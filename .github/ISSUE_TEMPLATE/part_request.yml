@@ -1,0 +1,61 @@
+name: Part request
+description: Request a new part for the DropOut library
+title: "Add <MPN>"
+labels: ["part-request"]
+body:
+  - type: input
+    id: mpn
+    attributes:
+      label: MPN
+      description: Exact orderable part number, including packaging suffix
+    validations:
+      required: true
+  - type: input
+    id: manufacturer
+    attributes:
+      label: Manufacturer
+    validations:
+      required: true
+  - type: input
+    id: datasheet
+    attributes:
+      label: Datasheet URL
+      description: Manufacturer link preferred
+    validations:
+      required: true
+  - type: input
+    id: digikey
+    attributes:
+      label: DigiKey part number
+  - type: input
+    id: mouser
+    attributes:
+      label: Mouser part number
+  - type: dropdown
+    id: category
+    attributes:
+      label: Library category
+      options:
+        - DropOut_MCU
+        - DropOut_Interface
+        - DropOut_Power
+        - DropOut_PowerSwitch
+        - DropOut_Sensor
+        - DropOut_Memory
+        - DropOut_Passive
+        - DropOut_Protection
+        - DropOut_Timing
+        - DropOut_Connector
+        - Other (explain below)
+    validations:
+      required: true
+  - type: input
+    id: project
+    attributes:
+      label: Needed for project
+      placeholder: Node60
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Package variant, footprint concerns, symbol layout preferences

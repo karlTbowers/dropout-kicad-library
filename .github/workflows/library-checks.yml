@@ -1,0 +1,43 @@
+name: Library checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  fields:
+    name: Required symbol fields
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 scripts/check_symbol_fields.py symbols
+
+  parse:
+    name: KiCad 10 can load every library
+    runs-on: ubuntu-latest
+    container: kicad/kicad:10.0
+    steps:
+      - uses: actions/checkout@v4
+      - name: Export every symbol library to SVG (fails on parse errors)
+        shell: bash
+        run: |
+          shopt -s nullglob
+          mkdir -p /tmp/out
+          for lib in symbols/*.kicad_sym; do
+            echo "::group::$lib"
+            kicad-cli sym export svg --output /tmp/out "$lib"
+            echo "::endgroup::"
+          done
+      - name: Export every footprint library to SVG (fails on parse errors)
+        shell: bash
+        run: |
+          shopt -s nullglob
+          for lib in footprints/*.pretty; do
+            echo "::group::$lib"
+            kicad-cli fp export svg --output /tmp/out "$lib"
+            echo "::endgroup::"
+          done

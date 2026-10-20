@@ -1,0 +1,11 @@
+# KiCad files are text; keep LF line endings across Windows/macOS/Linux
+*.kicad_sym   text eol=lf
+*.kicad_mod   text eol=lf
+*.py          text eol=lf
+*.md          text eol=lf
+*.yml         text eol=lf
+
+# STEP/WRL models are text but not meaningfully diffable; hide them from diffs and language stats
+*.step  -diff linguist-generated
+*.stp   -diff linguist-generated
+*.wrl   -diff linguist-generated
