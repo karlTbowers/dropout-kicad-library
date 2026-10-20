@@ -19,7 +19,9 @@ jobs:
   parse:
     name: KiCad 10 can load every library
     runs-on: ubuntu-latest
-    container: kicad/kicad:10.0
+    container:
+      image: kicad/kicad:10.0
+      options: --user root   # default image user can't write the Actions workspace
     steps:
       - uses: actions/checkout@v4
       - name: Export every symbol library to SVG (fails on parse errors)
