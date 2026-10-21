@@ -22,7 +22,7 @@ from pathlib import Path
 
 # Pin the checker version. TODO(first run on the Mac): set the default below to the commit hash
 # of a known-good kicad-library-tools revision, and keep CI's KLT_REF in sync.
-KLT_REF = os.environ.get("KLT_REF", "")  # empty = default branch
+KLT_REF = os.environ.get("KLT_REF", "a903a695bf4e69905e9e56548f44dd46cdc1130e")  # kicad-library-tools main @ 2026-10-21
 KLT_URL = "https://gitlab.com/kicad/libraries/kicad-library-tools.git"
 
 REPO = Path(__file__).resolve().parent.parent

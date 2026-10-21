@@ -20,7 +20,7 @@ jobs:
     name: KLC (with DropOut exceptions)
     runs-on: ubuntu-latest
     env:
-      KLT_REF: ""   # empty = default branch. Pin to a commit hash; keep in sync with scripts/klc_check.py
+      KLT_REF: a903a695bf4e69905e9e56548f44dd46cdc1130e   # kicad-library-tools main @ 2026-10-21; keep in sync with scripts/klc_check.py
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -41,6 +41,11 @@ jobs:
           if [ -n "$req" ]; then
             out=$(pip install --quiet -r "$RUNNER_TEMP/klt/$req" 2>&1) || echo "::warning title=KLC setup::requirements install had problems: ${out//$'\n'/ | }"
           fi
+      - name: Checker output probe (temporary diagnostic)
+        shell: bash
+        run: |
+          out=$(python3 "$RUNNER_TEMP/klt/library_utils/klc-check/check_footprint.py" -vv tests/klc/DropOut_Test.pretty/SOT-23.kicad_mod 2>&1 | sed 's/\x1b\[[0-9;]*m//g' | head -40)
+          i=0; while IFS= read -r line; do i=$((i+1)); echo "::notice title=probe $(printf %02d $i)::$line"; done <<< "$out"
       - name: Run KLC checks
         env:
           KICAD_LIBRARY_TOOLS: ${{ runner.temp }}/klt
