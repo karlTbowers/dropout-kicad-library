@@ -19,9 +19,13 @@ exceptions:
   - id: model-path-kiprjmod
     rules: [F9.3]
     applies: ["*"]
-    match: "(?i)KICAD\\d*_3DMODEL_DIR|KIPRJMOD|model path|path prefix"
+    # Waives only: the path-prefix message, the "directory is different" message when our
+    # path ends in exactly the expected <Lib>.3dshapes folder, and the informational path line.
+    # A wrong .3dshapes folder, wrong file name, scale, offset or rotation still fails.
+    match: >-
+      ^Model path should start with '\$\{KICAD\d+_3DMODEL_DIR\}/'$|^3D model directory is different from footprint directory \(found '\$\{KIPRJMOD\}/lib/dropout-kicad-library/3dmodels/([^']+)', should be '\1'\)$|^- 3D model path: \$\{KIPRJMOD\}/lib/dropout-kicad-library/3dmodels/[^/]+\.3dshapes/[^/]+\.step$
     reason: >
-      KLC requires the ${KICAD9_3DMODEL_DIR}/ prefix, which points at KiCad's stock
+      KLC requires the ${KICAD10_3DMODEL_DIR}/ prefix, which points at KiCad's stock
       model folder. DropOut models live in this repo, mounted in every project as a
       submodule, so footprints use ${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/...
       This keeps 3D models pinned per board revision. All other F9.3 requirements

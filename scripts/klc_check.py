@@ -26,9 +26,16 @@ KLT_REF = os.environ.get("KLT_REF", "a903a695bf4e69905e9e56548f44dd46cdc1130e") 
 KLT_URL = "https://gitlab.com/kicad/libraries/kicad-library-tools.git"
 
 REPO = Path(__file__).resolve().parent.parent
-RULE_RE = re.compile(r"\b([GSFM]\d+\.\d+)\b")
-ITEM_RE = re.compile(r"(?:Checking|checking)\s+(?:symbol|footprint)\s+['\"]?([^'\":\s]+)")
-VIOLATION_RE = re.compile(r"(?i)violat|error|warning")
+# Checker output format (verified against kicad-library-tools a903a69, `-vv`):
+#   Checking footprint 'SOT-23':
+#     Violating F9.3 - https://klc.kicad.org/footprint/f9/f9.3/      <- header (printed twice)
+#     Violating F9.3 - https://klc.kicad.org/footprint/f9/f9.3/
+#       Footprint 3D model requirements - F9.3 - https://...           <- title echo, ignored
+#       Model path should start with '${KICAD10_3DMODEL_DIR}/'        <- detail lines
+#         - 3D model path: ...
+ITEM_RE = re.compile(r"^Checking\s+(?:symbol|footprint)\s+'([^']+)'")
+HEADER_RE = re.compile(r"^(?:Violating|Warning|Error)\b.*?\b([GSFM]\d+\.\d+)\b")
+TITLE_ECHO_RE = re.compile(r"\s-\s[GSFM]\d+\.\d+\s-\shttps?://")
 
 
 def load_exceptions():
@@ -107,19 +114,24 @@ def parse(output, library, default_item):
     item = default_item
     current = None
     for line in output.splitlines():
-        clean = re.sub(r"\x1b\[[0-9;]*m", "", line).rstrip()
-        text = clean.strip()
+        text = re.sub(r"\x1b\[[0-9;]*m", "", line).strip()
+        if not text:
+            continue
         m = ITEM_RE.search(text)
-        r = RULE_RE.search(text)
-        if m or (r and VIOLATION_RE.search(text)):
+        h = HEADER_RE.search(text)
+        if m:
             if current:
                 yield current
                 current = None
-            if m:
-                item = m.group(1)
-            if r and VIOLATION_RE.search(text):
-                current = (item, r.group(1), text, [])
-        elif current and text:
+            item = m.group(1)
+        elif h:
+            # The checker prints each header twice; merge an identical header with no details yet.
+            if current and current[2] == text and not current[3]:
+                continue
+            if current:
+                yield current
+            current = (item, h.group(1), text, [])
+        elif current and not TITLE_ECHO_RE.search(text):
             current[3].append(text)
     if current:
         yield current

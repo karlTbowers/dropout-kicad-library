@@ -24,7 +24,8 @@ The essentials are below.
 - **kicad-library-tools** (https://gitlab.com/kicad/libraries/kicad-library-tools): the KiCad library team's footprint generators, 3D model generators, and KLC checkers. `scripts/klc_check.py` clones it to `~/.cache/dropout/kicad-library-tools` at the commit in `KLT_REF`.
 - **kicad-happy** skills: `digikey`, `mouser`, `element14` for distributor data; `kicad` for pin-level review.
 - Do not install or use kistack. The user decided against it.
-- **First-session tasks for the KLC setup:** (1) run `python3 scripts/klc_check.py --raw` against a known-bad test footprint and confirm the wrapper's parsing matches the real checker output format; adjust `ITEM_RE`/`RULE_RE`/`VIOLATION_RE` if not. (2) Confirm the two `match` regexes in `klc-exceptions.yml` match the checker's actual messages. (3) Pin `KLT_REF` to a specific commit hash in both `scripts/klc_check.py` and `.github/workflows/library-checks.yml`. (4) Check whether the checker flags the extra DropOut fields (MPN etc.) and, if so, propose an exception to the user.
+- **KLC checker status:** pinned to kicad-library-tools `a903a69` (in `scripts/klc_check.py` and CI). The wrapper's parser was verified against that version's real footprint-checker output, and `tests/klc/` is a CI self-test proving exceptions waive exactly what they should. When re-pinning, keep both `KLT_REF`s in sync and make sure the self-test still passes.
+- **Open KLC task:** the *symbol* checker's output hasn't been verified yet. With the first real symbol, run `python3 scripts/klc_check.py --raw symbols/<lib>.kicad_sym`, confirm the parser handles it, check whether the DropOut fields (MPN etc.) get flagged under S6.2, and if so propose an exception to the user. Add a symbol fixture to `tests/klc/`.
 
 ## Credentials and vendor sites
 
