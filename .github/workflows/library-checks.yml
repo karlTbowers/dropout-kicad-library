@@ -20,18 +20,27 @@ jobs:
     name: KLC (with DropOut exceptions)
     runs-on: ubuntu-latest
     env:
-      KLT_REF: master   # keep in sync with KLT_REF in scripts/klc_check.py
+      KLT_REF: ""   # empty = default branch. Pin to a commit hash; keep in sync with scripts/klc_check.py
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - name: Fetch kicad-library-tools
+        shell: bash
         run: |
-          git clone --quiet https://gitlab.com/kicad/libraries/kicad-library-tools.git "$RUNNER_TEMP/klt"
-          git -C "$RUNNER_TEMP/klt" checkout --quiet "$KLT_REF"
-          pip install pyyaml
-          if [ -f "$RUNNER_TEMP/klt/requirements.txt" ]; then pip install -r "$RUNNER_TEMP/klt/requirements.txt"; fi
+          fail() { echo "::error title=KLC setup::$1"; exit 1; }
+          out=$(git clone --quiet --depth 50 https://gitlab.com/kicad/libraries/kicad-library-tools.git "$RUNNER_TEMP/klt" 2>&1) || fail "clone failed: ${out//$'\n'/ | }"
+          if [ -n "$KLT_REF" ]; then
+            out=$(git -C "$RUNNER_TEMP/klt" checkout --quiet "$KLT_REF" 2>&1) || fail "checkout $KLT_REF failed: ${out//$'\n'/ | }"
+          fi
+          echo "::notice title=KLC tools::kicad-library-tools at $(git -C "$RUNNER_TEMP/klt" rev-parse HEAD) ($(git -C "$RUNNER_TEMP/klt" rev-parse --abbrev-ref HEAD))"
+          echo "::notice title=KLC checkers::$(cd "$RUNNER_TEMP/klt" && find . -name 'check_symbol.py' -o -name 'check_footprint.py' | tr '\n' ' ')"
+          pip install --quiet pyyaml || fail "pip install pyyaml failed"
+          req=$(cd "$RUNNER_TEMP/klt" && find . -maxdepth 3 -name requirements.txt | head -1)
+          if [ -n "$req" ]; then
+            out=$(pip install --quiet -r "$RUNNER_TEMP/klt/$req" 2>&1) || echo "::warning title=KLC setup::requirements install had problems: ${out//$'\n'/ | }"
+          fi
       - name: Run KLC checks
         env:
           KICAD_LIBRARY_TOOLS: ${{ runner.temp }}/klt

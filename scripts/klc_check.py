@@ -20,9 +20,9 @@ import subprocess
 import sys
 from pathlib import Path
 
-# Pin the checker version. TODO(first run on the Mac): replace "master" with the commit hash
+# Pin the checker version. TODO(first run on the Mac): set the default below to the commit hash
 # of a known-good kicad-library-tools revision, and keep CI's KLT_REF in sync.
-KLT_REF = os.environ.get("KLT_REF", "master")
+KLT_REF = os.environ.get("KLT_REF", "")  # empty = default branch
 KLT_URL = "https://gitlab.com/kicad/libraries/kicad-library-tools.git"
 
 REPO = Path(__file__).resolve().parent.parent
@@ -48,8 +48,9 @@ def tools_dir():
     if not (d / ".git").exists():
         d.parent.mkdir(parents=True, exist_ok=True)
         subprocess.run(["git", "clone", "--quiet", KLT_URL, str(d)], check=True)
-    subprocess.run(["git", "-C", str(d), "fetch", "--quiet", "origin", KLT_REF], check=False)
-    subprocess.run(["git", "-C", str(d), "checkout", "--quiet", KLT_REF], check=False)
+    if KLT_REF:
+        subprocess.run(["git", "-C", str(d), "fetch", "--quiet", "origin", KLT_REF], check=False)
+        subprocess.run(["git", "-C", str(d), "checkout", "--quiet", KLT_REF], check=True)
     return d
 
 
