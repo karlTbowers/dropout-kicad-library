@@ -47,8 +47,9 @@ jobs:
           set +e +o pipefail
           python3 "$RUNNER_TEMP/klt/library_utils/klc-check/check_footprint.py" -vv tests/klc/DropOut_Test.pretty/SOT-23.kicad_mod > "$RUNNER_TEMP/fp.txt" 2>&1; echo "::notice title=probe 00::footprint checker exit code $?"
           python3 "$RUNNER_TEMP/klt/library_utils/klc-check/check_footprint.py" --help > "$RUNNER_TEMP/help.txt" 2>&1
-          i=0; while IFS= read -r line; do i=$((i+1)); echo "::notice title=probe $(printf %02d $i)::$line"; done < <(sed 's/\x1b\[[0-9;]*m//g' "$RUNNER_TEMP/fp.txt" | head -45)
-          i=0; while IFS= read -r line; do i=$((i+1)); echo "::notice title=help $(printf %02d $i)::$line"; done < <(head -30 "$RUNNER_TEMP/help.txt")
+          enc() { sed 's/\x1b\[[0-9;]*m//g; s/%/%25/g' "$1" | head -120 | awk 'BEGIN{ORS="%0A"} {print}'; }
+          echo "::notice title=probe-footprint::$(enc "$RUNNER_TEMP/fp.txt")"
+          echo "::notice title=probe-help::$(enc "$RUNNER_TEMP/help.txt")"
           exit 0
       - name: Run KLC checks
         env:
