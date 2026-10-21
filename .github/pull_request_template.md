@@ -7,6 +7,7 @@
 ## Checklist
 
 - [ ] Symbol has all required fields (CI checks this)
+- [ ] `scripts/klc_check.py` passes; no new KLC exceptions added in this PR
 - [ ] Pin numbers and names verified against the datasheet package drawing
 - [ ] Pin electrical types set for ERC
 - [ ] Footprint land pattern from the manufacturer's recommended layout (page/figure noted in description)

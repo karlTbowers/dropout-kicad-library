@@ -16,6 +16,27 @@ jobs:
           python-version: "3.12"
       - run: python3 scripts/check_symbol_fields.py symbols
 
+  klc:
+    name: KLC (with DropOut exceptions)
+    runs-on: ubuntu-latest
+    env:
+      KLT_REF: master   # keep in sync with KLT_REF in scripts/klc_check.py
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch kicad-library-tools
+        run: |
+          git clone --quiet https://gitlab.com/kicad/libraries/kicad-library-tools.git "$RUNNER_TEMP/klt"
+          git -C "$RUNNER_TEMP/klt" checkout --quiet "$KLT_REF"
+          pip install pyyaml
+          if [ -f "$RUNNER_TEMP/klt/requirements.txt" ]; then pip install -r "$RUNNER_TEMP/klt/requirements.txt"; fi
+      - name: Run KLC checks
+        env:
+          KICAD_LIBRARY_TOOLS: ${{ runner.temp }}/klt
+        run: python3 scripts/klc_check.py
+
   parse:
     name: KiCad 10 can load every library
     runs-on: ubuntu-latest

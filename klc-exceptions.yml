@@ -1,0 +1,40 @@
+# DropOut deviations from the KiCad Library Conventions (https://klc.kicad.org/).
+#
+# DropOut follows KLC everywhere EXCEPT the entries below. scripts/klc_check.py
+# suppresses exactly these violations and fails on everything else.
+#
+# To add an exception: open a PR that adds ONE entry here with a clear reason.
+# Never add an exception just to make a single part pass; fix the part instead.
+#
+# Fields:
+#   id        short unique slug
+#   rules     KLC rule IDs this covers (e.g. F9.3). A rule ID like "F9" covers all F9.x.
+#   applies   glob(s) matched against "<Library>:<Item>" (e.g. "DropOut_Power:*", "*").
+#   match     optional regex; if set, EVERY detail line of the violation must match it,
+#             so a violation that also reports some other problem is not waived.
+#   reason    why DropOut deviates
+#   approved  date approved (YYYY-MM-DD)
+
+exceptions:
+  - id: model-path-kiprjmod
+    rules: [F9.3]
+    applies: ["*"]
+    match: "(?i)KICAD\\d*_3DMODEL_DIR|KIPRJMOD|model path|path prefix"
+    reason: >
+      KLC requires the ${KICAD9_3DMODEL_DIR}/ prefix, which points at KiCad's stock
+      model folder. DropOut models live in this repo, mounted in every project as a
+      submodule, so footprints use ${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/...
+      This keeps 3D models pinned per board revision. All other F9.3 requirements
+      (STEP, 1:1:1 scale, zero offset/rotation, .3dshapes folder named after the
+      footprint library, model named after the footprint) still apply.
+    approved: 2026-10-21
+
+  - id: dropout-library-prefix
+    rules: [G1.3, S1.1, F1.1]
+    applies: ["*"]
+    match: "(?i)librar(y|ies)"
+    reason: >
+      Libraries are named DropOut_<Category> instead of function-only names so they
+      never collide with KiCad's stock libraries in a user's library tables. The
+      <Category> part still follows KLC functional naming and capitalization.
+    approved: 2026-10-21

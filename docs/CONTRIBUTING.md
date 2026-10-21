@@ -1,63 +1,66 @@
 # DropOut Library Rules
 
-These rules keep the library trustworthy as it grows. CI enforces the symbol-field rules; reviewers check the rest.
+## The standard: KLC, plus a short list of exceptions
 
-## 1. Atomic parts
+DropOut follows the **KiCad Library Conventions** (https://klc.kicad.org/) in full: naming, symbol layout, pin types, footprint layers, land patterns, 3D models, all of it.
 
-One symbol represents one orderable part. Do not create generic "R" or "C" symbols with values filled in later. A 10 kΩ 0603 1% resistor and a 10 kΩ 0402 1% resistor are two symbols.
+The only deviations are the ones listed in [`klc-exceptions.yml`](../klc-exceptions.yml), each with a reason and approval date. CI runs the official KLC checker from [kicad-library-tools](https://gitlab.com/kicad/libraries/kicad-library-tools) through `scripts/klc_check.py`, which waives exactly those exceptions and fails on anything else.
 
-## 2. Required symbol fields
+```bash
+python3 scripts/klc_check.py                 # check the whole library
+python3 scripts/klc_check.py --raw <files>   # also show the checker's full output
+```
 
-Every symbol must have these fields, filled in (not blank):
+### Adding an exception
+
+1. Open a PR that adds **one** entry to `klc-exceptions.yml`: the rule ID(s), what it applies to, an optional `match` regex that narrows it to the specific message, the reason, and the date.
+2. Keep each exception as narrow as possible. A `match` regex must match every detail line of a violation, so an unrelated problem under the same rule still fails.
+3. Never add an exception just to make one part pass. Fix the part.
+
+## DropOut additions to KLC
+
+These are stricter than KLC or add things KLC doesn't cover.
+
+### Fully specified (atomic) parts only
+
+One symbol = one orderable part, named by MPN, with its footprint linked (KLC G2.1 "fully specified" symbols). DropOut does **not** use generic symbols. Passives are fully specified too: a 10 kΩ 0603 1% resistor and a 10 kΩ 0402 1% resistor are two symbols.
+
+### Required symbol fields
+
+All KLC S6.2 fields, plus these DropOut fields, filled in (not blank):
 
 | Field | Example | Notes |
 |---|---|---|
-| `Reference` | `U` | Standard KiCad prefix |
-| `Value` | `TPS2HCS08A-Q1` | What prints on the schematic |
-| `Footprint` | `DropOut_PowerSwitch:HTSSOP-16-1EP_4.4x5mm_P0.65mm` | Must point at a DropOut footprint |
-| `Datasheet` | `https://www.ti.com/lit/gpn/TPS2HCS08-Q1` | Manufacturer URL, not a distributor copy |
-| `Description` | `Dual-channel smart high-side switch, 8.9 mΩ, SPI, AEC-Q100 Grade 1` | One line |
 | `Manufacturer` | `Texas Instruments` | Full manufacturer name |
 | `MPN` | `TPS2HCS08AQPWPRQ1` | Exact orderable part number incl. packaging suffix |
-| `DigiKey_PN` | `296-TPS2HCS08AQPWPRQ1CT-ND` | Use `-` if not stocked |
-| `Mouser_PN` | `595-TPS2HCS08AQPWPRQ1` | Use `-` if not stocked |
+| `DigiKey_PN` | `296-TPS2HCS08AQPWPRQ1CT-ND` | `-` only if not stocked |
+| `Mouser_PN` | `595-TPS2HCS08AQPWPRQ1` | `-` only if not stocked |
 
-Optional fields: `Temperature_Grade` (e.g. `AEC-Q100 Grade 1`), `Notes`.
+Optional: `Temperature_Grade` (e.g. `AEC-Q100 Grade 1`), `Notes`. `scripts/check_symbol_fields.py` enforces these in CI.
 
-Field names are case-sensitive. Only `Reference` and `Value` are visible on the schematic by default.
+The `Datasheet` field must be the **manufacturer's** URL, never a distributor copy. Datasheet PDFs are never committed.
 
-## 3. Naming
+### Library names
 
-- **Libraries**: `DropOut_<Category>` (see README for the category list). Never put DropOut parts in KiCad's stock libraries.
-- **Symbols**: the MPN without packaging suffix, e.g. `LM74910H-Q1`, `INA228A-Q1`. Passives: `R_10k_0603_1%`, `C_100n_0603_50V_X7R`.
-- **Footprints**: IPC-7351-style descriptive names, e.g. `SOIC-8_3.9x4.9mm_P1.27mm`, `VQFN-24-1EP_4x4mm_P0.5mm`. Reuse an existing footprint when the land pattern is identical.
-- **3D models**: same name as the footprint, `.step` format, in the matching `.3dshapes` folder.
+`DropOut_<Category>`, where `<Category>` follows KLC functional naming (see README for the list). New categories need approval.
 
-## 4. Footprint rules
+### 3D models
 
-- Land pattern from the **manufacturer's recommended layout** in the datasheet; record the datasheet page/figure in the footprint description.
-- Pin 1 marked on silkscreen and fab layer.
-- Courtyard on `F.CrtYd`, 0.25 mm clearance from body/pads (0.5 mm for connectors).
-- Exposed pads: include the manufacturer's paste-aperture pattern and thermal vias where recommended.
-- 3D model path uses `${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/...` and is aligned (check in the 3D viewer).
+- Prefer models generated with kicad-library-tools (source supplied, license-clean for a public repo).
+- Manufacturer STEP files only when their license allows redistribution; note source and license in the PR.
+- Never commit SnapMagic, Ultra Librarian, or SamacSys models.
 
-## 5. Symbol rules
+### Changing released parts
 
-- Pin numbers match the datasheet package exactly; double-check exposed pad numbering.
-- Pins grouped by function (power on top/bottom, inputs left, outputs right), not by package order.
-- Pin electrical types set correctly so ERC is meaningful (power input, power output, open drain, passive, etc.).
-- 100 mil (2.54 mm) pin grid.
+Projects pin this library as a submodule, so a change reaches a board only when that project updates. Even so:
+- **Never silently change a land pattern** that existing boards use. Create a new footprint name or call the change out clearly in the PR and release notes.
+- Field corrections (typos, updated distributor PNs) may be edited in place.
 
-## 6. Changing released parts
+## Workflow
 
-Projects pin this library, so a change reaches a board only when that project updates its submodule. Even so:
+1. Branch from `main` (`add/<MPN>`).
+2. Add symbol + footprint + 3D model in one PR titled `Add <MPN>`.
+3. Run `check_symbol_fields.py` and `klc_check.py` locally; CI runs both again.
+4. Complete the PR checklist, including the pin-by-pin datasheet check, which the scripts can't do.
 
-- **Never silently change a land pattern** that existing boards use. Create a new footprint name (e.g. `..._Rev2`) or document the change clearly in the PR and release notes.
-- Field corrections (typos, updated distributor PNs) are fine to edit in place.
-
-## 7. Workflow
-
-1. Open a **Part request** issue (or go straight to a PR).
-2. Add symbol + footprint + 3D model in one PR, titled `Add <MPN>`.
-3. CI checks required fields. Fix anything it flags.
-4. Complete the PR checklist (datasheet verification) before merging.
+Claude Code follows this process through the `add-part` skill in `.claude/skills/add-part/SKILL.md`.

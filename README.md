@@ -10,8 +10,10 @@ Every part in this library is an **atomic part**: one symbol = one orderable man
 symbols/        DropOut_<Category>.kicad_sym        one file per category
 footprints/     DropOut_<Category>.pretty/          one folder per category
 3dmodels/       DropOut_<Category>.3dshapes/        STEP models, mirroring footprint categories
-docs/           CONTRIBUTING.md (library rules)
-scripts/        check_symbol_fields.py (run by CI)
+docs/           CONTRIBUTING.md (library rules: KLC + DropOut additions)
+scripts/        check_symbol_fields.py, klc_check.py (run by CI), vendor-env.sh
+klc-exceptions.yml   approved deviations from the KiCad Library Conventions
+.claude/skills/add-part/   Claude Code procedure for adding parts
 ```
 
 Planned categories (created as the first part in each one is added):
@@ -52,7 +54,7 @@ Each board revision pins the library commit it was released with, so old revisio
 
 ## Adding a part
 
-Read [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md). In short: open a part request issue or a pull request, fill in the required fields, verify against the datasheet, and let CI check the fields.
+DropOut follows the [KiCad Library Conventions (KLC)](https://klc.kicad.org/), except the approved deviations in [klc-exceptions.yml](klc-exceptions.yml). Read [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md). In short: open a part request issue or a pull request, verify against the datasheet, and let CI run the field and KLC checks.
 
 ## License
 

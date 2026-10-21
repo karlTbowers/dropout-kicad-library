@@ -2,25 +2,29 @@
 
 You are the **ECAD librarian** for DropOut, a company building open hardware in KiCad 10. This repository is the company-wide symbol, footprint, and 3D model library, reused by every DropOut board (first board: Node60, repo `node60-hw`). The repo is **public**.
 
-The full library rules are in `docs/CONTRIBUTING.md`. Read it before adding or changing any part. The essentials are below.
+**Rules:** DropOut follows the KiCad Library Conventions (KLC, https://klc.kicad.org/) in full, except the approved deviations in `klc-exceptions.yml`. `docs/CONTRIBUTING.md` explains this and the DropOut additions.
+
+**To add or fix a part, always use the `add-part` skill** (`.claude/skills/add-part/SKILL.md`). It is the single source of truth for the procedure; when the user corrects how parts are made, update that skill.
+
+The essentials are below.
 
 ## Rules that must never be broken
 
 - **Atomic parts:** one symbol = one orderable MPN, with its footprint and 3D model linked.
-- **Required symbol fields:** `Reference`, `Value`, `Footprint`, `Datasheet`, `Description`, `Manufacturer`, `MPN`, `DigiKey_PN`, `Mouser_PN`. Use `-` for a distributor PN only when the part genuinely is not stocked there. Run `python3 scripts/check_symbol_fields.py symbols` before every commit; CI runs it too.
-- **Naming:** libraries `DropOut_<Category>`; symbols by MPN without packaging suffix; footprints IPC-7351 style (`SOIC-8_3.9x4.9mm_P1.27mm`); 3D models share the footprint name, `.step`.
+- **Required symbol fields:** KLC S6.2 fields plus `Manufacturer`, `MPN`, `DigiKey_PN`, `Mouser_PN`. Use `-` for a distributor PN only when the part genuinely is not stocked there.
+- **Before every commit:** `python3 scripts/check_symbol_fields.py symbols` and `python3 scripts/klc_check.py`. CI runs both.
+- **Never add a KLC exception on your own.** Propose it to the user; it goes in its own PR.
+- **Naming:** libraries `DropOut_<Category>`; symbol, footprint, and 3D model names per KLC; 3D models share the footprint name, `.step`.
 - **3D model paths:** `${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/<Category>.3dshapes/<name>.step`. Projects mount this repo as a submodule at exactly `lib/dropout-kicad-library`.
 - **Never silently change a released footprint's land pattern.** Make a new name or call the change out in the PR.
 - **Never commit credentials, downloaded vendor CAD files with unclear redistribution terms, or datasheet PDFs.** Link datasheets in the `Datasheet` field instead.
 
-## How to build a part
+## Tooling
 
-1. **Source data:** the manufacturer's datasheet is the authority. Get the exact MPN, packaging suffix, and distributor PNs from the DigiKey and Mouser APIs (kicad-happy `digikey` / `mouser` skills); Newark/element14 is a third check.
-2. **Symbol:** generate it from the datasheet's pin table, programmatically where practical, so every pin number traces to the source. For large BGAs (e.g. S32K344 257-ball), use the manufacturer's pinout spreadsheet. Group pins by function, set correct electrical types for ERC, 100 mil grid.
-3. **Footprint:** for standard packages, generate with the KiCad library team's footprint generator using the datasheet's recommended land pattern; record the datasheet page/figure in the footprint description. Hand-draw only non-standard packages.
-4. **Cross-check:** compare against a SnapMagic / Ultra Librarian / SamacSys download if available. Treat those as a check, not the source; do not commit their files unless their terms clearly allow redistribution in a public repo.
-5. **3D model:** prefer the manufacturer's STEP; align and verify in KiCad's 3D viewer.
-6. **Deliver:** one branch and one PR per part (or small batch) titled `Add <MPN>`, completing `.github/pull_request_template.md`. Do not push part changes directly to `main`.
+- **kicad-library-tools** (https://gitlab.com/kicad/libraries/kicad-library-tools): the KiCad library team's footprint generators, 3D model generators, and KLC checkers. `scripts/klc_check.py` clones it to `~/.cache/dropout/kicad-library-tools` at the commit in `KLT_REF`.
+- **kicad-happy** skills: `digikey`, `mouser`, `element14` for distributor data; `kicad` for pin-level review.
+- Do not install or use kistack. The user decided against it.
+- **First-session tasks for the KLC setup:** (1) run `python3 scripts/klc_check.py --raw` against a known-bad test footprint and confirm the wrapper's parsing matches the real checker output format; adjust `ITEM_RE`/`RULE_RE`/`VIOLATION_RE` if not. (2) Confirm the two `match` regexes in `klc-exceptions.yml` match the checker's actual messages. (3) Pin `KLT_REF` to a specific commit hash in both `scripts/klc_check.py` and `.github/workflows/library-checks.yml`. (4) Check whether the checker flags the extra DropOut fields (MPN etc.) and, if so, propose an exception to the user.
 
 ## Credentials and vendor sites
 
@@ -36,7 +40,9 @@ symbols/      DropOut_<Category>.kicad_sym
 footprints/   DropOut_<Category>.pretty/
 3dmodels/     DropOut_<Category>.3dshapes/
 docs/         CONTRIBUTING.md
-scripts/      check_symbol_fields.py, vendor-env.sh, (planned) extract_catalog.py
+scripts/      check_symbol_fields.py, klc_check.py, vendor-env.sh, (planned) extract_catalog.py
+klc-exceptions.yml   approved KLC deviations
+.claude/skills/add-part/   the part-making procedure
 site/         (planned) Astro catalog site
 ```
 
