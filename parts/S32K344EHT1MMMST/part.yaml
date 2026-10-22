@@ -1,0 +1,28 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/S32K344EHT1MMMST/part.yaml
+#
+# pins.csv was made from NXP's IOMUX spreadsheet (S32K3xx Reference Manual, Nov 2025 build,
+# attachment S32K344_S32K324_S32K314_IOMUX.xlsx; archived in the private dropout-vendor-docs):
+#   python3 scripts/pintables/nxp_iomux.py S32K344_S32K324_S32K314_IOMUX.xlsx \
+#     --device S32K344 --package 257bga --type V11=power_out --type V25=power_out \
+#     -o parts/S32K344EHT1MMMST/pins.csv
+# V11 and V25 are power outputs: "internally regulated" in data sheet Rev. 14 Table 3.
+library: DropOut_MCU
+name: S32K344EHT1MMMST
+pins: pins.csv
+units: [Power, PTA, PTB, PTC, PTD, PTE, PTF, PTG]
+fields:
+  Reference: U
+  Value: S32K344EHT1MMMST
+  Footprint: DropOut_Package_BGA:NXP_LFBGA-257_14x14mm_Layout17x17_P0.8mm
+  Datasheet: https://www.nxp.com/docs/en/data-sheet/S32K3xx.pdf
+  Description: NXP S32K344 automotive MCU, Arm Cortex-M7 lockstep, 160 MHz, 4 MB flash, 512 KB SRAM, CAN FD, Ethernet, HSE_B, 2.97-5.5 V, AEC-Q100 Grade 1, LFBGA-257
+  ki_keywords: NXP S32K3 S32K344 Arm Cortex-M7 lockstep automotive MCU CAN FD Ethernet
+  ki_fp_filters: NXP*LFBGA*257*14x14mm*Layout17x17*P0.8mm*
+  Manufacturer: NXP Semiconductors
+  MPN: S32K344EHT1MMMST
+  DigiKey_PN: 568-S32K344EHT1MMMST-ND
+  Mouser_PN: 771-S32K344EHT1MMMST
+  Temperature_Grade: AEC-Q100 Grade 1
+  Reference_Manual: https://www.nxp.com/webapp/Download?colCode=S32K3XXRM
+  Notes: Ball map and alternate functions generated from S32K3xx Reference Manual (S32K3XXRM, Nov 2025 build) attachment S32K344_S32K324_S32K314_IOMUX.xlsx, sheets S32K344_Pinout / S32K344_IO Signal Table. NXP sign-in required.

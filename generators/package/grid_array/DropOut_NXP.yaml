@@ -1,0 +1,35 @@
+# DropOut footprint specs for the kicad-library-tools grid_array (BGA) generator.
+# Generate with: scripts/generate_footprint.py generators/package/grid_array/DropOut_NXP.yaml --lib DropOut_Package_BGA
+# Source documents are archived in the private dropout-vendor-docs repo.
+
+
+NXP_LFBGA-257_14x14mm_Layout17x17_P0.8mm:
+  size_source:
+    url: "https://www.nxp.com/docs/en/package-information/SOT1547-3.pdf"
+    page: 2
+  description: "NXP LFBGA-257 (SOT1547-3, 98ASA01483D), NSMD; land pattern per SOT1547-3 Figures 2-4"
+  manufacturer: "NXP"
+  device_type: "LFBGA"
+  additional_tags:
+    - "257-ball"
+    - "SOT1547-3"
+    - "98ASA01483D"
+  body_size_x: 14.0
+  body_size_y: 14.0
+  overall_height: 1.37  # package summary nominal (1.52 max)
+  body_pcb_gap: 0.27  # ball stand-off nominal (0.20 to 0.34)
+  ball_diameter: 0.43  # nominal (0.38 to 0.48)
+  ball_type: 'collapsible'
+  pitch: 0.8
+  layout_x: 17
+  layout_y: 17
+  row_skips: [
+    [], [], [], [],  # A-D
+    [[5, 14]],       # E: E5-E13 unpopulated
+    [5, 13], [5, 13], [5, 13], [5, 13], [5, 13], [5, 13], [5, 13],  # F-M (no row I)
+    [[5, 14]],       # N: N5-N13 unpopulated
+    [], [], [],      # P-U
+  ]
+  pad_diameter: 0.34  # Figure 3: 257X dia 0.34 copper
+  mask_margin: 0.05   # Figure 2: 257X dia 0.44 mask opening
+  paste_margin: 0.000001  # Figure 4: 257X dia 0.34 paste, 0.125 stencil
