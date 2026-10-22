@@ -27,7 +27,7 @@ The essentials are below.
 - **kicad-happy** skills: `digikey`, `mouser`, `element14` for distributor data; `kicad` for pin-level review.
 - Do not install or use kistack. The user decided against it.
 - **KLC checker status:** pinned to kicad-library-tools `a903a69` (in `scripts/klc_check.py` and CI). The wrapper's parser is verified against that version's real footprint *and* symbol output (the symbol checker prints `Checking component 'Lib:Name'`). It reads each finding's severity from the checker's colours: errors are `FAIL`, warnings are `WARN` and don't fail CI (the checker itself exits 2, "allowed failure"), and exceptions give `WAIVED`. Symbols are checked with `--footprints` so S5.1 verifies footprint links. `tests/klc/` is a CI self-test with footprint and symbol fixtures. When re-pinning, keep both `KLT_REF`s in sync and make sure the self-test still passes.
-- **S6.2 and DropOut fields:** the symbol checker warns (S6.2) about every DropOut field (`Manufacturer`, `MPN`, `DigiKey_PN`, `Mouser_PN`, and optional ones). An exception for them was proposed with the first symbol (S32K344EHT1MMMST).
+- **S6.2 and DropOut fields:** the symbol checker warns (S6.2) about every DropOut field (`Manufacturer`, `MPN`, `DigiKey_PN`, `Mouser_PN`, and optional ones). These are waived by the `dropout-symbol-fields` exception; any other S6.2 finding still shows.
 
 ## Credentials and vendor sites
 
