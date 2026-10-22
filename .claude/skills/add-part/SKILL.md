@@ -68,17 +68,17 @@ You need the datasheet, the package drawing with the recommended land pattern, a
   - Another vendor's spreadsheet or CSV: write a new adapter in `scripts/pintables/` (same output columns) and commit it.
   - Small parts: build the CSV from the datasheet pin table text (`pdftotext -layout`), then check every row against the PDF.
 - Electrical types come from the datasheet, not the pin name: e.g. S32K3 V11/V25 are power **outputs** ("internally regulated", Table 3) on S32K344 but V11 is an input on S32K388. Record the reasoning as a comment in `part.yaml`.
-- Layout (`symbolgen` enforces it): inputs left, outputs right, supplies top, grounds bottom; big parts in units (power/clock, then one per port or function); same-name supply pins become KiCad 10 native pin stacks; active-low names as `~{NAME}` (KLC S4.7); pins whose reset default is a special function carry it in the name (`PTA5/~{RESET}`).
+- Layout (`symbolgen` enforces it): inputs left, outputs right, supplies top, grounds bottom; big parts in units (power/clock, then one per port or function); **every package pin is its own visible pin: never combine pins** (no KiCad native pin stacks, no hidden pins stacked under a visible one, even for 18 identical VSS balls; DropOut rule, stricter than KLC S4.3); active-low names as `~{NAME}` (KLC S4.7); pins whose reset default is a special function carry it in the name (`PTA5/~{RESET}`).
 - Fields: KLC S6.2 fields plus `Manufacturer`, `MPN`, `DigiKey_PN`, `Mouser_PN`; optional `Temperature_Grade`, `Notes`, `Reference_Manual`. Only Reference and Value visible. Footprint links to the step 4 footprint; set `ki_fp_filters`.
 - Generate: `PY scripts/symbolgen.py parts/<MPN>/part.yaml` (writes/replaces the symbol in `symbols/<Library>.kicad_sym`, normalised by `kicad-cli`).
 
 ## 6. Verify (all before a PR)
 
 1. `python3 scripts/check_symbol_fields.py symbols`
-2. `python3 scripts/check_pin_pad_match.py`: symbol pins (stacks expanded) equal footprint pads.
+2. `python3 scripts/check_pin_pad_match.py`: no combined pins, and symbol pins equal footprint pads.
 3. `PY scripts/klc_check.py <changed files>`: `FAIL` = checker error, fix it. `WARN` = checker warning, allowed only where the manufacturer's data requires it; explain each one in the PR. `WAIVED` = covered by `klc-exceptions.yml`. Never add an exception to get a pass. Expected warnings so far: F9.2 on generated BGAs (manufacturer mask/paste margins, same as KiCad stock), S4.5 on depopulated BGAs (empty grid positions read as missing pins).
 4. **Independent pin cross-check:** compare against a second manufacturer source, e.g. a datasheet figure listing supply balls, or the vendor's own CAD symbol in a hardware design package. If the manufacturer's sources disagree (e.g. a pad-type typo), say which one wins and why in the PR. Aggregator models (SnapMagic, Ultra Librarian, SamacSys) are a check only.
-5. **Look at it:** `kicad-cli sym export svg symbols/<Lib>.kicad_sym -o <dir>` and `kicad-cli fp export svg footprints/<Lib>.pretty -o <dir>`, convert with `qlmanage -t -s 1200 -o <dir> <file>.svg`, and Read the PNGs. Check every unit after the final regeneration: pin names readable, stacked-pin number lists not overlapping, pin 1 marking, courtyard, fab/silk. 3D model: `PY -c "import cadquery as cq; print(cq.importers.importStep('<file>.step').val().BoundingBox().__dict__)"` matches the body size and sits at z = 0.
+5. **Look at it:** `kicad-cli sym export svg symbols/<Lib>.kicad_sym -o <dir>` and `kicad-cli fp export svg footprints/<Lib>.pretty -o <dir>`, convert with `qlmanage -t -s 1200 -o <dir> <file>.svg`, and Read the PNGs. Check every unit after the final regeneration: pin names and numbers readable and not overlapping, every package pin visible, pin 1 marking, courtyard, fab/silk. 3D model: `PY -c "import cadquery as cq; print(cq.importers.importStep('<file>.step').val().BoundingBox().__dict__)"` matches the body size and sits at z = 0.
 
 ## 7. Deliver
 

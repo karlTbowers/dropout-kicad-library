@@ -35,10 +35,10 @@ pins.csv columns (header row required):
               Default: next free slot in file order.
   alternates  optional, ";"-separated NAME or NAME:type (KiCad alternate pin functions)
 
-Pins with the same unit, side, name and a power type are drawn as one KiCad 10 native pin
-stack (number "[A1,B2,...]", KLC S4.3). Bodies are sized from pin-name lengths and centred on
-the origin (KLC S3.1); pins are 200 mil long on a 100 mil grid with 20 mil name offset (S3.6).
-The result is normalised with `kicad-cli sym upgrade` when kicad-cli is available.
+Every package pin gets its own visible pin: DropOut never combines pins (no native pin stacks,
+no hidden pins stacked under a visible one), even where KLC S4.3 would allow it. Bodies are
+sized from pin-name lengths and centred on the origin (KLC S3.1); pins are 200 mil long on a
+100 mil grid with 20 mil name offset (S3.6). The result is normalised with `kicad-cli sym upgrade` when kicad-cli is available.
 """
 import argparse
 import csv
@@ -49,7 +49,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
-from collections import OrderedDict, defaultdict
+from collections import OrderedDict
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
@@ -58,10 +58,8 @@ from check_symbol_fields import top_level_symbols  # noqa: E402
 
 G = 2.54          # 100 mil grid
 PIN_LEN = 5.08    # 200 mil pins, as KiCad's stock MCU symbols
-TB_PITCH = 5.08   # top/bottom pins 200 mil apart, room for vertical names
+TB_PITCH = 2.54   # top/bottom pins 100 mil apart, as KiCad's stock MCU symbols
 CHAR_W = 1.27     # conservative pin-name glyph width at 1.27 mm text
-STACK_LABEL_W = 1.8  # room per number in a native stack's drawn number list
-STACKABLE = {"power_in", "power_out"}
 TYPES = {"input", "output", "bidirectional", "tri_state", "passive", "free", "unspecified",
          "power_in", "power_out", "open_collector", "open_emitter", "no_connect"}
 VISIBLE = {"Reference", "Value"}
@@ -82,11 +80,6 @@ def text_w(name):
 
 def snap_up(v, step=G):
     return math.ceil(v / step - 1e-9) * step
-
-
-def ball_key(n):
-    m = re.match(r"([A-Z]*)(\d+)$", n)
-    return (m.group(1), int(m.group(2))) if m else (n, 0)
 
 
 def load_yaml(path):
@@ -120,66 +113,51 @@ def read_pins(path):
     return pins
 
 
-def place_side(pins, pitch):
-    """Group stackable pins and assign slots. Returns list of (slot, [pins]).
-
-    KiCad draws a native stack's pin numbers as a list beside the pin, extending towards
-    lower slots (left on top/bottom edges, up on left/right edges), so a stack reserves
-    enough slots before its pin for that list.
-    """
-    groups = OrderedDict()
-    for p in pins:
-        key = (p["name"], p["type"]) if p["type"] in STACKABLE else ("#", p["number"])
-        groups.setdefault(key, []).append(p)
+def place_side(pins):
+    """Assign each pin a slot on its side: its own `slot`, else the next free one in file order.
+    Returns list of (slot, pin)."""
     placed, used = [], set()
-    for g in groups.values():
-        span = max(1, math.ceil(len(g) * STACK_LABEL_W / pitch)) if len(g) > 1 else 1
-        slot = g[0]["slot"]
+    for p in pins:
+        slot = p["slot"]
         if slot is None:
-            start = next(i for i in range(len(used) + span + 1)
-                         if not used & set(range(i, i + span)))
-            slot = start + span - 1
-        elif used & set(range(slot - span + 1, slot + 1)):
-            sys.exit(f"symbolgen: slot {slot} on one side is taken ({g[0]['name']})")
-        used |= set(range(slot - span + 1, slot + 1))
-        placed.append((slot, g))
+            slot = next(i for i in range(len(used) + 1) if i not in used)
+        elif slot in used:
+            sys.exit(f"symbolgen: slot {slot} on one side is taken ({p['name']} {p['number']})")
+        used.add(slot)
+        placed.append((slot, p))
     return placed
 
 
-def pin_sexpr(group, x, y, rot):
-    p = group[0]
-    nums = sorted((q["number"] for q in group), key=ball_key)
-    number = nums[0] if len(nums) == 1 else "[" + ",".join(nums) + "]"
+def pin_sexpr(p, x, y, rot):
     s = [f'\t\t\t(pin {p["type"]} line', f"\t\t\t\t(at {fmt(x)} {fmt(y)} {rot})",
          f"\t\t\t\t(length {fmt(PIN_LEN)})",
          f'\t\t\t\t(name "{esc(p["name"])}" (effects (font (size 1.27 1.27))))',
-         f'\t\t\t\t(number "{esc(number)}" (effects (font (size 1.27 1.27))))']
+         f'\t\t\t\t(number "{esc(p["number"])}" (effects (font (size 1.27 1.27))))']
     s += [f'\t\t\t\t(alternate "{esc(a)}" {t} line)' for a, t in p["alts"]]
     s.append("\t\t\t)")
     return "\n".join(s)
 
 
 def build_unit(pins):
-    sides = {s: place_side([p for p in pins if p["side"] == s], G if s in "LR" else TB_PITCH)
-             for s in "LRTB"}
+    sides = {s: place_side([p for p in pins if p["side"] == s]) for s in "LRTB"}
     rows = max([slot + 1 for s in "LR" for slot, _ in sides[s]] or [1])
     cols = max([slot + 1 for s in "TB" for slot, _ in sides[s]] or [0])
-    width = lambda s: max((text_w(g[0]["name"]) for _, g in sides[s]), default=0)
+    width = lambda s: max((text_w(p["name"]) for _, p in sides[s]), default=0)
     # half width: names on both sides plus a gap, and room for the top/bottom pin row
     hw = snap_up(max((width("L") + width("R") + 2 * G) / 2, ((cols - 1) * TB_PITCH + 2 * G) / 2, 2 * G))
     top = G * math.ceil((rows - 1) / 2)  # y of the first L/R row; rows centred on the origin
     hh = max(top + G, snap_up((width("T") + width("B") + 2 * G) / 2), 2 * G)
     out = [f"\t\t\t(rectangle (start {fmt(-hw)} {fmt(hh)}) (end {fmt(hw)} {fmt(-hh)})\n"
            f"\t\t\t\t(stroke (width 0.254) (type default)) (fill (type background)))"]
-    for slot, g in sides["L"]:
-        out.append(pin_sexpr(g, -hw - PIN_LEN, top - slot * G, 0))
-    for slot, g in sides["R"]:
-        out.append(pin_sexpr(g, hw + PIN_LEN, top - slot * G, 180))
+    for slot, p in sides["L"]:
+        out.append(pin_sexpr(p, -hw - PIN_LEN, top - slot * G, 0))
+    for slot, p in sides["R"]:
+        out.append(pin_sexpr(p, hw + PIN_LEN, top - slot * G, 180))
     x0 = -(cols - 1) * TB_PITCH / 2
-    for slot, g in sides["T"]:
-        out.append(pin_sexpr(g, x0 + slot * TB_PITCH, hh + PIN_LEN, 270))
-    for slot, g in sides["B"]:
-        out.append(pin_sexpr(g, x0 + slot * TB_PITCH, -hh - PIN_LEN, 90))
+    for slot, p in sides["T"]:
+        out.append(pin_sexpr(p, x0 + slot * TB_PITCH, hh + PIN_LEN, 270))
+    for slot, p in sides["B"]:
+        out.append(pin_sexpr(p, x0 + slot * TB_PITCH, -hh - PIN_LEN, 90))
     return out, hh
 
 

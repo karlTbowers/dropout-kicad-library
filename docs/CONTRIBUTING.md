@@ -27,6 +27,10 @@ These are stricter than KLC or add things KLC doesn't cover.
 
 One symbol = one orderable part, named by MPN, with its footprint linked (KLC G2.1 "fully specified" symbols). DropOut does **not** use generic symbols. Passives are fully specified too: a 10 kΩ 0603 1% resistor and a 10 kΩ 0402 1% resistor are two symbols.
 
+### Every pin is its own pin
+
+Every package pin gets its own visible pin on the symbol, including repeated power and ground pins (an MCU's 18 VSS balls are 18 pins). DropOut never combines pins: no KiCad native pin stacks and no hidden pins stacked under a visible one, even though KLC S4.3 allows stacking. Each pin can then be wired, decoupled, and checked individually. CI enforces this (`scripts/check_pin_pad_match.py`).
+
 ### Required symbol fields
 
 All KLC S6.2 fields, plus these DropOut fields, filled in (not blank):

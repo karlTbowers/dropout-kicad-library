@@ -13,6 +13,7 @@
 - [ ] Every source document archived in the private `dropout-vendor-docs` repo; this PR only links to them
 - [ ] Every KLC `WARN` explained below
 - [ ] Pin electrical types set for ERC
+- [ ] Every package pin is its own visible pin (no stacked or hidden pins)
 - [ ] Footprint land pattern from the manufacturer's recommended layout (page/figure noted in description)
 - [ ] Pin 1 marked; courtyard and fab layers present
 - [ ] 3D model added and aligned in the 3D viewer
