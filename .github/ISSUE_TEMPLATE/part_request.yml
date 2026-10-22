@@ -42,7 +42,10 @@ body:
         - DropOut_PowerSwitch
         - DropOut_Sensor
         - DropOut_Memory
-        - DropOut_Passive
+        - DropOut_Resistor
+        - DropOut_Capacitor
+        - DropOut_Inductor
+        - DropOut_Thermistor
         - DropOut_Protection
         - DropOut_Timing
         - DropOut_Connector
