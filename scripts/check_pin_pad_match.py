@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
-"""Check that every symbol's pin numbers match the pads of the footprint it links to.
+"""Check DropOut's symbol pin rules.
 
 Usage: python3 scripts/check_pin_pad_match.py [symbols_dir] [footprints_dir]
 
-For each symbol whose Footprint field points at a DropOut footprint in this repo, the set of
-pin numbers (native pin stacks "[A1,B2]" expanded) must equal the set of numbered pads.
-Unnumbered pads (mechanical, thermal-only with an empty name) are ignored. Exit 1 on mismatch.
+1. No combined pins: every package pin is its own pin on the symbol. A KiCad native pin stack
+   (number "[A1,B2]") or two pins at the same position in a unit is an error. Stricter than
+   KLC S4.3, which allows stacking.
+2. Pins match pads: for each symbol whose Footprint field points at a DropOut footprint in this
+   repo, the set of pin numbers must equal the set of numbered pads. Unnumbered pads
+   (mechanical, thermal-only with an empty name) are ignored.
+Exit 1 on any problem.
 """
 import re
 import sys
@@ -23,6 +27,24 @@ def pin_numbers(body):
     return nums
 
 
+def combined_pins(name, body):
+    """Return descriptions of combined pins: native stacks, or several pins at one position."""
+    problems = []
+    for unit_name, unit_body in re.findall(r'\(symbol\s+"([^"]*_\d+_\d+)"(.*?)(?=\(symbol\s+"[^"]*_\d+_\d+"|\Z)',
+                                           body, re.S):
+        seen = {}
+        for at, number in re.findall(r'\(pin\s+\w+\s+\w+\s*\(at\s+([-\d.]+\s+[-\d.]+).*?\(number\s+"([^"]*)"',
+                                     unit_body, re.S):
+            if number.startswith("["):
+                problems.append(f"pin stack {number} in {unit_name}")
+            pos = tuple(float(v) for v in at.split())
+            if pos in seen:
+                problems.append(f"pins {seen[pos]} and {number} share position {pos} in {unit_name}")
+            else:
+                seen[pos] = number
+    return problems
+
+
 def pad_numbers(text):
     return {n for n in re.findall(r'\(pad\s+"([^"]*)"', text) if n}
 
@@ -33,6 +55,9 @@ def main():
     errors = checked = 0
     for lib in sorted(sym_dir.glob("*.kicad_sym")):
         for name, body in top_level_symbols(lib.read_text(encoding="utf-8")):
+            for problem in combined_pins(name, body):
+                errors += 1
+                print(f"{lib.stem}:{name}: combined pins not allowed ({problem})")
             fp = properties(body).get("Footprint", "")
             if ":" not in fp:
                 continue
@@ -49,7 +74,8 @@ def main():
                     print(f"  pins with no pad: {sorted(pins - pads)}")
                 if pads - pins:
                     print(f"  pads with no pin: {sorted(pads - pins)}")
-    print(f"Pin/pad match: {checked} symbol(s) checked, {'OK' if not errors else str(errors) + ' mismatch(es)'}")
+    print(f"Symbol pins: no combined pins; pin/pad match on {checked} symbol(s): "
+          f"{'OK' if not errors else str(errors) + ' problem(s)'}")
     return 1 if errors else 0
 
 

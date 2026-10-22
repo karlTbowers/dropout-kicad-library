@@ -101,8 +101,12 @@ def main():
             rows.append([ball, name, etype, "Power", "L", "", ""])
 
     # Stable, readable order: Power unit first (by name), then ports by bit
+    def ball(n):
+        m = re.match(r"([A-Z]*)(\d+)$", n)
+        return (m.group(1), int(m.group(2))) if m else (n, 0)
+
     def key(r):
-        return (r[3] != "Power", r[3], r[4], r[1] if r[3] == "Power" else int(r[5]))
+        return (r[3] != "Power", r[3], r[4], (r[1], ball(r[0])) if r[3] == "Power" else (int(r[5]),))
     rows.sort(key=key)
     with open(args.out, "w", newline="") as f:
         w = csv.writer(f)
