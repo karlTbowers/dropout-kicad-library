@@ -28,7 +28,10 @@ Planned categories (created as the first part in each one is added):
 | `DropOut_PowerSwitch` | Smart high-side switches, MOSFETs |
 | `DropOut_Sensor` | Current/voltage monitors, temperature sensors |
 | `DropOut_Memory` | Flash, EEPROM |
-| `DropOut_Passive` | Resistors, capacitors, inductors, NTCs, shunts |
+| `DropOut_Resistor` | Resistors, including current-sense shunts |
+| `DropOut_Capacitor` | Capacitors |
+| `DropOut_Inductor` | Inductors and ferrite beads |
+| `DropOut_Thermistor` | NTC and PTC thermistors |
 | `DropOut_Protection` | TVS, ESD, fuses |
 | `DropOut_Timing` | Oscillators, crystals |
 | `DropOut_Connector` | Connectors and headers |
