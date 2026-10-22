@@ -7,7 +7,7 @@
 #     --device S32K344 --package 257bga --type V11=power_out --type V25=power_out \
 #     -o parts/S32K344EHT1MMMST/pins.csv
 # V11 and V25 are power outputs: "internally regulated" in data sheet Rev. 14 Table 3.
-library: DropOut_MCU
+library: DropOut_MCU_NXP
 name: S32K344EHT1MMMST
 pins: pins.csv
 units: [Power, PTA, PTB, PTC, PTD, PTE, PTF, PTG]

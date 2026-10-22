@@ -18,11 +18,13 @@ klc-exceptions.yml   approved deviations from the KiCad Library Conventions
 .claude/skills/add-part/   Claude Code procedure for adding parts
 ```
 
-Planned categories (created as the first part in each one is added):
+Planned categories (created as the first part in each one is added). Microcontrollers get one library per vendor, `DropOut_MCU_<Vendor>`, with the vendor named as in KiCad's stock `MCU_<Vendor>_*` libraries:
 
 | Category | Contents |
 |---|---|
-| `DropOut_MCU` | Microcontrollers |
+| `DropOut_MCU_NXP` | NXP microcontrollers |
+| `DropOut_MCU_Microchip` | Microchip microcontrollers |
+| `DropOut_MCU_ST` | STMicroelectronics microcontrollers |
 | `DropOut_Interface` | PHYs, transceivers, level shifters |
 | `DropOut_Power` | Regulators, ideal-diode/eFuse controllers, supervisors |
 | `DropOut_PowerSwitch` | Smart high-side switches, MOSFETs |

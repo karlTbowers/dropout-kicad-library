@@ -50,6 +50,8 @@ The `Datasheet` field must be the **manufacturer's** URL, never a distributor co
 
 `DropOut_<Category>`, where `<Category>` follows KLC functional naming (see README for the list). New categories need approval.
 
+Microcontrollers are split by vendor: `DropOut_MCU_<Vendor>` (`DropOut_MCU_NXP`, `DropOut_MCU_Microchip`, `DropOut_MCU_ST`, …), with the vendor named as in KiCad's stock `MCU_<Vendor>_*` libraries. A new vendor's library needs no separate approval.
+
 ### 3D models
 
 - Prefer models generated with kicad-library-tools (source supplied, license-clean for a public repo).

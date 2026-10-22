@@ -45,7 +45,7 @@ You need the datasheet, the package drawing with the recommended land pattern, a
 
 ## 3. Decide symbol, footprint, and model names
 
-- **Symbol library:** the existing `DropOut_<Category>` that fits (README table). A new category needs the user's OK.
+- **Symbol library:** the existing `DropOut_<Category>` that fits (README table). A new category needs the user's OK. Microcontrollers go in `DropOut_MCU_<Vendor>` (vendor named as in KiCad's stock `MCU_<Vendor>_*` libraries, e.g. `DropOut_MCU_NXP`, `DropOut_MCU_ST`); a new vendor library is pre-approved.
 - **Footprint library:** KLC package-type naming with the DropOut prefix, e.g. `DropOut_Package_BGA`. A new one needs the user's OK and a README table row.
 - **Symbol name:** the MPN (KLC S2, DropOut atomic parts).
 - **Footprint name:** per KLC F2/F3, as kicad-library-tools would name it. Vendor-specific layouts (e.g. a depopulated BGA) get a vendor prefix: `NXP_LFBGA-257_14x14mm_Layout17x17_P0.8mm`. **Reuse** an existing DropOut footprint if the land pattern is identical.
