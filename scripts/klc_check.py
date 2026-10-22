@@ -6,7 +6,13 @@ Usage:
   python3 scripts/klc_check.py symbols/DropOut_Power.kicad_sym footprints/DropOut_Power.pretty/X.kicad_mod
   python3 scripts/klc_check.py --raw ...           # also print the checker's full output
 
-Exit code 0 when every violation is covered by klc-exceptions.yml, 1 otherwise, 2 on setup errors.
+Each violation is reported as:
+  FAIL    the checker raised an error (fails CI)
+  WARN    the checker raised only warnings, which KLC allows where the manufacturer's data
+          requires it (the checker itself exits 2, "allowed failure"); reviewers look at these
+  WAIVED  covered by klc-exceptions.yml
+
+Exit code 0 when there is no FAIL, 1 otherwise, 2 on setup errors.
 
 The checker comes from https://gitlab.com/kicad/libraries/kicad-library-tools at the commit in
 KLT_REF below. Set KICAD_LIBRARY_TOOLS=/path/to/checkout to use an existing clone; otherwise it is
@@ -27,15 +33,20 @@ KLT_URL = "https://gitlab.com/kicad/libraries/kicad-library-tools.git"
 
 REPO = Path(__file__).resolve().parent.parent
 # Checker output format (verified against kicad-library-tools a903a69, `-vv`):
-#   Checking footprint 'SOT-23':
+#   Checking footprint 'SOT-23':                                       <- symbols: Checking component 'Lib:Name':
 #     Violating F9.3 - https://klc.kicad.org/footprint/f9/f9.3/      <- header (printed twice)
 #     Violating F9.3 - https://klc.kicad.org/footprint/f9/f9.3/
 #       Footprint 3D model requirements - F9.3 - https://...           <- title echo, ignored
 #       Model path should start with '${KICAD10_3DMODEL_DIR}/'        <- detail lines
 #         - 3D model path: ...
-ITEM_RE = re.compile(r"^Checking\s+(?:symbol|footprint)\s+'([^']+)'")
+# Detail lines carry the severity as their colour: warnings brown (0;33), errors red (0;31)
+# (library_utils/common/rulebase.py). A message continues on uncoloured lines until the next code.
+ITEM_RE = re.compile(r"^Checking\s+(?:symbol|footprint|component)\s+'(?:[^':]+:)?([^']+)'")
 HEADER_RE = re.compile(r"^(?:Violating|Warning|Error)\b.*?\b([GSFM]\d+\.\d+)\b")
-TITLE_ECHO_RE = re.compile(r"\s-\s[GSFM]\d+\.\d+\s-\shttps?://")
+# The title echo may wrap: "<title> - S5.1 -" on one line, then the bare KLC URL on the next.
+TITLE_ECHO_RE = re.compile(r"\s-\s[GSFM]\d+\.\d+\s-(?:\s+https?://\S+)?$|^https?://klc\.kicad\.org/\S+$")
+COLOR_RE = re.compile(r"\x1b\[([0-9;]*)m")
+ERROR_COLOR = "0;31"
 
 
 def load_exceptions():
@@ -94,8 +105,8 @@ def covered(rule, library, item, header, details, exceptions):
     return None
 
 
-def run(checker, target, raw):
-    proc = subprocess.run([sys.executable, str(checker), "-vv", str(target)],
+def run(checker, target, raw, extra=()):
+    proc = subprocess.run([sys.executable, str(checker), "-vv", *extra, str(target)],
                           capture_output=True, text=True)
     if raw:
         print(proc.stdout)
@@ -107,14 +118,19 @@ def run(checker, target, raw):
 
 
 def parse(output, library, default_item):
-    """Yield (item, rule, header, details) for each violation in checker output.
+    """Yield (item, rule, header, details, is_error) for each violation in checker output.
 
-    A violation is a line naming a rule ID, followed by its indented detail lines.
+    A violation is a line naming a rule ID, followed by its indented detail lines. It is an
+    error if any detail line was printed in the checker's error colour.
     """
     item = default_item
     current = None
+    color = None
     for line in output.splitlines():
-        text = re.sub(r"\x1b\[[0-9;]*m", "", line).strip()
+        codes = COLOR_RE.findall(line)
+        if codes and line.lstrip().startswith("\x1b"):
+            color = codes[0]
+        text = COLOR_RE.sub("", line).strip()
         if not text:
             continue
         m = ITEM_RE.search(text)
@@ -130,9 +146,12 @@ def parse(output, library, default_item):
                 continue
             if current:
                 yield current
-            current = (item, h.group(1), text, [])
+            current = [item, h.group(1), text, [], False]
         elif current and not TITLE_ECHO_RE.search(text):
             current[3].append(text)
+            current[4] = current[4] or color == ERROR_COLOR
+        if codes and codes[-1] in ("0", ""):
+            color = None  # reset code closes the coloured message
     if current:
         yield current
 
@@ -164,25 +183,33 @@ def main():
     sym_checker = find_checker(root, "check_symbol.py")
     fp_checker = find_checker(root, "check_footprint.py")
 
-    failures, waived = [], []
+    failures, warnings, waived = [], [], []
     for f in files:
+        extra = ()
         if f.suffix == ".kicad_sym":
             library, default_item, checker = f.stem, "?", sym_checker
+            # S5.1: resolve "DropOut_X:Name" footprint links against this repo's footprints
+            # (test fixtures keep their .pretty next to the symbol file)
+            fp_root = REPO / "footprints" if f.parent.resolve() == (REPO / "symbols") else f.parent
+            extra = ("--footprints", str(fp_root))
         elif f.suffix == ".kicad_mod":
             library, default_item, checker = f.parent.stem, f.stem, fp_checker
         else:
             continue
-        for item, rule, header, details in parse(run(checker, f, args.raw), library, default_item):
+        for item, rule, header, details, is_error in parse(run(checker, f, args.raw, extra), library, default_item):
             ex = covered(rule, library, item, header, details, exceptions)
-            (waived if ex else failures).append((f"{library}:{item}", rule, header, details, ex))
+            entry = (f"{library}:{item}", rule, header, details, ex)
+            (waived if ex else failures if is_error else warnings).append(entry)
 
     for key, rule, header, details, ex in waived:
         print(f"WAIVED  {key}  {rule}  [{ex}]")
-    for key, rule, header, details, _ in failures:
-        print(f"FAIL    {key}  {rule}  {header}")
-        for d in details:
-            print(f"          {d}")
-    print(f"\nKLC: {len(files)} file(s), {len(failures)} violation(s), {len(waived)} waived by klc-exceptions.yml")
+    for label, group in (("WARN", warnings), ("FAIL", failures)):
+        for key, rule, header, details, _ in group:
+            print(f"{label:<8}{key}  {rule}  {header}")
+            for d in details:
+                print(f"          {d}")
+    print(f"\nKLC: {len(files)} file(s), {len(failures)} error(s), {len(warnings)} warning(s), "
+          f"{len(waived)} waived by klc-exceptions.yml")
     return 1 if failures else 0
 
 

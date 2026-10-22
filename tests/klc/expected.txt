@@ -1,4 +1,6 @@
-FAIL DropOut_Test:SOT-23 F5.2
-FAIL DropOut_Test:SOT-23_WrongDir F5.2
 FAIL DropOut_Test:SOT-23_WrongDir F9.3
+FAIL DropOut_TestSym:TEST-BADFP S5.1
 WAIVED DropOut_Test:SOT-23 F9.3
+WARN DropOut_Test:SOT-23 F5.2
+WARN DropOut_Test:SOT-23_WrongDir F5.2
+WARN DropOut_TestSym:TEST-GOOD S6.2

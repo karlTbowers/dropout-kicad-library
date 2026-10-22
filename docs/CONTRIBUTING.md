@@ -11,6 +11,8 @@ python3 scripts/klc_check.py                 # check the whole library
 python3 scripts/klc_check.py --raw <files>   # also show the checker's full output
 ```
 
+Results are `FAIL` (a checker error: fix it, CI fails), `WARN` (a checker warning: KLC allows these where the manufacturer's data requires it, e.g. a BGA's specified mask and paste margins; explain each one in the PR), or `WAIVED` (covered by `klc-exceptions.yml`).
+
 ### Adding an exception
 
 1. Open a PR that adds **one** entry to `klc-exceptions.yml`: the rule ID(s), what it applies to, an optional `match` regex that narrows it to the specific message, the reason, and the date.
