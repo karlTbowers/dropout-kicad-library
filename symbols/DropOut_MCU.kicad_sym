@@ -1,0 +1,5736 @@
+(kicad_symbol_lib
+	(version 20251024)
+	(generator "kicad_symbol_editor")
+	(generator_version "10.0")
+	(symbol "S32K344EHT1MMMST"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "U"
+			(at 0 25.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "S32K344EHT1MMMST"
+			(at 0 -22.86 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "DropOut_Package_BGA:NXP_LFBGA-257_14x14mm_Layout17x17_P0.8mm"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.nxp.com/docs/en/data-sheet/S32K3xx.pdf"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "NXP S32K344 automotive MCU, Arm Cortex-M7 lockstep, 160 MHz, 4 MB flash, 512 KB SRAM, CAN FD, Ethernet, HSE_B, 2.97-5.5 V, AEC-Q100 Grade 1, LFBGA-257"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "NXP Semiconductors"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "S32K344EHT1MMMST"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "DigiKey_PN" "568-S32K344EHT1MMMST-ND"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mouser_PN" "771-S32K344EHT1MMMST"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Temperature_Grade" "AEC-Q100 Grade 1"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Reference_Manual" "https://www.nxp.com/webapp/Download?colCode=S32K3XXRM"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Notes" "Ball map and alternate functions generated from S32K3xx Reference Manual (S32K3XXRM, Nov 2025 build) attachment S32K344_S32K324_S32K314_IOMUX.xlsx, sheets S32K344_Pinout / S32K344_IO Signal Table. NXP sign-in required."
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "NXP S32K3 S32K344 Arm Cortex-M7 lockstep automotive MCU CAN FD Ethernet"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "NXP*LFBGA*257*14x14mm*Layout17x17*P0.8mm*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "S32K344EHT1MMMST_1_1"
+			(rectangle
+				(start -15.24 10.16)
+				(end 15.24 -10.16)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+			(pin power_in line
+				(at 7.62 15.24 270)
+				(length 5.08)
+				(name "VREFH"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "H6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at 2.54 -15.24 90)
+				(length 5.08)
+				(name "VREFL"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "J6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_out line
+				(at 20.32 -2.54 180)
+				(length 5.08)
+				(name "V25"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "J7"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -20.32 2.54 0)
+				(length 5.08)
+				(name "EXTAL"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "K1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at -20.32 -2.54 0)
+				(length 5.08)
+				(name "XTAL"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "L1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at -2.54 -15.24 90)
+				(length 5.08)
+				(name "VSS"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "[B2,B16,D4,D9,G7,G11,J1,J4,J9,J14,L7,L11,P4,P14,T2,T7,T10,T16]"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at -7.62 15.24 270)
+				(length 5.08)
+				(name "VDD_HV_A"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "[D14,G10,H7,K11,L8]"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at 2.54 15.24 270)
+				(length 5.08)
+				(name "V15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "[H8,H10,K8,K10]"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_out line
+				(at 20.32 2.54 180)
+				(length 5.08)
+				(name "V11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "[H9,J8,J10,K9]"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at -2.54 15.24 270)
+				(length 5.08)
+				(name "VDD_HV_B"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "[N4,R7,R10]"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(symbol "S32K344EHT1MMMST_2_1"
+			(rectangle
+				(start -25.4 22.86)
+				(end 25.4 -22.86)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+			(pin bidirectional line
+				(at -30.48 0 0)
+				(length 5.08)
+				(name "PTA8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "A2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_P2" input line)
+				(alternate "EIRQ[16]" input line)
+				(alternate "FXIO_D6" input line)
+				(alternate "LPSPI2_SOUT" input line)
+				(alternate "LPUART2_RX" input line)
+				(alternate "WKPU[23]" input line)
+				(alternate "eMIOS_1_CH[12]_H" input line)
+				(alternate "eMIOS_2_CH[7]_H" input line)
+			)
+			(pin bidirectional line
+				(at -30.48 7.62 0)
+				(length 5.08)
+				(name "PTA5/~{RESET}"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "A3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[5]" input line)
+				(alternate "~{RESET}" bidirectional line)
+			)
+			(pin bidirectional line
+				(at -30.48 -10.16 0)
+				(length 5.08)
+				(name "PTA12/CLKOUT_STANDBY"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "A7"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_P0" input line)
+				(alternate "CAN1_RX" input line)
+				(alternate "CLKOUT_STANDBY" output line)
+				(alternate "CMP1_OUT" output line)
+				(alternate "EIRQ[20]" input line)
+				(alternate "FXIO_D9" input line)
+				(alternate "LPSPI1_PCS5" input line)
+				(alternate "LPUART11_RX" input line)
+				(alternate "eMIOS_0_CH[14]_H" input line)
+				(alternate "eMIOS_1_CH[2]_H" input line)
+			)
+			(pin bidirectional line
+				(at -30.48 -12.7 0)
+				(length 5.08)
+				(name "PTA13"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "A9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_P1" input line)
+				(alternate "EIRQ[21]" input line)
+				(alternate "FXIO_D8" input line)
+				(alternate "LPSPI1_PCS4" input line)
+				(alternate "LPUART11_TX" input line)
+				(alternate "WKPU[4]" input line)
+				(alternate "eMIOS_0_CH[15]_H" input line)
+				(alternate "eMIOS_1_CH[3]_H" input line)
+			)
+			(pin bidirectional line
+				(at -30.48 -15.24 0)
+				(length 5.08)
+				(name "PTA14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "A10"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_P4" input line)
+				(alternate "EIRQ[22]" input line)
+				(alternate "FXIO_D14" input line)
+				(alternate "LPSPI1_PCS3" input line)
+				(alternate "LPSPI5_PCS1" input line)
+				(alternate "eMIOS_1_CH[4]_H" input line)
+				(alternate "eMIOS_2_CH[18]_Y" input line)
+			)
+			(pin bidirectional line
+				(at -30.48 -17.78 0)
+				(length 5.08)
+				(name "PTA15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "A11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_P7" input line)
+				(alternate "EIRQ[23]" input line)
+				(alternate "FXIO_D31" input line)
+				(alternate "LPSPI0_PCS3" input line)
+				(alternate "LPSPI2_PCS3" input line)
+				(alternate "LPSPI5_PCS0" input line)
+				(alternate "LPUART6_RX" input line)
+				(alternate "WKPU[20]" input line)
+				(alternate "eMIOS_0_CH[10]_H" input line)
+			)
+			(pin bidirectional line
+				(at 30.48 20.32 180)
+				(length 5.08)
+				(name "PTA16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "A12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_S13" input line)
+				(alternate "EIRQ[4]" input line)
+				(alternate "FXIO_D30" input line)
+				(alternate "LPSPI0_PCS4" input line)
+				(alternate "LPSPI1_PCS2" input line)
+				(alternate "LPSPI4_PCS3" input line)
+				(alternate "LPUART6_TX" input line)
+				(alternate "WKPU[31]" input line)
+				(alternate "eMIOS_0_CH[11]_H" input line)
+			)
+			(pin bidirectional line
+				(at -30.48 20.32 0)
+				(length 5.08)
+				(name "PTA0"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "A13"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_S8" input line)
+				(alternate "CMP1_IN0" input line)
+				(alternate "EIRQ[0]" input line)
+				(alternate "FXIO_D2" input line)
+				(alternate "LCU0_OUT4" output line)
+				(alternate "LPSPI0_PCS7" input line)
+				(alternate "LPSPI4_PCS2" input line)
+				(alternate "LPUART0_CTS" input line)
+				(alternate "TRGMUX_OUT3" output line)
+				(alternate "eMIOS_0_CH[17]_Y" input line)
+				(alternate "eMIOS_1_CH[0]_X" input line)
+			)
+			(pin bidirectional line
+				(at 30.48 15.24 180)
+				(length 5.08)
+				(name "PTA18"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "B1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC2_P0" input line)
+				(alternate "EIRQ[0]" input line)
+				(alternate "LPSPI1_SOUT" input line)
+				(alternate "LPUART1_TX" input line)
+				(alternate "TRGMUX_IN12" input line)
+				(alternate "eMIOS_1_CH[0]_X" input line)
+				(alternate "eMIOS_1_CH[16]_X" input line)
+				(alternate "eMIOS_2_CH[0]_X" input line)
+			)
+			(pin bidirectional line
+				(at -30.48 -2.54 0)
+				(length 5.08)
+				(name "PTA9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "B3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_P7" input line)
+				(alternate "CMP2_OUT" output line)
+				(alternate "EIRQ[17]" input line)
+				(alternate "FXIO_D7" input line)
+				(alternate "LPSPI2_PCS0" input line)
+				(alternate "LPSPI3_PCS0" input line)
+				(alternate "LPUART2_TX" input line)
+				(alternate "WKPU[21]" input line)
+			)
+			(pin bidirectional line
+				(at -30.48 -7.62 0)
+				(length 5.08)
+				(name "PTA11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "B7"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_S10" input line)
+				(alternate "CAN1_TX" output line)
+				(alternate "CMP0_RRT" bidirectional line)
+				(alternate "EIRQ[19]" input line)
+				(alternate "FXIO_D1" input line)
+				(alternate "LPSPI1_PCS0" input line)
+				(alternate "eMIOS_0_CH[13]_H" input line)
+				(alternate "eMIOS_1_CH[1]_H" input line)
+			)
+			(pin bidirectional line
+				(at -30.48 17.78 0)
+				(length 5.08)
+				(name "PTA1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "B14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_S9" input line)
+				(alternate "CMP1_IN1" input line)
+				(alternate "EIRQ[1]" input line)
+				(alternate "FXIO_D3" input line)
+				(alternate "LCU0_OUT5" output line)
+				(alternate "LPSPI0_PCS6" input line)
+				(alternate "LPSPI4_PCS1" input line)
+				(alternate "LPUART0_RTS" output line)
+				(alternate "TRGMUX_OUT0" output line)
+				(alternate "WKPU[5]" input line)
+				(alternate "eMIOS_0_CH[9]_H" input line)
+			)
+			(pin bidirectional line
+				(at 30.48 12.7 180)
+				(length 5.08)
+				(name "PTA19"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "C1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC2_P1" input line)
+				(alternate "EIRQ[1]" input line)
+				(alternate "LPSPI1_SCK" input line)
+				(alternate "LPUART1_RX" input line)
+				(alternate "TRGMUX_IN13" input line)
+				(alternate "eMIOS_1_CH[1]_H" input line)
+				(alternate "eMIOS_2_CH[1]_H" input line)
+			)
+			(pin bidirectional line
+				(at 30.48 5.08 180)
+				(length 5.08)
+				(name "PTA22"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "C3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN1_RX" input line)
+				(alternate "FXIO_D1" input line)
+				(alternate "LPSPI1_PCS1" input line)
+				(alternate "eMIOS_1_CH[4]_H" input line)
+			)
+			(pin bidirectional line
+				(at 30.48 7.62 180)
+				(length 5.08)
+				(name "PTA21"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "D1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC2_S12" input line)
+				(alternate "EIRQ[3]" input line)
+				(alternate "FXIO_D0" input line)
+				(alternate "LPSPI1_PCS0" input line)
+				(alternate "LPSPI2_PCS2" input line)
+				(alternate "TRGMUX_IN15" input line)
+				(alternate "eMIOS_1_CH[3]_H" input line)
+				(alternate "eMIOS_2_CH[3]_H" input line)
+			)
+			(pin bidirectional line
+				(at 30.48 2.54 180)
+				(length 5.08)
+				(name "PTA23"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "D3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN1_TX" output line)
+				(alternate "FXIO_D2" input line)
+				(alternate "eMIOS_1_CH[6]_H" input line)
+			)
+			(pin bidirectional line
+				(at -30.48 15.24 0)
+				(length 5.08)
+				(name "PTA2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "D17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_X[0]" input line)
+				(alternate "CMP1_IN2" input line)
+				(alternate "EIRQ[2]" input line)
+				(alternate "FCCU_ERR0" output line)
+				(alternate "FCCU_ERR_IN0" input line)
+				(alternate "FXIO_D4" input line)
+				(alternate "LCU0_OUT3" output line)
+				(alternate "LPSPI1_SIN" input line)
+				(alternate "LPSPI5_SIN" input line)
+				(alternate "LPUART0_RX" input line)
+				(alternate "WKPU[0]" input line)
+				(alternate "eMIOS_1_CH[19]_Y" input line)
+			)
+			(pin bidirectional line
+				(at 30.48 10.16 180)
+				(length 5.08)
+				(name "PTA20"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "E4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC2_P2" input line)
+				(alternate "EIRQ[2]" input line)
+				(alternate "LPSPI1_SIN" input line)
+				(alternate "TRGMUX_IN14" input line)
+				(alternate "WKPU[59]" input line)
+				(alternate "eMIOS_1_CH[2]_H" input line)
+				(alternate "eMIOS_2_CH[2]_H" input line)
+			)
+			(pin bidirectional line
+				(at -30.48 12.7 0)
+				(length 5.08)
+				(name "PTA3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "E16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_S17" input line)
+				(alternate "EIRQ[3]" input line)
+				(alternate "FCCU_ERR1" output line)
+				(alternate "FCCU_ERR_IN1" input line)
+				(alternate "FXIO_D5" input line)
+				(alternate "LCU0_OUT2" output line)
+				(alternate "LPSPI1_SCK" input line)
+				(alternate "LPSPI5_SCK" input line)
+				(alternate "LPUART0_TX" input line)
+				(alternate "eMIOS_1_CH[20]_Y" input line)
+			)
+			(pin bidirectional line
+				(at -30.48 10.16 0)
+				(length 5.08)
+				(name "PTA4/JTAG_TMS/SWD_DIO"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "F6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_S15" input line)
+				(alternate "CMP0_OUT" output line)
+				(alternate "EIRQ[4]" input line)
+				(alternate "FXIO_D6" input line)
+				(alternate "JTAG_TMS" bidirectional line)
+				(alternate "SWD_DIO" bidirectional line)
+			)
+			(pin input line
+				(at 30.48 0 180)
+				(length 5.08)
+				(name "PTA24"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "G1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "FXIO_D3" input line)
+				(alternate "OSC32K_XTAL" output line)
+				(alternate "eMIOS_1_CH[7]_H" input line)
+			)
+			(pin bidirectional line
+				(at -30.48 -5.08 0)
+				(length 5.08)
+				(name "PTA10/JTAG_TDO/TRACEnoETM_SWO"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "G8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[18]" input line)
+				(alternate "FXIO_D0" input line)
+				(alternate "JTAG_TDO" bidirectional line)
+				(alternate "TRACEnoETM_SWO" bidirectional line)
+				(alternate "eMIOS_0_CH[12]_H" input line)
+			)
+			(pin input line
+				(at 30.48 -2.54 180)
+				(length 5.08)
+				(name "PTA25"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "H1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[5]" input line)
+				(alternate "FXIO_D2" input line)
+				(alternate "OSC32K_EXTAL" input line)
+				(alternate "WKPU[34]" input line)
+				(alternate "eMIOS_1_CH[8]_X" input line)
+				(alternate "eMIOS_2_CH[8]_X" input line)
+			)
+			(pin bidirectional line
+				(at 30.48 -5.08 180)
+				(length 5.08)
+				(name "PTA26"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "L2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EMAC_PPS0" input line)
+				(alternate "FXIO_D1" input line)
+				(alternate "LPSPI0_PCS0" input line)
+				(alternate "LPSPI1_PCS0" input line)
+				(alternate "WKPU[35]" input line)
+				(alternate "eMIOS_1_CH[9]_H" input line)
+				(alternate "eMIOS_2_CH[9]_H" input line)
+			)
+			(pin bidirectional line
+				(at 30.48 17.78 180)
+				(length 5.08)
+				(name "PTA17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "L17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC2_S19" input line)
+				(alternate "FXIO_D19" input line)
+				(alternate "LPSPI3_SOUT" input line)
+				(alternate "LPUART4_TX" input line)
+				(alternate "eMIOS_0_CH[6]_G" input line)
+			)
+			(pin bidirectional line
+				(at 30.48 -7.62 180)
+				(length 5.08)
+				(name "PTA27"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "M2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN0_TX" output line)
+				(alternate "EMAC_PPS1" input line)
+				(alternate "FXIO_D5" input line)
+				(alternate "LPUART0_TX" input line)
+				(alternate "eMIOS_1_CH[10]_H" input line)
+				(alternate "eMIOS_2_CH[10]_H" input line)
+			)
+			(pin bidirectional line
+				(at 30.48 -12.7 180)
+				(length 5.08)
+				(name "PTA29"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "M3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EMAC_PPS2" input line)
+				(alternate "LPSPI1_SIN" input line)
+				(alternate "LPUART2_TX" input line)
+				(alternate "eMIOS_1_CH[12]_H" input line)
+				(alternate "eMIOS_2_CH[12]_H" input line)
+			)
+			(pin bidirectional line
+				(at -30.48 5.08 0)
+				(length 5.08)
+				(name "PTA6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "M15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_S18" input line)
+				(alternate "CAN0_RX" input line)
+				(alternate "EIRQ[6]" input line)
+				(alternate "FXIO_D19" input line)
+				(alternate "LPSPI1_PCS1" input line)
+				(alternate "LPSPI3_PCS1" input line)
+				(alternate "LPUART1_CTS" input line)
+				(alternate "LPUART3_RX" input line)
+				(alternate "WKPU[15]" input line)
+				(alternate "eMIOS_1_CH[13]_H" input line)
+			)
+			(pin bidirectional line
+				(at -30.48 2.54 0)
+				(length 5.08)
+				(name "PTA7"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "M16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_S11" input line)
+				(alternate "CAN0_TX" output line)
+				(alternate "EIRQ[7]" input line)
+				(alternate "FXIO_D9" input line)
+				(alternate "LPSPI0_PCS1" input line)
+				(alternate "LPUART1_RTS" output line)
+				(alternate "LPUART3_TX" input line)
+				(alternate "eMIOS_1_CH[11]_H" input line)
+			)
+			(pin bidirectional line
+				(at 30.48 -10.16 180)
+				(length 5.08)
+				(name "PTA28"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "N2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN0_RX" input line)
+				(alternate "EIRQ[6]" input line)
+				(alternate "LPSPI1_SCK" input line)
+				(alternate "LPUART0_RX" input line)
+				(alternate "eMIOS_1_CH[11]_H" input line)
+				(alternate "eMIOS_2_CH[11]_H" input line)
+			)
+			(pin bidirectional line
+				(at 30.48 -17.78 180)
+				(length 5.08)
+				(name "PTA31"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "P1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "FXIO_D0" input line)
+				(alternate "LPSPI0_PCS1" input line)
+				(alternate "TRGMUX_OUT8" output line)
+				(alternate "eMIOS_1_CH[14]_H" input line)
+			)
+			(pin bidirectional line
+				(at 30.48 -15.24 180)
+				(length 5.08)
+				(name "PTA30"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "P3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[7]" input line)
+				(alternate "LPSPI0_SOUT" input line)
+				(alternate "LPSPI1_SOUT" input line)
+				(alternate "LPUART2_RX" input line)
+				(alternate "WKPU[37]" input line)
+				(alternate "eMIOS_1_CH[13]_H" input line)
+				(alternate "eMIOS_2_CH[13]_H" input line)
+			)
+		)
+		(symbol "S32K344EHT1MMMST_3_1"
+			(rectangle
+				(start -10.16 22.86)
+				(end 10.16 -22.86)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+			(pin bidirectional line
+				(at -15.24 0 0)
+				(length 5.08)
+				(name "PTB8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "A14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_X[0]" input line)
+				(alternate "CMP2_IN3" input line)
+				(alternate "EIRQ[14]" input line)
+				(alternate "FXIO_D29" input line)
+				(alternate "LCU0_OUT11" output line)
+				(alternate "LPSPI0_PCS5" input line)
+				(alternate "LPSPI4_PCS0" input line)
+				(alternate "WKPU[25]" input line)
+				(alternate "eMIOS_1_CH[15]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -2.54 0)
+				(length 5.08)
+				(name "PTB9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "C15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_X[1]" input line)
+				(alternate "CMP2_IN2" input line)
+				(alternate "EIRQ[15]" input line)
+				(alternate "FXIO_D28" input line)
+				(alternate "LCU0_OUT10" output line)
+				(alternate "LPSPI4_SOUT" input line)
+				(alternate "LPUART9_RX" input line)
+				(alternate "WKPU[17]" input line)
+				(alternate "eMIOS_1_CH[16]_X" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -7.62 0)
+				(length 5.08)
+				(name "PTB11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "C17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_X[3]" input line)
+				(alternate "CMP2_IN0" input line)
+				(alternate "EIRQ[25]" input line)
+				(alternate "FXIO_D26" input line)
+				(alternate "LCU0_OUT8" output line)
+				(alternate "LPI2C0_HREQ" input line)
+				(alternate "LPSPI4_SIN" input line)
+				(alternate "WKPU[16]" input line)
+				(alternate "eMIOS_1_CH[18]_Y" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -5.08 0)
+				(length 5.08)
+				(name "PTB10"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "D15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_X[2]" input line)
+				(alternate "CMP2_IN1" input line)
+				(alternate "EIRQ[24]" input line)
+				(alternate "FXIO_D27" input line)
+				(alternate "LCU0_OUT9" output line)
+				(alternate "LPSPI4_SCK" input line)
+				(alternate "LPUART9_TX" input line)
+				(alternate "eMIOS_1_CH[17]_Y" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -12.7 0)
+				(length 5.08)
+				(name "PTB13"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "H16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_S8" input line)
+				(alternate "ADC1_S8" input line)
+				(alternate "ADC2_S8" input line)
+				(alternate "EIRQ[27]" input line)
+				(alternate "FXIO_D24" input line)
+				(alternate "FXIO_D8" input line)
+				(alternate "LCU0_OUT3" output line)
+				(alternate "LPSPI3_PCS2" input line)
+				(alternate "LPUART8_TX" input line)
+				(alternate "WKPU[11]" input line)
+				(alternate "eMIOS_0_CH[1]_G" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -10.16 0)
+				(length 5.08)
+				(name "PTB12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "H17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_X[1]" input line)
+				(alternate "EIRQ[26]" input line)
+				(alternate "FXIO_D25" input line)
+				(alternate "LCU0_OUT2" output line)
+				(alternate "LPSPI3_PCS3" input line)
+				(alternate "LPUART8_RX" input line)
+				(alternate "WKPU[12]" input line)
+				(alternate "eMIOS_0_CH[0]_X" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -17.78 0)
+				(length 5.08)
+				(name "PTB15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "J16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_S11" input line)
+				(alternate "EIRQ[29]" input line)
+				(alternate "FXIO_D22" input line)
+				(alternate "LPSPI1_SIN" input line)
+				(alternate "LPUART7_TX" input line)
+				(alternate "WKPU[33]" input line)
+				(alternate "eMIOS_0_CH[3]_G" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -15.24 0)
+				(length 5.08)
+				(name "PTB14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "J17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_S9" input line)
+				(alternate "ADC1_S9" input line)
+				(alternate "ADC2_S9" input line)
+				(alternate "EIRQ[28]" input line)
+				(alternate "FXIO_D23" input line)
+				(alternate "LCU0_OUT7" output line)
+				(alternate "LPSPI1_SCK" input line)
+				(alternate "LPUART7_RX" input line)
+				(alternate "eMIOS_0_CH[2]_G" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 17.78 180)
+				(length 5.08)
+				(name "PTB17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "K16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_X[2]" input line)
+				(alternate "EIRQ[31]" input line)
+				(alternate "FXIO_D20" input line)
+				(alternate "LPSPI1_PCS3" input line)
+				(alternate "LPSPI3_PCS0" input line)
+				(alternate "LPUART4_RX" input line)
+				(alternate "WKPU[14]" input line)
+				(alternate "eMIOS_0_CH[5]_G" input line)
+				(alternate "eMIOS_1_CH[7]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 20.32 180)
+				(length 5.08)
+				(name "PTB16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "K17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_S12" input line)
+				(alternate "EIRQ[30]" input line)
+				(alternate "FXIO_D21" input line)
+				(alternate "LPSPI1_SOUT" input line)
+				(alternate "LPUART4_TX" input line)
+				(alternate "WKPU[13]" input line)
+				(alternate "eMIOS_0_CH[4]_G" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 5.08 180)
+				(length 5.08)
+				(name "PTB22"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "M6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN1_TX" output line)
+				(alternate "EIRQ[9]" input line)
+				(alternate "EMAC_MII_CRS" input line)
+				(alternate "FXIO_D15" input line)
+				(alternate "LPSPI3_PCS1" input line)
+				(alternate "LPUART1_TX" input line)
+				(alternate "TRGMUX_OUT13" output line)
+				(alternate "eMIOS_1_CH[18]_Y" input line)
+				(alternate "eMIOS_2_CH[18]_Y" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 2.54 180)
+				(length 5.08)
+				(name "PTB23"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "M7"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_MA[0]" output line)
+				(alternate "CAN1_RX" input line)
+				(alternate "EIRQ[10]" input line)
+				(alternate "EMAC_MII_COL" input line)
+				(alternate "FXIO_D4" input line)
+				(alternate "LPUART1_RX" input line)
+				(alternate "TRGMUX_OUT14" output line)
+				(alternate "WKPU[40]" input line)
+				(alternate "eMIOS_1_CH[19]_Y" input line)
+				(alternate "eMIOS_2_CH[19]_Y" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 0 180)
+				(length 5.08)
+				(name "PTB24"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "P7"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_MA[1]" output line)
+				(alternate "EIRQ[11]" input line)
+				(alternate "FXIO_D5" input line)
+				(alternate "eMIOS_1_CH[20]_Y" input line)
+				(alternate "eMIOS_2_CH[20]_Y" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -2.54 180)
+				(length 5.08)
+				(name "PTB25"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "P8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[12]" input line)
+				(alternate "FXIO_D6" input line)
+				(alternate "LPSPI2_PCS0" input line)
+				(alternate "LPUART15_TX" input line)
+				(alternate "eMIOS_1_CH[21]_Y" input line)
+				(alternate "eMIOS_2_CH[21]_Y" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -7.62 180)
+				(length 5.08)
+				(name "PTB27"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "P9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "FXIO_D8" input line)
+				(alternate "LPSPI2_SOUT" input line)
+				(alternate "LPUART5_TX" input line)
+				(alternate "eMIOS_1_CH[23]_X" input line)
+				(alternate "eMIOS_2_CH[23]_X" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -10.16 180)
+				(length 5.08)
+				(name "PTB28"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "P10"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_MA[2]" output line)
+				(alternate "EIRQ[14]" input line)
+				(alternate "EMAC_PPS3" input line)
+				(alternate "FXIO_D9" input line)
+				(alternate "LCU1_OUT11" output line)
+				(alternate "LPSPI2_SIN" input line)
+				(alternate "LPUART5_RX" input line)
+				(alternate "WKPU[42]" input line)
+				(alternate "eMIOS_2_CH[10]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 20.32 0)
+				(length 5.08)
+				(name "PTB0"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "P16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_S14" input line)
+				(alternate "ADC1_S14" input line)
+				(alternate "CAN0_RX" input line)
+				(alternate "EIRQ[8]" input line)
+				(alternate "FXIO_D14" input line)
+				(alternate "HSE_TAMPER_LOOP_OUT0" output line)
+				(alternate "LCU1_OUT5" output line)
+				(alternate "LPI2C0_SDAS" input line)
+				(alternate "LPSPI0_PCS0" input line)
+				(alternate "LPUART0_RX" input line)
+				(alternate "WKPU[7]" input line)
+				(alternate "eMIOS_0_CH[3]_G" input line)
+				(alternate "eMIOS_1_CH[6]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 15.24 180)
+				(length 5.08)
+				(name "PTB18"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "R1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "FXIO_D1" input line)
+				(alternate "LPSPI1_PCS1" input line)
+				(alternate "LPUART13_TX" input line)
+				(alternate "TRGMUX_OUT9" output line)
+				(alternate "eMIOS_1_CH[15]_H" input line)
+				(alternate "eMIOS_2_CH[14]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 12.7 180)
+				(length 5.08)
+				(name "PTB19"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "R2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "FXIO_D2" input line)
+				(alternate "LPUART13_RX" input line)
+				(alternate "TRGMUX_OUT10" output line)
+				(alternate "WKPU[38]" input line)
+				(alternate "eMIOS_1_CH[15]_H" input line)
+				(alternate "eMIOS_2_CH[15]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -5.08 180)
+				(length 5.08)
+				(name "PTB26"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "R9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[13]" input line)
+				(alternate "FXIO_D7" input line)
+				(alternate "LPUART15_RX" input line)
+				(alternate "WKPU[41]" input line)
+				(alternate "eMIOS_1_CH[22]_X" input line)
+				(alternate "eMIOS_2_CH[22]_X" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 17.78 0)
+				(length 5.08)
+				(name "PTB1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "R17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_S15" input line)
+				(alternate "ADC1_S15" input line)
+				(alternate "CAN0_TX" output line)
+				(alternate "EIRQ[9]" input line)
+				(alternate "HSE_TAMPER_EXTIN0" input line)
+				(alternate "LCU1_OUT4" output line)
+				(alternate "LPI2C0_SCLS" input line)
+				(alternate "LPSPI0_SOUT" input line)
+				(alternate "LPUART0_TX" input line)
+				(alternate "eMIOS_0_CH[7]_G" input line)
+				(alternate "eMIOS_1_CH[5]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 10.16 180)
+				(length 5.08)
+				(name "PTB20"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "T1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "FXIO_D3" input line)
+				(alternate "LPUART14_TX" input line)
+				(alternate "TRGMUX_OUT11" output line)
+				(alternate "eMIOS_1_CH[16]_X" input line)
+				(alternate "eMIOS_2_CH[16]_X" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 15.24 0)
+				(length 5.08)
+				(name "PTB2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "T11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_MA[0]" output line)
+				(alternate "CAN4_RX" input line)
+				(alternate "EIRQ[10]" input line)
+				(alternate "FXIO_D18" input line)
+				(alternate "LCU1_OUT3" output line)
+				(alternate "LPSPI2_SIN" input line)
+				(alternate "LPUART9_RX" input line)
+				(alternate "SAI0_D0" input line)
+				(alternate "TRGMUX_IN3" input line)
+				(alternate "WKPU[8]" input line)
+				(alternate "eMIOS_0_CH[8]_X" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -17.78 180)
+				(length 5.08)
+				(name "PTB31"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "T14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[15]" input line)
+				(alternate "HSE_TAMPER_EXTIN0" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 7.62 180)
+				(length 5.08)
+				(name "PTB21"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "U1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[8]" input line)
+				(alternate "FXIO_D4" input line)
+				(alternate "LPUART14_RX" input line)
+				(alternate "TRGMUX_OUT12" output line)
+				(alternate "WKPU[39]" input line)
+				(alternate "eMIOS_1_CH[17]_Y" input line)
+				(alternate "eMIOS_2_CH[17]_Y" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 7.62 0)
+				(length 5.08)
+				(name "PTB5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "U2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CLKOUT_RUN" output line)
+				(alternate "EIRQ[13]" input line)
+				(alternate "EMAC_MII_RMII_MDC" output line)
+				(alternate "EMAC_MII_RMII_TXD[0]" output line)
+				(alternate "LPSPI0_PCS0" input line)
+				(alternate "LPSPI0_PCS1" input line)
+				(alternate "TRGMUX_IN0" input line)
+				(alternate "eMIOS_0_CH[5]_G" input line)
+				(alternate "eMIOS_1_CH[11]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 10.16 0)
+				(length 5.08)
+				(name "PTB4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "U3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[12]" input line)
+				(alternate "EMAC_MII_RMII_MDIO" input line)
+				(alternate "EMAC_MII_RMII_TXD[1]" output line)
+				(alternate "LPSPI0_SOUT" input line)
+				(alternate "TRGMUX_IN1" input line)
+				(alternate "eMIOS_0_CH[4]_G" input line)
+				(alternate "eMIOS_1_CH[10]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 12.7 0)
+				(length 5.08)
+				(name "PTB3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "U10"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_MA[0]" output line)
+				(alternate "CAN4_TX" output line)
+				(alternate "EIRQ[11]" input line)
+				(alternate "FXIO_D17" input line)
+				(alternate "LCU1_OUT2" output line)
+				(alternate "LPSPI2_SOUT" input line)
+				(alternate "LPUART9_TX" input line)
+				(alternate "SAI0_MCLK" input line)
+				(alternate "TRGMUX_IN2" input line)
+				(alternate "eMIOS_0_CH[9]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -12.7 180)
+				(length 5.08)
+				(name "PTB29"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "U12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "FXIO_D10" input line)
+				(alternate "LCU1_OUT10" output line)
+				(alternate "LPSPI2_SCK" input line)
+				(alternate "LPUART6_TX" input line)
+				(alternate "SAI0_D1" input line)
+				(alternate "eMIOS_2_CH[11]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -15.24 180)
+				(length 5.08)
+				(name "PTB30"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "U13"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "FXIO_D11" input line)
+				(alternate "HSE_TAMPER_LOOP_OUT0" output line)
+			)
+		)
+		(symbol "S32K344EHT1MMMST_4_1"
+			(rectangle
+				(start -20.32 22.86)
+				(end 20.32 -22.86)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+			(pin bidirectional line
+				(at -25.4 2.54 0)
+				(length 5.08)
+				(name "PTC7"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "B12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_S16" input line)
+				(alternate "CAN2_TX" output line)
+				(alternate "EIRQ[7]" input line)
+				(alternate "FXIO_D10" input line)
+				(alternate "LCU0_OUT6" output line)
+				(alternate "LPI2C0_HREQ" input line)
+				(alternate "LPI2C1_SCL" input line)
+				(alternate "LPSPI0_PCS0" input line)
+				(alternate "LPUART1_TX" input line)
+				(alternate "WKPU[2]" input line)
+				(alternate "eMIOS_1_CH[7]_H" input line)
+			)
+			(pin bidirectional line
+				(at -25.4 5.08 0)
+				(length 5.08)
+				(name "PTC6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "C12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_MA[2]" output line)
+				(alternate "ADC1_S18" input line)
+				(alternate "CAN2_RX" input line)
+				(alternate "EIRQ[6]" input line)
+				(alternate "FXIO_D11" input line)
+				(alternate "LCU0_OUT7" output line)
+				(alternate "LPI2C1_SDA" input line)
+				(alternate "LPSPI0_PCS1" input line)
+				(alternate "LPSPI1_PCS1" input line)
+				(alternate "LPUART1_RX" input line)
+				(alternate "WKPU[3]" input line)
+				(alternate "eMIOS_1_CH[6]_H" input line)
+			)
+			(pin bidirectional line
+				(at -25.4 10.16 0)
+				(length 5.08)
+				(name "PTC4/JTAG_TCK/SWD_CLK"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "F7"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CMP1_IN3" input line)
+				(alternate "EIRQ[4]" input line)
+				(alternate "FXIO_D5" input line)
+				(alternate "JTAG_TCK" bidirectional line)
+				(alternate "SWD_CLK" bidirectional line)
+				(alternate "eMIOS_0_CH[8]_X" input line)
+			)
+			(pin bidirectional line
+				(at -25.4 7.62 0)
+				(length 5.08)
+				(name "PTC5/JTAG_TDI"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "F8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_S14" input line)
+				(alternate "CMP2_RRT" bidirectional line)
+				(alternate "EIRQ[5]" input line)
+				(alternate "FXIO_D4" input line)
+				(alternate "JTAG_TDI" input line)
+				(alternate "LPI2C1_HREQ" input line)
+				(alternate "eMIOS_0_CH[16]_X" input line)
+			)
+			(pin bidirectional line
+				(at 25.4 -17.78 180)
+				(length 5.08)
+				(name "PTC31"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "L14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC2_S21" input line)
+				(alternate "CAN4_RX" input line)
+				(alternate "FXIO_D1" input line)
+				(alternate "FXIO_D24" input line)
+				(alternate "WKPU[49]" input line)
+				(alternate "eMIOS_1_CH[14]_H" input line)
+				(alternate "eMIOS_2_CH[6]_H" input line)
+			)
+			(pin bidirectional line
+				(at -25.4 -2.54 0)
+				(length 5.08)
+				(name "PTC9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "N14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_S13" input line)
+				(alternate "CAN1_RX" input line)
+				(alternate "EIRQ[17]" input line)
+				(alternate "FXIO_D13" input line)
+				(alternate "LCU1_OUT6" output line)
+				(alternate "LPI2C0_SDA" input line)
+				(alternate "LPSPI0_SIN" input line)
+				(alternate "LPUART0_RTS" output line)
+				(alternate "LPUART1_TX" input line)
+				(alternate "WKPU[10]" input line)
+				(alternate "eMIOS_1_CH[8]_X" input line)
+			)
+			(pin bidirectional line
+				(at -25.4 0 0)
+				(length 5.08)
+				(name "PTC8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "N15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_S12" input line)
+				(alternate "CAN1_TX" output line)
+				(alternate "EIRQ[16]" input line)
+				(alternate "FXIO_D12" input line)
+				(alternate "LCU1_OUT7" output line)
+				(alternate "LPI2C0_SCL" input line)
+				(alternate "LPSPI0_SCK" input line)
+				(alternate "LPUART0_CTS" input line)
+				(alternate "LPUART1_RX" input line)
+				(alternate "eMIOS_1_CH[9]_H" input line)
+			)
+			(pin bidirectional line
+				(at 25.4 -12.7 180)
+				(length 5.08)
+				(name "PTC29"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "N16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN3_RX" input line)
+				(alternate "EIRQ[23]" input line)
+				(alternate "FXIO_D22" input line)
+				(alternate "FXIO_D3" input line)
+				(alternate "LPI2C1_SDA" input line)
+				(alternate "WKPU[47]" input line)
+				(alternate "eMIOS_1_CH[10]_H" input line)
+				(alternate "eMIOS_2_CH[4]_H" input line)
+			)
+			(pin bidirectional line
+				(at 25.4 -15.24 180)
+				(length 5.08)
+				(name "PTC30"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "N17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN4_TX" output line)
+				(alternate "FXIO_D0" input line)
+				(alternate "FXIO_D23" input line)
+				(alternate "eMIOS_1_CH[12]_H" input line)
+				(alternate "eMIOS_2_CH[5]_H" input line)
+			)
+			(pin bidirectional line
+				(at 25.4 20.32 180)
+				(length 5.08)
+				(name "PTC16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "P6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN2_RX" input line)
+				(alternate "EMAC_MII_RMII_RX_ER" input line)
+				(alternate "FXIO_D15" input line)
+				(alternate "LPI2C1_SDA" input line)
+				(alternate "LPI2C1_SDAS" input line)
+				(alternate "LPSPI3_SIN" input line)
+				(alternate "LPUART2_RX" input line)
+				(alternate "eMIOS_1_CH[9]_H" input line)
+				(alternate "eMIOS_2_CH[9]_H" input line)
+			)
+			(pin bidirectional line
+				(at -25.4 -10.16 0)
+				(length 5.08)
+				(name "PTC12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "P11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_MA[2]" output line)
+				(alternate "EIRQ[20]" input line)
+				(alternate "FXIO_D19" input line)
+				(alternate "LCU1_OUT9" output line)
+				(alternate "LPSPI2_PCS1" input line)
+				(alternate "LPUART10_RX" input line)
+				(alternate "SAI0_BCLK" input line)
+				(alternate "eMIOS_0_CH[22]_X" input line)
+				(alternate "eMIOS_1_CH[2]_H" input line)
+			)
+			(pin bidirectional line
+				(at 25.4 -5.08 180)
+				(length 5.08)
+				(name "PTC26"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "P15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_S21" input line)
+				(alternate "CAN5_RX" input line)
+				(alternate "EIRQ[21]" input line)
+				(alternate "FXIO_D19" input line)
+				(alternate "LCU1_OUT9" output line)
+				(alternate "LPSPI4_SIN" input line)
+				(alternate "LPUART13_TX" input line)
+				(alternate "WKPU[48]" input line)
+				(alternate "eMIOS_1_CH[3]_H" input line)
+				(alternate "eMIOS_2_CH[2]_H" input line)
+			)
+			(pin bidirectional line
+				(at 25.4 -10.16 180)
+				(length 5.08)
+				(name "PTC28"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "P17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN3_TX" output line)
+				(alternate "FXIO_D2" input line)
+				(alternate "FXIO_D21" input line)
+				(alternate "LCU1_OUT8" output line)
+				(alternate "LPI2C1_SCL" input line)
+				(alternate "eMIOS_1_CH[7]_H" input line)
+			)
+			(pin bidirectional line
+				(at 25.4 17.78 180)
+				(length 5.08)
+				(name "PTC17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "R6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN2_TX" output line)
+				(alternate "EMAC_MII_RMII_RX_DV" input line)
+				(alternate "FXIO_D14" input line)
+				(alternate "LPI2C1_SCLS" input line)
+				(alternate "LPSPI3_SCK" input line)
+			)
+			(pin bidirectional line
+				(at -25.4 -12.7 0)
+				(length 5.08)
+				(name "PTC13"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "R11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_MA[1]" output line)
+				(alternate "EIRQ[21]" input line)
+				(alternate "FXIO_D16" input line)
+				(alternate "LCU1_OUT8" output line)
+				(alternate "LPUART10_TX" input line)
+				(alternate "SAI0_SYNC" input line)
+				(alternate "eMIOS_0_CH[23]_X" input line)
+				(alternate "eMIOS_1_CH[3]_H" input line)
+			)
+			(pin bidirectional line
+				(at 25.4 7.62 180)
+				(length 5.08)
+				(name "PTC21"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "R13"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_MA[1]" output line)
+				(alternate "EIRQ[17]" input line)
+				(alternate "FXIO_D15" input line)
+				(alternate "LCU1_OUT4" output line)
+				(alternate "eMIOS_2_CH[15]_H" input line)
+			)
+			(pin bidirectional line
+				(at 25.4 -2.54 180)
+				(length 5.08)
+				(name "PTC25"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "R14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_S20" input line)
+				(alternate "EIRQ[20]" input line)
+				(alternate "FXIO_D18" input line)
+				(alternate "LCU1_OUT2" output line)
+				(alternate "LPSPI4_PCS1" input line)
+				(alternate "LPUART12_RX" input line)
+				(alternate "WKPU[45]" input line)
+				(alternate "eMIOS_1_CH[1]_H" input line)
+				(alternate "eMIOS_2_CH[1]_H" input line)
+			)
+			(pin bidirectional line
+				(at 25.4 0 180)
+				(length 5.08)
+				(name "PTC24"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "R15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC2_S22" input line)
+				(alternate "EIRQ[19]" input line)
+				(alternate "FXIO_D17" input line)
+				(alternate "LCU1_OUT1" output line)
+				(alternate "LPUART12_TX" input line)
+				(alternate "TRGMUX_OUT15" output line)
+				(alternate "WKPU[46]" input line)
+				(alternate "eMIOS_1_CH[0]_X" input line)
+				(alternate "eMIOS_2_CH[0]_X" input line)
+			)
+			(pin bidirectional line
+				(at 25.4 -7.62 180)
+				(length 5.08)
+				(name "PTC27"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "R16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_MA[0]" output line)
+				(alternate "CAN5_TX" output line)
+				(alternate "EIRQ[22]" input line)
+				(alternate "FXIO_D20" input line)
+				(alternate "LCU1_OUT3" output line)
+				(alternate "LPSPI4_SCK" input line)
+				(alternate "LPUART13_RX" input line)
+				(alternate "eMIOS_1_CH[4]_H" input line)
+				(alternate "eMIOS_2_CH[3]_H" input line)
+			)
+			(pin bidirectional line
+				(at -25.4 12.7 0)
+				(length 5.08)
+				(name "PTC3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "T3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN0_TX" output line)
+				(alternate "CMP0_IN4" input line)
+				(alternate "EIRQ[3]" input line)
+				(alternate "LPUART0_TX" input line)
+				(alternate "QuadSPI_PCSFA" output line)
+				(alternate "eMIOS_0_CH[3]_G" input line)
+			)
+			(pin bidirectional line
+				(at -25.4 15.24 0)
+				(length 5.08)
+				(name "PTC2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "T4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN0_RX" input line)
+				(alternate "CMP0_IN2" input line)
+				(alternate "EIRQ[2]" input line)
+				(alternate "EMAC_MII_RMII_TXD[0]" output line)
+				(alternate "EMAC_MII_RMII_TXD[1]" output line)
+				(alternate "LPSPI0_PCS2" input line)
+				(alternate "LPSPI3_PCS2" input line)
+				(alternate "LPUART0_RX" input line)
+				(alternate "QuadSPI_IOFA3" input line)
+				(alternate "TRACE_ETM_CLKOUT" output line)
+				(alternate "eMIOS_0_CH[2]_G" input line)
+			)
+			(pin bidirectional line
+				(at -25.4 17.78 0)
+				(length 5.08)
+				(name "PTC1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "T8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN3_RX" input line)
+				(alternate "EIRQ[1]" input line)
+				(alternate "EMAC_MII_RMII_RXD[0]" input line)
+				(alternate "EMAC_MII_RMII_RXD[1]" input line)
+				(alternate "EMAC_MII_RX_CLK" input line)
+				(alternate "FXIO_D5" input line)
+				(alternate "eMIOS_0_CH[15]_H" input line)
+				(alternate "eMIOS_0_CH[1]_G" input line)
+			)
+			(pin bidirectional line
+				(at -25.4 -15.24 0)
+				(length 5.08)
+				(name "PTC14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "T9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_MA[1]" output line)
+				(alternate "CAN2_RX" input line)
+				(alternate "EIRQ[22]" input line)
+				(alternate "EMAC_MII_COL" input line)
+				(alternate "EMAC_MII_RMII_RX_ER" input line)
+				(alternate "EMAC_MII_RXD3" input line)
+				(alternate "FXIO_D16" input line)
+				(alternate "LCU1_OUT1" output line)
+				(alternate "LPSPI2_PCS0" input line)
+				(alternate "TRGMUX_IN9" input line)
+				(alternate "eMIOS_0_CH[10]_H" input line)
+				(alternate "eMIOS_1_CH[4]_H" input line)
+			)
+			(pin bidirectional line
+				(at 25.4 12.7 180)
+				(length 5.08)
+				(name "PTC19"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "T12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "FXIO_D13" input line)
+				(alternate "LCU1_OUT6" output line)
+				(alternate "LPSPI2_PCS1" input line)
+				(alternate "LPUART7_TX" input line)
+				(alternate "SAI0_D3" input line)
+				(alternate "eMIOS_2_CH[13]_H" input line)
+			)
+			(pin bidirectional line
+				(at 25.4 10.16 180)
+				(length 5.08)
+				(name "PTC20"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "T13"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_MA[2]" output line)
+				(alternate "EIRQ[16]" input line)
+				(alternate "FXIO_D14" input line)
+				(alternate "LCU1_OUT5" output line)
+				(alternate "LPUART7_RX" input line)
+				(alternate "WKPU[43]" input line)
+				(alternate "eMIOS_2_CH[14]_H" input line)
+			)
+			(pin bidirectional line
+				(at -25.4 -7.62 0)
+				(length 5.08)
+				(name "PTC11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "T15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_S17" input line)
+				(alternate "CAN5_RX" input line)
+				(alternate "EIRQ[19]" input line)
+				(alternate "FXIO_D15" input line)
+				(alternate "FXIO_D19" input line)
+				(alternate "LCU1_OUT10" output line)
+				(alternate "LPSPI4_SOUT" input line)
+				(alternate "LPUART11_RX" input line)
+				(alternate "TRGMUX_IN10" input line)
+				(alternate "WKPU[18]" input line)
+				(alternate "eMIOS_1_CH[1]_H" input line)
+			)
+			(pin bidirectional line
+				(at -25.4 -5.08 0)
+				(length 5.08)
+				(name "PTC10"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "T17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_X[3]" input line)
+				(alternate "CAN5_TX" output line)
+				(alternate "EIRQ[18]" input line)
+				(alternate "LCU1_OUT11" output line)
+				(alternate "LPSPI2_PCS1" input line)
+				(alternate "LPSPI4_PCS0" input line)
+				(alternate "LPUART11_TX" input line)
+				(alternate "TRGMUX_IN11" input line)
+				(alternate "eMIOS_0_CH[6]_G" input line)
+				(alternate "eMIOS_1_CH[0]_X" input line)
+			)
+			(pin bidirectional line
+				(at -25.4 20.32 0)
+				(length 5.08)
+				(name "PTC0"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "U7"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN3_TX" output line)
+				(alternate "EIRQ[0]" input line)
+				(alternate "EMAC_MII_RMII_RXD[0]" input line)
+				(alternate "EMAC_MII_RMII_RXD[1]" input line)
+				(alternate "EMAC_MII_RMII_TX_CLK" input line)
+				(alternate "eMIOS_0_CH[0]_X" input line)
+				(alternate "eMIOS_0_CH[14]_H" input line)
+			)
+			(pin bidirectional line
+				(at -25.4 -17.78 0)
+				(length 5.08)
+				(name "PTC15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "U9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_MA[2]" output line)
+				(alternate "CAN2_TX" output line)
+				(alternate "EIRQ[23]" input line)
+				(alternate "EMAC_MII_CRS" input line)
+				(alternate "EMAC_MII_RMII_RX_DV" input line)
+				(alternate "EMAC_MII_RXD2" input line)
+				(alternate "LCU1_OUT0" output line)
+				(alternate "LPI2C1_SCL" input line)
+				(alternate "LPSPI2_SCK" input line)
+				(alternate "LPUART2_TX" input line)
+				(alternate "TRGMUX_IN8" input line)
+				(alternate "eMIOS_0_CH[11]_H" input line)
+			)
+			(pin bidirectional line
+				(at 25.4 15.24 180)
+				(length 5.08)
+				(name "PTC18"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "U11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "FXIO_D12" input line)
+				(alternate "FXIO_D6" input line)
+				(alternate "LCU1_OUT7" output line)
+				(alternate "LPUART6_RX" input line)
+				(alternate "SAI0_D2" input line)
+				(alternate "WKPU[36]" input line)
+				(alternate "eMIOS_2_CH[12]_H" input line)
+			)
+			(pin bidirectional line
+				(at 25.4 2.54 180)
+				(length 5.08)
+				(name "PTC23"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "U14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC2_S23" input line)
+				(alternate "EIRQ[18]" input line)
+				(alternate "FXIO_D16" input line)
+				(alternate "LCU1_OUT0" output line)
+				(alternate "WKPU[44]" input line)
+			)
+			(pin bidirectional line
+				(at 25.4 5.08 180)
+				(length 5.08)
+				(name "PTC22"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "U15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "eMIOS_0_CH[8]_X" input line)
+			)
+		)
+		(symbol "S32K344EHT1MMMST_5_1"
+			(rectangle
+				(start -10.16 22.86)
+				(end 10.16 -22.86)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+			(pin bidirectional line
+				(at 15.24 -7.62 180)
+				(length 5.08)
+				(name "PTD27"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "A15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_S21" input line)
+				(alternate "EIRQ[30]" input line)
+				(alternate "FXIO_D31" input line)
+				(alternate "LCU0_OUT1" output line)
+				(alternate "LPSPI5_SOUT" input line)
+				(alternate "LPUART14_RX" input line)
+				(alternate "WKPU[51]" input line)
+				(alternate "eMIOS_2_CH[9]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -5.08 180)
+				(length 5.08)
+				(name "PTD26"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "A16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC2_S16" input line)
+				(alternate "FXIO_D30" input line)
+				(alternate "FXIO_D7" input line)
+				(alternate "LCU0_OUT0" output line)
+				(alternate "LPSPI5_SCK" input line)
+				(alternate "LPUART14_TX" input line)
+				(alternate "eMIOS_1_CH[23]_X" input line)
+				(alternate "eMIOS_2_CH[7]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -10.16 180)
+				(length 5.08)
+				(name "PTD28"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "B13"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_S22" input line)
+				(alternate "EIRQ[31]" input line)
+				(alternate "LCU0_OUT2" output line)
+				(alternate "LPSPI5_SIN" input line)
+				(alternate "LPUART15_TX" input line)
+				(alternate "eMIOS_2_CH[0]_X" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -17.78 180)
+				(length 5.08)
+				(name "PTD31"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "C13"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC2_S14" input line)
+				(alternate "FXIO_D6" input line)
+				(alternate "LCU0_OUT9" output line)
+				(alternate "WKPU[53]" input line)
+				(alternate "eMIOS_2_CH[22]_X" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -12.7 180)
+				(length 5.08)
+				(name "PTD29"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "C14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_S23" input line)
+				(alternate "LCU0_OUT3" output line)
+				(alternate "LPSPI5_PCS2" input line)
+				(alternate "LPUART15_RX" input line)
+				(alternate "WKPU[52]" input line)
+				(alternate "eMIOS_2_CH[8]_X" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -2.54 180)
+				(length 5.08)
+				(name "PTD25"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "C16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "eMIOS_1_CH[22]_X" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -15.24 180)
+				(length 5.08)
+				(name "PTD30"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "D13"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC2_S15" input line)
+				(alternate "LCU0_OUT8" output line)
+				(alternate "LPSPI5_PCS3" input line)
+				(alternate "eMIOS_2_CH[16]_X" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 0 180)
+				(length 5.08)
+				(name "PTD24"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "D16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_S20" input line)
+				(alternate "EIRQ[29]" input line)
+				(alternate "FXIO_D29" input line)
+				(alternate "HSE_TAMPER_EXTIN0" input line)
+				(alternate "LCU0_OUT11" output line)
+				(alternate "eMIOS_1_CH[21]_Y" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 17.78 0)
+				(length 5.08)
+				(name "PTD1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "E3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_P0" input line)
+				(alternate "EIRQ[9]" input line)
+				(alternate "FXIO_D1" input line)
+				(alternate "LPSPI3_SCK" input line)
+				(alternate "LPUART5_TX" input line)
+				(alternate "TRGMUX_OUT2" output line)
+				(alternate "eMIOS_0_CH[17]_Y" input line)
+				(alternate "eMIOS_0_CH[3]_G" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 2.54 180)
+				(length 5.08)
+				(name "PTD23"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "E17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC2_S17" input line)
+				(alternate "EIRQ[28]" input line)
+				(alternate "FXIO_D28" input line)
+				(alternate "HSE_TAMPER_LOOP_OUT0" output line)
+				(alternate "LCU0_OUT10" output line)
+				(alternate "WKPU[50]" input line)
+				(alternate "eMIOS_1_CH[20]_Y" input line)
+				(alternate "eMIOS_2_CH[23]_X" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 20.32 0)
+				(length 5.08)
+				(name "PTD0"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "F3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_P1" input line)
+				(alternate "EIRQ[8]" input line)
+				(alternate "FXIO_D0" input line)
+				(alternate "LPSPI3_SOUT" input line)
+				(alternate "LPUART5_RX" input line)
+				(alternate "TRGMUX_OUT1" output line)
+				(alternate "WKPU[6]" input line)
+				(alternate "eMIOS_0_CH[16]_X" input line)
+				(alternate "eMIOS_0_CH[2]_G" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 15.24 0)
+				(length 5.08)
+				(name "PTD2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "F16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_S16" input line)
+				(alternate "EIRQ[10]" input line)
+				(alternate "FXIO_D4" input line)
+				(alternate "FXIO_D6" input line)
+				(alternate "LCU0_OUT1" output line)
+				(alternate "LPSPI1_SOUT" input line)
+				(alternate "LPSPI5_SOUT" input line)
+				(alternate "LPUART3_TX" input line)
+				(alternate "TRGMUX_IN5" input line)
+				(alternate "WKPU[9]" input line)
+				(alternate "eMIOS_1_CH[21]_Y" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 12.7 0)
+				(length 5.08)
+				(name "PTD3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "F17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_S10" input line)
+				(alternate "EIRQ[11]" input line)
+				(alternate "FXIO_D5" input line)
+				(alternate "FXIO_D7" input line)
+				(alternate "LCU0_OUT0" output line)
+				(alternate "LPSPI1_PCS0" input line)
+				(alternate "LPUART3_RX" input line)
+				(alternate "TRGMUX_IN4" input line)
+				(alternate "WKPU[1]" input line)
+				(alternate "eMIOS_1_CH[22]_X" input line)
+				(alternate "~{NMI}" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 10.16 0)
+				(length 5.08)
+				(name "PTD4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "G16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_S19" input line)
+				(alternate "EIRQ[12]" input line)
+				(alternate "LCU0_OUT6" output line)
+				(alternate "LPSPI1_PCS1" input line)
+				(alternate "LPSPI5_PCS0" input line)
+				(alternate "WKPU[22]" input line)
+				(alternate "eMIOS_1_CH[23]_X" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 5.08 180)
+				(length 5.08)
+				(name "PTD22"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "G17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC2_S18" input line)
+				(alternate "EIRQ[27]" input line)
+				(alternate "FXIO_D27" input line)
+				(alternate "LCU0_OUT5" output line)
+				(alternate "eMIOS_1_CH[19]_Y" input line)
+				(alternate "eMIOS_2_CH[22]_X" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 7.62 180)
+				(length 5.08)
+				(name "PTD21"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "H15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_S23" input line)
+				(alternate "EIRQ[26]" input line)
+				(alternate "FXIO_D26" input line)
+				(alternate "LCU0_OUT4" output line)
+				(alternate "eMIOS_1_CH[18]_Y" input line)
+				(alternate "eMIOS_2_CH[8]_X" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 10.16 180)
+				(length 5.08)
+				(name "PTD20"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "K15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_S22" input line)
+				(alternate "EIRQ[25]" input line)
+				(alternate "FXIO_D25" input line)
+				(alternate "LPSPI1_PCS2" input line)
+				(alternate "LPSPI3_SIN" input line)
+				(alternate "WKPU[54]" input line)
+				(alternate "eMIOS_1_CH[17]_Y" input line)
+				(alternate "eMIOS_2_CH[0]_X" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -17.78 0)
+				(length 5.08)
+				(name "PTD15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "L4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN3_RX" input line)
+				(alternate "CMP0_IN1" input line)
+				(alternate "EIRQ[31]" input line)
+				(alternate "EMAC_PPS2" input line)
+				(alternate "FXIO_D10" input line)
+				(alternate "FXIO_D6" input line)
+				(alternate "LPSPI0_SCK" input line)
+				(alternate "LPUART2_CTS" input line)
+				(alternate "LPUART8_RX" input line)
+				(alternate "SAI1_SYNC" input line)
+				(alternate "eMIOS_0_CH[0]_X" input line)
+				(alternate "eMIOS_1_CH[14]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 12.7 180)
+				(length 5.08)
+				(name "PTD19"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "L15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN2_RX" input line)
+				(alternate "FXIO_D3" input line)
+				(alternate "eMIOS_1_CH[16]_X" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 15.24 180)
+				(length 5.08)
+				(name "PTD18"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "L16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN2_TX" output line)
+				(alternate "FXIO_D2" input line)
+				(alternate "eMIOS_1_CH[15]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -15.24 0)
+				(length 5.08)
+				(name "PTD14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "M4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CLKOUT_RUN" output line)
+				(alternate "CMP0_RRT" bidirectional line)
+				(alternate "EIRQ[30]" input line)
+				(alternate "EMAC_PPS0" input line)
+				(alternate "LPI2C0_SCL" input line)
+				(alternate "LPSPI5_SCK" input line)
+				(alternate "LPUART1_TX" input line)
+				(alternate "SAI1_MCLK" input line)
+				(alternate "eMIOS_0_CH[21]_Y" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 17.78 180)
+				(length 5.08)
+				(name "PTD17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "N3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN5_RX" input line)
+				(alternate "EIRQ[24]" input line)
+				(alternate "EMAC_MII_RMII_MDC" output line)
+				(alternate "EMAC_PPS2" input line)
+				(alternate "FXIO_D9" input line)
+				(alternate "LPSPI3_PCS0" input line)
+				(alternate "LPSPI5_PCS0" input line)
+				(alternate "LPUART2_RX" input line)
+				(alternate "eMIOS_0_CH[18]_Y" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 20.32 180)
+				(length 5.08)
+				(name "PTD16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "P2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CMP0_IN5" input line)
+				(alternate "EMAC_MII_RMII_MDIO" input line)
+				(alternate "LPSPI0_SIN" input line)
+				(alternate "LPUART2_RTS" output line)
+				(alternate "LPUART8_TX" input line)
+				(alternate "eMIOS_0_CH[1]_G" input line)
+				(alternate "eMIOS_1_CH[15]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -12.7 0)
+				(length 5.08)
+				(name "PTD13"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "P5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[29]" input line)
+				(alternate "EMAC_PPS1" input line)
+				(alternate "FXIO_D7" input line)
+				(alternate "LPI2C0_SDA" input line)
+				(alternate "LPSPI5_SIN" input line)
+				(alternate "LPUART1_RX" input line)
+				(alternate "SAI1_D0" input line)
+				(alternate "WKPU[24]" input line)
+				(alternate "eMIOS_0_CH[20]_Y" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -10.16 0)
+				(length 5.08)
+				(name "PTD12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "R5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[28]" input line)
+				(alternate "EMAC_MII_RMII_TX_CLK" input line)
+				(alternate "EMAC_MII_RMII_TX_EN" output line)
+				(alternate "LPI2C1_HREQ" input line)
+				(alternate "LPSPI0_SOUT" input line)
+				(alternate "LPUART2_RTS" output line)
+				(alternate "QuadSPI_IOFA2" input line)
+				(alternate "TRACE_ETM_D1" output line)
+				(alternate "eMIOS_0_CH[18]_Y" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 0 0)
+				(length 5.08)
+				(name "PTD8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "R8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[24]" input line)
+				(alternate "EMAC_MII_RMII_RXD[1]" input line)
+				(alternate "EMAC_MII_RXD3" input line)
+				(alternate "FXIO_D1" input line)
+				(alternate "FXIO_D11" input line)
+				(alternate "LPI2C1_SDA" input line)
+				(alternate "LPSPI3_SOUT" input line)
+				(alternate "LPUART6_RX" input line)
+				(alternate "eMIOS_0_CH[12]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 5.08 0)
+				(length 5.08)
+				(name "PTD6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "T5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CMP0_IN7" input line)
+				(alternate "EIRQ[14]" input line)
+				(alternate "EMAC_MII_RMII_TX_CLK" input line)
+				(alternate "EMAC_MII_TXD2" output line)
+				(alternate "EMAC_MII_TXD3" output line)
+				(alternate "FXIO_D13" input line)
+				(alternate "LPSPI0_PCS0" input line)
+				(alternate "LPUART2_RX" input line)
+				(alternate "eMIOS_1_CH[12]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -5.08 0)
+				(length 5.08)
+				(name "PTD10"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "T6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CLKOUT_RUN" output line)
+				(alternate "EIRQ[26]" input line)
+				(alternate "EMAC_MII_RX_CLK" input line)
+				(alternate "EMAC_MII_TXD3" output line)
+				(alternate "LPSPI0_SIN" input line)
+				(alternate "QuadSPI_SCKFA" input line)
+				(alternate "TRACE_ETM_D3" output line)
+				(alternate "eMIOS_0_CH[16]_X" input line)
+				(alternate "eMIOS_1_CH[10]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 2.54 0)
+				(length 5.08)
+				(name "PTD7"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "U4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CMP0_IN6" input line)
+				(alternate "EIRQ[15]" input line)
+				(alternate "EMAC_MII_RMII_TXD[0]" output line)
+				(alternate "EMAC_MII_RMII_TXD[1]" output line)
+				(alternate "LPSPI0_PCS3" input line)
+				(alternate "LPSPI3_PCS3" input line)
+				(alternate "LPUART2_TX" input line)
+				(alternate "QuadSPI_IOFA1" input line)
+				(alternate "TRACE_ETM_D0" output line)
+			)
+			(pin bidirectional line
+				(at -15.24 7.62 0)
+				(length 5.08)
+				(name "PTD5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "U5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[13]" input line)
+				(alternate "EMAC_MII_RX_CLK" input line)
+				(alternate "EMAC_MII_TXD2" output line)
+				(alternate "EMAC_MII_TXD3" output line)
+				(alternate "FXIO_D15" input line)
+				(alternate "LPSPI0_PCS1" input line)
+				(alternate "TRGMUX_IN7" input line)
+				(alternate "eMIOS_0_CH[19]_Y" input line)
+				(alternate "eMIOS_0_CH[2]_G" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -7.62 0)
+				(length 5.08)
+				(name "PTD11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "U6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[27]" input line)
+				(alternate "EMAC_MII_RMII_TX_CLK" input line)
+				(alternate "EMAC_MII_RMII_TX_EN" output line)
+				(alternate "EMAC_MII_TXD2" output line)
+				(alternate "LPSPI0_SCK" input line)
+				(alternate "LPUART2_CTS" input line)
+				(alternate "QuadSPI_IOFA0" input line)
+				(alternate "TRACE_ETM_D2" output line)
+				(alternate "eMIOS_0_CH[17]_Y" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -2.54 0)
+				(length 5.08)
+				(name "PTD9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "U8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[25]" input line)
+				(alternate "EMAC_MII_RMII_RXD[0]" input line)
+				(alternate "EMAC_MII_RXD2" input line)
+				(alternate "FXIO_D0" input line)
+				(alternate "FXIO_D10" input line)
+				(alternate "LPI2C1_SCL" input line)
+				(alternate "LPUART6_TX" input line)
+				(alternate "eMIOS_0_CH[13]_H" input line)
+			)
+		)
+		(symbol "S32K344EHT1MMMST_6_1"
+			(rectangle
+				(start -10.16 22.86)
+				(end 10.16 -22.86)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+			(pin bidirectional line
+				(at 15.24 -15.24 180)
+				(length 5.08)
+				(name "PTE30"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "A4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN4_TX" output line)
+				(alternate "CMP1_OUT" output line)
+			)
+			(pin bidirectional line
+				(at -15.24 17.78 0)
+				(length 5.08)
+				(name "PTE1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "A5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_P3" input line)
+				(alternate "EIRQ[1]" input line)
+				(alternate "FXIO_D2" input line)
+				(alternate "LPSPI0_SCK" input line)
+				(alternate "LPUART7_TX" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 0 180)
+				(length 5.08)
+				(name "PTE24"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "A8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC2_S13" input line)
+				(alternate "CAN2_TX" output line)
+				(alternate "FXIO_D11" input line)
+				(alternate "FXIO_D5" input line)
+				(alternate "LPSPI4_PCS1" input line)
+				(alternate "eMIOS_1_CH[4]_H" input line)
+				(alternate "eMIOS_2_CH[4]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -17.78 180)
+				(length 5.08)
+				(name "PTE31"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "B4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN4_RX" input line)
+				(alternate "CMP1_RRT" bidirectional line)
+			)
+			(pin bidirectional line
+				(at -15.24 20.32 0)
+				(length 5.08)
+				(name "PTE0"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "B5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_P2" input line)
+				(alternate "EIRQ[0]" input line)
+				(alternate "FXIO_D3" input line)
+				(alternate "LPSPI0_SIN" input line)
+				(alternate "LPUART7_RX" input line)
+				(alternate "WKPU[26]" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -2.54 180)
+				(length 5.08)
+				(name "PTE25"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "B8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC2_P7" input line)
+				(alternate "CAN2_RX" input line)
+				(alternate "LPSPI4_SOUT" input line)
+				(alternate "WKPU[58]" input line)
+				(alternate "eMIOS_1_CH[5]_H" input line)
+				(alternate "eMIOS_2_CH[5]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 5.08 180)
+				(length 5.08)
+				(name "PTE22"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "B9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC2_P4" input line)
+				(alternate "LPSPI4_SCK" input line)
+				(alternate "eMIOS_1_CH[2]_H" input line)
+				(alternate "eMIOS_2_CH[20]_Y" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 15.24 0)
+				(length 5.08)
+				(name "PTE2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "B10"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_MA[0]" output line)
+				(alternate "ADC1_P5" input line)
+				(alternate "EIRQ[2]" input line)
+				(alternate "FXIO_D13" input line)
+				(alternate "LPSPI0_SOUT" input line)
+				(alternate "LPUART10_RX" input line)
+				(alternate "LPUART1_CTS" input line)
+				(alternate "WKPU[27]" input line)
+				(alternate "eMIOS_0_CH[3]_G" input line)
+				(alternate "eMIOS_1_CH[8]_X" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 5.08 0)
+				(length 5.08)
+				(name "PTE6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "B11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_MA[1]" output line)
+				(alternate "ADC1_P6" input line)
+				(alternate "EIRQ[6]" input line)
+				(alternate "FXIO_D12" input line)
+				(alternate "LPSPI0_PCS2" input line)
+				(alternate "LPUART10_TX" input line)
+				(alternate "LPUART1_RTS" output line)
+				(alternate "WKPU[29]" input line)
+				(alternate "eMIOS_1_CH[14]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 20.32 180)
+				(length 5.08)
+				(name "PTE16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "C2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_P4" input line)
+				(alternate "EIRQ[15]" input line)
+				(alternate "FCCU_ERR1" output line)
+				(alternate "FCCU_ERR_IN1" input line)
+				(alternate "FXIO_D3" input line)
+				(alternate "LPSPI2_SIN" input line)
+				(alternate "LPUART1_RTS" output line)
+				(alternate "LPUART3_TX" input line)
+				(alternate "TRGMUX_OUT7" output line)
+				(alternate "WKPU[19]" input line)
+				(alternate "eMIOS_0_CH[23]_X" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -10.16 180)
+				(length 5.08)
+				(name "PTE28"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "C4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN3_TX" output line)
+			)
+			(pin bidirectional line
+				(at 15.24 -12.7 180)
+				(length 5.08)
+				(name "PTE29"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "C5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN3_RX" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 10.16 180)
+				(length 5.08)
+				(name "PTE20"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "C10"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "eMIOS_1_CH[0]_X" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 12.7 180)
+				(length 5.08)
+				(name "PTE19"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "C11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "eMIOS_0_CH[22]_X" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -17.78 0)
+				(length 5.08)
+				(name "PTE15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "D2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_P3" input line)
+				(alternate "CMP1_RRT" bidirectional line)
+				(alternate "EIRQ[14]" input line)
+				(alternate "FCCU_ERR0" output line)
+				(alternate "FCCU_ERR_IN0" input line)
+				(alternate "FXIO_D2" input line)
+				(alternate "LPSPI2_SCK" input line)
+				(alternate "LPUART1_CTS" input line)
+				(alternate "LPUART3_RX" input line)
+				(alternate "TRGMUX_OUT6" output line)
+				(alternate "eMIOS_0_CH[22]_X" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -5.08 180)
+				(length 5.08)
+				(name "PTE26"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "D5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC2_P6" input line)
+				(alternate "eMIOS_1_CH[6]_H" input line)
+				(alternate "eMIOS_2_CH[6]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 2.54 180)
+				(length 5.08)
+				(name "PTE23"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "D8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC2_P5" input line)
+				(alternate "LPSPI4_PCS0" input line)
+				(alternate "WKPU[57]" input line)
+				(alternate "eMIOS_1_CH[3]_H" input line)
+				(alternate "eMIOS_2_CH[21]_Y" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 15.24 180)
+				(length 5.08)
+				(name "PTE18"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "D11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_S23" input line)
+				(alternate "ADC2_S11" input line)
+				(alternate "FXIO_D4" input line)
+				(alternate "WKPU[55]" input line)
+				(alternate "eMIOS_2_CH[17]_Y" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 17.78 180)
+				(length 5.08)
+				(name "PTE17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "D12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_S22" input line)
+				(alternate "ADC2_S10" input line)
+				(alternate "FXIO_D5" input line)
+				(alternate "eMIOS_2_CH[23]_X" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -7.62 0)
+				(length 5.08)
+				(name "PTE11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "E1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_P6" input line)
+				(alternate "EIRQ[10]" input line)
+				(alternate "FXIO_D5" input line)
+				(alternate "LPSPI2_PCS0" input line)
+				(alternate "LPUART4_TX" input line)
+				(alternate "TRGMUX_OUT5" output line)
+				(alternate "WKPU[28]" input line)
+				(alternate "eMIOS_0_CH[1]_G" input line)
+				(alternate "eMIOS_0_CH[21]_Y" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -5.08 0)
+				(length 5.08)
+				(name "PTE10"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "E2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_P5" input line)
+				(alternate "CLKOUT_STANDBY" output line)
+				(alternate "EIRQ[9]" input line)
+				(alternate "FXIO_D4" input line)
+				(alternate "LPSPI2_PCS1" input line)
+				(alternate "LPSPI3_SIN" input line)
+				(alternate "LPUART4_RX" input line)
+				(alternate "TRGMUX_OUT4" output line)
+				(alternate "eMIOS_0_CH[20]_Y" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -12.7 0)
+				(length 5.08)
+				(name "PTE13"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "F1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_S19" input line)
+				(alternate "EIRQ[12]" input line)
+				(alternate "FXIO_D5" input line)
+				(alternate "LPSPI2_PCS0" input line)
+				(alternate "LPSPI2_PCS2" input line)
+				(alternate "VRC_CTRL" output line)
+				(alternate "eMIOS_1_CH[5]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 7.62 0)
+				(length 5.08)
+				(name "PTE5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "F2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC2_S8" input line)
+				(alternate "EIRQ[5]" input line)
+				(alternate "FXIO_D7" input line)
+				(alternate "LPUART12_RX" input line)
+				(alternate "WKPU[32]" input line)
+				(alternate "eMIOS_0_CH[19]_Y" input line)
+				(alternate "eMIOS_1_CH[5]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 7.62 180)
+				(length 5.08)
+				(name "PTE21"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "F9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC2_P3" input line)
+				(alternate "LPSPI4_SIN" input line)
+				(alternate "WKPU[56]" input line)
+				(alternate "eMIOS_1_CH[1]_H" input line)
+				(alternate "eMIOS_2_CH[19]_Y" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 10.16 0)
+				(length 5.08)
+				(name "PTE4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "G6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC2_S9" input line)
+				(alternate "EIRQ[4]" input line)
+				(alternate "FXIO_D6" input line)
+				(alternate "LPSPI0_PCS0" input line)
+				(alternate "LPSPI1_PCS1" input line)
+				(alternate "LPUART12_TX" input line)
+				(alternate "eMIOS_0_CH[18]_Y" input line)
+				(alternate "eMIOS_1_CH[4]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -7.62 180)
+				(length 5.08)
+				(name "PTE27"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "G9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "eMIOS_1_CH[7]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -15.24 0)
+				(length 5.08)
+				(name "PTE14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "L3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN4_RX" input line)
+				(alternate "EIRQ[13]" input line)
+				(alternate "EMAC_PPS1" input line)
+				(alternate "FXIO_D7" input line)
+				(alternate "LPUART5_TX" input line)
+				(alternate "WKPU[30]" input line)
+				(alternate "eMIOS_0_CH[19]_Y" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -10.16 0)
+				(length 5.08)
+				(name "PTE12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "M1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN5_TX" output line)
+				(alternate "EIRQ[11]" input line)
+				(alternate "EMAC_PPS3" input line)
+				(alternate "FXIO_D8" input line)
+				(alternate "LPUART2_TX" input line)
+				(alternate "eMIOS_1_CH[5]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 2.54 0)
+				(length 5.08)
+				(name "PTE7"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "M17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC2_S20" input line)
+				(alternate "FXIO_D11" input line)
+				(alternate "LPSPI3_SCK" input line)
+				(alternate "LPUART4_RX" input line)
+				(alternate "eMIOS_0_CH[7]_G" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 12.7 0)
+				(length 5.08)
+				(name "PTE3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "N1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN4_TX" output line)
+				(alternate "CMP0_OUT" output line)
+				(alternate "EIRQ[3]" input line)
+				(alternate "EMAC_PPS0" input line)
+				(alternate "FXIO_D6" input line)
+				(alternate "LPUART2_RTS" output line)
+				(alternate "LPUART5_RX" input line)
+				(alternate "TRGMUX_IN6" input line)
+				(alternate "eMIOS_0_CH[19]_Y" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -2.54 0)
+				(length 5.08)
+				(name "PTE9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "R3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN3_TX" output line)
+				(alternate "CMP0_IN0" input line)
+				(alternate "EIRQ[8]" input line)
+				(alternate "EMAC_MII_RMII_TX_EN" output line)
+				(alternate "EMAC_PPS3" input line)
+				(alternate "FXIO_D11" input line)
+				(alternate "LPSPI5_SOUT" input line)
+				(alternate "LPUART2_CTS" input line)
+				(alternate "eMIOS_0_CH[7]_G" input line)
+				(alternate "eMIOS_1_CH[13]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 0 0)
+				(length 5.08)
+				(name "PTE8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "R4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CMP0_IN3" input line)
+				(alternate "EIRQ[7]" input line)
+				(alternate "EMAC_MII_RMII_MDC" output line)
+				(alternate "FXIO_D12" input line)
+				(alternate "FXIO_D8" input line)
+				(alternate "LPSPI3_PCS1" input line)
+				(alternate "LPSPI5_PCS1" input line)
+				(alternate "SAI1_BCLK" input line)
+				(alternate "eMIOS_0_CH[6]_G" input line)
+			)
+		)
+		(symbol "S32K344EHT1MMMST_7_1"
+			(rectangle
+				(start -10.16 22.86)
+				(end 10.16 -22.86)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+			(pin bidirectional line
+				(at -15.24 20.32 0)
+				(length 5.08)
+				(name "PTF0"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "A6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[0]" input line)
+				(alternate "LPSPI2_SCK" input line)
+				(alternate "LPUART5_TX" input line)
+				(alternate "eMIOS_2_CH[0]_X" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 17.78 0)
+				(length 5.08)
+				(name "PTF1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "B6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[1]" input line)
+				(alternate "LPSPI2_SIN" input line)
+				(alternate "LPUART5_RX" input line)
+				(alternate "eMIOS_2_CH[1]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -2.54 0)
+				(length 5.08)
+				(name "PTF9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "B15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_MA[0]" output line)
+				(alternate "EIRQ[17]" input line)
+				(alternate "eMIOS_2_CH[9]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -5.08 0)
+				(length 5.08)
+				(name "PTF10"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "B17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_MA[1]" output line)
+				(alternate "EIRQ[18]" input line)
+				(alternate "eMIOS_2_CH[10]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 15.24 0)
+				(length 5.08)
+				(name "PTF2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "C6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[2]" input line)
+				(alternate "LPSPI2_SOUT" input line)
+				(alternate "LPUART6_TX" input line)
+				(alternate "eMIOS_2_CH[2]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 10.16 0)
+				(length 5.08)
+				(name "PTF4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "C7"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN5_TX" output line)
+				(alternate "EIRQ[4]" input line)
+				(alternate "FXIO_D0" input line)
+				(alternate "eMIOS_2_CH[4]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 7.62 0)
+				(length 5.08)
+				(name "PTF5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "C8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN5_RX" input line)
+				(alternate "EIRQ[5]" input line)
+				(alternate "eMIOS_2_CH[5]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 2.54 0)
+				(length 5.08)
+				(name "PTF7"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "C9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[7]" input line)
+				(alternate "FXIO_D1" input line)
+				(alternate "LPI2C1_SCL" input line)
+				(alternate "eMIOS_2_CH[7]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 12.7 0)
+				(length 5.08)
+				(name "PTF3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "D6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[3]" input line)
+				(alternate "LPSPI2_PCS0" input line)
+				(alternate "LPUART6_RX" input line)
+				(alternate "eMIOS_2_CH[3]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 5.08 0)
+				(length 5.08)
+				(name "PTF6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "D7"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[6]" input line)
+				(alternate "eMIOS_2_CH[6]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 0 0)
+				(length 5.08)
+				(name "PTF8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "D10"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[16]" input line)
+				(alternate "FXIO_D2" input line)
+				(alternate "LPI2C1_SDA" input line)
+				(alternate "eMIOS_2_CH[8]_X" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -12.7 0)
+				(length 5.08)
+				(name "PTF13"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "E14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_MA[1]" output line)
+				(alternate "EIRQ[21]" input line)
+				(alternate "LPSPI3_SCK" input line)
+				(alternate "LPUART10_RX" input line)
+				(alternate "eMIOS_2_CH[13]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -10.16 0)
+				(length 5.08)
+				(name "PTF12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "E15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_MA[0]" output line)
+				(alternate "EIRQ[20]" input line)
+				(alternate "LPSPI3_SIN" input line)
+				(alternate "LPUART10_TX" input line)
+				(alternate "eMIOS_2_CH[12]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -17.78 0)
+				(length 5.08)
+				(name "PTF15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "F14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN1_RX" input line)
+				(alternate "CMP0_RRT" bidirectional line)
+				(alternate "EIRQ[23]" input line)
+				(alternate "FCCU_ERR1" output line)
+				(alternate "FCCU_ERR_IN1" input line)
+				(alternate "LPSPI3_SOUT" input line)
+				(alternate "eMIOS_2_CH[15]_H" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -15.24 0)
+				(length 5.08)
+				(name "PTF14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "F15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN1_TX" output line)
+				(alternate "CMP0_OUT" output line)
+				(alternate "EIRQ[22]" input line)
+				(alternate "FCCU_ERR0" output line)
+				(alternate "FCCU_ERR_IN0" input line)
+				(alternate "FXIO_D3" input line)
+				(alternate "eMIOS_2_CH[14]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 17.78 180)
+				(length 5.08)
+				(name "PTF17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "G14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_MA[1]" output line)
+				(alternate "LPUART12_RX" input line)
+				(alternate "eMIOS_1_CH[1]_H" input line)
+				(alternate "eMIOS_2_CH[17]_Y" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 20.32 180)
+				(length 5.08)
+				(name "PTF16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "G15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_MA[0]" output line)
+				(alternate "LPSPI3_PCS0" input line)
+				(alternate "LPUART12_TX" input line)
+				(alternate "eMIOS_1_CH[0]_X" input line)
+				(alternate "eMIOS_2_CH[16]_X" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -7.62 0)
+				(length 5.08)
+				(name "PTF11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "H11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_MA[2]" output line)
+				(alternate "EIRQ[19]" input line)
+				(alternate "HSE_TAMPER_EXTIN0" input line)
+				(alternate "eMIOS_2_CH[11]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 15.24 180)
+				(length 5.08)
+				(name "PTF18"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "H14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_MA[2]" output line)
+				(alternate "LPSPI3_PCS1" input line)
+				(alternate "LPUART7_TX" input line)
+				(alternate "eMIOS_1_CH[2]_H" input line)
+				(alternate "eMIOS_2_CH[18]_Y" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 12.7 180)
+				(length 5.08)
+				(name "PTF19"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "J11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC0_MA[2]" output line)
+				(alternate "HSE_TAMPER_LOOP_OUT0" output line)
+				(alternate "LPSPI3_PCS2" input line)
+				(alternate "LPUART7_RX" input line)
+				(alternate "eMIOS_1_CH[3]_H" input line)
+				(alternate "eMIOS_2_CH[19]_Y" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 10.16 180)
+				(length 5.08)
+				(name "PTF20"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "J15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN0_TX" output line)
+				(alternate "FXIO_D4" input line)
+				(alternate "LPI2C0_SCL" input line)
+				(alternate "LPSPI3_PCS3" input line)
+				(alternate "LPUART8_TX" input line)
+				(alternate "eMIOS_1_CH[4]_H" input line)
+				(alternate "eMIOS_2_CH[20]_Y" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -15.24 180)
+				(length 5.08)
+				(name "PTF30"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "K3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_MA[1]" output line)
+				(alternate "CAN3_RX" input line)
+				(alternate "eMIOS_1_CH[14]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -12.7 180)
+				(length 5.08)
+				(name "PTF29"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "K4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_MA[0]" output line)
+				(alternate "CAN3_TX" output line)
+				(alternate "FXIO_D8" input line)
+				(alternate "LPSPI3_PCS1" input line)
+				(alternate "eMIOS_1_CH[13]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 7.62 180)
+				(length 5.08)
+				(name "PTF21"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "K14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN0_RX" input line)
+				(alternate "FXIO_D5" input line)
+				(alternate "LPI2C0_SDA" input line)
+				(alternate "LPSPI1_PCS0" input line)
+				(alternate "LPUART8_RX" input line)
+				(alternate "eMIOS_1_CH[5]_H" input line)
+				(alternate "eMIOS_2_CH[21]_Y" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -17.78 180)
+				(length 5.08)
+				(name "PTF31"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "L9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "ADC1_MA[2]" output line)
+				(alternate "FXIO_D9" input line)
+				(alternate "TRACE_ETM_D3" output line)
+				(alternate "eMIOS_1_CH[15]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -10.16 180)
+				(length 5.08)
+				(name "PTF28"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "L10"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "FXIO_D7" input line)
+				(alternate "LPSPI0_PCS0" input line)
+				(alternate "LPSPI4_PCS3" input line)
+				(alternate "LPUART11_RX" input line)
+				(alternate "TRACE_ETM_D5" output line)
+				(alternate "eMIOS_1_CH[12]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 0 180)
+				(length 5.08)
+				(name "PTF24"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "M12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "LPUART9_RX" input line)
+				(alternate "eMIOS_1_CH[8]_X" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 2.54 180)
+				(length 5.08)
+				(name "PTF23"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "M14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "LPSPI3_PCS3" input line)
+				(alternate "LPUART9_TX" input line)
+				(alternate "eMIOS_1_CH[7]_H" input line)
+				(alternate "eMIOS_2_CH[23]_X" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -2.54 180)
+				(length 5.08)
+				(name "PTF25"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "P12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN2_TX" output line)
+				(alternate "FXIO_D6" input line)
+				(alternate "LPSPI2_PCS2" input line)
+				(alternate "LPSPI4_PCS0" input line)
+				(alternate "eMIOS_1_CH[9]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -7.62 180)
+				(length 5.08)
+				(name "PTF27"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "P13"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "LPSPI4_PCS2" input line)
+				(alternate "LPUART11_TX" input line)
+				(alternate "eMIOS_1_CH[11]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -5.08 180)
+				(length 5.08)
+				(name "PTF26"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "R12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN2_RX" input line)
+				(alternate "LPSPI2_PCS3" input line)
+				(alternate "LPSPI4_PCS1" input line)
+				(alternate "eMIOS_1_CH[10]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 5.08 180)
+				(length 5.08)
+				(name "PTF22"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "U16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "LPSPI4_PCS2" input line)
+				(alternate "eMIOS_1_CH[6]_H" input line)
+				(alternate "eMIOS_2_CH[22]_X" input line)
+			)
+		)
+		(symbol "S32K344EHT1MMMST_8_1"
+			(rectangle
+				(start -10.16 22.86)
+				(end 10.16 -22.86)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+			(pin bidirectional line
+				(at -15.24 -5.08 0)
+				(length 5.08)
+				(name "PTG10"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "A1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[26]" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -7.62 0)
+				(length 5.08)
+				(name "PTG11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "A17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[27]" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 0 0)
+				(length 5.08)
+				(name "PTG8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "F4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN4_TX" output line)
+				(alternate "EIRQ[24]" input line)
+				(alternate "FXIO_D12" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 -7.62 180)
+				(length 5.08)
+				(name "PTG27"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "F10"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "FXIO_D26" input line)
+				(alternate "TRACE_ETM_D15" output line)
+			)
+			(pin bidirectional line
+				(at 15.24 -5.08 180)
+				(length 5.08)
+				(name "PTG26"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "F11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "FXIO_D25" input line)
+				(alternate "TRACE_ETM_D14" output line)
+			)
+			(pin bidirectional line
+				(at 15.24 -2.54 180)
+				(length 5.08)
+				(name "PTG25"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "F12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "FXIO_D24" input line)
+				(alternate "TRACE_ETM_D13" output line)
+			)
+			(pin bidirectional line
+				(at -15.24 -2.54 0)
+				(length 5.08)
+				(name "PTG9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "G2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN4_RX" input line)
+				(alternate "EIRQ[25]" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -12.7 0)
+				(length 5.08)
+				(name "PTG13"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "G3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN5_TX" output line)
+				(alternate "EIRQ[29]" input line)
+				(alternate "FXIO_D13" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 10.16 0)
+				(length 5.08)
+				(name "PTG4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "G4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CMP2_OUT" output line)
+				(alternate "EIRQ[12]" input line)
+				(alternate "LPUART15_TX" input line)
+				(alternate "eMIOS_1_CH[20]_Y" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 0 180)
+				(length 5.08)
+				(name "PTG24"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "G12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "FXIO_D23" input line)
+				(alternate "TRACE_ETM_D12" output line)
+			)
+			(pin bidirectional line
+				(at -15.24 17.78 0)
+				(length 5.08)
+				(name "PTG1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "H2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[9]" input line)
+				(alternate "LPUART13_RX" input line)
+				(alternate "eMIOS_1_CH[17]_Y" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -15.24 0)
+				(length 5.08)
+				(name "PTG14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "H3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CAN5_RX" input line)
+				(alternate "EIRQ[30]" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 7.62 0)
+				(length 5.08)
+				(name "PTG5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "H4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "CMP2_RRT" bidirectional line)
+				(alternate "EIRQ[13]" input line)
+				(alternate "LPUART15_RX" input line)
+				(alternate "eMIOS_1_CH[21]_Y" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 2.54 180)
+				(length 5.08)
+				(name "PTG23"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "H12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "FXIO_D22" input line)
+				(alternate "TRACE_ETM_D11" output line)
+				(alternate "eMIOS_2_CH[23]_X" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 20.32 0)
+				(length 5.08)
+				(name "PTG0"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "J2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[8]" input line)
+				(alternate "LPUART13_TX" input line)
+				(alternate "eMIOS_1_CH[16]_X" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 15.24 0)
+				(length 5.08)
+				(name "PTG2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "J3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[10]" input line)
+				(alternate "LPUART14_TX" input line)
+				(alternate "eMIOS_1_CH[18]_Y" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 5.08 180)
+				(length 5.08)
+				(name "PTG22"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "J12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "FXIO_D21" input line)
+				(alternate "TRACE_ETM_D10" output line)
+				(alternate "eMIOS_2_CH[22]_X" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 12.7 0)
+				(length 5.08)
+				(name "PTG3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "K2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[11]" input line)
+				(alternate "LPUART14_RX" input line)
+				(alternate "eMIOS_1_CH[19]_Y" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 2.54 0)
+				(length 5.08)
+				(name "PTG7"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "K6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[15]" input line)
+				(alternate "FXIO_D11" input line)
+				(alternate "TRACE_ETM_D0" output line)
+				(alternate "eMIOS_1_CH[23]_X" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 5.08 0)
+				(length 5.08)
+				(name "PTG6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "K7"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[14]" input line)
+				(alternate "FXIO_D10" input line)
+				(alternate "TRACE_ETM_CLKOUT" output line)
+				(alternate "eMIOS_1_CH[22]_X" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 7.62 180)
+				(length 5.08)
+				(name "PTG21"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "K12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "FXIO_D20" input line)
+				(alternate "TRACE_ETM_D9" output line)
+				(alternate "eMIOS_2_CH[21]_Y" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -17.78 0)
+				(length 5.08)
+				(name "PTG15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "L6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[31]" input line)
+				(alternate "FXIO_D14" input line)
+				(alternate "TRACE_ETM_D1" output line)
+				(alternate "eMIOS_2_CH[15]_H" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 10.16 180)
+				(length 5.08)
+				(name "PTG20"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "L12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "FXIO_D19" input line)
+				(alternate "TRACE_ETM_D8" output line)
+				(alternate "eMIOS_2_CH[20]_Y" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 20.32 180)
+				(length 5.08)
+				(name "PTG16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "M8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "FXIO_D15" input line)
+				(alternate "TRACE_ETM_D2" output line)
+				(alternate "eMIOS_2_CH[16]_X" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 17.78 180)
+				(length 5.08)
+				(name "PTG17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "M9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "FXIO_D16" input line)
+				(alternate "TRACE_ETM_D4" output line)
+				(alternate "eMIOS_2_CH[17]_Y" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 15.24 180)
+				(length 5.08)
+				(name "PTG18"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "M10"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "FXIO_D17" input line)
+				(alternate "TRACE_ETM_D6" output line)
+				(alternate "eMIOS_2_CH[18]_Y" input line)
+			)
+			(pin bidirectional line
+				(at 15.24 12.7 180)
+				(length 5.08)
+				(name "PTG19"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "M11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "FXIO_D18" input line)
+				(alternate "TRACE_ETM_D7" output line)
+				(alternate "eMIOS_2_CH[19]_Y" input line)
+			)
+			(pin bidirectional line
+				(at -15.24 -10.16 0)
+				(length 5.08)
+				(name "PTG12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "U17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(alternate "EIRQ[28]" input line)
+				(alternate "LPSPI4_PCS3" input line)
+			)
+		)
+		(embedded_fonts no)
+	)
+)
