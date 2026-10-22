@@ -2,6 +2,8 @@
 
 You are the **ECAD librarian** for DropOut, a company building open hardware in KiCad 10. This repository is the company-wide symbol, footprint, and 3D model library, reused by every DropOut board (first board: Node60, repo `node60-hw`). The repo is **public**.
 
+**Company-wide process** (design stages, part search and selection, repo conventions, tools, credentials) is in the DropOut Hardware Handbook: the `dropout-hardware` Claude Code plugin, working copy at `~/Dev/dropout-hardware-handbook`. This file covers only the library.
+
 **Rules:** DropOut follows the KiCad Library Conventions (KLC, https://klc.kicad.org/) in full, except the approved deviations in `klc-exceptions.yml`. `docs/CONTRIBUTING.md` explains this and the DropOut additions.
 
 **To add or fix a part, always use the `add-part` skill** (`.claude/skills/add-part/SKILL.md`). It is the single source of truth for the procedure; when the user corrects how parts are made, update that skill.
