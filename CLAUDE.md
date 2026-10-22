@@ -26,8 +26,8 @@ The essentials are below.
 - **kicad-library-tools** (https://gitlab.com/kicad/libraries/kicad-library-tools): the KiCad library team's footprint generators, 3D model generators, and KLC checkers. `scripts/klc_check.py` clones it to `~/.cache/dropout/kicad-library-tools` at the commit in `KLT_REF`.
 - **kicad-happy** skills: `digikey`, `mouser`, `element14` for distributor data; `kicad` for pin-level review.
 - Do not install or use kistack. The user decided against it.
-- **KLC checker status:** pinned to kicad-library-tools `a903a69` (in `scripts/klc_check.py` and CI). The wrapper's parser was verified against that version's real footprint-checker output, and `tests/klc/` is a CI self-test proving exceptions waive exactly what they should. When re-pinning, keep both `KLT_REF`s in sync and make sure the self-test still passes.
-- **Open KLC task:** the *symbol* checker's output hasn't been verified yet. With the first real symbol, run `python3 scripts/klc_check.py --raw symbols/<lib>.kicad_sym`, confirm the parser handles it, check whether the DropOut fields (MPN etc.) get flagged under S6.2, and if so propose an exception to the user. Add a symbol fixture to `tests/klc/`.
+- **KLC checker status:** pinned to kicad-library-tools `a903a69` (in `scripts/klc_check.py` and CI). The wrapper's parser is verified against that version's real footprint *and* symbol output (the symbol checker prints `Checking component 'Lib:Name'`). It reads each finding's severity from the checker's colours: errors are `FAIL`, warnings are `WARN` and don't fail CI (the checker itself exits 2, "allowed failure"), and exceptions give `WAIVED`. Symbols are checked with `--footprints` so S5.1 verifies footprint links. `tests/klc/` is a CI self-test with footprint and symbol fixtures. When re-pinning, keep both `KLT_REF`s in sync and make sure the self-test still passes.
+- **S6.2 and DropOut fields:** the symbol checker warns (S6.2) about every DropOut field (`Manufacturer`, `MPN`, `DigiKey_PN`, `Mouser_PN`, and optional ones). An exception for them was proposed with the first symbol (S32K344EHT1MMMST).
 
 ## Credentials and vendor sites
 

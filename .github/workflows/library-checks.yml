@@ -47,8 +47,8 @@ jobs:
           KICAD_LIBRARY_TOOLS: ${{ runner.temp }}/klt
         run: |
           set +e
-          python3 scripts/klc_check.py tests/klc/DropOut_Test.pretty > "$RUNNER_TEMP/selftest.txt"
-          grep -E '^(FAIL|WAIVED) ' "$RUNNER_TEMP/selftest.txt" | awk '{print $1, $2, $3}' | LC_ALL=C sort > "$RUNNER_TEMP/got.txt"
+          python3 scripts/klc_check.py tests/klc/DropOut_Test.pretty tests/klc/DropOut_TestSym.kicad_sym > "$RUNNER_TEMP/selftest.txt"
+          grep -E '^(FAIL|WARN|WAIVED) ' "$RUNNER_TEMP/selftest.txt" | awk '{print $1, $2, $3}' | LC_ALL=C sort > "$RUNNER_TEMP/got.txt"
           if ! diff -u tests/klc/expected.txt "$RUNNER_TEMP/got.txt" > "$RUNNER_TEMP/diff.txt"; then
             echo "::error title=KLC self-test::wrapper results changed:%0A$(sed 's/%/%25/g' "$RUNNER_TEMP/diff.txt" | awk 'BEGIN{ORS="%0A"}{print}')"
             exit 1
