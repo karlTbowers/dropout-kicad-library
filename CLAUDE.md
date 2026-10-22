@@ -43,27 +43,18 @@ symbols/      DropOut_<Category>.kicad_sym
 footprints/   DropOut_<Category>.pretty/
 3dmodels/     DropOut_<Category>.3dshapes/
 docs/         CONTRIBUTING.md
-scripts/      check_symbol_fields.py, klc_check.py, vendor-env.sh, (planned) extract_catalog.py
+scripts/      check_symbol_fields.py, klc_check.py, vendor-env.sh
 klc-exceptions.yml   approved KLC deviations
 .claude/skills/add-part/   the part-making procedure
-site/         (planned) Astro catalog site
 ```
 
-## Library catalog site (planned — build alongside the first parts)
+## Library catalog
 
-A public catalog of the library on GitHub Pages at `https://karltbowers.github.io/dropout-kicad-library/`, rebuilt automatically on every push to `main`. Decisions already made with the user:
+The browsable catalog of this library lives in its **own repo**, `karlTbowers/dropout-library-catalog` (moved out on 2026-10-22 so boards that mount this library don't carry the site), published at https://karltbowers.github.io/dropout-library-catalog/. Its `CLAUDE.md` holds the catalog plan and decisions.
 
-- **Generator: Astro.** Not Hugo, Jekyll, seite, or KiCAD-Prism (the user reviewed and rejected KiCAD-Prism).
-- **Interactive 3D model viewer is required in the first version.**
-- **No DropOut branding exists yet.** Use a clean, neutral engineering-datasheet look with light and dark modes, with all colors and fonts as CSS tokens so branding can be dropped in later.
-- Site source lives in `site/` in this repo. One workflow, two jobs:
-  1. **Extract** (in the `kicad/kicad:10.0` container, `--user root`): `scripts/extract_catalog.py` reads every `.kicad_sym` and `.pretty`, writes `site/src/data/parts.json` (all symbol fields, library refs, footprint name, category), exports symbol and footprint SVGs with `kicad-cli sym export svg` / `kicad-cli fp export svg`, and builds one GLB per footprint by placing the footprint on a minimal temporary board and running `kicad-cli pcb export glb`. Upload as an artifact.
-  2. **Build and deploy** (Node): Astro content collection loads `parts.json` and generates one page per part; Pagefind provides static search; deploy with `actions/upload-pages-artifact` + `actions/deploy-pages`. Set Astro `base` to `/dropout-kicad-library`.
-- **Catalog page:** search plus filters (category, manufacturer, package); one row per part.
-- **Part page:** symbol and footprint SVGs side by side; full field table; datasheet, DigiKey, and Mouser links; copy buttons for MPN and library reference (`DropOut_Power:LM74910H-Q1`); 3D viewer.
-- **3D viewer:** `<model-viewer>` or a small three.js island, loaded only on part pages. Orbit/zoom/pan/reset; top, bottom, and isometric presets; toggles for board substrate and silkscreen; theme-matched background; "Download STEP" link. The GLB shows the model on the real footprint pads, so the viewer doubles as a model-alignment check.
-- **3D model sourcing:** prefer the KiCad library team's CadQuery 3D generator for standard packages (license-clean for a public repo). Use manufacturer STEP only where its terms allow redistribution; record the source on the part page.
-- **Later:** "used in" board links, nightly DigiKey/Mouser stock and price snapshot via GitHub Actions secrets (never call distributor APIs from the browser), per-part changelog from git history.
+- Nothing in this repo is site code. Don't add `site/`, catalog scripts, or Node tooling here.
+- The `notify-catalog` job in `library-checks.yml` asks the catalog to rebuild after every push to `main` that passes the checks. It needs the repo secret `CATALOG_DISPATCH_TOKEN` (a fine-grained token with Contents: read and write on `dropout-library-catalog` only); without it the job skips with a notice and the catalog's nightly rebuild catches up.
+- Part changes show up in the catalog automatically. If a field or drawing looks wrong there, fix the part here.
 
 ## Working copies
 

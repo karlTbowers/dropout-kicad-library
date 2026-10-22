@@ -2,6 +2,8 @@
 
 The shared KiCad 10 symbol, footprint, and 3D model library for all DropOut open-hardware projects.
 
+**Browse the library:** https://karltbowers.github.io/dropout-library-catalog/ (built from this repo by [dropout-library-catalog](https://github.com/karlTbowers/dropout-library-catalog)).
+
 Every part in this library is an **atomic part**: one symbol = one orderable manufacturer part number (MPN), with its footprint and 3D model already linked. A BOM exported from any DropOut schematic should be purchasable from DigiKey or Mouser as-is.
 
 ## Layout

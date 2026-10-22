@@ -85,3 +85,21 @@ jobs:
             kicad-cli fp export svg --output /tmp/out "$lib"
             echo "::endgroup::"
           done
+
+  notify-catalog:
+    name: Ask the catalog to rebuild
+    needs: [fields, klc, parse]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch library-updated to dropout-library-catalog
+        env:
+          GH_TOKEN: ${{ secrets.CATALOG_DISPATCH_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::notice title=Catalog::CATALOG_DISPATCH_TOKEN not set; the catalog's nightly build will pick this up"
+            exit 0
+          fi
+          gh api repos/karlTbowers/dropout-library-catalog/dispatches \
+            -f event_type=library-updated -f "client_payload[sha]=$GITHUB_SHA"
+          echo "::notice title=Catalog::rebuild requested for $GITHUB_SHA"
