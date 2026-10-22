@@ -9,7 +9,7 @@ kicad-library-tools output for both footprints and symbols.
 |---|---|
 | `DropOut_Test.pretty/SOT-23` | F9.3 **waived** (correct `${KIPRJMOD}` model path); F5.2 **warn** (RefDes text too small, a checker warning) |
 | `DropOut_Test.pretty/SOT-23_WrongDir` | F9.3 **fails** (model in the wrong `.3dshapes` folder, a checker error); F5.2 **warn** |
-| `DropOut_TestSym.kicad_sym` `TEST-GOOD` | S6.2 **warn** (DropOut fields `Manufacturer`, `MPN`, `DigiKey_PN`, `Mouser_PN`) |
+| `DropOut_TestSym.kicad_sym` `TEST-GOOD` | S6.2 **waived** by `dropout-symbol-fields` (DropOut fields `Manufacturer`, `MPN`, `DigiKey_PN`, `Mouser_PN`) |
 | `DropOut_TestSym.kicad_sym` `TEST-BADFP` | S5.1 **fails** (footprint link to a file that doesn't exist) |
 
 `expected.txt` lists the expected `FAIL`/`WARN`/`WAIVED` lines. Update it only when an exception or

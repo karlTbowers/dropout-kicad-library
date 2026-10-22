@@ -42,3 +42,18 @@ exceptions:
       never collide with KiCad's stock libraries in a user's library tables. The
       <Category> part still follows KLC functional naming and capitalization.
     approved: 2026-10-21
+
+  - id: dropout-symbol-fields
+    rules: [S6.2]
+    applies: ["*"]
+    # Waives only "unexpected property" warnings for DropOut's own fields. Any other S6.2
+    # finding (missing or empty KLC fields, bad keywords, etc.) is still reported.
+    match: >-
+      ^Found a unexpected property with the name (Manufacturer|MPN|DigiKey_PN|Mouser_PN|Temperature_Grade|Notes|Reference_Manual)$
+    reason: >
+      Every DropOut symbol is an atomic, orderable part, so it carries Manufacturer, MPN,
+      DigiKey_PN and Mouser_PN (required, enforced by scripts/check_symbol_fields.py) and
+      may carry Temperature_Grade, Notes and Reference_Manual (optional; see
+      docs/CONTRIBUTING.md). KLC's stock symbols are generic and define no such fields,
+      so the checker flags them under S6.2. All KLC-required S6.2 fields are still checked.
+    approved: 2026-10-22

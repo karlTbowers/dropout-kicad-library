@@ -38,7 +38,7 @@ All KLC S6.2 fields, plus these DropOut fields, filled in (not blank):
 | `DigiKey_PN` | `296-TPS2HCS08AQPWPRQ1CT-ND` | `-` only if not stocked |
 | `Mouser_PN` | `595-TPS2HCS08AQPWPRQ1` | `-` only if not stocked |
 
-Optional: `Temperature_Grade` (e.g. `AEC-Q100 Grade 1`), `Notes`. `scripts/check_symbol_fields.py` enforces these in CI.
+Optional: `Temperature_Grade` (e.g. `AEC-Q100 Grade 1`), `Notes`, `Reference_Manual` (link to a manufacturer document the part was built from that isn't the datasheet, e.g. a sign-in-gated reference manual holding the ball map; never commit the document itself). `scripts/check_symbol_fields.py` enforces these in CI.
 
 The `Datasheet` field must be the **manufacturer's** URL, never a distributor copy. Datasheet PDFs are never committed.
 
