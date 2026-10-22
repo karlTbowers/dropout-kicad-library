@@ -36,7 +36,9 @@ body:
     attributes:
       label: Library category
       options:
-        - DropOut_MCU
+        - DropOut_MCU_NXP
+        - DropOut_MCU_Microchip
+        - DropOut_MCU_ST
         - DropOut_Interface
         - DropOut_Power
         - DropOut_PowerSwitch

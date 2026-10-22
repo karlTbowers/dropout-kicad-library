@@ -6,7 +6,7 @@ Usage:
   python3 scripts/symbolgen.py parts/<MPN>/part.yaml --out x.kicad_sym
 
 part.yaml:
-  library: DropOut_MCU
+  library: DropOut_MCU_NXP
   name: S32K344EHT1MMMST                 # symbol name = MPN (KLC S2, DropOut atomic parts)
   pins: pins.csv                         # relative to part.yaml
   fields:                                # in order; Reference and Value are shown, the rest hidden
