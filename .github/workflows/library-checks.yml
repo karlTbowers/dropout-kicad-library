@@ -15,6 +15,8 @@ jobs:
         with:
           python-version: "3.12"
       - run: python3 scripts/check_symbol_fields.py symbols
+      - name: Symbol pins match footprint pads
+        run: python3 scripts/check_pin_pad_match.py symbols footprints
 
   klc:
     name: KLC (with DropOut exceptions)

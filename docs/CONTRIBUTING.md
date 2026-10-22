@@ -66,3 +66,7 @@ Projects pin this library as a submodule, so a change reaches a board only when 
 4. Complete the PR checklist, including the pin-by-pin datasheet check, which the scripts can't do.
 
 Claude Code follows this process through the `add-part` skill in `.claude/skills/add-part/SKILL.md`.
+
+## Tools
+
+`scripts/setup_tools.sh` sets up everything on a Mac. Symbols are generated from `parts/<MPN>/part.yaml` and `pins.csv` by `scripts/symbolgen.py`; footprints and 3D models from specs in `generators/` by `scripts/generate_footprint.py`; `scripts/check_pin_pad_match.py` (also in CI) checks that every symbol's pins match its footprint's pads. Vendor source documents live in the private `dropout-vendor-docs` repo, never here.
