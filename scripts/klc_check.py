@@ -82,11 +82,15 @@ def find_checker(root, name):
 def covered(rule, library, item, header, details, exceptions):
     """Return the exception id that waives this violation, or None.
 
-    If an exception has a `match` regex, every detail line must match it (or the header,
-    when the checker printed no details). A violation that mixes a waived problem with any
-    other problem is NOT waived.
+    If an exception has a `match` regex, it covers only the detail lines (or the header, when
+    the checker printed no details) that match it. The violation is waived when every line is
+    covered by some exception that applies to this rule and item, so two narrow exceptions can
+    together waive one violation (the checker reports all S6.2 findings of a symbol as one).
+    A violation that mixes a waived problem with any other problem is NOT waived.
     """
     key = f"{library}:{item}"
+    lines = details or [header]
+    uncovered, used = set(range(len(lines))), []
     for ex in exceptions:
         rules = [str(r) for r in ex.get("rules", [])]
         if not any(rule == r or rule.startswith(r + ".") for r in rules):
@@ -97,11 +101,14 @@ def covered(rule, library, item, header, details, exceptions):
         if not any(fnmatch.fnmatchcase(key, p) for p in patterns):
             continue
         m = ex.get("match")
-        if m:
-            lines = details or [header]
-            if not all(re.search(m, ln) for ln in lines):
-                continue
-        return ex["id"]
+        if not m:
+            return ex["id"]
+        hit = {i for i in uncovered if re.search(m, lines[i])}
+        if hit:
+            uncovered -= hit
+            used.append(ex["id"])
+        if not uncovered:
+            return ", ".join(used)
     return None
 
 
