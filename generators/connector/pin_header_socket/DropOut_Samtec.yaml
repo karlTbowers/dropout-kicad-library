@@ -1,0 +1,45 @@
+# DropOut footprint specs for the kicad-library-tools connector/pin_header_socket generator.
+# Generate with: scripts/generate_footprint.py generators/connector/pin_header_socket/DropOut_Samtec.yaml --lib DropOut_Connector_Samtec
+# Source documents are archived in the private dropout-vendor-docs repo.
+
+# Samtec FTSH-1xx-01-x-DV (1.27 mm micro header, double row, vertical SMD). Land pattern from
+# Samtec "Recommended PCB layout for FTSH-1XX-XX-XXX-DV-XXX" rev. H, Fig. 1: pads 0.74 x 2.79 mm
+# (.029 x .110), 1.27 mm pitch, 6.86 mm (.270) over both rows -> 4.07 mm row centre spacing.
+# Options -K (keying piece, Table 1 "A" = N/A) and plating -L/-F do not change the pattern;
+# only -A adds alignment-pin holes (not used here). Body from the series print
+# FTSH-1XX-XX-XXX-DV-XXX-XXX-X-XX rev. FZ: 3.43 mm (.135) wide, No. of pos x 1.27 mm long,
+# 2.51 mm (.099) high; -01 post 3.05 mm (.120); tails 5.84 mm (.230) tip to tip.
+# Samtec's drawing has the rows horizontal with 01 bottom-left and 02 above it; the generator
+# draws them vertical (KiCad's pin-header convention) with 1 top-left and 2 to its right,
+# which is the same view rotated 90 deg clockwise, not mirrored.
+Samtec-FTSH-01-DV_Vertical_SMD:
+  lib_format: 'Connector_Samtec'
+  class_name: PinHeader
+  class_descr: Samtec FTSH micro header
+  footpr_format: "Samtec_FTSH-1{pos_count:02}-01-x-DV_{row_count}x{pos_count:02}_P{pin_pitch:03.2f}mm_Vertical_SMD"
+  descr_format: 'surface-mounted straight {class_descr}, {row_count}x{pos_count:02}, {pin_pitch:03.2f}mm pitch, -01 lead style, land pattern per Samtec FTSH-1XX-XX-XXX-DV-XXX footprint rev. H, https://suddendocs.samtec.com/prints/ftsh-1xx-xx-xxx-dv-xxx-footprint.pdf'
+  tags_base: '{mount_text} {class_descr} FTSH {mount_type} {row_count}x{pos_count:02} {pin_pitch:03.2f}mm Samtec'
+  mount_type: SMD
+  mount_text: Surface mounted
+  orientation: Vertical
+  pin_pitch: 1.27
+  pin1_left: True
+  row_count: 2
+  pos_range:
+    range: [5, 5]
+  body:
+    width:  3.43
+    height: 2.51
+    offset: 0.0
+    overlength: 0.0
+  pins:
+    width:  0.41
+    drill:  0.0
+    offset: 0.0
+    length: 3.05
+    smd_length: 2.285   # (5.84 tails tip to tip - 1.27) / 2
+  pads:
+    length: 2.79
+    width:  0.74
+    offset: 1.4         # (6.86 - 1.27 - 2.79) / 2
+  datasheet: https://suddendocs.samtec.com/prints/ftsh-1xx-xx-xxx-dv-xxx-footprint.pdf

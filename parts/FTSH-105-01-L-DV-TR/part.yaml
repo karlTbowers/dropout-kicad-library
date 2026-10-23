@@ -1,0 +1,24 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/FTSH-105-01-L-DV-TR/part.yaml
+# Samtec FTSH 1.27 mm micro header, 2x05, vertical SMD (catalog page F-226, series print
+# FTSH-1XX-XX-XXX-DV-XXX-XXX-X-XX rev. FZ). Code: 05 positions/row, -01 lead style (3.05 mm
+# post), -L 10 µin gold on post / matte tin tail, -DV double vertical; -TR tape and reel.
+# This is the 10-pin Arm Cortex debug (SWD/JTAG) header footprint; NXP's MR-CANHUBK344 uses
+# FTSH-105-01-L-DV (P7A). Numbering as Samtec's print: odd pins in one row, even in the
+# other, as KiCad's Connector_Generic:Conn_02x05_Odd_Even.
+library: DropOut_Connector
+name: FTSH-105-01-L-DV-TR
+pins: pins.csv
+fields:
+  Reference: J
+  Value: FTSH-105-01-L-DV-TR
+  Footprint: DropOut_Connector_Samtec:Samtec_FTSH-105-01-x-DV_2x05_P1.27mm_Vertical_SMD
+  Datasheet: https://suddendocs.samtec.com/catalog_english/ftsh_smt.pdf
+  Description: Samtec FTSH micro header, 2x05, 1.27 mm pitch, vertical SMD, 3.05 mm post, gold flash, -55 to +125 °C; 10-pin Arm Cortex SWD/JTAG debug connector
+  ki_keywords: connector header 2x05 1.27mm SMD Samtec FTSH debug SWD JTAG Cortex
+  ki_fp_filters: Samtec*FTSH?105*DV*
+  Manufacturer: Samtec
+  MPN: FTSH-105-01-L-DV-TR
+  DigiKey_PN: SAM13167CT-ND
+  Mouser_PN: 200-FTSH10501LDVTR
+  Temperature_Grade: -55 to +125 °C (not AEC qualified)

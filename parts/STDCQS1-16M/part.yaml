@@ -1,0 +1,26 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/STDCQS1-16M/part.yaml
+# NDK NX3225SA automotive crystal, NDK spec STD-CQS-1, 16.000 MHz (datasheet NDKX03-00011-002:
+# spec table p. 2, frequency list p. 3, drawing p. 5). The orderable code STDCQS1-16M is
+# <spec>-<frequency> (STD-CQS-1, 16 MHz; DigiKey lists exactly this code). Used as the S32K344
+# FXOSC crystal on NXP's FRDM-A-S32K344 and S32K344MINI-EVB boards (Y1/Y2).
+# Pins (p. 5): #1, #3 crystal; #2, #4 GND, connected to the metal cover. Lid pins are passive
+# "G" as KiCad's Device:Crystal_GND24, but drawn as two separate visible pins (DropOut never
+# combines pins).
+library: DropOut_Timing
+name: STDCQS1-16M
+style: crystal_gnd24
+pins: pins.csv
+fields:
+  Reference: Y
+  Value: STDCQS1-16M
+  Footprint: DropOut_Crystal:Crystal_SMD_NDK_NX3225SA-4Pin_3.2x2.5mm
+  Datasheet: https://www.ndk.com/en/products/upload/lineup/pdf/NDKX03-00011_en.pdf
+  Description: NDK NX3225SA 16 MHz crystal, fundamental, CL 8 pF, ±15 ppm at 25 °C, ±50 ppm over temperature, ESR 120 Ω max, -40 to +125 °C, AEC-Q200, 3.2x2.5 mm
+  ki_keywords: crystal quartz 16MHz automotive AEC-Q200
+  ki_fp_filters: Crystal*NDK*NX3225SA*
+  Manufacturer: NDK
+  MPN: STDCQS1-16M
+  DigiKey_PN: 644-STDCQS1-16MCT-ND
+  Mouser_PN: '-'
+  Temperature_Grade: AEC-Q200, -40 to +125 °C
