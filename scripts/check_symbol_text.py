@@ -114,6 +114,11 @@ def field_box(prop):
     tl = text_len(prop[2], w)
     if rot in (90, 270):
         return (x - h / 2, y - tl / 2, x + h / 2, y + tl / 2)
+    j = find(find(prop, "effects") or [], "justify") or []
+    if "left" in j:
+        return (x, y - h / 2, x + tl, y + h / 2)
+    if "right" in j:
+        return (x - tl, y - h / 2, x, y + h / 2)
     return (x - tl / 2, y - h / 2, x + tl / 2, y + h / 2)
 
 

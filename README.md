@@ -42,13 +42,14 @@ Planned categories (created as the first part in each one is added). Microcontro
 | `DropOut_Connector_Samtec` | Footprints and 3D models for Samtec connectors |
 | `DropOut_Connector_TE-Connectivity` | Footprints and 3D models for TE Connectivity connectors (incl. DEUTSCH), named after KiCad's `Connector_TE-Connectivity` |
 | `DropOut_Diode_SMD` | Footprints and 3D models for SMD diode packages (DO-218, DO-214, SOD...) |
+| `DropOut_Capacitor_SMD` | Footprints and 3D models for MLCCs (one per size code, shared by every DropOut MLCC of that size) |
 | `DropOut_Inductor_SMD` | Footprints and 3D models for SMD inductors and common mode chokes |
 | `DropOut_Package_BGA` | Footprints and 3D models for ball grid array packages (footprint libraries follow KLC package-type naming) |
 | `DropOut_Package_DFN_QFN` | Footprints and 3D models for DFN/QFN (no-lead) packages |
 | `DropOut_Package_QFP` | Footprints and 3D models for quad flat packages (LQFP, TQFP) |
 | `DropOut_Package_SO` | Footprints and 3D models for small-outline packages (SOIC, SSOP, TSSOP, HTSSOP) |
 | `DropOut_Package_TO_SOT_SMD` | Footprints and 3D models for SOT/TSOT/TO SMD packages, including TOLL-family power MOSFETs |
-| `DropOut_Resistor_SMD` | Footprints and 3D models for SMD resistors, including current-sense shunts with manufacturer land patterns |
+| `DropOut_Resistor_SMD` | Footprints and 3D models for SMD resistors: chip resistors (one IPC footprint per size code), current-sense shunts with manufacturer land patterns |
 | `DropOut_TestPoint` | Footprints and 3D models for test points: bare pads and SMD/THT test loops (as KiCad's stock `TestPoint`) |
 
 ## Using it in a project

@@ -26,6 +26,8 @@ part.yaml:
   style: testpoint                       # optional graphic style for small parts (see STYLES)
   in_bom: false                          # optional, default true: false for a part with nothing to
   in_pos_files: false                    #   buy or place (a bare-copper test pad)
+  field_layout:                          # optional: per-field position, size and visibility,
+    MPN: {at: [2.54, -2.667], size: 1.0, show: true}   # left-justified at `at` (symbol mm, y up)
 
 pins.csv columns (header row required):
   number      pin/ball number as on the footprint
@@ -199,6 +201,14 @@ def vertical_two_pin(pins, graphic, pin_len):
     out = graphic + [pin_sexpr(top[0], 0, 1.5 * G, 270, length=pin_len),
                      pin_sexpr(bottom[0], 0, -1.5 * G, 90, length=pin_len)]
     return out, 1.5 * G, 1.5 * G
+
+
+def style_capacitor(pins):
+    # Two plates as KiCad's Device:C (unpolarised); 100 mil pins (KLC S4.1: lengths in 50 mil
+    # steps), so a 20 mil gap is left between pin end and plate
+    g = [poly([(-2.032, 0.762), (2.032, 0.762)], width=0.508),
+         poly([(-2.032, -0.762), (2.032, -0.762)], width=0.508)]
+    return vertical_two_pin(pins, g, G)
 
 
 def style_tvs_bidirectional(pins):
@@ -403,10 +413,11 @@ def style_testpoint(pins):
 STYLES = {"tvs_bidirectional": style_tvs_bidirectional, "crystal_gnd24": style_crystal_gnd24,
           "cmc_4pin": style_cmc_4pin, "inductor": style_inductor, "testpoint": style_testpoint,
           "resistor": style_resistor, "resistor_shunt_4pin": style_resistor_shunt_4pin, "nmos": style_nmos,
-          "thermistor_ntc": style_thermistor_ntc}
+          "thermistor_ntc": style_thermistor_ntc, "capacitor": style_capacitor}
 # Reference and Value beside the body, left-justified, for the narrow vertical styles (as
 # KiCad's Device:C; a long MPN Value would not fit inside Device:R's body)
-STYLE_FIELDS = {"inductor": {"Reference": (2.54, 1.27), "Value": (2.54, -1.27)}}
+STYLE_FIELDS = {"inductor": {"Reference": (2.54, 1.27), "Value": (2.54, -1.27)},
+                "capacitor": {"Reference": (2.54, 1.27), "Value": (2.54, -1.27)}}
 # Reference and Value positions where the default (above and below the body) doesn't fit:
 # a test point's connection point is at the bottom, so both go above it, as on KiCad's TestPoint
 STYLE_FIELD_Y = {"testpoint": {"Reference": 6.858, "Value": 5.08}}
@@ -438,12 +449,17 @@ def build_symbol(part, pins):
              f"\t\t(in_bom {yn('in_bom')})", "\t\t(on_board yes)", f"\t\t(in_pos_files {yn('in_pos_files')})"]
     field_y = {"Reference": top + G, "Value": -bottom - G, **STYLE_FIELD_Y.get(style, {})}
     beside = STYLE_FIELDS.get(style, {})
+    layout = part.get("field_layout") or {}
     for k, v in part["fields"].items():
         x, y = beside.get(k, (0, field_y.get(k, 0)))
-        hide = "" if k in VISIBLE else "\n\t\t\t(hide yes)"
-        justify = " (justify left)" if k in beside else ""
+        shown, size, left = k in VISIBLE, 1.27, k in beside
+        if k in layout:
+            x, y = layout[k]["at"]
+            shown, size, left = layout[k].get("show", shown), layout[k].get("size", 1.27), True
+        hide = "" if shown else "\n\t\t\t(hide yes)"
+        justify = " (justify left)" if left else ""
         lines.append(f'\t\t(property "{esc(k)}" "{esc(str(v))}"\n\t\t\t(at {fmt(x)} {fmt(y)} 0){hide}\n'
-                     f"\t\t\t(effects (font (size 1.27 1.27)){justify})\n\t\t)")
+                     f"\t\t\t(effects (font (size {fmt(size)} {fmt(size)})){justify})\n\t\t)")
     for i, (body, _, _) in enumerate(units, start=1):
         lines.append(f'\t\t(symbol "{esc(name)}_{i}_1"')
         lines.extend(body)

@@ -1,0 +1,1399 @@
+# Chip resistors and MLCCs: one row per orderable MPN. scripts/passivegen.py turns each row into
+# parts/<MPN>/part.yaml + pins.csv and builds its symbol; edit this file, never the generated files.
+#
+# families: what an ordering-code family has in common (manufacturer, datasheet, construction,
+#   temperature range). `datasheet: per part` takes each row's own `datasheet`.
+# parts: mpn, family, value (handbook D-45 short form: 10k, 49.9R, 0R, 100nF, 4.7uF), size (EIA),
+#   ratings (tolerance, voltage, power, tcr for resistors; voltage, tolerance, dielectric for MLCCs;
+#   current for 0R jumpers), digikey/mouser product numbers ("-" = not stocked), line (the part-search
+#   line the part was chosen for), notes (become the Notes field), observed (dated stock and price).
+#
+# Selection (Node60 schematic passives, 2026-10-22/23): AEC-Q200, rated to +125 °C or more, two or
+# more manufacturers per line where AEC-Q200 parts exist; every candidate is built, rejected ones too.
+families:
+  yageo_ac:
+    kind: R
+    manufacturer: Yageo
+    series: AC
+    construction: thick film
+    grade: AEC-Q200
+    temperature: -55 to +155 °C
+    datasheet: https://yageogroup.com/content/datasheet/asset/file/PYU-AC_51_ROHS_L
+    source: Yageo AC series product specification PYu-AC_51 V.11 (17 Nov 2023), Table 1 dimensions, Table 2 ratings
+    keywords: resistor thick film automotive
+  panasonic_erj_g:
+    kind: R
+    manufacturer: Panasonic
+    series: ERJ-G
+    construction: thick film
+    grade: AEC-Q200
+    temperature: -55 to +155 °C
+    datasheet: https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C301.pdf
+    source: Panasonic Thick Film Chip Resistors ERJ type AOA0000C301 (ERJ2G/3G ratings, jumper ratings, dimensions)
+    keywords: resistor thick film automotive
+  panasonic_erj_precision:
+    kind: R
+    manufacturer: Panasonic
+    series: ERJ-2RK/3EK
+    construction: precision thick film
+    grade: AEC-Q200
+    temperature: -55 to +155 °C
+    datasheet: https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf
+    source: Panasonic Precision Thick Film Chip Resistors ERJ type AOA0000C304 (29-May-25), ratings ±1 % table,
+      dimensions
+    keywords: resistor thick film precision automotive
+  vishay_crcw:
+    kind: R
+    manufacturer: Vishay
+    series: CRCW e3
+    construction: thick film
+    grade: AEC-Q200
+    temperature: -55 to +155 °C
+    datasheet: https://www.vishay.com/docs/20035/dcrcwe3.pdf
+    source: Vishay D/CRCW e3 doc 20035 (rev. 14-Apr-2026), TCR and resistance range table (jumper Imax), dimensions
+    keywords: resistor jumper thick film automotive
+  vishay_crcw_hp:
+    kind: R
+    manufacturer: Vishay
+    series: CRCW-HP e3
+    construction: pulse proof high power thick film
+    grade: AEC-Q200
+    temperature: -55 to +155 °C
+    datasheet: https://www.vishay.com/docs/20043/crcwhpe3.pdf
+    source: Vishay CRCW-HP e3 doc 20043 (rev. 17-Mar-2026), TCR and resistance range table (jumper Imax), dimensions
+    keywords: resistor jumper thick film pulse automotive
+  koa_rk73z:
+    kind: R
+    manufacturer: KOA Speer
+    series: RK73Z
+    construction: thick film
+    grade: AEC-Q200
+    temperature: -55 to +155 °C
+    datasheet: https://www.koaspeer.com/pdfs/RK73Z.pdf
+    source: KOA Speer RK73Z zero ohm jumper datasheet (applications and ratings table, dimensions)
+    keywords: resistor jumper thick film automotive
+  vishay_tnpw:
+    kind: R
+    manufacturer: Vishay
+    series: TNPW e3
+    construction: thin film
+    grade: AEC-Q200
+    temperature: -55 to +175 °C
+    datasheet: https://www.vishay.com/docs/28758/tnpw_e3.pdf
+    source: Vishay TNPW e3 doc 28758 (rev. 10-Apr-2026), technical specifications and dimensions
+    keywords: resistor thin film precision automotive
+  susumu_rg:
+    kind: R
+    manufacturer: Susumu
+    series: RG
+    construction: thin film
+    grade: AEC-Q200
+    temperature: -55 to +155 °C
+    datasheet: https://www.susumu.co.jp/dl/?filename=n_catalog_partition01_en.pdf&type=application/pdf
+    source: Susumu RG series catalog (partition 01), ratings table (RG1608, TCR code P = ±25 ppm/K) and dimensions
+    keywords: resistor thin film precision automotive
+  panasonic_era:
+    kind: R
+    manufacturer: Panasonic
+    series: ERA-A
+    construction: thin film
+    grade: AEC-Q200
+    temperature: -55 to +155 °C
+    datasheet: https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf
+    source: Panasonic Metal Film (Thin Film) Chip Resistors ERA A type AOA0000C307, ratings (ERA3AEB) and dimensions
+    keywords: resistor thin film precision automotive
+  stackpole_rncf:
+    kind: R
+    manufacturer: Stackpole
+    series: RNCF
+    construction: thin film
+    grade: AEC-Q200
+    temperature: -55 to +155 °C
+    datasheet: https://www.seielect.com/catalog/SEI-RNCF.pdf
+    source: Stackpole RNCF datasheet (rev. 5/20/2026), ratings and how-to-order (B = 0.1 %, T = 7 inch paper reel,
+      E = 25 ppm/K)
+    keywords: resistor thin film precision automotive
+  murata_gcm:
+    kind: C
+    manufacturer: Murata
+    series: GCM
+    construction: MLCC for automotive powertrain/safety
+    grade: AEC-Q200
+    temperature: -55 to +125 °C
+    datasheet: per part
+    source: Murata reference sheet of this part (dimensions, rated values, package codes; AEC-Q200 Rev.D test table)
+    keywords: capacitor ceramic MLCC automotive
+  murata_gcj:
+    kind: C
+    manufacturer: Murata
+    series: GCJ
+    construction: soft termination MLCC for automotive
+    grade: AEC-Q200
+    temperature: -55 to +125 °C
+    datasheet: per part
+    source: Murata reference sheet of this part (dimensions, rated values, package codes; AEC-Q200 Rev.D test table)
+    keywords: capacitor ceramic MLCC soft termination automotive
+  tdk_cga:
+    kind: C
+    manufacturer: TDK
+    series: CGA
+    construction: automotive MLCC
+    grade: AEC-Q200
+    temperature: -55 to +125 °C
+    datasheet: https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_automotive_general_en.pdf
+    source: TDK MLCC catalog Automotive grade, general (up to 75 V), 20260901 (catalog number construction, dimensions,
+      capacitance range tables)
+    keywords: capacitor ceramic MLCC automotive
+  tdk_cga_mid:
+    kind: C
+    manufacturer: TDK
+    series: CGA
+    construction: automotive mid voltage MLCC
+    grade: AEC-Q200
+    temperature: -55 to +125 °C
+    datasheet: https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_automotive_midvoltage_en.pdf
+    source: TDK MLCC catalog Automotive grade, mid voltage (100 to 630 V), 20260925 (capacitance range tables, dimensions)
+    keywords: capacitor ceramic MLCC automotive
+  tdk_cna:
+    kind: C
+    manufacturer: TDK
+    series: CNA
+    construction: soft termination automotive MLCC
+    grade: AEC-Q200
+    temperature: -55 to +125 °C
+    datasheet: https://product.tdk.com/en/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_automotive_soft_cna_en.pdf
+    source: TDK MLCC catalog Automotive grade, soft termination CNA, 20260821 (capacitance range table, dimensions)
+    keywords: capacitor ceramic MLCC soft termination automotive
+  kemet_c0g_auto:
+    kind: C
+    manufacturer: KEMET
+    series: AUTO
+    construction: automotive grade MLCC
+    grade: AEC-Q200
+    temperature: -55 to +125 °C
+    datasheet: https://content.kemet.com/datasheets/KEM_C1022_C0G_AUTO_SMD.pdf
+    source: KEMET C1022 C0G automotive grade SMD datasheet (ordering information, dimensions)
+    keywords: capacitor ceramic MLCC automotive
+  kemet_x7r_auto:
+    kind: C
+    manufacturer: KEMET
+    series: AUTO
+    construction: automotive grade MLCC
+    grade: AEC-Q200
+    temperature: -55 to +125 °C
+    datasheet: https://content.kemet.com/datasheets/KEM_C1023_X7R_AUTO_SMD.pdf
+    source: KEMET C1023 X7R automotive grade SMD datasheet (2026-08-19; ordering information, dimensions)
+    keywords: capacitor ceramic MLCC automotive
+  avx_auto:
+    kind: C
+    manufacturer: KYOCERA AVX
+    series: Automotive MLCC
+    construction: automotive MLCC
+    grade: AEC-Q200
+    temperature: -55 to +125 °C
+    datasheet: https://datasheets.kyocera-avx.com/AutoMLCC.pdf
+    source: 'KYOCERA AVX Automotive MLCC catalog (how to order: 4 = automotive, T = Ni/Sn, 2 = 7 inch reel)'
+    keywords: capacitor ceramic MLCC automotive
+  avx_kam:
+    kind: C
+    manufacturer: KYOCERA AVX
+    series: KAM
+    construction: automotive MLCC
+    grade: AEC-Q200
+    temperature: -55 to +125 °C
+    datasheet: https://datasheets.kyocera-avx.com/AutoMLCCKAM.pdf
+    source: KYOCERA AVX KAM automotive MLCC datasheet TDS-SMDMLCC-0033 Rev 20 (how to order, dimensions)
+    keywords: capacitor ceramic MLCC automotive
+  yageo_ac_mlcc:
+    kind: C
+    manufacturer: Yageo
+    series: AC
+    construction: automotive MLCC
+    grade: AEC-Q200
+    temperature: -55 to +125 °C
+    datasheet: https://yageogroup.com/content/datasheet/asset/file/UPY-AC_NP0X7RX7S_6_3V-TO-2KV
+    source: Yageo AC series NP0/X7R/X7S 6.3 V to 2 kV product specification V.25 (21 Jan 2026)
+    keywords: capacitor ceramic MLCC automotive
+  taiyo_mcas:
+    kind: C
+    manufacturer: Taiyo Yuden
+    series: MCAS
+    construction: MLCC for automotive body/infotainment
+    grade: AEC-Q200
+    temperature: -55 to +125 °C
+    datasheet: https://ds.yuden.co.jp/TYCOMPAS/ut/detail?pn=MCASU168SB7474KTCA01
+    source: Taiyo Yuden TY-COMPAS product page of this part (specifications and dimensions; the spec sheet PDF did
+      not download)
+    keywords: capacitor ceramic MLCC automotive
+parts:
+- mpn: AC0402JR-0710RL
+  family: yageo_ac
+  value: 10R
+  size: '0402'
+  tolerance: ±5%
+  tcr: ±200 ppm/K
+  power: 1/16 W
+  voltage: 50 V
+  line: 5 % 0402
+  digikey: YAG3519CT-ND
+  mouser: 603-AC0402JR-0710RL
+  observed:
+    digikey: YAG3519CT-ND 29470 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 603-AC0402JR-0710RL 9143 in stock, $0.11 @1, $0.008 @1k (2026-10-23)
+- mpn: AC0402JR-0733RL
+  family: yageo_ac
+  value: 33R
+  size: '0402'
+  tolerance: ±5%
+  tcr: ±200 ppm/K
+  power: 1/16 W
+  voltage: 50 V
+  line: 5 % 0402
+  digikey: YAG3543CT-ND
+  mouser: 603-AC0402JR-0733RL
+  observed:
+    digikey: YAG3543CT-ND 229130 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 603-AC0402JR-0733RL 11975 in stock, $0.11 @1, $0.006 @1k (2026-10-23)
+- mpn: AC0402JR-072K2L
+  family: yageo_ac
+  value: 2.2k
+  size: '0402'
+  tolerance: ±5%
+  tcr: ±200 ppm/K
+  power: 1/16 W
+  voltage: 50 V
+  line: 5 % 0402
+  digikey: YAG3536CT-ND
+  mouser: 603-AC0402JR-072K2L
+  observed:
+    digikey: YAG3536CT-ND 300000 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 603-AC0402JR-072K2L 1799 in stock, $0.1 @1, $0.006 @1k (2026-10-23)
+- mpn: AC0402JR-074K7L
+  family: yageo_ac
+  value: 4.7k
+  size: '0402'
+  tolerance: ±5%
+  tcr: ±200 ppm/K
+  power: 1/16 W
+  voltage: 50 V
+  line: 5 % 0402
+  digikey: 311-4.7KLBCT-ND
+  mouser: 603-AC0402JR-074K7L
+  observed:
+    digikey: 311-4.7KLBCT-ND 31423 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 603-AC0402JR-074K7L 298 in stock, $0.11 @1, $0.007 @1k (2026-10-23)
+- mpn: AC0402JR-0710KL
+  family: yageo_ac
+  value: 10k
+  size: '0402'
+  tolerance: ±5%
+  tcr: ±200 ppm/K
+  power: 1/16 W
+  voltage: 50 V
+  line: 5 % 0402
+  digikey: YAG3517CT-ND
+  mouser: 603-AC0402JR-0710KL
+  observed:
+    digikey: YAG3517CT-ND 443303 in stock, $0.1 @1, $0.0057 @1k (2026-10-22)
+    mouser: 603-AC0402JR-0710KL 261272 in stock, $0.1 @1, $0.006 @1k (2026-10-23)
+- mpn: ERJ-2GEJ100X
+  family: panasonic_erj_g
+  value: 10R
+  size: '0402'
+  tolerance: ±5%
+  tcr: ±200 ppm/K
+  power: 0.1 W
+  voltage: 50 V
+  line: 5 % 0402
+  digikey: P10JCT-ND
+  mouser: 667-ERJ-2GEJ100X
+  observed:
+    digikey: P10JCT-ND 307667 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 667-ERJ-2GEJ100X 287432 in stock, $0.11 @1, $0.01 @1k (2026-10-23)
+- mpn: ERJ-2GEJ330X
+  family: panasonic_erj_g
+  value: 33R
+  size: '0402'
+  tolerance: ±5%
+  tcr: ±200 ppm/K
+  power: 0.1 W
+  voltage: 50 V
+  line: 5 % 0402
+  digikey: P33JCT-ND
+  mouser: 667-ERJ-2GEJ330X
+  observed:
+    digikey: P33JCT-ND 0 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 667-ERJ-2GEJ330X 0 in stock, $0.1 @1, $0.008 @1k (2026-10-23)
+- mpn: ERJ-2GEJ222X
+  family: panasonic_erj_g
+  value: 2.2k
+  size: '0402'
+  tolerance: ±5%
+  tcr: ±200 ppm/K
+  power: 0.1 W
+  voltage: 50 V
+  line: 5 % 0402
+  digikey: P2.2KJCT-ND
+  mouser: 667-ERJ-2GEJ222X
+  observed:
+    digikey: P2.2KJCT-ND 684661 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 667-ERJ-2GEJ222X 75496 in stock, $0.1 @1, $0.008 @1k (2026-10-23)
+- mpn: ERJ-2GEJ472X
+  family: panasonic_erj_g
+  value: 4.7k
+  size: '0402'
+  tolerance: ±5%
+  tcr: ±200 ppm/K
+  power: 0.1 W
+  voltage: 50 V
+  line: 5 % 0402
+  digikey: P4.7KJCT-ND
+  mouser: 667-ERJ-2GEJ472X
+  observed:
+    digikey: P4.7KJCT-ND 1200672 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 667-ERJ-2GEJ472X 380861 in stock, $0.11 @1, $0.009 @1k (2026-10-23)
+- mpn: ERJ-2GEJ103X
+  family: panasonic_erj_g
+  value: 10k
+  size: '0402'
+  tolerance: ±5%
+  tcr: ±200 ppm/K
+  power: 0.1 W
+  voltage: 50 V
+  line: 5 % 0402
+  digikey: P10KJCT-ND
+  mouser: 667-ERJ-2GEJ103X
+  observed:
+    digikey: P10KJCT-ND 5122892 in stock, $0.11 @1, $0.0083 @1k (2026-10-22)
+    mouser: 667-ERJ-2GEJ103X 1585902 in stock, $0.11 @1, $0.009 @1k (2026-10-23)
+- mpn: AC0402JR-070RL
+  family: yageo_ac
+  value: 0R
+  size: '0402'
+  current: 1 A
+  line: 0R 0402
+  digikey: 311-0.0LBCT-ND
+  mouser: 603-AC0402JR-070RL
+  observed:
+    digikey: 311-0.0LBCT-ND 3645055 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 603-AC0402JR-070RL 3010307 in stock, $0.1 @1, $0.005 @1k (2026-10-23)
+- mpn: ERJ-2GE0R00X
+  family: panasonic_erj_g
+  value: 0R
+  size: '0402'
+  current: 1 A
+  line: 0R 0402
+  digikey: P0.0JCT-ND
+  mouser: 667-ERJ-2GE0R00X
+  observed:
+    digikey: P0.0JCT-ND 14915157 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 667-ERJ-2GE0R00X 8589736 in stock, $0.1 @1, $0.007 @1k (2026-10-23)
+- mpn: CRCW06030000Z0EA
+  family: vishay_crcw
+  value: 0R
+  size: '0603'
+  current: 2.0 A
+  line: 0R 0603 >= 2 A
+  digikey: 541-0.0GCT-ND
+  mouser: 71-CRCW0603-0-E3
+  observed:
+    digikey: 541-0.0GCT-ND 4284500 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 71-CRCW0603-0-E3 2350389 in stock, $0.1 @1, $0.007 @1k (2026-10-23)
+- mpn: CRCW06030000Z0EAHP
+  family: vishay_crcw_hp
+  value: 0R
+  size: '0603'
+  current: 5 A
+  line: 0R 0603 >= 2 A
+  digikey: 541-0.0SBCT-ND
+  mouser: 71-CRCW06030000Z0EAH
+  observed:
+    digikey: 541-0.0SBCT-ND 833404 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 71-CRCW06030000Z0EAH 2962 in stock, $0.1 @1, $0.025 @1k (2026-10-23)
+- mpn: AC0603JR-070RL
+  family: yageo_ac
+  value: 0R
+  size: '0603'
+  current: 1 A
+  line: 0R 0603 >= 2 A (rejected)
+  notes: 'Rejected for the Node60 0R 0603 regulator-output debug links, which need a 2 A rated jumper: this one
+    is rated 1 A, 2 A maximum (Yageo AC Table 2). Kept as a part-search candidate.'
+  digikey: 311-0.0LECT-ND
+  mouser: 603-AC0603JR-070RL
+  observed:
+    digikey: 311-0.0LECT-ND 0 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 603-AC0603JR-070RL 415107 in stock, $0.1 @1, $0.006 @1k (2026-10-23)
+- mpn: ERJ-3GEY0R00V
+  family: panasonic_erj_g
+  value: 0R
+  size: '0603'
+  current: 1 A
+  line: 0R 0603 >= 2 A (rejected)
+  notes: 'Rejected for the Node60 0R 0603 regulator-output debug links, which need a 2 A rated jumper: this one
+    is rated 1 A, 2 A maximum overload (AOA0000C301 jumper table). Kept as a part-search candidate.'
+  digikey: P0.0GCT-ND
+  mouser: 667-ERJ-3GEY0R00V
+  observed:
+    digikey: P0.0GCT-ND 4623220 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 667-ERJ-3GEY0R00V 2310066 in stock, $0.1 @1, $0.01 @1k (2026-10-23)
+- mpn: RK73Z1JTTD
+  family: koa_rk73z
+  value: 0R
+  size: '0603'
+  current: 1 A
+  line: 0R 0603 >= 2 A (rejected)
+  notes: 'Rejected for the Node60 0R 0603 regulator-output debug links, which need a 2 A rated jumper: this one
+    is rated 1 A, 2 A maximum overload (RK73Z ratings table). Kept as a part-search candidate.'
+  digikey: 2019-RK73Z1JTTDCT-ND
+  mouser: 660-RK73Z1JTTD
+  observed:
+    digikey: 2019-RK73Z1JTTDCT-ND 3504325 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 660-RK73Z1JTTD 37979 in stock, $0.1 @1, $0.004 @1k (2026-10-23)
+- mpn: AC0402FR-0712K4L
+  family: yageo_ac
+  value: 12.4k
+  size: '0402'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 1/16 W
+  voltage: 50 V
+  line: 1 % 0402
+  digikey: YAG5256CT-ND
+  mouser: 603-AC0402FR-0712K4L
+  observed:
+    digikey: YAG5256CT-ND 43305 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 603-AC0402FR-0712K4L 278828 in stock, $0.1 @1, $0.007 @1k (2026-10-23)
+- mpn: AC0402FR-0714KL
+  family: yageo_ac
+  value: 14k
+  size: '0402'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 1/16 W
+  voltage: 50 V
+  line: 1 % 0402
+  digikey: 13-AC0402FR-0714KLCT-ND
+  mouser: 603-AC0402FR-0714KL
+  observed:
+    digikey: 13-AC0402FR-0714KLCT-ND 30231 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 603-AC0402FR-0714KL 145608 in stock, $0.1 @1, $0.007 @1k (2026-10-23)
+- mpn: AC0402FR-0728KL
+  family: yageo_ac
+  value: 28k
+  size: '0402'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 1/16 W
+  voltage: 50 V
+  line: 1 % 0402
+  digikey: 13-AC0402FR-0728KLCT-ND
+  mouser: 603-AC0402FR-0728KL
+  observed:
+    digikey: 13-AC0402FR-0728KLCT-ND 54750 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 603-AC0402FR-0728KL 8999 in stock, $0.1 @1, $0.007 @1k (2026-10-23)
+- mpn: AC0402FR-07100KL
+  family: yageo_ac
+  value: 100k
+  size: '0402'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 1/16 W
+  voltage: 50 V
+  line: 1 % 0402
+  digikey: YAG3434CT-ND
+  mouser: 603-AC0402FR-07100KL
+  observed:
+    digikey: YAG3434CT-ND 541165 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 603-AC0402FR-07100KL 466108 in stock, $0.11 @1, $0.007 @1k (2026-10-23)
+- mpn: ERJ-2RKF1242X
+  family: panasonic_erj_precision
+  value: 12.4k
+  size: '0402'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 0.1 W
+  voltage: 50 V
+  line: 1 % 0402
+  digikey: P12.4KLCT-ND
+  mouser: 667-ERJ-2RKF1242X
+  observed:
+    digikey: P12.4KLCT-ND 206920 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 667-ERJ-2RKF1242X 22020 in stock, $0.1 @1, $0.009 @1k (2026-10-23)
+- mpn: ERJ-2RKF1402X
+  family: panasonic_erj_precision
+  value: 14k
+  size: '0402'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 0.1 W
+  voltage: 50 V
+  line: 1 % 0402
+  digikey: P14.0KLCT-ND
+  mouser: 667-ERJ-2RKF1402X
+  observed:
+    digikey: P14.0KLCT-ND 2133 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 667-ERJ-2RKF1402X 48270 in stock, $0.1 @1, $0.009 @1k (2026-10-23)
+- mpn: ERJ-2RKF2802X
+  family: panasonic_erj_precision
+  value: 28k
+  size: '0402'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 0.1 W
+  voltage: 50 V
+  line: 1 % 0402
+  digikey: P28.0KLCT-ND
+  mouser: 667-ERJ-2RKF2802X
+  observed:
+    digikey: P28.0KLCT-ND 101640 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 667-ERJ-2RKF2802X 118168 in stock, $0.1 @1, $0.009 @1k (2026-10-23)
+- mpn: ERJ-2RKF1003X
+  family: panasonic_erj_precision
+  value: 100k
+  size: '0402'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 0.1 W
+  voltage: 50 V
+  line: 1 % 0402
+  digikey: P100KLCT-ND
+  mouser: 667-ERJ-2RKF1003X
+  observed:
+    digikey: P100KLCT-ND 3822903 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 667-ERJ-2RKF1003X 3098551 in stock, $0.1 @1, $0.009 @1k (2026-10-23)
+- mpn: AC0603FR-0749R9L
+  family: yageo_ac
+  value: 49.9R
+  size: '0603'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 1/10 W
+  voltage: 75 V
+  line: 1 % 0603 >= 50 V
+  digikey: YAG3611CT-ND
+  mouser: 603-AC0603FR-0749R9L
+  observed:
+    digikey: YAG3611CT-ND 42422 in stock, $0.1 @1, $0.0075 @1k (2026-10-22)
+    mouser: 603-AC0603FR-0749R9L 663323 in stock, $0.1 @1, $0.008 @1k (2026-10-23)
+- mpn: AC0603FR-07100RL
+  family: yageo_ac
+  value: 100R
+  size: '0603'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 1/10 W
+  voltage: 75 V
+  line: 1 % 0603 >= 50 V
+  digikey: YAG3561CT-ND
+  mouser: 603-AC0603FR-07100RL
+  observed:
+    digikey: YAG3561CT-ND 384585 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 603-AC0603FR-07100RL 985161 in stock, $0.1 @1, $0.008 @1k (2026-10-23)
+- mpn: AC0603FR-072KL
+  family: yageo_ac
+  value: 2k
+  size: '0603'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 1/10 W
+  voltage: 75 V
+  line: 1 % 0603 >= 50 V
+  digikey: YAG3590CT-ND
+  mouser: 603-AC0603FR-072KL
+  observed:
+    digikey: YAG3590CT-ND 76515 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 603-AC0603FR-072KL 47937 in stock, $0.1 @1, $0.008 @1k (2026-10-23)
+- mpn: AC0603FR-072K1L
+  family: yageo_ac
+  value: 2.1k
+  size: '0603'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 1/10 W
+  voltage: 75 V
+  line: 1 % 0603 >= 50 V
+  digikey: 13-AC0603FR-072K1LCT-ND
+  mouser: 603-AC0603FR-072K1L
+  observed:
+    digikey: 13-AC0603FR-072K1LCT-ND 11665 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 603-AC0603FR-072K1L 78239 in stock, $0.1 @1, $0.008 @1k (2026-10-23)
+- mpn: AC0603FR-077K87L
+  family: yageo_ac
+  value: 7.87k
+  size: '0603'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 1/10 W
+  voltage: 75 V
+  line: 1 % 0603 >= 50 V
+  digikey: 13-AC0603FR-077K87LCT-ND
+  mouser: 603-AC0603FR-077K87L
+  observed:
+    digikey: 13-AC0603FR-077K87LCT-ND 8919 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 603-AC0603FR-077K87L 45367 in stock, $0.1 @1, $0.008 @1k (2026-10-23)
+- mpn: AC0603FR-07107KL
+  family: yageo_ac
+  value: 107k
+  size: '0603'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 1/10 W
+  voltage: 75 V
+  line: 1 % 0603 >= 50 V
+  digikey: 13-AC0603FR-07107KLCT-ND
+  mouser: 603-AC0603FR-07107KL
+  observed:
+    digikey: 13-AC0603FR-07107KLCT-ND 1668 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 603-AC0603FR-07107KL 133897 in stock, $0.1 @1, $0.008 @1k (2026-10-23)
+- mpn: ERJ-3EKF49R9V
+  family: panasonic_erj_precision
+  value: 49.9R
+  size: '0603'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 0.1 W
+  voltage: 75 V
+  line: 1 % 0603 >= 50 V
+  digikey: P49.9HCT-ND
+  mouser: 667-ERJ-3EKF49R9V
+  observed:
+    digikey: P49.9HCT-ND 259646 in stock, $0.1 @1, $0.0113 @1k (2026-10-22)
+    mouser: 667-ERJ-3EKF49R9V 518105 in stock, $0.1 @1, $0.012 @1k (2026-10-23)
+- mpn: ERJ-3EKF1000V
+  family: panasonic_erj_precision
+  value: 100R
+  size: '0603'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 0.1 W
+  voltage: 75 V
+  line: 1 % 0603 >= 50 V
+  digikey: P100HCT-ND
+  mouser: 667-ERJ-3EKF1000V
+  observed:
+    digikey: P100HCT-ND 2435796 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 667-ERJ-3EKF1000V 1431472 in stock, $0.1 @1, $0.012 @1k (2026-10-23)
+- mpn: ERJ-3EKF2001V
+  family: panasonic_erj_precision
+  value: 2k
+  size: '0603'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 0.1 W
+  voltage: 75 V
+  line: 1 % 0603 >= 50 V
+  digikey: P2.00KHCT-ND
+  mouser: 667-ERJ-3EKF2001V
+  observed:
+    digikey: P2.00KHCT-ND 1175158 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 667-ERJ-3EKF2001V 596065 in stock, $0.11 @1, $0.012 @1k (2026-10-23)
+- mpn: ERJ-3EKF2101V
+  family: panasonic_erj_precision
+  value: 2.1k
+  size: '0603'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 0.1 W
+  voltage: 75 V
+  line: 1 % 0603 >= 50 V
+  digikey: P2.10KHCT-ND
+  mouser: 667-ERJ-3EKF2101V
+  observed:
+    digikey: P2.10KHCT-ND 11889 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 667-ERJ-3EKF2101V 83665 in stock, $0.1 @1, $0.012 @1k (2026-10-23)
+- mpn: ERJ-3EKF7871V
+  family: panasonic_erj_precision
+  value: 7.87k
+  size: '0603'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 0.1 W
+  voltage: 75 V
+  line: 1 % 0603 >= 50 V
+  digikey: P7.87KHCT-ND
+  mouser: 667-ERJ-3EKF7871V
+  observed:
+    digikey: P7.87KHCT-ND 4596 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 667-ERJ-3EKF7871V 3364 in stock, $0.1 @1, $0.012 @1k (2026-10-23)
+- mpn: ERJ-3EKF1073V
+  family: panasonic_erj_precision
+  value: 107k
+  size: '0603'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 0.1 W
+  voltage: 75 V
+  line: 1 % 0603 >= 50 V
+  digikey: P107KHCT-ND
+  mouser: 667-ERJ-3EKF1073V
+  observed:
+    digikey: P107KHCT-ND 61040 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 667-ERJ-3EKF1073V 3763 in stock, $0.1 @1, $0.012 @1k (2026-10-23)
+- mpn: TNPW060332K0BEEA
+  family: vishay_tnpw
+  value: 32k
+  size: '0603'
+  tolerance: ±0.1%
+  tcr: ±25 ppm/K
+  power: 0.11 W
+  voltage: 100 V
+  line: 1 % 0603 >= 50 V
+  notes: '32 kΩ is an E192 value: no AEC-Q200 1 % thick film part offers it (Yageo AC and Panasonic ERJ-3EKF are
+    E24/E96 only), so this 0.1 % thin film part serves the 1 % line.'
+  digikey: 541-TNPW060332K0BEEACT-ND
+  mouser: 71-TNPW060332K0BEEA
+  observed:
+    digikey: 541-TNPW060332K0BEEACT-ND 4863 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 71-TNPW060332K0BEEA 6220 in stock, $0.27 @1, $0.229 @1k (2026-10-23)
+- mpn: RNCF0603BTE32K0
+  family: stackpole_rncf
+  value: 32k
+  size: '0603'
+  tolerance: ±0.1%
+  tcr: ±25 ppm/K
+  power: 0.1 W
+  voltage: 75 V
+  line: 1 % 0603 >= 50 V
+  notes: '32 kΩ is an E192 value: no AEC-Q200 1 % thick film part offers it (Yageo AC and Panasonic ERJ-3EKF are
+    E24/E96 only), so this 0.1 % thin film part serves the 1 % line.'
+  digikey: 738-RNCF0603BTE32K0CT-ND
+  mouser: 708-RNCF0603BTE32K0
+  observed:
+    digikey: 738-RNCF0603BTE32K0CT-ND 24321 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 708-RNCF0603BTE32K0 0 in stock, $0.11 @1, $0.062 @1k (2026-10-23)
+- mpn: RG1608P-6980-B-T5
+  family: susumu_rg
+  value: 698R
+  size: '0603'
+  tolerance: ±0.1%
+  tcr: ±25 ppm/K
+  power: 0.1 W
+  voltage: 100 V
+  line: 0.1 % 25 ppm thin film 0603
+  notes: 'Precision part: not substitutable (0.1 %, ±25 ppm/K thin film).'
+  digikey: RG1608P-6980-B-T5-ND
+  mouser: 754-RG1608P-6980-BT5
+  observed:
+    digikey: RG1608P-6980-B-T5-ND 0 in stock, price not captured (API daily limit), reel only (2026-10-22)
+    mouser: 754-RG1608P-6980-BT5 0 in stock, $0.22 @1, $0.077 @1k (2026-10-23)
+- mpn: RG1608P-103-B-T5
+  family: susumu_rg
+  value: 10k
+  size: '0603'
+  tolerance: ±0.1%
+  tcr: ±25 ppm/K
+  power: 0.1 W
+  voltage: 100 V
+  line: 0.1 % 25 ppm thin film 0603
+  notes: 'Precision part: not substitutable (0.1 %, ±25 ppm/K thin film).'
+  digikey: RG16P10.0KBCT-ND
+  mouser: 754-RG1608P-103-B-T5
+  observed:
+    digikey: RG16P10.0KBCT-ND 584858 in stock, $0.11 @1, $0.0561 @1k (2026-10-22)
+    mouser: 754-RG1608P-103-B-T5 147701 in stock, $0.11 @1, $0.057 @1k (2026-10-23)
+- mpn: ERA-3AEB6980V
+  family: panasonic_era
+  value: 698R
+  size: '0603'
+  tolerance: ±0.1%
+  tcr: ±25 ppm/K
+  power: 0.1 W
+  voltage: 75 V
+  line: 0.1 % 25 ppm thin film 0603
+  notes: 'Precision part: not substitutable (0.1 %, ±25 ppm/K thin film).'
+  digikey: 10-ERA-3AEB6980VCT-ND
+  mouser: 667-ERA-3AEB6980V
+  observed:
+    digikey: 10-ERA-3AEB6980VCT-ND 8514 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 667-ERA-3AEB6980V 5605 in stock, $0.1 @1, $0.053 @1k (2026-10-23)
+- mpn: ERA-3AEB103V
+  family: panasonic_era
+  value: 10k
+  size: '0603'
+  tolerance: ±0.1%
+  tcr: ±25 ppm/K
+  power: 0.1 W
+  voltage: 75 V
+  line: 0.1 % 25 ppm thin film 0603
+  notes: 'Precision part: not substitutable (0.1 %, ±25 ppm/K thin film).'
+  digikey: P10KDBCT-ND
+  mouser: 667-ERA-3AEB103V
+  observed:
+    digikey: P10KDBCT-ND 0 in stock, $0.1 @1, $0.053 @1k (2026-10-22)
+    mouser: 667-ERA-3AEB103V 1611633 in stock, $0.33 @1, $0.065 @1k (2026-10-23)
+- mpn: TNPW0603698RBEEA
+  family: vishay_tnpw
+  value: 698R
+  size: '0603'
+  tolerance: ±0.1%
+  tcr: ±25 ppm/K
+  power: 0.11 W
+  voltage: 100 V
+  line: 0.1 % 25 ppm thin film 0603
+  notes: 'Precision part: not substitutable (0.1 %, ±25 ppm/K thin film).'
+  digikey: 541-TNPW0603698RBEEACT-ND
+  mouser: 71-TNPW0603698RBEEA
+  observed:
+    digikey: 541-TNPW0603698RBEEACT-ND 4472 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 71-TNPW0603698RBEEA 4585 in stock, $0.26 @1, $0.218 @1k (2026-10-23)
+- mpn: TNPW060310K0BEEA
+  family: vishay_tnpw
+  value: 10k
+  size: '0603'
+  tolerance: ±0.1%
+  tcr: ±25 ppm/K
+  power: 0.11 W
+  voltage: 100 V
+  line: 0.1 % 25 ppm thin film 0603
+  notes: 'Precision part: not substitutable (0.1 %, ±25 ppm/K thin film).'
+  digikey: TNP10.0KAACT-ND
+  mouser: 71-TNPW060310K0BEEA
+  observed:
+    digikey: TNP10.0KAACT-ND 124370 in stock, $0.28 @1, $0.1693 @1k (2026-10-22)
+    mouser: 71-TNPW060310K0BEEA 388126 in stock, $0.28 @1, $0.229 @1k (2026-10-23)
+- mpn: GCM1885C1H472JA16D
+  family: murata_gcm
+  value: 4.7nF
+  size: '0603'
+  voltage: 50 V
+  tolerance: ±5%
+  dielectric: C0G
+  line: C0G 4.7nF 50V 0402
+  notes: No AEC-Q200 part exists in the drawn 0402 package (DigiKey parametric search, 2026-10-22); built in the
+    next larger package, 0603.
+  digikey: 490-GCM1885C1H472JA16DCT-ND
+  mouser: 81-GCM1885C1H472JA6D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM1885C1H472JA16-01A-EN_PDF_CERAMICCAPACITORSMD
+  observed:
+    digikey: 490-GCM1885C1H472JA16DCT-ND 126286 in stock, $0.15 @1, $0.0386 @1k (2026-10-22)
+    mouser: 81-GCM1885C1H472JA6D 70650 in stock, $0.15 @1, $0.039 @1k (2026-10-23)
+- mpn: CGA3E2C0G1H472J080AA
+  family: tdk_cga
+  value: 4.7nF
+  size: '0603'
+  voltage: 50 V
+  tolerance: ±5%
+  dielectric: C0G
+  line: C0G 4.7nF 50V 0402
+  notes: No AEC-Q200 part exists in the drawn 0402 package (DigiKey parametric search, 2026-10-22); built in the
+    next larger package, 0603.
+  digikey: 445-6912-1-ND
+  mouser: 810-CGA3E2C0G1H472J
+  observed:
+    digikey: 445-6912-1-ND 18868 in stock, $0.24 @1, $0.0686 @1k (2026-10-22)
+    mouser: 810-CGA3E2C0G1H472J 88405 in stock, $0.24 @1, $0.069 @1k (2026-10-23)
+- mpn: GCM1885C1H103GA16D
+  family: murata_gcm
+  value: 10nF
+  size: '0603'
+  voltage: 50 V
+  tolerance: ±2%
+  dielectric: C0G
+  line: C0G 10nF 50V 0402
+  notes: No AEC-Q200 part exists in the drawn 0402 package (DigiKey parametric search, 2026-10-22); built in the
+    next larger package, 0603. Murata makes the 50 V GCM 10 nF C0G only in ±2 % or tighter.
+  digikey: 490-GCM1885C1H103GA16DCT-ND
+  mouser: 81-GCM1885C1H103GA6D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM1885C1H103GA16-01A-EN_PDF_CERAMICCAPACITORSMD
+  observed:
+    digikey: 490-GCM1885C1H103GA16DCT-ND 6548 in stock, $0.28 @1, $0.08 @1k (2026-10-22)
+    mouser: 81-GCM1885C1H103GA6D 5378 in stock, $0.28 @1, $0.08 @1k (2026-10-23)
+- mpn: CGA3E2C0G1H103J080AA
+  family: tdk_cga
+  value: 10nF
+  size: '0603'
+  voltage: 50 V
+  tolerance: ±5%
+  dielectric: C0G
+  line: C0G 10nF 50V 0402
+  notes: No AEC-Q200 part exists in the drawn 0402 package (DigiKey parametric search, 2026-10-22); built in the
+    next larger package, 0603.
+  digikey: 445-6916-1-ND
+  mouser: 810-CGA3E2C0G1H103J
+  observed:
+    digikey: 445-6916-1-ND 0 in stock, $0.3 @1, $0.0882 @1k (2026-10-22)
+    mouser: 810-CGA3E2C0G1H103J 0 in stock, $0.3 @1, $0.089 @1k (2026-10-23)
+- mpn: GCM1885C2A103JE02D
+  family: murata_gcm
+  value: 10nF
+  size: '0603'
+  voltage: 100 V
+  tolerance: ±5%
+  dielectric: C0G
+  line: C0G 10nF 100V 0603
+  digikey: 490-GCM1885C2A103JE02DCT-ND
+  mouser: 81-GCM1885C2A103JE2D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM1885C2A103JE02-01A-EN_PDF_CERAMICCAPACITORSMD
+  observed:
+    digikey: 490-GCM1885C2A103JE02DCT-ND 3860 in stock, $0.22 @1, $0.0611 @1k (2026-10-22)
+    mouser: 81-GCM1885C2A103JE2D 3950 in stock, $0.21 @1, $0.058 @1k (2026-10-23)
+- mpn: CGA3E1C0G2A103J080AC
+  family: tdk_cga_mid
+  value: 10nF
+  size: '0603'
+  voltage: 100 V
+  tolerance: ±5%
+  dielectric: C0G
+  line: C0G 10nF 100V 0603
+  digikey: 445-172688-1-ND
+  mouser: 810-CGA3E1C0G2A103J8
+  observed:
+    digikey: 445-172688-1-ND 31 in stock, $0.32 @1, $0.0946 @1k (2026-10-22)
+    mouser: 810-CGA3E1C0G2A103J8 37818 in stock, $0.32 @1, $0.121 @1k (2026-10-23)
+- mpn: GCM31C5C1H683JA16L
+  family: murata_gcm
+  value: 68nF
+  size: '1206'
+  voltage: 50 V
+  tolerance: ±5%
+  dielectric: C0G
+  line: C0G 68nF 50V 0805
+  notes: No AEC-Q200 68 nF C0G part exists in the drawn 0805 package (DigiKey parametric search, 2026-10-22); built
+    in the next larger package, 1206.
+  digikey: 490-5323-1-ND
+  mouser: 81-GCM31C5C1H683JA6L
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM31C5C1H683JA16-01A-EN_PDF_CERAMICCAPACITORSMD
+  observed:
+    digikey: 490-5323-1-ND 1525 in stock, $0.59 @1, $0.196 @1k (2026-10-22)
+    mouser: 81-GCM31C5C1H683JA6L 3903 in stock, $0.59 @1, $0.196 @1k (2026-10-23)
+- mpn: CGA5L2C0G1H683J160AA
+  family: tdk_cga
+  value: 68nF
+  size: '1206'
+  voltage: 50 V
+  tolerance: ±5%
+  dielectric: C0G
+  line: C0G 68nF 50V 0805
+  notes: No AEC-Q200 68 nF C0G part exists in the drawn 0805 package (DigiKey parametric search, 2026-10-22); built
+    in the next larger package, 1206.
+  digikey: 445-6983-1-ND
+  mouser: 810-CGA5L2C0G1H683J
+  observed:
+    digikey: 445-6983-1-ND 55 in stock, $0.71 @1, $0.2464 @1k (2026-10-22)
+    mouser: 810-CGA5L2C0G1H683J 7224 in stock, $0.71 @1, $0.272 @1k (2026-10-23)
+- mpn: CGA5L2C0G1H104J160AA
+  family: tdk_cga
+  value: 100nF
+  size: '1206'
+  voltage: 50 V
+  tolerance: ±5%
+  dielectric: C0G
+  line: C0G 100nF 25V 0805
+  notes: No AEC-Q200 100 nF C0G part exists in the drawn 0805 package (DigiKey parametric search, 2026-10-22); built
+    in the next larger package, 1206. TDK's lowest rating for this value is 50 V.
+  digikey: 445-6984-1-ND
+  mouser: 810-CGA5L2C0G1H104J
+  observed:
+    digikey: 445-6984-1-ND 129470 in stock, $0.8 @1, $0.2806 @1k (2026-10-22)
+    mouser: 810-CGA5L2C0G1H104J 0 in stock, $0.78 @1, $0.272 @1k (2026-10-23)
+- mpn: C1206C104J3GACAUTO
+  family: kemet_c0g_auto
+  value: 100nF
+  size: '1206'
+  voltage: 25 V
+  tolerance: ±5%
+  dielectric: C0G
+  line: C0G 100nF 25V 0805
+  notes: No AEC-Q200 100 nF C0G part exists in the drawn 0805 package (DigiKey parametric search, 2026-10-22); built
+    in the next larger package, 1206.
+  digikey: 399-7007-1-ND
+  mouser: 80-C1206C104J3GAUTO
+  observed:
+    digikey: 399-7007-1-ND 5043 in stock, $2.37 @1, $1.0158 @1k (2026-10-22)
+    mouser: 80-C1206C104J3GAUTO 4077 in stock, $1.28 @1, $1.02 @1k (2026-10-23)
+- mpn: CGA5L1C0G2A104J160AC
+  family: tdk_cga_mid
+  value: 100nF
+  size: '1206'
+  voltage: 100 V
+  tolerance: ±5%
+  dielectric: C0G
+  line: C0G 100nF 100V 1206
+  digikey: 445-172694-1-ND
+  mouser: 810-CGA5L1C0G2A104J6
+  observed:
+    digikey: 445-172694-1-ND 44486 in stock, $1.12 @1, $0.4227 @1k (2026-10-22)
+    mouser: 810-CGA5L1C0G2A104J6 1265 in stock, $1.12 @1, $0.423 @1k (2026-10-23)
+- mpn: GCM31C5C2A104JE02L
+  family: murata_gcm
+  value: 100nF
+  size: '1206'
+  voltage: 100 V
+  tolerance: ±5%
+  dielectric: C0G
+  line: C0G 100nF 100V 1206
+  digikey: 490-GCM31C5C2A104JE02LCT-ND
+  mouser: 81-GCM31C5C2A104JE2L
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM31C5C2A104JE02-02A-EN_PDF_CERAMICCAPACITORSMD
+  observed:
+    digikey: 490-GCM31C5C2A104JE02LCT-ND 0 in stock, $0.65 @1, $0.2228 @1k (2026-10-22)
+    mouser: 81-GCM31C5C2A104JE2L 0 in stock, $0.65 @1, $0.223 @1k (2026-10-23)
+- mpn: GCM155R71H103KA55D
+  family: murata_gcm
+  value: 10nF
+  size: '0402'
+  voltage: 50 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 10nF 50V 0402
+  digikey: 490-4762-1-ND
+  mouser: 81-GCM155R71H103KA5D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM155R71H103KA55-01A-EN_PDF_CERAMICCAPACITORSMD
+  observed:
+    digikey: 490-4762-1-ND 2007034 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 81-GCM155R71H103KA5D 619634 in stock, $0.1 @1, $0.011 @1k (2026-10-23)
+- mpn: CGA2B3X7R1H103K050BB
+  family: tdk_cga
+  value: 10nF
+  size: '0402'
+  voltage: 50 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 10nF 50V 0402
+  digikey: 445-6893-1-ND
+  mouser: 810-CGA2B3X7R1H103K
+  observed:
+    digikey: 445-6893-1-ND 232 in stock, $0.1 @1, $0.0207 @1k (2026-10-22)
+    mouser: 810-CGA2B3X7R1H103K 0 in stock, $0.11 @1, $0.022 @1k (2026-10-23)
+- mpn: GCM155R71C104KA55D
+  family: murata_gcm
+  value: 100nF
+  size: '0402'
+  voltage: 16 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 100nF 16V 0402
+  digikey: 490-4759-1-ND
+  mouser: 81-GCM155R71C104KA5D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM155R71C104KA55-01A-EN_PDF_CERAMICCAPACITORSMD
+  observed:
+    digikey: 490-4759-1-ND 9070195 in stock, $0.11 @1, $0.0139 @1k (2026-10-22)
+    mouser: 81-GCM155R71C104KA5D 0 in stock, $0.1 @1, $0.014 @1k (2026-10-23)
+- mpn: CGA2B1X7R1C104K050BC
+  family: tdk_cga
+  value: 100nF
+  size: '0402'
+  voltage: 16 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 100nF 16V 0402
+  digikey: 445-5613-1-ND
+  mouser: 810-CGA2B1X7R1C104K
+  observed:
+    digikey: 445-5613-1-ND 1023396 in stock, $0.1 @1, $0.0202 @1k (2026-10-22)
+    mouser: 810-CGA2B1X7R1C104K 2195275 in stock, $0.1 @1, $0.021 @1k (2026-10-23)
+- mpn: GCJ188R72A104KA01D
+  family: murata_gcj
+  value: 100nF
+  size: '0603'
+  voltage: 100 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 100nF 100V 0603
+  notes: Murata makes no 100 V 100 nF X7R GCM in 0603; GCJ is Murata's AEC-Q200 soft termination series.
+  digikey: 490-13420-1-ND
+  mouser: 81-GCJ188R72A104KA1D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCJ188R72A104KA01-02B-EN_PDF_CERAMICCAPACITORSMD
+  observed:
+    digikey: 490-13420-1-ND 1414882 in stock, $0.19 @1, $0.0495 @1k (2026-10-22)
+    mouser: 81-GCJ188R72A104KA1D 698848 in stock, $0.19 @1, $0.05 @1k (2026-10-23)
+- mpn: C0603C104K1RACAUTO
+  family: kemet_x7r_auto
+  value: 100nF
+  size: '0603'
+  voltage: 100 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 100nF 100V 0603
+  digikey: 399-C0603C104K1RACAUTOCT-ND
+  mouser: 80-C0603C104K1RAUTO
+  observed:
+    digikey: 399-C0603C104K1RACAUTOCT-ND 43145 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 80-C0603C104K1RAUTO 2476 in stock, $0.65 @1, $0.188 @1k (2026-10-23)
+- mpn: GCM155R71C224KE02D
+  family: murata_gcm
+  value: 220nF
+  size: '0402'
+  voltage: 16 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 220nF 16V 0402
+  digikey: 490-10671-1-ND
+  mouser: 81-GCM155R71C224KE2D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM155R71C224KE02-01A-EN_PDF_CERAMICCAPACITORSMD
+  observed:
+    digikey: 490-10671-1-ND 2664917 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 81-GCM155R71C224KE2D 0 in stock, $0.11 @1, $0.023 @1k (2026-10-23)
+- mpn: CGA2B2X7R1C224K050BA
+  family: tdk_cga
+  value: 220nF
+  size: '0402'
+  voltage: 16 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 220nF 16V 0402
+  digikey: 445-174423-1-ND
+  mouser: 810-CGA2B2X7R1C224KA
+  observed:
+    digikey: 445-174423-1-ND 138892 in stock, $0.16 @1, $0.0418 @1k (2026-10-22)
+    mouser: 810-CGA2B2X7R1C224KA 0 in stock, $0.16 @1, $0.042 @1k (2026-10-23)
+- mpn: GCM188R71C474KA55D
+  family: murata_gcm
+  value: 470nF
+  size: '0603'
+  voltage: 16 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 470nF 16V 0402
+  notes: No AEC-Q200 part exists in the drawn 0402 package (DigiKey parametric search, 2026-10-22); built in the
+    next larger package, 0603.
+  digikey: 490-4775-1-ND
+  mouser: 81-GCM188R71C474KA5D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM188R71C474KA55-01A-EN_PDF_CERAMICCAPACITORSMD
+  observed:
+    digikey: 490-4775-1-ND 205998 in stock, $0.14 @1, $0.0349 @1k (2026-10-22)
+    mouser: 81-GCM188R71C474KA5D 214059 in stock, $0.14 @1, $0.031 @1k (2026-10-23)
+- mpn: CGA3E1X7R1C474K080AC
+  family: tdk_cga
+  value: 470nF
+  size: '0603'
+  voltage: 16 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 470nF 16V 0402
+  notes: No AEC-Q200 part exists in the drawn 0402 package (DigiKey parametric search, 2026-10-22); built in the
+    next larger package, 0603.
+  digikey: 445-5672-1-ND
+  mouser: 810-CGA3E1X7R1C474K
+  observed:
+    digikey: 445-5672-1-ND 38573 in stock, $0.14 @1, $0.0355 @1k (2026-10-22)
+    mouser: 810-CGA3E1X7R1C474K 118163 in stock, $0.14 @1, $0.036 @1k (2026-10-23)
+- mpn: CGA3E3X7R1H474K080AB
+  family: tdk_cga
+  value: 470nF
+  size: '0603'
+  voltage: 50 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 470nF 50V 0603
+  digikey: 445-175200-1-ND
+  mouser: 810-CGA3E3X7R1H474KB
+  observed:
+    digikey: 445-175200-1-ND 0 in stock, $0.26 @1, $0.0752 @1k (2026-10-22)
+    mouser: 810-CGA3E3X7R1H474KB 174354 in stock, $0.45 @1, $0.131 @1k (2026-10-23)
+- mpn: MCASU168SB7474KTCA01
+  family: taiyo_mcas
+  value: 470nF
+  size: '0603'
+  voltage: 50 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 470nF 50V 0603
+  notes: Murata makes no 50 V 470 nF X7R GCM in 0603.
+  digikey: 587-MCASU168SB7474KTCA01TR-ND
+  mouser: 963-MCASU168SB7474KT
+  observed:
+    digikey: 587-MCASU168SB7474KTCA01TR-ND 0 in stock, price not captured (API daily limit), reel only (2026-10-22)
+    mouser: 963-MCASU168SB7474KT 3793 in stock, $0.44 @1, $0.127 @1k (2026-10-23)
+- mpn: GCM188R71C105KA64D
+  family: murata_gcm
+  value: 1uF
+  size: '0603'
+  voltage: 16 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 1uF 16V 0402
+  notes: No AEC-Q200 part exists in the drawn 0402 package (DigiKey parametric search, 2026-10-22); built in the
+    next larger package, 0603.
+  digikey: 490-5241-1-ND
+  mouser: 81-GCM188R71C105K64D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM188R71C105KA64-04A-EN_PDF_CERAMICCAPACITORSMD
+  observed:
+    digikey: 490-5241-1-ND 899039 in stock, $0.15 @1, $0.0373 @1k (2026-10-22)
+    mouser: 81-GCM188R71C105K64D 534062 in stock, $0.15 @1, $0.038 @1k (2026-10-23)
+- mpn: CGA3E1X7R1C105K080AC
+  family: tdk_cga
+  value: 1uF
+  size: '0603'
+  voltage: 16 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 1uF 16V 0402
+  notes: No AEC-Q200 part exists in the drawn 0402 package (DigiKey parametric search, 2026-10-22); built in the
+    next larger package, 0603.
+  digikey: 445-12539-1-ND
+  mouser: 810-CGA3E1X7R1C105AC
+  observed:
+    digikey: 445-12539-1-ND 458080 in stock, $0.12 @1, $0.0279 @1k (2026-10-22)
+    mouser: 810-CGA3E1X7R1C105AC 1016689 in stock, $0.12 @1, $0.028 @1k (2026-10-23)
+- mpn: CGA5L2X7R2A105K160AA
+  family: tdk_cga_mid
+  value: 1uF
+  size: '1206'
+  voltage: 100 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 1uF 100V 1206
+  digikey: 445-5845-1-ND
+  mouser: 810-CGA5L2X7R2A105K
+  observed:
+    digikey: 445-5845-1-ND 227500 in stock, $0.57 @1, $0.1911 @1k (2026-10-22)
+    mouser: 810-CGA5L2X7R2A105K 72451 in stock, $0.57 @1, $0.192 @1k (2026-10-23)
+- mpn: C1206C105K1RACAUTO
+  family: kemet_x7r_auto
+  value: 1uF
+  size: '1206'
+  voltage: 100 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 1uF 100V 1206
+  notes: Murata's GCM31CR72A105 is not recommended for new designs (DigiKey, 2026-10-22).
+  digikey: 399-13374-1-ND
+  mouser: 80-C1206C105K1RAUTO
+  observed:
+    digikey: 399-13374-1-ND 42 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 80-C1206C105K1RAUTO 40522 in stock, $0.84 @1, $0.292 @1k (2026-10-23)
+- mpn: KAM15AR71A225KT
+  family: avx_kam
+  value: 2.2uF
+  size: '0603'
+  voltage: 10 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 2.2uF 10V 0603
+  notes: Murata and TDK make no 10 V 2.2 uF X7R automotive part in 0603.
+  digikey: 478-KAM15AR71A225KTCT-ND
+  mouser: 581-KAM15AR71A225KT
+  observed:
+    digikey: 478-KAM15AR71A225KTCT-ND 14346 in stock, $0.47 @1, $0.1462 @1k (2026-10-22)
+    mouser: 581-KAM15AR71A225KT 3851 in stock, $0.47 @1, $0.147 @1k (2026-10-23)
+- mpn: AC0603KRX7R6BB225
+  family: yageo_ac_mlcc
+  value: 2.2uF
+  size: '0603'
+  voltage: 10 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 2.2uF 10V 0603
+  notes: Murata and TDK make no 10 V 2.2 uF X7R automotive part in 0603.
+  digikey: 13-AC0603KRX7R6BB225CT-ND
+  mouser: 603-C0603KRX7R6BB225
+  observed:
+    digikey: 13-AC0603KRX7R6BB225CT-ND 0 in stock, $0.28 @1, $0.0784 @1k (2026-10-22)
+    mouser: 603-C0603KRX7R6BB225 0 in stock, $0.11 @1, $0.042 @1k (2026-10-23)
+- mpn: GCM21BR71C475KA73L
+  family: murata_gcm
+  value: 4.7uF
+  size: 0805
+  voltage: 16 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 4.7uF 10V 0805
+  notes: Murata's lowest rating for this value in GCM21B X7R is 16 V.
+  digikey: 490-5332-1-ND
+  mouser: 81-GCM21BR71C475KA3L
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM21BR71C475KA73-01A-EN_PDF_CERAMICCAPACITORSMD
+  observed:
+    digikey: 490-5332-1-ND 118568 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 81-GCM21BR71C475KA3L 291435 in stock, $0.29 @1, $0.084 @1k (2026-10-23)
+- mpn: CGA4J3X7R1A475K125AB
+  family: tdk_cga
+  value: 4.7uF
+  size: 0805
+  voltage: 10 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 4.7uF 10V 0805
+  digikey: 445-12730-1-ND
+  mouser: 810-CGA4J3X7R1A475AB
+  observed:
+    digikey: 445-12730-1-ND 1391 in stock, $0.26 @1, $0.0743 @1k (2026-10-22)
+    mouser: 810-CGA4J3X7R1A475AB 57875 in stock, $0.26 @1, $0.075 @1k (2026-10-23)
+- mpn: 12101C475K4T2A
+  family: avx_auto
+  value: 4.7uF
+  size: '1210'
+  voltage: 100 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 4.7uF 100V 1210
+  notes: DigiKey lists this code under its KAM32LR72A475KU product numbers (observed 2026-10-22); check the code
+    on the order.
+  digikey: 478-KAM32LR72A475KUCT-ND
+  mouser: 581-12101C475K4T2A
+  observed:
+    digikey: 478-KAM32LR72A475KUCT-ND 229555 in stock, $1.15 @1, $0.429 @1k (2026-10-22)
+    mouser: 581-12101C475K4T2A 171657 in stock, $1.14 @1, $0.392 @1k (2026-10-23)
+- mpn: CNA6P1X7R2A475K250AE
+  family: tdk_cna
+  value: 4.7uF
+  size: '1210'
+  voltage: 100 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 4.7uF 100V 1210
+  notes: TDK makes this value only in its CNA soft termination series.
+  digikey: 445-181409-1-ND
+  mouser: 810-CNA6P1X7R2A475K2
+  observed:
+    digikey: 445-181409-1-ND 43370 in stock, $1.59 @1, $0.6547 @1k (2026-10-22)
+    mouser: 810-CNA6P1X7R2A475K2 30792 in stock, $1.59 @1, $0.575 @1k (2026-10-23)
+- mpn: GCM31CR71C106KA64L
+  family: murata_gcm
+  value: 10uF
+  size: '1206'
+  voltage: 16 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 10uF 16V 0805
+  notes: No AEC-Q200 10 uF 16 V X7R part exists in the drawn 0805 package (DigiKey parametric search, 2026-10-22);
+    built in the next larger package, 1206.
+  digikey: 490-4793-1-ND
+  mouser: 81-GCM31CR71C106KA4L
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM31CR71C106KA64-01A-EN_PDF_CERAMICCAPACITORSMD
+  observed:
+    digikey: 490-4793-1-ND 234265 in stock, $0.96 @1, $0.3521 @1k (2026-10-22)
+    mouser: 81-GCM31CR71C106KA4L 211155 in stock, $0.67 @1, $0.205 @1k (2026-10-23)
+- mpn: CGA5L1X7R1C106K160AC
+  family: tdk_cga
+  value: 10uF
+  size: '1206'
+  voltage: 16 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 10uF 16V 0805
+  notes: No AEC-Q200 10 uF 16 V X7R part exists in the drawn 0805 package (DigiKey parametric search, 2026-10-22);
+    built in the next larger package, 1206.
+  digikey: 445-12902-1-ND
+  mouser: 810-CGA5L1X7R1C106KC
+  observed:
+    digikey: 445-12902-1-ND 221598 in stock, $0.46 @1, $0.1471 @1k (2026-10-22)
+    mouser: 810-CGA5L1X7R1C106KC 112799 in stock, $0.46 @1, $0.148 @1k (2026-10-23)
+- mpn: GCM32ER71A226KE12L
+  family: murata_gcm
+  value: 22uF
+  size: '1210'
+  voltage: 10 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 22uF 10V 1210
+  digikey: 490-4797-1-ND
+  mouser: 81-GCM32ER71A226KE2L
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM32ER71A226KE12-01A-EN_PDF_CERAMICCAPACITORSMD
+  observed:
+    digikey: 490-4797-1-ND 21435 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 81-GCM32ER71A226KE2L 32741 in stock, $0.92 @1, $0.304 @1k (2026-10-23)
+- mpn: C1210C226K8RACAUTO
+  family: kemet_x7r_auto
+  value: 22uF
+  size: '1210'
+  voltage: 10 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: X7R 22uF 10V 1210
+  notes: TDK's 22 uF X7R 1210 parts are ±20 % only.
+  digikey: 399-16007-1-ND
+  mouser: 80-C1210C226K8RAUTO
+  observed:
+    digikey: 399-16007-1-ND 60314 in stock, price not captured (API daily limit) (2026-10-22)
+    mouser: 80-C1210C226K8RAUTO 5032 in stock, $2.12 @1, $0.815 @1k (2026-10-23)
