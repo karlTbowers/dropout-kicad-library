@@ -1,0 +1,8 @@
+number,name,type,unit,side,slot,alternates
+6,IN,power_in,1,L,0,
+4,EN,input,1,L,2,
+2,NC,no_connect,1,L,4,
+1,OUT,power_out,1,R,0,
+5,PG,open_collector,1,R,2,
+3,GND,power_in,1,B,,
+7,EP,passive,1,B,,

@@ -1,0 +1,28 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/BVR-Z-R0003-1.0/part.yaml
+# Isabellenhuette BVR (4026) data sheet, issue 12-September-2024. Node60 4-terminal (Kelvin) shunt search
+# (2026-10-22): no 0.25 mΩ code exists, so the stocked 0.2 and 0.3 mΩ neighbours are built for a later
+# revision (user's request, 2026-10-23); using one means rescaling the LM74910H and INA228 thresholds.
+# p. 1-2: 0.3 mΩ ZERANIN element, TCR 0 ±20 ppm/K (20-60 °C), Rthi 5 K/W, recommended max.
+# power 11 W at 70 °C and 5 W above 100 °C terminal temperature, -65 to +170 °C, AEC-Q200.
+# Ordering code (p. 1): type BVR - material Z - value R0003 - tolerance 1.0 (%); one packaging
+# (24 mm tape, 1400 per 13" reel). DigiKey stock 5866 (2026-10-22); Mouser and Newark do not list it.
+# Pins as KiCad's Device:R_Shunt and stock R_Shunt_Isabellenhuette_BVR4026: 1 and 4 force, 2 and 3
+# sense (the narrow leads), 2 on pin 1's terminal.
+library: DropOut_Resistor
+name: BVR-Z-R0003-1.0
+style: resistor_shunt_4pin
+pins: pins.csv
+fields:
+  Reference: R
+  Value: BVR-Z-R0003-1.0
+  Footprint: DropOut_Resistor_SMD:R_Shunt_Isabellenhuette_BVR4026
+  Datasheet: https://www.isabellenhuette.com/hubfs/Files/Data-sheets/BVR.pdf
+  Description: Isabellenhuette BVR ISA-WELD 4-terminal (Kelvin) current sense resistor, 0.3 mΩ ±1 %, 11 W at 70 °C / 5 W above 100 °C terminal temperature, TCR 0 ±20 ppm/K, AEC-Q200, -65 to +170 °C, 4026 (10.1 x 6.6 mm)
+  ki_keywords: resistor shunt current sense Kelvin 4-terminal metal automotive low ohm ISA-WELD
+  ki_fp_filters: R*Shunt*Isabellenhuette*BVR4026*
+  Manufacturer: Isabellenhuette
+  MPN: BVR-Z-R0003-1.0
+  DigiKey_PN: 4423-BVR-Z-R0003-1.0CT-ND
+  Mouser_PN: "-"
+  Temperature_Grade: AEC-Q200, -65 to +170 °C

@@ -1,0 +1,25 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/CSS2725FTL250/part.yaml
+# Stackpole CSS/CSSH data sheet, rev date 8/19/2026. Node60 power-entry current-sense shunt,
+# selected 2026-10-22 (shared by LM74910H-Q1 and INA228 through Kelvin traces to the pads).
+# 0.25 mΩ is in the CSS2725 ±50 ppm/°C, 1 % range (p. 2); AEC-Q200 compliant (p. 1); 4 W, full power
+# to 100 °C, derated linearly to 0 at 225 °C (p. 6): 3.2 W at +125 °C ambient. Ordering code
+# (p. 15): CSS 2725 F(1 %) T(7" reel, 1000 pcs, the only packaging for 2725) L250. Two terminals,
+# no polarity; drawn as KiCad's Device:R.
+library: DropOut_Resistor
+name: CSS2725FTL250
+style: resistor
+pins: pins.csv
+fields:
+  Reference: R
+  Value: CSS2725FTL250
+  Footprint: DropOut_Resistor_SMD:R_Shunt_Stackpole_CSS2725
+  Datasheet: https://www.seielect.com/catalog/SEI-CSS_CSSH.PDF
+  Description: Stackpole CSS2725 metal alloy current sense resistor, 0.25 mΩ ±1 %, 4 W (to 100 °C, 3.2 W at 125 °C), ±50 ppm/°C, AEC-Q200, -55 to +225 °C, 2725 (6.81 x 6.45 mm)
+  ki_keywords: resistor shunt current sense metal alloy automotive low ohm
+  ki_fp_filters: R*Shunt*Stackpole*CSS2725*
+  Manufacturer: Stackpole Electronics
+  MPN: CSS2725FTL250
+  DigiKey_PN: CSS2725FTL250CT-ND
+  Mouser_PN: 708-CSS2725FTL250
+  Temperature_Grade: AEC-Q200, -55 to +225 °C

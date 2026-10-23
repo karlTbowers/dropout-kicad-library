@@ -1,0 +1,42 @@
+# Bourns SRP-TA automotive shielded power inductors (DropOut spec for kicad-library-tools
+# data/inductor/SMD/).
+default_parameters:
+  manufacturer: Bourns
+  library_name: DropOut_Inductor_SMD
+  3d:
+    type: 2
+    bodyColor: dark grey body
+    pinColor: metal grey pins
+    padThickness: 0.05
+  tags:
+    - power
+    - shielded
+    - AEC-Q200
+
+# SRP4020TA data sheet (PDF dated 2020-07-16) p. 1, "Recommended Layout": 5.2 mm outside, 2.2 mm
+# inside, 2.4 mm pad height. Body 4.45 x 4.06 x 2.0 mm, lead-frame terminals 0.76 x 1.8 mm.
+DropOut_SRP4020TA:
+  PartNumber: SRP4020TA
+  datasheet: "https://www.bourns.com/docs/Product-Datasheets/SRP4020TA.pdf"
+  widthX: 4.45
+  lengthY: 4.06
+  height: 2.0
+  padX: 0.76
+  padY: 1.8
+  landingInsideX: 2.2
+  landingOutsideX: 5.2
+  landingY: 2.4
+
+# SRP3020TA data sheet (PDF dated 2026-05-16) p. 1, "Recommended Layout": 4.1 mm outside, 1.9 mm
+# inside, 1.45 mm pad height. Body 3.5 x 3.2 x 2.0 mm, terminals 0.7 x 1.2 mm.
+DropOut_SRP3020TA:
+  PartNumber: SRP3020TA
+  datasheet: "https://www.bourns.com/docs/Product-Datasheets/SRP3020TA.pdf"
+  widthX: 3.5
+  lengthY: 3.2
+  height: 2.0
+  padX: 0.7
+  padY: 1.2
+  landingInsideX: 1.9
+  landingOutsideX: 4.1
+  landingY: 1.45

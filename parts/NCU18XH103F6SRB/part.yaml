@@ -1,0 +1,30 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/NCU18XH103F6SRB/part.yaml
+# Murata NCU18XH103F6SRB product data sheet (murata.com "Product Search Data Sheet", last updated
+# 05/29/2025): 10 kOhm +/-1 % at 25 C, B25/50 3380 K +/-1 % (B25/80 3428, B25/85 3434, B25/100
+# 3455 K reference), -55 to 150 C, max 5 V, 0.1 mA, 1 mW/C, MSL 1, specific application
+# "Automotive powertrain/safety equipment" (Murata's AEC-Q200 automotive line), 4000/reel (RB).
+# Land pattern: NCU18 reflow, catalog R44E (Mar. 6, 2020) p. 13. Pins as KiCad's
+# Device:Thermistor_NTC (non-polarised, unnamed).
+# R-T data for firmware: Murata's per-part "Resistance-Temperature Characteristics" on the product
+# page (-55 to 150 C); the XH103 centre values -40 to 125 C in 5 C steps are R44E p. 15
+# ("NCpppXH103" column), same B-constant material as this part.
+# Node60 temperature sensing (shunt and switch packages): selected 2026-10-22.
+library: DropOut_Thermistor
+name: NCU18XH103F6SRB
+style: thermistor_ntc
+pins: pins.csv
+fields:
+  Reference: RT
+  Value: NCU18XH103F6SRB
+  Footprint: DropOut_Resistor_SMD:R_NTC_0603_1608Metric_Pad0.7x0.7mm
+  Datasheet: https://www.murata.com/en-us/products/productdetail?partno=NCU18XH103F6SRB
+  Description: Murata NCU18 NTC thermistor 10 kΩ ±1 %, B25/50 3380 K ±1 %, -55 to +150 °C, automotive (AEC-Q200), 0603 (1608 metric)
+  ki_keywords: thermistor NTC temperature sensor 10k automotive
+  ki_fp_filters: R?NTC?0603?1608Metric*
+  Manufacturer: Murata Electronics
+  MPN: NCU18XH103F6SRB
+  DigiKey_PN: 490-18139-1-ND
+  Mouser_PN: 81-NCU18XH103F6SRB
+  Temperature_Grade: AEC-Q200, -55 to +150 °C
+  Notes: R-T table on Murata's product page (Resistance-Temperature Characteristics); XH103 centre values in catalog R44E p. 15

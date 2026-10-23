@@ -1,0 +1,29 @@
+# Murata DFE automotive metal alloy chip power inductors (DropOut spec for kicad-library-tools
+# data/inductor/SMD/).
+default_parameters:
+  manufacturer: Murata
+  library_name: DropOut_Inductor_SMD
+  3d:
+    type: 2
+    bodyColor: dark grey body
+    pinColor: metal grey pins
+    padThickness: 0.05
+  tags:
+    - power
+    - shielded
+    - AEC-Q200
+
+# DFE3225RFD reference specification J(E)TE243A-9104F-01 p. 1 "Physical Dimensions" (3.2 x 2.5 x
+# 2.0 mm max, 0.6 mm terminals) and p. 4 "Recommended PCB pattern": 3.7 mm outside, 1.8 mm inside,
+# 2.8 mm pad height.
+DropOut_DFE322520F:
+  PartNumber: DFE322520F
+  datasheet: "https://pim.murata.com/asset/pim4/inductor/J(E)TE243A-9104_PDF_INDUCTOR"
+  widthX: 3.2
+  lengthY: 2.5
+  height: 2.0
+  padX: 0.6
+  padY: 2.5
+  landingInsideX: 1.8
+  landingOutsideX: 3.7
+  landingY: 2.8

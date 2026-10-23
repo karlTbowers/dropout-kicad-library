@@ -159,3 +159,41 @@ Texas_DGK0008A_TSSOP-8_3x3mm_P0.65mm:
   pad_to_pad_min_x_overwrite: 3.0
   pad_to_pad_max_x_overwrite: 5.8
   pad_size_y_overwrite: 0.45
+
+# TPS7B8133QDGNRQ1. TI DGN0008G PowerPAD HVSSOP (4225480/C 11/2024), TPS7B81-Q1 datasheet SBVS370F
+# pages 33-35 (JEDEC MO-187). Land pattern: 8X (1.4) x (0.45), pitch 0.65, rows (4.4) apart ->
+# 3.0 inside, 5.8 outside. Thermal pad 9: metal (2) x (3), partly under solder mask, with a
+# solder-mask-defined (1.57) x (1.89) opening; stencil 1.57 x 1.89 (100 % for 0.125 mm stencil).
+# Package exposed pad 1.646..1.846 x 1.95..2.15. KiCad's stock Texas_DGN0008G_VSSOP-8-1EP_..._EP2x2.94mm_Mask1.846x2.15mm
+# follows an older TI drawing (TPA711), hence a separate name.
+Texas_DGN0008G_HVSSOP-8-1EP_3x3mm_P0.65mm_EP2x3mm_Mask1.57x1.89mm:
+  size_source:
+    url: 'https://www.ti.com/lit/ds/symlink/tps7b81-q1.pdf'
+    page: 33
+  manufacturer: 'Texas'
+  part_number: 'DGN0008G'
+  device_type: 'HVSSOP'
+  body_size_x: 2.90 .. 3.10      # E1
+  body_size_y: 2.90 .. 3.10      # D
+  body_height: 0.80 .. 0.95      # A 1.1 max minus A1 0.05..0.15
+  overall_height:
+    maximum: 1.10
+  body_pcb_gap: 0.05 .. 0.15
+  overall_size_x: 4.75 .. 5.05   # E
+  lead_width: 0.25 .. 0.38
+  lead_len: 0.40 .. 0.70
+  lead_height: 0.13 .. 0.23
+  pitch: 0.65
+  num_pins_x: 0
+  num_pins_y: 4
+  EP_size_x: 1.646 .. 1.846
+  EP_size_y: 1.95 .. 2.15
+  EP_num_paste_pads: [1, 1]
+  EP_paste_coverage: 1.0
+  EP_mask_x: 1.57
+  EP_mask_y: 1.89
+  EP_size_x_overwrite: 2.0
+  EP_size_y_overwrite: 3.0
+  pad_to_pad_min_x_overwrite: 3.0
+  pad_to_pad_max_x_overwrite: 5.8
+  pad_size_y_overwrite: 0.45

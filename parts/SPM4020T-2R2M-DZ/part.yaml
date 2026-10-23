@@ -1,0 +1,22 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/SPM4020T-2R2M-DZ/part.yaml
+# TDK SPM4020-DZ catalog (inductor_automotive_power_spm4020-dz_en, 20260420) pp. 1, 3. Two-terminal inductor, no polarity (pins 1/2 = footprint pads 1/2).
+# Node60 LMQ66430MC3RXBRQ1 buck inductor search (2.2 MHz, 3 A; Isat >= 5 A = IPEAKMAX max, Irms >= 3 A; SNVSBV1F §8.2.1.2.3).
+# Candidate for 3V3_MAIN, marginal: Itemp 3.1 A leaves 3 % margin over 3 A and DCR is the highest of the 2.2 µH candidates.
+library: DropOut_Inductor
+name: SPM4020T-2R2M-DZ
+style: inductor
+pins: pins.csv
+fields:
+  Reference: L
+  Value: SPM4020T-2R2M-DZ
+  Footprint: DropOut_Inductor_SMD:L_TDK_SPM4020-DZ
+  Datasheet: "https://product.tdk.com/system/files/dam/doc/product/inductor/inductor/smd/catalog/inductor_automotive_power_spm4020-dz_en.pdf"
+  Description: TDK SPM4020-DZ power inductor, 2.2 µH ±20 %, Isat 4.6 A (-20 %) / 6.2 A (-30 %), Itemp 3.1 A (40 °C rise), DCR 66.0 mΩ max, metal composite, wound, AEC-Q200, 4.3x4.1x2.0 mm
+  ki_keywords: inductor choke coil power buck shielded automotive AEC-Q200
+  ki_fp_filters: L*TDK*SPM4020*
+  Manufacturer: TDK
+  MPN: SPM4020T-2R2M-DZ
+  DigiKey_PN: 445-SPM4020T-2R2M-DZCT-ND
+  Mouser_PN: 810-SPM4020T-2R2M-DZ
+  Temperature_Grade: AEC-Q200, -55 to +155 °C including self-heating
