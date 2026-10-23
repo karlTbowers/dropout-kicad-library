@@ -9,7 +9,7 @@ style: resistor
 pins: pins.csv
 fields:
   Reference: "R"
-  Value: "ERA-3AEB6980V"
+  Value: "698R"
   Footprint: "DropOut_Resistor_SMD:R_0603_1608Metric"
   Datasheet: "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf"
   Description: "Panasonic ERA-A thin film chip resistor, 698 Ω ±0.1%, 0.1 W, 75 V, ±25 ppm/K, AEC-Q200, -55 to +155 °C, 0603 (1608 metric)"
@@ -23,4 +23,12 @@ fields:
   Tolerance: "±0.1%"
   Power: "0.1W"
   Voltage: "75V"
+  Case: "0603"
   Notes: "Precision part: not substitutable (0.1 %, ±25 ppm/K thin film)."
+field_layout:
+  Reference: {"at": [2.54, 2.858]}
+  Value: {"at": [2.54, 0.953]}
+  MPN: {"at": [2.54, -2.794], "size": 1.0, "show": true}
+  Tolerance: {"at": [2.54, -0.953], "show": true}
+  Voltage: {"at": [10.16, -0.953], "show": true}
+  Case: {"at": [15.24, -0.953], "show": true}

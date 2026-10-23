@@ -9,7 +9,7 @@ style: capacitor
 pins: pins.csv
 fields:
   Reference: "C"
-  Value: "GCM21BR71C475KA73L"
+  Value: "4.7uF"
   Footprint: "DropOut_Capacitor_SMD:C_0805_2012Metric"
   Datasheet: "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM21BR71C475KA73-01A-EN_PDF_CERAMICCAPACITORSMD"
   Description: "Murata GCM MLCC for automotive powertrain/safety, 4.7 µF ±10%, 16 V, X7R, AEC-Q200, -55 to +125 °C, 0805 (2012 metric)"
@@ -23,4 +23,13 @@ fields:
   Voltage: "16V"
   Tolerance: "±10%"
   Dielectric: "X7R"
+  Case: "0805"
   Notes: "Murata's lowest rating for this value in GCM21B X7R is 16 V."
+field_layout:
+  Reference: {"at": [2.54, 2.858]}
+  Value: {"at": [2.54, 0.953]}
+  MPN: {"at": [2.54, -2.794], "size": 1.0, "show": true}
+  Voltage: {"at": [2.54, -0.953], "show": true}
+  Dielectric: {"at": [7.62, -0.953], "show": true}
+  Tolerance: {"at": [12.7, -0.953], "show": true}
+  Case: {"at": [19.05, -0.953], "show": true}

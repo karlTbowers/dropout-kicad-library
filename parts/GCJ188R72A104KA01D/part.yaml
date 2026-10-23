@@ -9,7 +9,7 @@ style: capacitor
 pins: pins.csv
 fields:
   Reference: "C"
-  Value: "GCJ188R72A104KA01D"
+  Value: "100nF"
   Footprint: "DropOut_Capacitor_SMD:C_0603_1608Metric"
   Datasheet: "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCJ188R72A104KA01-02B-EN_PDF_CERAMICCAPACITORSMD"
   Description: "Murata GCJ soft termination MLCC for automotive, 100 nF ±10%, 100 V, X7R, AEC-Q200, -55 to +125 °C, 0603 (1608 metric)"
@@ -23,4 +23,13 @@ fields:
   Voltage: "100V"
   Tolerance: "±10%"
   Dielectric: "X7R"
+  Case: "0603"
   Notes: "Murata makes no 100 V 100 nF X7R GCM in 0603; GCJ is Murata's AEC-Q200 soft termination series."
+field_layout:
+  Reference: {"at": [2.54, 2.858]}
+  Value: {"at": [2.54, 0.953]}
+  MPN: {"at": [2.54, -2.794], "size": 1.0, "show": true}
+  Voltage: {"at": [2.54, -0.953], "show": true}
+  Dielectric: {"at": [8.89, -0.953], "show": true}
+  Tolerance: {"at": [13.97, -0.953], "show": true}
+  Case: {"at": [20.32, -0.953], "show": true}

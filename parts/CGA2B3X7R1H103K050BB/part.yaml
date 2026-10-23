@@ -9,7 +9,7 @@ style: capacitor
 pins: pins.csv
 fields:
   Reference: "C"
-  Value: "CGA2B3X7R1H103K050BB"
+  Value: "10nF"
   Footprint: "DropOut_Capacitor_SMD:C_0402_1005Metric"
   Datasheet: "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_automotive_general_en.pdf"
   Description: "TDK CGA automotive MLCC, 10 nF ±10%, 50 V, X7R, AEC-Q200, -55 to +125 °C, 0402 (1005 metric)"
@@ -23,3 +23,12 @@ fields:
   Voltage: "50V"
   Tolerance: "±10%"
   Dielectric: "X7R"
+  Case: "0402"
+field_layout:
+  Reference: {"at": [2.54, 2.858]}
+  Value: {"at": [2.54, 0.953]}
+  MPN: {"at": [2.54, -2.794], "size": 1.0, "show": true}
+  Voltage: {"at": [2.54, -0.953], "show": true}
+  Dielectric: {"at": [7.62, -0.953], "show": true}
+  Tolerance: {"at": [12.7, -0.953], "show": true}
+  Case: {"at": [19.05, -0.953], "show": true}

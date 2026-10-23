@@ -9,7 +9,7 @@ style: resistor
 pins: pins.csv
 fields:
   Reference: "R"
-  Value: "AC0402JR-070RL"
+  Value: "0R"
   Footprint: "DropOut_Resistor_SMD:R_0402_1005Metric"
   Datasheet: "https://yageogroup.com/content/datasheet/asset/file/PYU-AC_51_ROHS_L"
   Description: "Yageo AC thick film chip jumper, 0 Ω, 1 A rated, AEC-Q200, -55 to +155 °C, 0402 (1005 metric)"
@@ -20,3 +20,9 @@ fields:
   DigiKey_PN: "311-0.0LBCT-ND"
   Mouser_PN: "603-AC0402JR-070RL"
   Temperature_Grade: "AEC-Q200, -55 to +155 °C"
+  Case: "0402"
+field_layout:
+  Reference: {"at": [2.54, 2.858]}
+  Value: {"at": [2.54, 0.953]}
+  MPN: {"at": [2.54, -2.794], "size": 1.0, "show": true}
+  Case: {"at": [2.54, -0.953], "show": true}

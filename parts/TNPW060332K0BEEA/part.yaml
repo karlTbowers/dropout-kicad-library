@@ -9,7 +9,7 @@ style: resistor
 pins: pins.csv
 fields:
   Reference: "R"
-  Value: "TNPW060332K0BEEA"
+  Value: "32k"
   Footprint: "DropOut_Resistor_SMD:R_0603_1608Metric"
   Datasheet: "https://www.vishay.com/docs/28758/tnpw_e3.pdf"
   Description: "Vishay TNPW e3 thin film chip resistor, 32 kΩ ±0.1%, 0.11 W, 100 V, ±25 ppm/K, AEC-Q200, -55 to +175 °C, 0603 (1608 metric)"
@@ -23,4 +23,12 @@ fields:
   Tolerance: "±0.1%"
   Power: "0.11W"
   Voltage: "100V"
+  Case: "0603"
   Notes: "32 kΩ is an E192 value: no AEC-Q200 1 % thick film part offers it (Yageo AC and Panasonic ERJ-3EKF are E24/E96 only), so this 0.1 % thin film part serves the 1 % line."
+field_layout:
+  Reference: {"at": [2.54, 2.858]}
+  Value: {"at": [2.54, 0.953]}
+  MPN: {"at": [2.54, -2.794], "size": 1.0, "show": true}
+  Tolerance: {"at": [2.54, -0.953], "show": true}
+  Voltage: {"at": [10.16, -0.953], "show": true}
+  Case: {"at": [16.51, -0.953], "show": true}

@@ -9,7 +9,7 @@ style: capacitor
 pins: pins.csv
 fields:
   Reference: "C"
-  Value: "GCM1885C1H472JA16D"
+  Value: "4.7nF"
   Footprint: "DropOut_Capacitor_SMD:C_0603_1608Metric"
   Datasheet: "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM1885C1H472JA16-01A-EN_PDF_CERAMICCAPACITORSMD"
   Description: "Murata GCM MLCC for automotive powertrain/safety, 4.7 nF ±5%, 50 V, C0G, AEC-Q200, -55 to +125 °C, 0603 (1608 metric)"
@@ -23,4 +23,13 @@ fields:
   Voltage: "50V"
   Tolerance: "±5%"
   Dielectric: "C0G"
+  Case: "0603"
   Notes: "No AEC-Q200 part exists in the drawn 0402 package (DigiKey parametric search, 2026-10-22); built in the next larger package, 0603."
+field_layout:
+  Reference: {"at": [2.54, 2.858]}
+  Value: {"at": [2.54, 0.953]}
+  MPN: {"at": [2.54, -2.794], "size": 1.0, "show": true}
+  Voltage: {"at": [2.54, -0.953], "show": true}
+  Dielectric: {"at": [7.62, -0.953], "show": true}
+  Tolerance: {"at": [12.7, -0.953], "show": true}
+  Case: {"at": [17.78, -0.953], "show": true}

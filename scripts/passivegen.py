@@ -30,7 +30,7 @@ TABLE = REPO / "parts" / "passives.yaml"
 # "d45": Value = short value (10k, 100nF) with the ratings and case size on a row below it and the
 # MPN under that in smaller text. It needs KLC exceptions first: S6.2 (Value is not the symbol
 # name; the rating and Case fields) and S3.2 (MPN text smaller than 50 mil).
-LAYOUT = "mpn"
+LAYOUT = "d45"
 ROWS = {"Reference": 2.858, "Value": 0.953, "ratings": -0.953, "MPN": -2.794}  # y of each row, mm
 X0 = 2.54            # rows start right of the body (Device:C plates end at 2.032)
 CHAR = 1.27          # advance per character, as scripts/check_symbol_text.py measures text

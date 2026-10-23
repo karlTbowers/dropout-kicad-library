@@ -9,7 +9,7 @@ style: capacitor
 pins: pins.csv
 fields:
   Reference: "C"
-  Value: "GCM32ER71A226KE12L"
+  Value: "22uF"
   Footprint: "DropOut_Capacitor_SMD:C_1210_3225Metric"
   Datasheet: "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM32ER71A226KE12-01A-EN_PDF_CERAMICCAPACITORSMD"
   Description: "Murata GCM MLCC for automotive powertrain/safety, 22 µF ±10%, 10 V, X7R, AEC-Q200, -55 to +125 °C, 1210 (3225 metric)"
@@ -23,3 +23,12 @@ fields:
   Voltage: "10V"
   Tolerance: "±10%"
   Dielectric: "X7R"
+  Case: "1210"
+field_layout:
+  Reference: {"at": [2.54, 2.858]}
+  Value: {"at": [2.54, 0.953]}
+  MPN: {"at": [2.54, -2.794], "size": 1.0, "show": true}
+  Voltage: {"at": [2.54, -0.953], "show": true}
+  Dielectric: {"at": [7.62, -0.953], "show": true}
+  Tolerance: {"at": [12.7, -0.953], "show": true}
+  Case: {"at": [19.05, -0.953], "show": true}

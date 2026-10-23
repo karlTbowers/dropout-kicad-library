@@ -9,7 +9,7 @@ style: resistor
 pins: pins.csv
 fields:
   Reference: "R"
-  Value: "ERJ-2GE0R00X"
+  Value: "0R"
   Footprint: "DropOut_Resistor_SMD:R_0402_1005Metric"
   Datasheet: "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C301.pdf"
   Description: "Panasonic ERJ-G thick film chip jumper, 0 Ω, 1 A rated, AEC-Q200, -55 to +155 °C, 0402 (1005 metric)"
@@ -20,3 +20,9 @@ fields:
   DigiKey_PN: "P0.0JCT-ND"
   Mouser_PN: "667-ERJ-2GE0R00X"
   Temperature_Grade: "AEC-Q200, -55 to +155 °C"
+  Case: "0402"
+field_layout:
+  Reference: {"at": [2.54, 2.858]}
+  Value: {"at": [2.54, 0.953]}
+  MPN: {"at": [2.54, -2.794], "size": 1.0, "show": true}
+  Case: {"at": [2.54, -0.953], "show": true}

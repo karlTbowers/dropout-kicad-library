@@ -9,7 +9,7 @@ style: capacitor
 pins: pins.csv
 fields:
   Reference: "C"
-  Value: "KAM15AR71A225KT"
+  Value: "2.2uF"
   Footprint: "DropOut_Capacitor_SMD:C_0603_1608Metric"
   Datasheet: "https://datasheets.kyocera-avx.com/AutoMLCCKAM.pdf"
   Description: "KYOCERA AVX KAM automotive MLCC, 2.2 µF ±10%, 10 V, X7R, AEC-Q200, -55 to +125 °C, 0603 (1608 metric)"
@@ -23,4 +23,13 @@ fields:
   Voltage: "10V"
   Tolerance: "±10%"
   Dielectric: "X7R"
+  Case: "0603"
   Notes: "Murata and TDK make no 10 V 2.2 uF X7R automotive part in 0603."
+field_layout:
+  Reference: {"at": [2.54, 2.858]}
+  Value: {"at": [2.54, 0.953]}
+  MPN: {"at": [2.54, -2.794], "size": 1.0, "show": true}
+  Voltage: {"at": [2.54, -0.953], "show": true}
+  Dielectric: {"at": [7.62, -0.953], "show": true}
+  Tolerance: {"at": [12.7, -0.953], "show": true}
+  Case: {"at": [19.05, -0.953], "show": true}

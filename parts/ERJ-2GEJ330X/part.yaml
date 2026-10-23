@@ -9,7 +9,7 @@ style: resistor
 pins: pins.csv
 fields:
   Reference: "R"
-  Value: "ERJ-2GEJ330X"
+  Value: "33R"
   Footprint: "DropOut_Resistor_SMD:R_0402_1005Metric"
   Datasheet: "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C301.pdf"
   Description: "Panasonic ERJ-G thick film chip resistor, 33 Ω ±5%, 0.1 W, 50 V, ±200 ppm/K, AEC-Q200, -55 to +155 °C, 0402 (1005 metric)"
@@ -23,3 +23,11 @@ fields:
   Tolerance: "±5%"
   Power: "0.1W"
   Voltage: "50V"
+  Case: "0402"
+field_layout:
+  Reference: {"at": [2.54, 2.858]}
+  Value: {"at": [2.54, 0.953]}
+  MPN: {"at": [2.54, -2.794], "size": 1.0, "show": true}
+  Tolerance: {"at": [2.54, -0.953], "show": true}
+  Voltage: {"at": [7.62, -0.953], "show": true}
+  Case: {"at": [12.7, -0.953], "show": true}

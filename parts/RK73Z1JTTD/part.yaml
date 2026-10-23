@@ -9,7 +9,7 @@ style: resistor
 pins: pins.csv
 fields:
   Reference: "R"
-  Value: "RK73Z1JTTD"
+  Value: "0R"
   Footprint: "DropOut_Resistor_SMD:R_0603_1608Metric"
   Datasheet: "https://www.koaspeer.com/pdfs/RK73Z.pdf"
   Description: "KOA Speer RK73Z thick film chip jumper, 0 Ω, 1 A rated, AEC-Q200, -55 to +155 °C, 0603 (1608 metric)"
@@ -20,4 +20,10 @@ fields:
   DigiKey_PN: "2019-RK73Z1JTTDCT-ND"
   Mouser_PN: "660-RK73Z1JTTD"
   Temperature_Grade: "AEC-Q200, -55 to +155 °C"
+  Case: "0603"
   Notes: "Rejected for the Node60 0R 0603 regulator-output debug links, which need a 2 A rated jumper: this one is rated 1 A, 2 A maximum overload (RK73Z ratings table). Kept as a part-search candidate."
+field_layout:
+  Reference: {"at": [2.54, 2.858]}
+  Value: {"at": [2.54, 0.953]}
+  MPN: {"at": [2.54, -2.794], "size": 1.0, "show": true}
+  Case: {"at": [2.54, -0.953], "show": true}

@@ -9,7 +9,7 @@ style: resistor
 pins: pins.csv
 fields:
   Reference: "R"
-  Value: "ERJ-3EKF49R9V"
+  Value: "49.9R"
   Footprint: "DropOut_Resistor_SMD:R_0603_1608Metric"
   Datasheet: "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
   Description: "Panasonic ERJ-2RK/3EK precision thick film chip resistor, 49.9 Ω ±1%, 0.1 W, 75 V, ±100 ppm/K, AEC-Q200, -55 to +155 °C, 0603 (1608 metric)"
@@ -23,3 +23,11 @@ fields:
   Tolerance: "±1%"
   Power: "0.1W"
   Voltage: "75V"
+  Case: "0603"
+field_layout:
+  Reference: {"at": [2.54, 2.858]}
+  Value: {"at": [2.54, 0.953]}
+  MPN: {"at": [2.54, -2.794], "size": 1.0, "show": true}
+  Tolerance: {"at": [2.54, -0.953], "show": true}
+  Voltage: {"at": [7.62, -0.953], "show": true}
+  Case: {"at": [12.7, -0.953], "show": true}

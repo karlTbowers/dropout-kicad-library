@@ -9,7 +9,7 @@ style: capacitor
 pins: pins.csv
 fields:
   Reference: "C"
-  Value: "C1210C226K8RACAUTO"
+  Value: "22uF"
   Footprint: "DropOut_Capacitor_SMD:C_1210_3225Metric"
   Datasheet: "https://content.kemet.com/datasheets/KEM_C1023_X7R_AUTO_SMD.pdf"
   Description: "KEMET AUTO automotive grade MLCC, 22 µF ±10%, 10 V, X7R, AEC-Q200, -55 to +125 °C, 1210 (3225 metric)"
@@ -23,4 +23,13 @@ fields:
   Voltage: "10V"
   Tolerance: "±10%"
   Dielectric: "X7R"
+  Case: "1210"
   Notes: "TDK's 22 uF X7R 1210 parts are ±20 % only."
+field_layout:
+  Reference: {"at": [2.54, 2.858]}
+  Value: {"at": [2.54, 0.953]}
+  MPN: {"at": [2.54, -2.794], "size": 1.0, "show": true}
+  Voltage: {"at": [2.54, -0.953], "show": true}
+  Dielectric: {"at": [7.62, -0.953], "show": true}
+  Tolerance: {"at": [12.7, -0.953], "show": true}
+  Case: {"at": [19.05, -0.953], "show": true}

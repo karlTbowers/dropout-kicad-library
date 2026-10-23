@@ -9,7 +9,7 @@ style: capacitor
 pins: pins.csv
 fields:
   Reference: "C"
-  Value: "CGA3E1X7R1C474K080AC"
+  Value: "470nF"
   Footprint: "DropOut_Capacitor_SMD:C_0603_1608Metric"
   Datasheet: "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_automotive_general_en.pdf"
   Description: "TDK CGA automotive MLCC, 470 nF ±10%, 16 V, X7R, AEC-Q200, -55 to +125 °C, 0603 (1608 metric)"
@@ -23,4 +23,13 @@ fields:
   Voltage: "16V"
   Tolerance: "±10%"
   Dielectric: "X7R"
+  Case: "0603"
   Notes: "No AEC-Q200 part exists in the drawn 0402 package (DigiKey parametric search, 2026-10-22); built in the next larger package, 0603."
+field_layout:
+  Reference: {"at": [2.54, 2.858]}
+  Value: {"at": [2.54, 0.953]}
+  MPN: {"at": [2.54, -2.794], "size": 1.0, "show": true}
+  Voltage: {"at": [2.54, -0.953], "show": true}
+  Dielectric: {"at": [7.62, -0.953], "show": true}
+  Tolerance: {"at": [12.7, -0.953], "show": true}
+  Case: {"at": [19.05, -0.953], "show": true}

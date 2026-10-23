@@ -9,7 +9,7 @@ style: capacitor
 pins: pins.csv
 fields:
   Reference: "C"
-  Value: "CGA5L2C0G1H683J160AA"
+  Value: "68nF"
   Footprint: "DropOut_Capacitor_SMD:C_1206_3216Metric"
   Datasheet: "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_automotive_general_en.pdf"
   Description: "TDK CGA automotive MLCC, 68 nF ±5%, 50 V, C0G, AEC-Q200, -55 to +125 °C, 1206 (3216 metric)"
@@ -23,4 +23,13 @@ fields:
   Voltage: "50V"
   Tolerance: "±5%"
   Dielectric: "C0G"
+  Case: "1206"
   Notes: "No AEC-Q200 68 nF C0G part exists in the drawn 0805 package (DigiKey parametric search, 2026-10-22); built in the next larger package, 1206."
+field_layout:
+  Reference: {"at": [2.54, 2.858]}
+  Value: {"at": [2.54, 0.953]}
+  MPN: {"at": [2.54, -2.794], "size": 1.0, "show": true}
+  Voltage: {"at": [2.54, -0.953], "show": true}
+  Dielectric: {"at": [7.62, -0.953], "show": true}
+  Tolerance: {"at": [12.7, -0.953], "show": true}
+  Case: {"at": [17.78, -0.953], "show": true}

@@ -9,7 +9,7 @@ style: capacitor
 pins: pins.csv
 fields:
   Reference: "C"
-  Value: "C1206C105K1RACAUTO"
+  Value: "1uF"
   Footprint: "DropOut_Capacitor_SMD:C_1206_3216Metric"
   Datasheet: "https://content.kemet.com/datasheets/KEM_C1023_X7R_AUTO_SMD.pdf"
   Description: "KEMET AUTO automotive grade MLCC, 1 µF ±10%, 100 V, X7R, AEC-Q200, -55 to +125 °C, 1206 (3216 metric)"
@@ -23,4 +23,13 @@ fields:
   Voltage: "100V"
   Tolerance: "±10%"
   Dielectric: "X7R"
+  Case: "1206"
   Notes: "Murata's GCM31CR72A105 is not recommended for new designs (DigiKey, 2026-10-22)."
+field_layout:
+  Reference: {"at": [2.54, 2.858]}
+  Value: {"at": [2.54, 0.953]}
+  MPN: {"at": [2.54, -2.794], "size": 1.0, "show": true}
+  Voltage: {"at": [2.54, -0.953], "show": true}
+  Dielectric: {"at": [8.89, -0.953], "show": true}
+  Tolerance: {"at": [13.97, -0.953], "show": true}
+  Case: {"at": [20.32, -0.953], "show": true}

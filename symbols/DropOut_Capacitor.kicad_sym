@@ -16,7 +16,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -26,8 +26,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "12101C475K4T2A"
-			(at 2.54 -1.27 0)
+		(property "Value" "4.7uF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -82,14 +82,14 @@
 			)
 		)
 		(property "MPN" "12101C475K4T2A"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "478-KAM32LR72A475KUCT-ND"
@@ -126,36 +126,47 @@
 			)
 		)
 		(property "Voltage" "100V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 13.97 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 8.89 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "1210"
+			(at 20.32 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "DigiKey lists this code under its KAM32LR72A475KU product numbers (observed 2026-10-22); check the code on the order."
@@ -269,7 +280,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -279,8 +290,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "AC0603KRX7R6BB225"
-			(at 2.54 -1.27 0)
+		(property "Value" "2.2uF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -335,14 +346,14 @@
 			)
 		)
 		(property "MPN" "AC0603KRX7R6BB225"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "13-AC0603KRX7R6BB225CT-ND"
@@ -379,36 +390,47 @@
 			)
 		)
 		(property "Voltage" "10V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 19.05 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "Murata and TDK make no 10 V 2.2 uF X7R automotive part in 0603."
@@ -522,7 +544,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -532,8 +554,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C0603C104K1RACAUTO"
-			(at 2.54 -1.27 0)
+		(property "Value" "100nF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -588,14 +610,14 @@
 			)
 		)
 		(property "MPN" "C0603C104K1RACAUTO"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "399-C0603C104K1RACAUTOCT-ND"
@@ -632,36 +654,47 @@
 			)
 		)
 		(property "Voltage" "100V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 13.97 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 8.89 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 20.32 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "capacitor ceramic MLCC automotive"
@@ -764,7 +797,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -774,8 +807,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C1206C104J3GACAUTO"
-			(at 2.54 -1.27 0)
+		(property "Value" "100nF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -830,14 +863,14 @@
 			)
 		)
 		(property "MPN" "C1206C104J3GACAUTO"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "399-7007-1-ND"
@@ -874,36 +907,47 @@
 			)
 		)
 		(property "Voltage" "25V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±5%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "C0G"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "1206"
+			(at 17.78 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "No AEC-Q200 100 nF C0G part exists in the drawn 0805 package (DigiKey parametric search, 2026-10-22); built in the next larger package, 1206."
@@ -1017,7 +1061,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1027,8 +1071,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C1206C105K1RACAUTO"
-			(at 2.54 -1.27 0)
+		(property "Value" "1uF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1083,14 +1127,14 @@
 			)
 		)
 		(property "MPN" "C1206C105K1RACAUTO"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "399-13374-1-ND"
@@ -1127,36 +1171,47 @@
 			)
 		)
 		(property "Voltage" "100V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 13.97 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 8.89 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "1206"
+			(at 20.32 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "Murata's GCM31CR72A105 is not recommended for new designs (DigiKey, 2026-10-22)."
@@ -1270,7 +1325,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1280,8 +1335,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C1210C226K8RACAUTO"
-			(at 2.54 -1.27 0)
+		(property "Value" "22uF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1336,14 +1391,14 @@
 			)
 		)
 		(property "MPN" "C1210C226K8RACAUTO"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "399-16007-1-ND"
@@ -1380,36 +1435,47 @@
 			)
 		)
 		(property "Voltage" "10V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "1210"
+			(at 19.05 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "TDK's 22 uF X7R 1210 parts are ±20 % only."
@@ -1523,7 +1589,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1533,8 +1599,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "CGA2B1X7R1C104K050BC"
-			(at 2.54 -1.27 0)
+		(property "Value" "100nF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1589,14 +1655,14 @@
 			)
 		)
 		(property "MPN" "CGA2B1X7R1C104K050BC"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "445-5613-1-ND"
@@ -1633,36 +1699,47 @@
 			)
 		)
 		(property "Voltage" "16V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0402"
+			(at 19.05 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "capacitor ceramic MLCC automotive"
@@ -1765,7 +1842,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1775,8 +1852,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "CGA2B2X7R1C224K050BA"
-			(at 2.54 -1.27 0)
+		(property "Value" "220nF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1831,14 +1908,14 @@
 			)
 		)
 		(property "MPN" "CGA2B2X7R1C224K050BA"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "445-174423-1-ND"
@@ -1875,36 +1952,47 @@
 			)
 		)
 		(property "Voltage" "16V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0402"
+			(at 19.05 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "capacitor ceramic MLCC automotive"
@@ -2007,7 +2095,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2017,8 +2105,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "CGA2B3X7R1H103K050BB"
-			(at 2.54 -1.27 0)
+		(property "Value" "10nF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2073,14 +2161,14 @@
 			)
 		)
 		(property "MPN" "CGA2B3X7R1H103K050BB"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "445-6893-1-ND"
@@ -2117,36 +2205,47 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0402"
+			(at 19.05 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "capacitor ceramic MLCC automotive"
@@ -2249,7 +2348,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2259,8 +2358,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "CGA3E1C0G2A103J080AC"
-			(at 2.54 -1.27 0)
+		(property "Value" "10nF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2315,14 +2414,14 @@
 			)
 		)
 		(property "MPN" "CGA3E1C0G2A103J080AC"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "445-172688-1-ND"
@@ -2359,36 +2458,47 @@
 			)
 		)
 		(property "Voltage" "100V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±5%"
-			(at 0 0 0)
+			(at 13.97 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "C0G"
-			(at 0 0 0)
+			(at 8.89 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 19.05 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "capacitor ceramic MLCC automotive"
@@ -2491,7 +2601,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2501,8 +2611,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "CGA3E1X7R1C105K080AC"
-			(at 2.54 -1.27 0)
+		(property "Value" "1uF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2557,14 +2667,14 @@
 			)
 		)
 		(property "MPN" "CGA3E1X7R1C105K080AC"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "445-12539-1-ND"
@@ -2601,36 +2711,47 @@
 			)
 		)
 		(property "Voltage" "16V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 19.05 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "No AEC-Q200 part exists in the drawn 0402 package (DigiKey parametric search, 2026-10-22); built in the next larger package, 0603."
@@ -2744,7 +2865,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2754,8 +2875,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "CGA3E1X7R1C474K080AC"
-			(at 2.54 -1.27 0)
+		(property "Value" "470nF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2810,14 +2931,14 @@
 			)
 		)
 		(property "MPN" "CGA3E1X7R1C474K080AC"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "445-5672-1-ND"
@@ -2854,36 +2975,47 @@
 			)
 		)
 		(property "Voltage" "16V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 19.05 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "No AEC-Q200 part exists in the drawn 0402 package (DigiKey parametric search, 2026-10-22); built in the next larger package, 0603."
@@ -2997,7 +3129,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3007,8 +3139,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "CGA3E2C0G1H103J080AA"
-			(at 2.54 -1.27 0)
+		(property "Value" "10nF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3063,14 +3195,14 @@
 			)
 		)
 		(property "MPN" "CGA3E2C0G1H103J080AA"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "445-6916-1-ND"
@@ -3107,36 +3239,47 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±5%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "C0G"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 17.78 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "No AEC-Q200 part exists in the drawn 0402 package (DigiKey parametric search, 2026-10-22); built in the next larger package, 0603."
@@ -3250,7 +3393,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3260,8 +3403,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "CGA3E2C0G1H472J080AA"
-			(at 2.54 -1.27 0)
+		(property "Value" "4.7nF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3316,14 +3459,14 @@
 			)
 		)
 		(property "MPN" "CGA3E2C0G1H472J080AA"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "445-6912-1-ND"
@@ -3360,36 +3503,47 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±5%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "C0G"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 17.78 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "No AEC-Q200 part exists in the drawn 0402 package (DigiKey parametric search, 2026-10-22); built in the next larger package, 0603."
@@ -3503,7 +3657,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3513,8 +3667,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "CGA3E3X7R1H474K080AB"
-			(at 2.54 -1.27 0)
+		(property "Value" "470nF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3569,14 +3723,14 @@
 			)
 		)
 		(property "MPN" "CGA3E3X7R1H474K080AB"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "445-175200-1-ND"
@@ -3613,36 +3767,47 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 19.05 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "capacitor ceramic MLCC automotive"
@@ -3745,7 +3910,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3755,8 +3920,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "CGA4J3X7R1A475K125AB"
-			(at 2.54 -1.27 0)
+		(property "Value" "4.7uF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3811,14 +3976,14 @@
 			)
 		)
 		(property "MPN" "CGA4J3X7R1A475K125AB"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "445-12730-1-ND"
@@ -3855,36 +4020,47 @@
 			)
 		)
 		(property "Voltage" "10V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0805"
+			(at 19.05 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "capacitor ceramic MLCC automotive"
@@ -3987,7 +4163,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3997,8 +4173,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "CGA5L1C0G2A104J160AC"
-			(at 2.54 -1.27 0)
+		(property "Value" "100nF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4053,14 +4229,14 @@
 			)
 		)
 		(property "MPN" "CGA5L1C0G2A104J160AC"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "445-172694-1-ND"
@@ -4097,36 +4273,47 @@
 			)
 		)
 		(property "Voltage" "100V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±5%"
-			(at 0 0 0)
+			(at 13.97 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "C0G"
-			(at 0 0 0)
+			(at 8.89 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "1206"
+			(at 19.05 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "capacitor ceramic MLCC automotive"
@@ -4229,7 +4416,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4239,8 +4426,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "CGA5L1X7R1C106K160AC"
-			(at 2.54 -1.27 0)
+		(property "Value" "10uF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4295,14 +4482,14 @@
 			)
 		)
 		(property "MPN" "CGA5L1X7R1C106K160AC"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "445-12902-1-ND"
@@ -4339,36 +4526,47 @@
 			)
 		)
 		(property "Voltage" "16V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "1206"
+			(at 19.05 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "No AEC-Q200 10 uF 16 V X7R part exists in the drawn 0805 package (DigiKey parametric search, 2026-10-22); built in the next larger package, 1206."
@@ -4482,7 +4680,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4492,8 +4690,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "CGA5L2C0G1H104J160AA"
-			(at 2.54 -1.27 0)
+		(property "Value" "100nF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4548,14 +4746,14 @@
 			)
 		)
 		(property "MPN" "CGA5L2C0G1H104J160AA"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "445-6984-1-ND"
@@ -4592,36 +4790,47 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±5%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "C0G"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "1206"
+			(at 17.78 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "No AEC-Q200 100 nF C0G part exists in the drawn 0805 package (DigiKey parametric search, 2026-10-22); built in the next larger package, 1206. TDK's lowest rating for this value is 50 V."
@@ -4735,7 +4944,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4745,8 +4954,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "CGA5L2C0G1H683J160AA"
-			(at 2.54 -1.27 0)
+		(property "Value" "68nF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4801,14 +5010,14 @@
 			)
 		)
 		(property "MPN" "CGA5L2C0G1H683J160AA"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "445-6983-1-ND"
@@ -4845,36 +5054,47 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±5%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "C0G"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "1206"
+			(at 17.78 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "No AEC-Q200 68 nF C0G part exists in the drawn 0805 package (DigiKey parametric search, 2026-10-22); built in the next larger package, 1206."
@@ -4988,7 +5208,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4998,8 +5218,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "CGA5L2X7R2A105K160AA"
-			(at 2.54 -1.27 0)
+		(property "Value" "1uF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5054,14 +5274,14 @@
 			)
 		)
 		(property "MPN" "CGA5L2X7R2A105K160AA"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "445-5845-1-ND"
@@ -5098,36 +5318,47 @@
 			)
 		)
 		(property "Voltage" "100V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 13.97 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 8.89 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "1206"
+			(at 20.32 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "capacitor ceramic MLCC automotive"
@@ -5230,7 +5461,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5240,8 +5471,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "CNA6P1X7R2A475K250AE"
-			(at 2.54 -1.27 0)
+		(property "Value" "4.7uF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5296,14 +5527,14 @@
 			)
 		)
 		(property "MPN" "CNA6P1X7R2A475K250AE"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "445-181409-1-ND"
@@ -5340,36 +5571,47 @@
 			)
 		)
 		(property "Voltage" "100V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 13.97 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 8.89 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "1210"
+			(at 20.32 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "TDK makes this value only in its CNA soft termination series."
@@ -5483,7 +5725,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5493,8 +5735,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "GCJ188R72A104KA01D"
-			(at 2.54 -1.27 0)
+		(property "Value" "100nF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5549,14 +5791,14 @@
 			)
 		)
 		(property "MPN" "GCJ188R72A104KA01D"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "490-13420-1-ND"
@@ -5593,36 +5835,47 @@
 			)
 		)
 		(property "Voltage" "100V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 13.97 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 8.89 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 20.32 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "Murata makes no 100 V 100 nF X7R GCM in 0603; GCJ is Murata's AEC-Q200 soft termination series."
@@ -5736,7 +5989,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5746,8 +5999,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "GCM155R71C104KA55D"
-			(at 2.54 -1.27 0)
+		(property "Value" "100nF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5802,14 +6055,14 @@
 			)
 		)
 		(property "MPN" "GCM155R71C104KA55D"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "490-4759-1-ND"
@@ -5846,36 +6099,47 @@
 			)
 		)
 		(property "Voltage" "16V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0402"
+			(at 19.05 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "capacitor ceramic MLCC automotive"
@@ -5978,7 +6242,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5988,8 +6252,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "GCM155R71C224KE02D"
-			(at 2.54 -1.27 0)
+		(property "Value" "220nF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6044,14 +6308,14 @@
 			)
 		)
 		(property "MPN" "GCM155R71C224KE02D"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "490-10671-1-ND"
@@ -6088,36 +6352,47 @@
 			)
 		)
 		(property "Voltage" "16V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0402"
+			(at 19.05 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "capacitor ceramic MLCC automotive"
@@ -6220,7 +6495,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6230,8 +6505,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "GCM155R71H103KA55D"
-			(at 2.54 -1.27 0)
+		(property "Value" "10nF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6286,14 +6561,14 @@
 			)
 		)
 		(property "MPN" "GCM155R71H103KA55D"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "490-4762-1-ND"
@@ -6330,36 +6605,47 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0402"
+			(at 19.05 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "capacitor ceramic MLCC automotive"
@@ -6462,7 +6748,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6472,8 +6758,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "GCM1885C1H103GA16D"
-			(at 2.54 -1.27 0)
+		(property "Value" "10nF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6528,14 +6814,14 @@
 			)
 		)
 		(property "MPN" "GCM1885C1H103GA16D"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "490-GCM1885C1H103GA16DCT-ND"
@@ -6572,36 +6858,47 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±2%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "C0G"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 17.78 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "No AEC-Q200 part exists in the drawn 0402 package (DigiKey parametric search, 2026-10-22); built in the next larger package, 0603. Murata makes the 50 V GCM 10 nF C0G only in ±2 % or tighter."
@@ -6715,7 +7012,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6725,8 +7022,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "GCM1885C1H472JA16D"
-			(at 2.54 -1.27 0)
+		(property "Value" "4.7nF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6781,14 +7078,14 @@
 			)
 		)
 		(property "MPN" "GCM1885C1H472JA16D"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "490-GCM1885C1H472JA16DCT-ND"
@@ -6825,36 +7122,47 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±5%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "C0G"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 17.78 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "No AEC-Q200 part exists in the drawn 0402 package (DigiKey parametric search, 2026-10-22); built in the next larger package, 0603."
@@ -6968,7 +7276,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6978,8 +7286,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "GCM1885C2A103JE02D"
-			(at 2.54 -1.27 0)
+		(property "Value" "10nF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7034,14 +7342,14 @@
 			)
 		)
 		(property "MPN" "GCM1885C2A103JE02D"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "490-GCM1885C2A103JE02DCT-ND"
@@ -7078,36 +7386,47 @@
 			)
 		)
 		(property "Voltage" "100V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±5%"
-			(at 0 0 0)
+			(at 13.97 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "C0G"
-			(at 0 0 0)
+			(at 8.89 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 19.05 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "capacitor ceramic MLCC automotive"
@@ -7210,7 +7529,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7220,8 +7539,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "GCM188R71C105KA64D"
-			(at 2.54 -1.27 0)
+		(property "Value" "1uF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7276,14 +7595,14 @@
 			)
 		)
 		(property "MPN" "GCM188R71C105KA64D"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "490-5241-1-ND"
@@ -7320,36 +7639,47 @@
 			)
 		)
 		(property "Voltage" "16V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 19.05 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "No AEC-Q200 part exists in the drawn 0402 package (DigiKey parametric search, 2026-10-22); built in the next larger package, 0603."
@@ -7463,7 +7793,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7473,8 +7803,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "GCM188R71C474KA55D"
-			(at 2.54 -1.27 0)
+		(property "Value" "470nF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7529,14 +7859,14 @@
 			)
 		)
 		(property "MPN" "GCM188R71C474KA55D"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "490-4775-1-ND"
@@ -7573,36 +7903,47 @@
 			)
 		)
 		(property "Voltage" "16V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 19.05 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "No AEC-Q200 part exists in the drawn 0402 package (DigiKey parametric search, 2026-10-22); built in the next larger package, 0603."
@@ -7716,7 +8057,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7726,8 +8067,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "GCM21BR71C475KA73L"
-			(at 2.54 -1.27 0)
+		(property "Value" "4.7uF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7782,14 +8123,14 @@
 			)
 		)
 		(property "MPN" "GCM21BR71C475KA73L"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "490-5332-1-ND"
@@ -7826,36 +8167,47 @@
 			)
 		)
 		(property "Voltage" "16V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0805"
+			(at 19.05 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "Murata's lowest rating for this value in GCM21B X7R is 16 V."
@@ -7969,7 +8321,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7979,8 +8331,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "GCM31C5C1H683JA16L"
-			(at 2.54 -1.27 0)
+		(property "Value" "68nF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8035,14 +8387,14 @@
 			)
 		)
 		(property "MPN" "GCM31C5C1H683JA16L"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "490-5323-1-ND"
@@ -8079,36 +8431,47 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±5%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "C0G"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "1206"
+			(at 17.78 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "No AEC-Q200 68 nF C0G part exists in the drawn 0805 package (DigiKey parametric search, 2026-10-22); built in the next larger package, 1206."
@@ -8222,7 +8585,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8232,8 +8595,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "GCM31C5C2A104JE02L"
-			(at 2.54 -1.27 0)
+		(property "Value" "100nF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8288,14 +8651,14 @@
 			)
 		)
 		(property "MPN" "GCM31C5C2A104JE02L"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "490-GCM31C5C2A104JE02LCT-ND"
@@ -8332,36 +8695,47 @@
 			)
 		)
 		(property "Voltage" "100V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±5%"
-			(at 0 0 0)
+			(at 13.97 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "C0G"
-			(at 0 0 0)
+			(at 8.89 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "1206"
+			(at 19.05 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "capacitor ceramic MLCC automotive"
@@ -8464,7 +8838,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8474,8 +8848,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "GCM31CR71C106KA64L"
-			(at 2.54 -1.27 0)
+		(property "Value" "10uF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8530,14 +8904,14 @@
 			)
 		)
 		(property "MPN" "GCM31CR71C106KA64L"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "490-4793-1-ND"
@@ -8574,36 +8948,47 @@
 			)
 		)
 		(property "Voltage" "16V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "1206"
+			(at 19.05 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "No AEC-Q200 10 uF 16 V X7R part exists in the drawn 0805 package (DigiKey parametric search, 2026-10-22); built in the next larger package, 1206."
@@ -8717,7 +9102,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8727,8 +9112,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "GCM32ER71A226KE12L"
-			(at 2.54 -1.27 0)
+		(property "Value" "22uF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8783,14 +9168,14 @@
 			)
 		)
 		(property "MPN" "GCM32ER71A226KE12L"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "490-4797-1-ND"
@@ -8827,36 +9212,47 @@
 			)
 		)
 		(property "Voltage" "10V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "1210"
+			(at 19.05 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "capacitor ceramic MLCC automotive"
@@ -8959,7 +9355,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8969,8 +9365,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "KAM15AR71A225KT"
-			(at 2.54 -1.27 0)
+		(property "Value" "2.2uF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9025,14 +9421,14 @@
 			)
 		)
 		(property "MPN" "KAM15AR71A225KT"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "478-KAM15AR71A225KTCT-ND"
@@ -9069,36 +9465,47 @@
 			)
 		)
 		(property "Voltage" "10V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 19.05 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "Murata and TDK make no 10 V 2.2 uF X7R automotive part in 0603."
@@ -9212,7 +9619,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "C"
-			(at 2.54 1.27 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9222,8 +9629,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "MCASU168SB7474KTCA01"
-			(at 2.54 -1.27 0)
+		(property "Value" "470nF"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9278,14 +9685,14 @@
 			)
 		)
 		(property "MPN" "MCASU168SB7474KTCA01"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "587-MCASU168SB7474KTCA01TR-ND"
@@ -9322,36 +9729,47 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 0 0 0)
+			(at 12.7 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 19.05 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "Murata makes no 50 V 470 nF X7R GCM in 0603."

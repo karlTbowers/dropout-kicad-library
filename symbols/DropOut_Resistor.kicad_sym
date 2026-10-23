@@ -16,23 +16,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "AC0402FR-07100KL"
-			(at 0 -6.35 0)
+		(property "Value" "100k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0402_1005Metric"
@@ -80,14 +82,14 @@
 			)
 		)
 		(property "MPN" "AC0402FR-07100KL"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "YAG3434CT-ND"
@@ -124,14 +126,14 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "1/16W"
@@ -146,14 +148,25 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0402"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film automotive"
@@ -243,23 +256,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "AC0402FR-0712K4L"
-			(at 0 -6.35 0)
+		(property "Value" "12.4k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0402_1005Metric"
@@ -307,14 +322,14 @@
 			)
 		)
 		(property "MPN" "AC0402FR-0712K4L"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "YAG5256CT-ND"
@@ -351,14 +366,14 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "1/16W"
@@ -373,14 +388,25 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0402"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film automotive"
@@ -470,23 +496,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "AC0402FR-0714KL"
-			(at 0 -6.35 0)
+		(property "Value" "14k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0402_1005Metric"
@@ -534,14 +562,14 @@
 			)
 		)
 		(property "MPN" "AC0402FR-0714KL"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "13-AC0402FR-0714KLCT-ND"
@@ -578,14 +606,14 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "1/16W"
@@ -600,14 +628,25 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0402"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film automotive"
@@ -697,23 +736,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "AC0402FR-0728KL"
-			(at 0 -6.35 0)
+		(property "Value" "28k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0402_1005Metric"
@@ -761,14 +802,14 @@
 			)
 		)
 		(property "MPN" "AC0402FR-0728KL"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "13-AC0402FR-0728KLCT-ND"
@@ -805,14 +846,14 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "1/16W"
@@ -827,14 +868,25 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0402"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film automotive"
@@ -924,23 +976,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "AC0402JR-070RL"
-			(at 0 -6.35 0)
+		(property "Value" "0R"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0402_1005Metric"
@@ -988,14 +1042,14 @@
 			)
 		)
 		(property "MPN" "AC0402JR-070RL"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "311-0.0LBCT-ND"
@@ -1029,6 +1083,17 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "Case" "0402"
+			(at 2.54 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film automotive"
@@ -1118,23 +1183,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "AC0402JR-0710KL"
-			(at 0 -6.35 0)
+		(property "Value" "10k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0402_1005Metric"
@@ -1182,14 +1249,14 @@
 			)
 		)
 		(property "MPN" "AC0402JR-0710KL"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "YAG3517CT-ND"
@@ -1226,14 +1293,14 @@
 			)
 		)
 		(property "Tolerance" "±5%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "1/16W"
@@ -1248,14 +1315,25 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0402"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film automotive"
@@ -1345,23 +1423,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "AC0402JR-0710RL"
-			(at 0 -6.35 0)
+		(property "Value" "10R"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0402_1005Metric"
@@ -1409,14 +1489,14 @@
 			)
 		)
 		(property "MPN" "AC0402JR-0710RL"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "YAG3519CT-ND"
@@ -1453,14 +1533,14 @@
 			)
 		)
 		(property "Tolerance" "±5%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "1/16W"
@@ -1475,14 +1555,25 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0402"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film automotive"
@@ -1572,23 +1663,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "AC0402JR-072K2L"
-			(at 0 -6.35 0)
+		(property "Value" "2.2k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0402_1005Metric"
@@ -1636,14 +1729,14 @@
 			)
 		)
 		(property "MPN" "AC0402JR-072K2L"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "YAG3536CT-ND"
@@ -1680,14 +1773,14 @@
 			)
 		)
 		(property "Tolerance" "±5%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "1/16W"
@@ -1702,14 +1795,25 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0402"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film automotive"
@@ -1799,23 +1903,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "AC0402JR-0733RL"
-			(at 0 -6.35 0)
+		(property "Value" "33R"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0402_1005Metric"
@@ -1863,14 +1969,14 @@
 			)
 		)
 		(property "MPN" "AC0402JR-0733RL"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "YAG3543CT-ND"
@@ -1907,14 +2013,14 @@
 			)
 		)
 		(property "Tolerance" "±5%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "1/16W"
@@ -1929,14 +2035,25 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0402"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film automotive"
@@ -2026,23 +2143,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "AC0402JR-074K7L"
-			(at 0 -6.35 0)
+		(property "Value" "4.7k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0402_1005Metric"
@@ -2090,14 +2209,14 @@
 			)
 		)
 		(property "MPN" "AC0402JR-074K7L"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "311-4.7KLBCT-ND"
@@ -2134,14 +2253,14 @@
 			)
 		)
 		(property "Tolerance" "±5%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "1/16W"
@@ -2156,14 +2275,25 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0402"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film automotive"
@@ -2253,23 +2383,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "AC0603FR-07100RL"
-			(at 0 -6.35 0)
+		(property "Value" "100R"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -2317,14 +2449,14 @@
 			)
 		)
 		(property "MPN" "AC0603FR-07100RL"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "YAG3561CT-ND"
@@ -2361,14 +2493,14 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "1/10W"
@@ -2383,14 +2515,25 @@
 			)
 		)
 		(property "Voltage" "75V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film automotive"
@@ -2480,23 +2623,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "AC0603FR-07107KL"
-			(at 0 -6.35 0)
+		(property "Value" "107k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -2544,14 +2689,14 @@
 			)
 		)
 		(property "MPN" "AC0603FR-07107KL"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "13-AC0603FR-07107KLCT-ND"
@@ -2588,14 +2733,14 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "1/10W"
@@ -2610,14 +2755,25 @@
 			)
 		)
 		(property "Voltage" "75V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film automotive"
@@ -2707,23 +2863,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "AC0603FR-072K1L"
-			(at 0 -6.35 0)
+		(property "Value" "2.1k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -2771,14 +2929,14 @@
 			)
 		)
 		(property "MPN" "AC0603FR-072K1L"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "13-AC0603FR-072K1LCT-ND"
@@ -2815,14 +2973,14 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "1/10W"
@@ -2837,14 +2995,25 @@
 			)
 		)
 		(property "Voltage" "75V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film automotive"
@@ -2934,23 +3103,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "AC0603FR-072KL"
-			(at 0 -6.35 0)
+		(property "Value" "2k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -2998,14 +3169,14 @@
 			)
 		)
 		(property "MPN" "AC0603FR-072KL"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "YAG3590CT-ND"
@@ -3042,14 +3213,14 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "1/10W"
@@ -3064,14 +3235,25 @@
 			)
 		)
 		(property "Voltage" "75V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film automotive"
@@ -3161,23 +3343,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "AC0603FR-0749R9L"
-			(at 0 -6.35 0)
+		(property "Value" "49.9R"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -3225,14 +3409,14 @@
 			)
 		)
 		(property "MPN" "AC0603FR-0749R9L"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "YAG3611CT-ND"
@@ -3269,14 +3453,14 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "1/10W"
@@ -3291,14 +3475,25 @@
 			)
 		)
 		(property "Voltage" "75V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film automotive"
@@ -3388,23 +3583,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "AC0603FR-077K87L"
-			(at 0 -6.35 0)
+		(property "Value" "7.87k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -3452,14 +3649,14 @@
 			)
 		)
 		(property "MPN" "AC0603FR-077K87L"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "13-AC0603FR-077K87LCT-ND"
@@ -3496,14 +3693,14 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "1/10W"
@@ -3518,14 +3715,25 @@
 			)
 		)
 		(property "Voltage" "75V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film automotive"
@@ -3615,23 +3823,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "AC0603JR-070RL"
-			(at 0 -6.35 0)
+		(property "Value" "0R"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -3679,14 +3889,14 @@
 			)
 		)
 		(property "MPN" "AC0603JR-070RL"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "311-0.0LECT-ND"
@@ -3720,6 +3930,17 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "Case" "0603"
+			(at 2.54 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "Rejected for the Node60 0R 0603 regulator-output debug links, which need a 2 A rated jumper: this one is rated 1 A, 2 A maximum (Yageo AC Table 2). Kept as a part-search candidate."
@@ -4824,23 +5045,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "CRCW06030000Z0EA"
-			(at 0 -6.35 0)
+		(property "Value" "0R"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -4888,14 +5111,14 @@
 			)
 		)
 		(property "MPN" "CRCW06030000Z0EA"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "541-0.0GCT-ND"
@@ -4929,6 +5152,17 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "Case" "0603"
+			(at 2.54 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor jumper thick film automotive"
@@ -5018,23 +5252,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "CRCW06030000Z0EAHP"
-			(at 0 -6.35 0)
+		(property "Value" "0R"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -5082,14 +5318,14 @@
 			)
 		)
 		(property "MPN" "CRCW06030000Z0EAHP"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "541-0.0SBCT-ND"
@@ -5123,6 +5359,17 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "Case" "0603"
+			(at 2.54 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor jumper thick film pulse automotive"
@@ -5406,23 +5653,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "ERA-3AEB103V"
-			(at 0 -6.35 0)
+		(property "Value" "10k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -5470,14 +5719,14 @@
 			)
 		)
 		(property "MPN" "ERA-3AEB103V"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "P10KDBCT-ND"
@@ -5514,14 +5763,14 @@
 			)
 		)
 		(property "Tolerance" "±0.1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "0.1W"
@@ -5536,14 +5785,25 @@
 			)
 		)
 		(property "Voltage" "75V"
-			(at 0 0 0)
+			(at 10.16 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 15.24 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "Precision part: not substitutable (0.1 %, ±25 ppm/K thin film)."
@@ -5644,23 +5904,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "ERA-3AEB6980V"
-			(at 0 -6.35 0)
+		(property "Value" "698R"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -5708,14 +5970,14 @@
 			)
 		)
 		(property "MPN" "ERA-3AEB6980V"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "10-ERA-3AEB6980VCT-ND"
@@ -5752,14 +6014,14 @@
 			)
 		)
 		(property "Tolerance" "±0.1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "0.1W"
@@ -5774,14 +6036,25 @@
 			)
 		)
 		(property "Voltage" "75V"
-			(at 0 0 0)
+			(at 10.16 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 15.24 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "Precision part: not substitutable (0.1 %, ±25 ppm/K thin film)."
@@ -5882,23 +6155,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "ERJ-2GE0R00X"
-			(at 0 -6.35 0)
+		(property "Value" "0R"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0402_1005Metric"
@@ -5946,14 +6221,14 @@
 			)
 		)
 		(property "MPN" "ERJ-2GE0R00X"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "P0.0JCT-ND"
@@ -5987,6 +6262,17 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "Case" "0402"
+			(at 2.54 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film automotive"
@@ -6076,23 +6362,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "ERJ-2GEJ100X"
-			(at 0 -6.35 0)
+		(property "Value" "10R"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0402_1005Metric"
@@ -6140,14 +6428,14 @@
 			)
 		)
 		(property "MPN" "ERJ-2GEJ100X"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "P10JCT-ND"
@@ -6184,14 +6472,14 @@
 			)
 		)
 		(property "Tolerance" "±5%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "0.1W"
@@ -6206,14 +6494,25 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0402"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film automotive"
@@ -6303,23 +6602,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "ERJ-2GEJ103X"
-			(at 0 -6.35 0)
+		(property "Value" "10k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0402_1005Metric"
@@ -6367,14 +6668,14 @@
 			)
 		)
 		(property "MPN" "ERJ-2GEJ103X"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "P10KJCT-ND"
@@ -6411,14 +6712,14 @@
 			)
 		)
 		(property "Tolerance" "±5%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "0.1W"
@@ -6433,14 +6734,25 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0402"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film automotive"
@@ -6530,23 +6842,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "ERJ-2GEJ222X"
-			(at 0 -6.35 0)
+		(property "Value" "2.2k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0402_1005Metric"
@@ -6594,14 +6908,14 @@
 			)
 		)
 		(property "MPN" "ERJ-2GEJ222X"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "P2.2KJCT-ND"
@@ -6638,14 +6952,14 @@
 			)
 		)
 		(property "Tolerance" "±5%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "0.1W"
@@ -6660,14 +6974,25 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0402"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film automotive"
@@ -6757,23 +7082,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "ERJ-2GEJ330X"
-			(at 0 -6.35 0)
+		(property "Value" "33R"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0402_1005Metric"
@@ -6821,14 +7148,14 @@
 			)
 		)
 		(property "MPN" "ERJ-2GEJ330X"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "P33JCT-ND"
@@ -6865,14 +7192,14 @@
 			)
 		)
 		(property "Tolerance" "±5%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "0.1W"
@@ -6887,14 +7214,25 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0402"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film automotive"
@@ -6984,23 +7322,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "ERJ-2GEJ472X"
-			(at 0 -6.35 0)
+		(property "Value" "4.7k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0402_1005Metric"
@@ -7048,14 +7388,14 @@
 			)
 		)
 		(property "MPN" "ERJ-2GEJ472X"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "P4.7KJCT-ND"
@@ -7092,14 +7432,14 @@
 			)
 		)
 		(property "Tolerance" "±5%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "0.1W"
@@ -7114,14 +7454,25 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0402"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film automotive"
@@ -7211,23 +7562,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "ERJ-2RKF1003X"
-			(at 0 -6.35 0)
+		(property "Value" "100k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0402_1005Metric"
@@ -7275,14 +7628,14 @@
 			)
 		)
 		(property "MPN" "ERJ-2RKF1003X"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "P100KLCT-ND"
@@ -7319,14 +7672,14 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "0.1W"
@@ -7341,14 +7694,25 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0402"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film precision automotive"
@@ -7438,23 +7802,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "ERJ-2RKF1242X"
-			(at 0 -6.35 0)
+		(property "Value" "12.4k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0402_1005Metric"
@@ -7502,14 +7868,14 @@
 			)
 		)
 		(property "MPN" "ERJ-2RKF1242X"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "P12.4KLCT-ND"
@@ -7546,14 +7912,14 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "0.1W"
@@ -7568,14 +7934,25 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0402"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film precision automotive"
@@ -7665,23 +8042,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "ERJ-2RKF1402X"
-			(at 0 -6.35 0)
+		(property "Value" "14k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0402_1005Metric"
@@ -7729,14 +8108,14 @@
 			)
 		)
 		(property "MPN" "ERJ-2RKF1402X"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "P14.0KLCT-ND"
@@ -7773,14 +8152,14 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "0.1W"
@@ -7795,14 +8174,25 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0402"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film precision automotive"
@@ -7892,23 +8282,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "ERJ-2RKF2802X"
-			(at 0 -6.35 0)
+		(property "Value" "28k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0402_1005Metric"
@@ -7956,14 +8348,14 @@
 			)
 		)
 		(property "MPN" "ERJ-2RKF2802X"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "P28.0KLCT-ND"
@@ -8000,14 +8392,14 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "0.1W"
@@ -8022,14 +8414,25 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0402"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film precision automotive"
@@ -8119,23 +8522,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "ERJ-3EKF1000V"
-			(at 0 -6.35 0)
+		(property "Value" "100R"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -8183,14 +8588,14 @@
 			)
 		)
 		(property "MPN" "ERJ-3EKF1000V"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "P100HCT-ND"
@@ -8227,14 +8632,14 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "0.1W"
@@ -8249,14 +8654,25 @@
 			)
 		)
 		(property "Voltage" "75V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film precision automotive"
@@ -8346,23 +8762,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "ERJ-3EKF1073V"
-			(at 0 -6.35 0)
+		(property "Value" "107k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -8410,14 +8828,14 @@
 			)
 		)
 		(property "MPN" "ERJ-3EKF1073V"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "P107KHCT-ND"
@@ -8454,14 +8872,14 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "0.1W"
@@ -8476,14 +8894,25 @@
 			)
 		)
 		(property "Voltage" "75V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film precision automotive"
@@ -8573,23 +9002,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "ERJ-3EKF2001V"
-			(at 0 -6.35 0)
+		(property "Value" "2k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -8637,14 +9068,14 @@
 			)
 		)
 		(property "MPN" "ERJ-3EKF2001V"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "P2.00KHCT-ND"
@@ -8681,14 +9112,14 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "0.1W"
@@ -8703,14 +9134,25 @@
 			)
 		)
 		(property "Voltage" "75V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film precision automotive"
@@ -8800,23 +9242,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "ERJ-3EKF2101V"
-			(at 0 -6.35 0)
+		(property "Value" "2.1k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -8864,14 +9308,14 @@
 			)
 		)
 		(property "MPN" "ERJ-3EKF2101V"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "P2.10KHCT-ND"
@@ -8908,14 +9352,14 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "0.1W"
@@ -8930,14 +9374,25 @@
 			)
 		)
 		(property "Voltage" "75V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film precision automotive"
@@ -9027,23 +9482,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "ERJ-3EKF49R9V"
-			(at 0 -6.35 0)
+		(property "Value" "49.9R"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -9091,14 +9548,14 @@
 			)
 		)
 		(property "MPN" "ERJ-3EKF49R9V"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "P49.9HCT-ND"
@@ -9135,14 +9592,14 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "0.1W"
@@ -9157,14 +9614,25 @@
 			)
 		)
 		(property "Voltage" "75V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film precision automotive"
@@ -9254,23 +9722,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "ERJ-3EKF7871V"
-			(at 0 -6.35 0)
+		(property "Value" "7.87k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -9318,14 +9788,14 @@
 			)
 		)
 		(property "MPN" "ERJ-3EKF7871V"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "P7.87KHCT-ND"
@@ -9362,14 +9832,14 @@
 			)
 		)
 		(property "Tolerance" "±1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "0.1W"
@@ -9384,14 +9854,25 @@
 			)
 		)
 		(property "Voltage" "75V"
-			(at 0 0 0)
+			(at 7.62 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 12.7 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "ki_keywords" "resistor thick film precision automotive"
@@ -9481,23 +9962,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "ERJ-3GEY0R00V"
-			(at 0 -6.35 0)
+		(property "Value" "0R"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -9545,14 +10028,14 @@
 			)
 		)
 		(property "MPN" "ERJ-3GEY0R00V"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "P0.0GCT-ND"
@@ -9586,6 +10069,17 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "Case" "0603"
+			(at 2.54 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "Rejected for the Node60 0R 0603 regulator-output debug links, which need a 2 A rated jumper: this one is rated 1 A, 2 A maximum overload (AOA0000C301 jumper table). Kept as a part-search candidate."
@@ -9880,23 +10374,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "RG1608P-103-B-T5"
-			(at 0 -6.35 0)
+		(property "Value" "10k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -9944,14 +10440,14 @@
 			)
 		)
 		(property "MPN" "RG1608P-103-B-T5"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "RG16P10.0KBCT-ND"
@@ -9988,14 +10484,14 @@
 			)
 		)
 		(property "Tolerance" "±0.1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "0.1W"
@@ -10010,14 +10506,25 @@
 			)
 		)
 		(property "Voltage" "100V"
-			(at 0 0 0)
+			(at 10.16 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 16.51 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "Precision part: not substitutable (0.1 %, ±25 ppm/K thin film)."
@@ -10118,23 +10625,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "RG1608P-6980-B-T5"
-			(at 0 -6.35 0)
+		(property "Value" "698R"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -10182,14 +10691,14 @@
 			)
 		)
 		(property "MPN" "RG1608P-6980-B-T5"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "RG1608P-6980-B-T5-ND"
@@ -10226,14 +10735,14 @@
 			)
 		)
 		(property "Tolerance" "±0.1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "0.1W"
@@ -10248,14 +10757,25 @@
 			)
 		)
 		(property "Voltage" "100V"
-			(at 0 0 0)
+			(at 10.16 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 16.51 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "Precision part: not substitutable (0.1 %, ±25 ppm/K thin film)."
@@ -10356,23 +10876,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "RK73Z1JTTD"
-			(at 0 -6.35 0)
+		(property "Value" "0R"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -10420,14 +10942,14 @@
 			)
 		)
 		(property "MPN" "RK73Z1JTTD"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "2019-RK73Z1JTTDCT-ND"
@@ -10461,6 +10983,17 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "Case" "0603"
+			(at 2.54 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "Rejected for the Node60 0R 0603 regulator-output debug links, which need a 2 A rated jumper: this one is rated 1 A, 2 A maximum overload (RK73Z ratings table). Kept as a part-search candidate."
@@ -10561,23 +11094,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "RNCF0603BTE32K0"
-			(at 0 -6.35 0)
+		(property "Value" "32k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -10625,14 +11160,14 @@
 			)
 		)
 		(property "MPN" "RNCF0603BTE32K0"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "738-RNCF0603BTE32K0CT-ND"
@@ -10669,14 +11204,14 @@
 			)
 		)
 		(property "Tolerance" "±0.1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "0.1W"
@@ -10691,14 +11226,25 @@
 			)
 		)
 		(property "Voltage" "75V"
-			(at 0 0 0)
+			(at 10.16 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 15.24 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "32 kΩ is an E192 value: no AEC-Q200 1 % thick film part offers it (Yageo AC and Panasonic ERJ-3EKF are E24/E96 only), so this 0.1 % thin film part serves the 1 % line."
@@ -10799,23 +11345,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "TNPW060310K0BEEA"
-			(at 0 -6.35 0)
+		(property "Value" "10k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -10863,14 +11411,14 @@
 			)
 		)
 		(property "MPN" "TNPW060310K0BEEA"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "TNP10.0KAACT-ND"
@@ -10907,14 +11455,14 @@
 			)
 		)
 		(property "Tolerance" "±0.1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "0.11W"
@@ -10929,14 +11477,25 @@
 			)
 		)
 		(property "Voltage" "100V"
-			(at 0 0 0)
+			(at 10.16 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 16.51 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "Precision part: not substitutable (0.1 %, ±25 ppm/K thin film)."
@@ -11037,23 +11596,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "TNPW060332K0BEEA"
-			(at 0 -6.35 0)
+		(property "Value" "32k"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -11101,14 +11662,14 @@
 			)
 		)
 		(property "MPN" "TNPW060332K0BEEA"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "541-TNPW060332K0BEEACT-ND"
@@ -11145,14 +11706,14 @@
 			)
 		)
 		(property "Tolerance" "±0.1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "0.11W"
@@ -11167,14 +11728,25 @@
 			)
 		)
 		(property "Voltage" "100V"
-			(at 0 0 0)
+			(at 10.16 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 16.51 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "32 kΩ is an E192 value: no AEC-Q200 1 % thick film part offers it (Yageo AC and Panasonic ERJ-3EKF are E24/E96 only), so this 0.1 % thin film part serves the 1 % line."
@@ -11275,23 +11847,25 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "R"
-			(at 0 6.35 0)
+			(at 2.54 2.858 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "TNPW0603698RBEEA"
-			(at 0 -6.35 0)
+		(property "Value" "698R"
+			(at 2.54 0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric"
@@ -11339,14 +11913,14 @@
 			)
 		)
 		(property "MPN" "TNPW0603698RBEEA"
-			(at 0 0 0)
+			(at 2.54 -2.794 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
+				(justify left)
 			)
 		)
 		(property "DigiKey_PN" "541-TNPW0603698RBEEACT-ND"
@@ -11383,14 +11957,14 @@
 			)
 		)
 		(property "Tolerance" "±0.1%"
-			(at 0 0 0)
+			(at 2.54 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Power" "0.11W"
@@ -11405,14 +11979,25 @@
 			)
 		)
 		(property "Voltage" "100V"
-			(at 0 0 0)
+			(at 10.16 -0.953 0)
 			(show_name no)
 			(do_not_autoplace no)
-			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
+			)
+		)
+		(property "Case" "0603"
+			(at 16.51 -0.953 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(property "Notes" "Precision part: not substitutable (0.1 %, ±25 ppm/K thin film)."

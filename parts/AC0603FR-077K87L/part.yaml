@@ -9,7 +9,7 @@ style: resistor
 pins: pins.csv
 fields:
   Reference: "R"
-  Value: "AC0603FR-077K87L"
+  Value: "7.87k"
   Footprint: "DropOut_Resistor_SMD:R_0603_1608Metric"
   Datasheet: "https://yageogroup.com/content/datasheet/asset/file/PYU-AC_51_ROHS_L"
   Description: "Yageo AC thick film chip resistor, 7.87 kΩ ±1%, 1/10 W, 75 V, ±100 ppm/K, AEC-Q200, -55 to +155 °C, 0603 (1608 metric)"
@@ -23,3 +23,11 @@ fields:
   Tolerance: "±1%"
   Power: "1/10W"
   Voltage: "75V"
+  Case: "0603"
+field_layout:
+  Reference: {"at": [2.54, 2.858]}
+  Value: {"at": [2.54, 0.953]}
+  MPN: {"at": [2.54, -2.794], "size": 1.0, "show": true}
+  Tolerance: {"at": [2.54, -0.953], "show": true}
+  Voltage: {"at": [7.62, -0.953], "show": true}
+  Case: {"at": [12.7, -0.953], "show": true}

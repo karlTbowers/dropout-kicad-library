@@ -9,7 +9,7 @@ style: capacitor
 pins: pins.csv
 fields:
   Reference: "C"
-  Value: "C1206C104J3GACAUTO"
+  Value: "100nF"
   Footprint: "DropOut_Capacitor_SMD:C_1206_3216Metric"
   Datasheet: "https://content.kemet.com/datasheets/KEM_C1022_C0G_AUTO_SMD.pdf"
   Description: "KEMET AUTO automotive grade MLCC, 100 nF ±5%, 25 V, C0G, AEC-Q200, -55 to +125 °C, 1206 (3216 metric)"
@@ -23,4 +23,13 @@ fields:
   Voltage: "25V"
   Tolerance: "±5%"
   Dielectric: "C0G"
+  Case: "1206"
   Notes: "No AEC-Q200 100 nF C0G part exists in the drawn 0805 package (DigiKey parametric search, 2026-10-22); built in the next larger package, 1206."
+field_layout:
+  Reference: {"at": [2.54, 2.858]}
+  Value: {"at": [2.54, 0.953]}
+  MPN: {"at": [2.54, -2.794], "size": 1.0, "show": true}
+  Voltage: {"at": [2.54, -0.953], "show": true}
+  Dielectric: {"at": [7.62, -0.953], "show": true}
+  Tolerance: {"at": [12.7, -0.953], "show": true}
+  Case: {"at": [17.78, -0.953], "show": true}

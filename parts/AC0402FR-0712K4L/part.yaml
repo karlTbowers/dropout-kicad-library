@@ -9,7 +9,7 @@ style: resistor
 pins: pins.csv
 fields:
   Reference: "R"
-  Value: "AC0402FR-0712K4L"
+  Value: "12.4k"
   Footprint: "DropOut_Resistor_SMD:R_0402_1005Metric"
   Datasheet: "https://yageogroup.com/content/datasheet/asset/file/PYU-AC_51_ROHS_L"
   Description: "Yageo AC thick film chip resistor, 12.4 kΩ ±1%, 1/16 W, 50 V, ±100 ppm/K, AEC-Q200, -55 to +155 °C, 0402 (1005 metric)"
@@ -23,3 +23,11 @@ fields:
   Tolerance: "±1%"
   Power: "1/16W"
   Voltage: "50V"
+  Case: "0402"
+field_layout:
+  Reference: {"at": [2.54, 2.858]}
+  Value: {"at": [2.54, 0.953]}
+  MPN: {"at": [2.54, -2.794], "size": 1.0, "show": true}
+  Tolerance: {"at": [2.54, -0.953], "show": true}
+  Voltage: {"at": [7.62, -0.953], "show": true}
+  Case: {"at": [12.7, -0.953], "show": true}

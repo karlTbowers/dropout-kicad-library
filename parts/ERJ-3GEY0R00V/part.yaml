@@ -9,7 +9,7 @@ style: resistor
 pins: pins.csv
 fields:
   Reference: "R"
-  Value: "ERJ-3GEY0R00V"
+  Value: "0R"
   Footprint: "DropOut_Resistor_SMD:R_0603_1608Metric"
   Datasheet: "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C301.pdf"
   Description: "Panasonic ERJ-G thick film chip jumper, 0 Ω, 1 A rated, AEC-Q200, -55 to +155 °C, 0603 (1608 metric)"
@@ -20,4 +20,10 @@ fields:
   DigiKey_PN: "P0.0GCT-ND"
   Mouser_PN: "667-ERJ-3GEY0R00V"
   Temperature_Grade: "AEC-Q200, -55 to +155 °C"
+  Case: "0603"
   Notes: "Rejected for the Node60 0R 0603 regulator-output debug links, which need a 2 A rated jumper: this one is rated 1 A, 2 A maximum overload (AOA0000C301 jumper table). Kept as a part-search candidate."
+field_layout:
+  Reference: {"at": [2.54, 2.858]}
+  Value: {"at": [2.54, 0.953]}
+  MPN: {"at": [2.54, -2.794], "size": 1.0, "show": true}
+  Case: {"at": [2.54, -0.953], "show": true}

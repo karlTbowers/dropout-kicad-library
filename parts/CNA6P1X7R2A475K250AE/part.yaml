@@ -9,7 +9,7 @@ style: capacitor
 pins: pins.csv
 fields:
   Reference: "C"
-  Value: "CNA6P1X7R2A475K250AE"
+  Value: "4.7uF"
   Footprint: "DropOut_Capacitor_SMD:C_1210_3225Metric"
   Datasheet: "https://product.tdk.com/en/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_automotive_soft_cna_en.pdf"
   Description: "TDK CNA soft termination automotive MLCC, 4.7 µF ±10%, 100 V, X7R, AEC-Q200, -55 to +125 °C, 1210 (3225 metric)"
@@ -23,4 +23,13 @@ fields:
   Voltage: "100V"
   Tolerance: "±10%"
   Dielectric: "X7R"
+  Case: "1210"
   Notes: "TDK makes this value only in its CNA soft termination series."
+field_layout:
+  Reference: {"at": [2.54, 2.858]}
+  Value: {"at": [2.54, 0.953]}
+  MPN: {"at": [2.54, -2.794], "size": 1.0, "show": true}
+  Voltage: {"at": [2.54, -0.953], "show": true}
+  Dielectric: {"at": [8.89, -0.953], "show": true}
+  Tolerance: {"at": [13.97, -0.953], "show": true}
+  Case: {"at": [20.32, -0.953], "show": true}
