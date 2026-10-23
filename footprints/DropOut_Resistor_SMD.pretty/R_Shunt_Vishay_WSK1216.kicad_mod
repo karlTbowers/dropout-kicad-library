@@ -1,0 +1,215 @@
+(footprint "R_Shunt_Vishay_WSK1216"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Vishay WSK1216 4-terminal (Kelvin) Power Metal Strip resistor, 3.1 x 3.81 mm, solder pad dimensions (data sheet doc 30189 rev 14-Sep-2026 p. 2); pads 1/4 force, 2/3 sense, https://www.vishay.com/docs/30189/wsk1216.pdf")
+	(tags "resistor shunt current sense Kelvin 4-terminal Vishay WSK1216")
+	(property "Reference" "REF**"
+		(at 0 -3.2 0)
+		(layer "F.SilkS")
+		(uuid "8c6189c0-16a6-4939-b40d-abc2152aa208")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "R_Shunt_Vishay_WSK1216"
+		(at 0 3.2 0)
+		(layer "F.Fab")
+		(uuid "e4a86c2a-9e6a-4641-93dd-086e7c36f8e9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9aa46580-0c4e-4c96-b9ab-8ccafbedb93f")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c645dbf4-ffdd-4e05-a047-b09794c43473")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -1.8 -2.29)
+		(end 1.55 -2.29)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "c41e736a-2868-4f6c-b50f-0d6a1b616b82")
+	)
+	(fp_line
+		(start -1.55 2.29)
+		(end 1.55 2.29)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "2bf392a7-71ee-4008-a4ac-277dc512faef")
+	)
+	(fp_line
+		(start -2.05 -2.4)
+		(end 2.05 -2.4)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "7894a885-0ed2-40e7-85ae-fc85d4049f40")
+	)
+	(fp_line
+		(start -2.05 2.4)
+		(end -2.05 -2.4)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "5653abee-13cf-444f-b78a-7b88d46c26ef")
+	)
+	(fp_line
+		(start 2.05 -2.4)
+		(end 2.05 2.4)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "10766796-a440-4c41-a731-3c47ca117f5c")
+	)
+	(fp_line
+		(start 2.05 2.4)
+		(end -2.05 2.4)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "d25211a4-52c8-4e3a-b2fc-42ad994216f4")
+	)
+	(fp_line
+		(start -1.55 -1.405)
+		(end -1.05 -1.905)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "f51890bd-b8a8-492b-906c-bc194d8f36bc")
+	)
+	(fp_line
+		(start -1.55 1.905)
+		(end -1.55 -1.405)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "22530e29-ff75-412f-9274-5695bd535ba2")
+	)
+	(fp_line
+		(start -1.05 -1.905)
+		(end 1.55 -1.905)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "b6e9bf02-2b28-4187-b331-2c61add66607")
+	)
+	(fp_line
+		(start 1.55 -1.905)
+		(end 1.55 1.905)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "19ba75f5-aa6b-446c-97dc-915537813ae3")
+	)
+	(fp_line
+		(start 1.55 1.905)
+		(end -1.55 1.905)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "b60a0b13-9e96-4bef-9f56-45efca56fc38")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "fe5f1ec9-2e34-45a9-8fe2-6c761bfa2478")
+		(effects
+			(font
+				(size 0.6 0.6)
+				(thickness 0.09)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at -1.075 -0.555)
+		(size 1.45 2.95)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.1724)
+		(uuid "d0ded0a7-4ce9-42a2-82e8-203c56688446")
+	)
+	(pad "2" smd roundrect
+		(at -1.075 1.725)
+		(size 1.45 0.61)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "5aba51f0-a741-4359-bd56-6247d25a8222")
+	)
+	(pad "3" smd roundrect
+		(at 1.075 1.725)
+		(size 1.45 0.61)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "2ba772dd-b75f-4a5b-92f1-0fa98bf1fa76")
+	)
+	(pad "4" smd roundrect
+		(at 1.075 -0.555)
+		(size 1.45 2.95)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.1724)
+		(uuid "336e1327-387f-42ed-a88c-b9c53e442e05")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_Resistor_SMD.3dshapes/R_Shunt_Vishay_WSK1216.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

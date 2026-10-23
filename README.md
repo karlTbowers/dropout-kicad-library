@@ -46,7 +46,8 @@ Planned categories (created as the first part in each one is added). Microcontro
 | `DropOut_Package_DFN_QFN` | Footprints and 3D models for DFN/QFN (no-lead) packages |
 | `DropOut_Package_QFP` | Footprints and 3D models for quad flat packages (LQFP, TQFP) |
 | `DropOut_Package_SO` | Footprints and 3D models for small-outline packages (SOIC, SSOP, TSSOP, HTSSOP) |
-| `DropOut_Package_TO_SOT_SMD` | Footprints and 3D models for SOT/TSOT/TO SMD packages |
+| `DropOut_Package_TO_SOT_SMD` | Footprints and 3D models for SOT/TSOT/TO SMD packages, including TOLL-family power MOSFETs |
+| `DropOut_Resistor_SMD` | Footprints and 3D models for SMD resistors, including current-sense shunts with manufacturer land patterns |
 
 ## Using it in a project
 

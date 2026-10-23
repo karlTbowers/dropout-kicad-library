@@ -1,0 +1,24 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/HCS2512FTL250/part.yaml
+# Stackpole HCS data sheet, rev date 8/11/2026. Node60 power-entry shunt search (2026-10-22):
+# candidate, not selected. Data sheet p. 1 for 0.00025 Ω: TCR ±300 ppm/°C (not ±150 as first noted),
+# 9 W at 100 °C / 10 W at 70 °C TERMINAL temperature, derated to 0 at 170 °C (p. 3); DigiKey and
+# Mouser list it as 3 W. AEC-Q200 compliant (p. 1). Ordering code (p. 10): HCS 2512 F(1 %) T(10"
+# reel, 4000 pcs, the only packaging) L250. Two terminals, no polarity; drawn as KiCad's Device:R.
+library: DropOut_Resistor
+name: HCS2512FTL250
+style: resistor
+pins: pins.csv
+fields:
+  Reference: R
+  Value: HCS2512FTL250
+  Footprint: DropOut_Resistor_SMD:R_Shunt_Stackpole_HCS2512
+  Datasheet: https://www.seielect.com/catalog/SEI-HCS.pdf
+  Description: Stackpole HCS2512 high current metal alloy shunt resistor, 0.25 mΩ ±1 %, 9 W at 100 °C terminal temperature, ±300 ppm/°C, AEC-Q200, -55 to +170 °C, 2512 (6.50 x 3.25 mm)
+  ki_keywords: resistor shunt current sense metal alloy automotive low ohm
+  ki_fp_filters: R*Shunt*Stackpole*HCS2512*
+  Manufacturer: Stackpole Electronics
+  MPN: HCS2512FTL250
+  DigiKey_PN: 738-HCS2512FTL250CT-ND
+  Mouser_PN: 708-HCS2512FTL250
+  Temperature_Grade: AEC-Q200, -55 to +170 °C
