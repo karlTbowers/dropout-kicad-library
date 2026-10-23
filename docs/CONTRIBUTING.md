@@ -35,6 +35,8 @@ KiCad symbol names can't contain `/`, and KLC S6.2 requires Value to equal the s
 
 Every package pin gets its own visible pin on the symbol, including repeated power and ground pins (an MCU's 18 VSS balls are 18 pins) and no-connect pins. NC pins (and pads the datasheet says to leave floating) are visible pins of type `no_connect`, so ERC flags a wire to them; the `visible-nc-pins` exception waives KLC S4.6, which prefers them hidden. DropOut never combines pins: no KiCad native pin stacks and no hidden pins stacked under a visible one, even though KLC S4.3 allows stacking. Each pin can then be wired, decoupled, and checked individually. CI enforces this (`scripts/check_pin_pad_match.py`).
 
+No text on a symbol overprints other text (handbook rule D-47): a box symbol is sized from its pin-name text, not its pin count, so no pin name runs into another (including a top or bottom pin's vertical name against the side pins' names), and no pin number or visible field runs into anything. Grow the body downward first so existing pins keep their positions. `scripts/check_symbol_text.py` checks every symbol in CI (each character counted as wide as the font size, a conservative KiCad 10 estimate), and `scripts/symbolgen.py` refuses to write a symbol that fails it.
+
 ### Required symbol fields
 
 All KLC S6.2 fields, plus these DropOut fields, filled in (not blank):
@@ -49,6 +51,20 @@ All KLC S6.2 fields, plus these DropOut fields, filled in (not blank):
 Optional: `Temperature_Grade` (e.g. `AEC-Q100 Grade 1`), `Notes`, `Reference_Manual` (link to a manufacturer document the part was built from that isn't the datasheet, e.g. a sign-in-gated reference manual holding the ball map; never commit the document itself). `scripts/check_symbol_fields.py` enforces these in CI.
 
 The `Datasheet` field must be the **manufacturer's** URL, never a distributor copy. Datasheet PDFs are never committed.
+
+### Parts with nothing to buy
+
+(Adopted 2026-10-22.) Some library parts are features of the board itself, e.g. a bare copper test pad: there is no MPN and nothing to order or place. They still carry every required field, filled in like this:
+
+| Field | Value |
+|---|---|
+| Symbol name, `Value`, `MPN` | A KLC-style name for the feature, e.g. `TestPoint_Pad_D1.0mm` (usually the footprint name) |
+| `Manufacturer` | `DropOut` |
+| `DigiKey_PN`, `Mouser_PN` | `-` |
+| `Datasheet` | The generator or document that defines the feature (e.g. a link to the footprint script) |
+| `Notes` | "PCB copper only; nothing to order." |
+
+The symbol is marked `(in_bom no)` and `(in_pos_files no)` (`in_bom: false`, `in_pos_files: false` in `part.yaml`), and the footprint has the attributes `exclude_from_bom exclude_from_pos_files`. Then BOM and placement exports leave it out, and `Manufacturer: DropOut` never reaches a purchasing list. This applies only to parts that are pure PCB features; anything with a physical part to buy uses the real MPN.
 
 ### Library names
 

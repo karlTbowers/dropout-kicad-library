@@ -10,7 +10,7 @@ number,name,type,unit,side,slot,alternates
 12,NC,no_connect,1,L,10,
 7,SW,power_out,1,R,0,
 8,BOOT,passive,1,R,1,
-11,VOUT/FB,power_out,1,R,3,
+11,VOUT/FB,input,1,R,3,
 14,PG,open_collector,1,R,5,
 6,PGND,power_in,1,B,,
 15,GND,power_in,1,B,,

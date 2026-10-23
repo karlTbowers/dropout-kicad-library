@@ -1,0 +1,204 @@
+(footprint "TestPoint_Harwin_S2761"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Harwin S2761 SMT test terminal (loop), 1.6x0.8mm, 1.15mm high (customer information sheet S2761-46R), https://content.harwin.com/m/d630047163058eb1/original/DRG-02223-Technical-Drawing-Datasheet-S2761R-pdf.pdf")
+	(tags "test point loop SMD Harwin S2761")
+	(property "Reference" "REF**"
+		(at 0 -1.56 0)
+		(layer "F.SilkS")
+		(uuid "d7ca8221-7a9f-4b2d-a746-9133448759d2")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "TestPoint_Harwin_S2761"
+		(at 0 1.56 0)
+		(layer "F.Fab")
+		(uuid "369d5023-4116-494f-bf81-4fbd1ad346f1")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b59ced5e-27cd-4a7b-9a46-844509ba1e89")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "73590723-2308-4315-9bd5-90a059e40802")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -1.16 -0.76)
+		(end 1.16 -0.76)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "5a70f25c-ba9e-43c3-bd0e-9ad7660bca60")
+	)
+	(fp_line
+		(start -1.16 0.76)
+		(end -1.16 -0.76)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "0b54c2cf-1fcf-4a33-b462-a78cba1a0291")
+	)
+	(fp_line
+		(start 1.16 -0.76)
+		(end 1.16 0.76)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "13b763d1-8fd2-4d6a-badb-804e104a8567")
+	)
+	(fp_line
+		(start 1.16 0.76)
+		(end -1.16 0.76)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "783d2c66-f22a-43e3-98c5-e6b5e9742d79")
+	)
+	(fp_line
+		(start -1.15 -0.75)
+		(end 1.15 -0.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "f5d6640f-08b4-4e4b-b299-32c661151752")
+	)
+	(fp_line
+		(start -1.15 0.75)
+		(end -1.15 -0.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "f18aa46b-12a5-40c1-a73a-05dc921a64e5")
+	)
+	(fp_line
+		(start 1.15 -0.75)
+		(end 1.15 0.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "1c4a5916-4f09-4922-bc95-808e2a93f270")
+	)
+	(fp_line
+		(start 1.15 0.75)
+		(end -1.15 0.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "c5543ce5-cd73-42ec-9fc4-3bc64d2cf847")
+	)
+	(fp_line
+		(start -0.8 -0.4)
+		(end 0.8 -0.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "c3573555-13df-453b-8014-a863fcb72615")
+	)
+	(fp_line
+		(start -0.8 0.4)
+		(end -0.8 -0.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "f26eb3b5-76e2-4229-9bea-42b6bd2ab654")
+	)
+	(fp_line
+		(start 0.8 -0.4)
+		(end 0.8 0.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "4a0fe432-6747-4c0c-b07a-bbe13fc3a74d")
+	)
+	(fp_line
+		(start 0.8 0.4)
+		(end -0.8 0.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "de668734-89a6-49e1-a947-277c47c2151e")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "ef3f71c9-d2f9-476e-a4d8-5d9cc39decb6")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.075)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at 0 0)
+		(size 1.8 1)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.1)
+		(uuid "399c8f9c-f977-48f2-bbeb-d84b123dfb4a")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_TestPoint.3dshapes/TestPoint_Harwin_S2761.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
