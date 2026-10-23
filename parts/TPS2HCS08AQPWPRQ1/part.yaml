@@ -1,0 +1,22 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/TPS2HCS08AQPWPRQ1/part.yaml
+# Pins from TPS2HCS08-Q1 datasheet SLVSHR0 §5.1-5.2 (version A: DI and LHI on pins 4-5; version B
+# has DI1/DI2 instead). FLT/WAKE_SIG is open-drain, both active low (overbarred in Figure 5-1); nCS
+# is the active-low chip select. The thermal pad is VBB (the supply), pad 17 on TI's PWP0016P.
+# VOUT1 (6-8) and VOUT2 (9-11) are drawn as separate pins (DropOut never combines pins).
+library: DropOut_PowerSwitch
+name: TPS2HCS08AQPWPRQ1
+pins: pins.csv
+fields:
+  Reference: U
+  Value: TPS2HCS08AQPWPRQ1
+  Footprint: DropOut_Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.78x3.313mm
+  Datasheet: https://www.ti.com/lit/ds/symlink/tps2hcs08-q1.pdf
+  Description: TI TPS2HCS08A-Q1 8.9 mΩ dual-channel SPI high-side switch with I2T wire protection, current sense, limp-home input, AEC-Q100 Grade 1, HTSSOP-16 PowerPAD
+  ki_keywords: high-side switch smart eFuse SPI automotive load switch dual channel
+  ki_fp_filters: HTSSOP*16*1EP*4.4x5mm*P0.65mm*
+  Manufacturer: Texas Instruments
+  MPN: TPS2HCS08AQPWPRQ1
+  DigiKey_PN: 296-TPS2HCS08AQPWPRQ1CT-ND
+  Mouser_PN: 595-TPS2HCS08AQPWPRQ
+  Temperature_Grade: AEC-Q100 Grade 1
