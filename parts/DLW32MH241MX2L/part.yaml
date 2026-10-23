@@ -1,0 +1,24 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/DLW32MH241MX2L/part.yaml
+# Murata reference specification JEFL243C-9132D-01 (DLW32MH___MX2_, AEC-Q200) §3 ratings, §5
+# appearance and equivalent circuit (1 top left, 2 top right, 3 bottom right, 4 bottom left; windings
+# 1-2 and 4-3, no polarity), §11.1 land dimensions. Released July 2026; not stocked at DigiKey or Mouser
+# on 2026-10-22, so both distributor PNs are "-". Node60 10BASE-T1S line interface (DEC-012): second source for ACT1210E-241 (same rated
+# values, different pad numbering and footprint).
+library: DropOut_Inductor
+name: DLW32MH241MX2L
+style: cmc_4pin
+pins: pins.csv
+fields:
+  Reference: FL
+  Value: DLW32MH241MX2L
+  Footprint: DropOut_Inductor_SMD:L_CommonModeChoke_Murata_DLW32MHxxxMX2_3.2x2.5mm
+  Datasheet: https://pim.murata.com/asset/pim4/commonModeChokeCoilCommonModeNoiseFilter/QFLC9132_PDF_COMMONMODECHOKECOILCOMMONMODENOISEFILTER
+  Description: Murata metal-terminal common mode choke coil for automotive Ethernet 10BASE-T1S, 240 µH (-20/+50 %) at 0.1 MHz, 70 mA, 80 V, 4.1 Ω max, OPEN Alliance CMC Class 3, AEC-Q200, 3.2x2.5 mm
+  ki_keywords: common mode choke coil filter CMC automotive Ethernet 10BASE-T1S T1S
+  ki_fp_filters: L*CommonModeChoke*Murata*DLW32MH*MX2*
+  Manufacturer: Murata
+  MPN: DLW32MH241MX2L
+  DigiKey_PN: "-"
+  Mouser_PN: "-"
+  Temperature_Grade: AEC-Q200, -40 to +125 °C

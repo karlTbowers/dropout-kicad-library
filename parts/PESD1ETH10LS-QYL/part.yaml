@@ -1,0 +1,22 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/PESD1ETH10LS-QYL/part.yaml
+# Nexperia PESD1ETH10LS-Q data sheet (28 Jan 2025): pinning Table 2 (pin 1 = K1, pin 2 = K2, two
+# back-to-back diodes, bidirectional), Fig. 10 footprint. Orderable code PESD1ETH10LS-QYL (reel).
+# Pins A1/A2 as KiCad's Device:D_TVS. Node60 10BASE-T1S line interface (DEC-012): alternate ESD diode (lower capacitance, no stock today).
+library: DropOut_Protection
+name: PESD1ETH10LS-QYL
+style: tvs_bidirectional
+pins: pins.csv
+fields:
+  Reference: D
+  Value: PESD1ETH10LS-QYL
+  Footprint: DropOut_Diode_SMD:Nexperia_DFN1006BD-2_SOD882BD_1.0x0.6mm
+  Datasheet: https://assets.nexperia.com/documents/data-sheet/PESD1ETH10LS-Q.pdf
+  Description: Nexperia single-line bidirectional ESD protection diode for automotive Ethernet (OPEN Alliance 10BASE-T1S, 100BASE-T1, 1000BASE-T1), 75 V standoff, 100 V min trigger, 0.4 pF max, AEC-Q101, DFN1006BD-2 side-wettable
+  ki_keywords: ESD protection diode bidirectional automotive Ethernet 10BASE-T1S T1S OPEN Alliance
+  ki_fp_filters: Nexperia*DFN1006BD?2*SOD882BD*
+  Manufacturer: Nexperia
+  MPN: PESD1ETH10LS-QYL
+  DigiKey_PN: "1727-PESD1ETH10LS-QYLCT-ND"
+  Mouser_PN: "771-PESD1ETH10LS-QYL"
+  Temperature_Grade: AEC-Q101, Tamb -55 to +150 °C

@@ -1,0 +1,21 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/ACT1210E-131-2P-TL00/part.yaml
+# TDK ACT1210E data sheet (20240325) pp. 1-3, same package and pinout as ACT1210E-241.
+# Node60 10BASE-T1S line interface (DEC-012): lower-capacitance alternate (Class IV per TDK's 10BASE-T1S announcement).
+library: DropOut_Inductor
+name: ACT1210E-131-2P-TL00
+style: cmc_4pin
+pins: pins.csv
+fields:
+  Reference: FL
+  Value: ACT1210E-131-2P-TL00
+  Footprint: DropOut_Inductor_SMD:L_CommonModeChoke_TDK_ACT1210E_3.2x2.5mm
+  Datasheet: https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6152/ACT1210E.pdf
+  Description: TDK common mode filter for automotive Ethernet 10BASE-T1S, 130 µH (+50/-25 %) at 100 kHz, 70 mA, 80 V, 2.9 Ω max per line, OPEN Alliance CMC parasitic-capacitance Class IV (TDK), AEC-Q200, 3.2x2.5 mm
+  ki_keywords: common mode choke filter CMC automotive Ethernet 10BASE-T1S T1S
+  ki_fp_filters: L*CommonModeChoke*TDK*ACT1210E*
+  Manufacturer: TDK
+  MPN: ACT1210E-131-2P-TL00
+  DigiKey_PN: "445-ACT1210E-131-2P-TL00CT-ND"
+  Mouser_PN: "810-ACT1210E1312PTL0"
+  Temperature_Grade: AEC-Q200, -40 to +125 °C
