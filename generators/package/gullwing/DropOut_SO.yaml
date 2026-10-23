@@ -33,3 +33,36 @@ SOIC-8_3.9x4.9mm_P1.27mm:
   pitch: 1.27
   num_pins_x: 0
   num_pins_y: 4
+
+# INA228AQDGSRQ1. Outline and land pattern: TI DGS0010A (4221984/A), INA228-Q1 datasheet
+# SLYS022A pages 47-48 (JEDEC MO-187 BA). Land pattern: 10x 1.45 x 0.30 pads, rows 4.4 apart
+# -> pad-to-pad 2.95 inside, 5.85 outside (same as KiCad's stock Texas_DGS0020A).
+Texas_DGS0010A_TSSOP-10_3x3mm_P0.5mm:
+  size_source: 'https://www.ti.com/lit/ds/symlink/ina228-q1.pdf#page=47'
+  manufacturer: 'Texas'
+  part_number: 'DGS0010A'
+  device_type: 'TSSOP'
+  body_size_x:
+    minimum: 2.90       # E1
+    maximum: 3.10
+  body_size_y:
+    minimum: 2.90       # D
+    maximum: 3.10
+  body_height: 0.75 .. 0.95
+  body_pcb_gap: 0.05 .. 0.15
+  overall_size_x:
+    minimum: 4.75       # E
+    maximum: 5.05
+  lead_width:
+    minimum: 0.17
+    maximum: 0.27
+  lead_len:
+    minimum: 0.40
+    maximum: 0.70
+  lead_height: 0.13 .. 0.23
+  pitch: 0.50
+  num_pins_x: 0
+  num_pins_y: 5
+  pad_to_pad_min_x_overwrite: 2.95
+  pad_to_pad_max_x_overwrite: 5.85
+  pad_size_y_overwrite: 0.30
