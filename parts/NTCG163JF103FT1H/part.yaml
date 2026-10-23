@@ -17,11 +17,11 @@ pins: pins.csv
 fields:
   Reference: RT
   Value: NTCG163JF103FT1H
-  Footprint: DropOut_Resistor_SMD:R_0603_1608Metric_Pad0.7x0.7mm
+  Footprint: DropOut_Resistor_SMD:R_NTC_0603_1608Metric_Pad0.7x0.7mm
   Datasheet: https://product.tdk.com/system/files/dam/doc/product/sensor/ntc/chip-ntc-thermistor/data_sheet/datasheet_ntcg163jf103ft1h.pdf
   Description: TDK NTCG NTC thermistor 10 kΩ ±1 %, B25/85 3435 K ±1 % (B25/50 3380 K), -40 to +175 °C, automotive (AEC-Q200), 0603 (1608 metric)
   ki_keywords: thermistor NTC temperature sensor 10k automotive
-  ki_fp_filters: R?0603?1608Metric*
+  ki_fp_filters: R?NTC?0603?1608Metric*
   Manufacturer: TDK
   MPN: NTCG163JF103FT1H
   DigiKey_PN: "-"

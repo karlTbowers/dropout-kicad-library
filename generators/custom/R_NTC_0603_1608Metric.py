@@ -2,10 +2,11 @@
 """0603 (1608 metric) chip NTC thermistor footprints with the manufacturers' recommended reflow
 land patterns. kicad-library-tools' chip generator (SMD_2terminal_chip_molded) only computes
 IPC-7351 lands from the body, so the vendor lands are drawn here. Names follow KiCad's own
-"R_0603_1608Metric_Pad<w>x<h>mm" scheme for non-IPC lands; both share the 3D model
-R_0603_1608Metric.step (KLC F9.3: the pad suffix does not change the model).
+"_Pad<w>x<h>mm" suffix for non-IPC lands. The "R_NTC_" base name keeps them and their shared
+3D model R_NTC_0603_1608Metric.step (KLC F9.3 drops the pad suffix; NTC chips are 0.8 mm thick)
+apart from the IPC chip resistors' R_0603_1608Metric.
 
-Usage: ~/.cache/dropout/klt-venv/bin/python generators/custom/R_0603_1608Metric_NTC.py
+Usage: ~/.cache/dropout/klt-venv/bin/python generators/custom/R_NTC_0603_1608Metric.py
 
 Sources (archived in dropout-vendor-docs):
 - Murata NCU18 (NCU18XH103F6SRB): catalog R44E (Mar. 6, 2020) p. 13 "Standard Land Pattern
@@ -16,7 +17,7 @@ Sources (archived in dropout-vendor-docs):
   0.60-0.80; TDK's product pages give 0.7 +/-0.1 for all three. Body 1.6 x 0.8 x 0.8 (+/-0.1),
   terminations 0.2 min (catalog p. 10, data sheets).
   One land, 0.7 x 0.7 pads with a 0.7 gap, is inside both Murata's and TDK's ranges, so the two
-  share R_0603_1608Metric_Pad0.7x0.7mm.
+  share R_NTC_0603_1608Metric_Pad0.7x0.7mm.
 - Vishay NTCS0603E3 (NTCS0603E3103FMT): data sheet doc 29056 (rev. 29-Sep-2026) p. 2
   "Recommended solder land pattern dimensions": 0.8 (x) x 1.0 (y) pads, 2.4 outer span, so a
   0.8 gap. Body 1.6 x 0.8 x 0.8 (+/-0.15), terminations 0.2 min (L2, L3).
@@ -28,17 +29,17 @@ from fplib import (BODY, CRT_CLR, CRT_W, FAB_W, METAL, SILK_PAD, SILK_W, fab_ref
 
 LIB = "DropOut_Resistor_SMD"
 BODY_L, BODY_W, BODY_H, TERM = 1.6, 0.8, 0.8, 0.3
-MODEL = "R_0603_1608Metric"
+MODEL = "R_NTC_0603_1608Metric"
 
 # name: (pad length x, pad width y, gap between pads, description, tags)
 PARTS = {
-    "R_0603_1608Metric_Pad0.7x0.7mm": (0.7, 0.7, 0.7,
+    "R_NTC_0603_1608Metric_Pad0.7x0.7mm": (0.7, 0.7, 0.7,
         "Chip NTC thermistor 0603 (1608 Metric), manufacturer reflow land 0.7x0.7mm pads, 0.7mm gap, "
         "inside the recommendations for Murata NCU18 (catalog R44E p. 13) and TDK NTCG 1608 "
         "(automotive NTCG catalog p. 13), https://product.tdk.com/system/files/dam/doc/product/sensor/"
         "ntc/chip-ntc-thermistor/catalog/tpd_automotive_ntc-thermistor_ntcg_en.pdf",
         "resistor thermistor NTC 0603 1608 Murata NCU18 TDK NTCG163"),
-    "R_0603_1608Metric_Pad0.8x1.0mm": (0.8, 1.0, 0.8,
+    "R_NTC_0603_1608Metric_Pad0.8x1.0mm": (0.8, 1.0, 0.8,
         "Chip NTC thermistor 0603 (1608 Metric), Vishay NTCS0603E3 recommended solder land 0.8x1.0mm "
         "pads, 2.4mm outer span (data sheet doc 29056 p. 2), https://www.vishay.com/docs/29056/ntcs0603e3t.pdf",
         "resistor thermistor NTC 0603 1608 Vishay NTCS0603E3"),

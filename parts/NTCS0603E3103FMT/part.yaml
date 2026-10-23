@@ -16,11 +16,11 @@ pins: pins.csv
 fields:
   Reference: RT
   Value: NTCS0603E3103FMT
-  Footprint: DropOut_Resistor_SMD:R_0603_1608Metric_Pad0.8x1.0mm
+  Footprint: DropOut_Resistor_SMD:R_NTC_0603_1608Metric_Pad0.8x1.0mm
   Datasheet: https://www.vishay.com/docs/29056/ntcs0603e3t.pdf
   Description: Vishay NTCS0603E3 NTC thermistor 10 kΩ ±1 %, B25/85 3610 K ±1 %, -55 to +150 °C, AEC-Q200, glass protected, 0603 (1608 metric)
   ki_keywords: thermistor NTC temperature sensor 10k automotive
-  ki_fp_filters: R?0603?1608Metric*
+  ki_fp_filters: R?NTC?0603?1608Metric*
   Manufacturer: Vishay BCcomponents
   MPN: NTCS0603E3103FMT
   DigiKey_PN: BC2472CT-ND

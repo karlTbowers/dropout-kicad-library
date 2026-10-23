@@ -35,7 +35,7 @@
 				)
 			)
 		)
-		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric_Pad0.7x0.7mm"
+		(property "Footprint" "DropOut_Resistor_SMD:R_NTC_0603_1608Metric_Pad0.7x0.7mm"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -145,7 +145,7 @@
 				)
 			)
 		)
-		(property "ki_fp_filters" "R?0603?1608Metric*"
+		(property "ki_fp_filters" "R?NTC?0603?1608Metric*"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -373,7 +373,7 @@
 				)
 			)
 		)
-		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric_Pad0.7x0.7mm"
+		(property "Footprint" "DropOut_Resistor_SMD:R_NTC_0603_1608Metric_Pad0.7x0.7mm"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -483,7 +483,7 @@
 				)
 			)
 		)
-		(property "ki_fp_filters" "R?0603?1608Metric*"
+		(property "ki_fp_filters" "R?NTC?0603?1608Metric*"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -711,7 +711,7 @@
 				)
 			)
 		)
-		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric_Pad0.7x0.7mm"
+		(property "Footprint" "DropOut_Resistor_SMD:R_NTC_0603_1608Metric_Pad0.7x0.7mm"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -821,7 +821,7 @@
 				)
 			)
 		)
-		(property "ki_fp_filters" "R?0603?1608Metric*"
+		(property "ki_fp_filters" "R?NTC?0603?1608Metric*"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1049,7 +1049,7 @@
 				)
 			)
 		)
-		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric_Pad0.7x0.7mm"
+		(property "Footprint" "DropOut_Resistor_SMD:R_NTC_0603_1608Metric_Pad0.7x0.7mm"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1159,7 +1159,7 @@
 				)
 			)
 		)
-		(property "ki_fp_filters" "R?0603?1608Metric*"
+		(property "ki_fp_filters" "R?NTC?0603?1608Metric*"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1387,7 +1387,7 @@
 				)
 			)
 		)
-		(property "Footprint" "DropOut_Resistor_SMD:R_0603_1608Metric_Pad0.8x1.0mm"
+		(property "Footprint" "DropOut_Resistor_SMD:R_NTC_0603_1608Metric_Pad0.8x1.0mm"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1497,7 +1497,7 @@
 				)
 			)
 		)
-		(property "ki_fp_filters" "R?0603?1608Metric*"
+		(property "ki_fp_filters" "R?NTC?0603?1608Metric*"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)

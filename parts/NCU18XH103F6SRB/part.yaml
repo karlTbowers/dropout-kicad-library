@@ -17,11 +17,11 @@ pins: pins.csv
 fields:
   Reference: RT
   Value: NCU18XH103F6SRB
-  Footprint: DropOut_Resistor_SMD:R_0603_1608Metric_Pad0.7x0.7mm
+  Footprint: DropOut_Resistor_SMD:R_NTC_0603_1608Metric_Pad0.7x0.7mm
   Datasheet: https://www.murata.com/en-us/products/productdetail?partno=NCU18XH103F6SRB
   Description: Murata NCU18 NTC thermistor 10 kΩ ±1 %, B25/50 3380 K ±1 %, -55 to +150 °C, automotive (AEC-Q200), 0603 (1608 metric)
   ki_keywords: thermistor NTC temperature sensor 10k automotive
-  ki_fp_filters: R?0603?1608Metric*
+  ki_fp_filters: R?NTC?0603?1608Metric*
   Manufacturer: Murata Electronics
   MPN: NCU18XH103F6SRB
   DigiKey_PN: 490-18139-1-ND

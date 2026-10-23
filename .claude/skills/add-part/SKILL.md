@@ -52,7 +52,7 @@ You need the datasheet, the package drawing with the recommended land pattern, a
 - **Footprint library:** KLC package-type naming with the DropOut prefix, e.g. `DropOut_Package_BGA`. A new one needs the user's OK and a README table row.
 - **Symbol name:** the MPN (KLC S2, DropOut atomic parts).
 - **Footprint name:** per KLC F2/F3, as kicad-library-tools would name it. Vendor-specific layouts (e.g. a depopulated BGA) get a vendor prefix: `NXP_LFBGA-257_14x14mm_Layout17x17_P0.8mm`. **Reuse** an existing DropOut footprint if the land pattern is identical.
-- **3D model:** same name as the footprint, `.step`, in `3dmodels/<FootprintLibrary>.3dshapes/`. KLC F9.3 drops name fields that don't change the body: footprints such as `R_0603_1608Metric_Pad0.7x0.7mm` and `..._Pad0.8x1.0mm` share `R_0603_1608Metric.step`.
+- **3D model:** same name as the footprint, `.step`, in `3dmodels/<FootprintLibrary>.3dshapes/`. KLC F9.3 drops name fields that don't change the body: footprints such as `R_NTC_0603_1608Metric_Pad0.7x0.7mm` and `..._Pad0.8x1.0mm` share `R_NTC_0603_1608Metric.step`. A body that differs from the IPC part of the same size (an NTC chip is 0.8 mm thick, a chip resistor 0.45 mm) needs its own base name, or its model would overwrite the IPC part's.
 
 ## 4. Footprint and 3D model
 
