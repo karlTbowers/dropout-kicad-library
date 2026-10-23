@@ -1,0 +1,20 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/ECS-3225SMVQ-500-DS-TR/part.yaml
+# Pins from the ECS-3225SMVQ datasheet (Rev. 2024) "Pad Connections": 1 Tri-state, 2 Gnd,
+# 3 Output, 4 Vdd. Tri-state: >= 0.7 Vdd or open = output active, <= 0.3 Vdd = high impedance.
+library: DropOut_Timing
+name: ECS-3225SMVQ-500-DS-TR
+pins: pins.csv
+fields:
+  Reference: Y
+  Value: ECS-3225SMVQ-500-DS-TR
+  Footprint: DropOut_Oscillator:Oscillator_SMD_ECS_LGA-4_2.5x3.2mm_P2.3mm
+  Datasheet: https://ecsxtal.com/store/pdf/ECS-3225SMVQ.pdf
+  Description: ECS-3225SMVQ 50 MHz HCMOS oscillator, ±20 ppm, -40 to +125 °C, 1.62-3.63 V, tri-state, AEC-Q200, 3.2x2.5 mm
+  ki_keywords: oscillator XO HCMOS 50MHz clock AEC-Q200
+  ki_fp_filters: Oscillator*ECS*LGA*2.5x3.2mm*
+  Manufacturer: ECS Inc.
+  MPN: ECS-3225SMVQ-500-DS-TR
+  DigiKey_PN: 50-ECS-3225SMVQ-500-DS-TRCT-ND
+  Mouser_PN: 520-EC3225SMVQ500DST
+  Temperature_Grade: AEC-Q200, -40 to +125 °C

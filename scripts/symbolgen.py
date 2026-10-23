@@ -158,7 +158,10 @@ def build_unit(pins):
         out.append(pin_sexpr(p, x0 + slot * TB_PITCH, hh + PIN_LEN, 270))
     for slot, p in sides["B"]:
         out.append(pin_sexpr(p, x0 + slot * TB_PITCH, -hh - PIN_LEN, 90))
-    return out, hh
+    # Field clearance above/below this unit: past the top/bottom pins and their numbers
+    top_extent = hh + (PIN_LEN if sides["T"] else 0)
+    bottom_extent = hh + (PIN_LEN if sides["B"] else 0)
+    return out, top_extent, bottom_extent
 
 
 def build_symbol(part, pins):
@@ -168,15 +171,16 @@ def build_symbol(part, pins):
     if missing:
         sys.exit(f"symbolgen: units {sorted(missing)} not listed in part.yaml 'units'")
     units = [build_unit([p for p in pins if p["unit"] == u]) for u in order]
-    max_hh = max(hh for _, hh in units)
+    top = max(t for _, t, _ in units)
+    bottom = max(b for _, _, b in units)
     lines = [f'\t(symbol "{esc(name)}"', "\t\t(pin_names (offset 0.508))", "\t\t(exclude_from_sim no)",
              "\t\t(in_bom yes)", "\t\t(on_board yes)"]
     for k, v in part["fields"].items():
-        y = {"Reference": max_hh + G, "Value": -max_hh - G}.get(k, 0)
+        y = {"Reference": top + G, "Value": -bottom - G}.get(k, 0)
         hide = "" if k in VISIBLE else "\n\t\t\t(hide yes)"
         lines.append(f'\t\t(property "{esc(k)}" "{esc(str(v))}"\n\t\t\t(at 0 {fmt(y)} 0){hide}\n'
                      f"\t\t\t(effects (font (size 1.27 1.27)))\n\t\t)")
-    for i, (body, _) in enumerate(units, start=1):
+    for i, (body, _, _) in enumerate(units, start=1):
         lines.append(f'\t\t(symbol "{esc(name)}_{i}_1"')
         lines.extend(body)
         lines.append("\t\t)")
