@@ -1,0 +1,27 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/LAN8670D0T-E_LMX/part.yaml
+# Pins from LAN8670/1/2 datasheet DS60001573K Table 3-1 (32-VQFN) and §3.4 Pin Descriptions
+# (buffer types: VIS inputs, VO/VOH outputs, IRQ_N open-drain active low, INH active-high
+# P-channel open-drain = open_emitter, TRXP/TRXN/RBIAS analog). Strap pins (PHYADx, MODEx) are
+# typed by their run-time output function. The exposed pad is VSS (pad 33): "must be connected to
+# ground". Names keep the datasheet's multi-function form; _N suffixes become overbars (KLC S4.7).
+# Ordering (datasheet "Product Identification System"): the "Vxx" suffix designates the automotive
+# product. LAN8670D0T-E/LMX is the stocked, non-automotive tape-and-reel part (prototypes);
+# LAN8670D0-E/LMXVAO (parts/LAN8670D0-E_LMXVAO) is the automotive part. Same die, pins and package;
+# both share parts/LAN8670D0-E_LMXVAO/pins.csv. Symbol name and Value use "_" for "/".
+library: DropOut_Interface
+name: LAN8670D0T-E_LMX
+pins: ../LAN8670D0-E_LMXVAO/pins.csv
+fields:
+  Reference: U
+  Value: LAN8670D0T-E_LMX
+  Footprint: DropOut_Package_DFN_QFN:Microchip_LMX_VQFN-32-1EP_5x5mm_P0.5mm_EP3.5x3.5mm
+  Datasheet: https://ww1.microchip.com/downloads/aemDocuments/documents/AIS/ProductDocuments/DataSheets/LAN8670-1-2-Data-Sheet-60001573.pdf
+  Description: Microchip LAN8670 10BASE-T1S Ethernet PHY, MII/RMII, PLCA, topology discovery, sleep/wake with INH, -40 to +125 °C, not designated automotive (see LAN8670D0-E/LMXVAO), tape and reel, VQFN-32 5x5 mm wettable flanks
+  ki_keywords: Ethernet PHY 10BASE-T1S single pair SPE PLCA MII RMII automotive
+  ki_fp_filters: Microchip*LMX*VQFN*32*5x5mm*
+  Manufacturer: Microchip Technology
+  MPN: LAN8670D0T-E/LMX
+  DigiKey_PN: 150-LAN8670D0T-E/LMXTR-ND
+  Mouser_PN: 579-LAN8670D0TELMX
+  Temperature_Grade: -40 to +125 °C (non-automotive code)
