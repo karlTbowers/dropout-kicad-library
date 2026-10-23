@@ -1,0 +1,31 @@
+# DropOut footprint specs for the kicad-library-tools gullwing generator (SOT/TSOT packages).
+# Generate with: scripts/generate_footprint.py generators/package/gullwing/DropOut_SOT.yaml --lib DropOut_Package_TO_SOT_SMD
+# Source documents are archived in the private dropout-vendor-docs repo.
+
+default_parameters:
+  device_type: 'TSOT'
+  library_Suffix: 'TO_SOT_SMD'
+
+# TPS3702AX33QDDCRQ1 / TPS3702CX33QDDCRQ1. TI DDC0006A (4214841/E 08/2024), TPS3702-Q1 datasheet
+# SBVS261C pages 26-28 (JEDEC MO-193). Land pattern: 6X (1.1) x (0.6), pitch 0.95, rows (2.7) apart
+# -> pad-to-pad 1.6 inside, 3.8 outside. Body values as KiCad's TSOT-23-6 (MO-193 AA), which agree
+# with DDC0006A within tolerance (E1 1.45..1.75, D 2.75..3.05, E 2.55..3.05, A 1.1 max).
+Texas_DDC0006A_TSOT-23-6:
+  size_source: 'https://www.ti.com/lit/ds/symlink/tps3702-q1.pdf#page=26'
+  custom_name_format: 'Texas_DDC0006A_TSOT-23-6'
+  body_size_x: 1.6
+  body_size_y: 2.9
+  body_height: 0.7 .. 0.9 .. 1.0
+  body_pcb_gap: 0.0 .. 0.1
+  overall_size_x: 2.8
+  lead_width: 0.3 .. 0.5
+  lead_len: 0.3 .. 0.45 .. 0.6
+  lead_height: 0.12 .. 0.20
+  lead_radius_top: 0.1
+  lead_radius_bottom: 0.175
+  pitch: 0.95
+  num_pins_x: 0
+  num_pins_y: 3
+  pad_to_pad_min_x_overwrite: 1.6
+  pad_to_pad_max_x_overwrite: 3.8
+  pad_size_y_overwrite: 0.6

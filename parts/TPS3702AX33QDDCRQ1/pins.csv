@@ -1,0 +1,7 @@
+number,name,type,unit,side,slot,alternates
+3,SENSE,input,1,L,0,
+4,SET,input,1,L,2,
+6,~{OV},open_collector,1,R,0,
+1,~{UV},open_collector,1,R,1,
+5,VDD,power_in,1,T,,
+2,GND,power_in,1,B,,
