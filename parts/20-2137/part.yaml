@@ -1,0 +1,23 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/20-2137/part.yaml
+# Node60 ground probe loop part search (2026-10-22): candidate (fits). Through-hole, high temperature, but only at Newark/Farnell (60K8467, packs of 100) and hand-inserted.
+# Requirement (Node60 project answers): ground test points are probe loops a scope ground spring fits,
+# rated to at least +125 °C. Footprint: generators/custom/TestPoint.py.
+library: DropOut_Connector
+name: "20-2137"
+style: testpoint
+pins: pins.csv
+fields:
+  Reference: TP
+  Value: "20-2137"
+  Footprint: DropOut_TestPoint:TestPoint_Vero_20-2137_Beaded
+  Datasheet: http://www.farnell.com/datasheets/2042719.pdf
+  Description: "Vero wire loop test terminal, black sintered glass bead dia 2.35mm, 1.02mm hole, 1.6mm PCB, phosphor bronze, tin, max sustained 350 °C, pack of 100"
+  ki_keywords: test point loop ground probe THT Vero
+  ki_fp_filters: TestPoint?Vero?20?2137?Beaded*
+  Manufacturer: Vero Technologies
+  MPN: "20-2137"
+  DigiKey_PN: "-"
+  Mouser_PN: "-"
+  Temperature_Grade: "max sustained 350 °C"
+  Notes: "Not stocked at DigiKey or Mouser: Newark 60K8467 / Farnell (pack of 100). Data sheet is a Farnell copy; no manufacturer copy online."
