@@ -1,0 +1,22 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/IS25LP032D-JNLA3/part.yaml
+# Pins from ISSI IS25LP032D/IS25WP032D datasheet Rev. A16, §1 Pin Configuration (8-pin SOIC
+# 150mil, package N) and §2 Pin Descriptions: CE# and SCK inputs; SI/SO/WP#/HOLD# become
+# bidirectional IO0-IO3 in dual/quad mode. Pin 7 is HOLD# (P7=0, default) or RESET# (P7=1).
+# Ordering code: J standard, N SOIC 150mil, L green, A3 automotive -40 to +125 °C.
+library: DropOut_Memory
+name: IS25LP032D-JNLA3
+pins: pins.csv
+fields:
+  Reference: U
+  Value: IS25LP032D-JNLA3
+  Footprint: DropOut_Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
+  Datasheet: https://www.issi.com/WW/pdf/25LP-WP032D.pdf
+  Description: ISSI 32 Mbit 3 V serial NOR flash, SPI/dual/quad I/O, 133 MHz, 2.30-3.60 V, automotive -40 to +125 °C, SOIC-8 150 mil
+  ki_keywords: flash NOR SPI QSPI memory 32Mbit 4MB automotive
+  ki_fp_filters: SOIC*3.9x4.9mm*P1.27mm*
+  Manufacturer: ISSI
+  MPN: IS25LP032D-JNLA3
+  DigiKey_PN: 706-IS25LP032D-JNLA3-ND
+  Mouser_PN: 870-IS25LP032D-JNLA3
+  Temperature_Grade: Automotive Grade A3, -40 to +125 °C

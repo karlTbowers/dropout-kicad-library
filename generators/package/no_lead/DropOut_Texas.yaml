@@ -1,0 +1,53 @@
+# DropOut footprint specs for the kicad-library-tools no_lead generator (TI packages).
+# Generate with: scripts/generate_footprint.py generators/package/no_lead/DropOut_Texas.yaml --lib DropOut_Package_DFN_QFN
+# Source documents are archived in the private dropout-vendor-docs repo.
+
+default_parameters:
+  library: Package_DFN_QFN
+
+# LM74910HQRGERQ1. TI RGE0024T (4228214/A 11/2021), LM749x0-Q1 datasheet SNOSDE6C pages 48-50.
+# Land pattern: 24X (0.6) x (0.25), pitch 0.5, rows (3.8) apart; thermal pad 25 (2.1 square);
+# stencil 4X (0.94) squares at (0.57), i.e. 4 x 0.94^2 / 2.1^2 = 0.80 paste coverage. The generator
+# centres the squares at 0.525 (gap 0.11) instead of TI's reference (0.57): same size and area.
+Texas_RGE0024T_VQFN-24-1EP_4x4mm_P0.5mm_EP2.1x2.1mm:
+  size_source:
+    url: 'https://www.ti.com/lit/ds/symlink/lm74910h-q1.pdf'
+    page: 48
+  device_type: 'VQFN'
+  manufacturer: 'Texas'
+  part_number: 'RGE0024T'
+  ipc_class: 'qfn'
+  body_size_x:
+    minimum: 3.9
+    maximum: 4.1
+  body_size_y:
+    minimum: 3.9
+    maximum: 4.1
+  body_pcb_gap: 0.0 .. 0.05
+  overall_height:
+    minimum: 0.8
+    maximum: 1.0
+  num_pins_x: 6
+  num_pins_y: 6
+  pitch: 0.5
+  lead_shape: square
+  lead_width:
+    minimum: 0.2
+    maximum: 0.3
+  lead_len:
+    minimum: 0.3
+    maximum: 0.5
+  lead_height:
+    nominal: 0.2
+  EP_size_x:
+    nominal: 2.1
+    tolerance: 0.1
+  EP_size_y:
+    nominal: 2.1
+    tolerance: 0.1
+  EP_paste_coverage: 0.80
+  EP_num_paste_pads: [2, 2]
+  pad_length: 0.6
+  pad_width: 0.25
+  pad_center_to_center_x: 3.8
+  pad_center_to_center_y: 3.8

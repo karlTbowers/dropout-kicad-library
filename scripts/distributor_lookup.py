@@ -30,7 +30,7 @@ def digikey(mpn):
               urllib.parse.urlencode({"client_id": cid, "client_secret": secret,
                                       "grant_type": "client_credentials"}).encode(),
               {"Content-Type": "application/x-www-form-urlencoded"})["access_token"]
-    p = req(f"https://api.digikey.com/products/v4/search/{urllib.parse.quote(mpn)}/productdetails",
+    p = req(f"https://api.digikey.com/products/v4/search/{urllib.parse.quote(mpn, safe="")}/productdetails",
             headers={"Authorization": f"Bearer {tok}", "X-DIGIKEY-Client-Id": cid,
                      "X-DIGIKEY-Locale-Site": "US", "X-DIGIKEY-Locale-Currency": "USD"})["Product"]
     return {"manufacturer": p["Manufacturer"]["Name"], "mpn": p["ManufacturerProductNumber"],

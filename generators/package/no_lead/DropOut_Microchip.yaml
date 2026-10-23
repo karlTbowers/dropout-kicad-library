@@ -1,0 +1,49 @@
+# DropOut footprint specs for the kicad-library-tools no_lead generator (Microchip packages).
+# Generate with: scripts/generate_footprint.py generators/package/no_lead/DropOut_Microchip.yaml --lib DropOut_Package_DFN_QFN
+# Source documents are archived in the private dropout-vendor-docs repo.
+
+default_parameters:
+  library: Package_DFN_QFN
+
+# LAN8670D0T-E/LMX. Microchip "LMX" 32-lead VQFN 5x5x1.0 mm, 3.4 mm exposed pad, stepped wettable
+# flanks: package drawing C04-500 Rev B and recommended land pattern C04-2500 Rev B (LAN8670/1/2
+# datasheet DS60001573K pages 265-267). Land pattern: X1 0.30 x Y1 0.85 pads, pitch 0.50,
+# C1 = C2 = 4.90; centre pad X2 = Y2 = 3.50. Microchip gives no stencil; EP paste uses the
+# generator's default split. Optional thermal vias (0.33 on 1.2 pitch) are left to the board.
+Microchip_LMX_VQFN-32-1EP_5x5mm_P0.5mm_EP3.5x3.5mm:
+  size_source:
+    url: 'https://ww1.microchip.com/downloads/aemDocuments/documents/AIS/ProductDocuments/DataSheets/LAN8670-1-2-Data-Sheet-60001573.pdf'
+    page: 267
+  device_type: 'VQFN'
+  manufacturer: 'Microchip'
+  part_number: 'LMX'
+  ipc_class: 'qfn'
+  body_size_x:
+    nominal: 5.0
+  body_size_y:
+    nominal: 5.0
+  body_pcb_gap: 0.0 .. 0.05
+  overall_height:
+    minimum: 0.80
+    maximum: 1.00
+  num_pins_x: 8
+  num_pins_y: 8
+  pitch: 0.5
+  lead_shape: square
+  lead_width:
+    minimum: 0.20
+    maximum: 0.30
+  lead_len:
+    minimum: 0.30
+    maximum: 0.50
+  lead_height:
+    nominal: 0.203
+  EP_size_x:
+    nominal: 3.5
+  EP_size_y:
+    nominal: 3.5
+  EP_num_paste_pads: [3, 3]
+  pad_length: 0.85
+  pad_width: 0.30
+  pad_center_to_center_x: 4.90
+  pad_center_to_center_y: 4.90

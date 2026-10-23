@@ -1,0 +1,22 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/LM74910HQRGERQ1/part.yaml
+# Pins from LM749x0-Q1 datasheet SNOSDE6C Table 5-1 and Figure 5-1 (SLEEP and FLT are overbarred,
+# active low; FLT is open-drain). CAP is the charge-pump capacitor terminal (100 nF to VS), passive.
+# The thermal pad RTN is pad 25 on TI's RGE0024T drawing; "leave exposed pad floating, do not
+# connect to GND plane", so it is no_connect and ERC flags any connection.
+library: DropOut_Power
+name: LM74910HQRGERQ1
+pins: pins.csv
+fields:
+  Reference: U
+  Value: LM74910HQRGERQ1
+  Footprint: DropOut_Package_DFN_QFN:Texas_RGE0024T_VQFN-24-1EP_4x4mm_P0.5mm_EP2.1x2.1mm
+  Datasheet: https://www.ti.com/lit/ds/symlink/lm74910h-q1.pdf
+  Description: TI LM74910H-Q1 automotive ideal-diode controller with circuit breaker, 3-65 V operating (74 V abs. max), back-to-back FET drive, OV/UV, overcurrent and short-circuit protection, ±2% current monitor, auto-retry, fault output, AEC-Q100 Grade 1, VQFN-24 4x4 mm
+  ki_keywords: ideal diode controller reverse battery protection circuit breaker eFuse automotive ORing
+  ki_fp_filters: Texas*RGE0024T*VQFN*4x4mm*
+  Manufacturer: Texas Instruments
+  MPN: LM74910HQRGERQ1
+  DigiKey_PN: 296-LM74910HQRGERQ1CT-ND
+  Mouser_PN: 595-LM74910HQRGERQ1
+  Temperature_Grade: AEC-Q100 Grade 1

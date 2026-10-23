@@ -1,0 +1,5 @@
+number,name,type,unit,side,slot,alternates
+1,Tri-State,input,1,L,,
+3,OUT,output,1,R,,
+4,VDD,power_in,1,T,,
+2,GND,power_in,1,B,,

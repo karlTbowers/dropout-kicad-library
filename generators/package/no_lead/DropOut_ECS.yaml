@@ -1,0 +1,41 @@
+# DropOut footprint specs for the kicad-library-tools no_lead generator.
+# Generate with: scripts/generate_footprint.py generators/package/no_lead/DropOut_ECS.yaml --lib DropOut_Oscillator
+# Source documents are archived in the private dropout-vendor-docs repo.
+
+default_parameters:
+  library: Oscillator
+
+# ECS-3225SMVQ, drawn rotated 90 deg from the datasheet (as KiCad's 2.5x3.2mm oscillators):
+# datasheet top view (Fig. 1) has #1 bottom-left, #2 bottom-right, #3 top-right, #4 top-left
+# (counter-clockwise); rotated, the generator's left/right-side numbering gives 1 top-left,
+# 2 bottom-left, 3 bottom-right, 4 top-right, still counter-clockwise. Fig. 2's decoupling cap
+# joins #4 (Vdd) and #2 (Gnd), diagonal corners, which confirms the top-view reading.
+Oscillator_SMD_ECS_LGA-4_2.5x3.2mm_P2.3mm:
+  size_source:
+    url: "https://ecsxtal.com/store/pdf/ECS-3225SMVQ.pdf"
+    page: 1
+  description: "ECS-3225SMVQ AEC-Q200 HCMOS oscillator, 3.2x2.5mm ceramic, land pattern per ECS-3225SMVQ datasheet (Rev. 2024) Figure 2"
+  fp_name_prefix: Oscillator_SMD
+  device_type: 'LGA'
+  manufacturer: 'ECS'
+  ipc_class: 'qfn_pull_back'
+  body_size_x:
+    nominal: 2.5
+    tolerance: 0.2
+  body_size_y:
+    nominal: 3.2
+    tolerance: 0.2
+  overall_height:
+    nominal: 1.0
+    tolerance: 0.2
+  num_pins_x: 0
+  num_pins_y: 2
+  pitch: 2.3          # land pattern centre spacing (Fig. 2); the package's own pads are 2.2 apart (Fig. 1)
+  lead_width:
+    nominal: 1.0      # package pad, along the pin row (Fig. 1)
+  lead_len:
+    nominal: 0.75
+  # Manufacturer land pattern (Fig. 2): 1.3 (along the row) x 1.1 pads, 2.3 x 1.9 mm centre spacing
+  pad_width: 1.3
+  pad_length: 1.1
+  pad_center_to_center_x: 1.9

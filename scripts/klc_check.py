@@ -163,6 +163,9 @@ def targets(paths):
     for p in map(Path, paths):
         if p.is_dir() and p.suffix == ".pretty":
             yield from sorted(p.glob("*.kicad_mod"))
+        elif p.is_dir():  # e.g. symbols/ or footprints/: everything inside
+            yield from sorted(p.glob("*.kicad_sym"))
+            yield from sorted(p.glob("*.pretty/*.kicad_mod"))
         else:
             yield p
 
@@ -195,8 +198,15 @@ def main():
         elif f.suffix == ".kicad_mod":
             library, default_item, checker = f.parent.stem, f.stem, fp_checker
         else:
+            failures.append((str(f), "-", f"not a .kicad_sym or .kicad_mod file: {f}", [], None))
             continue
-        for item, rule, header, details, is_error in parse(run(checker, f, args.raw, extra), library, default_item):
+        output = run(checker, f, args.raw, extra)
+        # A file the checker never reports on (missing, unreadable, rejected) must not pass silently
+        if not any(ITEM_RE.search(COLOR_RE.sub("", ln).strip()) for ln in output.splitlines()):
+            first = next((COLOR_RE.sub("", ln).strip() for ln in output.splitlines() if ln.strip()), "no output")
+            failures.append((f"{library}:{default_item}", "-", f"checker did not check {f}: {first}", [], None))
+            continue
+        for item, rule, header, details, is_error in parse(output, library, default_item):
             ex = covered(rule, library, item, header, details, exceptions)
             entry = (f"{library}:{item}", rule, header, details, ex)
             (waived if ex else failures if is_error else warnings).append(entry)

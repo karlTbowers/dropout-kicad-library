@@ -1,0 +1,104 @@
+# DropOut footprint specs for the kicad-library-tools gullwing generator (SOIC, SSOP, TSSOP...).
+# Generate with: scripts/generate_footprint.py generators/package/gullwing/DropOut_SO.yaml --lib DropOut_Package_SO
+# Source documents are archived in the private dropout-vendor-docs repo.
+
+default_parameters:
+  device_type: 'SOIC'
+  library_Suffix: 'SO'
+
+# IS25LP032D-JNLA3 ("N" package). ISSI gives no land pattern, so the land pattern is IPC-7351
+# from the outline, as KiCad's stock footprint of the same name; the outline (ISSI IS25LP032D
+# datasheet Rev. A16 §10.2) is identical to JEDEC MS-012AA.
+SOIC-8_3.9x4.9mm_P1.27mm:
+  size_source: 'ISSI IS25LP032D/IS25WP032D datasheet Rev. A16, 10.2 8-pin JEDEC 150mil SOIC (N), JEDEC MS-012AA, https://www.issi.com/WW/pdf/25LP-WP032D.pdf#page=110'
+  device_type: 'SOIC'
+  body_size_x:
+    nominal: 3.9
+    tolerance: 0.1      # E1 3.80..4.00
+  body_size_y:
+    minimum: 4.8        # D
+    maximum: 5.0
+  body_height: 1.35 .. 1.75   # A max 1.75
+  body_pcb_gap: 0.10 .. 0.25  # A1
+  overall_size_x:
+    nominal: 6
+    tolerance: 0.2      # E 5.80..6.20
+  lead_width:
+    minimum: 0.31       # b
+    maximum: 0.51
+  lead_len:
+    minimum: 0.4        # L
+    maximum: 1.27
+  lead_height: 0.17 .. 0.25
+  pitch: 1.27
+  num_pins_x: 0
+  num_pins_y: 4
+
+# INA228AQDGSRQ1. Outline and land pattern: TI DGS0010A (4221984/A), INA228-Q1 datasheet
+# SLYS022A pages 47-48 (JEDEC MO-187 BA). Land pattern: 10x 1.45 x 0.30 pads, rows 4.4 apart
+# -> pad-to-pad 2.95 inside, 5.85 outside (same as KiCad's stock Texas_DGS0020A).
+Texas_DGS0010A_TSSOP-10_3x3mm_P0.5mm:
+  size_source: 'https://www.ti.com/lit/ds/symlink/ina228-q1.pdf#page=47'
+  manufacturer: 'Texas'
+  part_number: 'DGS0010A'
+  device_type: 'TSSOP'
+  body_size_x:
+    minimum: 2.90       # E1
+    maximum: 3.10
+  body_size_y:
+    minimum: 2.90       # D
+    maximum: 3.10
+  body_height: 0.75 .. 0.95
+  body_pcb_gap: 0.05 .. 0.15
+  overall_size_x:
+    minimum: 4.75       # E
+    maximum: 5.05
+  lead_width:
+    minimum: 0.17
+    maximum: 0.27
+  lead_len:
+    minimum: 0.40
+    maximum: 0.70
+  lead_height: 0.13 .. 0.23
+  pitch: 0.50
+  num_pins_x: 0
+  num_pins_y: 5
+  pad_to_pad_min_x_overwrite: 2.95
+  pad_to_pad_max_x_overwrite: 5.85
+  pad_size_y_overwrite: 0.30
+
+# TPS2HCS08AQPWPRQ1. TI PWP0016P (4229205/A 12/2022), TPS2HCS08-Q1 datasheet SLVSHR0 pages 118-120.
+# Land pattern: 16X (1.5) x (0.45), pitch 0.65, rows (5.8) apart -> pad-to-pad 4.3 inside, 7.3 outside.
+# Thermal pad 17: metal (3.4) x (5) under a solder-mask-defined opening (2.78) x (3.313); stencil
+# opening 2.78 x 3.31 for 0.125 mm (one aperture).
+HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.78x3.313mm:
+  size_source:
+    - url: 'https://www.ti.com/lit/ds/symlink/tps2hcs08-q1.pdf'
+      page: 118
+  compatible_mpns:
+    - 'Texas_PWP0016P Texas_PowerPAD-TSSOP'
+  device_type: 'HTSSOP'
+  body_size_x: 4.30 .. 4.50
+  body_size_y: 4.90 .. 5.10
+  body_height: 0.85 .. 1.05   # A 1.2 max minus A1 0.05..0.15
+  overall_height:
+    maximum: 1.20
+  body_pcb_gap: 0.05 .. 0.15
+  overall_size_x: 6.20 .. 6.60
+  lead_width: 0.19 .. 0.30
+  lead_len: 0.50 .. 0.75
+  lead_height: 0.09 .. 0.20
+  pitch: 0.65
+  num_pins_x: 0
+  num_pins_y: 8
+  EP_size_x: 2.22 .. 2.78
+  EP_size_y: 2.753 .. 3.313
+  EP_num_paste_pads: [1, 1]
+  EP_paste_coverage: 1.0
+  EP_mask_x: 2.78
+  EP_mask_y: 3.313
+  EP_size_x_overwrite: 3.4
+  EP_size_y_overwrite: 5.0
+  pad_to_pad_min_x_overwrite: 4.3
+  pad_to_pad_max_x_overwrite: 7.3
+  pad_size_y_overwrite: 0.45
