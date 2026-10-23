@@ -1,0 +1,22 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/TMP175AQDRQ1/part.yaml
+# Pins from TMP175-Q1 datasheet SBOS759 "Pin Functions" (same for both packages; the pin table
+# lives in parts/TMP175AQDGKRQ1/pins.csv). ALERT is open-drain; its polarity is set by a register (POL bit),
+# so it is not overbarred. One of two package versions built per the build-all-versions rule;
+# the other is TMP175AQDGKRQ1 (VSSOP-8).
+library: DropOut_Sensor
+name: TMP175AQDRQ1
+pins: ../TMP175AQDGKRQ1/pins.csv
+fields:
+  Reference: U
+  Value: TMP175AQDRQ1
+  Footprint: DropOut_Package_SO:Texas_D0008A_SOIC-8_3.9x4.9mm_P1.27mm
+  Datasheet: https://www.ti.com/lit/ds/symlink/tmp175-q1.pdf
+  Description: TI TMP175-Q1 digital temperature sensor, ±1 °C typ, 9-12 bit, I2C/SMBus with 27 addresses, alert output, 2.7-5.5 V, AEC-Q100 Grade 1, SOIC-8
+  ki_keywords: temperature sensor digital I2C SMBus thermostat automotive
+  ki_fp_filters: Texas*D0008A*SOIC*3.9x4.9mm*P1.27mm*
+  Manufacturer: Texas Instruments
+  MPN: TMP175AQDRQ1
+  DigiKey_PN: 296-48993-1-ND
+  Mouser_PN: 595-TMP175AQDRQ1
+  Temperature_Grade: AEC-Q100 Grade 1
