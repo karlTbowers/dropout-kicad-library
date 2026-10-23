@@ -102,3 +102,60 @@ HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.78x3.313mm:
   pad_to_pad_min_x_overwrite: 4.3
   pad_to_pad_max_x_overwrite: 7.3
   pad_size_y_overwrite: 0.45
+
+# TMP175AQDRQ1. TI D0008A (4214825/C 02/2019), TMP175-Q1 datasheet SBOS759 pages 27-29 (JEDEC
+# MS-012AA). Land pattern: 8X (1.55) x (0.6), pitch 1.27, rows (5.4) apart -> 3.85 inside, 6.95 outside.
+# Differs from the IPC SOIC-8_3.9x4.9mm_P1.27mm above (1.95 mm pads), hence a TI-specific name.
+Texas_D0008A_SOIC-8_3.9x4.9mm_P1.27mm:
+  size_source: 'https://www.ti.com/lit/ds/symlink/tmp175-q1.pdf#page=27'
+  manufacturer: 'Texas'
+  part_number: 'D0008A'
+  device_type: 'SOIC'
+  # Body and lead values as KiCad's JEDEC MS-012AA spec (TI's D0008A references MS-012AA and
+  # agrees within tolerance); they only shape the 3D model. The pads are TI's, below.
+  body_size_x:
+    nominal: 3.9
+    tolerance: 0.1
+  body_size_y:
+    minimum: 4.8
+    maximum: 5.0
+  body_height: 1.35 .. 1.75
+  body_pcb_gap: 0.10 .. 0.25
+  overall_size_x:
+    nominal: 6
+    tolerance: 0.2
+  lead_width:
+    minimum: 0.31
+    maximum: 0.51
+  lead_len:
+    minimum: 0.4
+    maximum: 1.27
+  lead_height: 0.17 .. 0.25
+  pitch: 1.27
+  num_pins_x: 0
+  num_pins_y: 4
+  pad_to_pad_min_x_overwrite: 3.85
+  pad_to_pad_max_x_overwrite: 6.95
+  pad_size_y_overwrite: 0.6
+
+# TMP175AQDGKRQ1. TI DGK0008A (4214862/A 04/2023), TMP175-Q1 datasheet SBOS759 pages 30-32 (JEDEC
+# MO-187). Land pattern: 8X (1.4) x (0.45), pitch 0.65, rows (4.4) apart -> 3.0 inside, 5.8 outside.
+Texas_DGK0008A_TSSOP-8_3x3mm_P0.65mm:
+  size_source: 'https://www.ti.com/lit/ds/symlink/tmp175-q1.pdf#page=30'
+  manufacturer: 'Texas'
+  part_number: 'DGK0008A'
+  device_type: 'TSSOP'
+  body_size_x: 2.90 .. 3.10      # E1
+  body_size_y: 2.90 .. 3.10      # D
+  body_height: 0.75 .. 0.95      # A 1.1 max minus A1
+  body_pcb_gap: 0.05 .. 0.15
+  overall_size_x: 4.75 .. 5.05   # E
+  lead_width: 0.25 .. 0.38
+  lead_len: 0.40 .. 0.70
+  lead_height: 0.13 .. 0.23
+  pitch: 0.65
+  num_pins_x: 0
+  num_pins_y: 4
+  pad_to_pad_min_x_overwrite: 3.0
+  pad_to_pad_max_x_overwrite: 5.8
+  pad_size_y_overwrite: 0.45

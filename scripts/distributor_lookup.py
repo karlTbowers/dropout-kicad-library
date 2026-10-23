@@ -12,6 +12,7 @@ import datetime
 import json
 import os
 import sys
+import urllib.error
 import urllib.parse
 import urllib.request
 
@@ -30,9 +31,22 @@ def digikey(mpn):
               urllib.parse.urlencode({"client_id": cid, "client_secret": secret,
                                       "grant_type": "client_credentials"}).encode(),
               {"Content-Type": "application/x-www-form-urlencoded"})["access_token"]
-    p = req(f"https://api.digikey.com/products/v4/search/{urllib.parse.quote(mpn, safe="")}/productdetails",
-            headers={"Authorization": f"Bearer {tok}", "X-DIGIKEY-Client-Id": cid,
-                     "X-DIGIKEY-Locale-Site": "US", "X-DIGIKEY-Locale-Currency": "USD"})["Product"]
+    headers = {"Authorization": f"Bearer {tok}", "X-DIGIKEY-Client-Id": cid,
+               "X-DIGIKEY-Locale-Site": "US", "X-DIGIKEY-Locale-Currency": "USD"}
+    try:
+        p = req(f"https://api.digikey.com/products/v4/search/{urllib.parse.quote(mpn, safe='')}/productdetails",
+                headers=headers)["Product"]
+    except urllib.error.HTTPError as e:
+        # productdetails answers 404 when DigiKey lists the MPN more than once (e.g. a marketplace
+        # copy); fall back to a keyword search and take DigiKey's own listing (most variations)
+        if e.code != 404:
+            raise
+        found = req("https://api.digikey.com/products/v4/search/keyword",
+                    json.dumps({"Keywords": mpn, "Limit": 10}).encode(), {**headers, "Content-Type": "application/json"})
+        exact = [q for q in found.get("Products", []) if q["ManufacturerProductNumber"] == mpn]
+        if not exact:
+            return {"error": "not found"}
+        p = max(exact, key=lambda q: len(q["ProductVariations"]))
     return {"manufacturer": p["Manufacturer"]["Name"], "mpn": p["ManufacturerProductNumber"],
             "status": p["ProductStatus"]["Status"], "stock": p.get("QuantityAvailable"),
             "datasheet": p.get("DatasheetUrl"), "description": p["Description"]["DetailedDescription"],

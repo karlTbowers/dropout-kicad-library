@@ -1,0 +1,23 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/TPS3702AX33QDDCRQ1/part.yaml
+# Pins from TPS3702-Q1 datasheet SBVS261C Table 4-1 (same for every version; the pin table lives in
+# parts/TPS3702AX33QDDCRQ1/pins.csv). OV and UV are active-low open-drain outputs. Naming (Table 8-1): "A" =
+# window ±2% (SET high) or ±6% (SET low) of the nominal, "X" = 0.55% hysteresis, "33" = 3.3 V, Q = automotive, DDC = SOT-23
+# 6-pin, R = reel. One of two 3.3 V automotive versions built per the build-all-versions rule;
+# the other is TPS3702CX33QDDCRQ1.
+library: DropOut_Power
+name: TPS3702AX33QDDCRQ1
+pins: pins.csv
+fields:
+  Reference: U
+  Value: TPS3702AX33QDDCRQ1
+  Footprint: DropOut_Package_TO_SOT_SMD:Texas_DDC0006A_TSOT-23-6
+  Datasheet: https://www.ti.com/lit/ds/symlink/tps3702-q1.pdf
+  Description: TI TPS3702-Q1 window voltage supervisor for a 3.3 V rail, OV/UV thresholds ±2% (SET high) or ±6% (SET low), 0.55% hysteresis, open-drain OV and UV outputs, AEC-Q100 Grade 1, SOT-23-6
+  ki_keywords: voltage supervisor window comparator overvoltage undervoltage monitor reset automotive
+  ki_fp_filters: Texas*DDC0006A*TSOT?23*
+  Manufacturer: Texas Instruments
+  MPN: TPS3702AX33QDDCRQ1
+  DigiKey_PN: 296-51914-2-ND
+  Mouser_PN: 595-3702AX33QDDCRQ1
+  Temperature_Grade: AEC-Q100 Grade 1
