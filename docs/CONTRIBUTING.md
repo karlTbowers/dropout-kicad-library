@@ -27,6 +27,10 @@ These are stricter than KLC or add things KLC doesn't cover.
 
 One symbol = one orderable part, named by MPN, with its footprint linked (KLC G2.1 "fully specified" symbols). DropOut does **not** use generic symbols. Passives are fully specified too: a 10 kΩ 0603 1% resistor and a 10 kΩ 0402 1% resistor are two symbols.
 
+### Resistors and capacitors
+
+Chip resistors and MLCCs show the short value (`10k`, `100nF`, handbook rule D-45) as Value, a row with their ratings and case size, and the MPN in smaller text (`klc-exceptions.yml`: `passive-short-value`, `passive-small-mpn`). The symbol name and `MPN` field keep the exact orderable code. They are generated from `parts/passives.yaml` by `scripts/passivegen.py`.
+
 ### Part numbers containing "/"
 
 KiCad symbol names can't contain `/`, and KLC S6.2 requires Value to equal the symbol name. For an MPN like `XLD8A24CAHM3_A/I` the symbol name and Value use `_` (`XLD8A24CAHM3_A_I`) and the `MPN` field keeps the exact orderable code, which BOMs use.
@@ -48,7 +52,7 @@ All KLC S6.2 fields, plus these DropOut fields, filled in (not blank):
 | `DigiKey_PN` | `296-TPS2HCS08AQPWPRQ1CT-ND` | `-` only if not stocked |
 | `Mouser_PN` | `595-TPS2HCS08AQPWPRQ1` | `-` only if not stocked |
 
-Optional: `Temperature_Grade` (e.g. `AEC-Q100 Grade 1`), `Notes`, `Reference_Manual` (link to a manufacturer document the part was built from that isn't the datasheet, e.g. a sign-in-gated reference manual holding the ball map; never commit the document itself). `scripts/check_symbol_fields.py` enforces these in CI.
+Optional: `Temperature_Grade` (e.g. `AEC-Q100 Grade 1`), the rating fields of handbook rule D-45 (`Voltage`, `Tolerance`, `Dielectric`, `Power`) and `Case` (EIA case size, passives), `Notes`, `Reference_Manual` (link to a manufacturer document the part was built from that isn't the datasheet, e.g. a sign-in-gated reference manual holding the ball map; never commit the document itself). `scripts/check_symbol_fields.py` enforces these in CI.
 
 The `Datasheet` field must be the **manufacturer's** URL, never a distributor copy. Datasheet PDFs are never committed.
 
