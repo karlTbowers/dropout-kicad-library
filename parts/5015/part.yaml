@@ -1,0 +1,23 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/5015/part.yaml
+# Node60 ground probe loop part search (2026-10-22): REJECTED for Node60 (needs +125 °C; Keystone rates its SMT test points -45 to +85 °C, catalog M75 p. 61).
+# Requirement (Node60 project answers): ground test points are probe loops a scope ground spring fits,
+# rated to at least +125 °C. Footprint: generators/custom/TestPoint.py.
+library: DropOut_Connector
+name: "5015"
+style: testpoint
+pins: pins.csv
+fields:
+  Reference: TP
+  Value: "5015"
+  Footprint: DropOut_TestPoint:TestPoint_Keystone_5015_Micro-Mini
+  Datasheet: https://www.keyelco.com/userAssets/file/K75p61.pdf
+  Description: "Keystone SMT micro miniature test point, loop 2.7x1.0mm, 1.5mm high, phosphor bronze, silver plate, -45 to +85 °C, tape and reel 1000"
+  ki_keywords: test point loop ground probe SMD Keystone
+  ki_fp_filters: TestPoint?Keystone?5015?Micro?Mini*
+  Manufacturer: Keystone Electronics
+  MPN: "5015"
+  DigiKey_PN: "36-5015CT-ND"
+  Mouser_PN: "534-5015"
+  Temperature_Grade: "-45 to +85 °C"
+  Notes: "Rated only to +85 °C: not for automotive Grade 1 boards."

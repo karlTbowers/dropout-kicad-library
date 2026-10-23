@@ -48,6 +48,7 @@ Planned categories (created as the first part in each one is added). Microcontro
 | `DropOut_Package_SO` | Footprints and 3D models for small-outline packages (SOIC, SSOP, TSSOP, HTSSOP) |
 | `DropOut_Package_TO_SOT_SMD` | Footprints and 3D models for SOT/TSOT/TO SMD packages, including TOLL-family power MOSFETs |
 | `DropOut_Resistor_SMD` | Footprints and 3D models for SMD resistors, including current-sense shunts with manufacturer land patterns |
+| `DropOut_TestPoint` | Footprints and 3D models for test points: bare pads and SMD/THT test loops (as KiCad's stock `TestPoint`) |
 
 ## Using it in a project
 
