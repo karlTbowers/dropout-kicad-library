@@ -14,6 +14,10 @@ data/<generator>/ folder, in that generator's YAML format. This script:
   4. copies the results into footprints/<lib>.pretty/ and 3dmodels/<lib>.3dshapes/, with the
      model path rewritten to ${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/<lib>.3dshapes/.
 
+Legacy generators (e.g. crystal_resonator_oscillator) read 3D-model specs only from the
+stock data/<generator>/cq_parameters.yaml: put ours in a companion file next to the spec,
+<spec stem>.cq_parameters.yaml, and it is appended there (stock entries of the same name dropped).
+
 Generated names encode the real pad count (e.g. LFBGA-257): check them against the datasheet.
 """
 import argparse
@@ -98,12 +102,18 @@ def main():
             for stock in (wt / "data" / generator).glob("*.yaml"):
                 drop_parts(stock, ours)
             shutil.copyfile(spec, wt / "data" / generator / f"dropout_{spec.name}")
+            cq = spec.with_name(f"{spec.stem}.cq_parameters.yaml")
+            models = spec_parts(cq) if cq.exists() else []
+            if models:
+                stock_cq = wt / "data" / generator / "cq_parameters.yaml"
+                drop_parts(stock_cq, models)
+                stock_cq.write_text(stock_cq.read_text().rstrip("\n") + "\n\n" + cq.read_text())
             # generate.py makes models only when given -m
             cmd = [sys.executable, "src/generators/generate.py", "-g", generator, "-f", str(out / "fp")]
             if not args.no_3d:
                 cmd += ["-m", str(out / "3d")]
             # Default: only the parts in our spec, never the generator's stock parts
-            cmd += ["-p", *(args.part or spec_parts(spec))]  # one -p, several names
+            cmd += ["-p", *(args.part or spec_parts(spec) + models)]  # one -p, several names
             env = {**os.environ, "PYTHONPATH": f"{wt / 'src'}:{wt}"}
             proc = subprocess.run(cmd, cwd=wt, env=env, capture_output=True, text=True)
             print(proc.stdout[-1500:])

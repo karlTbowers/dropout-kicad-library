@@ -1,0 +1,11 @@
+number,name,type,unit,side,slot,alternates
+1,Pin_1,passive,1,L,,
+2,Pin_2,passive,1,R,,
+3,Pin_3,passive,1,L,,
+4,Pin_4,passive,1,R,,
+5,Pin_5,passive,1,L,,
+6,Pin_6,passive,1,R,,
+7,Pin_7,passive,1,L,,
+8,Pin_8,passive,1,R,,
+9,Pin_9,passive,1,L,,
+10,Pin_10,passive,1,R,,

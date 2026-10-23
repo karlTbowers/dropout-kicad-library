@@ -192,7 +192,29 @@ def style_tvs_bidirectional(pins):
     return two_pin(pins, g)
 
 
-STYLES = {"tvs_bidirectional": style_tvs_bidirectional}
+def style_crystal_gnd24(pins):
+    """Four-pin crystal with a grounded lid (as KiCad's Device:Crystal_GND24), but with both lid
+    pins drawn as separate visible pins: crystal pins on L/R, the two lid pins on B."""
+    left = [p for p in pins if p["side"] == "L"]
+    right = [p for p in pins if p["side"] == "R"]
+    bottom = sorted((p for p in pins if p["side"] == "B"), key=lambda p: p["slot"] or 0)
+    if len(pins) != 4 or len(left) != 1 or len(right) != 1 or len(bottom) != 2:
+        sys.exit("symbolgen: crystal_gnd24 needs one L, one R and two B pins")
+    # quartz drawn as a closed polyline: a rectangle would read as the symbol body (KLC S3.3)
+    g = [poly([(-1.143, 2.54), (1.143, 2.54), (1.143, -2.54), (-1.143, -2.54), (-1.143, 2.54)], fill="background"),
+         poly([(-2.032, -1.27), (-2.032, 1.27)], width=0.508),          # electrodes
+         poly([(2.032, -1.27), (2.032, 1.27)], width=0.508),
+         poly([(-2.54, 0), (-2.032, 0)]), poly([(2.032, 0), (2.54, 0)]),
+         poly([(-2.54, 2.286), (-2.54, 3.556), (2.54, 3.556), (2.54, 2.286)]),     # lid
+         poly([(-2.54, -2.286), (-2.54, -5.08), (2.54, -5.08), (2.54, -2.286)])]
+    out = g + [pin_sexpr(left[0], -2 * G, 0, 0, length=G), pin_sexpr(right[0], 2 * G, 0, 180, length=G),
+               pin_sexpr(bottom[0], -G, -3 * G, 90, length=G), pin_sexpr(bottom[1], G, -3 * G, 90, length=G)]
+    return out, 3.556 + 0.27, 3 * G
+
+
+STYLES = {"tvs_bidirectional": style_tvs_bidirectional, "crystal_gnd24": style_crystal_gnd24}
+# Pin numbers are shown where the package has more than two terminals (as KiCad's stock symbols)
+STYLE_SHOW_NUMBERS = {"crystal_gnd24"}
 
 
 def build_symbol(part, pins):
@@ -206,7 +228,9 @@ def build_symbol(part, pins):
         if style not in STYLES:
             sys.exit(f"symbolgen: unknown style '{style}' (have {sorted(STYLES)})")
         units = [STYLES[style](pins)]
-        head = "\t\t(pin_numbers (hide yes))\n\t\t(pin_names (offset 1.016) (hide yes))"
+        head = "\t\t(pin_names (offset 1.016) (hide yes))"
+        if style not in STYLE_SHOW_NUMBERS:
+            head = "\t\t(pin_numbers (hide yes))\n" + head
     else:
         units = [build_unit([p for p in pins if p["unit"] == u]) for u in order]
         head = "\t\t(pin_names (offset 0.508))"

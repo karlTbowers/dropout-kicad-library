@@ -1,0 +1,45 @@
+# 3D models for DropOut_Crystals_SMD.yaml (kicad-library-tools legacy cq_parameters format;
+# IDs starting "SMD" use the generator's SMD crystal model). Package terminals from the
+# datasheets' bottom views; p_split_* are terminal centre distances.
+
+# NDK NX3225SA: terminals (1) x (0.9) mm, 1.2 mm gap in x, 0.7 mm gap in y -> centres 2.2 x 1.6
+SMD_NDK_NX3225SA:
+  type: 1
+  file_name: Crystal_SMD_NDK_NX3225SA-4Pin_3.2x2.5mm
+  L: 3.2
+  W: 2.5
+  H: 0.55
+  A1: 0.0
+  p_cnt: 4
+  p_split_x: 2.2
+  p_split_y: 1.6
+  p_length: 1.0
+  p_width: 0.9
+  body_top_color_key: metal aluminum
+  body_color_key: gold pins
+  bottom_color_key: black body
+  pin_color_key: metal grey pins
+  rotation: 0
+  destination_dir: 'Crystal.3dshapes'
+  source: 'https://www.ndk.com/en/products/upload/lineup/pdf/NDKX03-00011_en.pdf'
+
+# Abracon ABM10AIG: terminals 0.7 (x) x 0.6 (y) mm, centres 1.65 x 1.25
+SMD_Abracon_ABM10AIG:
+  type: 1
+  file_name: Crystal_SMD_Abracon_ABM10AIG-4Pin_2.5x2.0mm
+  L: 2.5
+  W: 2.0
+  H: 0.55
+  A1: 0.0
+  p_cnt: 4
+  p_split_x: 1.65
+  p_split_y: 1.25
+  p_length: 0.7
+  p_width: 0.6
+  body_top_color_key: metal aluminum
+  body_color_key: gold pins
+  bottom_color_key: black body
+  pin_color_key: metal grey pins
+  rotation: 0
+  destination_dir: 'Crystal.3dshapes'
+  source: 'https://abracon.com/AIGcrystals/ABM10AIG.pdf'

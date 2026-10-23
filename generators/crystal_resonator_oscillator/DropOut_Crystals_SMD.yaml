@@ -1,0 +1,57 @@
+# DropOut footprint specs for the kicad-library-tools crystal_resonator_oscillator generator.
+# Generate with: scripts/generate_footprint.py generators/crystal_resonator_oscillator/DropOut_Crystals_SMD.yaml --lib DropOut_Crystal
+# 3D models: DropOut_Crystals_SMD.cq_parameters.yaml (same names). Source documents are
+# archived in the private dropout-vendor-docs repo.
+#
+# Pad numbering: the generator puts pad 1 bottom-left, 2 bottom-right, 3 top-right, 4 top-left
+# (top view, counter-clockwise), which is the top view in both datasheets below.
+
+# NDK NX3225SA (automotive), NDK spec STD-CQS-1. Datasheet NDKX03-00011-002 p. 5:
+# "LAND PATTERN (Recommended)" 1.4 x 1.2 mm pads, 2.2 mm (x) x 1.6 mm (y) centre spacing;
+# body 3.2 x 2.5 x 0.55 mm; #1, #3 crystal, #2, #4 GND (cover).
+Crystal_SMD_NDK_NX3225SA-4Pin_3.2x2.5mm:
+  addSizeFootprintName: true
+  manufacturer: NDK
+  part_number: NX3225SA
+  tags: crystal SMD NDK NX3225SA automotive AEC-Q200
+  description: Automotive crystal, AEC-Q200, land pattern per NDK NX3225SA datasheet NDKX03-00011-002 page 5
+  datasheet: https://www.ndk.com/en/products/upload/lineup/pdf/NDKX03-00011_en.pdf
+  footprint_name: Crystal_SMD_NDK_NX3225SA
+  func: makeSMDCrystal
+  hasAdhesive: false
+  lib_name: Crystal
+  pack_bevel: 0
+  pack_height: 2.5
+  pack_width: 3.2
+  pad:
+  - 1.4
+  - 1.2
+  pad_sep_x: 2.2
+  pad_sep_y: 1.6
+  pins: 4
+  style: rect
+
+# Abracon ABM10AIG (automotive). Datasheet rev. 06-14-19 p. 3 "Recommended Land Pattern":
+# 1.1 x 1.0 mm pads, 1.65 mm (x) x 1.25 mm (y) centre spacing; body 2.5 x 2.0 x 0.55 mm
+# (drawing 2.55 x 2.05 +/-0.1); #1, #3 crystal, #2, #4 GND (lid).
+Crystal_SMD_Abracon_ABM10AIG-4Pin_2.5x2.0mm:
+  addSizeFootprintName: true
+  manufacturer: Abracon
+  part_number: ABM10AIG
+  tags: crystal SMD Abracon ABM10AIG automotive AEC-Q200
+  description: Automotive crystal, AEC-Q200, land pattern per Abracon ABM10AIG datasheet (rev. 06-14-19) page 3
+  datasheet: https://abracon.com/AIGcrystals/ABM10AIG.pdf
+  footprint_name: Crystal_SMD_Abracon_ABM10AIG
+  func: makeSMDCrystal
+  hasAdhesive: false
+  lib_name: Crystal
+  pack_bevel: 0
+  pack_height: 2.0
+  pack_width: 2.5
+  pad:
+  - 1.1
+  - 1.0
+  pad_sep_x: 1.65
+  pad_sep_y: 1.25
+  pins: 4
+  style: rect
