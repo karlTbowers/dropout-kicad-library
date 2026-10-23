@@ -1,0 +1,49 @@
+# Coilcraft molded power inductors (DropOut spec for kicad-library-tools data/inductor/SMD/).
+# Keys carry a DropOut_ prefix so `-p` never also selects a stock part; the footprint name comes
+# from manufacturer + PartNumber (L_Coilcraft_<PartNumber>).
+default_parameters:
+  manufacturer: Coilcraft
+  library_name: DropOut_Inductor_SMD
+  has_orientation: false
+  3d:
+    type: 1
+    bodyColor: black body
+    pinColor: metal grey pins
+    padThickness: 0.05
+  tags:
+    - power
+    - shielded
+    - molded
+    - AEC-Q200
+
+# XGL4020 and XEL4020 (4.0 x 4.0 x 2.1 mm max): Coilcraft documents 1529-3 and 1302-3 (revised
+# 02/19/26), "Recommended Land Pattern": 0.98 x 3.4 mm pads at 2.37 mm centres (1.39 mm inside).
+# Terminals 0.82 mm wide, 1.57 mm apart, 3.25 mm long. Same land as KiCad's stock L_Coilcraft_XxL4020.
+DropOut_XxL4020:
+  PartNumber: XxL4020
+  series_description: XGL4020 and XEL4020
+  datasheet: "https://www.coilcraft.com/getmedia/76c9c081-4945-4c85-9129-9356e1ad6734/xgl4020.pdf"
+  widthX: 4.0
+  lengthY: 4.0
+  height: 2.1
+  padX: 0.82
+  padY: 3.25
+  padInsideX: 1.57
+  landingX: 0.98
+  landingInsideX: 1.39
+  landingY: 3.4
+
+# XGL4030 (4.0 x 4.0 x 3.1 mm max): Coilcraft document 1575-4 (revised 02/19/26), same land as XxL4020.
+DropOut_XxL4030:
+  PartNumber: XxL4030
+  series_description: XGL4030 and XEL4030
+  datasheet: "https://www.coilcraft.com/getmedia/032d9c73-4222-482f-b6bc-7808590e27c9/xgl4030.pdf"
+  widthX: 4.0
+  lengthY: 4.0
+  height: 3.1
+  padX: 0.82
+  padY: 3.25
+  padInsideX: 1.57
+  landingX: 0.98
+  landingInsideX: 1.39
+  landingY: 3.4

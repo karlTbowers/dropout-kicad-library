@@ -1,0 +1,28 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/CH-AK-DT13-02/part.yaml
+# Shenzhen Haisheng Hongye Technology Co., Ltd. (brand HISENG) CH-AK-DT13-02, sold on Alibaba as a
+# "DT13-2P" compatible right-angle PCB header. Node60 alternate to TE DT13-2P (DEC-013, user's decision
+# 2026-10-22): no authorized distributor, so DigiKey_PN and Mouser_PN are "-".
+# Listing https://www.alibaba.com/product-detail/Right-Angle-DT13-2P-2-Pin_1601383533915.html, observed
+# 2026-10-22: $0.10-0.50, MOQ 100 pieces, shipping negotiated. Seller attributes (unverified): 13 A,
+# 250 V, IP67, nickel-plated copper contacts, PBT/PA66 housing; infographic -55 to +125 °C.
+# No drawing or datasheet: the footprint is TE's DT13-2P layout and the Datasheet field links TE's
+# drawing, the form the listing claims. Photos (archived in dropout-vendor-docs HISENG/CH-AK-DT13-02/)
+# show the DT13-2P boss and pin arrangement. Check a sample's holes and cavity numbers before use.
+library: DropOut_Connector
+name: CH-AK-DT13-02
+pins: ../DT13-2P/pins.csv
+fields:
+  Reference: J
+  Value: CH-AK-DT13-02
+  Footprint: DropOut_Connector_TE-Connectivity:TE_DEUTSCH-DT_DT13-2P_1x02_P5.46mm_Horizontal
+  Datasheet: https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=DT13-2P&DocType=Customer%20Drawing&DocLang=English&DocFormat=pdf&PartCntxt=DT13-2P
+  Description: HISENG DEUTSCH DT13-2P compatible 2-pin right-angle PCB header, 5.46 mm pitch, panel flange seal, seller rating 13 A 250 V; mates DT06-2S plug
+  ki_keywords: connector header right angle DEUTSCH DT DT13 DT13-2P DT06-2S sealed automotive
+  ki_fp_filters: TE*DEUTSCH?DT*DT13?2P*
+  Manufacturer: Shenzhen Haisheng Hongye Technology (HISENG)
+  MPN: CH-AK-DT13-02
+  DigiKey_PN: '-'
+  Mouser_PN: '-'
+  Temperature_Grade: Not specified by a datasheet (seller claims -55 to +125 °C)
+  Notes: 'Alternate to TE DT13-2P, no authorized distributor. Supplier: Alibaba, https://www.alibaba.com/product-detail/Right-Angle-DT13-2P-2-Pin_1601383533915.html (/bin/zsh.10-0.50, MOQ 100, observed 2026-10-22). No drawing or qualification data; footprint is the TE DT13-2P layout, verify a sample.'
