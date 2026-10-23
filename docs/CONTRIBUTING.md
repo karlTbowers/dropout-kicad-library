@@ -50,9 +50,9 @@ Optional: `Temperature_Grade` (e.g. `AEC-Q100 Grade 1`), `Notes`, `Reference_Man
 
 The `Datasheet` field must be the **manufacturer's** URL, never a distributor copy. Datasheet PDFs are never committed.
 
-### Parts with nothing to buy (proposed)
+### Parts with nothing to buy
 
-Some library parts are features of the board itself, e.g. a bare copper test pad: there is no MPN and nothing to order or place. They still carry every required field, filled in like this:
+(Adopted 2026-10-22.) Some library parts are features of the board itself, e.g. a bare copper test pad: there is no MPN and nothing to order or place. They still carry every required field, filled in like this:
 
 | Field | Value |
 |---|---|
