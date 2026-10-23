@@ -1,0 +1,28 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/DT13-2P_Jorch/part.yaml
+# Jorch (AliExpress Jorch Store, store 3057054) DT13-2P copy, sold with a DT06-2S plug per set (variant
+# "DT13-2P DT06-2S"). The seller has no part number of its own (item specifics: Model Number "DT13-2P
+# DT13-4P ...", Brand Name "Jorch"), so the symbol is named DT13-2P_Jorch and MPN is the seller's model
+# code. Node60 alternate to TE DT13-2P (DEC-013, user's decision 2026-10-22): no authorized
+# distributor, so DigiKey_PN and Mouser_PN are "-".
+# Listing https://www.aliexpress.com/i/3256804973396267.html, observed 2026-10-22 (regular price, USD):
+# 1 set $5.02, 2 sets $4.75, 5 sets $26.84, 10 sets $38.32. No ratings, drawing, or material data.
+# Photos (archived in dropout-vendor-docs Jorch/DT13-2P/) show the DT13-2P boss and pin arrangement.
+# The footprint is TE's DT13-2P layout; check a sample's holes and cavity numbers before use.
+library: DropOut_Connector
+name: DT13-2P_Jorch
+pins: ../DT13-2P/pins.csv
+fields:
+  Reference: J
+  Value: DT13-2P_Jorch
+  Footprint: DropOut_Connector_TE-Connectivity:TE_DEUTSCH-DT_DT13-2P_1x02_P5.46mm_Horizontal
+  Datasheet: https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=DT13-2P&DocType=Customer%20Drawing&DocLang=English&DocFormat=pdf&PartCntxt=DT13-2P
+  Description: Jorch DEUTSCH DT13-2P copy, 2-pin right-angle PCB header, 5.46 mm pitch, panel flange seal, sold as a set with a DT06-2S plug; no seller ratings
+  ki_keywords: connector header right angle DEUTSCH DT DT13 DT13-2P DT06-2S sealed automotive
+  ki_fp_filters: TE*DEUTSCH?DT*DT13?2P*
+  Manufacturer: Jorch
+  MPN: DT13-2P
+  DigiKey_PN: '-'
+  Mouser_PN: '-'
+  Temperature_Grade: Not specified
+  Notes: 'Alternate to TE DT13-2P, no authorized distributor. Supplier: AliExpress Jorch Store, https://www.aliexpress.com/i/3256804973396267.html, variant DT13-2P DT06-2S (.02 per set, .32 per 10 sets, observed 2026-10-22). No drawing or ratings; footprint is the TE DT13-2P layout, verify a sample.'
