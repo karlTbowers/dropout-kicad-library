@@ -163,6 +163,9 @@ def targets(paths):
     for p in map(Path, paths):
         if p.is_dir() and p.suffix == ".pretty":
             yield from sorted(p.glob("*.kicad_mod"))
+        elif p.is_dir():  # e.g. symbols/ or footprints/: everything inside
+            yield from sorted(p.glob("*.kicad_sym"))
+            yield from sorted(p.glob("*.pretty/*.kicad_mod"))
         else:
             yield p
 
@@ -195,6 +198,7 @@ def main():
         elif f.suffix == ".kicad_mod":
             library, default_item, checker = f.parent.stem, f.stem, fp_checker
         else:
+            failures.append((str(f), "-", f"not a .kicad_sym or .kicad_mod file: {f}", [], None))
             continue
         output = run(checker, f, args.raw, extra)
         # A file the checker never reports on (missing, unreadable, rejected) must not pass silently

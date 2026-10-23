@@ -1,0 +1,28 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/LMQ66430MC3RXBRQ1/part.yaml
+# Pins from LMQ664x0-Q1 datasheet SNVSBV1F Table 5-1. Pins 4 and 5 are the midpoint of the
+# internal VIN bypass capacitors ("leave this pin floating"); 2, 9, 12 have no connection. All
+# five are no_connect so ERC flags anything wired to them. BOOT has an internal 0.1 µF to SW.
+# VCC is the internal LDO output (1 µF to GND), typed power_in because KLC S4.4 requires it for
+# VCC-named pins: put a PWR_FLAG on the VCC net for ERC. VOUT/FB is power_out (KLC S4.4
+# suggestion, KiCad's usual type): the output node for fixed 3.3 V. VIN is on the left (KLC S4.2,
+# power converters). PG is open-drain. The thermal pad (GND/DAP,
+# unnumbered in the table) is pad 15 on TI's RXB0014A drawing.
+# Variant chosen with the user (2026-10-22): MC3 = 2.2 MHz, fixed 3.3 V or adjustable output
+# (Device Comparison Table); the Node60 BOM's "LMQ66430QMC5RXBRQ1" does not exist.
+library: DropOut_Power
+name: LMQ66430MC3RXBRQ1
+pins: pins.csv
+fields:
+  Reference: U
+  Value: LMQ66430MC3RXBRQ1
+  Footprint: DropOut_Package_DFN_QFN:Texas_RXB0014A_VQFN-14-1EP_2.6x2.6mm_P0.5mm_EP1x1mm
+  Datasheet: https://www.ti.com/lit/ds/symlink/lmq66430-q1.pdf
+  Description: TI LMQ66430-Q1 36 V 3 A synchronous buck, 2.2 MHz, fixed 3.3 V or adjustable output, 1.2 µA no-load Iq, integrated VIN and BOOT capacitors, AEC-Q100 Grade 1, VQFN-14 2.6x2.6 mm
+  ki_keywords: buck step-down regulator converter DC-DC automotive 3.3V low Iq HotRod
+  ki_fp_filters: Texas*RXB0014A*VQFN*
+  Manufacturer: Texas Instruments
+  MPN: LMQ66430MC3RXBRQ1
+  DigiKey_PN: 296-LMQ66430MC3RXBRQ1CT-ND
+  Mouser_PN: 595-MQ66430MC3RXBRQ1
+  Temperature_Grade: AEC-Q100 Grade 1

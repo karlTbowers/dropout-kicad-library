@@ -2,7 +2,7 @@
 	(version 20260206)
 	(generator "kicad-footprint-generator")
 	(layer "F.Cu")
-	(descr "SOIC, 8 Pin (JEDEC MS-012AA, https://www.analog.com/media/en/package-pcb-resources/package/pkg_pdf/soic_narrow-r/r_8.pdf)")
+	(descr "SOIC, 8 Pin (ISSI IS25LP032D/IS25WP032D datasheet Rev. A16, 10.2 8-pin JEDEC 150mil SOIC (N), JEDEC MS-012AA, https://www.issi.com/WW/pdf/25LP-WP032D.pdf#page=110)")
 	(tags "SOIC SO")
 	(property "Reference" "REF**"
 		(at 0 -3.4 0)
@@ -292,13 +292,6 @@
 		)
 		(scale
 			(xyz 1 1 1)
-		)
-		(rotate
-			(xyz 0 0 0)
-		)
-	)
-)
- 1)
 		)
 		(rotate
 			(xyz 0 0 0)

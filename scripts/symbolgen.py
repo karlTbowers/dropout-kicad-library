@@ -157,7 +157,7 @@ def build_unit(pins):
         out.append(pin_sexpr(p, -hw - PIN_LEN, top - slot * G, 0))
     for slot, p in sides["R"]:
         out.append(pin_sexpr(p, hw + PIN_LEN, top - slot * G, 180))
-    x0 = -(cols - 1) * TB_PITCH / 2
+    x0 = -snap_up((cols - 1) * TB_PITCH / 2 - 1e-9, G) if cols else 0  # first top/bottom pin, on grid
     for slot, p in sides["T"]:
         out.append(pin_sexpr(p, x0 + slot * TB_PITCH, hh + PIN_LEN, 270))
     for slot, p in sides["B"]:

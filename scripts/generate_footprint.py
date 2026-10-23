@@ -33,7 +33,38 @@ MODEL_RE = re.compile(r'\(model "\$\{KICAD\d+_3DMODEL_DIR\}/[^"/]+\.3dshapes/')
 
 def spec_parts(spec):
     # Top-level keys of the spec YAML are the part names
-    return re.findall(r"^([A-Za-z0-9_][^\s:#]*):\s*$", spec.read_text(), re.M)
+    names = re.findall(r"^([A-Za-z0-9_][^\s:#]*):\s*$", spec.read_text(), re.M)
+    return [n for n in names if n != "default_parameters"]
+
+
+def drop_parts(yaml_file, names):
+    """Remove top-level entries named in `names` from a stock spec file (worktree copy only),
+    plus any entry that inherits from a removed one.
+
+    A stock spec with the same name as ours would be generated too, in parallel, into the same
+    output file: the race corrupts the file, and either spec can win."""
+    blocks, current = [], None  # [name or None, lines]
+    for ln in yaml_file.read_text().splitlines(keepends=True):
+        m = re.match(r"^([A-Za-z0-9_][^\s:#]*):\s*$", ln)
+        if m or (ln.strip() and not ln[0].isspace() and not ln.startswith("#")):
+            current = [m.group(1) if m else None, []]
+            blocks.append(current)
+        elif current is None:
+            current = [None, []]
+            blocks.append(current)
+        current[1].append(ln)
+    drop, changed = set(names), True
+    while changed:
+        changed = False
+        for name, lines in blocks:
+            parent = next((re.match(r"^\s+inherit:\s*['\"]?([^'\"\s]+)", ln) for ln in lines
+                           if re.match(r"^\s+inherit:", ln)), None)
+            if name and name not in drop and parent and parent.group(1) in drop:
+                drop.add(name)
+                changed = True
+    kept = [ln for name, lines in blocks if name not in drop for ln in lines]
+    if any(name in drop for name, _ in blocks):
+        yaml_file.write_text("".join(kept))
 
 
 def main():
@@ -63,24 +94,32 @@ def main():
         wt, out = Path(td) / "klt", Path(td) / "out"
         subprocess.run(["git", "-C", str(klt), "worktree", "add", "--quiet", "--detach", str(wt), KLT_REF], check=True)
         try:
+            ours = spec_parts(spec)
+            for stock in (wt / "data" / generator).glob("*.yaml"):
+                drop_parts(stock, ours)
             shutil.copyfile(spec, wt / "data" / generator / f"dropout_{spec.name}")
             # generate.py makes models only when given -m
             cmd = [sys.executable, "src/generators/generate.py", "-g", generator, "-f", str(out / "fp")]
             if not args.no_3d:
                 cmd += ["-m", str(out / "3d")]
             # Default: only the parts in our spec, never the generator's stock parts
-            for p in args.part or spec_parts(spec):
-                cmd += ["-p", p]
+            cmd += ["-p", *(args.part or spec_parts(spec))]  # one -p, several names
             env = {**os.environ, "PYTHONPATH": f"{wt / 'src'}:{wt}"}
             proc = subprocess.run(cmd, cwd=wt, env=env, capture_output=True, text=True)
             print(proc.stdout[-1500:])
             if proc.returncode != 0:
-                print(proc.stderr[-3000:], file=sys.stderr)
+                errors = [ln for ln in (proc.stdout + proc.stderr).splitlines()
+                          if re.search(r"error|exception|Error:", ln, re.I)]
+                print("\n".join(errors[-15:]) or proc.stderr[-3000:], file=sys.stderr)
                 sys.exit("generate_footprint: generator failed")
 
             fps = sorted(out.glob("fp/*.pretty/*.kicad_mod"))
             if not fps:
                 sys.exit("generate_footprint: nothing generated - check the part names and the spec")
+            for f in fps:  # never install a footprint KiCad's own parser would reject
+                text = f.read_text()
+                if text.count("(") != text.count(")") or not text.rstrip().endswith(")"):
+                    sys.exit(f"generate_footprint: {f.name} is malformed")
             fp_dir = REPO / "footprints" / f"{args.lib}.pretty"
             md_dir = REPO / "3dmodels" / f"{args.lib}.3dshapes"
             fp_dir.mkdir(parents=True, exist_ok=True)
