@@ -49,12 +49,13 @@ exceptions:
     # Waives only "unexpected property" warnings for DropOut's own fields. Any other S6.2
     # finding (missing or empty KLC fields, bad keywords, etc.) is still reported.
     match: >-
-      ^Found a unexpected property with the name (Manufacturer|MPN|DigiKey_PN|Mouser_PN|Temperature_Grade|Notes|Reference_Manual)$
+      ^Found a unexpected property with the name (Manufacturer|MPN|DigiKey_PN|Mouser_PN|Temperature_Grade|Notes|Reference_Manual|Voltage|Tolerance|Dielectric|Power|Case)$
     reason: >
       Every DropOut symbol is an atomic, orderable part, so it carries Manufacturer, MPN,
       DigiKey_PN and Mouser_PN (required, enforced by scripts/check_symbol_fields.py) and
       may carry Temperature_Grade, Notes and Reference_Manual (optional; see
-      docs/CONTRIBUTING.md). KLC's stock symbols are generic and define no such fields,
+      docs/CONTRIBUTING.md), and the rating fields of handbook rule D-45 (Voltage, Tolerance,
+      Dielectric, Power) plus Case (EIA case size) on passives. KLC's stock symbols are generic and define no such fields,
       so the checker flags them under S6.2. All KLC-required S6.2 fields are still checked.
     approved: 2026-10-22
 
@@ -71,3 +72,28 @@ exceptions:
       ERC flags a wire to an NC pin. KLC S4.6 prefers NC pins hidden. NC pins must still be of
       type no_connect.
     approved: 2026-10-22
+
+  - id: passive-short-value
+    rules: [S6.2]
+    applies: ["DropOut_Resistor:*", "DropOut_Capacitor:*"]
+    # Waives only "Value ... does not match component name". Together with dropout-symbol-fields
+    # this waives a passive's S6.2 report; any other S6.2 finding (missing fields, keywords) still shows.
+    match: >-
+      ^Value \S+ does not match component name\.$
+    reason: >
+      Handbook rule D-45: resistor and capacitor symbols show the short value (10k, 49.9R, 0R, 100nF,
+      4.7uF) so a schematic reads at a glance. The symbol name and the MPN field keep the exact
+      orderable code, so BOMs are unaffected. Applies to the passive symbol libraries only.
+    approved: 2026-10-23
+
+  - id: passive-small-mpn
+    rules: [S3.2]
+    applies: ["DropOut_Resistor:*", "DropOut_Capacitor:*"]
+    # Waives only the MPN field drawn at 30 to 49 mil. Any other field or pin text size still fails.
+    match: >-
+      ^- Field MPN at posx -?\d+ posy -?\d+ size (3\d|4\d)$
+    reason: >
+      Passive symbols show the MPN under the value and ratings in smaller text (1.0 mm), so the
+      orderable code is on the sheet without dominating it (user's decision 2026-10-23). KLC S3.2
+      wants every field at 50 mil.
+    approved: 2026-10-23
