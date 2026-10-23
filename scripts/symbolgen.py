@@ -23,6 +23,9 @@ part.yaml:
     Mouser_PN: ...
     # optional: Temperature_Grade, Notes, Reference_Manual
   units: [Power, PTA, ...]               # optional unit order; default: order of first use in the CSV
+  style: testpoint                       # optional graphic style for small parts (see STYLES)
+  in_bom: false                          # optional, default true: false for a part with nothing to
+  in_pos_files: false                    #   buy or place (a bare-copper test pad)
 
 pins.csv columns (header row required):
   number      pin/ball number as on the footprint
@@ -246,8 +249,21 @@ def style_cmc_4pin(pins):
     return out, G + 0.27, G + 0.27
 
 
+def style_testpoint(pins):
+    """One-pin test point drawn as KiCad's Connector:TestPoint: a circle above a pin pointing down
+    to its connection point at the origin."""
+    if len(pins) != 1:
+        sys.exit("symbolgen: testpoint needs exactly one pin")
+    g = [f"\t\t\t(circle (center 0 3.302) (radius 0.762)\n"
+         f"\t\t\t\t(stroke (width 0) (type default)) (fill (type none)))"]
+    return g + [pin_sexpr(pins[0], 0, 0, 90, length=G)], 4.318, 0
+
+
 STYLES = {"tvs_bidirectional": style_tvs_bidirectional, "crystal_gnd24": style_crystal_gnd24,
-          "cmc_4pin": style_cmc_4pin}
+          "cmc_4pin": style_cmc_4pin, "testpoint": style_testpoint}
+# Reference and Value positions where the default (above and below the body) doesn't fit:
+# a test point's connection point is at the bottom, so both go above it, as on KiCad's TestPoint
+STYLE_FIELD_Y = {"testpoint": {"Reference": 6.858, "Value": 5.08}}
 # Pin numbers are shown where the package has more than two terminals (as KiCad's stock symbols)
 STYLE_SHOW_NUMBERS = {"crystal_gnd24", "cmc_4pin"}
 
@@ -271,10 +287,12 @@ def build_symbol(part, pins):
         head = "\t\t(pin_names (offset 0.508))"
     top = max(t for _, t, _ in units)
     bottom = max(b for _, _, b in units)
+    yn = lambda key: "yes" if part.get(key, True) else "no"
     lines = [f'\t(symbol "{esc(name)}"', head, "\t\t(exclude_from_sim no)",
-             "\t\t(in_bom yes)", "\t\t(on_board yes)"]
+             f"\t\t(in_bom {yn('in_bom')})", "\t\t(on_board yes)", f"\t\t(in_pos_files {yn('in_pos_files')})"]
+    field_y = {"Reference": top + G, "Value": -bottom - G, **STYLE_FIELD_Y.get(style, {})}
     for k, v in part["fields"].items():
-        y = {"Reference": top + G, "Value": -bottom - G}.get(k, 0)
+        y = field_y.get(k, 0)
         hide = "" if k in VISIBLE else "\n\t\t\t(hide yes)"
         lines.append(f'\t\t(property "{esc(k)}" "{esc(str(v))}"\n\t\t\t(at 0 {fmt(y)} 0){hide}\n'
                      f"\t\t\t(effects (font (size 1.27 1.27)))\n\t\t)")

@@ -47,6 +47,7 @@ Planned categories (created as the first part in each one is added). Microcontro
 | `DropOut_Package_QFP` | Footprints and 3D models for quad flat packages (LQFP, TQFP) |
 | `DropOut_Package_SO` | Footprints and 3D models for small-outline packages (SOIC, SSOP, TSSOP, HTSSOP) |
 | `DropOut_Package_TO_SOT_SMD` | Footprints and 3D models for SOT/TSOT/TO SMD packages |
+| `DropOut_TestPoint` | Footprints and 3D models for test points: bare pads and SMD/THT test loops (as KiCad's stock `TestPoint`) |
 
 ## Using it in a project
 
