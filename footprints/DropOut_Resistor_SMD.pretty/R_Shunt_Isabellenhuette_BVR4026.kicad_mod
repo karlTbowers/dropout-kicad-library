@@ -1,0 +1,215 @@
+(footprint "R_Shunt_Isabellenhuette_BVR4026"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Isabellenhuette BVR 4-terminal (Kelvin) ISA-WELD shunt, 4026, 10.1 x 6.6 mm, pcb-layout proposal (BVR data sheet issue 12-September-2024 p. 2; same lands as KiCad's stock Resistor_SMD:R_Shunt_Isabellenhuette_BVR4026); pads 1/4 force, 2/3 sense, https://www.isabellenhuette.com/hubfs/Files/Data-sheets/BVR.pdf")
+	(tags "resistor shunt current sense Kelvin 4-terminal Isabellenhuette BVR 4026")
+	(property "Reference" "REF**"
+		(at 0 -4.85 0)
+		(layer "F.SilkS")
+		(uuid "b533c555-1f85-411d-98bc-898c4b9d99c3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "R_Shunt_Isabellenhuette_BVR4026"
+		(at 0 4.85 0)
+		(layer "F.Fab")
+		(uuid "d94a341a-f9cc-4da3-a8ab-a96a7fb665e0")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "4b53f908-567e-4d14-9217-dd8cc632a273")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ccef0e20-ce26-422c-80eb-1970ed71bf90")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -5.3 -3.91)
+		(end 5.05 -3.91)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "57ff200e-d785-4345-9dc0-36dd8bf41a32")
+	)
+	(fp_line
+		(start -5.05 3.91)
+		(end 5.05 3.91)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "c3b9177d-ce97-4426-bd7b-0e9a106bd67e")
+	)
+	(fp_line
+		(start -5.55 -4.05)
+		(end 5.55 -4.05)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "7af08951-69b3-4d0d-bdd3-fb745fb55eda")
+	)
+	(fp_line
+		(start -5.55 4.05)
+		(end -5.55 -4.05)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "ee5b6f43-0d91-4b4c-9e98-5fcce0a3ddb5")
+	)
+	(fp_line
+		(start 5.55 -4.05)
+		(end 5.55 4.05)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "83f6d57c-1993-4396-aa85-8d73c45dc3f4")
+	)
+	(fp_line
+		(start 5.55 4.05)
+		(end -5.55 4.05)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "0ac3f635-3a7d-48da-87ce-67965208d508")
+	)
+	(fp_line
+		(start -5.05 -2.3)
+		(end -4.05 -3.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "28fd90c9-f73e-47bf-9121-d6120ec85a55")
+	)
+	(fp_line
+		(start -5.05 3.3)
+		(end -5.05 -2.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "e784c560-676a-4a14-bd01-617773c85f00")
+	)
+	(fp_line
+		(start -4.05 -3.3)
+		(end 5.05 -3.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "2660db43-7ea0-451a-bf9c-f64b91834338")
+	)
+	(fp_line
+		(start 5.05 -3.3)
+		(end 5.05 3.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "791e5038-1d60-4301-b576-e88851f32ae8")
+	)
+	(fp_line
+		(start 5.05 3.3)
+		(end -5.05 3.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "80ba307d-def1-43ab-936b-41eaa9758c65")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "100f83b9-5131-4b32-b253-d1d1d64f48d1")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at -4.025 -0.85)
+		(size 2.55 5.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.098)
+		(uuid "12f003fd-5c32-410d-aa47-b5331df49863")
+	)
+	(pad "2" smd roundrect
+		(at -4.025 3.2)
+		(size 2.55 0.9)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "940192ed-7c53-49f1-8362-24608f594f8e")
+	)
+	(pad "3" smd roundrect
+		(at 4.025 3.2)
+		(size 2.55 0.9)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "1db1f846-cce4-4ef9-b309-9f97b5da6d77")
+	)
+	(pad "4" smd roundrect
+		(at 4.025 -0.85)
+		(size 2.55 5.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.098)
+		(uuid "eac5edf9-8580-48c9-97d3-5101ac90dddb")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_Resistor_SMD.3dshapes/R_Shunt_Isabellenhuette_BVR4026.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

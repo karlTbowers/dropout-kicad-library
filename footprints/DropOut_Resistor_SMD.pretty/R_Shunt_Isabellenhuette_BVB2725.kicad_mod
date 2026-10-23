@@ -1,0 +1,215 @@
+(footprint "R_Shunt_Isabellenhuette_BVB2725"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Isabellenhuette BVB 4-terminal (Kelvin) ISA-WELD shunt, 2725, 6.9 x 6.6 mm, pcb-layout proposal (BVB data sheet issue 18-February-2025 p. 2); pads 1/4 force, 2/3 sense, https://www.isabellenhuette.com/hubfs/Files/Data-sheets/BVB.pdf")
+	(tags "resistor shunt current sense Kelvin 4-terminal Isabellenhuette BVB 2725")
+	(property "Reference" "REF**"
+		(at 0 -4.85 0)
+		(layer "F.SilkS")
+		(uuid "abb24b6d-2e03-4a32-af4c-e7c178e71b9c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "R_Shunt_Isabellenhuette_BVB2725"
+		(at 0 4.85 0)
+		(layer "F.Fab")
+		(uuid "a2fcc477-b6c6-416a-972b-c81bedd3856a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c11f5f17-f9e4-4978-986e-c11a9bf92ee9")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f15f3b0c-da2f-4e30-a429-3d4421692e8a")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -3.9 -3.91)
+		(end 3.45 -3.91)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b223638d-43a5-4e89-9c2d-4d1926cd8f46")
+	)
+	(fp_line
+		(start -3.45 3.91)
+		(end 3.45 3.91)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "57259669-aff2-4018-8420-a320d81b12f7")
+	)
+	(fp_line
+		(start -4.15 -4.05)
+		(end 4.15 -4.05)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "99428420-c80f-4935-a542-bab00c6bf8ec")
+	)
+	(fp_line
+		(start -4.15 4.05)
+		(end -4.15 -4.05)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "756286bf-508e-4b5c-ac2f-e19fdb035c9d")
+	)
+	(fp_line
+		(start 4.15 -4.05)
+		(end 4.15 4.05)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "4e233bd3-138d-4e7e-85ae-e83cc77d69ed")
+	)
+	(fp_line
+		(start 4.15 4.05)
+		(end -4.15 4.05)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "fcd277ff-348a-4405-bad6-0378847438c0")
+	)
+	(fp_line
+		(start -3.45 -2.3)
+		(end -2.45 -3.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "557964c9-ad60-4af9-96a5-559ed44c3ecb")
+	)
+	(fp_line
+		(start -3.45 3.3)
+		(end -3.45 -2.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "db2b3534-5e9b-45fd-9ce7-b4292ecafdb4")
+	)
+	(fp_line
+		(start -2.45 -3.3)
+		(end 3.45 -3.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "0d917a81-887b-4939-a14e-fd6aa21bd0f7")
+	)
+	(fp_line
+		(start 3.45 -3.3)
+		(end 3.45 3.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "801a0064-582c-4812-a468-2daad3c71fef")
+	)
+	(fp_line
+		(start 3.45 3.3)
+		(end -3.45 3.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "7c48d4e0-aa91-4673-95f7-c8ddd8381951")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "c35dc553-995e-4ba1-a22d-cc35051e0573")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at -2.45 -0.85)
+		(size 2.9 5.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.0862)
+		(uuid "ca835974-fe3c-4cca-bc38-283e5f6aa788")
+	)
+	(pad "2" smd roundrect
+		(at -2.45 3.2)
+		(size 2.9 0.9)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "ce0ddf58-0a2f-4443-b5dc-096e8d1c1126")
+	)
+	(pad "3" smd roundrect
+		(at 2.45 3.2)
+		(size 2.9 0.9)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "032912e6-2168-42af-ba61-177e26fe07fe")
+	)
+	(pad "4" smd roundrect
+		(at 2.45 -0.85)
+		(size 2.9 5.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.0862)
+		(uuid "ad5c1718-41cc-4ea8-9a04-235d44365cc6")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_Resistor_SMD.3dshapes/R_Shunt_Isabellenhuette_BVB2725.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
