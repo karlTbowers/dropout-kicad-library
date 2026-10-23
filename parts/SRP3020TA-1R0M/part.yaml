@@ -1,0 +1,22 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/SRP3020TA-1R0M/part.yaml
+# Bourns SRP3020TA data sheet (PDF dated 2026-05-16) p. 1. Two-terminal inductor, no polarity (pins 1/2 = footprint pads 1/2).
+# Node60 LMQ66430MC3RXBRQ1 buck inductor search (2.2 MHz, 3 A; Isat >= 5 A = IPEAKMAX max, Irms >= 3 A; SNVSBV1F §8.2.1.2.3).
+# Candidate for 1V5_CORE, marginal: Isat 5.0 A typical equals IPEAKMAX max with no margin. Smallest 1.0 µH option (metal alloy powder core).
+library: DropOut_Inductor
+name: SRP3020TA-1R0M
+style: inductor
+pins: pins.csv
+fields:
+  Reference: L
+  Value: SRP3020TA-1R0M
+  Footprint: DropOut_Inductor_SMD:L_Bourns_SRP3020TA
+  Datasheet: "https://www.bourns.com/docs/Product-Datasheets/SRP3020TA.pdf"
+  Description: Bourns SRP3020TA power inductor, 1.0 µH ±20 %, Isat 5.0 A typ (-30 %), Irms 4.0 A typ (40 °C rise), DCR 38 mΩ max, metal alloy powder core, shielded, wound, AEC-Q200, 3.5x3.2x2.0 mm
+  ki_keywords: inductor choke coil power buck shielded automotive AEC-Q200
+  ki_fp_filters: L*Bourns*SRP3020TA*
+  Manufacturer: Bourns
+  MPN: SRP3020TA-1R0M
+  DigiKey_PN: SRP3020TA-1R0MCT-ND
+  Mouser_PN: 652-SRP3020TA-1R0M
+  Temperature_Grade: AEC-Q200, -55 to +150 °C including temperature rise

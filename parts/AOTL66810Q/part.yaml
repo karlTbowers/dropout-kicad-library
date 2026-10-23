@@ -1,0 +1,24 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/AOTL66810Q/part.yaml
+# AOS AOTL66810Q data sheet Rev. 1.0 (Sep 2023); TOLLA land pattern from AOS PO-00272 version F.
+# Node60 power-entry MOSFET search (2026-10-22): second-source candidate, not selected.
+# Pinout (p. 1): pin 1 gate, pins 2-8 source, tab drain (pad 9). The only orderable code is
+# AOTL66810Q (tape and reel, MOQ 2000, p. 1); DigiKey and Newark stock it, Mouser does not list it.
+# Not a drop-in for the selected IAUTN08S5N012L (dual gate, pin 2 = second gate).
+library: DropOut_PowerSwitch
+name: AOTL66810Q
+style: nmos
+pins: pins.csv
+fields:
+  Reference: Q
+  Value: AOTL66810Q
+  Footprint: DropOut_Package_TO_SOT_SMD:AOS_TOLLA
+  Datasheet: https://www.aosmd.com/sites/default/files/res/datasheets/AOTL66810Q.pdf
+  Description: AOS AlphaSGT2 N-channel MOSFET, 80 V, 445 A (Tc 25 °C), 1.25 mΩ max RDS(on) at VGS 10 V, ±20 V VGS, Tj 175 °C, AEC-Q101, TOLLA
+  ki_keywords: MOSFET N-channel power transistor automotive TOLL TOLLA
+  ki_fp_filters: AOS*TOLLA*
+  Manufacturer: Alpha & Omega Semiconductor
+  MPN: AOTL66810Q
+  DigiKey_PN: 785-AOTL66810QCT-ND
+  Mouser_PN: "-"
+  Temperature_Grade: AEC-Q101, Tj -55 to +175 °C

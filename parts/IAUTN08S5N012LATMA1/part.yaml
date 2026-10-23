@@ -1,0 +1,28 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/IAUTN08S5N012LATMA1/part.yaml
+# Infineon IAUTN08S5N012L data sheet Rev. 1.0 (2024-02-28). Node60 power entry, selected 2026-10-22.
+# A DUAL-GATE part: a linear FET (LINFET) and a low-RDS(on) FET (ONFET) share drain and source
+# (p. 1: "Gate ON pin 1, Gate LIN pin 2, Source pin 3-8, Drain Tab"). The 1.15 mOhm max RDS(on) needs
+# both gates at 10 V (p. 4); the LINFET alone is 9.0 mOhm max. Drawn as two N-MOSFETs in parallel.
+# Not pin-compatible with single-gate TOLL parts (AOTL66810Q, TSM018NM08TL): pin 2 is a gate here
+# and a source pin there. Tab = pad 9 (Infineon gives it no number). Gate pins are inputs; drain and
+# source passive, as KiCad's stock Q_NMOS.
+# Orderable code: IAUTN08S5N012LATMA1 is the only one at DigiKey, Mouser and Newark (2026-10-22).
+library: DropOut_PowerSwitch
+name: IAUTN08S5N012LATMA1
+style: nmos
+pins: pins.csv
+fields:
+  Reference: Q
+  Value: IAUTN08S5N012LATMA1
+  Footprint: DropOut_Package_TO_SOT_SMD:Infineon_PG-HSOF-8-2
+  Datasheet: https://www.infineon.com/dgdl/Infineon-IAUTN08S5N012L-DataSheet-v01_00-EN.pdf?fileId=8ac78c8c8eeb092c018ef669549208cf
+  Description: Infineon OptiMOS 5 automotive dual-gate N-channel MOSFET (LINFET + ONFET), 80 V, 300 A, 1.15 mΩ max RDS(on) with both gates at 10 V, ±20 V VGS, Tj 175 °C, AEC-Q101, PG-HSOF-8-2 (TOLL)
+  ki_keywords: MOSFET N-channel power transistor automotive linear dual gate LINFET eFuse TOLL HSOF
+  ki_fp_filters: Infineon*PG?HSOF?8?2*
+  Manufacturer: Infineon Technologies
+  MPN: IAUTN08S5N012LATMA1
+  DigiKey_PN: 448-IAUTN08S5N012LATMA1CT-ND
+  Mouser_PN: 726-IAUTN08S5N012LAT
+  Temperature_Grade: AEC-Q101, Tj -55 to +175 °C
+  Notes: "Dual gate: G_ON (pin 1) and G_LIN (pin 2) must both be driven; 1.15 mΩ needs both at 10 V. Not pin-compatible with single-gate TOLL MOSFETs."

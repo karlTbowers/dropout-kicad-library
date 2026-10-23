@@ -4,9 +4,11 @@
 # internal VIN bypass capacitors ("leave this pin floating"); 2, 9, 12 have no connection. All
 # five are no_connect so ERC flags anything wired to them. BOOT has an internal 0.1 µF to SW.
 # VCC is the internal LDO output (1 µF to GND), typed power_in because KLC S4.4 requires it for
-# VCC-named pins: put a PWR_FLAG on the VCC net for ERC. VOUT/FB is power_out (KLC S4.4
-# suggestion, KiCad's usual type): the output node for fixed 3.3 V. VIN is on the left (KLC S4.2,
-# power converters). PG is open-drain. The thermal pad (GND/DAP,
+# VCC-named pins: put a PWR_FLAG on the VCC net for ERC (kept with the user, 2026-10-22, over
+# renaming the pin or a KLC exception). VOUT/FB is input: Table 5-1 makes it an analog sense
+# pin (output node for fixed 3.3 V, divider tap for adjustable), so the output is driven through
+# the inductor and its net needs a PWR_FLAG; KLC S4.4 warns (suggests power_out). VIN is on the
+# left (KLC S4.2, power converters). PG is open-drain. The thermal pad (GND/DAP,
 # unnumbered in the table) is pad 15 on TI's RXB0014A drawing.
 # Variant chosen with the user (2026-10-22): MC3 = 2.2 MHz, fixed 3.3 V or adjustable output
 # (Device Comparison Table); the Node60 BOM's "LMQ66430QMC5RXBRQ1" does not exist.

@@ -65,7 +65,9 @@ def main():
             one.mkdir()
             shutil.copy(mod, one)
             subprocess.run([cli, "fp", "export", "svg", str(one), "-o", str(svg)], check=True, capture_output=True)
-        step = REPO / "3dmodels" / f"{fp_lib}.3dshapes" / f"{fp_name}.step"
+        # The footprint's own model link: KLC F9.3 drops suffixes like _Pad0.7x0.7mm from it
+        m = re.search(r'\(model "[^"]*/3dmodels/([^"/]+\.3dshapes/[^"/]+\.step)"', mod.read_text())
+        step = REPO / "3dmodels" / (m.group(1) if m else f"{fp_lib}.3dshapes/{fp_name}.step")
     for f in svg.glob("*.svg"):
         square_svg(f)
         subprocess.run(["qlmanage", "-t", "-s", str(args.size), "-o", str(out), str(f)], capture_output=True)

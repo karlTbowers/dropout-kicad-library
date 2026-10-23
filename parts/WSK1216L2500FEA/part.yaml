@@ -1,0 +1,29 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/WSK1216L2500FEA/part.yaml
+# Vishay WSK1216 data sheet (doc 30189, revision 14-Sep-2026). Node60 4-terminal (Kelvin) 0.25 mΩ shunt
+# search (2026-10-22), for a later board revision: the only 4-terminal AEC-Q200 part found with a
+# 0.25 mΩ orderable code. Code per the data sheet's part numbering (p. 1): WSK1216 + L2500 (0.25 mΩ)
+# + F (1 %) + EA (tape and reel). 0.25 mΩ is not in the standard-value table ("other values may be
+# available, contact factory"); Mouser lists 71-WSK1216L2500FEA with no stock, 252-day lead time,
+# MOQ 2000; DigiKey and Newark do not list it. The 0.2 and 0.3 mΩ neighbours are 8 W at 70 °C
+# terminal temperature, ±35 ppm/°C, MnCuSn element; confirm the 0.25 mΩ ratings with Vishay.
+# Pins as KiCad's Device:R_Shunt: 1 and 4 force (current), 2 and 3 sense (Kelvin), 2 on pin 1's
+# terminal. The data sheet does not number the lands; see generators/custom/R_Shunt.py.
+library: DropOut_Resistor
+name: WSK1216L2500FEA
+style: resistor_shunt_4pin
+pins: pins.csv
+fields:
+  Reference: R
+  Value: WSK1216L2500FEA
+  Footprint: DropOut_Resistor_SMD:R_Shunt_Vishay_WSK1216
+  Datasheet: https://www.vishay.com/docs/30189/wsk1216.pdf
+  Description: Vishay Dale WSK1216 4-terminal (Kelvin) Power Metal Strip current sense resistor, 0.25 mΩ ±1 % (non-standard value), AEC-Q200, -65 to +170 °C, 1216 (3.1 x 3.81 mm)
+  ki_keywords: resistor shunt current sense Kelvin 4-terminal metal strip automotive low ohm
+  ki_fp_filters: R*Shunt*Vishay*WSK1216*
+  Manufacturer: Vishay Dale
+  MPN: WSK1216L2500FEA
+  DigiKey_PN: "-"
+  Mouser_PN: 71-WSK1216L2500FEA
+  Temperature_Grade: AEC-Q200, -65 to +170 °C
+  Notes: Non-standard value (factory order, no distributor stock 2026-10-22); pins 1/4 force, 2/3 sense.

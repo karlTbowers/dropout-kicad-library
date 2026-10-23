@@ -1,0 +1,23 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/S1751-46R/part.yaml
+# Node60 ground probe loop part search (2026-10-22): SELECTED. Largest loop opening of the +125 °C candidates (about 2.4 x 1.2 mm), reel for assembly.
+# Requirement (Node60 project answers): ground test points are probe loops a scope ground spring fits,
+# rated to at least +125 °C. Footprint: generators/custom/TestPoint.py.
+library: DropOut_Connector
+name: "S1751-46R"
+style: testpoint
+pins: pins.csv
+fields:
+  Reference: TP
+  Value: "S1751-46R"
+  Footprint: DropOut_TestPoint:TestPoint_Harwin_S1751
+  Datasheet: https://content.harwin.com/m/c5b84e6a45e9b9f6/original/DRG-02202-Technical-Drawing-Datasheet-S1751R-pdf.pdf
+  Description: "Harwin SMD test terminal, closed loop 3.25x1.63mm, 2.0mm high, brass, 100% tin, 2 A, -55 to +125 °C, tape and reel"
+  ki_keywords: test point loop ground probe SMD Harwin
+  ki_fp_filters: TestPoint?Harwin?S1751*
+  Manufacturer: Harwin
+  MPN: "S1751-46R"
+  DigiKey_PN: "952-1478-1-ND"
+  Mouser_PN: "855-S1751-46R"
+  Temperature_Grade: "-55 to +125 °C"
+  Notes: "Ground test point (probe loop) for a scope ground spring or clip. Same part loose: S1751-46."

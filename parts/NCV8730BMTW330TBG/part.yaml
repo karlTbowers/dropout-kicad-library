@@ -1,0 +1,31 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/NCV8730BMTW330TBG/part.yaml
+# Pins from NCV8730 datasheet Rev. 8 (Dec. 2025) pin description tables (p. 3); ordering information
+# p. 29. The 3.3 V automotive (NCV) codes are NCV8730BMTW330TBG (WDFNW6, with PG) and
+# NCV8730ASN330T1G (TSOP-5, without PG); no other 3.3 V NCV8730 code is listed. IN is on the left
+# (KLC S4.2). EN has an internal 0.3 uA (0.01-1.0) pull-up and "if connected to IN or left
+# unconnected the device is enabled"; EN may go to VIN + 0.3 V; EN leakage at 30 V +/-1 uA max.
+# Iq (IOUT = 0, VIN = VOUT + 1 V to 38 V, TJ -40 to 125 C): version A 1.3 typ / 2.5 max uA,
+# version B 1.8 typ / 3.0 max uA; shutdown 0.35 / 1.5 uA (includes the EN pull-up). Electrical
+# limits are specified to TJ 125 C (abs. max TJ 150 C); VIN abs. max 40 V, operating 38 V.
+# The fixed-voltage NC pins are "not internally connected; can be tied to the ground plane": typed
+# no_connect per the DropOut NC rule, so tying them to GND needs an ERC exclusion.
+# Version B: pin 5 is PG, open-drain power-good output (93 % threshold, needs a pull-up; may be
+# left open or tied to GND if unused). Exposed pad: connect to GND. Node60 always-on LDO:
+# candidate, not selected (2026-10-22, TPS7B8133-Q1 chosen).
+library: DropOut_Power
+name: NCV8730BMTW330TBG
+pins: pins.csv
+fields:
+  Reference: U
+  Value: NCV8730BMTW330TBG
+  Footprint: DropOut_Package_DFN_QFN:OnSemi_511DW_WDFNW-6-1EP_2x2mm_P0.65mm_EP0.95x1.65mm
+  Datasheet: https://www.onsemi.com/download/data-sheet/pdf/ncv8730-d.pdf
+  Description: onsemi NCV8730B 38 V 150 mA LDO, fixed 3.3 V, 1.8 µA typ / 3.0 µA max Iq, enable with internal pull-up, open-drain power good, AEC-Q100, WDFNW-6 2x2 mm wettable flanks
+  ki_keywords: LDO low-dropout linear voltage regulator 3.3V ultra-low-Iq power-good standby automotive
+  ki_fp_filters: OnSemi*511DW*WDFN*
+  Manufacturer: onsemi
+  MPN: NCV8730BMTW330TBG
+  DigiKey_PN: 488-NCV8730BMTW330TBGCT-ND
+  Mouser_PN: 863-NCV8730BMTW330TB
+  Temperature_Grade: AEC-Q100, TJ -40 to +125 °C (specified)

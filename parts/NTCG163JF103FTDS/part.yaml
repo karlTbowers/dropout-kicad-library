@@ -1,0 +1,30 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/NTCG163JF103FTDS/part.yaml
+# TDK NTCG163JF103FTDS data sheet (product.tdk.com) and the automotive NTCG catalog (20260731) pp. 9-10:
+# 10 kOhm +/-1 % at 25 C, B25/85 3435 K +/-1 % (B25/50 3380, B25/75 3422, B25/100 3453 K typ.),
+# -40 to +125 C, 100 mW, 1 mW/C, 0.31 mA permissible, automotive grade AEC-Q200. Land pattern:
+# catalog p. 13, 1608 (A/B/C 0.60-0.80; product page 0.7 +/-0.1). Pins as KiCad's
+# Device:Thermistor_NTC.
+# R-T data for firmware: TDK RT sheet (1 C steps, Rmin/Rnom/Rmax, B25/T, dT), archived in
+# dropout-vendor-docs.
+# 125 C version. Node60 temperature sensing: candidate; rejected because its range ends at
+# 125 C (Node60 asks for -55..+150 C at the switch packages). The 150 C / 175 C versions of the
+# same part are NTCG163JF103FT1S / NTCG163JF103FT1H.
+library: DropOut_Thermistor
+name: NTCG163JF103FTDS
+style: thermistor_ntc
+pins: pins.csv
+fields:
+  Reference: RT
+  Value: NTCG163JF103FTDS
+  Footprint: DropOut_Resistor_SMD:R_NTC_0603_1608Metric_Pad0.7x0.7mm
+  Datasheet: https://product.tdk.com/system/files/dam/doc/product/sensor/ntc/chip-ntc-thermistor/data_sheet/datasheet_ntcg163jf103ftds.pdf
+  Description: TDK NTCG NTC thermistor 10 kΩ ±1 %, B25/85 3435 K ±1 % (B25/50 3380 K), -40 to +125 °C, automotive (AEC-Q200), 0603 (1608 metric)
+  ki_keywords: thermistor NTC temperature sensor 10k automotive
+  ki_fp_filters: R?NTC?0603?1608Metric*
+  Manufacturer: TDK
+  MPN: NTCG163JF103FTDS
+  DigiKey_PN: "445-174516-1-ND"
+  Mouser_PN: "810-NTCG163JF103FTDS"
+  Temperature_Grade: AEC-Q200, -40 to +125 °C
+  Notes: R-T table in TDK's RT sheet https://product.tdk.com/system/files/dam/doc/product/sensor/ntc/chip-ntc-thermistor/rt_sheets/ntcg163jf103ftds.csv

@@ -1,0 +1,22 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/DFE322520FD-1R0M_P2/part.yaml
+# Murata reference specification J(E)TE243A-9104F-01 (DFE3225RFD) pp. 1-4. Two-terminal inductor, no polarity (pins 1/2 = footprint pads 1/2). Symbol name and Value replace "=" with "_" (KLC G1.1/S6.2: "=" is not a legal name character; Value = name); the MPN field keeps the exact code.
+# Node60 LMQ66430MC3RXBRQ1 buck inductor search (2.2 MHz, 3 A; Isat >= 5 A = IPEAKMAX max, Irms >= 3 A; SNVSBV1F §8.2.1.2.3).
+# Candidate for 1V5_CORE; smallest footprint. Murata grades it for automotive infotainment/comfort, not powertrain/safety.
+library: DropOut_Inductor
+name: DFE322520FD-1R0M_P2
+style: inductor
+pins: pins.csv
+fields:
+  Reference: L
+  Value: DFE322520FD-1R0M_P2
+  Footprint: DropOut_Inductor_SMD:L_Murata_DFE322520F
+  Datasheet: "https://pim.murata.com/asset/pim4/inductor/J(E)TE243A-9104_PDF_INDUCTOR"
+  Description: Murata DFE322520FD power inductor, 1.0 µH ±20 %, Isat 7.5 A (-30 %), Irms 4.1 A (40 °C rise), DCR 22 mΩ max, metal alloy, wound chip, AEC-Q200, 3.2x2.5x2.0 mm
+  ki_keywords: inductor choke coil power buck shielded automotive AEC-Q200
+  ki_fp_filters: L*Murata*DFE322520F*
+  Manufacturer: Murata
+  MPN: DFE322520FD-1R0M=P2
+  DigiKey_PN: 490-18403-1-ND
+  Mouser_PN: 81-DFE322520FD1R0MP2
+  Temperature_Grade: AEC-Q200 (automotive infotainment/comfort grade), -40 to +125 °C including self-heating

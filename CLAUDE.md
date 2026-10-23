@@ -15,7 +15,8 @@ The essentials are below.
 - **Atomic parts:** one symbol = one orderable MPN, with its footprint and 3D model linked.
 - **Never combine pins on a symbol:** every package pin gets its own visible pin, including repeated supply and ground pins and NC pins (visible `no_connect` pins; KLC S4.6 waived by `visible-nc-pins`). No KiCad native pin stacks and no hidden stacked pins, even where KLC S4.3 allows them. `scripts/check_pin_pad_match.py` enforces it in CI.
 - **Required symbol fields:** KLC S6.2 fields plus `Manufacturer`, `MPN`, `DigiKey_PN`, `Mouser_PN`. Use `-` for a distributor PN only when the part genuinely is not stocked there.
-- **Before every commit:** `python3 scripts/check_symbol_fields.py symbols`, `python3 scripts/check_pin_pad_match.py`, and `~/.cache/dropout/klt-venv/bin/python scripts/klc_check.py`. CI runs all three.
+- **No overprinting text on a symbol** (handbook D-47): no pin name, pin number, or visible field may run into another. Size the body from the text; grow it downward first so existing pins keep their positions. `scripts/check_symbol_text.py` enforces it in CI and `symbolgen.py` refuses to write a symbol that fails it.
+- **Before every commit:** `python3 scripts/check_symbol_fields.py symbols`, `python3 scripts/check_pin_pad_match.py`, `python3 scripts/check_symbol_text.py`, and `~/.cache/dropout/klt-venv/bin/python scripts/klc_check.py`. CI runs all four.
 - **Never add a KLC exception on your own.** Propose it to the user; it goes in its own PR.
 - **Naming:** libraries `DropOut_<Category>`; symbol, footprint, and 3D model names per KLC; 3D models share the footprint name, `.step`.
 - **3D model paths:** `${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/<Category>.3dshapes/<name>.step`. Projects mount this repo as a submodule at exactly `lib/dropout-kicad-library`.
@@ -53,8 +54,10 @@ parts/        <MPN>/part.yaml + pins.csv: the source of each generated symbol;
 generators/   <generator>/DropOut_<Vendor>.yaml: kicad-library-tools footprint/3D specs;
               custom/: scripts for packages no generator covers (fplib.py helpers)
 scripts/      setup_tools.sh, distributor_lookup.py, generate_footprint.py, symbolgen.py, passivegen.py, render_part.py,
-              pintables/, check_symbol_fields.py, check_pin_pad_match.py, klc_check.py, vendor-env.sh
+              pintables/, check_symbol_fields.py, check_pin_pad_match.py, check_symbol_text.py,
+              klc_check.py, vendor-env.sh
 tests/klc/    KLC wrapper self-test fixtures
+tests/symbol_text/   check_symbol_text.py self-test fixtures
 klc-exceptions.yml   approved KLC deviations
 .claude/skills/add-part/   the part-making procedure
 ```

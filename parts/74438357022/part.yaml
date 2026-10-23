@@ -1,0 +1,22 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/74438357022/part.yaml
+# Würth Elektronik data sheet 74438357022 rev. 003.002 (2026-09-01) p. 1. Two-terminal inductor, no polarity (pins 1/2 = footprint pads 1/2).
+# Node60 LMQ66430MC3RXBRQ1 buck inductor search (2.2 MHz, 3 A; Isat >= 5 A = IPEAKMAX max, Irms >= 3 A; SNVSBV1F §8.2.1.2.3).
+# Candidate for 3V3_MAIN (3.1 mm tall).
+library: DropOut_Inductor
+name: "74438357022"
+style: inductor
+pins: pins.csv
+fields:
+  Reference: L
+  Value: "74438357022"
+  Footprint: DropOut_Inductor_SMD:L_Wuerth_MAPI-4030
+  Datasheet: "https://www.we-online.com/components/products/datasheet/74438357022.pdf"
+  Description: Würth Elektronik WE-MAPI 4030 power inductor, 2.2 µH ±20 %, Isat 4.6 A (-10 %) / 9.2 A (-30 %), IRP 7.1 A (40 K rise), DCR 26 mΩ max, metal alloy composite, molded, AEC-Q200, 4.1x4.1x3.1 mm
+  ki_keywords: inductor choke coil power buck shielded automotive AEC-Q200
+  ki_fp_filters: L*Wuerth*MAPI?4030*
+  Manufacturer: Würth Elektronik
+  MPN: "74438357022"
+  DigiKey_PN: 732-11201-1-ND
+  Mouser_PN: 710-74438357022
+  Temperature_Grade: AEC-Q200 Grade 1, -40 to +125 °C operating (-40 to +85 °C ambient at IRP)

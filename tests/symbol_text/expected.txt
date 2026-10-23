@@ -1,0 +1,3 @@
+OVERPRINT DropOut_TextTest:Fail_Field unit 1: field Value overprints number 15
+OVERPRINT DropOut_TextTest:Fail_LeftRight unit 1: name ENABLE overprints name ~{FAULT}
+OVERPRINT DropOut_TextTest:Fail_TopSide unit 1: name VDD_HV_A overprints name EXTAL

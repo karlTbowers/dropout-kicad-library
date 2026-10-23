@@ -3,7 +3,9 @@
 # Pins from TPS2HCS08-Q1 datasheet SLVSHR0 §5.1-5.2 (version A: DI and LHI on pins 4-5; version B
 # has DI1/DI2 instead). FLT/WAKE_SIG is open-drain, both active low (overbarred in Figure 5-1); nCS
 # is the active-low chip select. The thermal pad is VBB (the supply), pad 17 on TI's PWP0016P.
-# VOUT1 (6-8) and VOUT2 (9-11) are drawn as separate pins (DropOut never combines pins).
+# VOUT1 (6-8) and VOUT2 (9-11) are drawn as separate pins (DropOut never combines pins). Each
+# output's lowest pin (6, 9) is power_out and the others passive (add-part skill, parallel pins
+# of one output), so ERC sees one driver per output; KLC S4.4 warns on the passive VOUT pins.
 library: DropOut_PowerSwitch
 name: TPS2HCS08AQPWPRQ1
 pins: pins.csv

@@ -1,0 +1,22 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/XEL4020-222MEC/part.yaml
+# Coilcraft XEL4020 data sheet, Document 1302-1/-3 (revised 02/19/26). Two-terminal inductor, no polarity (pins 1/2 = footprint pads 1/2).
+# Node60 LMQ66430MC3RXBRQ1 buck inductor search (2.2 MHz, 3 A; Isat >= 5 A = IPEAKMAX max, Irms >= 3 A; SNVSBV1F §8.2.1.2.3).
+# Candidate for 3V3_MAIN; predecessor of XGL4020 (higher DCR). Not listed at DigiKey (2026-10-22).
+library: DropOut_Inductor
+name: XEL4020-222MEC
+style: inductor
+pins: pins.csv
+fields:
+  Reference: L
+  Value: XEL4020-222MEC
+  Footprint: DropOut_Inductor_SMD:L_Coilcraft_XxL4020
+  Datasheet: "https://www.coilcraft.com/getmedia/3c7caaa2-c1ed-4ff8-84e5-0b1b14a30417/xel4020.pdf"
+  Description: Coilcraft XEL4020 power inductor, 2.2 µH ±20 %, Isat 5.9 A (-30 %), Irms 4.0 A (20 °C rise), DCR 38.7 mΩ max, composite (metal) core, molded, AEC-Q200, 4.0x4.0x2.1 mm
+  ki_keywords: inductor choke coil power buck shielded automotive AEC-Q200
+  ki_fp_filters: L*Coilcraft*XxL4020*
+  Manufacturer: Coilcraft
+  MPN: XEL4020-222MEC
+  DigiKey_PN: "-"
+  Mouser_PN: 994-XEL4020-222MEC
+  Temperature_Grade: AEC-Q200, -40 to +125 °C ambient, +165 °C max part temperature
