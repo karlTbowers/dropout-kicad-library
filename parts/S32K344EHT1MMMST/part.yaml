@@ -5,8 +5,11 @@
 # attachment S32K344_S32K324_S32K314_IOMUX.xlsx; archived in the private dropout-vendor-docs):
 #   python3 scripts/pintables/nxp_iomux.py S32K344_S32K324_S32K314_IOMUX.xlsx \
 #     --device S32K344 --package 257bga --type V11=power_out --type V25=power_out \
+#     --type J8=passive --type J10=passive --type K9=passive \
 #     -o parts/S32K344EHT1MMMST/pins.csv
 # V11 and V25 are power outputs: "internally regulated" in data sheet Rev. 14 Table 3.
+# V11 has four balls on one output: H9 is power_out, J8/J10/K9 passive (add-part skill, parallel
+# pins of one output), so ERC sees one driver instead of power_out-power_out conflicts.
 library: DropOut_MCU_NXP
 name: S32K344EHT1MMMST
 pins: pins.csv
