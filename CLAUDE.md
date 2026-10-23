@@ -49,8 +49,9 @@ footprints/   DropOut_<Category>.pretty/
 3dmodels/     DropOut_<Category>.3dshapes/
 docs/         CONTRIBUTING.md
 parts/        <MPN>/part.yaml + pins.csv: the source of each generated symbol
-generators/   <generator>/DropOut_<Vendor>.yaml: kicad-library-tools footprint/3D specs
-scripts/      setup_tools.sh, distributor_lookup.py, generate_footprint.py, symbolgen.py,
+generators/   <generator>/DropOut_<Vendor>.yaml: kicad-library-tools footprint/3D specs;
+              custom/: scripts for packages no generator covers (fplib.py helpers)
+scripts/      setup_tools.sh, distributor_lookup.py, generate_footprint.py, symbolgen.py, render_part.py,
               pintables/, check_symbol_fields.py, check_pin_pad_match.py, klc_check.py, vendor-env.sh
 tests/klc/    KLC wrapper self-test fixtures
 klc-exceptions.yml   approved KLC deviations
