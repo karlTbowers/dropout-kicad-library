@@ -1,0 +1,89 @@
+# MLCC sizes for DropOut_Capacitor_SMD, in kicad-library-tools' SMD_2terminal_chip_molded format
+# (generator part_definitions in DropOut_Capacitor_SMD.part_definitions.yaml).
+# Generate: ~/.cache/dropout/klt-venv/bin/python scripts/generate_footprint.py \
+#     generators/SMD_2terminal_chip_molded/DropOut_Capacitor_SMD.yaml --lib DropOut_Capacitor_SMD
+#
+# One footprint per size code, shared by every DropOut MLCC of that size. Body dimensions are the
+# envelope of the datasheets of every part built on it; the generator makes an IPC-7351 nominal land
+# pattern, as KiCad's stock C_* footprints. The PR compares it with the manufacturers' lands.
+C_0402:
+    code_imperial: "0402"
+    code_metric: "1005"
+    # Murata GCM155 spec sheets: L 1.0+/-0.05, W 0.5+/-0.05, e 0.15 to 0.35
+    # TDK CGA2 (mlcc_automotive_general_en, Sep 2026): L 1.00+/-0.05, W 0.50+/-0.05, B 0.10 min
+    body_length:
+        minimum: 0.95
+        maximum: 1.05
+    body_width:
+        minimum: 0.45
+        maximum: 0.55
+    terminal_length:
+        minimum: 0.10
+        maximum: 0.35
+    size_info: '(Body size source: envelope of Murata GCM155 and TDK CGA2 datasheets, https://github.com/karlTbowers/dropout-kicad-library/blob/main/generators/SMD_2terminal_chip_molded/DropOut_Capacitor_SMD.yaml)'
+    ipc_reference: "ipc_spec_smaller_0603"
+
+C_0603:
+    code_imperial: "0603"
+    code_metric: "1608"
+    # Murata GCM188: L 1.6+/-0.1, W 0.8+/-0.1, e 0.2 to 0.5; Murata GCJ188: L 1.6+/-0.2
+    # TDK CGA3: L 1.60+/-0.10, W 0.80+/-0.10; KEMET 0603 auto: L 1.60+/-0.15, W 0.80+/-0.15, band 0.35+/-0.15
+    # KYOCERA AVX KAM15: L 1.6+/-0.10, W 0.8+/-0.10, band 0.20 to 0.60
+    # Taiyo Yuden MCASU168: L 1.6+/-0.10, W 0.8+/-0.10, e 0.35+/-0.25; Yageo AC0603 MLCC: within the above
+    body_length:
+        minimum: 1.40
+        maximum: 1.80
+    body_width:
+        minimum: 0.65
+        maximum: 0.95
+    terminal_length:
+        minimum: 0.10
+        maximum: 0.60
+    size_info: '(Body size source: envelope of Murata GCM188/GCJ188, TDK CGA3, KEMET, KYOCERA AVX KAM15, Taiyo Yuden MCAS and Yageo AC 0603 datasheets, https://github.com/karlTbowers/dropout-kicad-library/blob/main/generators/SMD_2terminal_chip_molded/DropOut_Capacitor_SMD.yaml)'
+
+C_0805:
+    code_imperial: "0805"
+    code_metric: "2012"
+    # Murata GCM21B: L 2.0+/-0.15, W 1.25+/-0.15, e 0.2 to 0.7; TDK CGA4: L 2.00+/-0.20, W 1.25+/-0.20
+    body_length:
+        minimum: 1.80
+        maximum: 2.20
+    body_width:
+        minimum: 1.05
+        maximum: 1.45
+    terminal_length:
+        minimum: 0.20
+        maximum: 0.75
+    size_info: '(Body size source: envelope of Murata GCM21B and TDK CGA4 datasheets, https://github.com/karlTbowers/dropout-kicad-library/blob/main/generators/SMD_2terminal_chip_molded/DropOut_Capacitor_SMD.yaml)'
+
+C_1206:
+    code_imperial: "1206"
+    code_metric: "3216"
+    # Murata GCM31C: L 3.2+/-0.2, W 1.6+/-0.2, e 0.3 to 0.8; TDK CGA5: L 3.20+/-0.20, W 1.60+/-0.20
+    # KEMET 1206 auto: L 3.20+/-0.20, W 1.60+/-0.20, band 0.50+/-0.25
+    body_length:
+        minimum: 3.00
+        maximum: 3.40
+    body_width:
+        minimum: 1.40
+        maximum: 1.80
+    terminal_length:
+        minimum: 0.25
+        maximum: 0.80
+    size_info: '(Body size source: envelope of Murata GCM31C, TDK CGA5 and KEMET 1206 datasheets, https://github.com/karlTbowers/dropout-kicad-library/blob/main/generators/SMD_2terminal_chip_molded/DropOut_Capacitor_SMD.yaml)'
+
+C_1210:
+    code_imperial: "1210"
+    code_metric: "3225"
+    # Murata GCM32E: L 3.2+/-0.3, W 2.5+/-0.2, e 0.3 min; TDK CNA6 (soft CNA, Aug 2026): L 3.20+/-0.30, W 2.50+/-0.30
+    # KEMET 1210 auto: L 3.20+/-0.20, W 2.50+/-0.20, band 0.50+/-0.25; KYOCERA AVX 1210 auto: within the above
+    body_length:
+        minimum: 2.90
+        maximum: 3.50
+    body_width:
+        minimum: 2.20
+        maximum: 2.80
+    terminal_length:
+        minimum: 0.25
+        maximum: 0.75
+    size_info: '(Body size source: envelope of Murata GCM32E, TDK CNA6, KEMET and KYOCERA AVX 1210 datasheets, https://github.com/karlTbowers/dropout-kicad-library/blob/main/generators/SMD_2terminal_chip_molded/DropOut_Capacitor_SMD.yaml)'

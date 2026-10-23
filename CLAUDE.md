@@ -26,7 +26,7 @@ The essentials are below.
 ## Tooling
 
 - **Setup:** `scripts/setup_tools.sh` installs or checks everything below (Homebrew gh, uv, poppler, git-lfs; KiCad 10 check; Python 3.12 env at `~/.cache/dropout/klt-venv` with kicad-library-tools, CadQuery, pyyaml, openpyxl). Run library scripts that need those with `~/.cache/dropout/klt-venv/bin/python`.
-- **Part pipeline:** `scripts/distributor_lookup.py` (DigiKey/Mouser/Newark), `scripts/generate_footprint.py` (kicad-library-tools on a spec in `generators/`), `scripts/pintables/*.py` (vendor pin tables → `parts/<MPN>/pins.csv`), `scripts/symbolgen.py` (`parts/<MPN>/part.yaml` → symbol), `scripts/check_pin_pad_match.py`. The `add-part` skill says when to use each.
+- **Part pipeline:** `scripts/distributor_lookup.py` (DigiKey/Mouser/Newark), `scripts/generate_footprint.py` (kicad-library-tools on a spec in `generators/`), `scripts/pintables/*.py` (vendor pin tables → `parts/<MPN>/pins.csv`), `scripts/symbolgen.py` (`parts/<MPN>/part.yaml` → symbol), `scripts/passivegen.py` (`parts/passives.yaml` → chip resistor and MLCC parts), `scripts/check_pin_pad_match.py`. The `add-part` skill says when to use each.
 
 - **kicad-library-tools** (https://gitlab.com/kicad/libraries/kicad-library-tools): the KiCad library team's footprint generators, 3D model generators, and KLC checkers. `scripts/klc_check.py` clones it to `~/.cache/dropout/kicad-library-tools` at the commit in `KLT_REF`.
 - **kicad-happy** skills: `digikey`, `mouser`, `element14` for distributor data; `kicad` for pin-level review.
@@ -48,10 +48,11 @@ symbols/      DropOut_<Category>.kicad_sym
 footprints/   DropOut_<Category>.pretty/
 3dmodels/     DropOut_<Category>.3dshapes/
 docs/         CONTRIBUTING.md
-parts/        <MPN>/part.yaml + pins.csv: the source of each generated symbol
+parts/        <MPN>/part.yaml + pins.csv: the source of each generated symbol;
+              passives.yaml: the table chip resistors and MLCCs are generated from
 generators/   <generator>/DropOut_<Vendor>.yaml: kicad-library-tools footprint/3D specs;
               custom/: scripts for packages no generator covers (fplib.py helpers)
-scripts/      setup_tools.sh, distributor_lookup.py, generate_footprint.py, symbolgen.py, render_part.py,
+scripts/      setup_tools.sh, distributor_lookup.py, generate_footprint.py, symbolgen.py, passivegen.py, render_part.py,
               pintables/, check_symbol_fields.py, check_pin_pad_match.py, klc_check.py, vendor-env.sh
 tests/klc/    KLC wrapper self-test fixtures
 klc-exceptions.yml   approved KLC deviations

@@ -18,6 +18,12 @@ Legacy generators (e.g. crystal_resonator_oscillator) read 3D-model specs only f
 stock data/<generator>/cq_parameters.yaml: put ours in a companion file next to the spec,
 <spec stem>.cq_parameters.yaml, and it is appended there (stock entries of the same name dropped).
 
+Generators whose groups are fixed in a part_definitions.yaml (SMD_2terminal_chip_molded, which
+generates every size it is given and ignores -p) take our groups from <spec stem>.part_definitions.yaml:
+it replaces the stock file in the worktree, so only our sizes are generated. A companion
+cq_parameters file whose models come from another generator names it on a top-level
+`model_generator: <generator>` line (e.g. resistor/SMD).
+
 Generated names encode the real pad count (e.g. LFBGA-257): check them against the datasheet.
 """
 import argparse
@@ -102,26 +108,40 @@ def main():
             for stock in (wt / "data" / generator).glob("*.yaml"):
                 drop_parts(stock, ours)
             shutil.copyfile(spec, wt / "data" / generator / f"dropout_{spec.name}")
+            groups = spec.with_name(f"{spec.stem}.part_definitions.yaml")
+            if groups.exists():
+                shutil.copyfile(groups, wt / "src" / "generators" / generator / "part_definitions.yaml")
             cq = spec.with_name(f"{spec.stem}.cq_parameters.yaml")
             models = spec_parts(cq) if cq.exists() else []
+            model_gen = generator
             if models:
-                stock_cq = wt / "data" / generator / "cq_parameters.yaml"
+                cq_text = cq.read_text()
+                m = re.search(r"^model_generator:\s*(\S+)\s*$", cq_text, re.M)
+                if m:
+                    model_gen = m.group(1)
+                    cq_text = cq_text[:m.start()] + cq_text[m.end():]
+                stock_cq = wt / "data" / model_gen / "cq_parameters.yaml"
                 drop_parts(stock_cq, models)
-                stock_cq.write_text(stock_cq.read_text().rstrip("\n") + "\n\n" + cq.read_text())
-            # generate.py makes models only when given -m
-            cmd = [sys.executable, "src/generators/generate.py", "-g", generator, "-f", str(out / "fp")]
-            if not args.no_3d:
-                cmd += ["-m", str(out / "3d")]
+                stock_cq.write_text(stock_cq.read_text().rstrip("\n") + "\n\n" + cq_text)
             # Default: only the parts in our spec, never the generator's stock parts
-            cmd += ["-p", *(args.part or spec_parts(spec) + models)]  # one -p, several names
+            names = args.part or spec_parts(spec) + models
             env = {**os.environ, "PYTHONPATH": f"{wt / 'src'}:{wt}"}
-            proc = subprocess.run(cmd, cwd=wt, env=env, capture_output=True, text=True)
-            print(proc.stdout[-1500:])
-            if proc.returncode != 0:
-                errors = [ln for ln in (proc.stdout + proc.stderr).splitlines()
-                          if re.search(r"error|exception|Error:", ln, re.I)]
-                print("\n".join(errors[-15:]) or proc.stderr[-3000:], file=sys.stderr)
-                sys.exit("generate_footprint: generator failed")
+            # generate.py makes models only when given -m; one -p, several names
+            runs = [["-g", generator, "-f", str(out / "fp")]]
+            if not args.no_3d:
+                if model_gen == generator:
+                    runs[0] += ["-m", str(out / "3d")]
+                else:
+                    runs.append(["-g", model_gen, "-m", str(out / "3d")])
+            for run in runs:
+                cmd = [sys.executable, "src/generators/generate.py", *run, "-p", *names]
+                proc = subprocess.run(cmd, cwd=wt, env=env, capture_output=True, text=True)
+                print(proc.stdout[-1500:])
+                if proc.returncode != 0:
+                    errors = [ln for ln in (proc.stdout + proc.stderr).splitlines()
+                              if re.search(r"error|exception|Error:", ln, re.I)]
+                    print("\n".join(errors[-15:]) or proc.stderr[-3000:], file=sys.stderr)
+                    sys.exit("generate_footprint: generator failed")
 
             fps = sorted(out.glob("fp/*.pretty/*.kicad_mod"))
             if not fps:

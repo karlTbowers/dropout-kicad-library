@@ -79,4 +79,4 @@ Claude Code follows this process through the `add-part` skill in `.claude/skills
 
 ## Tools
 
-`scripts/setup_tools.sh` sets up everything on a Mac. Symbols are generated from `parts/<MPN>/part.yaml` and `pins.csv` by `scripts/symbolgen.py`; footprints and 3D models from specs in `generators/` by `scripts/generate_footprint.py`; `scripts/check_pin_pad_match.py` (also in CI) checks that every symbol's pins match its footprint's pads. Vendor source documents live in the private `dropout-vendor-docs` repo, never here.
+`scripts/setup_tools.sh` sets up everything on a Mac. Symbols are generated from `parts/<MPN>/part.yaml` and `pins.csv` by `scripts/symbolgen.py`; chip resistors and MLCCs get those files from one table, `parts/passives.yaml`, through `scripts/passivegen.py`; footprints and 3D models from specs in `generators/` by `scripts/generate_footprint.py`; `scripts/check_pin_pad_match.py` (also in CI) checks that every symbol's pins match its footprint's pads. Vendor source documents live in the private `dropout-vendor-docs` repo, never here.

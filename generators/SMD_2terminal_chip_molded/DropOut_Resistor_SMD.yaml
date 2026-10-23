@@ -1,0 +1,47 @@
+# Chip resistor sizes for DropOut_Resistor_SMD, in kicad-library-tools' SMD_2terminal_chip_molded
+# format (generator part_definitions in DropOut_Resistor_SMD.part_definitions.yaml).
+# Generate: ~/.cache/dropout/klt-venv/bin/python scripts/generate_footprint.py \
+#     generators/SMD_2terminal_chip_molded/DropOut_Resistor_SMD.yaml --lib DropOut_Resistor_SMD
+#
+# One footprint per size code, shared by every DropOut part of that size. The body dimensions are
+# the envelope (smallest minimum, largest maximum) of the datasheets of every part built on it, and
+# the generator turns them into an IPC-7351 nominal land pattern, as KiCad's stock R_* footprints.
+# The PR compares the result with each manufacturer's recommended land.
+R_0402:
+    code_imperial: "0402"
+    code_metric: "1005"
+    # Yageo AC (PYu-AC_51 V.11 Table 1): L 1.00+/-0.05, W 0.50+/-0.05, I2 0.25+/-0.10
+    # Panasonic ERJ-2G/2R (AOA0000C301, C304): L 1.00+/-0.05, W 0.50+/-0.05, b 0.25+/-0.05
+    body_length:
+        minimum: 0.95
+        maximum: 1.05
+    body_width:
+        minimum: 0.45
+        maximum: 0.55
+    terminal_length:
+        minimum: 0.15
+        maximum: 0.35
+    size_info: '(Body size source: envelope of Yageo AC0402 and Panasonic ERJ-2G/ERJ-2R datasheets, https://github.com/karlTbowers/dropout-kicad-library/blob/main/generators/SMD_2terminal_chip_molded/DropOut_Resistor_SMD.yaml)'
+    ipc_reference: "ipc_spec_smaller_0603"
+
+R_0603:
+    code_imperial: "0603"
+    code_metric: "1608"
+    # Yageo AC0603: L 1.60+/-0.10, W 0.80+/-0.10, I2 0.25+/-0.15
+    # Panasonic ERJ-3E/3G: L 1.60+/-0.15, W 0.80 +0.15/-0.05, b 0.30+/-0.15
+    # Panasonic ERA-3A (AOA0000C307): L 1.60+/-0.20, W 0.80+/-0.20, b 0.30+/-0.20
+    # Vishay CRCW0603 e3 (20035): L 1.55 +0.10/-0.05, W 0.85+/-0.10, T1/T2 0.3+/-0.20
+    # Vishay CRCW0603-HP e3 (20043): L 1.6+/-0.10, W 0.85+/-0.10, T 0.3+/-0.20
+    # Vishay TNPW0603 e3 (28758): L 1.55+/-0.05, W 0.85+/-0.10, T 0.3+/-0.20
+    # Susumu RG1608 (catalog partition 01): L 1.60+/-0.20, W 0.80+/-0.20, b 0.30+/-0.20
+    # KOA RK73Z1J: L 1.6+/-0.2, W 0.8+/-0.1, b 0.3+/-0.1; Stackpole RNCF0603: within the above
+    body_length:
+        minimum: 1.40
+        maximum: 1.80
+    body_width:
+        minimum: 0.60
+        maximum: 1.00
+    terminal_length:
+        minimum: 0.10
+        maximum: 0.50
+    size_info: '(Body size source: envelope of Yageo AC, Panasonic ERJ-3E/3G/ERA-3A, Vishay CRCW/CRCW-HP/TNPW, Susumu RG, KOA RK73Z and Stackpole RNCF 0603 datasheets, https://github.com/karlTbowers/dropout-kicad-library/blob/main/generators/SMD_2terminal_chip_molded/DropOut_Resistor_SMD.yaml)'

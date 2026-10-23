@@ -1,0 +1,13 @@
+# Footprint groups for DropOut_Resistor_SMD.yaml. scripts/generate_footprint.py puts this file in place
+# of the generator's stock part_definitions.yaml, so only the sizes in our spec are generated.
+# Copied from the stock "resistor" group (kicad-library-tools a903a69), library renamed.
+resistor:
+    fp_lib_name: 'DropOut_Resistor_SMD'
+    size_definitions: ['dropout_DropOut_Resistor_SMD.yaml']
+    ipc_reference: "ipc_spec_larger_or_equal_0603"
+    prefix: 'R'
+    description: 'Resistor SMD {code_imperial:s} ({code_metric:s} Metric), square (rectangular) end terminal{density:s}, {size_info:s}'
+    keywords: 'resistor'
+    ipc_density: 'nominal'
+    pad_length_addition: 0
+    suffix: ""
