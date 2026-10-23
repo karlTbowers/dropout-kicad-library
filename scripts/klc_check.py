@@ -196,7 +196,13 @@ def main():
             library, default_item, checker = f.parent.stem, f.stem, fp_checker
         else:
             continue
-        for item, rule, header, details, is_error in parse(run(checker, f, args.raw, extra), library, default_item):
+        output = run(checker, f, args.raw, extra)
+        # A file the checker never reports on (missing, unreadable, rejected) must not pass silently
+        if not any(ITEM_RE.search(COLOR_RE.sub("", ln).strip()) for ln in output.splitlines()):
+            first = next((COLOR_RE.sub("", ln).strip() for ln in output.splitlines() if ln.strip()), "no output")
+            failures.append((f"{library}:{default_item}", "-", f"checker did not check {f}: {first}", [], None))
+            continue
+        for item, rule, header, details, is_error in parse(output, library, default_item):
             ex = covered(rule, library, item, header, details, exceptions)
             entry = (f"{library}:{item}", rule, header, details, ex)
             (waived if ex else failures if is_error else warnings).append(entry)

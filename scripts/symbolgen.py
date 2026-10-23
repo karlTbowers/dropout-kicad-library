@@ -128,9 +128,9 @@ def place_side(pins):
     return placed
 
 
-def pin_sexpr(p, x, y, rot):
+def pin_sexpr(p, x, y, rot, length=PIN_LEN):
     s = [f'\t\t\t(pin {p["type"]} line', f"\t\t\t\t(at {fmt(x)} {fmt(y)} {rot})",
-         f"\t\t\t\t(length {fmt(PIN_LEN)})",
+         f"\t\t\t\t(length {fmt(length)})",
          f'\t\t\t\t(name "{esc(p["name"])}" (effects (font (size 1.27 1.27))))',
          f'\t\t\t\t(number "{esc(p["number"])}" (effects (font (size 1.27 1.27))))']
     s += [f'\t\t\t\t(alternate "{esc(a)}" {t} line)' for a, t in p["alts"]]
@@ -168,16 +168,51 @@ def build_unit(pins):
     return out, top_extent, bottom_extent
 
 
+def poly(points, fill="none", width=0.254):
+    pts = " ".join(f"(xy {fmt(x)} {fmt(y)})" for x, y in points)
+    return (f"\t\t\t(polyline (pts {pts})\n"
+            f"\t\t\t\t(stroke (width {width}) (type default)) (fill (type {fill})))")
+
+
+def two_pin(pins, graphic):
+    """A horizontal two-terminal symbol: pin '1'-side on the left, the other on the right."""
+    left = [p for p in pins if p["side"] == "L"]
+    right = [p for p in pins if p["side"] == "R"]
+    if len(pins) != 2 or len(left) != 1 or len(right) != 1:
+        sys.exit("symbolgen: two-terminal styles need exactly one L and one R pin")
+    out = graphic + [pin_sexpr(left[0], -2 * G, 0, 0, length=G), pin_sexpr(right[0], 2 * G, 0, 180, length=G)]
+    return out, G + 0.27, G + 0.27
+
+
+def style_tvs_bidirectional(pins):
+    # Two opposing diode triangles and a Z-shaped breakdown bar (as KiCad's Device:D_TVS)
+    g = [poly([(-2.54, 1.27), (-2.54, -1.27), (0, 0), (-2.54, 1.27)]),
+         poly([(2.54, 1.27), (2.54, -1.27), (0, 0), (2.54, 1.27)]),
+         poly([(-0.508, 1.778), (0, 1.27), (0, -1.27), (0.508, -1.778)])]
+    return two_pin(pins, g)
+
+
+STYLES = {"tvs_bidirectional": style_tvs_bidirectional}
+
+
 def build_symbol(part, pins):
     name = part["name"]
     order = part.get("units") or list(OrderedDict.fromkeys(p["unit"] for p in pins))
     missing = {p["unit"] for p in pins} - set(order)
     if missing:
         sys.exit(f"symbolgen: units {sorted(missing)} not listed in part.yaml 'units'")
-    units = [build_unit([p for p in pins if p["unit"] == u]) for u in order]
+    style = part.get("style")
+    if style:
+        if style not in STYLES:
+            sys.exit(f"symbolgen: unknown style '{style}' (have {sorted(STYLES)})")
+        units = [STYLES[style](pins)]
+        head = "\t\t(pin_numbers (hide yes))\n\t\t(pin_names (offset 1.016) (hide yes))"
+    else:
+        units = [build_unit([p for p in pins if p["unit"] == u]) for u in order]
+        head = "\t\t(pin_names (offset 0.508))"
     top = max(t for _, t, _ in units)
     bottom = max(b for _, _, b in units)
-    lines = [f'\t(symbol "{esc(name)}"', "\t\t(pin_names (offset 0.508))", "\t\t(exclude_from_sim no)",
+    lines = [f'\t(symbol "{esc(name)}"', head, "\t\t(exclude_from_sim no)",
              "\t\t(in_bom yes)", "\t\t(on_board yes)"]
     for k, v in part["fields"].items():
         y = {"Reference": top + G, "Value": -bottom - G}.get(k, 0)

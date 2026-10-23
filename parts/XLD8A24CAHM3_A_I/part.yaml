@@ -1,0 +1,24 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/XLD8A24CAHM3_A_I/part.yaml
+# Vishay XLD8A24CA datasheet (doc 87200, rev. 23-Jan-2026): bidirectional XClampR TVS, DO-218AC,
+# lead 1 = small lead (pad 1), lead 2 = metal heatsink (pad 2); no polarity. Pins A1/A2 as
+# KiCad's Device:D_TVS. Ordering code from the datasheet: XLD8A24CAHM3_A/I (AEC-Q101, "I" =
+# 13" tape and reel). Symbol name and Value replace "/" with "_" (KLC S6.2: Value = name; KiCad
+# symbol names cannot contain "/"); the MPN field keeps the exact code.
+library: DropOut_Protection
+name: XLD8A24CAHM3_A_I
+style: tvs_bidirectional
+pins: pins.csv
+fields:
+  Reference: D
+  Value: XLD8A24CAHM3_A_I
+  Footprint: DropOut_Diode_SMD:D_DO-218AC
+  Datasheet: https://www.vishay.com/doc?87200
+  Description: Vishay XClampR bidirectional TVS, 24 V stand-off, 26.7-29.5 V breakdown, 26 V max clamp at 180 A (10/10000 µs), 7 kW, AEC-Q101, DO-218AC
+  ki_keywords: TVS transient voltage suppressor bidirectional load dump automotive XClampR
+  ki_fp_filters: D*DO?218*
+  Manufacturer: Vishay
+  MPN: XLD8A24CAHM3_A/I
+  DigiKey_PN: 112-XLD8A24CAHM3_A/ICT-ND
+  Mouser_PN: 78-XLD8A24CAHM3_A/I
+  Temperature_Grade: AEC-Q101, TJ -55 to +175 °C
