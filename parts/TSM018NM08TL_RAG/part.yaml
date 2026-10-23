@@ -1,0 +1,27 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/TSM018NM08TL_RAG/part.yaml
+# Taiwan Semiconductor TSM018NM08TL data sheet version A2505; TOLL_A pad layout p. 6.
+# Node60 power-entry MOSFET search (2026-10-22): candidate, REJECTED for Node60: the data sheet
+# claims no AEC-Q101 qualification and rates Tj to 150 °C only (Node60 needs AEC-Q101); no
+# automotive variant found at DigiKey, Mouser or Newark. RDS(on) 1.8 mΩ max (vs 1.15 selected).
+# Ordering code "TSM018NM08TL RAG" (p. 2, TOLL_A, 2000 per 13" reel) contains a space: the symbol
+# name and Value use "_", the MPN field keeps the exact code.
+# Pinout (p. 1, p. 6): pin 1 gate, pins 2-8 source, tab drain (pad 9).
+library: DropOut_PowerSwitch
+name: TSM018NM08TL_RAG
+style: nmos
+pins: pins.csv
+fields:
+  Reference: Q
+  Value: TSM018NM08TL_RAG
+  Footprint: DropOut_Package_TO_SOT_SMD:TSC_TOLL-A
+  Datasheet: https://www.taiwansemi.com/assets/datasheet/pdf.php?pn=TSM018NM08TL
+  Description: Taiwan Semiconductor N-channel MOSFET, 80 V, 300 A (Tc 25 °C), 1.8 mΩ max RDS(on) at VGS 10 V, ±20 V VGS, Tj 150 °C, not AEC-Q101, TOLL_A
+  ki_keywords: MOSFET N-channel power transistor TOLL TOLLA
+  ki_fp_filters: TSC*TOLL?A*
+  Manufacturer: Taiwan Semiconductor
+  MPN: TSM018NM08TL RAG
+  DigiKey_PN: 1801-TSM018NM08TLRAGCT-ND
+  Mouser_PN: 821-TSM018NM08TLRAG
+  Temperature_Grade: Commercial (no AEC-Q101), Tj -55 to +150 °C
+  Notes: Rejected for Node60 power entry (not AEC-Q101, Tj 150 °C).

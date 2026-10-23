@@ -283,6 +283,107 @@ def style_thermistor_ntc(pins):
     return out, 3.175 + 0.27, bottom
 
 
+def by_slot(pins, s):
+    return sorted((p for p in pins if p["side"] == s), key=lambda p: p["slot"] or 0)
+
+
+def style_resistor(pins):
+    """Two-terminal resistor drawn as KiCad's Device:R, body filled with the background colour (KLC
+    S3.3): vertical body, pin on T (top) and B (bottom)."""
+    top, bottom = by_slot(pins, "T"), by_slot(pins, "B")
+    if len(pins) != 2 or len(top) != 1 or len(bottom) != 1:
+        sys.exit("symbolgen: resistor needs one T and one B pin")
+    g = [f"\t\t\t(rectangle (start -1.016 -2.54) (end 1.016 2.54)\n"
+         f"\t\t\t\t(stroke (width 0.254) (type default)) (fill (type background)))"]
+    return g + [pin_sexpr(top[0], 0, 3.81, 270, length=1.27), pin_sexpr(bottom[0], 0, -3.81, 90, length=1.27)], 3.81, 3.81
+
+
+def style_resistor_shunt_4pin(pins):
+    """Four-terminal (Kelvin) shunt drawn as KiCad's Device:R_Shunt: force pins on T and B, sense
+    pins on R (slot 0 next to the top force pin, slot 1 next to the bottom one)."""
+    top, bottom, right = by_slot(pins, "T"), by_slot(pins, "B"), by_slot(pins, "R")
+    if len(pins) != 4 or len(top) != 1 or len(bottom) != 1 or len(right) != 2:
+        sys.exit("symbolgen: resistor_shunt_4pin needs one T, one B and two R pins")
+    g = [f"\t\t\t(rectangle (start -1.016 -2.54) (end 1.016 2.54)\n"
+         f"\t\t\t\t(stroke (width 0.254) (type default)) (fill (type background)))",
+         poly([(0, -2.54), (1.27, -2.54)], width=0), poly([(1.27, 2.54), (0, 2.54)], width=0)]
+    out = g + [pin_sexpr(top[0], 0, 5.08, 270, length=G), pin_sexpr(bottom[0], 0, -5.08, 90, length=G),
+               pin_sexpr(right[0], G, G, 180, length=1.27), pin_sexpr(right[1], G, -G, 180, length=1.27)]
+    return out, 5.08, 5.08
+
+
+# KiCad's Device:Q_NMOS drawing in its own coordinates: gate lead ends at x = -2.54, drain and
+# source leads at x = 2.54 end at y = +/-2.54. Each item: (kind, points or (centre, radius), width, fill).
+QNMOS = [("poly", [(0.254, 1.905), (0.254, -1.905)], 0.254, "none"),
+         ("poly", [(0.254, 0), (-2.54, 0)], 0, "none"),
+         ("poly", [(0.762, 2.286), (0.762, 1.27)], 0.254, "none"),
+         ("poly", [(0.762, 0.508), (0.762, -0.508)], 0.254, "none"),
+         ("poly", [(0.762, -1.27), (0.762, -2.286)], 0.254, "none"),
+         ("poly", [(0.762, -1.778), (3.302, -1.778), (3.302, 1.778), (0.762, 1.778)], 0, "none"),
+         ("poly", [(1.016, 0), (2.032, 0.381), (2.032, -0.381), (1.016, 0)], 0, "outline"),
+         ("circle", ((1.651, 0), 2.794), 0.254, "none"),
+         ("poly", [(2.54, 2.54), (2.54, 1.778)], 0, "none"),
+         ("circle", ((2.54, 1.778), 0.254), 0, "outline"),
+         ("circle", ((2.54, -1.778), 0.254), 0, "outline"),
+         ("poly", [(2.54, -2.54), (2.54, 0), (0.762, 0)], 0, "none"),
+         ("poly", [(2.921, 0.381), (3.683, 0.381)], 0, "none"),
+         ("poly", [(3.302, 0.381), (2.921, -0.254), (3.683, -0.254), (3.302, 0.381)], 0, "none")]
+
+
+def qnmos(tx):
+    """The Q_NMOS drawing with every x mapped through tx (shift, or mirror for a FET facing left)."""
+    out = []
+    for kind, geo, w, fill in QNMOS:
+        if kind == "poly":
+            out.append(poly([(tx(x), y) for x, y in geo], fill=fill, width=w))
+        else:
+            (cx, cy), rad = geo
+            out.append(f"\t\t\t(circle (center {fmt(tx(cx))} {fmt(cy)}) (radius {fmt(rad)})\n"
+                       f"\t\t\t\t(stroke (width {w}) (type default)) (fill (type {fill})))")
+    return out
+
+
+def label(s, x, y):
+    return (f'\t\t\t(text "{esc(s)}" (at {fmt(x)} {fmt(y)} 0)\n'
+            f"\t\t\t\t(effects (font (size 1 1))))")
+
+
+def style_nmos(pins):
+    """N-channel MOSFET drawn as KiCad's Device:Q_NMOS, with every package pin its own pin: gate on
+    L, drain pins on T, source pins on B (joined by bus lines 100 mil outside the drawing). A part with a second gate on R
+    (dual-gate parts such as Infineon's LINFET + ONFET) is drawn as two FETs in parallel, the second
+    mirrored, each gate labelled with its pin name. Pins are spaced 100 mil apart."""
+    gl, gr = by_slot(pins, "L"), by_slot(pins, "R")
+    drains, sources = by_slot(pins, "T"), by_slot(pins, "B")
+    if len(gl) != 1 or len(gr) > 1 or not drains or not sources or len(pins) != 1 + len(gr) + len(drains) + len(sources):
+        sys.exit("symbolgen: nmos needs one L gate, optionally one R gate, and T drain and B source pins")
+    if gr:   # FET 1 as drawn, FET 2 mirrored 6 grid units to the right; drain/source leads at 2.54 and 12.7
+        legs, g = [2.54, 12.7], qnmos(lambda x: x) + qnmos(lambda x: 15.24 - x)
+        gates = [(gl[0], -5.08, 0), (gr[0], 20.32, 180)]
+        # gate labels without a "G_" prefix, so they fit between pin and channel
+        g += [label(gl[0]["name"].split("_")[-1], -1.27, 1.27), label(gr[0]["name"].split("_")[-1], 16.51, 1.27)]
+    else:
+        legs, g = [2.54], qnmos(lambda x: x)
+        gates = [(gl[0], -5.08, 0)]
+    def row(n, mid):     # n pins on the grid, centred on mid as nearly as the grid allows
+        x0 = mid - G * ((n - 1) // 2)
+        return [x0 + i * G for i in range(n)]
+    mid = G * round(sum(legs) / len(legs) / G)
+    dx, sx = row(len(drains), mid), row(len(sources), mid)
+    for y, xs in ((5.08, dx), (-5.08, sx)):           # legs run out to buses 100 mil clear of the circles
+        g += [poly([(x, y / 2), (x, y)], width=0) for x in legs]
+        a, b = min(xs + legs), max(xs + legs)
+        if b > a:
+            g.append(poly([(a, y), (b, y)], width=0))
+    xs_all = [x for _, x, _ in gates] + dx + sx
+    ox = G * round((min(xs_all) + max(xs_all)) / 2 / G)          # centre the symbol on the origin
+    shift = lambda items: [re.sub(r"\((xy|center|at) (-?[\d.]+) ",
+                                  lambda m: f"({m.group(1)} {fmt(float(m.group(2)) - ox)} ", s) for s in items]
+    out = shift(g)
+    out += [pin_sexpr(p, x - ox, 0, rot, length=G) for p, x, rot in gates]
+    out += [pin_sexpr(p, x - ox, 7.62, 270, length=G) for p, x in zip(drains, dx)]
+    out += [pin_sexpr(p, x - ox, -7.62, 90, length=G) for p, x in zip(sources, sx)]
+    return out, 7.62, 7.62
 def style_inductor(pins):
     # Four half-turns as KiCad's Device:L
     g = [arc((0, 2.54 - i * 1.27), (0.6323, 1.905 - i * 1.27), (0, 1.27 - i * 1.27), width=0) for i in range(4)]
@@ -301,6 +402,7 @@ def style_testpoint(pins):
 
 STYLES = {"tvs_bidirectional": style_tvs_bidirectional, "crystal_gnd24": style_crystal_gnd24,
           "cmc_4pin": style_cmc_4pin, "inductor": style_inductor, "testpoint": style_testpoint,
+          "resistor": style_resistor, "resistor_shunt_4pin": style_resistor_shunt_4pin, "nmos": style_nmos,
           "thermistor_ntc": style_thermistor_ntc}
 # Reference and Value beside the body, left-justified, for the narrow vertical styles (as
 # KiCad's Device:C; a long MPN Value would not fit inside Device:R's body)
@@ -309,7 +411,7 @@ STYLE_FIELDS = {"inductor": {"Reference": (2.54, 1.27), "Value": (2.54, -1.27)}}
 # a test point's connection point is at the bottom, so both go above it, as on KiCad's TestPoint
 STYLE_FIELD_Y = {"testpoint": {"Reference": 6.858, "Value": 5.08}}
 # Pin numbers are shown where the package has more than two terminals (as KiCad's stock symbols)
-STYLE_SHOW_NUMBERS = {"crystal_gnd24", "cmc_4pin"}
+STYLE_SHOW_NUMBERS = {"crystal_gnd24", "cmc_4pin", "resistor_shunt_4pin", "nmos"}
 
 
 def build_symbol(part, pins):
