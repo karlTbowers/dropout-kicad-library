@@ -57,3 +57,17 @@ exceptions:
       docs/CONTRIBUTING.md). KLC's stock symbols are generic and define no such fields,
       so the checker flags them under S6.2. All KLC-required S6.2 fields are still checked.
     approved: 2026-10-22
+
+  - id: visible-nc-pins
+    rules: [S4.6]
+    applies: ["*"]
+    # Waives only the "NC pins are VISIBLE (should be INVISIBLE)" warning and its per-pin lines.
+    # An NC pin of the wrong type, or a hidden power_in pin, still fails.
+    match: >-
+      ^NC pins are VISIBLE \(should be INVISIBLE\):$|^- Pin .+ \(\S+\) @ \(-?\d+,-?\d+\) should be INVISIBLE$
+    reason: >
+      DropOut draws every package pin as its own visible pin (docs/CONTRIBUTING.md, "Every pin
+      is its own pin"), including no-connect pins, so a schematic shows every pin of the part and
+      ERC flags a wire to an NC pin. KLC S4.6 prefers NC pins hidden. NC pins must still be of
+      type no_connect.
+    approved: 2026-10-22

@@ -33,7 +33,7 @@ KiCad symbol names can't contain `/`, and KLC S6.2 requires Value to equal the s
 
 ### Every pin is its own pin
 
-Every package pin gets its own visible pin on the symbol, including repeated power and ground pins (an MCU's 18 VSS balls are 18 pins). DropOut never combines pins: no KiCad native pin stacks and no hidden pins stacked under a visible one, even though KLC S4.3 allows stacking. Each pin can then be wired, decoupled, and checked individually. CI enforces this (`scripts/check_pin_pad_match.py`).
+Every package pin gets its own visible pin on the symbol, including repeated power and ground pins (an MCU's 18 VSS balls are 18 pins) and no-connect pins. NC pins (and pads the datasheet says to leave floating) are visible pins of type `no_connect`, so ERC flags a wire to them; the `visible-nc-pins` exception waives KLC S4.6, which prefers them hidden. DropOut never combines pins: no KiCad native pin stacks and no hidden pins stacked under a visible one, even though KLC S4.3 allows stacking. Each pin can then be wired, decoupled, and checked individually. CI enforces this (`scripts/check_pin_pad_match.py`).
 
 ### Required symbol fields
 
