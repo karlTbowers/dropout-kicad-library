@@ -1,0 +1,215 @@
+(footprint "Nexperia_DFN1006-2_SOD882-2_1.0x0.6mm"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Nexperia DFN1006-2 (SOD882-2), 1.0x0.6x0.47mm, pitch 0.65mm (PESD1ETH10L-Q data sheet Fig. 10, reflow soldering footprint), https://assets.nexperia.com/documents/data-sheet/PESD1ETH10L-Q.pdf")
+	(tags "DFN1006-2 SOD882 SOD-882 diode ESD Nexperia")
+	(property "Reference" "REF**"
+		(at 0 -1.45 0)
+		(layer "F.SilkS")
+		(uuid "f46618b9-baac-468c-b26b-49d777a3fd24")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Nexperia_DFN1006-2_SOD882-2_1.0x0.6mm"
+		(at 0 1.45 0)
+		(layer "F.Fab")
+		(uuid "26e0b413-94a8-4034-a441-ed23c6d02b7e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "7eaf37ed-d976-4d2b-a9a0-0707119f3ae6")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9fa8380c-c5d4-4ee6-a6ee-8369f203d14f")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -0.86 -0.66)
+		(end -0.86 0.66)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "f0cc3927-5b00-4bc1-addd-e7f4bcba431f")
+	)
+	(fp_line
+		(start -0.86 -0.66)
+		(end 0.5 -0.66)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "ef87d8de-e8cc-4c3b-8163-6e8b3b7a88a2")
+	)
+	(fp_line
+		(start -0.86 0.66)
+		(end 0.5 0.66)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "65ca3ac9-7d7d-474e-9216-79dd1e307829")
+	)
+	(fp_line
+		(start -0.8 -0.65)
+		(end 0.8 -0.65)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "2cf6f972-8cbe-4967-a21a-a3feb2053dad")
+	)
+	(fp_line
+		(start -0.8 0.65)
+		(end -0.8 -0.65)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "f68403be-e071-4eeb-9d9a-eda8abd546f3")
+	)
+	(fp_line
+		(start 0.8 -0.65)
+		(end 0.8 0.65)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "f9db75d6-2dc3-4d14-962b-0fd11b2da16a")
+	)
+	(fp_line
+		(start 0.8 0.65)
+		(end -0.8 0.65)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "cca36568-dc21-443f-bf93-f01acd0a59fa")
+	)
+	(fp_line
+		(start -0.5 -0.15)
+		(end -0.35 -0.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "29a59f00-5731-429b-bd2a-83b8e7eaf0e7")
+	)
+	(fp_line
+		(start -0.5 0.3)
+		(end -0.5 -0.15)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "867faf10-58b9-4dd7-9a5d-30ac037402fc")
+	)
+	(fp_line
+		(start -0.35 -0.3)
+		(end 0.5 -0.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "45d20132-f814-4580-929e-003c4d258964")
+	)
+	(fp_line
+		(start 0.5 -0.3)
+		(end 0.5 0.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "1b59b9b5-6e58-4571-a642-5197656bddc8")
+	)
+	(fp_line
+		(start 0.5 0.3)
+		(end -0.5 0.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "0351aa30-f9a9-4e38-8852-bf24369b809d")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "e2707e70-f84a-44fe-bbe3-b138fc21d152")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.075)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at -0.35 0)
+		(size 0.4 0.7)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.125)
+		(solder_mask_margin 0.05)
+		(solder_paste_margin -0.05)
+		(uuid "aa4c5da0-6460-45f0-9687-2d5cd2c4f30f")
+	)
+	(pad "2" smd roundrect
+		(at 0.35 0)
+		(size 0.4 0.7)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.125)
+		(solder_mask_margin 0.05)
+		(solder_paste_margin -0.05)
+		(uuid "8301e9b0-1166-4b43-a554-dc82fb709a8b")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_Diode_SMD.3dshapes/Nexperia_DFN1006-2_SOD882-2_1.0x0.6mm.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

@@ -1,0 +1,22 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/VETH100A1DD1HG3-08/part.yaml
+# Vishay VETH100A1DD1 data sheet (doc 86195, rev. 1.3, 06-Feb-2026): ordering code HG3-08 = AEC-Q101,
+# 10k reel; bidirectional, no polarity (pin 1 = bar side). Pins A1/A2 as KiCad's Device:D_TVS.
+# Node60 10BASE-T1S line interface (DEC-012): the selected ESD diode, one per line.
+library: DropOut_Protection
+name: VETH100A1DD1HG3-08
+style: tvs_bidirectional
+pins: pins.csv
+fields:
+  Reference: D
+  Value: VETH100A1DD1HG3-08
+  Footprint: DropOut_Diode_SMD:Vishay_DFN1006-2B_1.0x0.6mm
+  Datasheet: https://www.vishay.com/docs/86195/veth100a1dd1.pdf
+  Description: Vishay single-line bidirectional ESD protection diode for automotive Ethernet (OPEN Alliance 10BASE-T1S, 100BASE-T1, 1000BASE-T1), 24 V working, >100 V trigger, 2.0 pF max, ±15 kV ISO 10605, AEC-Q101, DFN1006-2B
+  ki_keywords: ESD protection diode bidirectional automotive Ethernet 10BASE-T1S T1S OPEN Alliance
+  ki_fp_filters: Vishay*DFN1006?2B*
+  Manufacturer: Vishay
+  MPN: VETH100A1DD1HG3-08
+  DigiKey_PN: "112-VETH100A1DD1HG3-08CT-ND"
+  Mouser_PN: "78-VETH100A1DD1HG308"
+  Temperature_Grade: AEC-Q101, TJ -55 to +150 °C

@@ -1,0 +1,23 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/DLW32MH201XK2L/part.yaml
+# Murata reference specification JEFL243C_9124E-01 (DLW32MH___XK2_, AEC-Q200) §3 ratings, §5
+# appearance and equivalent circuit (1 top left, 2 top right, 3 bottom right, 4 bottom left; windings
+# 1-2 and 4-3), §11.1 land dimensions. Murata recommends it for 100BASE-T1, not 10BASE-T1S: it was a
+# rejected candidate in the Node60 T1S search (DEC-012), kept in the library at the user's request.
+library: DropOut_Inductor
+name: DLW32MH201XK2L
+style: cmc_4pin
+pins: pins.csv
+fields:
+  Reference: FL
+  Value: DLW32MH201XK2L
+  Footprint: DropOut_Inductor_SMD:L_CommonModeChoke_Murata_DLW32MHxxxXK2_3.2x2.5mm
+  Datasheet: https://pim.murata.com/asset/pim4/commonModeChokeCoilCommonModeNoiseFilter/QFLC9124_PDF_COMMONMODECHOKECOILCOMMONMODENOISEFILTER
+  Description: Murata common mode choke coil for automotive Ethernet 100BASE-T1, 200 µH (-20/+50 %) at 0.1 MHz, 70 mA, 50 V, 4.0 Ω ±20 %, AEC-Q200, 3.2x2.5 mm
+  ki_keywords: common mode choke coil filter CMC automotive Ethernet 100BASE-T1
+  ki_fp_filters: L*CommonModeChoke*Murata*DLW32MH*XK2*
+  Manufacturer: Murata
+  MPN: DLW32MH201XK2L
+  DigiKey_PN: "490-18060-1-ND"
+  Mouser_PN: "81-DLW32MH201XK2L"
+  Temperature_Grade: AEC-Q200, -40 to +125 °C

@@ -212,9 +212,44 @@ def style_crystal_gnd24(pins):
     return out, 3.556 + 0.27, 3 * G
 
 
-STYLES = {"tvs_bidirectional": style_tvs_bidirectional, "crystal_gnd24": style_crystal_gnd24}
+def arc(start, mid, end, width=0.254):
+    return (f"\t\t\t(arc (start {fmt(start[0])} {fmt(start[1])}) (mid {fmt(mid[0])} {fmt(mid[1])}) "
+            f"(end {fmt(end[0])} {fmt(end[1])})\n\t\t\t\t(stroke (width {width}) (type default)) (fill (type none)))")
+
+
+def dot(x, y):
+    return (f"\t\t\t(circle (center {fmt(x)} {fmt(y)}) (radius 0.254)\n"
+            f"\t\t\t\t(stroke (width 0) (type default)) (fill (type outline)))")
+
+
+def style_cmc_4pin(pins):
+    """Two-line common mode choke, drawn as KiCad's Filter:Choke_CommonMode_FerriteCore_1234: one
+    winding on top (L slot 0 to R slot 0), one below (L slot 1 to R slot 1), dashed ferrite core,
+    winding-start dots on the left. Pin numbers come from the part's own pins.csv."""
+    side = lambda s: sorted((p for p in pins if p["side"] == s), key=lambda p: p["slot"] or 0)
+    left, right = side("L"), side("R")
+    if len(pins) != 4 or len(left) != 2 or len(right) != 2:
+        sys.exit("symbolgen: cmc_4pin needs two L and two R pins (slot 0 top, slot 1 bottom)")
+    g = [dot(-2.794, 1.27), dot(-2.794, -1.27),
+         poly([(-2.54, 2.032), (-2.54, 2.54)], width=0), poly([(2.54, 2.54), (2.54, 2.032)], width=0),
+         poly([(-2.54, -2.032), (-2.54, -2.54)], width=0), poly([(2.54, -2.032), (2.54, -2.54)], width=0)]
+    for i in range(5):                                   # five turns per winding
+        x0, x1 = -2.54 + i * 1.016, -1.524 + i * 1.016
+        g.append(arc((x1, 2.032), ((x0 + x1) / 2, 1.5262), (x0, 2.032)))
+        g.append(arc((x0, -2.032), ((x0 + x1) / 2, -1.5262), (x1, -2.032)))
+    for i in range(6):                                   # dashed core between the windings
+        x = -2.794 + i * 1.016
+        g.append(poly([(x, 0.381), (x + 0.508, 0.381)], width=0))
+        g.append(poly([(x, -0.381), (x + 0.508, -0.381)], width=0))
+    out = g + [pin_sexpr(left[0], -2 * G, G, 0, length=G), pin_sexpr(right[0], 2 * G, G, 180, length=G),
+               pin_sexpr(left[1], -2 * G, -G, 0, length=G), pin_sexpr(right[1], 2 * G, -G, 180, length=G)]
+    return out, G + 0.27, G + 0.27
+
+
+STYLES = {"tvs_bidirectional": style_tvs_bidirectional, "crystal_gnd24": style_crystal_gnd24,
+          "cmc_4pin": style_cmc_4pin}
 # Pin numbers are shown where the package has more than two terminals (as KiCad's stock symbols)
-STYLE_SHOW_NUMBERS = {"crystal_gnd24"}
+STYLE_SHOW_NUMBERS = {"crystal_gnd24", "cmc_4pin"}
 
 
 def build_symbol(part, pins):

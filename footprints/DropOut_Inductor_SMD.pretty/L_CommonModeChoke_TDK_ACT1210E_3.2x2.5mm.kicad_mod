@@ -1,0 +1,215 @@
+(footprint "L_CommonModeChoke_TDK_ACT1210E_3.2x2.5mm"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "TDK ACT1210E common mode filter, 3.2x2.5mm (data sheet 20240325 p. 3, recommended land pattern), https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6152/ACT1210E.pdf")
+	(tags "common mode choke filter automotive Ethernet 1210 3225")
+	(property "Reference" "REF**"
+		(at 0 -2.3 0)
+		(layer "F.SilkS")
+		(uuid "ee72a9d2-b96d-41d6-8257-eaa537288d78")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "L_CommonModeChoke_TDK_ACT1210E_3.2x2.5mm"
+		(at 0 2.3 0)
+		(layer "F.Fab")
+		(uuid "1fb150c8-2558-4646-9214-b9745d44488d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e7b2ff84-84b7-4d22-b9f9-a6ad8f79642e")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "34431da5-473b-4132-9e74-15fb5a005e35")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -2.11 -1.36)
+		(end 1.6 -1.36)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "057a28b6-3ec7-4d4e-a724-7ccf88ffd751")
+	)
+	(fp_line
+		(start -1.6 1.36)
+		(end 1.6 1.36)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "680bd0c0-d8d5-45fb-9a45-8d85ededb03e")
+	)
+	(fp_line
+		(start -2.3 -1.5)
+		(end 2.3 -1.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "54d0abd1-6094-4cad-b93e-2d7c00b5e7c6")
+	)
+	(fp_line
+		(start -2.3 1.5)
+		(end -2.3 -1.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "a6843f3b-cee9-4afd-86da-3d915e5084b3")
+	)
+	(fp_line
+		(start 2.3 -1.5)
+		(end 2.3 1.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "687af315-07f8-43cd-ac1b-87a1586dd14b")
+	)
+	(fp_line
+		(start 2.3 1.5)
+		(end -2.3 1.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "a990b5f1-ac32-4b96-89a4-4ba12c6d0867")
+	)
+	(fp_line
+		(start -1.6 -0.75)
+		(end -1.1 -1.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "a82f8777-6fc6-4004-a3f0-a34bc79c541d")
+	)
+	(fp_line
+		(start -1.6 1.25)
+		(end -1.6 -0.75)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "573b498a-752f-4124-a316-c28878de7c2c")
+	)
+	(fp_line
+		(start -1.1 -1.25)
+		(end 1.6 -1.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "067f42b0-8521-4dc9-abf6-2f4ae239caff")
+	)
+	(fp_line
+		(start 1.6 -1.25)
+		(end 1.6 1.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "d298c2d8-eb53-4880-a6a0-812d26dff216")
+	)
+	(fp_line
+		(start 1.6 1.25)
+		(end -1.6 1.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "f51fbea8-44ad-45ae-9cce-7af8c91c1df2")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "5843a313-4f90-4689-8836-84ff29494038")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at -1.525 -0.5)
+		(size 1.05 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "afe2db50-fc04-4e35-822b-f37ce4064299")
+	)
+	(pad "2" smd roundrect
+		(at -1.525 0.5)
+		(size 1.05 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "5006faed-b32a-4e36-ab6b-3bdd49898fa5")
+	)
+	(pad "3" smd roundrect
+		(at 1.525 0.5)
+		(size 1.05 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "f9ac0fd7-010d-4639-b537-ad7834eafda9")
+	)
+	(pad "4" smd roundrect
+		(at 1.525 -0.5)
+		(size 1.05 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "89300116-012b-467c-8b23-90c24ec6a54e")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_Inductor_SMD.3dshapes/L_CommonModeChoke_TDK_ACT1210E_3.2x2.5mm.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

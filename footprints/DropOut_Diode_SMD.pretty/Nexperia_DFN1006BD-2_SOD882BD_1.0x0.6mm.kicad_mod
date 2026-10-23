@@ -1,0 +1,223 @@
+(footprint "Nexperia_DFN1006BD-2_SOD882BD_1.0x0.6mm"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Nexperia DFN1006BD-2 (SOD882BD) with side-wettable flanks, 1.0x0.6x0.47mm, pitch 0.65mm (PESD1ETH10LS-Q data sheet Fig. 10, reflow soldering footprint), https://assets.nexperia.com/documents/data-sheet/PESD1ETH10LS-Q.pdf")
+	(tags "DFN1006BD-2 SOD882BD diode ESD Nexperia side-wettable")
+	(property "Reference" "REF**"
+		(at 0 -1.45 0)
+		(layer "F.SilkS")
+		(uuid "ba93a360-ebe1-4702-b902-69bbed52f366")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Nexperia_DFN1006BD-2_SOD882BD_1.0x0.6mm"
+		(at 0 1.45 0)
+		(layer "F.Fab")
+		(uuid "57a2179b-d1a6-46c5-b2cc-d9dd796b3728")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b0d58130-dd0e-4a0b-964e-ce4aed028d98")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c70bc316-65fa-4e87-a552-86b75b23926a")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -0.96 -0.66)
+		(end -0.96 0.66)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "c20e1595-5fb1-4950-a9fa-55732ead0985")
+	)
+	(fp_line
+		(start -0.96 -0.66)
+		(end 0.5 -0.66)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "d02a6dca-62e2-4ac8-aff5-30cbab39a74c")
+	)
+	(fp_line
+		(start -0.96 0.66)
+		(end 0.5 0.66)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "d68a7a51-c801-4de6-94ae-a1a5930151df")
+	)
+	(fp_line
+		(start -0.9 -0.65)
+		(end 0.9 -0.65)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "b4e5a9cf-1dfc-4070-adeb-573916156f66")
+	)
+	(fp_line
+		(start -0.9 0.65)
+		(end -0.9 -0.65)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "ce0c0e5f-1d12-40c9-a33f-6d76e550e4bf")
+	)
+	(fp_line
+		(start 0.9 -0.65)
+		(end 0.9 0.65)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "f69f6c9f-07a9-4718-be9f-bed2c1195b06")
+	)
+	(fp_line
+		(start 0.9 0.65)
+		(end -0.9 0.65)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "84cbbd2b-dac0-4771-a3de-6b52c112980f")
+	)
+	(fp_line
+		(start -0.5 -0.15)
+		(end -0.35 -0.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "688422a2-4fae-4d1a-94c8-1e5e27d3f12f")
+	)
+	(fp_line
+		(start -0.5 0.3)
+		(end -0.5 -0.15)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "b6ffe25f-bbf1-4202-ae60-f67b76b1613a")
+	)
+	(fp_line
+		(start -0.35 -0.3)
+		(end 0.5 -0.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "0d882cd2-1958-4532-94f8-f4c0e238241a")
+	)
+	(fp_line
+		(start 0.5 -0.3)
+		(end 0.5 0.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "8badbd97-0ef8-4ed8-8a89-9f5aa60c4b3b")
+	)
+	(fp_line
+		(start 0.5 0.3)
+		(end -0.5 0.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "f4dd3ea7-19c3-411c-b472-bbe651adec54")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "be4fd25c-c49e-46d7-b1d0-2060e4272bf1")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.075)
+			)
+		)
+	)
+	(pad "" smd rect
+		(at -0.35 0)
+		(size 0.3 0.6)
+		(layers "F.Paste")
+		(uuid "3c482fb0-1ca7-4fe3-8742-e41045ad6996")
+	)
+	(pad "" smd rect
+		(at 0.35 0)
+		(size 0.3 0.6)
+		(layers "F.Paste")
+		(uuid "0280e197-cf3f-4579-bbd9-52c3b0253a92")
+	)
+	(pad "1" smd rect
+		(at -0.4 0)
+		(size 0.5 0.7)
+		(layers "F.Cu" "F.Mask")
+		(solder_mask_margin 0.05)
+		(uuid "bb22dae4-ccee-45d5-98bc-29607bf76da5")
+	)
+	(pad "2" smd rect
+		(at 0.4 0)
+		(size 0.5 0.7)
+		(layers "F.Cu" "F.Mask")
+		(solder_mask_margin 0.05)
+		(uuid "507c31ef-5094-48fd-9931-c986470c0de4")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_Diode_SMD.3dshapes/Nexperia_DFN1006BD-2_SOD882BD_1.0x0.6mm.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

@@ -1,0 +1,215 @@
+(footprint "L_CommonModeChoke_Murata_DLW32MHxxxMX2_3.2x2.5mm"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Murata DLW32MH_MX2 metal-terminal common mode choke coil, 3.2x2.5mm body, 3.5mm over terminals (reference specification JEFL243C-9132D-01 §5 and §11.1), https://pim.murata.com/en-us/pim/details/?partNum=DLW32MH241MX2%23")
+	(tags "common mode choke filter automotive Ethernet 1210 3225")
+	(property "Reference" "REF**"
+		(at 0 -2.3 0)
+		(layer "F.SilkS")
+		(uuid "755ddc4e-3ab7-44f0-a06a-57093612e71e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "L_CommonModeChoke_Murata_DLW32MHxxxMX2_3.2x2.5mm"
+		(at 0 2.3 0)
+		(layer "F.Fab")
+		(uuid "0fddae61-0eb3-4915-b808-3ff4c3ced82c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a319b2dc-b87f-477a-9cdc-62d4dcb3c901")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1222c237-cc77-49d3-a80d-3c6d25d692db")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -2.11 -1.36)
+		(end 1.6 -1.36)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "8183db87-5e28-4fc5-8707-e18bb3ed5057")
+	)
+	(fp_line
+		(start -1.6 1.36)
+		(end 1.6 1.36)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "7c14955a-bd31-41d7-9bfc-4e2d8be1c0ac")
+	)
+	(fp_line
+		(start -2.3 -1.5)
+		(end 2.3 -1.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "1c2f22ed-3eb9-4452-a5b5-d76fdb0f04a8")
+	)
+	(fp_line
+		(start -2.3 1.5)
+		(end -2.3 -1.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "9c1c10f2-b09a-446d-a5c4-211d8d0a75fc")
+	)
+	(fp_line
+		(start 2.3 -1.5)
+		(end 2.3 1.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "de125dbb-491b-4ff6-8d4a-5af905832a0a")
+	)
+	(fp_line
+		(start 2.3 1.5)
+		(end -2.3 1.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "c0a6d85a-3945-4225-8da7-4833765d8b8e")
+	)
+	(fp_line
+		(start -1.6 -0.75)
+		(end -1.1 -1.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "0474cb1f-1874-4aae-aeed-d61e4683ca8d")
+	)
+	(fp_line
+		(start -1.6 1.25)
+		(end -1.6 -0.75)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "5eef761a-5e6b-485d-8803-2ba8060d4aae")
+	)
+	(fp_line
+		(start -1.1 -1.25)
+		(end 1.6 -1.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "877bb02f-776b-4fd2-b344-502304c9d2f2")
+	)
+	(fp_line
+		(start 1.6 -1.25)
+		(end 1.6 1.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "3d8e437b-fe48-4bcf-8a51-eff1e3905ca0")
+	)
+	(fp_line
+		(start 1.6 1.25)
+		(end -1.6 1.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "3da866bb-edcd-4eda-b7c5-1c9543de3f9e")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "2961aa90-5120-435b-acbc-cb29a8d41a29")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at -1.525 -0.5)
+		(size 1.05 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "4f1def6e-c4a3-4389-b6dd-0041c7f90aba")
+	)
+	(pad "2" smd roundrect
+		(at 1.525 -0.5)
+		(size 1.05 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "214aa716-3cde-422d-a726-aedefd003d15")
+	)
+	(pad "3" smd roundrect
+		(at 1.525 0.5)
+		(size 1.05 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "e377f1f7-6180-4196-b035-871f5d25cffd")
+	)
+	(pad "4" smd roundrect
+		(at -1.525 0.5)
+		(size 1.05 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "3f9211ed-ba59-4910-a3d4-bac8ce5b6cc9")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_Inductor_SMD.3dshapes/L_CommonModeChoke_Murata_DLW32MHxxxMX2_3.2x2.5mm.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

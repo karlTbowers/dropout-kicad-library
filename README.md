@@ -32,7 +32,7 @@ Planned categories (created as the first part in each one is added). Microcontro
 | `DropOut_Memory` | Flash, EEPROM |
 | `DropOut_Resistor` | Resistors, including current-sense shunts |
 | `DropOut_Capacitor` | Capacitors |
-| `DropOut_Inductor` | Inductors and ferrite beads |
+| `DropOut_Inductor` | Inductors, ferrite beads, and common mode chokes |
 | `DropOut_Thermistor` | NTC and PTC thermistors |
 | `DropOut_Protection` | TVS, ESD, fuses |
 | `DropOut_Timing` | Oscillators, crystals |
@@ -41,6 +41,7 @@ Planned categories (created as the first part in each one is added). Microcontro
 | `DropOut_Crystal` | Footprints and 3D models for crystals |
 | `DropOut_Connector_Samtec` | Footprints and 3D models for Samtec connectors |
 | `DropOut_Diode_SMD` | Footprints and 3D models for SMD diode packages (DO-218, DO-214, SOD...) |
+| `DropOut_Inductor_SMD` | Footprints and 3D models for SMD inductors and common mode chokes |
 | `DropOut_Package_BGA` | Footprints and 3D models for ball grid array packages (footprint libraries follow KLC package-type naming) |
 | `DropOut_Package_DFN_QFN` | Footprints and 3D models for DFN/QFN (no-lead) packages |
 | `DropOut_Package_QFP` | Footprints and 3D models for quad flat packages (LQFP, TQFP) |
