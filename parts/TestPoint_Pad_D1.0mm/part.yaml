@@ -4,7 +4,7 @@
 # It is a PCB feature, not a bought part: excluded from the BOM and from position files (here and
 # in the footprint's attributes). Footprint: generators/custom/TestPoint.py.
 #
-# No-MPN convention (PROPOSED, karlTbowers/dropout-kicad-library PR; handbook PR #9 item 7):
+# No-MPN convention (adopted 2026-10-22, docs/CONTRIBUTING.md; handbook PR #9 item 7):
 #   Manufacturer = DropOut (the part is copper DropOut defines on its own boards)
 #   MPN          = the symbol name (DropOut's own part number for the feature)
 #   DigiKey_PN, Mouser_PN = "-" (not stocked: nothing to buy)
