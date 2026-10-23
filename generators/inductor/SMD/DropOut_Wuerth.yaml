@@ -1,0 +1,45 @@
+# Würth Elektronik WE-MAPI metal alloy power inductors (DropOut spec for kicad-library-tools
+# data/inductor/SMD/). Keys carry a DropOut_ prefix so `-p` never also selects the stock CSV parts
+# of the same PartNumber.
+default_parameters:
+  manufacturer: Wuerth
+  library_name: DropOut_Inductor_SMD
+  3d:
+    type: 2
+    bodyColor: dark grey body
+    pinColor: metal grey pins
+    padThickness: 0.05
+  tags:
+    - Würth
+    - WE-MAPI
+    - power
+    - shielded
+    - AEC-Q200
+
+# Data sheets 74438356022 / 74438357022 rev. 003.002 (2026-09-01) p. 1, "Recommended Land Pattern"
+# (the first one, compatible with WE-MXGI 40xx; not the IPC-7351 "Land Pattern 2"):
+# 0.98 x 3.7 mm pads, 1.39 mm inside, 3.35 mm outside. Body 4.1 x 4.1 mm, terminals 1.25 mm wide,
+# 1.6 mm apart. Same values as the stock Wuerth_mapi.csv rows.
+DropOut_MAPI-4020:
+  PartNumber: MAPI-4020
+  datasheet: "https://www.we-online.com/components/products/datasheet/74438356022.pdf"
+  widthX: 4.1
+  lengthY: 4.1
+  height: 2.1
+  padX: 1.25
+  padY: 4.1
+  landingX: 0.98
+  landingInsideX: 1.39
+  landingY: 3.7
+
+DropOut_MAPI-4030:
+  PartNumber: MAPI-4030
+  datasheet: "https://www.we-online.com/components/products/datasheet/74438357022.pdf"
+  widthX: 4.1
+  lengthY: 4.1
+  height: 3.1
+  padX: 1.25
+  padY: 4.1
+  landingX: 0.98
+  landingInsideX: 1.39
+  landingY: 3.7

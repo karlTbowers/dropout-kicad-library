@@ -1,0 +1,29 @@
+# TDK SPM-DZ automotive metal composite power inductors (DropOut spec for kicad-library-tools
+# data/inductor/SMD/).
+default_parameters:
+  manufacturer: TDK
+  library_name: DropOut_Inductor_SMD
+  3d:
+    type: 2
+    bodyColor: black body
+    pinColor: metal grey pins
+    padThickness: 0.05
+  tags:
+    - power
+    - shielded
+    - AEC-Q200
+
+# SPM4020-DZ catalog (inductor_automotive_power_spm4020-dz_en, 20260420) p. 3, "Recommended land
+# pattern": 5.4 mm outside, 2.4 mm inside, 2.3 mm pad height. Body 4.3 x 4.1 x 2.0 mm max,
+# terminals (0.8) x (2.0) mm.
+DropOut_SPM4020-DZ:
+  PartNumber: SPM4020-DZ
+  datasheet: "https://product.tdk.com/system/files/dam/doc/product/inductor/inductor/smd/catalog/inductor_automotive_power_spm4020-dz_en.pdf"
+  widthX: 4.3
+  lengthY: 4.1
+  height: 2.0
+  padX: 0.8
+  padY: 2.0
+  landingInsideX: 2.4
+  landingOutsideX: 5.4
+  landingY: 2.3
