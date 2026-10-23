@@ -6,7 +6,7 @@ Manual (extract it with `pdfdetach -list RM.pdf`, then `pdfdetach -save N -o out
 
 Usage:
   python3 scripts/pintables/nxp_iomux.py IOMUX.xlsx --device S32K344 --package 257bga \
-      --type V11=power_out --type V25=power_out -o parts/<MPN>/pins.csv
+      --type V11=power_out --type J8=passive --type V25=power_out -o parts/<MPN>/pins.csv
 
 Reads sheets <device>_Pinout, <device>_IO Signal Table, <device>_Supplies (columns named
 <device>_<package>). Output units: "Power" (supplies on top, VSS*/VREFL at the bottom, power
@@ -18,6 +18,9 @@ Pin rules:
   - Alternates come from "Composite Pin Name"; directions from the IO Signal Table.
   - NXP's active-low "_b" suffix becomes an overbar (KLC S4.7).
   - Supplies default to power_in; set exceptions from the datasheet with --type NAME=TYPE.
+    --type BALL=TYPE overrides one ball and wins over NAME: when several balls share one power
+    output, keep the first power_out and make the rest passive (add-part skill). A supply's
+    side follows its NAME type, so all balls of one output stay together.
 """
 import argparse
 import csv
@@ -39,7 +42,8 @@ def main():
     ap.add_argument("--device", required=True, help="sheet prefix, e.g. S32K344")
     ap.add_argument("--package", required=True, help="package column suffix, e.g. 257bga")
     ap.add_argument("--type", action="append", default=[], metavar="NAME=TYPE",
-                    help="electrical type override for a supply or misc pin (from the datasheet)")
+                    help="electrical type override for a supply or misc pin (from the datasheet);"
+                         " NAME may be a ball, which wins over a pin name")
     ap.add_argument("-o", "--out", required=True)
     args = ap.parse_args()
     try:
@@ -92,12 +96,14 @@ def main():
                     alts.append(f"{overbar(f)}:{DIR_TYPE.get(direction.get((name, f)), 'bidirectional')}")
             rows.append([ball, label, etype, f"PT{m.group(1)}", "L" if bit < 16 else "R", bit % 16, ";".join(alts)])
         elif name in supplies:
-            etype = overrides.get(name, "power_in")
-            side = "B" if GROUND.match(name) else "R" if etype == "power_out" else "T"
+            etype = overrides.get(ball, overrides.get(name, "power_in"))
+            side = ("B" if GROUND.match(name) else
+                    "R" if overrides.get(name, etype) == "power_out" else "T")
             rows.append([ball, name, etype, "Power", side, "", ""])
         else:  # oscillator and other analog misc pins
-            etype = overrides.get(name, "input" if name in ("EXTAL", "XTAL32_IN") else
-                                  "output" if name in ("XTAL", "XTAL32_OUT") else "passive")
+            etype = overrides.get(ball, overrides.get(name)) or (
+                "input" if name in ("EXTAL", "XTAL32_IN") else
+                "output" if name in ("XTAL", "XTAL32_OUT") else "passive")
             rows.append([ball, name, etype, "Power", "L", "", ""])
 
     # Stable, readable order: Power unit first (by name), then ports by bit

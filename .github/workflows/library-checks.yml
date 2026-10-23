@@ -17,6 +17,14 @@ jobs:
       - run: python3 scripts/check_symbol_fields.py symbols
       - name: Symbol pins (no combined pins; pins match footprint pads)
         run: python3 scripts/check_pin_pad_match.py symbols footprints
+      - name: Symbol text (no overprinting, handbook D-47)
+        run: python3 scripts/check_symbol_text.py symbols
+      - name: Self-test the symbol text check
+        shell: bash
+        run: |
+          python3 scripts/check_symbol_text.py tests/symbol_text/DropOut_TextTest.kicad_sym > "$RUNNER_TEMP/text.txt" && { echo "::error title=Symbol text self-test::fixtures should fail"; exit 1; }
+          grep '^OVERPRINT ' "$RUNNER_TEMP/text.txt" | LC_ALL=C sort > "$RUNNER_TEMP/got.txt"
+          diff -u tests/symbol_text/expected.txt "$RUNNER_TEMP/got.txt"
 
   klc:
     name: KLC (with DropOut exceptions)

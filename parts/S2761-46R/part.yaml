@@ -1,0 +1,23 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/S2761-46R/part.yaml
+# Node60 ground probe loop part search (2026-10-22): candidate, marginal. Opening only about 1.2 x 0.75 mm: check that the probe's ground spring tip goes through.
+# Requirement (Node60 project answers): ground test points are probe loops a scope ground spring fits,
+# rated to at least +125 °C. Footprint: generators/custom/TestPoint.py.
+library: DropOut_Connector
+name: "S2761-46R"
+style: testpoint
+pins: pins.csv
+fields:
+  Reference: TP
+  Value: "S2761-46R"
+  Footprint: DropOut_TestPoint:TestPoint_Harwin_S2761
+  Datasheet: https://content.harwin.com/m/d630047163058eb1/original/DRG-02223-Technical-Drawing-Datasheet-S2761R-pdf.pdf
+  Description: "Harwin SMT test terminal, closed loop 1.6x0.8mm, 1.15mm high, brass, tin over nickel, 3.5 A, -55 to +125 °C, tape and reel"
+  ki_keywords: test point loop ground probe SMD Harwin
+  ki_fp_filters: TestPoint?Harwin?S2761*
+  Manufacturer: Harwin
+  MPN: "S2761-46R"
+  DigiKey_PN: "952-2665-1-ND"
+  Mouser_PN: "855-S2761-46R"
+  Temperature_Grade: "-55 to +125 °C"
+  Notes: "Smallest Harwin loop; check the scope ground spring fits before using it as a ground probe loop."
