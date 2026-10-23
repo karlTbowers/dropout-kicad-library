@@ -189,6 +189,18 @@ def two_pin(pins, graphic):
     return out, G + 0.27, G + 0.27
 
 
+def vertical_two_pin(pins, graphic, pin_len):
+    """A vertical two-terminal symbol (as KiCad's Device:R and Device:C): the T pin on top, the B
+    pin below, pin ends 150 mil from the origin."""
+    top = [p for p in pins if p["side"] == "T"]
+    bottom = [p for p in pins if p["side"] == "B"]
+    if len(pins) != 2 or len(top) != 1 or len(bottom) != 1:
+        sys.exit("symbolgen: vertical two-terminal styles need exactly one T and one B pin")
+    out = graphic + [pin_sexpr(top[0], 0, 1.5 * G, 270, length=pin_len),
+                     pin_sexpr(bottom[0], 0, -1.5 * G, 90, length=pin_len)]
+    return out, 1.5 * G, 1.5 * G
+
+
 def style_tvs_bidirectional(pins):
     # Two opposing diode triangles and a Z-shaped breakdown bar (as KiCad's Device:D_TVS)
     g = [poly([(-2.54, 1.27), (-2.54, -1.27), (0, 0), (-2.54, 1.27)]),
@@ -352,6 +364,10 @@ def style_nmos(pins):
     out += [pin_sexpr(p, x - ox, 7.62, 270, length=G) for p, x in zip(drains, dx)]
     out += [pin_sexpr(p, x - ox, -7.62, 90, length=G) for p, x in zip(sources, sx)]
     return out, 7.62, 7.62
+def style_inductor(pins):
+    # Four half-turns as KiCad's Device:L
+    g = [arc((0, 2.54 - i * 1.27), (0.6323, 1.905 - i * 1.27), (0, 1.27 - i * 1.27), width=0) for i in range(4)]
+    return vertical_two_pin(pins, g, G / 2)
 
 
 def style_testpoint(pins):
@@ -365,8 +381,11 @@ def style_testpoint(pins):
 
 
 STYLES = {"tvs_bidirectional": style_tvs_bidirectional, "crystal_gnd24": style_crystal_gnd24,
-          "cmc_4pin": style_cmc_4pin, "testpoint": style_testpoint, "resistor": style_resistor,
-          "resistor_shunt_4pin": style_resistor_shunt_4pin, "nmos": style_nmos}
+          "cmc_4pin": style_cmc_4pin, "inductor": style_inductor, "testpoint": style_testpoint,
+          "resistor": style_resistor, "resistor_shunt_4pin": style_resistor_shunt_4pin, "nmos": style_nmos}
+# Reference and Value beside the body, left-justified, for the narrow vertical styles (as
+# KiCad's Device:C; a long MPN Value would not fit inside Device:R's body)
+STYLE_FIELDS = {"inductor": {"Reference": (2.54, 1.27), "Value": (2.54, -1.27)}}
 # Reference and Value positions where the default (above and below the body) doesn't fit:
 # a test point's connection point is at the bottom, so both go above it, as on KiCad's TestPoint
 STYLE_FIELD_Y = {"testpoint": {"Reference": 6.858, "Value": 5.08}}
@@ -397,11 +416,13 @@ def build_symbol(part, pins):
     lines = [f'\t(symbol "{esc(name)}"', head, "\t\t(exclude_from_sim no)",
              f"\t\t(in_bom {yn('in_bom')})", "\t\t(on_board yes)", f"\t\t(in_pos_files {yn('in_pos_files')})"]
     field_y = {"Reference": top + G, "Value": -bottom - G, **STYLE_FIELD_Y.get(style, {})}
+    beside = STYLE_FIELDS.get(style, {})
     for k, v in part["fields"].items():
-        y = field_y.get(k, 0)
+        x, y = beside.get(k, (0, field_y.get(k, 0)))
         hide = "" if k in VISIBLE else "\n\t\t\t(hide yes)"
-        lines.append(f'\t\t(property "{esc(k)}" "{esc(str(v))}"\n\t\t\t(at 0 {fmt(y)} 0){hide}\n'
-                     f"\t\t\t(effects (font (size 1.27 1.27)))\n\t\t)")
+        justify = " (justify left)" if k in beside else ""
+        lines.append(f'\t\t(property "{esc(k)}" "{esc(str(v))}"\n\t\t\t(at {fmt(x)} {fmt(y)} 0){hide}\n'
+                     f"\t\t\t(effects (font (size 1.27 1.27)){justify})\n\t\t)")
     for i, (body, _, _) in enumerate(units, start=1):
         lines.append(f'\t\t(symbol "{esc(name)}_{i}_1"')
         lines.extend(body)

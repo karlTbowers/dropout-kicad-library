@@ -1,0 +1,22 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/SRP4020TA-1R0M/part.yaml
+# Bourns SRP4020TA data sheet (PDF dated 2020-07-16) p. 1. Two-terminal inductor, no polarity (pins 1/2 = footprint pads 1/2).
+# Node60 LMQ66430MC3RXBRQ1 buck inductor search (2.2 MHz, 3 A; Isat >= 5 A = IPEAKMAX max, Irms >= 3 A; SNVSBV1F §8.2.1.2.3).
+# Rejected for Node60: carbonyl powder core; TI SNVSBV1F §8.2.1.2.3 warns of powder-core losses above about 1 MHz, and Bourns gives no 2.2 MHz loss data. Kept as a stocked fallback.
+library: DropOut_Inductor
+name: SRP4020TA-1R0M
+style: inductor
+pins: pins.csv
+fields:
+  Reference: L
+  Value: SRP4020TA-1R0M
+  Footprint: DropOut_Inductor_SMD:L_Bourns_SRP4020TA
+  Datasheet: "https://www.bourns.com/docs/Product-Datasheets/SRP4020TA.pdf"
+  Description: Bourns SRP4020TA power inductor, 1.0 µH ±20 %, Isat 8.5 A (-20 %), Irms 5.0 A (40 °C rise), DCR 27 mΩ max, carbonyl powder core, shielded, wound, AEC-Q200, 4.45x4.06x2.0 mm
+  ki_keywords: inductor choke coil power buck shielded automotive AEC-Q200
+  ki_fp_filters: L*Bourns*SRP4020TA*
+  Manufacturer: Bourns
+  MPN: SRP4020TA-1R0M
+  DigiKey_PN: SRP4020TA-1R0MCT-ND
+  Mouser_PN: 652-SRP4020TA-1R0M
+  Temperature_Grade: AEC-Q200, -55 to +150 °C including temperature rise

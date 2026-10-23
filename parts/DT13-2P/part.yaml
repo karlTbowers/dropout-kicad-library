@@ -1,0 +1,30 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/DT13-2P/part.yaml
+# TE Connectivity DEUTSCH DT13-2P: DT series 2-pin right-angle (90°) PCB mount receptacle with panel
+# flange and flange seal, gray, nickel-plated pins; mates the DT06-2S plug (W2S wedgelock, size 16
+# sockets). Sources: customer drawing DT13-2P rev. B (pins, envelope, cavity numbering), application
+# spec 114-151046 rev. A §3.4 (PCB layout), product spec 108-151009 rev. E §3.2 (13 A at 14/16 AWG,
+# 250 V, -55 to +125 °C, header ingress protection "Not Tested"); archived in dropout-vendor-docs TE/DT/.
+# Started from the user's old DO_Connectors.kicad_sym "DT13-2P" (karlTbowers/old_do_symbols): same two
+# passive pins, now with footprint, DropOut fields, and KLC layout.
+# Node60 primary output connector (DEC-013, user's decision 2026-10-22). Alternates (no authorized
+# distributor): CH-AK-DT13-02 (HISENG, Alibaba) and DT13-2P_Jorch (AliExpress).
+# Observed 2026-10-22: DigiKey 1734-1452-ND $8.23 @1 / $6.991 @10 / $5.658 @200, 217 in stock;
+# Mouser 571-DT13-2P $8.15 @1 / $6.99 @10 / $5.65 @100, 508 in stock; Newark 21AM2964.
+library: DropOut_Connector
+name: DT13-2P
+pins: pins.csv
+fields:
+  Reference: J
+  Value: DT13-2P
+  Footprint: DropOut_Connector_TE-Connectivity:TE_DEUTSCH-DT_DT13-2P_1x02_P5.46mm_Horizontal
+  Datasheet: https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=DT13-2P&DocType=Customer%20Drawing&DocLang=English&DocFormat=pdf&PartCntxt=DT13-2P
+  Description: TE DEUTSCH DT series 2-pin right-angle PCB header, 5.46 mm pitch, panel flange seal, 13 A per contact (14/16 AWG), 250 V, -55 to +125 °C; mates DT06-2S plug
+  ki_keywords: connector header right angle DEUTSCH DT DT13 DT06-2S sealed automotive
+  ki_fp_filters: TE*DEUTSCH?DT*DT13?2P*
+  Manufacturer: TE Connectivity
+  MPN: DT13-2P
+  DigiKey_PN: 1734-1452-ND
+  Mouser_PN: 571-DT13-2P
+  Temperature_Grade: -55 to +125 °C (not AEC qualified)
+  Notes: Mates DT06-2S + W2S wedgelock. No current derating curve; +125 °C is the maximum including self-heating. Header ingress protection not tested by TE (108-151009). Pin numbering per the drawing's cavity marks; TE 114-151046 layout figure shows the opposite, verify on a sample.
