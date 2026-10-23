@@ -263,6 +263,26 @@ def style_cmc_4pin(pins):
     return out, G + 0.27, G + 0.27
 
 
+def style_thermistor_ntc(pins):
+    """NTC thermistor, KiCad's Device:Thermistor_NTC turned horizontal (x, y -> y, -x): resistor
+    body (a closed polyline, not a body rectangle, KLC S3.3) with the diagonal, the two opposed
+    arrows and the "t°" mark above it."""
+    g = [poly([(-2.54, 1.016), (2.54, 1.016), (2.54, -1.016), (-2.54, -1.016), (-2.54, 1.016)], fill="background"),
+         poly([(2.54, 1.778), (1.524, 1.778), (-1.524, -1.778), (-2.54, -1.778)]),
+         poly([(-3.683, 2.54), (-1.397, 2.54), (-2.159, 2.794), (-2.159, 2.286), (-1.397, 2.54), (-1.651, 2.54)]),
+         poly([(-1.397, 1.778), (-3.683, 1.778), (-2.921, 2.032), (-2.921, 1.524), (-3.683, 1.778), (-3.429, 1.778)]),
+         poly([(2.159, 2.54), (2.794, 2.54)]),
+         arc((2.413, 3.175), (2.3165, 3.0506), (2.159, 3.048)),
+         arc((2.794, 3.048), (2.9736, 2.9736), (3.048, 2.794)),
+         arc((3.048, 2.794), (2.9736, 2.6144), (2.794, 2.54)),
+         arc((2.54, 2.794), (2.6144, 2.9736), (2.794, 3.048)),
+         arc((1.905, 2.794), (1.9794, 2.9736), (2.159, 3.048)),
+         arc((2.159, 2.54), (1.9794, 2.6144), (1.905, 2.794)),
+         arc((2.794, 2.159), (2.5608, 2.434), (2.54, 2.794))]
+    out, _, bottom = two_pin(pins, g)
+    return out, 3.175 + 0.27, bottom
+
+
 def by_slot(pins, s):
     return sorted((p for p in pins if p["side"] == s), key=lambda p: p["slot"] or 0)
 
@@ -382,7 +402,8 @@ def style_testpoint(pins):
 
 STYLES = {"tvs_bidirectional": style_tvs_bidirectional, "crystal_gnd24": style_crystal_gnd24,
           "cmc_4pin": style_cmc_4pin, "inductor": style_inductor, "testpoint": style_testpoint,
-          "resistor": style_resistor, "resistor_shunt_4pin": style_resistor_shunt_4pin, "nmos": style_nmos}
+          "resistor": style_resistor, "resistor_shunt_4pin": style_resistor_shunt_4pin, "nmos": style_nmos,
+          "thermistor_ntc": style_thermistor_ntc}
 # Reference and Value beside the body, left-justified, for the narrow vertical styles (as
 # KiCad's Device:C; a long MPN Value would not fit inside Device:R's body)
 STYLE_FIELDS = {"inductor": {"Reference": (2.54, 1.27), "Value": (2.54, -1.27)}}

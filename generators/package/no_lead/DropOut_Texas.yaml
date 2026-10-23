@@ -51,3 +51,50 @@ Texas_RGE0024T_VQFN-24-1EP_4x4mm_P0.5mm_EP2.1x2.1mm:
   pad_width: 0.25
   pad_center_to_center_x: 3.8
   pad_center_to_center_y: 3.8
+
+# TPS7B8133QWDRVRQ1 (wettable flank) / TPS7B8133QDRVRQ1. TI DRV0006A (4222173/C 11/2025), TPS7B81-Q1
+# datasheet SBVS370F pages 27-29; one drawing for both versions (the wettable flank is an optional
+# side-wall detail, note 4). Land pattern: 6X (0.45) x (0.3), pitch 0.65, rows (1.95) apart;
+# thermal pad 7 (1) x (1.6). Stencil: two (1) x (0.7) apertures at +/-(0.45), 88 % coverage.
+# Optional 0.2 mm vias at +/-0.55 are left to the board.
+Texas_DRV0006A_WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm:
+  size_source:
+    url: 'https://www.ti.com/lit/ds/symlink/tps7b81-q1.pdf'
+    page: 27
+  device_type: 'WSON'
+  manufacturer: 'Texas'
+  part_number: 'DRV0006A'
+  ipc_class: 'qfn_pull_back'
+  body_size_x:
+    minimum: 1.9
+    maximum: 2.1
+  body_size_y:
+    minimum: 1.9
+    maximum: 2.1
+  body_pcb_gap: 0.0 .. 0.05
+  overall_height:
+    minimum: 0.7
+    maximum: 0.8
+  num_pins_x: 0
+  num_pins_y: 3
+  pitch: 0.65
+  lead_shape: square
+  lead_width:
+    minimum: 0.2
+    maximum: 0.3
+  lead_len:
+    minimum: 0.25
+    maximum: 0.35
+  lead_height:
+    nominal: 0.2
+  EP_size_x:
+    nominal: 1.0
+    tolerance: 0.1
+  EP_size_y:
+    nominal: 1.6
+    tolerance: 0.1
+  EP_num_paste_pads: [1, 2]
+  EP_paste_coverage: 0.88
+  pad_length: 0.45
+  pad_width: 0.3
+  pad_center_to_center_x: 1.95
