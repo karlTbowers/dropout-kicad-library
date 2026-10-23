@@ -1,0 +1,31 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/TestPoint_Pad_D1.0mm/part.yaml
+# A bare 1 mm copper test pad (Node60 project answers: signal test points are 1 mm exposed pads).
+# It is a PCB feature, not a bought part: excluded from the BOM and from position files (here and
+# in the footprint's attributes). Footprint: generators/custom/TestPoint.py.
+#
+# No-MPN convention (PROPOSED, karlTbowers/dropout-kicad-library PR; handbook PR #9 item 7):
+#   Manufacturer = DropOut (the part is copper DropOut defines on its own boards)
+#   MPN          = the symbol name (DropOut's own part number for the feature)
+#   DigiKey_PN, Mouser_PN = "-" (not stocked: nothing to buy)
+#   in_bom: false, in_pos_files: false; Notes says there is nothing to order.
+# This passes scripts/check_symbol_fields.py unchanged.
+library: DropOut_Connector
+name: TestPoint_Pad_D1.0mm
+style: testpoint
+in_bom: false
+in_pos_files: false
+pins: pins.csv
+fields:
+  Reference: TP
+  Value: TestPoint_Pad_D1.0mm
+  Footprint: DropOut_TestPoint:TestPoint_Pad_D1.0mm
+  Datasheet: https://github.com/karlTbowers/dropout-kicad-library/blob/main/generators/custom/TestPoint.py
+  Description: "Test point, exposed copper pad, diameter 1.0mm, solder mask opening only; a PCB feature with nothing to buy or place (excluded from BOM and position files)"
+  ki_keywords: test point pad exposed copper signal
+  ki_fp_filters: TestPoint?Pad?D1?0mm*
+  Manufacturer: DropOut
+  MPN: TestPoint_Pad_D1.0mm
+  DigiKey_PN: "-"
+  Mouser_PN: "-"
+  Notes: "PCB copper only; nothing to order. Excluded from BOM and position files."
