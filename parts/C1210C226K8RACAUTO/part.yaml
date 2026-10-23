@@ -20,7 +20,7 @@ fields:
   DigiKey_PN: "399-16007-1-ND"
   Mouser_PN: "80-C1210C226K8RAUTO"
   Temperature_Grade: "AEC-Q200, -55 to +125 °C"
-  Voltage: "10 V"
+  Voltage: "10V"
   Tolerance: "±10%"
   Dielectric: "X7R"
   Notes: "TDK's 22 uF X7R 1210 parts are ±20 % only."

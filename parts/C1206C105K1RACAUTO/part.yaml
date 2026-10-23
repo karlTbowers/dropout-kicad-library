@@ -20,7 +20,7 @@ fields:
   DigiKey_PN: "399-13374-1-ND"
   Mouser_PN: "80-C1206C105K1RAUTO"
   Temperature_Grade: "AEC-Q200, -55 to +125 °C"
-  Voltage: "100 V"
+  Voltage: "100V"
   Tolerance: "±10%"
   Dielectric: "X7R"
   Notes: "Murata's GCM31CR72A105 is not recommended for new designs (DigiKey, 2026-10-22)."

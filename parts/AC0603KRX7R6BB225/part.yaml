@@ -20,7 +20,7 @@ fields:
   DigiKey_PN: "13-AC0603KRX7R6BB225CT-ND"
   Mouser_PN: "603-C0603KRX7R6BB225"
   Temperature_Grade: "AEC-Q200, -55 to +125 °C"
-  Voltage: "10 V"
+  Voltage: "10V"
   Tolerance: "±10%"
   Dielectric: "X7R"
   Notes: "Murata and TDK make no 10 V 2.2 uF X7R automotive part in 0603."

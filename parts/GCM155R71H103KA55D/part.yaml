@@ -20,6 +20,6 @@ fields:
   DigiKey_PN: "490-4762-1-ND"
   Mouser_PN: "81-GCM155R71H103KA5D"
   Temperature_Grade: "AEC-Q200, -55 to +125 °C"
-  Voltage: "50 V"
+  Voltage: "50V"
   Tolerance: "±10%"
   Dielectric: "X7R"

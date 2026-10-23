@@ -20,6 +20,6 @@ fields:
   DigiKey_PN: "399-C0603C104K1RACAUTOCT-ND"
   Mouser_PN: "80-C0603C104K1RAUTO"
   Temperature_Grade: "AEC-Q200, -55 to +125 °C"
-  Voltage: "100 V"
+  Voltage: "100V"
   Tolerance: "±10%"
   Dielectric: "X7R"

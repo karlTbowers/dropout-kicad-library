@@ -20,7 +20,7 @@ fields:
   DigiKey_PN: "490-GCM1885C1H472JA16DCT-ND"
   Mouser_PN: "81-GCM1885C1H472JA6D"
   Temperature_Grade: "AEC-Q200, -55 to +125 °C"
-  Voltage: "50 V"
+  Voltage: "50V"
   Tolerance: "±5%"
   Dielectric: "C0G"
   Notes: "No AEC-Q200 part exists in the drawn 0402 package (DigiKey parametric search, 2026-10-22); built in the next larger package, 0603."

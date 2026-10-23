@@ -13,9 +13,10 @@ Each row becomes an ordinary parts/<MPN>/part.yaml + pins.csv (as every other Dr
 symbolgen.py, the catalog and reviewers see nothing special), and symbolgen.py builds the symbol.
 Edit the table, never the generated part.yaml files.
 
-Value: the symbol name, i.e. the MPN, as KLC S6.2 requires (Value = symbol name). The table keeps
-the short value (`10k`, `100nF`, handbook rule D-45) in each row's `value`; it goes into the
-Description and, once a KLC exception allows it, can become the Value (VALUE_IS_MPN below).
+Layout (LAYOUT below, or --layout): "mpn" keeps Value = MPN as KLC S6.2 requires. "d45" shows the
+short value (`10k`, `100nF`, handbook rule D-45), a row with the ratings and case size, and the
+MPN in smaller text; it needs KLC exceptions (S6.2, S3.2) first. `--out DIR` writes a preview
+(parts and libraries) outside the repo.
 """
 import argparse
 import json
@@ -25,8 +26,16 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 TABLE = REPO / "parts" / "passives.yaml"
-# KLC S6.2: Value must equal the symbol name. D-45 short values need an approved exception first.
-VALUE_IS_MPN = True
+# Symbol layout. "mpn": Value = MPN, only Reference and Value shown (KLC as it stands).
+# "d45": Value = short value (10k, 100nF) with the ratings and case size on a row below it and the
+# MPN under that in smaller text. It needs KLC exceptions first: S6.2 (Value is not the symbol
+# name; the rating and Case fields) and S3.2 (MPN text smaller than 50 mil).
+LAYOUT = "mpn"
+ROWS = {"Reference": 2.858, "Value": 0.953, "ratings": -0.953, "MPN": -2.794}  # y of each row, mm
+X0 = 2.54            # rows start right of the body (Device:C plates end at 2.032)
+CHAR = 1.27          # advance per character, as scripts/check_symbol_text.py measures text
+MPN_SIZE = 1.0       # MPN text height, mm
+RATING_ROW = {"R": ["Tolerance", "Voltage", "Case"], "C": ["Voltage", "Dielectric", "Tolerance", "Case"]}
 
 SIZES = {"0402": "1005", "0603": "1608", "0805": "2012", "1206": "3216", "1210": "3225"}
 KIND = {
@@ -68,13 +77,30 @@ def description(row, fam):
     return f"{fam['manufacturer']} {fam['series']} {body}, {fam['grade']}, {fam['temperature']}, {pkg}"
 
 
-def build_part(row, fam):
+def compact(v):
+    """'50 V' -> '50V', '1/16 W' -> '1/16W': ratings as written on a schematic (D-45 style)."""
+    return str(v).replace(" ", "")
+
+
+def field_layout(fields, kind):
+    """Rows beside the body: Reference, Value, the ratings and case size, then the MPN (small)."""
+    lay = {"Reference": {"at": [X0, ROWS["Reference"]]}, "Value": {"at": [X0, ROWS["Value"]]},
+           "MPN": {"at": [X0, ROWS["MPN"]], "size": MPN_SIZE, "show": True}}
+    x = X0
+    for f in RATING_ROW[kind]:
+        if f in fields:
+            lay[f] = {"at": [round(x, 3), ROWS["ratings"]], "show": True}
+            x += (len(str(fields[f])) + 1) * CHAR
+    return lay
+
+
+def build_part(row, fam, layout):
     kind = KIND[fam["kind"]]
     size = row["size"]
     fp = f"{fam['kind']}_{size}_{SIZES[size]}Metric"
     fields = {
         "Reference": fam["kind"],
-        "Value": row["mpn"] if VALUE_IS_MPN else row["value"],
+        "Value": row["mpn"] if layout == "mpn" else row["value"],
         "Footprint": f"{kind['fp_lib']}:{fp}",
         "Datasheet": row.get("datasheet", fam["datasheet"]),
         "Description": description(row, fam),
@@ -89,15 +115,17 @@ def build_part(row, fam):
     # Rating fields (handbook rule D-45); a jumper has none (its current rating is in Description)
     if row["value"] != "0R":
         for f in kind["rating_fields"]:
-            fields[f] = row[f.lower()]
+            fields[f] = compact(row[f.lower()])
+    if layout == "d45":
+        fields["Case"] = row["size"]
     notes = " ".join(n for n in (row.get("notes"), fam.get("notes")) if n)
     if notes:
         fields["Notes"] = notes
     return fields
 
 
-def write_part(row, fam):
-    d = REPO / "parts" / row["mpn"]
+def write_part(row, fam, layout, out_dir):
+    d = out_dir / row["mpn"]
     d.mkdir(parents=True, exist_ok=True)
     kind = KIND[fam["kind"]]
     obs = row["observed"]
@@ -111,8 +139,13 @@ def write_part(row, fam):
     lines.append(f"# Observed: DigiKey {obs['digikey']}; Mouser {obs['mouser']}.")
     lines += [f"library: {kind['library']}", f"name: {row['mpn']}", f"style: {kind['style']}",
               "pins: pins.csv", "fields:"]
-    for k, v in build_part(row, fam).items():
+    fields = build_part(row, fam, layout)
+    for k, v in fields.items():
         lines.append(f"  {k}: {json.dumps(str(v), ensure_ascii=False)}")  # JSON strings are valid YAML
+    if layout == "d45":
+        lines.append("field_layout:")
+        for k, v in field_layout(fields, fam["kind"]).items():
+            lines.append(f"  {k}: {json.dumps(v)}")
     (d / "part.yaml").write_text("\n".join(lines) + "\n")
     # Pin 1 on top, pin 2 below (as KiCad's Device:R and Device:C); both passive
     (d / "pins.csv").write_text("number,name,type,unit,side,slot,alternates\n"
@@ -125,6 +158,8 @@ def main():
     ap.add_argument("--table", default=str(TABLE))
     ap.add_argument("--mpn", action="append", help="only these MPNs")
     ap.add_argument("--no-symbols", action="store_true")
+    ap.add_argument("--layout", choices=["mpn", "d45"], default=LAYOUT, help=f"symbol layout (default {LAYOUT})")
+    ap.add_argument("--out", help="preview: write parts and symbol libraries under this folder, not the repo")
     args = ap.parse_args()
     t = load_yaml(args.table)
     fams = t["families"]
@@ -140,9 +175,11 @@ def main():
             sys.exit(f"passivegen: {r['mpn']}: unknown family {r['family']}")
         if r["size"] not in SIZES:
             sys.exit(f"passivegen: {r['mpn']}: unknown size {r['size']}")
-        path = write_part(r, fams[r["family"]])
+        out = Path(args.out) if args.out else REPO / "parts"
+        path = write_part(r, fams[r["family"]], args.layout, out)
         if not args.no_symbols:
-            subprocess.run([sys.executable, str(REPO / "scripts" / "symbolgen.py"), str(path)], check=True)
+            lib = ["--out", str(out / f"{KIND[fams[r['family']]['kind']]['library']}.kicad_sym")] if args.out else []
+            subprocess.run([sys.executable, str(REPO / "scripts" / "symbolgen.py"), str(path), *lib], check=True)
     print(f"passivegen: {len(rows)} part(s)")
 
 

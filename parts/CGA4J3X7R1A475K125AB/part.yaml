@@ -20,6 +20,6 @@ fields:
   DigiKey_PN: "445-12730-1-ND"
   Mouser_PN: "810-CGA4J3X7R1A475AB"
   Temperature_Grade: "AEC-Q200, -55 to +125 °C"
-  Voltage: "10 V"
+  Voltage: "10V"
   Tolerance: "±10%"
   Dielectric: "X7R"

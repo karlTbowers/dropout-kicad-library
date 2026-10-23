@@ -21,5 +21,5 @@ fields:
   Mouser_PN: "667-ERJ-2RKF1242X"
   Temperature_Grade: "AEC-Q200, -55 to +155 °C"
   Tolerance: "±1%"
-  Power: "0.1 W"
-  Voltage: "50 V"
+  Power: "0.1W"
+  Voltage: "50V"

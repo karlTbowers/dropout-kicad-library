@@ -20,7 +20,7 @@ fields:
   DigiKey_PN: "587-MCASU168SB7474KTCA01TR-ND"
   Mouser_PN: "963-MCASU168SB7474KT"
   Temperature_Grade: "AEC-Q200, -55 to +125 °C"
-  Voltage: "50 V"
+  Voltage: "50V"
   Tolerance: "±10%"
   Dielectric: "X7R"
   Notes: "Murata makes no 50 V 470 nF X7R GCM in 0603."

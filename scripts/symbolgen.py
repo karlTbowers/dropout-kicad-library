@@ -26,6 +26,8 @@ part.yaml:
   style: testpoint                       # optional graphic style for small parts (see STYLES)
   in_bom: false                          # optional, default true: false for a part with nothing to
   in_pos_files: false                    #   buy or place (a bare-copper test pad)
+  field_layout:                          # optional: per-field position, size and visibility,
+    MPN: {at: [2.54, -2.667], size: 1.0, show: true}   # left-justified at `at` (symbol mm, y up)
 
 pins.csv columns (header row required):
   number      pin/ball number as on the footprint
@@ -447,12 +449,17 @@ def build_symbol(part, pins):
              f"\t\t(in_bom {yn('in_bom')})", "\t\t(on_board yes)", f"\t\t(in_pos_files {yn('in_pos_files')})"]
     field_y = {"Reference": top + G, "Value": -bottom - G, **STYLE_FIELD_Y.get(style, {})}
     beside = STYLE_FIELDS.get(style, {})
+    layout = part.get("field_layout") or {}
     for k, v in part["fields"].items():
         x, y = beside.get(k, (0, field_y.get(k, 0)))
-        hide = "" if k in VISIBLE else "\n\t\t\t(hide yes)"
-        justify = " (justify left)" if k in beside else ""
+        shown, size, left = k in VISIBLE, 1.27, k in beside
+        if k in layout:
+            x, y = layout[k]["at"]
+            shown, size, left = layout[k].get("show", shown), layout[k].get("size", 1.27), True
+        hide = "" if shown else "\n\t\t\t(hide yes)"
+        justify = " (justify left)" if left else ""
         lines.append(f'\t\t(property "{esc(k)}" "{esc(str(v))}"\n\t\t\t(at {fmt(x)} {fmt(y)} 0){hide}\n'
-                     f"\t\t\t(effects (font (size 1.27 1.27)){justify})\n\t\t)")
+                     f"\t\t\t(effects (font (size {fmt(size)} {fmt(size)})){justify})\n\t\t)")
     for i, (body, _, _) in enumerate(units, start=1):
         lines.append(f'\t\t(symbol "{esc(name)}_{i}_1"')
         lines.extend(body)

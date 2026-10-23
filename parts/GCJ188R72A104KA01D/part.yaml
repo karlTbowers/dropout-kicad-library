@@ -20,7 +20,7 @@ fields:
   DigiKey_PN: "490-13420-1-ND"
   Mouser_PN: "81-GCJ188R72A104KA1D"
   Temperature_Grade: "AEC-Q200, -55 to +125 °C"
-  Voltage: "100 V"
+  Voltage: "100V"
   Tolerance: "±10%"
   Dielectric: "X7R"
   Notes: "Murata makes no 100 V 100 nF X7R GCM in 0603; GCJ is Murata's AEC-Q200 soft termination series."

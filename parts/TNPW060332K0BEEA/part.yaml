@@ -21,6 +21,6 @@ fields:
   Mouser_PN: "71-TNPW060332K0BEEA"
   Temperature_Grade: "AEC-Q200, -55 to +175 °C"
   Tolerance: "±0.1%"
-  Power: "0.11 W"
-  Voltage: "100 V"
+  Power: "0.11W"
+  Voltage: "100V"
   Notes: "32 kΩ is an E192 value: no AEC-Q200 1 % thick film part offers it (Yageo AC and Panasonic ERJ-3EKF are E24/E96 only), so this 0.1 % thin film part serves the 1 % line."

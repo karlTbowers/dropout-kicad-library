@@ -21,6 +21,6 @@ fields:
   Mouser_PN: "667-ERA-3AEB103V"
   Temperature_Grade: "AEC-Q200, -55 to +155 °C"
   Tolerance: "±0.1%"
-  Power: "0.1 W"
-  Voltage: "75 V"
+  Power: "0.1W"
+  Voltage: "75V"
   Notes: "Precision part: not substitutable (0.1 %, ±25 ppm/K thin film)."

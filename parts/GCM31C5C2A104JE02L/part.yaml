@@ -20,6 +20,6 @@ fields:
   DigiKey_PN: "490-GCM31C5C2A104JE02LCT-ND"
   Mouser_PN: "81-GCM31C5C2A104JE2L"
   Temperature_Grade: "AEC-Q200, -55 to +125 °C"
-  Voltage: "100 V"
+  Voltage: "100V"
   Tolerance: "±5%"
   Dielectric: "C0G"

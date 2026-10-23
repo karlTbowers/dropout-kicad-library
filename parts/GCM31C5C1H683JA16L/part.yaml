@@ -20,7 +20,7 @@ fields:
   DigiKey_PN: "490-5323-1-ND"
   Mouser_PN: "81-GCM31C5C1H683JA6L"
   Temperature_Grade: "AEC-Q200, -55 to +125 °C"
-  Voltage: "50 V"
+  Voltage: "50V"
   Tolerance: "±5%"
   Dielectric: "C0G"
   Notes: "No AEC-Q200 68 nF C0G part exists in the drawn 0805 package (DigiKey parametric search, 2026-10-22); built in the next larger package, 1206."

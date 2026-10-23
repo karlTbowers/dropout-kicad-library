@@ -21,6 +21,6 @@ fields:
   Mouser_PN: "71-TNPW060310K0BEEA"
   Temperature_Grade: "AEC-Q200, -55 to +175 °C"
   Tolerance: "±0.1%"
-  Power: "0.11 W"
-  Voltage: "100 V"
+  Power: "0.11W"
+  Voltage: "100V"
   Notes: "Precision part: not substitutable (0.1 %, ±25 ppm/K thin film)."

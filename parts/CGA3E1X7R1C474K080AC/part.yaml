@@ -20,7 +20,7 @@ fields:
   DigiKey_PN: "445-5672-1-ND"
   Mouser_PN: "810-CGA3E1X7R1C474K"
   Temperature_Grade: "AEC-Q200, -55 to +125 °C"
-  Voltage: "16 V"
+  Voltage: "16V"
   Tolerance: "±10%"
   Dielectric: "X7R"
   Notes: "No AEC-Q200 part exists in the drawn 0402 package (DigiKey parametric search, 2026-10-22); built in the next larger package, 0603."

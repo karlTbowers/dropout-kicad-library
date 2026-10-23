@@ -134,7 +134,7 @@
 				)
 			)
 		)
-		(property "Power" "1/16 W"
+		(property "Power" "1/16W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -145,7 +145,7 @@
 				)
 			)
 		)
-		(property "Voltage" "50 V"
+		(property "Voltage" "50V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -361,7 +361,7 @@
 				)
 			)
 		)
-		(property "Power" "1/16 W"
+		(property "Power" "1/16W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -372,7 +372,7 @@
 				)
 			)
 		)
-		(property "Voltage" "50 V"
+		(property "Voltage" "50V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -588,7 +588,7 @@
 				)
 			)
 		)
-		(property "Power" "1/16 W"
+		(property "Power" "1/16W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -599,7 +599,7 @@
 				)
 			)
 		)
-		(property "Voltage" "50 V"
+		(property "Voltage" "50V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -815,7 +815,7 @@
 				)
 			)
 		)
-		(property "Power" "1/16 W"
+		(property "Power" "1/16W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -826,7 +826,7 @@
 				)
 			)
 		)
-		(property "Voltage" "50 V"
+		(property "Voltage" "50V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1236,7 +1236,7 @@
 				)
 			)
 		)
-		(property "Power" "1/16 W"
+		(property "Power" "1/16W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1247,7 +1247,7 @@
 				)
 			)
 		)
-		(property "Voltage" "50 V"
+		(property "Voltage" "50V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1463,7 +1463,7 @@
 				)
 			)
 		)
-		(property "Power" "1/16 W"
+		(property "Power" "1/16W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1474,7 +1474,7 @@
 				)
 			)
 		)
-		(property "Voltage" "50 V"
+		(property "Voltage" "50V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1690,7 +1690,7 @@
 				)
 			)
 		)
-		(property "Power" "1/16 W"
+		(property "Power" "1/16W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1701,7 +1701,7 @@
 				)
 			)
 		)
-		(property "Voltage" "50 V"
+		(property "Voltage" "50V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1917,7 +1917,7 @@
 				)
 			)
 		)
-		(property "Power" "1/16 W"
+		(property "Power" "1/16W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1928,7 +1928,7 @@
 				)
 			)
 		)
-		(property "Voltage" "50 V"
+		(property "Voltage" "50V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2144,7 +2144,7 @@
 				)
 			)
 		)
-		(property "Power" "1/16 W"
+		(property "Power" "1/16W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2155,7 +2155,7 @@
 				)
 			)
 		)
-		(property "Voltage" "50 V"
+		(property "Voltage" "50V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2371,7 +2371,7 @@
 				)
 			)
 		)
-		(property "Power" "1/10 W"
+		(property "Power" "1/10W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2382,7 +2382,7 @@
 				)
 			)
 		)
-		(property "Voltage" "75 V"
+		(property "Voltage" "75V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2598,7 +2598,7 @@
 				)
 			)
 		)
-		(property "Power" "1/10 W"
+		(property "Power" "1/10W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2609,7 +2609,7 @@
 				)
 			)
 		)
-		(property "Voltage" "75 V"
+		(property "Voltage" "75V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2825,7 +2825,7 @@
 				)
 			)
 		)
-		(property "Power" "1/10 W"
+		(property "Power" "1/10W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2836,7 +2836,7 @@
 				)
 			)
 		)
-		(property "Voltage" "75 V"
+		(property "Voltage" "75V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3052,7 +3052,7 @@
 				)
 			)
 		)
-		(property "Power" "1/10 W"
+		(property "Power" "1/10W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3063,7 +3063,7 @@
 				)
 			)
 		)
-		(property "Voltage" "75 V"
+		(property "Voltage" "75V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3279,7 +3279,7 @@
 				)
 			)
 		)
-		(property "Power" "1/10 W"
+		(property "Power" "1/10W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3290,7 +3290,7 @@
 				)
 			)
 		)
-		(property "Voltage" "75 V"
+		(property "Voltage" "75V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3506,7 +3506,7 @@
 				)
 			)
 		)
-		(property "Power" "1/10 W"
+		(property "Power" "1/10W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3517,7 +3517,7 @@
 				)
 			)
 		)
-		(property "Voltage" "75 V"
+		(property "Voltage" "75V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5524,7 +5524,7 @@
 				)
 			)
 		)
-		(property "Power" "0.1 W"
+		(property "Power" "0.1W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5535,7 +5535,7 @@
 				)
 			)
 		)
-		(property "Voltage" "75 V"
+		(property "Voltage" "75V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5762,7 +5762,7 @@
 				)
 			)
 		)
-		(property "Power" "0.1 W"
+		(property "Power" "0.1W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5773,7 +5773,7 @@
 				)
 			)
 		)
-		(property "Voltage" "75 V"
+		(property "Voltage" "75V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6194,7 +6194,7 @@
 				)
 			)
 		)
-		(property "Power" "0.1 W"
+		(property "Power" "0.1W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6205,7 +6205,7 @@
 				)
 			)
 		)
-		(property "Voltage" "50 V"
+		(property "Voltage" "50V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6421,7 +6421,7 @@
 				)
 			)
 		)
-		(property "Power" "0.1 W"
+		(property "Power" "0.1W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6432,7 +6432,7 @@
 				)
 			)
 		)
-		(property "Voltage" "50 V"
+		(property "Voltage" "50V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6648,7 +6648,7 @@
 				)
 			)
 		)
-		(property "Power" "0.1 W"
+		(property "Power" "0.1W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6659,7 +6659,7 @@
 				)
 			)
 		)
-		(property "Voltage" "50 V"
+		(property "Voltage" "50V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6875,7 +6875,7 @@
 				)
 			)
 		)
-		(property "Power" "0.1 W"
+		(property "Power" "0.1W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6886,7 +6886,7 @@
 				)
 			)
 		)
-		(property "Voltage" "50 V"
+		(property "Voltage" "50V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7102,7 +7102,7 @@
 				)
 			)
 		)
-		(property "Power" "0.1 W"
+		(property "Power" "0.1W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7113,7 +7113,7 @@
 				)
 			)
 		)
-		(property "Voltage" "50 V"
+		(property "Voltage" "50V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7329,7 +7329,7 @@
 				)
 			)
 		)
-		(property "Power" "0.1 W"
+		(property "Power" "0.1W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7340,7 +7340,7 @@
 				)
 			)
 		)
-		(property "Voltage" "50 V"
+		(property "Voltage" "50V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7556,7 +7556,7 @@
 				)
 			)
 		)
-		(property "Power" "0.1 W"
+		(property "Power" "0.1W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7567,7 +7567,7 @@
 				)
 			)
 		)
-		(property "Voltage" "50 V"
+		(property "Voltage" "50V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7783,7 +7783,7 @@
 				)
 			)
 		)
-		(property "Power" "0.1 W"
+		(property "Power" "0.1W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7794,7 +7794,7 @@
 				)
 			)
 		)
-		(property "Voltage" "50 V"
+		(property "Voltage" "50V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8010,7 +8010,7 @@
 				)
 			)
 		)
-		(property "Power" "0.1 W"
+		(property "Power" "0.1W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8021,7 +8021,7 @@
 				)
 			)
 		)
-		(property "Voltage" "50 V"
+		(property "Voltage" "50V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8237,7 +8237,7 @@
 				)
 			)
 		)
-		(property "Power" "0.1 W"
+		(property "Power" "0.1W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8248,7 +8248,7 @@
 				)
 			)
 		)
-		(property "Voltage" "75 V"
+		(property "Voltage" "75V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8464,7 +8464,7 @@
 				)
 			)
 		)
-		(property "Power" "0.1 W"
+		(property "Power" "0.1W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8475,7 +8475,7 @@
 				)
 			)
 		)
-		(property "Voltage" "75 V"
+		(property "Voltage" "75V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8691,7 +8691,7 @@
 				)
 			)
 		)
-		(property "Power" "0.1 W"
+		(property "Power" "0.1W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8702,7 +8702,7 @@
 				)
 			)
 		)
-		(property "Voltage" "75 V"
+		(property "Voltage" "75V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8918,7 +8918,7 @@
 				)
 			)
 		)
-		(property "Power" "0.1 W"
+		(property "Power" "0.1W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8929,7 +8929,7 @@
 				)
 			)
 		)
-		(property "Voltage" "75 V"
+		(property "Voltage" "75V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9145,7 +9145,7 @@
 				)
 			)
 		)
-		(property "Power" "0.1 W"
+		(property "Power" "0.1W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9156,7 +9156,7 @@
 				)
 			)
 		)
-		(property "Voltage" "75 V"
+		(property "Voltage" "75V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9372,7 +9372,7 @@
 				)
 			)
 		)
-		(property "Power" "0.1 W"
+		(property "Power" "0.1W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9383,7 +9383,7 @@
 				)
 			)
 		)
-		(property "Voltage" "75 V"
+		(property "Voltage" "75V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9998,7 +9998,7 @@
 				)
 			)
 		)
-		(property "Power" "0.1 W"
+		(property "Power" "0.1W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10009,7 +10009,7 @@
 				)
 			)
 		)
-		(property "Voltage" "100 V"
+		(property "Voltage" "100V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10236,7 +10236,7 @@
 				)
 			)
 		)
-		(property "Power" "0.1 W"
+		(property "Power" "0.1W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10247,7 +10247,7 @@
 				)
 			)
 		)
-		(property "Voltage" "100 V"
+		(property "Voltage" "100V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10679,7 +10679,7 @@
 				)
 			)
 		)
-		(property "Power" "0.1 W"
+		(property "Power" "0.1W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10690,7 +10690,7 @@
 				)
 			)
 		)
-		(property "Voltage" "75 V"
+		(property "Voltage" "75V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10917,7 +10917,7 @@
 				)
 			)
 		)
-		(property "Power" "0.11 W"
+		(property "Power" "0.11W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10928,7 +10928,7 @@
 				)
 			)
 		)
-		(property "Voltage" "100 V"
+		(property "Voltage" "100V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11155,7 +11155,7 @@
 				)
 			)
 		)
-		(property "Power" "0.11 W"
+		(property "Power" "0.11W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11166,7 +11166,7 @@
 				)
 			)
 		)
-		(property "Voltage" "100 V"
+		(property "Voltage" "100V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11393,7 +11393,7 @@
 				)
 			)
 		)
-		(property "Power" "0.11 W"
+		(property "Power" "0.11W"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11404,7 +11404,7 @@
 				)
 			)
 		)
-		(property "Voltage" "100 V"
+		(property "Voltage" "100V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)

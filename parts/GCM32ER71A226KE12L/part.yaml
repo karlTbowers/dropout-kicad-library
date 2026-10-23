@@ -20,6 +20,6 @@ fields:
   DigiKey_PN: "490-4797-1-ND"
   Mouser_PN: "81-GCM32ER71A226KE2L"
   Temperature_Grade: "AEC-Q200, -55 to +125 °C"
-  Voltage: "10 V"
+  Voltage: "10V"
   Tolerance: "±10%"
   Dielectric: "X7R"

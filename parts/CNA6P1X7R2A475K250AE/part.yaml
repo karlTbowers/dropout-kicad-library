@@ -20,7 +20,7 @@ fields:
   DigiKey_PN: "445-181409-1-ND"
   Mouser_PN: "810-CNA6P1X7R2A475K2"
   Temperature_Grade: "AEC-Q200, -55 to +125 °C"
-  Voltage: "100 V"
+  Voltage: "100V"
   Tolerance: "±10%"
   Dielectric: "X7R"
   Notes: "TDK makes this value only in its CNA soft termination series."
