@@ -40,6 +40,7 @@ Planned categories (created as the first part in each one is added). Microcontro
 | `DropOut_Oscillator` | Footprints and 3D models for oscillators (KLC footprint library naming) |
 | `DropOut_Crystal` | Footprints and 3D models for crystals |
 | `DropOut_Connector_Samtec` | Footprints and 3D models for Samtec connectors |
+| `DropOut_Connector_TE-Connectivity` | Footprints and 3D models for TE Connectivity connectors (incl. DEUTSCH), named after KiCad's `Connector_TE-Connectivity` |
 | `DropOut_Diode_SMD` | Footprints and 3D models for SMD diode packages (DO-218, DO-214, SOD...) |
 | `DropOut_Inductor_SMD` | Footprints and 3D models for SMD inductors and common mode chokes |
 | `DropOut_Package_BGA` | Footprints and 3D models for ball grid array packages (footprint libraries follow KLC package-type naming) |
