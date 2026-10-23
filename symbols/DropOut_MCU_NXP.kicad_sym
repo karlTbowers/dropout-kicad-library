@@ -9,7 +9,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "U"
-			(at 0 25.4 0)
+			(at 0 27.94 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -19,7 +19,7 @@
 			)
 		)
 		(property "Value" "S32K344EHT1MMMST"
-			(at 0 -25.4 0)
+			(at 0 -27.94 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -162,8 +162,8 @@
 		)
 		(symbol "S32K344EHT1MMMST_1_1"
 			(rectangle
-				(start -25.4 12.7)
-				(end 25.4 -12.7)
+				(start -25.4 20.32)
+				(end 25.4 -20.32)
 				(stroke
 					(width 0.254)
 					(type default)
@@ -173,7 +173,7 @@
 				)
 			)
 			(pin power_in line
-				(at -20.32 -17.78 90)
+				(at -20.32 -25.4 90)
 				(length 5.08)
 				(name "VSS"
 					(effects
@@ -191,7 +191,7 @@
 				)
 			)
 			(pin power_in line
-				(at -17.78 -17.78 90)
+				(at -17.78 -25.4 90)
 				(length 5.08)
 				(name "VSS"
 					(effects
@@ -209,7 +209,7 @@
 				)
 			)
 			(pin power_in line
-				(at -15.24 -17.78 90)
+				(at -15.24 -25.4 90)
 				(length 5.08)
 				(name "VSS"
 					(effects
@@ -227,7 +227,7 @@
 				)
 			)
 			(pin power_in line
-				(at -12.7 -17.78 90)
+				(at -12.7 -25.4 90)
 				(length 5.08)
 				(name "VSS"
 					(effects
@@ -245,7 +245,7 @@
 				)
 			)
 			(pin power_in line
-				(at -12.7 17.78 270)
+				(at -12.7 25.4 270)
 				(length 5.08)
 				(name "VDD_HV_A"
 					(effects
@@ -263,7 +263,7 @@
 				)
 			)
 			(pin power_in line
-				(at -10.16 -17.78 90)
+				(at -10.16 -25.4 90)
 				(length 5.08)
 				(name "VSS"
 					(effects
@@ -281,7 +281,7 @@
 				)
 			)
 			(pin power_in line
-				(at -10.16 17.78 270)
+				(at -10.16 25.4 270)
 				(length 5.08)
 				(name "VDD_HV_A"
 					(effects
@@ -299,7 +299,7 @@
 				)
 			)
 			(pin power_in line
-				(at -7.62 -17.78 90)
+				(at -7.62 -25.4 90)
 				(length 5.08)
 				(name "VSS"
 					(effects
@@ -317,7 +317,7 @@
 				)
 			)
 			(pin power_in line
-				(at 7.62 17.78 270)
+				(at 7.62 25.4 270)
 				(length 5.08)
 				(name "VREFH"
 					(effects
@@ -335,7 +335,7 @@
 				)
 			)
 			(pin power_in line
-				(at -7.62 17.78 270)
+				(at -7.62 25.4 270)
 				(length 5.08)
 				(name "VDD_HV_A"
 					(effects
@@ -353,7 +353,7 @@
 				)
 			)
 			(pin power_in line
-				(at -22.86 17.78 270)
+				(at -22.86 25.4 270)
 				(length 5.08)
 				(name "V15"
 					(effects
@@ -389,7 +389,7 @@
 				)
 			)
 			(pin power_in line
-				(at -20.32 17.78 270)
+				(at -20.32 25.4 270)
 				(length 5.08)
 				(name "V15"
 					(effects
@@ -407,7 +407,7 @@
 				)
 			)
 			(pin power_in line
-				(at -5.08 -17.78 90)
+				(at -5.08 -25.4 90)
 				(length 5.08)
 				(name "VSS"
 					(effects
@@ -425,7 +425,7 @@
 				)
 			)
 			(pin power_in line
-				(at -2.54 -17.78 90)
+				(at -2.54 -25.4 90)
 				(length 5.08)
 				(name "VSS"
 					(effects
@@ -443,7 +443,7 @@
 				)
 			)
 			(pin power_in line
-				(at -22.86 -17.78 90)
+				(at -22.86 -25.4 90)
 				(length 5.08)
 				(name "VREFL"
 					(effects
@@ -497,7 +497,7 @@
 				)
 			)
 			(pin power_in line
-				(at 0 -17.78 90)
+				(at 0 -25.4 90)
 				(length 5.08)
 				(name "VSS"
 					(effects
@@ -533,7 +533,7 @@
 				)
 			)
 			(pin power_in line
-				(at 2.54 -17.78 90)
+				(at 2.54 -25.4 90)
 				(length 5.08)
 				(name "VSS"
 					(effects
@@ -569,7 +569,7 @@
 				)
 			)
 			(pin power_in line
-				(at -17.78 17.78 270)
+				(at -17.78 25.4 270)
 				(length 5.08)
 				(name "V15"
 					(effects
@@ -605,7 +605,7 @@
 				)
 			)
 			(pin power_in line
-				(at -15.24 17.78 270)
+				(at -15.24 25.4 270)
 				(length 5.08)
 				(name "V15"
 					(effects
@@ -623,7 +623,7 @@
 				)
 			)
 			(pin power_in line
-				(at -5.08 17.78 270)
+				(at -5.08 25.4 270)
 				(length 5.08)
 				(name "VDD_HV_A"
 					(effects
@@ -659,7 +659,7 @@
 				)
 			)
 			(pin power_in line
-				(at 5.08 -17.78 90)
+				(at 5.08 -25.4 90)
 				(length 5.08)
 				(name "VSS"
 					(effects
@@ -677,7 +677,7 @@
 				)
 			)
 			(pin power_in line
-				(at -2.54 17.78 270)
+				(at -2.54 25.4 270)
 				(length 5.08)
 				(name "VDD_HV_A"
 					(effects
@@ -695,7 +695,7 @@
 				)
 			)
 			(pin power_in line
-				(at 7.62 -17.78 90)
+				(at 7.62 -25.4 90)
 				(length 5.08)
 				(name "VSS"
 					(effects
@@ -713,7 +713,7 @@
 				)
 			)
 			(pin power_in line
-				(at 0 17.78 270)
+				(at 0 25.4 270)
 				(length 5.08)
 				(name "VDD_HV_B"
 					(effects
@@ -731,7 +731,7 @@
 				)
 			)
 			(pin power_in line
-				(at 10.16 -17.78 90)
+				(at 10.16 -25.4 90)
 				(length 5.08)
 				(name "VSS"
 					(effects
@@ -749,7 +749,7 @@
 				)
 			)
 			(pin power_in line
-				(at 12.7 -17.78 90)
+				(at 12.7 -25.4 90)
 				(length 5.08)
 				(name "VSS"
 					(effects
@@ -767,7 +767,7 @@
 				)
 			)
 			(pin power_in line
-				(at 2.54 17.78 270)
+				(at 2.54 25.4 270)
 				(length 5.08)
 				(name "VDD_HV_B"
 					(effects
@@ -785,7 +785,7 @@
 				)
 			)
 			(pin power_in line
-				(at 5.08 17.78 270)
+				(at 5.08 25.4 270)
 				(length 5.08)
 				(name "VDD_HV_B"
 					(effects
@@ -803,7 +803,7 @@
 				)
 			)
 			(pin power_in line
-				(at 15.24 -17.78 90)
+				(at 15.24 -25.4 90)
 				(length 5.08)
 				(name "VSS"
 					(effects
@@ -821,7 +821,7 @@
 				)
 			)
 			(pin power_in line
-				(at 17.78 -17.78 90)
+				(at 17.78 -25.4 90)
 				(length 5.08)
 				(name "VSS"
 					(effects
@@ -839,7 +839,7 @@
 				)
 			)
 			(pin power_in line
-				(at 20.32 -17.78 90)
+				(at 20.32 -25.4 90)
 				(length 5.08)
 				(name "VSS"
 					(effects
@@ -857,7 +857,7 @@
 				)
 			)
 			(pin power_in line
-				(at 22.86 -17.78 90)
+				(at 22.86 -25.4 90)
 				(length 5.08)
 				(name "VSS"
 					(effects

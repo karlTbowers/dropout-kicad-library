@@ -146,7 +146,11 @@ def build_unit(pins):
     # half width: names on both sides plus a gap, and room for the top/bottom pin row
     hw = snap_up(max((width("L") + width("R") + 2 * G) / 2, ((cols - 1) * TB_PITCH + 2 * G) / 2, 2 * G))
     top = G * math.ceil((rows - 1) / 2)  # y of the first L/R row; rows centred on the origin
-    hh = max(top + G, snap_up((width("T") + width("B") + 2 * G) / 2), 2 * G)
+    # Top/bottom pin names are drawn vertically inside the body; keep them clear of the
+    # left/right pin rows (whose names can reach the middle) with a band above and below.
+    band_t = width("T") + G if sides["T"] else 0
+    band_b = width("B") + G if sides["B"] else 0
+    hh = snap_up(max(top + G + max(band_t, band_b), 2 * G))
     out = [f"\t\t\t(rectangle (start {fmt(-hw)} {fmt(hh)}) (end {fmt(hw)} {fmt(-hh)})\n"
            f"\t\t\t\t(stroke (width 0.254) (type default)) (fill (type background)))"]
     for slot, p in sides["L"]:

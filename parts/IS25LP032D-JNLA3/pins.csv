@@ -1,0 +1,9 @@
+number,name,type,unit,side,slot,alternates
+1,~{CE},input,1,L,,
+6,SCK,input,1,L,,
+5,SI/IO0,bidirectional,1,L,,
+2,SO/IO1,bidirectional,1,R,,
+3,~{WP}/IO2,bidirectional,1,R,,
+7,~{HOLD}/~{RESET}/IO3,bidirectional,1,R,,
+8,VCC,power_in,1,T,,
+4,GND,power_in,1,B,,

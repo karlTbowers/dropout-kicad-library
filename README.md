@@ -39,6 +39,7 @@ Planned categories (created as the first part in each one is added). Microcontro
 | `DropOut_Connector` | Connectors and headers |
 | `DropOut_Oscillator` | Footprints and 3D models for oscillators (KLC footprint library naming) |
 | `DropOut_Package_BGA` | Footprints and 3D models for ball grid array packages (footprint libraries follow KLC package-type naming) |
+| `DropOut_Package_SO` | Footprints and 3D models for small-outline packages (SOIC, SSOP, TSSOP, HTSSOP) |
 
 ## Using it in a project
 

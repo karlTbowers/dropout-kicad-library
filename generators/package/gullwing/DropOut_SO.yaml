@@ -1,0 +1,35 @@
+# DropOut footprint specs for the kicad-library-tools gullwing generator (SOIC, SSOP, TSSOP...).
+# Generate with: scripts/generate_footprint.py generators/package/gullwing/DropOut_SO.yaml --lib DropOut_Package_SO
+# Source documents are archived in the private dropout-vendor-docs repo.
+
+default_parameters:
+  device_type: 'SOIC'
+  library_Suffix: 'SO'
+
+# IS25LP032D-JNLA3 ("N" package). ISSI gives no land pattern, so the land pattern is IPC-7351
+# from the outline, as KiCad's stock footprint of the same name; the outline (ISSI IS25LP032D
+# datasheet Rev. A16 §10.2) is identical to JEDEC MS-012AA.
+SOIC-8_3.9x4.9mm_P1.27mm:
+  size_source: 'ISSI IS25LP032D/IS25WP032D datasheet Rev. A16, 10.2 8-pin JEDEC 150mil SOIC (N), JEDEC MS-012AA, https://www.issi.com/WW/pdf/25LP-WP032D.pdf#page=110'
+  device_type: 'SOIC'
+  body_size_x:
+    nominal: 3.9
+    tolerance: 0.1      # E1 3.80..4.00
+  body_size_y:
+    minimum: 4.8        # D
+    maximum: 5.0
+  body_height: 1.35 .. 1.75   # A max 1.75
+  body_pcb_gap: 0.10 .. 0.25  # A1
+  overall_size_x:
+    nominal: 6
+    tolerance: 0.2      # E 5.80..6.20
+  lead_width:
+    minimum: 0.31       # b
+    maximum: 0.51
+  lead_len:
+    minimum: 0.4        # L
+    maximum: 1.27
+  lead_height: 0.17 .. 0.25
+  pitch: 1.27
+  num_pins_x: 0
+  num_pins_y: 4
