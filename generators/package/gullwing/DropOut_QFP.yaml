@@ -1,0 +1,47 @@
+# DropOut footprint specs for the kicad-library-tools gullwing generator (QFP packages).
+# Generate with: scripts/generate_footprint.py generators/package/gullwing/DropOut_QFP.yaml --lib DropOut_Package_QFP
+# Source documents are archived in the private dropout-vendor-docs repo.
+
+default_parameters:
+  device_type: 'LQFP'
+  library_Suffix: 'QFP'
+
+# MFS2613HMDA2AD (FS26). NXP SOT1571-6 / 98ASA00945D rev. B, H-PQFP-G-48 7x7x1.5 mm, 0.5 mm pitch,
+# exposed pad: FS26 short data sheet Rev. 6.2 Figures 56-61 (pages 150-155).
+# Land pattern (Fig. 60): 48X (1.5) x (0.27) pads, centres 2X 4.25 from the axis -> pad-to-pad 7.0
+# inside, 10.0 outside; solderable exposed pad (3.9) square. Mask (Fig. 59): pads (1.6) x (0.37),
+# exposed pad (4) square. Paste (Fig. 61): 4X (1.55) squares at 2X 0.925 -> 4 x 1.55^2 / 3.9^2 =
+# 0.632 coverage. Note 10: keep a (5.2) square around the exposed pad free of other exposed metal.
+LQFP-48-1EP_7x7mm_P0.5mm_EP3.9x3.9mm:
+  size_source:
+    url: 'https://www.nxp.com/docs/en/data-sheet/FS26_SDS.pdf'
+    page: 150
+  manufacturer: 'NXP'
+  part_number: 'SOT1571-6'
+  device_type: 'LQFP'
+  body_size_x: 7
+  body_size_y: 7
+  body_height: 1.35 .. 1.45
+  overall_height: 1.60
+  body_pcb_gap: 0.05 .. 0.15
+  overall_size_x: 9
+  overall_size_y: 9
+  lead_width: 0.17 .. 0.27
+  lead_len: 0.5 .. 0.7
+  lead_height: 0.09 .. 0.20
+  pitch: 0.5
+  num_pins_x: 12
+  num_pins_y: 12
+  EP_size_x: 3.5 .. 5.2
+  EP_size_y: 3.5 .. 5.2
+  EP_size_x_overwrite: 3.9
+  EP_size_y_overwrite: 3.9
+  EP_mask_x: 4.0
+  EP_mask_y: 4.0
+  EP_num_paste_pads: [2, 2]
+  EP_paste_coverage: 0.632
+  pad_to_pad_min_x_overwrite: 7.0
+  pad_to_pad_max_x_overwrite: 10.0
+  pad_to_pad_min_y_overwrite: 7.0
+  pad_to_pad_max_y_overwrite: 10.0
+  pad_size_y_overwrite: 0.27
