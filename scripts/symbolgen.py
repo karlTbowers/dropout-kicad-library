@@ -38,7 +38,8 @@ pins.csv columns (header row required):
 Every package pin gets its own visible pin: DropOut never combines pins (no native pin stacks,
 no hidden pins stacked under a visible one), even where KLC S4.3 would allow it. Bodies are
 sized from pin-name lengths and centred on the origin (KLC S3.1); pins are 200 mil long on a
-100 mil grid with 20 mil name offset (S3.6). The result is normalised with `kicad-cli sym upgrade` when kicad-cli is available.
+100 mil grid with 20 mil name offset (S3.6). No text may overprint other text (handbook D-47):
+symbolgen refuses to write a symbol that check_symbol_text.py would reject. The result is normalised with `kicad-cli sym upgrade` when kicad-cli is available.
 """
 import argparse
 import csv
@@ -55,6 +56,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from check_symbol_fields import top_level_symbols  # noqa: E402
+from check_symbol_text import check_symbol, parse  # noqa: E402
 
 G = 2.54          # 100 mil grid
 PIN_LEN = 5.08    # 200 mil pins, as KiCad's stock MCU symbols
@@ -325,6 +327,9 @@ def main():
     part = load_yaml(part_path)
     pins = read_pins(part_path.parent / part.get("pins", "pins.csv"))
     sym = build_symbol(part, pins)
+    overprints = check_symbol(parse(sym)[0])
+    if overprints:
+        sys.exit("symbolgen: text overprints (D-47); move pins or fix the layout:\n  " + "\n  ".join(overprints))
     out = Path(args.out) if args.out else REPO / "symbols" / f"{part['library']}.kicad_sym"
     write_library(out, part["name"], sym)
     units = len(part.get("units") or {p["unit"] for p in pins})
