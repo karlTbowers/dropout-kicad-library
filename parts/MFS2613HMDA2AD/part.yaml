@@ -1,0 +1,30 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/MFS2613HMDA2AD/part.yaml
+# Pins from the FS26 short data sheet (FS26_SDS) Rev. 6.2, Table 3 and Figure 7 (LQFP48 with exposed
+# pad; EP = pin 49, ground). NXP's "B" suffix marks active-low pins: RSTB, INTB, FS0B, FS1B, CSB are
+# drawn ~{RST}, ~{INT}, ~{FS0}, ~{FS1}, ~{CS} (KLC S4.7). Output structures from the data sheet:
+# VBST_PG, INTB open drain; FS0B/FS1B open with external pull-up; RSTB open-drain I/O
+# (bidirectional); MISO push-pull, tri-stated when deselected. VREF is the reference OUTPUT
+# (power_out); KLC S4.4 suggests "input" from the name alone (warning).
+# Part number (data sheet Fig. 4 / Table 2): MFS26 1 3 H M D A2 AD = production, VCORE 0.8 A with 2
+# trackers, FS1b + long-duration timer, enhanced-manufacturability release, -40..125 °C, ASIL D,
+# OTP configuration A2 = "S32K344 + FS26 EVB ASIL D S32K3X4EVB-x257", China assembly site.
+# Chosen with the user 2026-10-22: the dev boards carry unorderable prototypes (PFS2613HMDGVAD,
+# PFS26ZZXMA0D). The OTP configuration report and files are on NXP's site (sign-in).
+library: DropOut_Power
+name: MFS2613HMDA2AD
+pins: pins.csv
+fields:
+  Reference: U
+  Value: MFS2613HMDA2AD
+  Footprint: DropOut_Package_QFP:NXP_SOT1571-6_LQFP-48-1EP_7x7mm_P0.5mm_EP3.9x3.9mm_Mask4x4mm
+  Datasheet: https://www.nxp.com/docs/en/data-sheet/FS26_SDS.pdf
+  Description: NXP FS26 safety system basis chip, ASIL D, VCORE buck 0.8 A, VPRE buck, VBST boost controller, 2 LDOs, 2 trackers, VREF, challenger watchdog, FS0B/FS1B, OTP configured for S32K344 (S32K3X4EVB-x257, config DA2), 40 V, LQFP-48 EP
+  ki_keywords: SBC system basis chip PMIC safety ASIL watchdog regulator S32K3 automotive
+  ki_fp_filters: NXP*SOT1571?6*LQFP*7x7mm*P0.5mm*
+  Manufacturer: NXP Semiconductors
+  MPN: MFS2613HMDA2AD
+  DigiKey_PN: 568-MFS2613HMDA2AD-ND
+  Mouser_PN: 771-MFS2613HMDA2AD
+  Temperature_Grade: -40 to +125 °C (TA)
+  Notes: OTP configuration DA2 (S32K344 + FS26 EVB S32K3X4EVB-x257). The configuration report sets the regulator voltages; check it on nxp.com (sign-in) before use.
