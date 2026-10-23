@@ -1,0 +1,29 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/NTCS0603E3103FMT/part.yaml
+# Vishay NTCS0603E3....T data sheet, doc 29056 (rev. 29-Sep-2026): ordering table p. 1:
+# NTCS0603E3103*MT = 10 kOhm, B25/85 3610 K +/-1 %; "F" = +/-1 % on R25. -55 to +150 C,
+# 125 mW at 25 C, 3.0 mW/K, AEC-Q200, glass protected, NiSn terminations, 4000/reel. Recommended
+# solder land p. 2. Only the M (3610 K) curve is a candidate; FLT (3435 K) and FHT (3960 K) are
+# other materials, not built. Pins as KiCad's Device:Thermistor_NTC.
+# R-T data for firmware: Vishay NTC RT Calculation Tool (vishay.com/en/thermistors/ntc-rt-calculator/),
+# ordering code NTCS0603E3103FMT = curve 32, -55 to 150 C in 1 C steps with Rmin/Rmax/dT at
+# +/-1 %; exported 2026-10-22 and archived in dropout-vendor-docs.
+# Node60 temperature sensing: second source.
+library: DropOut_Thermistor
+name: NTCS0603E3103FMT
+style: thermistor_ntc
+pins: pins.csv
+fields:
+  Reference: RT
+  Value: NTCS0603E3103FMT
+  Footprint: DropOut_Resistor_SMD:R_0603_1608Metric_Pad0.8x1.0mm
+  Datasheet: https://www.vishay.com/docs/29056/ntcs0603e3t.pdf
+  Description: Vishay NTCS0603E3 NTC thermistor 10 kΩ ±1 %, B25/85 3610 K ±1 %, -55 to +150 °C, AEC-Q200, glass protected, 0603 (1608 metric)
+  ki_keywords: thermistor NTC temperature sensor 10k automotive
+  ki_fp_filters: R?0603?1608Metric*
+  Manufacturer: Vishay BCcomponents
+  MPN: NTCS0603E3103FMT
+  DigiKey_PN: BC2472CT-ND
+  Mouser_PN: 594-NTCS0603E3103FMT
+  Temperature_Grade: AEC-Q200, -55 to +150 °C
+  Notes: R-T table from the Vishay NTC RT Calculation Tool, curve 32 (https://www.vishay.com/en/thermistors/ntc-rt-calculator/)

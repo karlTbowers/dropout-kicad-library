@@ -1,0 +1,30 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/TPS7B8133QWDRVRQ1/part.yaml
+# Pins from TPS7B81-Q1 datasheet SBVS370F (Sept 2025) Table 4-1. Orderable codes from the Package
+# Option Addendum (p. 22): TPS7B8133 = fixed 3.3 V, Q = automotive (AEC-Q100 Grade 1, TA -40 to
+# +125 C, TJ -40 to +150 C), R = reel. IN is on the left (KLC S4.2). EN is high-voltage tolerant
+# (abs. max VIN) with no internal pull: tie it to IN for always-on use ("connect to the IN pin for
+# self-bias applications", 6.3.1); VIH 2 V, IEN 10 nA typ. Iq (EN >= 2 V, VIN 6-40 V, TJ -40 to
+# 150 C): 1.9 typ / 3.5 max uA at IOUT = 0; 2.7 typ / 4.5 max uA at 0.2 mA (DRV, KVU), 6.5 max uA
+# (DGN); shutdown 0.3 / 1 uA. DNC: "do not connect to a biased voltage; tie to ground or leave
+# floating": typed no_connect so ERC flags a wire, leave it open. The thermal pad is not a
+# numbered pin in Table 4-1; TI numbers it on the package drawing; tie it to GND.
+# QWDRVRQ1 = DRV0006A WSON 2x2 with wettable flanks (Sn finish, MSL 1); same pinout and land
+# pattern as TPS7B8133QDRVRQ1 (pin table in parts/TPS7B8133QDRVRQ1/pins.csv).
+# Node60 always-on LDO for the LAN8670 VDDAU (selected 2026-10-22): the version Node60 fits.
+library: DropOut_Power
+name: TPS7B8133QWDRVRQ1
+pins: ../TPS7B8133QDRVRQ1/pins.csv
+fields:
+  Reference: U
+  Value: TPS7B8133QWDRVRQ1
+  Footprint: DropOut_Package_DFN_QFN:Texas_DRV0006A_WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm
+  Datasheet: https://www.ti.com/lit/ds/symlink/tps7b81-q1.pdf
+  Description: TI TPS7B81-Q1 40 V 150 mA ultra-low-Iq LDO, fixed 3.3 V, 2.7 µA typ / 4.5 µA max Iq, enable, AEC-Q100 Grade 1, WSON-6 2x2 mm with wettable flanks
+  ki_keywords: LDO low-dropout linear voltage regulator 3.3V ultra-low-Iq battery standby automotive
+  ki_fp_filters: Texas*DRV0006A*WSON*
+  Manufacturer: Texas Instruments
+  MPN: TPS7B8133QWDRVRQ1
+  DigiKey_PN: 296-TPS7B8133QWDRVRQ1CT-ND
+  Mouser_PN: 595-PS7B8133QWDRVRQ1
+  Temperature_Grade: AEC-Q100 Grade 1, TJ -40 to +150 °C
