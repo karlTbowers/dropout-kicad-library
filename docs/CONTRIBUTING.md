@@ -50,6 +50,20 @@ Optional: `Temperature_Grade` (e.g. `AEC-Q100 Grade 1`), `Notes`, `Reference_Man
 
 The `Datasheet` field must be the **manufacturer's** URL, never a distributor copy. Datasheet PDFs are never committed.
 
+### Parts with nothing to buy (proposed)
+
+Some library parts are features of the board itself, e.g. a bare copper test pad: there is no MPN and nothing to order or place. They still carry every required field, filled in like this:
+
+| Field | Value |
+|---|---|
+| Symbol name, `Value`, `MPN` | A KLC-style name for the feature, e.g. `TestPoint_Pad_D1.0mm` (usually the footprint name) |
+| `Manufacturer` | `DropOut` |
+| `DigiKey_PN`, `Mouser_PN` | `-` |
+| `Datasheet` | The generator or document that defines the feature (e.g. a link to the footprint script) |
+| `Notes` | "PCB copper only; nothing to order." |
+
+The symbol is marked `(in_bom no)` and `(in_pos_files no)` (`in_bom: false`, `in_pos_files: false` in `part.yaml`), and the footprint has the attributes `exclude_from_bom exclude_from_pos_files`. Then BOM and placement exports leave it out, and `Manufacturer: DropOut` never reaches a purchasing list. This applies only to parts that are pure PCB features; anything with a physical part to buy uses the real MPN.
+
 ### Library names
 
 `DropOut_<Category>`, where `<Category>` follows KLC functional naming (see README for the list). New categories need approval.
