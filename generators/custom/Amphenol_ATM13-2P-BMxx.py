@@ -14,16 +14,18 @@ Sources (archived in dropout-vendor-docs, Amphenol-SINE/ATM/):
 - Body: same drawing. Flange 36.8 x 27.0 with the flange seal face 16.5 in front of the pin row
   (top boss 10.5 behind it, pins 6.0 further), overall length 39.7, 26.8 from the rear to the flange
   face, mating shroud 16.6 x 16.2, pins Ø1.0 with tails 3.05 below the boss faces. The rear deck
-  width and the heights are read from the drawing views (not dimensioned): the 3D model is an
-  envelope, not a manufacturer model.
+  width is read from the drawing views (not dimensioned).
+- 3D model: Amphenol SINE's own STEP for ATM13-2P-BM04 (CADENAS PARTcommunity download, 2026-10-25,
+  header "License CC BY-ND 4.0"; the user reports Amphenol SINE allowed publishing and modifying it).
+  Amphenol_ATM13-2P-BMxx_step.py places it in the footprint frame (zero offset and rotation, KLC
+  F9.3) without changing its geometry; this script does not write the model.
 - Pin numbering: the drawing's mounting-face (bottom) view marks PIN #1 on the left with the
   mating face up; seen from the component side with the mating face toward +y, pin 1 is on the
   left (x = 0) and pin 2 on the right. Check against the cavity letters moulded on a sample.
 
 Origin at pin 1, mating face toward +y (the panel / board edge side).
 """
-from fplib import (CRT_W, FAB_W, METAL, SILK_W, footprint_text, line, model_ref, poly,
-                   r, text, up, write_footprint, write_model)
+from fplib import (CRT_W, FAB_W, SILK_W, footprint_text, line, model_ref, poly, r, text, up, write_footprint)
 
 LIB = "DropOut_Connector_Amphenol"
 NAME = "Amphenol_ATM13-2P-BMxx_1x02_P4.20mm_Horizontal"
@@ -38,19 +40,17 @@ SCREWS = [(XC, 6.00), (XC - 18.02 / 2, 6.00 - 12.35), (XC + 18.02 / 2, 6.00 - 12
 CRT_CLR = 0.5                   # KLC F5.3: connectors
 
 FLANGE_FACE = 16.5              # 10.5 + 6.0 from the pin row
-REAR = FLANGE_FACE - 26.8       # -10.3
-FRONT = REAR + 39.7             # 29.4, mating face
-# Body outline seen from above, from the rear (-y) to the mating face (+y): (y0, y1, half width,
-# height). None = the shroud, which does not reach the board.
+REAR = -10.25                   # 26.8 behind the flange face (drawing); -10.25 in the vendor STEP
+FRONT = 29.4                    # mating face, 39.7 from the rear
+# Body outline seen from above, from the rear (-y) to the mating face (+y): (y0, y1, half width),
+# from slices of the vendor STEP (it agrees with the drawing's 36.8 flange, 16.6 shroud, 39.7 length).
 SECTIONS = [
-    (REAR, 1.8, 12.0, 6.0),             # rear deck with the two outer screw bosses
-    (1.8, FLANGE_FACE, 18.4, 25.5),     # housing and flange, 36.8 wide, 27.0 tall (1.5 below the board top)
-    (FLANGE_FACE, FRONT, 8.3, None),    # mating shroud 16.6 x 16.2 through the panel cutout
+    (REAR, 2.6, 12.95),                 # rear deck with the two outer screw bosses
+    (2.6, FLANGE_FACE, 18.41),          # housing and flange, 36.8 wide
+    (FLANGE_FACE, 17.3, 16.90),         # flange seal lip
+    (17.3, 27.3, 8.30),                 # mating shroud 16.6 wide, through the panel cutout
+    (27.3, FRONT, 6.40),                # latch
 ]
-AXIS_Z = 9.3                            # mating axis above the board (read from the side view)
-SHROUD_Z = (AXIS_Z - 8.1, AXIS_Z + 8.1)
-TAIL = 3.05
-PIN_D = 1.0
 
 
 def stepped(offset):
@@ -86,7 +86,7 @@ def footprint():
     fab = stepped(0)
     silk_off = FAB_W / 2 + SILK_W / 2 + 0.04          # 0.15 outside the body line
     silk = stepped(silk_off)
-    yc = (REAR + FRONT) / 2
+    yc = round((REAR + FRONT) / 2, 2)                 # on the 0.01 grid (KLC F5.3)
     crt = [(XC + up(x - XC, 0.01), yc + up(y - yc, 0.01)) for x, y in stepped(CRT_CLR)]
     top = SECTIONS[0][0] - silk_off
     # pin 1 marker: silk triangle on the rear edge above pin 1, fab triangle inside the body edge
@@ -118,27 +118,5 @@ def footprint():
     return footprint_text(NAME, descr, tags, body, attr="through_hole")
 
 
-def model():
-    import cadquery as cq
-    box = lambda x0, x1, y0, y1, z0, z1: cq.Workplane("XY").box(x1 - x0, y1 - y0, z1 - z0) \
-        .translate(((x0 + x1) / 2, (y0 + y1) / 2, (z0 + z1) / 2))
-    housing = None
-    for y0, y1, hw, h in SECTIONS:
-        z0, z1 = (0, h) if h else SHROUD_Z
-        b = box(XC - hw, XC + hw, y0, y1, z0, z1)
-        housing = b if housing is None else housing.union(b)
-    housing = housing.cut(box(XC - 6.8, XC + 6.8, FRONT - 11.0, FRONT + 1, AXIS_Z - 6.6, AXIS_Z + 6.6))
-    for x, y in SCREWS:                                 # screw holes in the bosses
-        housing = housing.cut(cq.Workplane("XY").circle(2.79 / 2).extrude(6.4).translate((x, y, -1)))
-    metal = None
-    for x in (0, PITCH):
-        tail = cq.Workplane("XY").circle(PIN_D / 2).extrude(TAIL + 1.0).translate((x, 0, -TAIL))
-        mate = cq.Workplane("XZ").circle(PIN_D / 2).extrude(-9.0).translate((x, FRONT - 11.0, AXIS_Z))
-        part = tail.union(mate)
-        metal = part if metal is None else metal.union(part)
-    return [(housing, (0.55, 0.56, 0.58)), (metal, METAL)]
-
-
 if __name__ == "__main__":
     print("footprint ", write_footprint(LIB, NAME, footprint()))
-    print("3D model  ", write_model(LIB, NAME, model()))
