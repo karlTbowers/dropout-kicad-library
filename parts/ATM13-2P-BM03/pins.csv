@@ -1,0 +1,3 @@
+number,name,type,unit,side,slot,alternates
+1,Pin_1,passive,1,L,0,
+2,Pin_2,passive,1,L,1,
