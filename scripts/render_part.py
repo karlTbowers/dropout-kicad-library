@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
-"""Render a part for visual review: every symbol unit and its footprint as PNG, plus the 3D
-model's bounding box.
+"""Render a part for visual review: every symbol unit and its footprint as PNG, 3D views of the
+footprint with its model as KiCad places it, and the model's bounding box.
 
 Usage (tools Python, for the STEP bounding box):
   ~/.cache/dropout/klt-venv/bin/python scripts/render_part.py <Library>:<Symbol> [-o DIR]
 
-Writes DIR/<Symbol>_unit<N>.png and DIR/<footprint>.png (default DIR: a temp folder, printed),
-then prints the STEP bounding box. Read the PNGs: pin names and numbers readable and not
-overlapping, every pin visible, pin 1 marking, courtyard, fab and silk.
+Writes DIR/<Symbol>_unit<N>.png, DIR/<footprint>.png and DIR/<footprint>_3d_{top,bottom,iso}.png
+(default DIR: a temp folder, printed), then prints the STEP bounding box. Read the PNGs: pin names
+and numbers readable and not overlapping, every pin visible, pin 1 marking, courtyard, fab and
+silk; in 3D, the model on its pads, seated on the board, and facing the right way (KiCad's model
+Y is the footprint's -y: from below, housings show through mounting holes).
 macOS only for the PNGs (qlmanage); SVGs are padded to a square first because qlmanage crops
 thumbnails to a square.
 """
@@ -39,6 +41,37 @@ def square_svg(path):
     path.write_text(t)
 
 
+POINT = re.compile(r"\((?:start|end|mid|center|xy|at) (-?[\d.]+) (-?[\d.]+)")
+
+
+def render_3d(cli, fp_lib, fp_name, mod, out, size):
+    """Place the footprint on a board just larger than it (the library mounted at
+    lib/dropout-kicad-library, as in a project) and render it with kicad-cli: top, bottom, angled."""
+    text = mod.read_text()
+    pts = [(float(x), float(y)) for x, y in POINT.findall(text)]
+    xs, ys = [p[0] for p in pts] or [0], [p[1] for p in pts] or [0]
+    placed = text.replace(f'(footprint "{fp_name}"', f'(footprint "{fp_lib}:{fp_name}"\n\t(at 0 0)', 1)
+    board = ('(kicad_pcb (version 20260206) (generator "render_part")\n(general (thickness 1.6))\n'
+             '(layers (0 "F.Cu" signal) (2 "B.Cu" signal) (1 "F.Mask" user) (3 "B.Mask" user)'
+             ' (5 "F.SilkS" user) (7 "B.SilkS" user) (25 "Edge.Cuts" user))\n'
+             f"{placed}\n(gr_rect (start {min(xs) - 1} {min(ys) - 1}) (end {max(xs) + 1} {max(ys) + 1})"
+             ' (stroke (width 0.05) (type solid)) (fill no) (layer "Edge.Cuts"))\n)\n')
+    views = {"top": ["--side", "top"], "bottom": ["--side", "bottom"],
+             "iso": ["--side", "top", "--rotate", "-50,0,30"]}
+    with tempfile.TemporaryDirectory() as td:
+        (Path(td) / "lib").mkdir()
+        (Path(td) / "lib" / "dropout-kicad-library").symlink_to(REPO)  # resolves ${KIPRJMOD}/lib/...
+        pcb = Path(td) / "board.kicad_pcb"
+        pcb.write_text(board)
+        for view, opts in views.items():
+            png = out / f"{fp_name}_3d_{view}.png"
+            r = subprocess.run([cli, "pcb", "render", *opts, "--quality", "high", "-w", str(size), "-h", str(size),
+                                "-o", str(png), str(pcb)], capture_output=True, text=True)
+            msg = [l for l in (r.stdout + r.stderr).splitlines() if "Could not" in l or ("rror" in l and "NSCocoa" not in l)]
+            if r.returncode != 0 or msg:
+                print(f"3D render {view}: {' '.join(msg) or r.returncode}")
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("symbol", help="<Library>:<Symbol>, e.g. DropOut_Power:LM74910HQRGERQ1")
@@ -68,6 +101,8 @@ def main():
         # The footprint's own model link: KLC F9.3 drops suffixes like _Pad0.7x0.7mm from it
         m = re.search(r'\(model "[^"]*/3dmodels/([^"/]+\.3dshapes/[^"/]+\.step)"', mod.read_text())
         step = REPO / "3dmodels" / (m.group(1) if m else f"{fp_lib}.3dshapes/{fp_name}.step")
+        if step.exists():
+            render_3d(cli, fp_lib, fp_name, mod, out, args.size)
     for f in svg.glob("*.svg"):
         square_svg(f)
         subprocess.run(["qlmanage", "-t", "-s", str(args.size), "-o", str(out), str(f)], capture_output=True)
