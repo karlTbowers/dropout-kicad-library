@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Amphenol Sine Systems BoardLock AT13-2P-BMxx right-angle PCB header footprint and 3D model.
+"""Amphenol Sine Systems BoardLock AT13-2P-BMxx right-angle PCB header footprint.
 
 Usage: ~/.cache/dropout/klt-venv/bin/python generators/custom/Amphenol_AT13-2P-BMxx.py
 
@@ -18,9 +18,10 @@ Amphenol-Sine/BoardLock/.
   on the left (x = 0) with the mating face toward +y, as for TE's DT13-2P.
 
 Origin at pin 1, mating face toward +y (the panel / board edge side). Geometry: dt_header.py.
+The 3D model is Amphenol Sine's own STEP, placed in this frame by Amphenol_AT13-2P-BMxx_step.py.
 """
-from dt_header import Header, footprint, model
-from fplib import write_footprint, write_model
+from dt_header import Header, footprint
+from fplib import write_footprint
 
 DRAWING = "https://www.amphenol-sine.com/pdf/datasheet/AT13-2P-BM04.pdf"
 
@@ -49,4 +50,3 @@ HEADER = Header(
 
 if __name__ == "__main__":
     print("footprint ", write_footprint(HEADER.lib, HEADER.name, footprint(HEADER)))
-    print("3D model  ", write_model(HEADER.lib, HEADER.name, model(HEADER)))

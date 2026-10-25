@@ -135,4 +135,6 @@ def model(h):
             .translate((x, h.front - 13.0, zc))
         part = tail.union(mate)
         metal = part if metal is None else metal.union(part)
-    return [(housing, (0.55, 0.56, 0.58)), (metal, METAL)]
+    # Built in footprint coordinates (y toward the mating face); KiCad's model frame has
+    # Y = -footprint y, so mirror before export or the shroud ends up behind the pins.
+    return [(housing.mirror("XZ"), (0.55, 0.56, 0.58)), (metal.mirror("XZ"), METAL)]
