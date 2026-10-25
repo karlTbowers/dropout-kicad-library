@@ -40,7 +40,6 @@ Planned categories (created as the first part in each one is added). Microcontro
 | `DropOut_Connector_Amphenol` | Footprints and 3D models for Amphenol connectors (incl. Amphenol Sine BoardLock), named after KiCad's `Connector_Amphenol` |
 | `DropOut_Oscillator` | Footprints and 3D models for oscillators (KLC footprint library naming) |
 | `DropOut_Crystal` | Footprints and 3D models for crystals |
-| `DropOut_Connector_Amphenol` | Footprints and 3D models for Amphenol connectors (incl. Amphenol Sine BoardLock), named after KiCad's `Connector_Amphenol` |
 | `DropOut_Connector_Samtec` | Footprints and 3D models for Samtec connectors |
 | `DropOut_Connector_TE-Connectivity` | Footprints and 3D models for TE Connectivity connectors (incl. DEUTSCH), named after KiCad's `Connector_TE-Connectivity` |
 | `DropOut_Diode_SMD` | Footprints and 3D models for SMD diode packages (DO-218, DO-214, SOD...) |
