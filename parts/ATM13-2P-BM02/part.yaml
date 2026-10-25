@@ -14,11 +14,11 @@ pins: pins.csv
 fields:
   Reference: J
   Value: ATM13-2P-BM02
-  Footprint: DropOut_Connector_Amphenol:Amphenol_SINE_ATM13-2P-BMxx_1x02_P4.20mm_Horizontal
+  Footprint: DropOut_Connector_Amphenol:Amphenol_ATM13-2P-BMxx_1x02_P4.20mm_Horizontal
   Datasheet: https://www.amphenol-sine.com/pdf/datasheet/ATM13-2P-BM02.pdf
   Description: Amphenol SINE BoardLock ATM13 2-pin right-angle PCB receptacle with flange seal, 4.20 mm pitch, gold-plated size 20 pins, potting, 7.5 A, 250 V, IP67 mated, -55 to +125 °C; mates ATM06-2S
   ki_keywords: connector receptacle header right angle Amphenol SINE ATM ATM13 ATM06-2S BoardLock sealed automotive
-  ki_fp_filters: Amphenol*SINE*ATM13?2P*
+  ki_fp_filters: Amphenol*ATM13?2P*
   Manufacturer: Amphenol SINE Systems
   MPN: ATM13-2P-BM02
   DigiKey_PN: 889-3356-ND

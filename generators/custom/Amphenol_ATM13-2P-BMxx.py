@@ -3,7 +3,7 @@
 generator covers it). One footprint serves all four versions (BM01 gold/unpotted, BM02 gold/potted,
 BM03 tin/unpotted, BM04 tin/potted): they share drawing ATM13-2P-BMXX.
 
-Usage: ~/.cache/dropout/klt-venv/bin/python generators/custom/Amphenol_SINE_ATM13-2P.py
+Usage: ~/.cache/dropout/klt-venv/bin/python generators/custom/Amphenol_ATM13-2P-BMxx.py
 
 Sources (archived in dropout-vendor-docs, Amphenol-SINE/ATM/):
 - Holes: drawing ATM13-2P-BMXX rev. A2 (10 Jul 2020), "Recommended PCB layout, view from components
@@ -26,7 +26,7 @@ from fplib import (CRT_W, FAB_W, METAL, SILK_W, footprint_text, line, model_ref,
                    r, text, up, write_footprint, write_model)
 
 LIB = "DropOut_Connector_Amphenol"
-NAME = "Amphenol_SINE_ATM13-2P-BMxx_1x02_P4.20mm_Horizontal"
+NAME = "Amphenol_ATM13-2P-BMxx_1x02_P4.20mm_Horizontal"
 DRAWING = "https://www.amphenol-sine.com/pdf/datasheet/ATM13-2P-BM04.pdf"
 
 PITCH = 4.20
