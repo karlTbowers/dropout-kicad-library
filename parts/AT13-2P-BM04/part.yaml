@@ -1,0 +1,32 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/AT13-2P-BM04/part.yaml
+# Amphenol Sine Systems BoardLock AT13-2P-BM04: AT series 2-position 90° flange-mount PCB receptacle,
+# tin-plated pin contacts, self-threading screw bosses, flange gasket, potting reservoir potted, grey.
+# Mates the AT06-2S plug (Amphenol: comparable to DT06-2S); size 16 contacts, 14-20 AWG.
+# Sources: drawing C-AT13-2P-BMXX rev. A2 (10 Jul 2020; PCB layout, envelope, pin marks, ratings:
+# 13 A, 250 V, -55 to +125 °C, IP67 mated, potted versions for up to 5 psi), BoardLock Family flyer
+# "updated 09-2026" (p. 2: -55 to +125 °C "at rated current"; p. 10: BM04 = tin, potting), product
+# page; archived in dropout-vendor-docs Amphenol-Sine/BoardLock/.
+# Node60 output connector (DEC-013 rev. B, user's decision 2026-10-25), replacing TE DT13-2P.
+# Siblings on the same drawing (not built): BM01 gold/no potting, BM02 gold/potting, BM03 tin/no
+# potting (Amphenol: comparable to DT13-2P).
+# Observed 2026-10-25: DigiKey 889-3345-ND $5.93 @1 / $5.035 @10 / $4.106 @180 / $3.618 @1080,
+# 174 in stock; Mouser 654-AT13-2P-BM04 $5.41 @1 / $5.04 @10 / $4.11 @100 / $3.26 @1080, 129 in
+# stock; Newark 94AC1009.
+library: DropOut_Connector
+name: AT13-2P-BM04
+pins: ../DT13-2P/pins.csv
+fields:
+  Reference: J
+  Value: AT13-2P-BM04
+  Footprint: DropOut_Connector_Amphenol:Amphenol_AT13-2P-BMxx_1x02_P5.40mm_Horizontal
+  Datasheet: https://www.amphenol-sine.com/pdf/datasheet/AT13-2P-BM04.pdf
+  Description: Amphenol Sine BoardLock AT13 2-pin right-angle PCB header, panel flange with gasket, potted, tin-plated pins, 5.40 mm pitch, 13 A, 250 V, -55 to +125 °C at rated current, IP67 mated; mates AT06-2S / DT06-2S plug
+  ki_keywords: connector header right angle BoardLock AT13 AT06-2S DT06-2S DEUTSCH sealed automotive
+  ki_fp_filters: Amphenol*AT13?2P*
+  Manufacturer: Amphenol Sine Systems
+  MPN: AT13-2P-BM04
+  DigiKey_PN: 889-3345-ND
+  Mouser_PN: 654-AT13-2P-BM04
+  Temperature_Grade: -55 to +125 °C at rated current (not AEC qualified)
+  Notes: Mates AT06-2S plug (DT06-2S compatible). Potted version, rated for up to 5 psi. Footprint is Amphenol's layout (5.40 mm pitch, Ø1.80 holes), not TE DT13-2P's (5.46 mm).
