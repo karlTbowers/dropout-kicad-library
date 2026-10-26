@@ -1,0 +1,299 @@
+(footprint "Wuerth_REDCUBE-PRESS-FIT_WP-RATR_7461106_PressFit"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Würth REDCUBE PRESS-FIT WP-RATR, right angled, two rows pin-plate, M6, 10 press-fit pins 2.54 mm, 240 A (data sheet 7461106 rev. 001.005 p. 1), https://www.we-online.com/components/products/datasheet/7461106.pdf")
+	(tags "REDCUBE press-fit power terminal M6 right angle WP-RATR 7461106")
+	(property "Reference" "REF**"
+		(at 0 -7.75 0)
+		(layer "F.SilkS")
+		(uuid "2b3586e5-80ee-441c-ab0b-a63ed8b20097")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Wuerth_REDCUBE-PRESS-FIT_WP-RATR_7461106_PressFit"
+		(at 0 7.75 0)
+		(layer "F.Fab")
+		(uuid "157b3035-6e22-4205-9931-9db61bf57f67")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "82793b43-e19e-4afe-a697-ee4b6f2fc0f3")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5bbb9e76-5034-4715-b076-2e01c92df663")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -6.65 -6.65)
+		(end 6.65 -6.65)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "f4f1fed0-88f9-4ef4-a45c-47e4edd12ddb")
+	)
+	(fp_line
+		(start -6.65 6.65)
+		(end -6.65 -6.65)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "4450f1c6-2925-475f-9512-6077640b99ee")
+	)
+	(fp_line
+		(start 6.65 -6.65)
+		(end 6.65 6.65)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "6fab9e4f-8579-4491-a98f-33af8b8f0c4e")
+	)
+	(fp_line
+		(start 6.65 6.65)
+		(end -6.65 6.65)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "17f6b62b-04ca-47be-8414-49c80e56a103")
+	)
+	(fp_line
+		(start -6.75 -6.75)
+		(end 6.75 -6.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "d434baee-b664-4876-92eb-79a7f3fd393b")
+	)
+	(fp_line
+		(start -6.75 6.75)
+		(end -6.75 -6.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "a705c5e0-71cd-4a88-8d24-2e67b15e9aa3")
+	)
+	(fp_line
+		(start 6.75 -6.75)
+		(end 6.75 6.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "5cac7bff-a64e-4bf6-8f48-0d5e07cfb10a")
+	)
+	(fp_line
+		(start 6.75 6.75)
+		(end -6.75 6.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "82d247e4-67d5-487c-a281-f4144ad26edc")
+	)
+	(fp_line
+		(start -6.5 -6.5)
+		(end 6.5 -6.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "7f31b738-8e33-437f-803a-cbc9fc3e9f63")
+	)
+	(fp_line
+		(start -6.5 6.5)
+		(end -6.5 -6.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "89814f61-01b7-4171-9cde-8902a03930fc")
+	)
+	(fp_line
+		(start 6.5 -6.5)
+		(end 6.5 6.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "973031c5-e50d-41ac-b278-4f90fcd9b571")
+	)
+	(fp_line
+		(start 6.5 6.5)
+		(end -6.5 6.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "5c9f48fd-c53c-4bf1-bbd0-d5bd59f17a59")
+	)
+	(fp_text user "Drill Ø1.60 -0.03 before plating, Cu 25-60 µm; finished Ø1.475 (chem.) / Ø1.45 (HAL)"
+		(at 0 9.15 0)
+		(layer "Cmts.User")
+		(uuid "a43273d1-3b72-48fb-b552-0b84c4bd9576")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(fp_text user "Press-fit in one movement; no rework or soldering after insertion"
+		(at 0 10.35 0)
+		(layer "Cmts.User")
+		(uuid "bfceff83-0990-4c80-a230-c05c69cd42e0")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "af33188d-9374-4bdc-a4af-a3a0b821c645")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole circle
+		(at -5.08 -5.08)
+		(size 2.1 2.1)
+		(drill 1.475)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "144b12bf-d0b3-4087-b4c7-768d01102fe0")
+	)
+	(pad "1" thru_hole circle
+		(at -5.08 -2.54)
+		(size 2.1 2.1)
+		(drill 1.475)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "02c3b623-3f83-4ab3-b073-3a409429cc66")
+	)
+	(pad "1" thru_hole circle
+		(at -5.08 0)
+		(size 2.1 2.1)
+		(drill 1.475)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "daeb53df-1ef1-4f78-9c4e-b715dbd70136")
+	)
+	(pad "1" thru_hole circle
+		(at -5.08 2.54)
+		(size 2.1 2.1)
+		(drill 1.475)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "a9782c3e-519a-4bc0-9425-0c666ed23f21")
+	)
+	(pad "1" thru_hole circle
+		(at -5.08 5.08)
+		(size 2.1 2.1)
+		(drill 1.475)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "e45352f0-dfa4-4e00-aac7-64ea78d3a125")
+	)
+	(pad "1" thru_hole circle
+		(at 5.08 -5.08)
+		(size 2.1 2.1)
+		(drill 1.475)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "78cd4bea-8d62-44c9-bcb2-26f3372cbcaf")
+	)
+	(pad "1" thru_hole circle
+		(at 5.08 -2.54)
+		(size 2.1 2.1)
+		(drill 1.475)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "ca9dc732-004c-4637-a6ef-d51965d61ebe")
+	)
+	(pad "1" thru_hole circle
+		(at 5.08 0)
+		(size 2.1 2.1)
+		(drill 1.475)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "27e824a1-b509-405f-981f-ebc4a3c07b78")
+	)
+	(pad "1" thru_hole circle
+		(at 5.08 2.54)
+		(size 2.1 2.1)
+		(drill 1.475)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "53440baa-53a3-4f93-b6c5-b17f6a038166")
+	)
+	(pad "1" thru_hole circle
+		(at 5.08 5.08)
+		(size 2.1 2.1)
+		(drill 1.475)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "9bb48283-47a6-4af8-8050-a27fd226f587")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_TerminalBlock_Wuerth.3dshapes/Wuerth_REDCUBE-PRESS-FIT_WP-RATR_7461106_PressFit.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
