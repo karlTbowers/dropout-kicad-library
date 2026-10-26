@@ -5,6 +5,8 @@
 # automotive approval "Released", -55 to +150 °C, bulk. Keep other components 4 mm away and the part 3 mm from the board edge.
 # One electrical terminal: all press-fit pads are numbered 1 and the symbol has one pin (KiCad's stock REDCUBE
 # convention; user's decision 2026-10-26). Archived in dropout-vendor-docs Wuerth/REDCUBE/.
+# 3D model: Würth's own STEP from its official KiCad library (REDCUBE_THT_Wurth.3dshapes, commit 802ff55), marked as
+# modified by DropOut and crediting WE eiSos per Würth's license; pads Ø1.8 as in that library. `_HAL` footprint for HAL boards.
 # Observed 2026-10-26: not found at DigiKey, Mouser or Newark (exact MPN and keyword searches).
 library: DropOut_Connector
 name: "786202106"

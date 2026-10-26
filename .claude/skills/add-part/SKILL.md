@@ -46,6 +46,26 @@ You need the datasheet, the package drawing with the recommended land pattern, a
 - **Archive every document used** in the private repo `~/Dev/dropout-vendor-docs`, under `<Manufacturer>/<family>/` (package drawings under `<Manufacturer>/packages/`) with the original file name. Add a row to its README index (revision, source URL, sign-in yes/no, date retrieved, first 16 hex digits of `shasum -a 256`, what it was used for), then commit and push. This is the default for every part.
 - **Never commit vendor documents to this public repo**, including anything sign-in-gated or marked confidential. The part links to them instead: `Datasheet` field (manufacturer URL), optional `Reference_Manual` field (URL of the gated document), and `Notes` naming the exact attachment/sheet the pin data came from.
 
+## 2a. Check trusted KiCad libraries
+
+Before building anything, look for the part in the trusted libraries listed in `docs/trusted-kicad-libraries.md`
+(KiCad's official libraries, CERN's, and every manufacturer-supported library listed there), and search for
+the **manufacturer's own official KiCad library** (e.g. "<manufacturer> KiCad library" on GitHub/GitLab and the
+manufacturer's EDA/CAD download page). A newly found official vendor library goes on that list.
+
+- **Decide case by case** (user's rule, 2026-10-26): a trusted library is a source to compare against, never
+  an automatic replacement for our own work. Compare what it has (symbol pin map, land pattern, drills,
+  keep-outs, 3D model) with the data sheet, show the user the differences that matter, and decide per part
+  what to reuse and what to build. Example: Würth's REDCUBE 3D models were clearly better than our envelopes
+  (side-by-side renders), so we use them; we kept our own silk, fab and courtyard (with the 4 mm keep-out
+  Würth's footprint lacks).
+- Reused items still follow KLC and DropOut rules (fields, never combine pins, model named like the
+  footprint at zero offset). Respect the library's license: record source, version/commit and license in
+  `part.yaml` and the PR, mark modified models as the license requires, and archive the license in
+  `dropout-vendor-docs`.
+- Compare 3D models visually: put both on two copies of the footprint and render them side by side with
+  `python3 scripts/compare_models.py <Lib>:<footprint> ours.step theirs.step -o <prefix>`.
+
 ## 3. Decide symbol, footprint, and model names
 
 **Library names match KiCad's stock libraries** as closely as possible, with the `DropOut_` prefix and DropOut's own additions where KiCad has no equivalent (user's rule, 2026-10-23). Check KiCad's stock library list before naming a new one: `DropOut_Connector_Samtec` ↔ `Connector_Samtec`, `DropOut_Connector_TE-Connectivity` ↔ `Connector_TE-Connectivity`, `DropOut_Package_BGA` ↔ `Package_BGA`.
