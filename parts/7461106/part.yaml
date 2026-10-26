@@ -5,6 +5,8 @@
 # tin, 240 A @ 20 °C, 3.9 N·m tightening torque, PCB 1.6-3.2 mm, -55 to +150 °C, MSL 1.
 # One electrical terminal: all press-fit pads are numbered 1 and the symbol has one pin (KiCad's stock REDCUBE
 # convention; user's decision 2026-10-26). Archived in dropout-vendor-docs Wuerth/REDCUBE/.
+# 3D model: Würth's own STEP from its official KiCad library (REDCUBE_THT_Wurth.3dshapes, commit 802ff55), marked as
+# modified by DropOut and crediting WE eiSos per Würth's license; pads Ø1.8 as in that library. `_HAL` footprint for HAL boards.
 # Observed 2026-10-26: DigiKey 732-3228-ND, 451 in stock; Mouser 710-7461106, 45 in stock.
 library: DropOut_Connector
 name: "7461106"
