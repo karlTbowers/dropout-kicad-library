@@ -1,0 +1,25 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/7461106/part.yaml
+# Würth 7461106 data sheet rev. 001.005 (2025-12-22; RS Components serves rev. 001.004): WP-RATR REDCUBE PRESS-FIT,
+# terminals right angled with two rows pin-plate, M6, 10 press-fit pins (2 columns 10.16 apart, 5 rows at 2.54), brass,
+# tin, 240 A @ 20 °C, 3.9 N·m tightening torque, PCB 1.6-3.2 mm, -55 to +150 °C, MSL 1.
+# One electrical terminal: all press-fit pads are numbered 1 and the symbol has one pin (KiCad's stock REDCUBE
+# convention; user's decision 2026-10-26). Archived in dropout-vendor-docs Wuerth/REDCUBE/.
+# Observed 2026-10-26: DigiKey 732-3228-ND, 451 in stock; Mouser 710-7461106, 45 in stock.
+library: DropOut_Connector
+name: "7461106"
+pins: pins.csv
+fields:
+  Reference: J
+  Value: "7461106"
+  Footprint: DropOut_TerminalBlock_Wuerth:Wuerth_REDCUBE-PRESS-FIT_WP-RATR_7461106_PressFit
+  Datasheet: https://www.we-online.com/components/products/datasheet/7461106.pdf
+  Description: Würth REDCUBE PRESS-FIT WP-RATR power terminal, right angled, two rows pin-plate, M6 through thread, 10 press-fit pins, 240 A, 3.9 N·m, PCB 1.6-3.2 mm, -55 to +150 °C
+  ki_keywords: power terminal press-fit REDCUBE WP-RATR M6 right angle cable lug busbar
+  ki_fp_filters: Wuerth*REDCUBE*PRESS?FIT*WP?RATR*7461106*
+  Manufacturer: Würth Elektronik
+  MPN: "7461106"
+  DigiKey_PN: "732-3228-ND"
+  Mouser_PN: "710-7461106"
+  Temperature_Grade: -55 to +150 °C
+  Notes: "Press-fit: insert in one movement, no rework or soldering after insertion. 3.9 N·m max. tightening torque; hold the terminal while tightening. Finished hole Ø1.475 (chemical Sn/ENIG) or Ø1.45 (HAL)."

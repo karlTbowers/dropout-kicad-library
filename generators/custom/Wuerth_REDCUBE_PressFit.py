@@ -8,6 +8,11 @@ Sources (archived in dropout-vendor-docs, Wuerth/REDCUBE/):
 - 7461068 WP-RAFU, right angled, M8 (data sheet rev. 001.004, 2025-12-22, p. 1): 5 x 5 press-fit
   pins at 2.54 (10.16 grid), 13.0 square pin plate, body 20.0 above the board, pins 3.5 below,
   PCB 1.6 to 3.2 thick, 250 A.
+- 7461114 WP-RAFU, right angled, M6 (data sheet rev. 001.004, 2025-12-22, p. 1): same pin plate and body as
+  7461068 (5 x 5 at 2.54, 13.0 square, 20.0 tall), M6 through thread, 250 A, 3.9 N·m.
+- 7461106 WP-RATR, right angled, two rows pin-plate, M6 (data sheet rev. 001.005, 2025-12-22, p. 1): 2 x 5
+  press-fit pins, columns 10.16 apart, rows at 2.54 (10.16 span), 13.0 square, 20.0 tall, pins 3.5,
+  PCB 1.6 to 3.2 thick, 240 A @ 20 °C, 3.9 N·m.
 - 786202106 WP-PFIFUA, M6 blind thread, 10 mm (data sheet rev. 001.003, 2024-09-26, p. 1): 4 x 4
   press-fit pins at 2.54 (7.62 grid), 10.0 square body 10.5 above the board, pins 3.0 below, PCB
   1.6 to 2.7 thick, 180 A. "Recommended hole pattern": no components within 4 mm of the REDCUBE, and
@@ -36,6 +41,16 @@ PARTS = {
         descr="Würth REDCUBE PRESS-FIT WP-RAFU, right angled, M8, 25 press-fit pins 2.54 mm, 250 A "
               "(data sheet 7461068 rev. 001.004 p. 1), https://www.we-online.com/components/products/datasheet/7461068.pdf",
         tags="REDCUBE press-fit power terminal M8 right angle WP-RAFU 7461068"),
+    "Wuerth_REDCUBE-PRESS-FIT_WP-RAFU_7461114_PressFit": dict(
+        n=5, body=13.0, height=20.0, tail=3.5, keepout=None, thread=("x", 6.0, 12.0),
+        descr="Würth REDCUBE PRESS-FIT WP-RAFU, right angled, M6, 25 press-fit pins 2.54 mm, 250 A "
+              "(data sheet 7461114 rev. 001.004 p. 1), https://www.we-online.com/components/products/datasheet/7461114.pdf",
+        tags="REDCUBE press-fit power terminal M6 right angle WP-RAFU 7461114"),
+    "Wuerth_REDCUBE-PRESS-FIT_WP-RATR_7461106_PressFit": dict(
+        n=(2, 5), cols=10.16, body=13.0, height=20.0, tail=3.5, keepout=None, thread=("x", 6.0, 12.0),
+        descr="Würth REDCUBE PRESS-FIT WP-RATR, right angled, two rows pin-plate, M6, 10 press-fit pins 2.54 mm, 240 A "
+              "(data sheet 7461106 rev. 001.005 p. 1), https://www.we-online.com/components/products/datasheet/7461106.pdf",
+        tags="REDCUBE press-fit power terminal M6 right angle WP-RATR 7461106"),
     "Wuerth_REDCUBE-PRESS-FIT_WP-PFIFUA_786202106_PressFit": dict(
         n=4, body=10.0, height=10.5, tail=3.0, keepout=4.0, thread=("z", 6.0, 6.0),
         descr="Würth REDCUBE PRESS-FIT WP-PFIFUA, M6 blind thread, 16 press-fit pins 2.54 mm, 180 A, "
@@ -45,9 +60,16 @@ PARTS = {
 }
 
 
-def pins(n):
-    o = (n - 1) * PITCH / 2
-    return [(-o + i * PITCH, -o + j * PITCH) for j in range(n) for i in range(n)]
+def pins(p):
+    """Pin centres: an n x n grid at PITCH, or (columns, rows) with the columns `cols` apart."""
+    if isinstance(p["n"], tuple):
+        nc, nr = p["n"]
+        xs = [-p["cols"] / 2 + i * p["cols"] / (nc - 1) for i in range(nc)]
+    else:
+        nc = nr = p["n"]
+        xs = [-(nc - 1) * PITCH / 2 + i * PITCH for i in range(nc)]
+    o = (nr - 1) * PITCH / 2
+    return [(x, -o + j * PITCH) for j in range(nr) for x in xs]
 
 
 def tht_pad(x, y):
@@ -72,7 +94,7 @@ def footprint(name, p):
         *[f'\t(fp_text user "{t}" (at 0 {r(crt + 2.4 + 1.2 * i)} 0) (layer "Cmts.User")\n'
           f'\t\t(effects (font (size 0.8 0.8) (thickness 0.12))))' for i, t in enumerate(notes)],
         f'\t(fp_text user "${{REFERENCE}}" (at 0 0 0) (layer "F.Fab")\n\t\t(effects (font (size 1 1) (thickness 0.15))))',
-        *[tht_pad(x, y) for x, y in pins(p["n"])],
+        *[tht_pad(x, y) for x, y in pins(p)],
         model_ref(LIB, name),
     ]
     return footprint_text(name, p["descr"], p["tags"], body, attr="through_hole")
@@ -88,7 +110,7 @@ def model(p):
     else:                                             # through thread, axis along x
         block = block.cut(cq.Workplane("YZ").circle(d / 2).extrude(2 * h + 2).translate((-h - 1, 0, zc)))
     tails = None
-    for x, y in pins(p["n"]):
+    for x, y in pins(p):
         t = cq.Workplane("XY").box(0.8, 0.8, p["tail"] + 0.1).translate((x, y, -(p["tail"] + 0.1) / 2 + 0.1))
         tails = t if tails is None else tails.union(t)
     # KiCad's model Y is the footprint's -y; these models are symmetric, so no mirror is needed
