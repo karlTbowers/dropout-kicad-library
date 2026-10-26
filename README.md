@@ -42,6 +42,7 @@ Planned categories (created as the first part in each one is added). Microcontro
 | `DropOut_Connector_Amphenol` | Footprints and 3D models for Amphenol connectors (incl. Amphenol Sine BoardLock), named after KiCad's `Connector_Amphenol` |
 | `DropOut_Connector_Samtec` | Footprints and 3D models for Samtec connectors |
 | `DropOut_Connector_TE-Connectivity` | Footprints and 3D models for TE Connectivity connectors (incl. DEUTSCH), named after KiCad's `Connector_TE-Connectivity` |
+| `DropOut_TerminalBlock_Wuerth` | Footprints and 3D models for Würth terminals (REDCUBE power terminals), named after KiCad's `TerminalBlock_Wuerth` |
 | `DropOut_Diode_SMD` | Footprints and 3D models for SMD diode packages (DO-218, DO-214, SOD...) |
 | `DropOut_Capacitor_SMD` | Footprints and 3D models for MLCCs (one per size code, shared by every DropOut MLCC of that size) |
 | `DropOut_Inductor_SMD` | Footprints and 3D models for SMD inductors and common mode chokes |

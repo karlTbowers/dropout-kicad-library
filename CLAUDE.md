@@ -13,7 +13,7 @@ The essentials are below.
 ## Rules that must never be broken
 
 - **Atomic parts:** one symbol = one orderable MPN, with its footprint and 3D model linked.
-- **Never combine pins on a symbol:** every package pin gets its own visible pin, including repeated supply and ground pins and NC pins (visible `no_connect` pins; KLC S4.6 waived by `visible-nc-pins`). No KiCad native pin stacks and no hidden stacked pins, even where KLC S4.3 allows them. `scripts/check_pin_pad_match.py` enforces it in CI.
+- **Never combine pins on a symbol:** every package pin gets its own visible pin, including repeated supply and ground pins and NC pins (visible `no_connect` pins; KLC S4.6 waived by `visible-nc-pins`). No KiCad native pin stacks and no hidden stacked pins, even where KLC S4.3 allows them. `scripts/check_pin_pad_match.py` enforces it in CI. Exception: a power terminal whose unnumbered press-fit pins form one contact (Würth REDCUBE) has one symbol pin and all its pads numbered `1` (user, 2026-10-26).
 - **Required symbol fields:** KLC S6.2 fields plus `Manufacturer`, `MPN`, `DigiKey_PN`, `Mouser_PN`. Use `-` for a distributor PN only when the part genuinely is not stocked there.
 - **No overprinting text on a symbol** (handbook D-47): no pin name, pin number, or visible field may run into another. Size the body from the text; grow it downward first so existing pins keep their positions. `scripts/check_symbol_text.py` enforces it in CI and `symbolgen.py` refuses to write a symbol that fails it.
 - **Before every commit:** `python3 scripts/check_symbol_fields.py symbols`, `python3 scripts/check_pin_pad_match.py`, `python3 scripts/check_symbol_text.py`, and `~/.cache/dropout/klt-venv/bin/python scripts/klc_check.py`. CI runs all four.
