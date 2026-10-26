@@ -1,0 +1,25 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/786202106/part.yaml
+# Würth 786202106 data sheet rev. 001.003 (2024-09-26): WP-PFIFUA REDCUBE PRESS-FIT, 10 mm, M6 blind thread (6.0
+# deep), 16 press-fit pins (4 x 4, 2.54), brass, tin, 180 A @ 20 °C max., 3.9 N·m max. (DIN 20898), PCB 1.6-2.7 mm,
+# automotive approval "Released", -55 to +150 °C, bulk. Keep other components 4 mm away and the part 3 mm from the board edge.
+# One electrical terminal: all press-fit pads are numbered 1 and the symbol has one pin (KiCad's stock REDCUBE
+# convention; user's decision 2026-10-26). Archived in dropout-vendor-docs Wuerth/REDCUBE/.
+# Observed 2026-10-26: not found at DigiKey, Mouser or Newark (exact MPN and keyword searches).
+library: DropOut_Connector
+name: "786202106"
+pins: pins.csv
+fields:
+  Reference: J
+  Value: "786202106"
+  Footprint: DropOut_TerminalBlock_Wuerth:Wuerth_REDCUBE-PRESS-FIT_WP-PFIFUA_786202106_PressFit
+  Datasheet: https://www.we-online.com/components/products/datasheet/786202106.pdf
+  Description: Würth REDCUBE PRESS-FIT WP-PFIFUA power terminal, M6 blind thread, 10 mm, 16 press-fit pins, 180 A, 3.9 N·m, PCB 1.6-2.7 mm, automotive approval, -55 to +150 °C
+  ki_keywords: power terminal press-fit REDCUBE WP-PFIFUA M6 automotive cable lug busbar
+  ki_fp_filters: Wuerth*REDCUBE*PRESS?FIT*WP?PFIFUA*786202106*
+  Manufacturer: Würth Elektronik
+  MPN: "786202106"
+  DigiKey_PN: "-"
+  Mouser_PN: "-"
+  Temperature_Grade: -55 to +150 °C
+  Notes: "Press-fit: insert in one movement, no rework or soldering after insertion, 0.1 mm min. gap under the part. 3.9 N·m max. tightening torque. No components within 4 mm; keep 3 mm from the PCB edge."

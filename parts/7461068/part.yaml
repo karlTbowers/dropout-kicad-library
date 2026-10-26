@@ -1,0 +1,25 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/7461068/part.yaml
+# Würth 7461068 data sheet rev. 001.004 (2025-12-22): WP-RAFU REDCUBE PRESS-FIT, terminals right angled with full
+# plain pin-plate, M8, 25 press-fit pins (5 x 5, 2.54), brass, tin, 250 A (operating current depends on PCB, cable lug
+# and cable), 9 N·m tightening torque, PCB 1.6-3.2 mm, -55 to +150 °C, tray. No automotive approval listed.
+# One electrical terminal: all press-fit pads are numbered 1 and the symbol has one pin (KiCad's stock REDCUBE
+# convention; user's decision 2026-10-26). Archived in dropout-vendor-docs Wuerth/REDCUBE/.
+# Observed 2026-10-26: DigiKey 732-7461068-ND $14.54 @1 / $9.45 @1k, 76 in stock; Mouser 710-7461068 $15.30 @1 / $12.49 @81, 28 in stock (154-day lead).
+library: DropOut_Connector
+name: "7461068"
+pins: pins.csv
+fields:
+  Reference: J
+  Value: "7461068"
+  Footprint: DropOut_TerminalBlock_Wuerth:Wuerth_REDCUBE-PRESS-FIT_WP-RAFU_7461068_PressFit
+  Datasheet: https://www.we-online.com/components/products/datasheet/7461068.pdf
+  Description: Würth REDCUBE PRESS-FIT WP-RAFU power terminal, right angled, M8 through thread, 25 press-fit pins, 250 A, 9 N·m, PCB 1.6-3.2 mm, -55 to +150 °C
+  ki_keywords: power terminal press-fit REDCUBE WP-RAFU M8 right angle cable lug busbar
+  ki_fp_filters: Wuerth*REDCUBE*PRESS?FIT*WP?RAFU*7461068*
+  Manufacturer: Würth Elektronik
+  MPN: "7461068"
+  DigiKey_PN: "732-7461068-ND"
+  Mouser_PN: "710-7461068"
+  Temperature_Grade: -55 to +150 °C
+  Notes: "Press-fit: insert in one movement, no rework or soldering after insertion. 9 N·m max. tightening torque. Finished hole Ø1.475 (chemical Sn/ENIG) or Ø1.45 (HAL)."
