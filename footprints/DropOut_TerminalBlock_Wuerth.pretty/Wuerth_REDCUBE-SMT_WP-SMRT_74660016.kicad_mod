@@ -1,0 +1,281 @@
+(footprint "Wuerth_REDCUBE-SMT_WP-SMRT_74660016"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Würth REDCUBE SMT WP-SMRT, reverse with internal thread, M6, Ø12 flange, Ø9.3 non-plated hole for the Ø9.0 spigot, 85 A (data sheet 74660016 rev. 001.001 p. 1), https://www.we-online.com/components/products/datasheet/74660016.pdf")
+	(tags "REDCUBE SMT power terminal M6 internal thread reverse WP-SMRT 74660016 74660016R")
+	(property "Reference" "REF**"
+		(at 0 -7.85 0)
+		(layer "F.SilkS")
+		(uuid "7494a2e6-71d0-43cd-9914-667c1f7ceef1")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Wuerth_REDCUBE-SMT_WP-SMRT_74660016"
+		(at 0 7.85 0)
+		(layer "F.Fab")
+		(uuid "8f38f210-df1e-440b-a674-d67a35fd2161")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1eeec0a2-e527-428f-9a2b-e70a2eb3fe0e")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9b101f56-4613-4b1b-beac-b240349a1976")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_circle
+		(center 0 0)
+		(end 6.76 0)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "0eb1239f-d3ec-4fd8-9979-8f5deb617026")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 6.85 0)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "3af9d614-af38-496a-b74a-d844b0d415c6")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 3 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "977bb8cf-d09b-4fe0-8ae6-0b88ff780bc2")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 6 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "546613fb-8f64-440a-9d2a-deb70ab52c0b")
+	)
+	(fp_text user "Ø9.3 non-plated hole for the Ø9.0 spigot (2.6 mm below the flange)"
+		(at 0 9.25 0)
+		(layer "Cmts.User")
+		(uuid "f070b702-88d4-4c68-ae37-8feb322bcd4c")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(fp_text user "Copper Ø9.8-13.0: data sheet Ø9.3 pulled back 0.25 from the hole"
+		(at 0 10.45 0)
+		(layer "Cmts.User")
+		(uuid "1b0a7aa2-8117-4be9-bfd4-62db88669760")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(fp_text user "Paste 150 µm, 4 segments per Würth stencil suggestion; 3.9 N·m max."
+		(at 0 11.65 0)
+		(layer "Cmts.User")
+		(uuid "dc69ecac-b0a4-4c36-a9f3-4ae86ccecc8b")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 -4.8 0)
+		(layer "F.Fab")
+		(uuid "a00a9ec6-cb0b-4ee2-b8b1-d634b7d6e1c8")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "" smd custom
+		(at -3.9421 -3.9421)
+		(size 0.5 0.5)
+		(layers "F.Paste")
+		(options
+			(clearance outline)
+			(anchor circle)
+		)
+		(primitives
+			(gr_poly
+				(pts
+					(xy -2.4383 3.4421) (xy -2.3747 2.9136) (xy -2.2674 2.3922) (xy -2.1171 1.8816) (xy -1.9249 1.3851)
+					(xy -1.6921 0.9064) (xy -1.4203 0.4487) (xy -1.1115 0.0151) (xy -0.7677 -0.3912) (xy -0.3912 -0.7677)
+					(xy 0.0151 -1.1115) (xy 0.4487 -1.4203) (xy 0.9064 -1.6921) (xy 1.3851 -1.9249) (xy 1.8816 -2.1171)
+					(xy 2.3922 -2.2674) (xy 2.9136 -2.3747) (xy 3.4421 -2.4383) (xy 3.4421 -0.7815) (xy 3.0663 -0.7264)
+					(xy 2.696 -0.6415) (xy 2.3337 -0.5273) (xy 1.9817 -0.3845) (xy 1.6423 -0.214) (xy 1.3175 -0.0169)
+					(xy 1.0096 0.2055) (xy 0.7204 0.4517) (xy 0.4517 0.7204) (xy 0.2055 1.0096) (xy -0.0169 1.3175)
+					(xy -0.214 1.6423) (xy -0.3845 1.9817) (xy -0.5273 2.3337) (xy -0.6415 2.696) (xy -0.7264 3.0663)
+					(xy -0.7815 3.4421)
+				)
+				(width 0)
+				(fill yes)
+			)
+		)
+		(uuid "ea8698fb-2f91-486d-bfd2-ce2bd16af0a1")
+	)
+	(pad "" smd custom
+		(at -3.9421 3.9421)
+		(size 0.5 0.5)
+		(layers "F.Paste")
+		(options
+			(clearance outline)
+			(anchor circle)
+		)
+		(primitives
+			(gr_poly
+				(pts
+					(xy 3.4421 2.4383) (xy 2.9136 2.3747) (xy 2.3922 2.2674) (xy 1.8816 2.1171) (xy 1.3851 1.9249)
+					(xy 0.9064 1.6921) (xy 0.4487 1.4203) (xy 0.0151 1.1115) (xy -0.3912 0.7677) (xy -0.7677 0.3912)
+					(xy -1.1115 -0.0151) (xy -1.4203 -0.4487) (xy -1.6921 -0.9064) (xy -1.9249 -1.3851) (xy -2.1171 -1.8816)
+					(xy -2.2674 -2.3922) (xy -2.3747 -2.9136) (xy -2.4383 -3.4421) (xy -0.7815 -3.4421) (xy -0.7264 -3.0663)
+					(xy -0.6415 -2.696) (xy -0.5273 -2.3337) (xy -0.3845 -1.9817) (xy -0.214 -1.6423) (xy -0.0169 -1.3175)
+					(xy 0.2055 -1.0096) (xy 0.4517 -0.7204) (xy 0.7204 -0.4517) (xy 1.0096 -0.2055) (xy 1.3175 0.0169)
+					(xy 1.6423 0.214) (xy 1.9817 0.3845) (xy 2.3337 0.5273) (xy 2.696 0.6415) (xy 3.0663 0.7264) (xy 3.4421 0.7815)
+				)
+				(width 0)
+				(fill yes)
+			)
+		)
+		(uuid "a64f006b-1673-4d78-8799-6a930305dba5")
+	)
+	(pad "" np_thru_hole circle
+		(at 0 0)
+		(size 9.3 9.3)
+		(drill 9.3)
+		(layers "*.Cu" "*.Mask")
+		(uuid "0ffaede1-1b37-4ddd-a8a3-8d8579f93658")
+	)
+	(pad "" smd custom
+		(at 3.9421 -3.9421)
+		(size 0.5 0.5)
+		(layers "F.Paste")
+		(options
+			(clearance outline)
+			(anchor circle)
+		)
+		(primitives
+			(gr_poly
+				(pts
+					(xy -3.4421 -2.4383) (xy -2.9136 -2.3747) (xy -2.3922 -2.2674) (xy -1.8816 -2.1171) (xy -1.3851 -1.9249)
+					(xy -0.9064 -1.6921) (xy -0.4487 -1.4203) (xy -0.0151 -1.1115) (xy 0.3912 -0.7677) (xy 0.7677 -0.3912)
+					(xy 1.1115 0.0151) (xy 1.4203 0.4487) (xy 1.6921 0.9064) (xy 1.9249 1.3851) (xy 2.1171 1.8816)
+					(xy 2.2674 2.3922) (xy 2.3747 2.9136) (xy 2.4383 3.4421) (xy 0.7815 3.4421) (xy 0.7264 3.0663)
+					(xy 0.6415 2.696) (xy 0.5273 2.3337) (xy 0.3845 1.9817) (xy 0.214 1.6423) (xy 0.0169 1.3175) (xy -0.2055 1.0096)
+					(xy -0.4517 0.7204) (xy -0.7204 0.4517) (xy -1.0096 0.2055) (xy -1.3175 -0.0169) (xy -1.6423 -0.214)
+					(xy -1.9817 -0.3845) (xy -2.3337 -0.5273) (xy -2.696 -0.6415) (xy -3.0663 -0.7264) (xy -3.4421 -0.7815)
+				)
+				(width 0)
+				(fill yes)
+			)
+		)
+		(uuid "f45b0354-e453-4428-a890-e7a8d79b5bc4")
+	)
+	(pad "" smd custom
+		(at 3.9421 3.9421)
+		(size 0.5 0.5)
+		(layers "F.Paste")
+		(options
+			(clearance outline)
+			(anchor circle)
+		)
+		(primitives
+			(gr_poly
+				(pts
+					(xy 2.4383 -3.4421) (xy 2.3747 -2.9136) (xy 2.2674 -2.3922) (xy 2.1171 -1.8816) (xy 1.9249 -1.3851)
+					(xy 1.6921 -0.9064) (xy 1.4203 -0.4487) (xy 1.1115 -0.0151) (xy 0.7677 0.3912) (xy 0.3912 0.7677)
+					(xy -0.0151 1.1115) (xy -0.4487 1.4203) (xy -0.9064 1.6921) (xy -1.3851 1.9249) (xy -1.8816 2.1171)
+					(xy -2.3922 2.2674) (xy -2.9136 2.3747) (xy -3.4421 2.4383) (xy -3.4421 0.7815) (xy -3.0663 0.7264)
+					(xy -2.696 0.6415) (xy -2.3337 0.5273) (xy -1.9817 0.3845) (xy -1.6423 0.214) (xy -1.3175 0.0169)
+					(xy -1.0096 -0.2055) (xy -0.7204 -0.4517) (xy -0.4517 -0.7204) (xy -0.2055 -1.0096) (xy 0.0169 -1.3175)
+					(xy 0.214 -1.6423) (xy 0.3845 -1.9817) (xy 0.5273 -2.3337) (xy 0.6415 -2.696) (xy 0.7264 -3.0663)
+					(xy 0.7815 -3.4421)
+				)
+				(width 0)
+				(fill yes)
+			)
+		)
+		(uuid "22d0ddf3-5f22-45b3-a172-215f05c88002")
+	)
+	(pad "1" smd custom
+		(at 5.7 0)
+		(size 1.6 1.6)
+		(layers "F.Cu" "F.Mask")
+		(options
+			(clearance outline)
+			(anchor circle)
+		)
+		(primitives
+			(gr_circle
+				(center -5.7 0)
+				(end 0 0)
+				(width 1.6)
+				(fill no)
+			)
+		)
+		(uuid "cf316f91-43aa-41d3-9dff-59f1a7836b6a")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_TerminalBlock_Wuerth.3dshapes/Wuerth_REDCUBE-SMT_WP-SMRT_74660016.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
