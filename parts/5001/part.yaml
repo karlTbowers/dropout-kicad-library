@@ -21,3 +21,13 @@ fields:
   Mouser_PN: "534-5001"
   Temperature_Grade: "-45 to +85 °C"
   Notes: "Rated only to +85 °C: not for automotive Grade 1 boards."
+catalog:
+  family: test-points
+  group: Keystone test points
+  attributes:
+    Mounting: Through hole
+    Style: Miniature, black nylon base
+    Loop: 1.25 mm I.D.
+    Height: 4.6 mm
+    Hole: 1.0 mm
+    Plating: Silver

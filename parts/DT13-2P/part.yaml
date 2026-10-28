@@ -28,3 +28,14 @@ fields:
   Mouser_PN: 571-DT13-2P
   Temperature_Grade: -55 to +125 °C (not AEC qualified)
   Notes: Mates DT06-2S + W2S wedgelock. No current derating curve; +125 °C is the maximum including self-heating. Header ingress protection not tested by TE (108-151009). Pin numbering per the drawing's cavity marks; TE 114-151046 layout figure shows the opposite, verify on a sample.
+catalog:
+  family: sealed-headers
+  group: DEUTSCH DT13-2P and compatibles
+  attributes:
+    Pitch: 5.46 mm
+    Current: 13 A
+    Voltage: 250 V
+    Sealing: Panel flange seal
+    Ratings: Manufacturer data sheet
+  mates_with:
+  - DT06-2S

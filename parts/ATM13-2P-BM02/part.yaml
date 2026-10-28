@@ -27,3 +27,17 @@ fields:
   Mouser_PN: 654-ATM13-2P-BM02
   Temperature_Grade: -55 to +125 °C (not AEC qualified)
   Notes: Mates the ATM06-2S plug (size 20 sockets). Fixed by 3x #4-20 thread-forming screws from the solder side (0.68-1.13 N-m). Pin numbering from the drawing's mounting-face view; verify on a sample.
+catalog:
+  family: sealed-headers
+  group: Amphenol ATM13 BoardLock
+  attributes:
+    Pitch: 4.20 mm
+    Contacts: Size 20
+    Plating: Gold
+    Potting: 'Yes'
+    Current: 7.5 A
+    Voltage: 250 V
+    Sealing: Flange seal, IP67 mated
+    Fixing: '3× #4-20 thread-forming screws'
+  mates_with:
+  - ATM06-2S

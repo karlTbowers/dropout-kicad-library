@@ -1,0 +1,47 @@
+# Catalog families: how the library catalog (dropout-library-catalog) groups mechanical parts on
+# one page, McMaster-Carr style: one table per group, one row per orderable MPN, with the attributes
+# that differ as columns and the ones every row shares listed above the table.
+#
+# A part joins a family with a `catalog:` block at the end of its part.yaml:
+#
+#   catalog:
+#     family: test-points            # a key below
+#     group: Harwin SMT loops        # a table on the family page; listed under the family's groups
+#     attributes:                    # name: value, in the order the columns should appear
+#       Loop: 3.25 × 1.63 mm
+#       Packaging: Tape and reel
+#     mates_with: [DT06-2S]          # optional: MPNs it mates with, linked when they are in the library
+#
+# Attribute values are copied from the part's own data (Description, Notes, the header comment's
+# source document); never estimate one. Leave an attribute out when the source doesn't state it.
+# The catalog adds Manufacturer and Temperature (from Temperature_Grade) to every table itself.
+# symbolgen.py ignores the catalog block: nothing here reaches a symbol.
+
+test-points:
+  title: Test points
+  intro: Wire loops, SMT probe loops, and bare pads for scope probes, ground clips, and test fixtures.
+  groups:
+    - Harwin SMT loops
+    - Keystone test points
+    - Vero beaded wire loops
+    - Copper pads
+
+sealed-headers:
+  title: Sealed 2-pin PCB headers
+  intro: Right-angle headers with a panel seal for sealed automotive-style wire harness plugs.
+  groups:
+    - Amphenol ATM13 BoardLock
+    - DEUTSCH DT13-2P and compatibles
+
+power-terminals:
+  title: Power terminals
+  intro: Würth REDCUBE bolt-on terminals for high-current cable lugs.
+  groups:
+    - REDCUBE PRESS-FIT
+    - REDCUBE SMT
+
+debug-headers:
+  title: Debug headers
+  intro: 1.27 mm micro headers for the 10-pin Arm Cortex SWD/JTAG debug connector.
+  groups:
+    - Samtec FTSH 2×05, 1.27 mm

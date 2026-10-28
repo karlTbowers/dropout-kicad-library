@@ -25,3 +25,14 @@ fields:
   Mouser_PN: "710-7461068"
   Temperature_Grade: -55 to +150 °C
   Notes: "Press-fit: insert in one movement, no rework or soldering after insertion. 9 N·m max. tightening torque. Finished hole Ø1.475 (chemical Sn/ENIG) or Ø1.45 (HAL)."
+catalog:
+  family: power-terminals
+  group: REDCUBE PRESS-FIT
+  attributes:
+    Series: WP-RAFU
+    Thread: M8 through
+    Press-fit pins: '25'
+    Current: 250 A
+    Torque: 9 N·m
+    PCB thickness: 1.6–3.2 mm
+    Packaging: Tray

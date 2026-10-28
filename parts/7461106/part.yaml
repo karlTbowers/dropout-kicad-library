@@ -25,3 +25,13 @@ fields:
   Mouser_PN: "710-7461106"
   Temperature_Grade: -55 to +150 °C
   Notes: "Press-fit: insert in one movement, no rework or soldering after insertion. 3.9 N·m max. tightening torque; hold the terminal while tightening. Finished hole Ø1.475 (chemical Sn/ENIG) or Ø1.45 (HAL)."
+catalog:
+  family: power-terminals
+  group: REDCUBE PRESS-FIT
+  attributes:
+    Series: WP-RATR
+    Thread: M6 through
+    Press-fit pins: '10'
+    Current: 240 A
+    Torque: 3.9 N·m
+    PCB thickness: 1.6–3.2 mm

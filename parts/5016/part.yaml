@@ -21,3 +21,14 @@ fields:
   Mouser_PN: "534-5016"
   Temperature_Grade: "-45 to +85 °C"
   Notes: "Rated only to +85 °C: not for automotive Grade 1 boards."
+catalog:
+  family: test-points
+  group: Keystone test points
+  attributes:
+    Mounting: SMT
+    Style: Compact
+    Loop: 3.8 mm wide
+    Height: 2.3 mm
+    Material: Phosphor bronze
+    Plating: Silver
+    Packaging: Tape and reel, 1000
