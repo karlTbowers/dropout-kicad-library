@@ -1,0 +1,26 @@
+# Würth 74660016R data sheet rev. 001.001 (2022-02-10): WP-SMRT REDCUBE SMT, reverse with internal thread, M6 through
+# thread, Ø12.0 flange 3.0 high, Ø9.0 spigot 2.6 into a Ø9.3 non-plated hole, brass, tin, 85 A (operating current depends
+# on PCB, cable lug and cable), 3.9 N·m tightening torque, -55 to +150 °C, MSL 1, packaging tape and reel (rev. 001.001, p. 2-3). Same part and drawing as the bulk 74660016.
+# One electrical terminal: one pad and one symbol pin, numbered 1. Archived in dropout-vendor-docs Wuerth/REDCUBE/.
+# Footprint from the data sheet's land pattern and stencil (generators/custom/Wuerth_REDCUBE_SMT.py), copper ring pulled back 0.25 from the hole (Ø9.8, user's decision 2026-10-26). Würth's official
+# KiCad library (commit c905610) has the same paste but no Ø9.3 hole; we follow the data sheet.
+# 3D model: Würth's own STEP from that library (REDCUBE_SMD_Wurth.3dshapes), marked as modified by DropOut and crediting
+# WE eiSos per Würth's license.
+# Observed 2026-10-26: Mouser 710-74660016R $4.32 @1 (stock not reported); not at DigiKey or Newark.
+library: DropOut_Connector
+name: "74660016R"
+pins: pins.csv
+fields:
+  Reference: J
+  Value: "74660016R"
+  Footprint: DropOut_TerminalBlock_Wuerth:Wuerth_REDCUBE-SMT_WP-SMRT_74660016
+  Datasheet: https://www.we-online.com/components/products/datasheet/74660016R.pdf
+  Description: Würth REDCUBE SMT WP-SMRT power terminal, reverse with internal thread, M6, 85 A, 3.9 N·m, tape and reel, -55 to +150 °C
+  ki_keywords: power terminal SMT REDCUBE WP-SMRT M6 internal thread reverse cable lug busbar
+  ki_fp_filters: Wuerth*REDCUBE*SMT*WP?SMRT*74660016*
+  Manufacturer: Würth Elektronik
+  MPN: "74660016R"
+  DigiKey_PN: "-"
+  Mouser_PN: "710-74660016R"
+  Temperature_Grade: -55 to +150 °C
+  Notes: "Reflow; Ø9.3 non-plated hole in the board for the spigot. 3.9 N·m max. tightening torque; hold the terminal while tightening. Tape and reel version of 74660016."

@@ -124,9 +124,10 @@ def footprint(name, p, finish=""):
     return footprint_text(name + finish, descr, p["tags"] + (" HAL" if finish else ""), body, attr="through_hole")
 
 
-def write_we_model(src, name):
+def write_we_model(src, name, commit=WE_COMMIT):
     """Copy Würth's model to <name>.step: geometry and colours unchanged (it is already in the footprint
-    frame), header marked as modified by DropOut with WE eiSos credited, as Würth's license requires."""
+    frame), header marked as modified by DropOut with WE eiSos credited, as Würth's license requires.
+    `commit` is the Würth KiCad library commit the model was taken from."""
     from OCP.APIHeaderSection import APIHeaderSection_MakeHeader
     from OCP.IFSelect import IFSelect_RetDone
     from OCP.STEPCAFControl import STEPCAFControl_Reader, STEPCAFControl_Writer
@@ -147,7 +148,7 @@ def write_we_model(src, name):
     header = APIHeaderSection_MakeHeader(writer.ChangeWriter().Model())
     header.SetName(TCollection_HAsciiString(name))
     header.SetAuthorValue(1, TCollection_HAsciiString(
-        f"Original model provided by Wuerth Elektronik eiSos GmbH & Co. KG (WE eiSos), KiCad-Library {WE_COMMIT}: {src.name}"))
+        f"Original model provided by Wuerth Elektronik eiSos GmbH & Co. KG (WE eiSos), KiCad-Library {commit}: {src.name}"))
     header.SetOrganizationValue(1, TCollection_HAsciiString(
         "MODIFIED by DropOut: renamed and re-exported with this header; geometry and colours unchanged"))
     out = REPO / "3dmodels" / f"{LIB}.3dshapes" / f"{name}.step"
