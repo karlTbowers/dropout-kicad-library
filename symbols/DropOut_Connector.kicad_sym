@@ -2263,7 +2263,7 @@
 				)
 			)
 		)
-		(property "Description" "Amphenol SINE BoardLock ATM13 2-pin right-angle PCB receptacle with flange seal, 4.20 mm pitch, gold-plated size 20 pins, no potting, 7.5 A, 250 V, IP67 mated, -55 to +125 °C; mates ATM06-2S"
+		(property "Description" "Amphenol Sine BoardLock ATM13 2-pin right-angle PCB receptacle with flange seal, 4.20 mm pitch, gold-plated size 20 pins, no potting, 7.5 A, 250 V, IP67 mated, -55 to +125 °C; mates ATM06-2S"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2274,7 +2274,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Amphenol SINE Systems"
+		(property "Manufacturer" "Amphenol Sine Systems"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2329,7 +2329,7 @@
 				)
 			)
 		)
-		(property "Notes" "Mates the ATM06-2S plug (size 20 sockets). Fixed by 3x"
+		(property "Notes" "Mates the ATM06-2S plug (size 20 sockets). Fixed by 3x #4-20 thread-forming screws from the solder side (0.68-1.13 N-m). Pin numbering from the drawing's mounting-face view; verify on a sample."
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2340,7 +2340,7 @@
 				)
 			)
 		)
-		(property "ki_keywords" "connector receptacle header right angle Amphenol SINE ATM ATM13 ATM06-2S BoardLock sealed automotive"
+		(property "ki_keywords" "connector receptacle header right angle Amphenol Sine ATM ATM13 ATM06-2S BoardLock sealed automotive"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2461,7 +2461,7 @@
 				)
 			)
 		)
-		(property "Description" "Amphenol SINE BoardLock ATM13 2-pin right-angle PCB receptacle with flange seal, 4.20 mm pitch, gold-plated size 20 pins, potting, 7.5 A, 250 V, IP67 mated, -55 to +125 °C; mates ATM06-2S"
+		(property "Description" "Amphenol Sine BoardLock ATM13 2-pin right-angle PCB receptacle with flange seal, 4.20 mm pitch, gold-plated size 20 pins, potting, 7.5 A, 250 V, IP67 mated, -55 to +125 °C; mates ATM06-2S"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2472,7 +2472,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Amphenol SINE Systems"
+		(property "Manufacturer" "Amphenol Sine Systems"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2527,7 +2527,7 @@
 				)
 			)
 		)
-		(property "Notes" "Mates the ATM06-2S plug (size 20 sockets). Fixed by 3x"
+		(property "Notes" "Mates the ATM06-2S plug (size 20 sockets). Fixed by 3x #4-20 thread-forming screws from the solder side (0.68-1.13 N-m). Pin numbering from the drawing's mounting-face view; verify on a sample."
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2538,7 +2538,7 @@
 				)
 			)
 		)
-		(property "ki_keywords" "connector receptacle header right angle Amphenol SINE ATM ATM13 ATM06-2S BoardLock sealed automotive"
+		(property "ki_keywords" "connector receptacle header right angle Amphenol Sine ATM ATM13 ATM06-2S BoardLock sealed automotive"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2659,7 +2659,7 @@
 				)
 			)
 		)
-		(property "Description" "Amphenol SINE BoardLock ATM13 2-pin right-angle PCB receptacle with flange seal, 4.20 mm pitch, tin-plated size 20 pins, no potting, 7.5 A, 250 V, IP67 mated, -55 to +125 °C; mates ATM06-2S"
+		(property "Description" "Amphenol Sine BoardLock ATM13 2-pin right-angle PCB receptacle with flange seal, 4.20 mm pitch, tin-plated size 20 pins, no potting, 7.5 A, 250 V, IP67 mated, -55 to +125 °C; mates ATM06-2S"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2670,7 +2670,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Amphenol SINE Systems"
+		(property "Manufacturer" "Amphenol Sine Systems"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2725,7 +2725,7 @@
 				)
 			)
 		)
-		(property "Notes" "Mates the ATM06-2S plug (size 20 sockets). Fixed by 3x"
+		(property "Notes" "Mates the ATM06-2S plug (size 20 sockets). Fixed by 3x #4-20 thread-forming screws from the solder side (0.68-1.13 N-m). Pin numbering from the drawing's mounting-face view; verify on a sample."
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2736,7 +2736,7 @@
 				)
 			)
 		)
-		(property "ki_keywords" "connector receptacle header right angle Amphenol SINE ATM ATM13 ATM06-2S BoardLock sealed automotive"
+		(property "ki_keywords" "connector receptacle header right angle Amphenol Sine ATM ATM13 ATM06-2S BoardLock sealed automotive"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2857,7 +2857,7 @@
 				)
 			)
 		)
-		(property "Description" "Amphenol SINE BoardLock ATM13 2-pin right-angle PCB receptacle with flange seal, 4.20 mm pitch, tin-plated size 20 pins, potting, 7.5 A, 250 V, IP67 mated, -55 to +125 °C; mates ATM06-2S"
+		(property "Description" "Amphenol Sine BoardLock ATM13 2-pin right-angle PCB receptacle with flange seal, 4.20 mm pitch, tin-plated size 20 pins, potting, 7.5 A, 250 V, IP67 mated, -55 to +125 °C; mates ATM06-2S"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2868,7 +2868,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Amphenol SINE Systems"
+		(property "Manufacturer" "Amphenol Sine Systems"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2923,7 +2923,7 @@
 				)
 			)
 		)
-		(property "Notes" "Mates the ATM06-2S plug (size 20 sockets). Fixed by 3x"
+		(property "Notes" "Mates the ATM06-2S plug (size 20 sockets). Fixed by 3x #4-20 thread-forming screws from the solder side (0.68-1.13 N-m). Pin numbering from the drawing's mounting-face view; verify on a sample."
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2934,7 +2934,7 @@
 				)
 			)
 		)
-		(property "ki_keywords" "connector receptacle header right angle Amphenol SINE ATM ATM13 ATM06-2S BoardLock sealed automotive"
+		(property "ki_keywords" "connector receptacle header right angle Amphenol Sine ATM ATM13 ATM06-2S BoardLock sealed automotive"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)

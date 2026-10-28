@@ -11137,7 +11137,7 @@
 				)
 			)
 		)
-		(property "Description" "Stackpole RNCF thin film chip resistor, 32 kΩ ±0.1%, 0.1 W, 75 V, ±25 ppm/K, AEC-Q200, -55 to +155 °C, 0603 (1608 metric)"
+		(property "Description" "Stackpole Electronics RNCF thin film chip resistor, 32 kΩ ±0.1%, 0.1 W, 75 V, ±25 ppm/K, AEC-Q200, -55 to +155 °C, 0603 (1608 metric)"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11148,7 +11148,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Stackpole"
+		(property "Manufacturer" "Stackpole Electronics"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
