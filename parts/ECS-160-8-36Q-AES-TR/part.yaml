@@ -1,0 +1,27 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/ECS-160-8-36Q-AES-TR/part.yaml
+# ECS ECX-2236Q automotive crystal (datasheet Rev.2020). Ordering code decoded with the "Part
+# Numbering Guide" (p. 1): 160 = 16.000 MHz; 8 = CL 8 pF; 36Q = ECX-2236Q; A = ±25 ppm tolerance;
+# E = ±50 ppm stability; S = -40 to +125 °C; TR = tape and reel, 3k/reel. ESR 80 Ω max
+# (16.000 to 19.999 MHz), C0 5 pF max.
+# Node60 DEC-015 part search (2026-10-28): alternate, not selected (less accurate at 25 °C,
+# ±25 ppm, than the selected Abracon ABM8AIG-16.000MHZ-8-1Z-T at ±10 ppm).
+# Pins (p. 1, "Pad Connections"): #1 In/Out, #3 Out/In (crystal); #2, #4 GND, grounded to the metal
+# lid. Lid pins are passive "G" as KiCad's Device:Crystal_GND24, drawn as two separate visible pins.
+library: DropOut_Timing
+name: ECS-160-8-36Q-AES-TR
+style: crystal_gnd24
+pins: pins.csv
+fields:
+  Reference: Y
+  Value: ECS-160-8-36Q-AES-TR
+  Footprint: DropOut_Crystal:Crystal_SMD_ECS_ECX-2236Q-4Pin_2.5x2.0mm
+  Datasheet: https://ecsxtal.com/store/pdf/ECX-2236Q.pdf
+  Description: ECS ECX-2236Q 16 MHz crystal, fundamental, CL 8 pF, ±25 ppm at 25 °C, ±50 ppm over temperature, ESR 80 Ω max, -40 to +125 °C, AEC-Q200, 2.5x2.0 mm
+  ki_keywords: crystal quartz 16MHz automotive AEC-Q200
+  ki_fp_filters: Crystal*ECS*ECX?2236Q*
+  Manufacturer: ECS Inc.
+  MPN: ECS-160-8-36Q-AES-TR
+  DigiKey_PN: XC2443CT-ND
+  Mouser_PN: 520-160-8-36Q-AEST
+  Temperature_Grade: AEC-Q200, -40 to +125 °C

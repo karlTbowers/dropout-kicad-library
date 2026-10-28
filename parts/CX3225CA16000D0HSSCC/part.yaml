@@ -1,0 +1,28 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/CX3225CA16000D0HSSCC/part.yaml
+# KYOCERA AVX CX3225CA automotive crystal. Product specification for this code:
+# UKY1C-H2-26AAA-00[43] rev. 00, issued 2026-07-15 (ele.kyocera.com; DigiKey's mirror is the 2013
+# drawing K1101-13751-431, superseded). Ordering code checked with the CX3225CA catalog sheet
+# (cx3225ca_e.pdf, "How to Order"): 16000 = 16 MHz; D0 = CL 8.0 pF; H = ±20 ppm tolerance;
+# S = -40 to +125 °C; S = ±50 ppm stability; CC = individual specification (the spec sheet above;
+# catalog standard is HH). Spec p. 3: ESR 100 Ω max; catalog: C0 3.0 pF max. Reel of 3000.
+# Node60 DEC-015 part search (2026-10-28): alternate / second source to ABM8AIG-16.000MHZ-8-1Z-T.
+# Pins (spec p. 5, "Connection"): #1, #3 HOT (crystal); #2, #4 NC. Unlike the Abracon/NDK/ECS
+# parts there is no lid connection, so pads 2 and 4 are visible no_connect pins (style crystal_nc24).
+library: DropOut_Timing
+name: CX3225CA16000D0HSSCC
+style: crystal_nc24
+pins: pins.csv
+fields:
+  Reference: Y
+  Value: CX3225CA16000D0HSSCC
+  Footprint: DropOut_Crystal:Crystal_SMD_Kyocera_CX3225CA-4Pin_3.2x2.5mm
+  Datasheet: https://ele.kyocera.com/assets/products/crystal-device/specification/CX3225CA16000D0HSSCC_e.pdf
+  Description: KYOCERA AVX CX3225CA 16 MHz crystal, fundamental, CL 8 pF, ±20 ppm at 25 °C, ±50 ppm over temperature, ESR 100 Ω max, pins 2 and 4 not connected, -40 to +125 °C, AEC-Q200, 3.2x2.5 mm
+  ki_keywords: crystal quartz 16MHz automotive AEC-Q200
+  ki_fp_filters: Crystal*Kyocera*CX3225CA*
+  Manufacturer: KYOCERA AVX
+  MPN: CX3225CA16000D0HSSCC
+  DigiKey_PN: 478-CX3225CA16000D0HSSCCCT-ND
+  Mouser_PN: 581-CX3225CA16DHSSCC
+  Temperature_Grade: AEC-Q200, -40 to +125 °C

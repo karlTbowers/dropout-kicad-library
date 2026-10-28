@@ -851,6 +851,24 @@ parts:
   observed:
     digikey: TNP10.0KAACT-ND 124370 in stock, $0.28 @1, $0.1693 @1k (2026-10-22)
     mouser: 71-TNPW060310K0BEEA 388126 in stock, $0.28 @1, $0.229 @1k (2026-10-23)
+# 10 pF C0G 50 V 0402 (2026-10-28): DigiKey parametric search (category 60, AEC-Q200, 0402, C0G, 50 V, 10 pF)
+# found Murata GCM1555C1H100JA16D ($0.10 @1, $0.0118 @500, 465k stock), Yageo AC0402JRNPO9BN100 ($0.10 @1,
+# $0.0206 @500), TDK CGA2B2NP01H100D050BA ($0.12 @1, $0.0285 @500, ±0.5 pF) and KEMET C0402C100J5GACAUTO
+# ($0.12 @1, $0.0292 @500); the Murata part is the cheapest with the most stock at both distributors.
+- mpn: GCM1555C1H100JA16D
+  family: murata_gcm
+  value: 10pF
+  size: '0402'
+  voltage: 50 V
+  tolerance: ±5%
+  dielectric: C0G
+  line: C0G 10pF 50V 0402 (16 MHz crystal load capacitors, Node60 DEC-015)
+  digikey: 490-10668-1-ND
+  mouser: 81-GCM1555C1H100JA6D
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM1555C1H100JA16-01A-EN_PDF_CERAMICCAPACITORSMD
+  observed:
+    digikey: 490-10668-1-ND 465164 in stock, $0.10 @1, $0.0118 @500 (2026-10-28)
+    mouser: 81-GCM1555C1H100JA6D 44438 in stock, $0.10 @1, $0.017 @100 (2026-10-28)
 - mpn: GCM1885C1H472JA16D
   family: murata_gcm
   value: 4.7nF

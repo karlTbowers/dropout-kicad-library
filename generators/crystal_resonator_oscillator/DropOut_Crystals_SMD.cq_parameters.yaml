@@ -43,3 +43,47 @@ SMD_Abracon_ABM10AIG:
   rotation: 0
   destination_dir: 'Crystal.3dshapes'
   source: 'https://abracon.com/AIGcrystals/ABM10AIG.pdf'
+
+# KYOCERA AVX CX3225CA (spec UKY1C-H2-26AAA-00[43] p. 5): terminals 1.00 (x) x 0.75 (y) mm,
+# 0.10 mm in from the body edges -> centres 2.0 x 1.55; height 0.8 +/-0.1 (0.90 max)
+SMD_Kyocera_CX3225CA:
+  type: 1
+  file_name: Crystal_SMD_Kyocera_CX3225CA-4Pin_3.2x2.5mm
+  L: 3.2
+  W: 2.5
+  H: 0.8
+  A1: 0.0
+  p_cnt: 4
+  p_split_x: 2.0
+  p_split_y: 1.55
+  p_length: 1.0
+  p_width: 0.75
+  body_top_color_key: metal aluminum
+  body_color_key: gold pins
+  bottom_color_key: black body
+  pin_color_key: metal grey pins
+  rotation: 0
+  destination_dir: 'Crystal.3dshapes'
+  source: 'https://ele.kyocera.com/assets/products/crystal-device/specification/CX3225CA16000D0HSSCC_e.pdf'
+
+# ECS ECX-2236Q (Rev.2020 p. 1 bottom view): terminals 0.8 (x) x 0.65 (y) mm, 0.9 mm gap in x,
+# 0.7 mm gap in y -> centres 1.7 x 1.35; height 0.5 +/-0.1
+SMD_ECS_ECX-2236Q:
+  type: 1
+  file_name: Crystal_SMD_ECS_ECX-2236Q-4Pin_2.5x2.0mm
+  L: 2.5
+  W: 2.0
+  H: 0.5
+  A1: 0.0
+  p_cnt: 4
+  p_split_x: 1.7
+  p_split_y: 1.35
+  p_length: 0.8
+  p_width: 0.65
+  body_top_color_key: metal aluminum
+  body_color_key: gold pins
+  bottom_color_key: black body
+  pin_color_key: metal grey pins
+  rotation: 0
+  destination_dir: 'Crystal.3dshapes'
+  source: 'https://ecsxtal.com/store/pdf/ECX-2236Q.pdf'

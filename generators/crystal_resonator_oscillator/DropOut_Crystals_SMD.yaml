@@ -55,3 +55,55 @@ Crystal_SMD_Abracon_ABM10AIG-4Pin_2.5x2.0mm:
   pad_sep_y: 1.25
   pins: 4
   style: rect
+
+# KYOCERA AVX CX3225CA (automotive), product specification UKY1C-H2-26AAA-00[43] rev. 00 (2026-07-15)
+# for CX3225CA16000D0HSSCC. p. 5 outline: body 3.20 x 2.50 x 0.8 +/-0.1 mm; top view #1, #3 HOT
+# (crystal), #2, #4 NC (no lid connection). p. 6 "RECOMMENDED LAND PATTERN": 1.3 x 1.05 mm pads,
+# 1.0 mm gap in x and 0.8 mm gap in y -> centres 2.3 mm (x) x 1.85 mm (y). Same land in the
+# CX3225CA catalog sheet (cx3225ca_e.pdf, 2026-10-07).
+Crystal_SMD_Kyocera_CX3225CA-4Pin_3.2x2.5mm:
+  addSizeFootprintName: true
+  manufacturer: Kyocera
+  part_number: CX3225CA
+  tags: crystal SMD Kyocera CX3225CA automotive AEC-Q200
+  description: Automotive crystal, AEC-Q200, pins 2 and 4 not connected, land pattern per KYOCERA CX3225CA product specification UKY1C-H2-26AAA-00[43] page 6
+  datasheet: https://ele.kyocera.com/assets/products/crystal-device/cx3225ca_e.pdf
+  footprint_name: Crystal_SMD_Kyocera_CX3225CA
+  func: makeSMDCrystal
+  hasAdhesive: false
+  lib_name: Crystal
+  pack_bevel: 0
+  pack_height: 2.5
+  pack_width: 3.2
+  pad:
+  - 1.3
+  - 1.05
+  pad_sep_x: 2.3
+  pad_sep_y: 1.85
+  pins: 4
+  style: rect
+
+# ECS ECX-2236Q (AEC-Q200). Datasheet "Rev.2020" p. 1: body 2.5 x 2.0 x 0.5 +/-0.1 mm; pads
+# #1 In/Out, #3 Out/In, #2, #4 GND (grounded to metal lid); "Figure 2) Suggested land pattern":
+# 1.2 (x) x 1.0 (y) mm pads, centres 1.7 mm (x) x 1.3 mm (y). Top view #1 bottom-left.
+Crystal_SMD_ECS_ECX-2236Q-4Pin_2.5x2.0mm:
+  addSizeFootprintName: true
+  manufacturer: ECS
+  part_number: ECX-2236Q
+  tags: crystal SMD ECS ECX-2236Q automotive AEC-Q200
+  description: Automotive crystal, AEC-Q200, land pattern per ECS ECX-2236Q datasheet (Rev.2020) figure 2
+  datasheet: https://ecsxtal.com/store/pdf/ECX-2236Q.pdf
+  footprint_name: Crystal_SMD_ECS_ECX-2236Q
+  func: makeSMDCrystal
+  hasAdhesive: false
+  lib_name: Crystal
+  pack_bevel: 0
+  pack_height: 2.0
+  pack_width: 2.5
+  pad:
+  - 1.2
+  - 1.0
+  pad_sep_x: 1.7
+  pad_sep_y: 1.3
+  pins: 4
+  style: rect

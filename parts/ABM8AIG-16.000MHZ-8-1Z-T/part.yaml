@@ -1,0 +1,29 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/ABM8AIG-16.000MHZ-8-1Z-T/part.yaml
+# Abracon ABM8AIG automotive crystal (datasheet "REVISED: 06-13-19"). Ordering code decoded with
+# "Options and Part Identification" (p. 2): 16.000MHZ; 8 = CL 8 pF; custom ESR blank = standard
+# (70 Ω max for 16.000 to 19.999 MHz, p. 1); operating temperature blank = -40 to +125 °C;
+# 1 = ±10 ppm tolerance at +25 °C; Z = ±50 ppm stability over temperature; T = 1k pcs / reel.
+# Node60 DEC-015 (S32K344 FXOSC, 16 MHz): the SELECTED part of the 2026-10-28 part search.
+# Pins (p. 3): #1, #3 crystal; #2, #4 GND, electrically connected to the lid. Lid pins are passive
+# "G" as KiCad's Device:Crystal_GND24, drawn as two separate visible pins (DropOut never combines
+# pins). Footprint: the recommended land pattern (p. 3: 1.4 x 1.2 mm pads, 2.2 x 1.6 mm centres,
+# pad 1 bottom-left in top view) is identical to NDK NX3225SA's, so that DropOut footprint is
+# reused; its 3D model is 0.55 mm tall (NDK), the ABM8AIG is 0.8 mm max.
+library: DropOut_Timing
+name: ABM8AIG-16.000MHZ-8-1Z-T
+style: crystal_gnd24
+pins: pins.csv
+fields:
+  Reference: Y
+  Value: ABM8AIG-16.000MHZ-8-1Z-T
+  Footprint: DropOut_Crystal:Crystal_SMD_NDK_NX3225SA-4Pin_3.2x2.5mm
+  Datasheet: https://abracon.com/AIGcrystals/ABM8AIG.pdf
+  Description: Abracon ABM8AIG 16 MHz crystal, fundamental, CL 8 pF, ±10 ppm at 25 °C, ±50 ppm over temperature, ESR 70 Ω max, C0 2 pF max, -40 to +125 °C, AEC-Q200, 3.2x2.5 mm
+  ki_keywords: crystal quartz 16MHz automotive AEC-Q200
+  ki_fp_filters: Crystal*NDK*NX3225SA*
+  Manufacturer: Abracon
+  MPN: ABM8AIG-16.000MHZ-8-1Z-T
+  DigiKey_PN: 535-ABM8AIG-16.000MHZ-8-1Z-TCT-ND
+  Mouser_PN: 815-M8AIG-16-8-1ZT
+  Temperature_Grade: AEC-Q200, -40 to +125 °C

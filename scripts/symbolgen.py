@@ -239,6 +239,26 @@ def style_crystal_gnd24(pins):
     return out, 3.556 + 0.27, 3 * G
 
 
+def style_crystal_nc24(pins):
+    """Four-pin crystal whose pads 2 and 4 are not connected (no lid connection, e.g. KYOCERA
+    CX3225CA): the quartz of crystal_gnd24 without the lid, crystal pins on L/R, the two NC pins on
+    B as visible no_connect pins (DropOut never hides or combines pins)."""
+    left = [p for p in pins if p["side"] == "L"]
+    right = [p for p in pins if p["side"] == "R"]
+    bottom = sorted((p for p in pins if p["side"] == "B"), key=lambda p: p["slot"] or 0)
+    if len(pins) != 4 or len(left) != 1 or len(right) != 1 or len(bottom) != 2:
+        sys.exit("symbolgen: crystal_nc24 needs one L, one R and two B pins")
+    if any(p["type"] != "no_connect" for p in bottom):
+        sys.exit("symbolgen: crystal_nc24 bottom pins must be no_connect (use crystal_gnd24 for a lid)")
+    g = [poly([(-1.143, 2.54), (1.143, 2.54), (1.143, -2.54), (-1.143, -2.54), (-1.143, 2.54)], fill="background"),
+         poly([(-2.032, -1.27), (-2.032, 1.27)], width=0.508),          # electrodes
+         poly([(2.032, -1.27), (2.032, 1.27)], width=0.508),
+         poly([(-2.54, 0), (-2.032, 0)]), poly([(2.032, 0), (2.54, 0)])]
+    out = g + [pin_sexpr(left[0], -2 * G, 0, 0, length=G), pin_sexpr(right[0], 2 * G, 0, 180, length=G),
+               pin_sexpr(bottom[0], -G, -3 * G, 90, length=G), pin_sexpr(bottom[1], G, -3 * G, 90, length=G)]
+    return out, 2.54 + 0.27, 3 * G
+
+
 def arc(start, mid, end, width=0.254):
     return (f"\t\t\t(arc (start {fmt(start[0])} {fmt(start[1])}) (mid {fmt(mid[0])} {fmt(mid[1])}) "
             f"(end {fmt(end[0])} {fmt(end[1])})\n\t\t\t\t(stroke (width {width}) (type default)) (fill (type none)))")
@@ -411,6 +431,7 @@ def style_testpoint(pins):
 
 
 STYLES = {"tvs_bidirectional": style_tvs_bidirectional, "crystal_gnd24": style_crystal_gnd24,
+          "crystal_nc24": style_crystal_nc24,
           "cmc_4pin": style_cmc_4pin, "inductor": style_inductor, "testpoint": style_testpoint,
           "resistor": style_resistor, "resistor_shunt_4pin": style_resistor_shunt_4pin, "nmos": style_nmos,
           "thermistor_ntc": style_thermistor_ntc, "capacitor": style_capacitor}
@@ -422,7 +443,7 @@ STYLE_FIELDS = {"inductor": {"Reference": (2.54, 1.27), "Value": (2.54, -1.27)},
 # a test point's connection point is at the bottom, so both go above it, as on KiCad's TestPoint
 STYLE_FIELD_Y = {"testpoint": {"Reference": 6.858, "Value": 5.08}}
 # Pin numbers are shown where the package has more than two terminals (as KiCad's stock symbols)
-STYLE_SHOW_NUMBERS = {"crystal_gnd24", "cmc_4pin", "resistor_shunt_4pin", "nmos"}
+STYLE_SHOW_NUMBERS = {"crystal_gnd24", "crystal_nc24", "cmc_4pin", "resistor_shunt_4pin", "nmos"}
 
 
 def build_symbol(part, pins):
