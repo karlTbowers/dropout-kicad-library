@@ -5,7 +5,7 @@ BM03 tin/unpotted, BM04 tin/potted): they share drawing ATM13-2P-BMXX.
 
 Usage: ~/.cache/dropout/klt-venv/bin/python generators/custom/Amphenol_ATM13-2P-BMxx.py
 
-Sources (archived in dropout-vendor-docs, Amphenol-SINE/ATM/):
+Sources (archived in dropout-vendor-docs, Amphenol-Sine/ATM/):
 - Holes: drawing ATM13-2P-BMXX rev. A2 (10 Jul 2020), "Recommended PCB layout, view from components
   side of PCB": 2x Ø1.20 +0.2/-0 pin holes 4.20 apart; 3x Ø3.43 holes for #4-20 thread-forming
   screws (inserted from the solder side into the housing bosses, 0.68-1.13 N-m): one on the pin
