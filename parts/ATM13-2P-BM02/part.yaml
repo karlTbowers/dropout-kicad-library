@@ -26,4 +26,4 @@ fields:
   DigiKey_PN: 889-3356-ND
   Mouser_PN: 654-ATM13-2P-BM02
   Temperature_Grade: -55 to +125 °C (not AEC qualified)
-  Notes: Mates the ATM06-2S plug (size 20 sockets). Fixed by 3x #4-20 thread-forming screws from the solder side (0.68-1.13 N-m). Pin numbering from the drawing's mounting-face view; verify on a sample.
+  Notes: "Mates the ATM06-2S plug (size 20 sockets). Fixed by 3x #4-20 thread-forming screws from the solder side (0.68-1.13 N-m). Pin numbering from the drawing's mounting-face view; verify on a sample."
