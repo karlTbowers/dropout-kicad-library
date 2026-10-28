@@ -29,3 +29,9 @@ fields:
   DigiKey_PN: "-"
   Mouser_PN: "-"
   Notes: "PCB copper only; nothing to order. Excluded from BOM and position files."
+catalog:
+  family: test-points
+  group: Copper pads
+  attributes:
+    Pad: Ø1.0 mm exposed copper
+    Mounting: PCB feature, nothing to order

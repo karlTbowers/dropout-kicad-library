@@ -21,3 +21,14 @@ fields:
   Mouser_PN: "-"
   Temperature_Grade: "max sustained 350 °C"
   Notes: "Not stocked at DigiKey or Mouser: Newark 50M8454 / Farnell (pack of 100). Data sheet is a Farnell copy; no manufacturer copy online."
+catalog:
+  family: test-points
+  group: Vero beaded wire loops
+  attributes:
+    Mounting: Through hole
+    Hole: 1.32 mm
+    Bead: Ø3.0 mm black glass
+    PCB thickness: 1.6 mm
+    Material: Phosphor bronze
+    Plating: Tin
+    Packaging: Pack of 100

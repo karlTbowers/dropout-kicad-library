@@ -21,3 +21,13 @@ fields:
   Mouser_PN: "855-S2751-46R"
   Temperature_Grade: "-55 to +125 °C"
   Notes: "Ground test point (probe loop) for a scope ground spring or clip."
+catalog:
+  family: test-points
+  group: Harwin SMT loops
+  attributes:
+    Loop: 2.0 × 1.2 mm
+    Height: 1.4 mm
+    Material: Brass
+    Plating: Tin over nickel
+    Current: 3.5 A
+    Packaging: Tape and reel

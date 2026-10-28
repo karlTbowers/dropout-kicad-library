@@ -21,3 +21,14 @@ fields:
   Mouser_PN: "534-5015"
   Temperature_Grade: "-45 to +85 °C"
   Notes: "Rated only to +85 °C: not for automotive Grade 1 boards."
+catalog:
+  family: test-points
+  group: Keystone test points
+  attributes:
+    Mounting: SMT
+    Style: Micro miniature
+    Loop: 2.7 × 1.0 mm
+    Height: 1.5 mm
+    Material: Phosphor bronze
+    Plating: Silver
+    Packaging: Tape and reel, 1000

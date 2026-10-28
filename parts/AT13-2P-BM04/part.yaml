@@ -30,3 +30,17 @@ fields:
   Mouser_PN: 654-AT13-2P-BM04
   Temperature_Grade: -55 to +125 °C at rated current (not AEC qualified)
   Notes: Mates AT06-2S plug (DT06-2S compatible). Potted version, rated for up to 5 psi. Footprint is Amphenol's layout (5.40 mm pitch, Ø1.80 holes), not TE DT13-2P's (5.46 mm).
+catalog:
+  family: sealed-headers
+  group: DEUTSCH DT13-2P and compatibles
+  attributes:
+    Pitch: 5.40 mm
+    Current: 13 A
+    Voltage: 250 V
+    Sealing: Panel flange gasket, IP67 mated
+    Potting: 'Yes'
+    Plating: Tin
+    Ratings: Manufacturer data sheet
+  mates_with:
+  - AT06-2S
+  - DT06-2S

@@ -21,3 +21,13 @@ fields:
   Mouser_PN: "855-S2761-46R"
   Temperature_Grade: "-55 to +125 °C"
   Notes: "Smallest Harwin loop; check the scope ground spring fits before using it as a ground probe loop."
+catalog:
+  family: test-points
+  group: Harwin SMT loops
+  attributes:
+    Loop: 1.6 × 0.8 mm
+    Height: 1.15 mm
+    Material: Brass
+    Plating: Tin over nickel
+    Current: 3.5 A
+    Packaging: Tape and reel

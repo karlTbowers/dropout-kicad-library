@@ -23,3 +23,14 @@ fields:
   DigiKey_PN: SAM13165CT-ND
   Mouser_PN: 200-FTSH10501LDVKTR
   Temperature_Grade: -55 to +125 °C (not AEC qualified)
+catalog:
+  family: debug-headers
+  group: Samtec FTSH 2×05, 1.27 mm
+  attributes:
+    Positions: 2 × 5
+    Pitch: 1.27 mm
+    Mounting: Vertical SMD
+    Post: 3.05 mm
+    Plating: Gold on post, matte tin tail
+    Keying: Keying piece for FFSD cables
+    Packaging: Tape and reel

@@ -16,7 +16,7 @@ The essentials are below.
 - **Never combine pins on a symbol:** every package pin gets its own visible pin, including repeated supply and ground pins and NC pins (visible `no_connect` pins; KLC S4.6 waived by `visible-nc-pins`). No KiCad native pin stacks and no hidden stacked pins, even where KLC S4.3 allows them. `scripts/check_pin_pad_match.py` enforces it in CI. Exception: a power terminal whose unnumbered press-fit pins form one contact (Würth REDCUBE) has one symbol pin and all its pads numbered `1` (user, 2026-10-26).
 - **Required symbol fields:** KLC S6.2 fields plus `Manufacturer`, `MPN`, `DigiKey_PN`, `Mouser_PN`. Use `-` for a distributor PN only when the part genuinely is not stocked there.
 - **No overprinting text on a symbol** (handbook D-47): no pin name, pin number, or visible field may run into another. Size the body from the text; grow it downward first so existing pins keep their positions. `scripts/check_symbol_text.py` enforces it in CI and `symbolgen.py` refuses to write a symbol that fails it.
-- **Before every commit:** `python3 scripts/check_symbol_fields.py symbols`, `python3 scripts/check_pin_pad_match.py`, `python3 scripts/check_symbol_text.py`, and `~/.cache/dropout/klt-venv/bin/python scripts/klc_check.py`. CI runs all four.
+- **Before every commit:** `python3 scripts/check_symbol_fields.py symbols`, `python3 scripts/check_pin_pad_match.py`, `python3 scripts/check_symbol_text.py`, `~/.cache/dropout/klt-venv/bin/python scripts/check_catalog_data.py`, and `~/.cache/dropout/klt-venv/bin/python scripts/klc_check.py`. CI runs all five.
 - **Never add a KLC exception on your own.** Propose it to the user; it goes in its own PR.
 - **Naming:** libraries `DropOut_<Category>`; symbol, footprint, and 3D model names per KLC; 3D models share the footprint name, `.step`.
 - **3D model paths:** `${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/<Category>.3dshapes/<name>.step`. Projects mount this repo as a submodule at exactly `lib/dropout-kicad-library`.
@@ -51,11 +51,12 @@ footprints/   DropOut_<Category>.pretty/
 3dmodels/     DropOut_<Category>.3dshapes/
 docs/         CONTRIBUTING.md
 parts/        <MPN>/part.yaml + pins.csv: the source of each generated symbol;
-              passives.yaml: the table chip resistors and MLCCs are generated from
+              passives.yaml: the table chip resistors and MLCCs are generated from;
+              families.yaml: catalog families for mechanical parts (the `catalog:` block in part.yaml)
 generators/   <generator>/DropOut_<Vendor>.yaml: kicad-library-tools footprint/3D specs;
               custom/: scripts for packages no generator covers (fplib.py helpers)
 scripts/      setup_tools.sh, distributor_lookup.py, generate_footprint.py, symbolgen.py, passivegen.py, render_part.py,
-              pintables/, check_symbol_fields.py, check_pin_pad_match.py, check_symbol_text.py,
+              pintables/, check_symbol_fields.py, check_pin_pad_match.py, check_symbol_text.py, check_catalog_data.py,
               klc_check.py, vendor-env.sh
 tests/klc/    KLC wrapper self-test fixtures
 tests/symbol_text/   check_symbol_text.py self-test fixtures
@@ -70,6 +71,7 @@ The browsable catalog of this library lives in its **own repo**, `karlTbowers/dr
 - Nothing in this repo is site code. Don't add `site/`, catalog scripts, or Node tooling here.
 - The `notify-catalog` job in `library-checks.yml` asks the catalog to rebuild after every push to `main` that passes the checks. It needs the repo secret `CATALOG_DISPATCH_TOKEN` (a fine-grained token with Contents: read and write on `dropout-library-catalog` only); without it the job skips with a notice and the catalog's nightly rebuild catches up.
 - Part changes show up in the catalog automatically. If a field or drawing looks wrong there, fix the part here.
+- The catalog's family pages for mechanical parts come from `parts/families.yaml` and the `catalog:` blocks in `part.yaml` (data only; the catalog reads them from `parts/`).
 
 ## Working copies
 

@@ -26,3 +26,14 @@ fields:
   Mouser_PN: '-'
   Temperature_Grade: Not specified by a datasheet (seller claims -55 to +125 °C)
   Notes: 'Alternate to TE DT13-2P, no authorized distributor. Supplier: Alibaba, https://www.alibaba.com/product-detail/Right-Angle-DT13-2P-2-Pin_1601383533915.html (/bin/zsh.10-0.50, MOQ 100, observed 2026-10-22). No drawing or qualification data; footprint is the TE DT13-2P layout, verify a sample.'
+catalog:
+  family: sealed-headers
+  group: DEUTSCH DT13-2P and compatibles
+  attributes:
+    Pitch: 5.46 mm
+    Current: 13 A
+    Voltage: 250 V
+    Sealing: Panel flange seal
+    Ratings: Seller claim, no drawing
+  mates_with:
+  - DT06-2S

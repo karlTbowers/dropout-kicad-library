@@ -25,3 +25,15 @@ fields:
   Mouser_PN: "-"
   Temperature_Grade: -55 to +150 °C
   Notes: "Press-fit: insert in one movement, no rework or soldering after insertion, 0.1 mm min. gap under the part. 3.9 N·m max. tightening torque. No components within 4 mm; keep 3 mm from the PCB edge."
+catalog:
+  family: power-terminals
+  group: REDCUBE PRESS-FIT
+  attributes:
+    Series: WP-PFIFUA
+    Thread: M6 blind, 10 mm
+    Press-fit pins: '16'
+    Current: 180 A
+    Torque: 3.9 N·m
+    PCB thickness: 1.6–2.7 mm
+    Approval: Automotive
+    Packaging: Bulk

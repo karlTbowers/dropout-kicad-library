@@ -24,3 +24,13 @@ fields:
   Mouser_PN: "-"
   Temperature_Grade: -55 to +150 °C
   Notes: "Reflow; Ø9.3 non-plated hole in the board for the spigot. 3.9 N·m max. tightening torque; hold the terminal while tightening. Bulk; for assembly on tape and reel order 74660016R."
+catalog:
+  family: power-terminals
+  group: REDCUBE SMT
+  attributes:
+    Series: WP-SMRT
+    Thread: M6 internal, reverse
+    Current: 85 A
+    Torque: 3.9 N·m
+    Mounting: Reflow, Ø9.3 mm hole for the spigot
+    Packaging: Bulk
