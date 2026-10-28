@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Amphenol SINE BoardLock ATM13-2P-BMxx right-angle PCB receptacle footprint and 3D model (no
+"""Amphenol Sine BoardLock ATM13-2P-BMxx right-angle PCB receptacle footprint and 3D model (no
 generator covers it). One footprint serves all four versions (BM01 gold/unpotted, BM02 gold/potted,
 BM03 tin/unpotted, BM04 tin/potted): they share drawing ATM13-2P-BMXX.
 
@@ -15,8 +15,8 @@ Sources (archived in dropout-vendor-docs, Amphenol-SINE/ATM/):
   (top boss 10.5 behind it, pins 6.0 further), overall length 39.7, 26.8 from the rear to the flange
   face, mating shroud 16.6 x 16.2, pins Ø1.0 with tails 3.05 below the boss faces. The rear deck
   width is read from the drawing views (not dimensioned).
-- 3D model: Amphenol SINE's own STEP for ATM13-2P-BM04 (CADENAS PARTcommunity download, 2026-10-25,
-  header "License CC BY-ND 4.0"; the user reports Amphenol SINE allowed publishing and modifying it).
+- 3D model: Amphenol Sine's own STEP for ATM13-2P-BM04 (CADENAS PARTcommunity download, 2026-10-25,
+  header "License CC BY-ND 4.0"; the user reports Amphenol Sine allowed publishing and modifying it).
   Amphenol_ATM13-2P-BMxx_step.py places it in the footprint frame (zero offset and rotation, KLC
   F9.3) without changing its geometry; this script does not write the model.
 - Pin numbering: the drawing's mounting-face (bottom) view marks PIN #1 on the left with the
@@ -111,10 +111,10 @@ def footprint():
         *[npth(x, y) for x, y in SCREWS],
         model_ref(LIB, NAME),
     ]
-    descr = ("Amphenol SINE BoardLock ATM13-2P-BMxx 2-pin right-angle PCB receptacle with flange (mates ATM06-2S), "
+    descr = ("Amphenol Sine BoardLock ATM13-2P-BMxx 2-pin right-angle PCB receptacle with flange (mates ATM06-2S), "
              "4.20 mm pitch, 3x #4-20 screw bosses; PCB layout and body per drawing ATM13-2P-BMXX rev. A2, "
              f"{DRAWING}")
-    tags = "connector Amphenol SINE ATM ATM13 ATM13-2P ATM06-2S BoardLock horizontal right angle sealed automotive"
+    tags = "connector Amphenol Sine ATM ATM13 ATM13-2P ATM06-2S BoardLock horizontal right angle sealed automotive"
     return footprint_text(NAME, descr, tags, body, attr="through_hole")
 
 

@@ -3,8 +3,8 @@
 	(generator "pcbnew")
 	(generator_version "10.0")
 	(layer "F.Cu")
-	(descr "Amphenol SINE BoardLock ATM13-2P-BMxx 2-pin right-angle PCB receptacle with flange (mates ATM06-2S), 4.20 mm pitch, 3x #4-20 screw bosses; PCB layout and body per drawing ATM13-2P-BMXX rev. A2, https://www.amphenol-sine.com/pdf/datasheet/ATM13-2P-BM04.pdf")
-	(tags "connector Amphenol SINE ATM ATM13 ATM13-2P ATM06-2S BoardLock horizontal right angle sealed automotive")
+	(descr "Amphenol Sine BoardLock ATM13-2P-BMxx 2-pin right-angle PCB receptacle with flange (mates ATM06-2S), 4.20 mm pitch, 3x #4-20 screw bosses; PCB layout and body per drawing ATM13-2P-BMXX rev. A2, https://www.amphenol-sine.com/pdf/datasheet/ATM13-2P-BM04.pdf")
+	(tags "connector Amphenol Sine ATM ATM13 ATM13-2P ATM06-2S BoardLock horizontal right angle sealed automotive")
 	(property "Reference" "REF**"
 		(at 0 -11.75 0)
 		(layer "F.SilkS")
