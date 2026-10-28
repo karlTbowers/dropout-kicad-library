@@ -104,7 +104,7 @@ families:
     keywords: resistor thin film precision automotive
   stackpole_rncf:
     kind: R
-    manufacturer: Stackpole
+    manufacturer: Stackpole Electronics
     series: RNCF
     construction: thin film
     grade: AEC-Q200
