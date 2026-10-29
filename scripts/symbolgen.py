@@ -26,6 +26,8 @@ part.yaml:
   style: testpoint                       # optional graphic style for small parts (see STYLES)
   in_bom: false                          # optional, default true: false for a part with nothing to
   in_pos_files: false                    #   buy or place (a bare-copper test pad)
+  on_board: false                        # optional, default true: false for a part bought but never
+                                         #   placed on the PCB (panel connector); Footprint may be ""
   field_layout:                          # optional: per-field position, size and visibility,
     MPN: {at: [2.54, -2.667], size: 1.0, show: true}   # left-justified at `at` (symbol mm, y up)
 
@@ -467,7 +469,7 @@ def build_symbol(part, pins):
     bottom = max(b for _, _, b in units)
     yn = lambda key: "yes" if part.get(key, True) else "no"
     lines = [f'\t(symbol "{esc(name)}"', head, "\t\t(exclude_from_sim no)",
-             f"\t\t(in_bom {yn('in_bom')})", "\t\t(on_board yes)", f"\t\t(in_pos_files {yn('in_pos_files')})"]
+             f"\t\t(in_bom {yn('in_bom')})", f"\t\t(on_board {yn('on_board')})", f"\t\t(in_pos_files {yn('in_pos_files')})"]
     field_y = {"Reference": top + G, "Value": -bottom - G, **STYLE_FIELD_Y.get(style, {})}
     beside = STYLE_FIELDS.get(style, {})
     layout = part.get("field_layout") or {}

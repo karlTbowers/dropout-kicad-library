@@ -70,6 +70,15 @@ The `Datasheet` field must be the **manufacturer's** URL, never a distributor co
 
 The symbol is marked `(in_bom no)` and `(in_pos_files no)` (`in_bom: false`, `in_pos_files: false` in `part.yaml`), and the footprint has the attributes `exclude_from_bom exclude_from_pos_files`. Then BOM and placement exports leave it out, and `Manufacturer: DropOut` never reaches a purchasing list. This applies only to parts that are pure PCB features; anything with a physical part to buy uses the real MPN.
 
+### Parts not placed on the PCB
+
+(Adopted 2026-10-28.) Some parts are bought for a board but never placed on it, e.g. a panel-mount power connector (Amphenol SurLok Plus `SLPRATPSB`) whose M6 stud screws into a board terminal (Würth REDCUBE `74660016`) that is placed as its own part. Such a part has a symbol and a 3D model but **no footprint**:
+
+- The symbol is marked `(on_board no)` and `(in_pos_files no)` (`on_board: false`, `in_pos_files: false` in `part.yaml`). It stays in the schematic and the BOM but is never sent to the PCB. `Footprint` is empty and there is no `ki_fp_filters`; `scripts/check_symbol_fields.py` accepts a blank `Footprint` only on such symbols.
+- Every other required field is filled in as usual (real MPN, distributor PNs).
+- The 3D model lives in `3dmodels/DropOut_Connector_<Vendor>.3dshapes/`, named `<Vendor>_<Series>_<MPN>` when variants differ only in colour. `Notes` gives its path and how to add it to the board terminal's footprint (offset).
+- The KLC symbol checker warns S5.2 ("No footprint filters defined") on these symbols; that warning is expected.
+
 ### Library names
 
 `DropOut_<Category>`, where `<Category>` follows KLC functional naming (see README for the list). New categories need approval.

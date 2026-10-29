@@ -40,6 +40,12 @@ power-terminals:
     - REDCUBE PRESS-FIT
     - REDCUBE SMT
 
+power-connectors:
+  title: High-current power connectors
+  intro: Panel-mount single-pole power connectors; the receptacle's stud bolts to a board power terminal.
+  groups:
+    - Amphenol SurLok Plus 5.7 mm
+
 debug-headers:
   title: Debug headers
   intro: 1.27 mm micro headers for the 10-pin Arm Cortex SWD/JTAG debug connector.
