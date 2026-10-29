@@ -1,0 +1,41 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/G6KU-2F-Y-T1-TRS_DC3/part.yaml
+# Omron (now ARATAS, formerly Omron Components) G6K datasheet Cat. No. K106-E1-16 (03/2026; DigiKey's copy
+# "G6K-T1_Datasheet_EN.pdf"). ARATAS's own URL served the older K106-E1-15 (09/2025), which has no -T1 models,
+# on 2026-10-28; both archived in dropout-vendor-docs.
+# Model number legend (p. 1) and ordering table (p. 2): G6K U = single-winding latching, 2 = DPDT, F = outside-L
+# surface-mount terminals, Y = 3.2 mm coil-to-contact / 2.2 mm contact pitch, T1 = high-temperature model
+# (-40 to +125 °C, 2 A switching); -TRS = tape packing (900 pcs/reel), no suffix = tube (50 pcs); the rated coil
+# voltage is appended (Note 1: "G6K-2F DC3"). The MPN field keeps the exact code with its space; the symbol
+# name and Value use "_" (KLC S6.2 / G1.1, add-part step 5).
+# SELECTED for the Node60 switchable 10BASE-T1S termination (user decision 2026-10-28): 3 V coil driven from 3V3 by two
+# complementary MOSFET half-bridges (DMC2710UVQ-7).
+# Stock and price: DigiKey 39-G6KU-2F-Y-T1-TRSDC3TR-ND 0 in stock (reel only, MOQ 900, $3.54 @900); Mouser 653-G6KU-2FYT1TRSDC3 no stock
+# shown (2026-10-28). Procurement risk: neither distributor had the selected DC3 code in stock.
+# Pins: p. 7 "Terminal Arrangement/Internal Connections (TOP VIEW)" for G6KU-2F-Y / G6KU-2F-Y-T1: coil between
+# pins 1 and 8, marked "S: 1 +, 8 -" and "R: 8 +, 1 -" (SET with pin 1 positive, RESET with pin 8 positive);
+# pole 1 = common 3, contacts 2 and 4; pole 2 = common 6, contacts 7 and 5. The drawing shows the reset state
+# (p. 12: "The Latching Relay is reset before shipping"): 3-2 and 6-7 closed. SET closes 3-4 and 6-5.
+# Pin names: S+ = coil end positive for SET (1), R+ = positive for RESET (8), COMn = common, RSTn = contact
+# closed in the reset state, SETn = contact closed in the set state. All pins passive (as KiCad's stock
+# Relay:G6KU-2, whose pin numbering and drawing this symbol follows; the drawing is KiCad's, CC-BY-SA 4.0).
+# Cross-check: KiCad's stock Relay:G6KU-2 places pins 1/8 on the coil with "S:+" at pin 1, commons 3/6, reset
+# contacts 2/7 (filled, drawn closed) and set contacts 4/5: same as the datasheet.
+library: DropOut_Relay
+name: G6KU-2F-Y-T1-TRS_DC3
+style: relay_dpdt_latching
+pins: pins.csv
+fields:
+  Reference: K
+  Value: G6KU-2F-Y-T1-TRS_DC3
+  Footprint: DropOut_Relay_SMD:Relay_DPDT_Omron_G6K-2F-Y
+  Datasheet: https://www.aratas.com/us-en/datasheet_pdf/K106-E1.pdf
+  Description: Omron (ARATAS) G6KU-2F-Y-T1 DPDT single-winding latching signal relay, high-temperature model, 3 VDC coil 64 Ω, 46.6 mA, set/reset by coil polarity (pin 1 + = set, pin 8 + = reset), 10 ms min. pulse, 2 A 30 VDC / 0.5 A 125 VAC contacts, -40 to +125 °C, surface mount, tape and reel (-TRS, 900 pcs/reel)
+  ki_keywords: relay latching bistable DPDT 2 form C signal surface mount high temperature
+  ki_fp_filters: Relay*DPDT*Omron*G6K?2F?Y*
+  Manufacturer: ARATAS (formerly Omron Components)
+  MPN: G6KU-2F-Y-T1-TRS DC3
+  DigiKey_PN: 39-G6KU-2F-Y-T1-TRSDC3TR-ND
+  Mouser_PN: 653-G6KU-2FYT1TRSDC3
+  Temperature_Grade: -40 to +125 °C ambient (T1 high-temperature model; relays have no AEC grade)
+  Notes: "Single-winding latching: pin 1 + / pin 8 - sets (3-4 and 6-5 closed), pin 8 + / pin 1 - resets (3-2 and 6-7 closed). Ships reset, but apply a reset pulse before use. Rated coil voltage only, 10 ms min. pulse. Built from datasheet Cat. No. K106-E1-16 (03/2026)."

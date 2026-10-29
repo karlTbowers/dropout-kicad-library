@@ -1,0 +1,235 @@
+(footprint "Nexperia_SOT-666"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Nexperia SOT666, 6 pin, 1.6x1.2x0.55mm body, 0.5mm pitch, flat leads (SOT666 package information 1 June 2022 Fig. 2, reflow soldering footprint), https://assets.nexperia.com/documents/package-information/SOT666.pdf")
+	(tags "SOT-666 SOT666 Nexperia flat lead")
+	(property "Reference" "REF**"
+		(at 0 -1.85 0)
+		(layer "F.SilkS")
+		(uuid "0e25587f-057e-420e-a763-d41fee951a62")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Nexperia_SOT-666"
+		(at 0 1.85 0)
+		(layer "F.Fab")
+		(uuid "965dc9d7-59e6-4f61-9684-ab1c0ba592f7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "88344052-c2f0-4000-90a4-92b9faa2ae56")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b5a9cb94-08db-4d30-aefb-9610858bb98f")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -1.25 -0.985)
+		(end 0.6 -0.985)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "2f09e11a-2b7b-4eba-9225-6b75b7143776")
+	)
+	(fp_line
+		(start -0.6 0.985)
+		(end 0.6 0.985)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "f9f4ca1e-0fb1-4aea-9925-5c2dc54b9069")
+	)
+	(fp_line
+		(start -1.5 -1.05)
+		(end 1.5 -1.05)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "97be38d8-79cc-48c9-bf5d-c05157ef79f4")
+	)
+	(fp_line
+		(start -1.5 1.05)
+		(end -1.5 -1.05)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "966520cc-1344-4f29-991b-3b97e37bed54")
+	)
+	(fp_line
+		(start 1.5 -1.05)
+		(end 1.5 1.05)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "959fc2a2-291f-4616-ac23-9adc4258eb4d")
+	)
+	(fp_line
+		(start 1.5 1.05)
+		(end -1.5 1.05)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "77c20966-d413-4a45-8c63-fefc186904ec")
+	)
+	(fp_line
+		(start -0.6 -0.5)
+		(end -0.3 -0.8)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "9dc2c283-addb-4261-b723-71f2bfc2c9fc")
+	)
+	(fp_line
+		(start -0.6 0.8)
+		(end -0.6 -0.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "977623b5-dcf3-40cd-b978-d689b7342d51")
+	)
+	(fp_line
+		(start -0.3 -0.8)
+		(end 0.6 -0.8)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "dadc6b73-0d2e-437d-ab2b-b711e68b9b70")
+	)
+	(fp_line
+		(start 0.6 -0.8)
+		(end 0.6 0.8)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "6d812bf5-b6c7-4e95-89dc-b941f1c1703a")
+	)
+	(fp_line
+		(start 0.6 0.8)
+		(end -0.6 0.8)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "c6ac874f-256a-45e1-9355-2d9b7a86e3a2")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "0c52d474-102c-4202-8773-8e2e107c78a9")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.075)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at -0.85 -0.5375)
+		(size 0.5 0.375)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(solder_paste_margin -0.025)
+		(uuid "0ff4e38b-07c8-4c62-b9de-708e13749faf")
+	)
+	(pad "2" smd roundrect
+		(at -0.925 0)
+		(size 0.65 0.3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(solder_paste_margin -0.025)
+		(uuid "ad88334d-3129-42d5-8a03-493df3d35dbc")
+	)
+	(pad "3" smd roundrect
+		(at -0.85 0.5375)
+		(size 0.5 0.375)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(solder_paste_margin -0.025)
+		(uuid "37d54525-b503-4081-9384-5a04a508185c")
+	)
+	(pad "4" smd roundrect
+		(at 0.85 0.5375)
+		(size 0.5 0.375)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(solder_paste_margin -0.025)
+		(uuid "b2400bdb-9063-46e5-b853-e7d390dc2963")
+	)
+	(pad "5" smd roundrect
+		(at 0.925 0)
+		(size 0.65 0.3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(solder_paste_margin -0.025)
+		(uuid "b903f78b-8ab0-446a-ab47-2b22dcd966da")
+	)
+	(pad "6" smd roundrect
+		(at 0.85 -0.5375)
+		(size 0.5 0.375)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(solder_paste_margin -0.025)
+		(uuid "013a503b-200b-400e-b21b-5635c02cbbff")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_Package_TO_SOT_SMD.3dshapes/Nexperia_SOT-666.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

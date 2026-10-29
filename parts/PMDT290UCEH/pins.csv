@@ -1,0 +1,7 @@
+number,name,type,unit,side,slot,alternates
+1,S1,passive,N,B,0,
+2,G1,input,N,L,0,
+3,D2,passive,P,T,0,
+4,S2,passive,P,B,0,
+5,G2,input,P,L,0,
+6,D1,passive,N,T,0,

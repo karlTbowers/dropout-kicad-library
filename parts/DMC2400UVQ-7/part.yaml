@@ -1,0 +1,31 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/DMC2400UVQ-7/part.yaml
+# Diodes DMC2400UVQ data sheet DS44119 Rev. 2-2 (marked "Advance Information"). ALTERNATE from the Node60 T1S
+# termination MOSFET search (2026-10-28), not selected: higher RDS(on) than DMC2710UVQ and no distributor stock.
+# Same SOT563 pinout and suggested pad layout as DMC2710UVQ (p. 1 pin out, p. 10), so it shares pins.csv and the
+# footprint. Ordering Information (p. 1): DMC2400UVQ-7 = SOT563, 3000/tape & reel. AEC-Q101 (p. 1).
+# Ratings: Q1 N 20 V, 0.5 Ω max at 4.5 V, VGSS ±12 V; Q2 P -20 V, 1.0 Ω max at -4.5 V, VGSS ±8 V; Tj -55..+150 °C.
+# Stock and price: DigiKey 31-DMC2400UVQ-7TR-ND 0 in stock (reel only, $0.092 @3k); Mouser 621-DMC2400UVQ-7 no stock
+# shown, $0.54 @1, $0.129 @1k (2026-10-28).
+# Drawn as KiCad's Transistor_FET:Q_Dual_NMOS_PMOS_*: unit A the N-channel FET (Device:Q_NMOS), unit B the P-channel
+# FET (Device:Q_PMOS), drain on top and source below in both (flip the P unit in the schematic for a high-side
+# switch). Gates input, drains and sources passive, as KiCad's stock FET symbols. The gate ESD diodes are not drawn.
+library: DropOut_PowerSwitch
+name: DMC2400UVQ-7
+style: nmos_pmos
+pins: ../DMC2710UVQ-7/pins.csv
+units: [N, P]
+fields:
+  Reference: Q
+  Value: DMC2400UVQ-7
+  Footprint: DropOut_Package_TO_SOT_SMD:Diodes_SOT-563
+  Datasheet: https://www.diodes.com/assets/Datasheets/DMC2400UVQ.pdf
+  Description: Diodes DMC2400UVQ complementary N + P MOSFET pair, 20 V / -20 V, N 0.5 Ω max at VGS 4.5 V (1.03 A), P 1.0 Ω max at VGS -4.5 V (-0.7 A), ±12 V / ±8 V VGS, ESD-protected gates, AEC-Q101, SOT-563
+  ki_keywords: MOSFET complementary N-channel P-channel pair dual transistor half bridge
+  ki_fp_filters: Diodes*SOT?563*
+  Manufacturer: Diodes Incorporated
+  MPN: DMC2400UVQ-7
+  DigiKey_PN: 31-DMC2400UVQ-7TR-ND
+  Mouser_PN: 621-DMC2400UVQ-7
+  Temperature_Grade: AEC-Q101, Tj -55 to +150 °C
+  Notes: "Unit A = N-channel (G1 2, D1 6, S1 1), unit B = P-channel (G2 5, D2 3, S2 4). Pin-compatible alternate to DMC2710UVQ-7. Data sheet marked Advance Information."

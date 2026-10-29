@@ -1,0 +1,229 @@
+(footprint "Diodes_SOT-563"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Diodes Incorporated SOT563, 6 pin, 1.6x1.2mm body, 0.5mm pitch, flat leads (DMC2710UVQ data sheet DS43454 Rev. 3-2 p. 10, Suggested Pad Layout), https://www.diodes.com/assets/Datasheets/DMC2710UVQ.pdf")
+	(tags "SOT-563 SOT563 Diodes flat lead")
+	(property "Reference" "REF**"
+		(at 0 -1.85 0)
+		(layer "F.SilkS")
+		(uuid "65509104-9165-4f53-b39c-17a51fed58a4")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Diodes_SOT-563"
+		(at 0 1.85 0)
+		(layer "F.Fab")
+		(uuid "6f4af3d5-3fa0-44a0-8bde-777a6111865c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "00d85cd1-6a09-4456-a7b3-7bdd6bcc91db")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "846f5422-5eda-4f41-bd8e-0d5331c187f0")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -0.97 -0.91)
+		(end 0.6 -0.91)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "6094fa90-e46b-4960-aa25-0286071cd130")
+	)
+	(fp_line
+		(start -0.6 0.91)
+		(end 0.6 0.91)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "63b8e64b-2f24-4590-a5b3-c35ffc95f606")
+	)
+	(fp_line
+		(start -1.25 -1.05)
+		(end 1.25 -1.05)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "99c26809-0c19-469e-9daa-c569470724a4")
+	)
+	(fp_line
+		(start -1.25 1.05)
+		(end -1.25 -1.05)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "7dd98f47-1305-4735-bef4-b9507c30ea4c")
+	)
+	(fp_line
+		(start 1.25 -1.05)
+		(end 1.25 1.05)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "d7f1ceaf-27a3-4733-8358-0855434dda76")
+	)
+	(fp_line
+		(start 1.25 1.05)
+		(end -1.25 1.05)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "02bfe2dd-a94f-4d63-97a5-98e4135bbacc")
+	)
+	(fp_line
+		(start -0.6 -0.5)
+		(end -0.3 -0.8)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "a9b63e87-6b17-4ee4-8328-759bed9c2843")
+	)
+	(fp_line
+		(start -0.6 0.8)
+		(end -0.6 -0.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "abb40407-bb59-41e5-b278-2af989263ce0")
+	)
+	(fp_line
+		(start -0.3 -0.8)
+		(end 0.6 -0.8)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "f1a97093-fe54-4758-8caf-6bf22f6f58f7")
+	)
+	(fp_line
+		(start 0.6 -0.8)
+		(end 0.6 0.8)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "a341973d-92cf-4568-9e3e-cac6c6b3f430")
+	)
+	(fp_line
+		(start 0.6 0.8)
+		(end -0.6 0.8)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "d4d3c40e-1917-42a4-8cad-61414a32e6d0")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "34b94223-3431-4eec-9170-7bb9c901735f")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.075)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at -0.635 -0.5)
+		(size 0.67 0.3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "6b156e70-a3b6-4e53-b95a-2498b703b606")
+	)
+	(pad "2" smd roundrect
+		(at -0.635 0)
+		(size 0.67 0.3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "f604263d-152f-4bb3-9c04-cc1ce8a5e0ed")
+	)
+	(pad "3" smd roundrect
+		(at -0.635 0.5)
+		(size 0.67 0.3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "3a011bbc-6df6-4a94-87e4-4c17a2c842d7")
+	)
+	(pad "4" smd roundrect
+		(at 0.635 0.5)
+		(size 0.67 0.3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "c40426a1-372a-4ac1-a5fe-04f60b7ca635")
+	)
+	(pad "5" smd roundrect
+		(at 0.635 0)
+		(size 0.67 0.3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "53405ec3-e0b5-43b5-89d6-c6cf1a87b939")
+	)
+	(pad "6" smd roundrect
+		(at 0.635 -0.5)
+		(size 0.67 0.3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "53f2c62e-273f-40d5-af81-b8bed2ec60e2")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_Package_TO_SOT_SMD.3dshapes/Diodes_SOT-563.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

@@ -225,6 +225,39 @@ families:
     source: Taiyo Yuden TY-COMPAS product page of this part (specifications and dimensions; the spec sheet PDF did
       not download)
     keywords: capacitor ceramic MLCC automotive
+  panasonic_erj_p:
+    kind: R
+    manufacturer: Panasonic
+    series: ERJ-P
+    construction: anti-surge thick film
+    grade: AEC-Q200
+    temperature: -55 to +155 °C
+    datasheet: https://industrial.panasonic.com/cdbs/www-data/pdf/RDO0000/AOA0000C331.pdf
+    source: Panasonic Anti-Surge Thick Film Chip Resistors ERJ PA2/PA3/P03/P06/P08/PM8/P14 AOA0000C331 (28-Mar-26),
+      part numbers, ratings (ERJP08 0.66 W at 70 °C, 500 V), dimensions
+    keywords: resistor thick film anti-surge pulse automotive
+  koa_sg73p:
+    kind: R
+    manufacturer: KOA Speer
+    series: SG73P
+    construction: anti-surge thick film
+    grade: AEC-Q200
+    temperature: -55 to +155 °C
+    datasheet: https://www.koaspeer.com/pdfs/SG73P.pdf
+    source: KOA Speer SG73P anti-surge thick film chip resistor datasheet (ordering information, applications and
+      ratings, 2B = 1206 1 W at 70 °C 200 V, dimensions)
+    keywords: resistor thick film anti-surge pulse automotive
+  rohm_esr:
+    kind: R
+    manufacturer: Rohm Semiconductor
+    series: ESR
+    construction: anti-surge thick film
+    grade: AEC-Q200
+    temperature: -55 to +155 °C
+    datasheet: https://fscdn.rohm.com/en/products/databook/datasheet/passive/resistor/chip_resistor/esr-e.pdf
+    source: Rohm ESR series datasheet 2025.10 Rev.001 (ratings, ESR18 0.75 W at 70 °C for R < 1 kΩ and 200 V; composition
+      of part number). The datasheet gives no dimensions.
+    keywords: resistor thick film anti-surge pulse automotive
 parts:
 - mpn: AC0402JR-0710RL
   family: yageo_ac
@@ -1415,3 +1448,159 @@ parts:
   observed:
     digikey: 399-16007-1-ND 60314 in stock, price not captured (API daily limit) (2026-10-22)
     mouser: 80-C1210C226K8RAUTO 5032 in stock, $2.12 @1, $0.815 @1k (2026-10-23)
+- mpn: CRCW120649R9FKEAHP
+  family: vishay_crcw_hp
+  value: 49.9R
+  size: '1206'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 0.75 W
+  voltage: 200 V
+  line: T1S bus-end termination 49.9 Ω 1 % 1206 >= 0.4 W (Node60, 2026-10-28)
+  notes: SELECTED for the Node60 10BASE-T1S bus-end termination legs (2 per board). Highest-rated stocked AEC-Q200
+    1206 part found (0.75 W at 70 °C, needs Rth <= 110 K/W per Vishay note 3); OPEN Alliance minimum 0.4 W, Microchip
+    AN1718 recommends 1 W.
+  digikey: 541-49.9UCT-ND
+  mouser: 71-CRCW120649R9FKEAH
+  observed:
+    digikey: 541-49.9UCT-ND 15561 in stock, $0.26 @1, $0.0562 @1k (2026-10-28)
+    mouser: 71-CRCW120649R9FKEAH 14559 in stock, $0.26 @1, $0.057 @1k (2026-10-28)
+- mpn: ERJ-P08F49R9V
+  family: panasonic_erj_p
+  value: 49.9R
+  size: '1206'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 0.66 W
+  voltage: 500 V
+  line: T1S bus-end termination 49.9 Ω 1 % 1206 >= 0.4 W (Node60, 2026-10-28)
+  notes: Second source for the 49.9 Ω T1S termination leg (0.66 W at 70 °C); not selected because DigiKey had no
+    stock.
+  digikey: ERJ-P08F49R9V-ND
+  mouser: 667-ERJ-P08F49R9V
+  observed:
+    digikey: ERJ-P08F49R9V-ND 0 in stock (2026-10-28)
+    mouser: 667-ERJ-P08F49R9V 4757 in stock, $0.32 @1 (2026-10-28)
+- mpn: SG73P2BTTD49R9F
+  family: koa_sg73p
+  value: 49.9R
+  size: '1206'
+  tolerance: ±1%
+  tcr: ±200 ppm/K
+  power: 1 W
+  voltage: 200 V
+  line: T1S bus-end termination 49.9 Ω 1 % 1206 >= 0.4 W (rejected)
+  notes: Highest rating in 1206 (1 W at 70 °C, the Microchip AN1718 recommendation) but REJECTED, no stock at DigiKey
+    or Mouser (2026-10-28). TCR ±200 ppm/K below 300 Ω.
+  digikey: 2019-SG73P2BTTD49R9FTR-ND
+  mouser: 660-SG73P2BTTD49R9F
+  observed:
+    digikey: 2019-SG73P2BTTD49R9FTR-ND 0 in stock (2026-10-28)
+    mouser: 660-SG73P2BTTD49R9F 0 in stock, $0.16 @1, $0.029 @1k (2026-10-28)
+- mpn: ESR18EZPF49R9
+  family: rohm_esr
+  value: 49.9R
+  size: '1206'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 0.75 W
+  voltage: 200 V
+  line: T1S bus-end termination 49.9 Ω 1 % 1206 >= 0.4 W (rejected)
+  notes: REJECTED, DigiKey lists it Not For New Designs (2026-10-28). 0.75 W at 70 °C for R < 1 kΩ.
+  digikey: 846-ESR18EZPF49R9CT-ND
+  mouser: 755-ESR18EZPF49R9
+  observed:
+    digikey: 846-ESR18EZPF49R9CT-ND 0 in stock, $0.18 @1, $0.0326 @1k, Not For New Designs (2026-10-28)
+    mouser: 755-ESR18EZPF49R9 3334 in stock, $0.21 @1, $0.037 @1k (2026-10-28)
+- mpn: CRCW12061K50FKEA
+  family: vishay_crcw
+  value: 1.5k
+  size: '1206'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 1/4 W
+  voltage: 200 V
+  line: T1S mid-bus termination 1.5 kΩ 1 % 1206 >= 0.1 W (Node60, 2026-10-28)
+  notes: SELECTED for the Node60 10BASE-T1S mid-bus termination legs (2 per board).
+  digikey: 541-1.50KFCT-ND
+  mouser: 71-CRCW1206-1.5K-E3
+  observed:
+    digikey: 541-1.50KFCT-ND 60645 in stock, $0.11 @1, $0.0168 @1k (2026-10-28)
+    mouser: 71-CRCW1206-1.5K-E3 101800 in stock, $0.11 @1, $0.017 @1k (2026-10-28)
+- mpn: AC1206FR-071K5L
+  family: yageo_ac
+  value: 1.5k
+  size: '1206'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 1/4 W
+  voltage: 200 V
+  line: T1S mid-bus termination 1.5 kΩ 1 % 1206 >= 0.1 W (Node60, 2026-10-28)
+  notes: Second source for the 1.5 kΩ T1S termination leg; not selected because Mouser had no stock.
+  digikey: YAG3827CT-ND
+  mouser: 603-AC1206FR-071K5L
+  observed:
+    digikey: YAG3827CT-ND 5250 in stock, $0.12 @1, $0.0183 @1k (2026-10-28)
+    mouser: 603-AC1206FR-071K5L 0 in stock, $0.10 @1, $0.016 @1k (2026-10-28)
+- mpn: AC0805FR-07100KL
+  family: yageo_ac
+  value: 100k
+  size: 0805
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 1/8 W
+  voltage: 150 V
+  line: T1S termination centre-tap bleed 100 kΩ <= 5 % 0805 (Node60, 2026-10-28)
+  notes: SELECTED for the Node60 10BASE-T1S termination centre tap (100 nF || 100 kΩ to GND). 1 % costs the same as
+    5 % (AC0805JR-07100KL $0.10 @1).
+  digikey: YAG3688CT-ND
+  mouser: 603-AC0805FR-07100KL
+  observed:
+    digikey: YAG3688CT-ND 137072 in stock, $0.10 @1, $0.0112 @1k (2026-10-28)
+    mouser: 603-AC0805FR-07100KL 181878 in stock, $0.10 @1, $0.011 @1k (2026-10-28)
+- mpn: CRCW0805100KFKEA
+  family: vishay_crcw
+  value: 100k
+  size: 0805
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 1/8 W
+  voltage: 150 V
+  line: T1S termination centre-tap bleed 100 kΩ <= 5 % 0805 (Node60, 2026-10-28)
+  notes: Second source for the T1S termination centre-tap 100 kΩ.
+  digikey: 541-100KCCT-ND
+  mouser: 71-CRCW0805-100K-E3
+  observed:
+    digikey: 541-100KCCT-ND 358857 in stock, $0.10 @1, $0.0133 @1k (2026-10-28)
+    mouser: 71-CRCW0805-100K-E3 103519 in stock, $0.10 @1, $0.014 @1k (2026-10-28)
+- mpn: CGA4J2X7R2A104K125AA
+  family: tdk_cga_mid
+  value: 100nF
+  size: 0805
+  voltage: 100 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: T1S termination centre-tap X7R 100nF 100V 0805 (Node60, 2026-10-28)
+  notes: SELECTED for the Node60 10BASE-T1S termination centre tap (100 nF || 100 kΩ to GND). No AEC-Q200 100 nF C0G
+    part exists in 0805 (DigiKey parametric search 2026-10-22; TDK's mid-voltage catalog has 100 nF C0G at 100 V only in
+    1206 and larger), so X7R.
+  digikey: 445-5827-1-ND
+  mouser: 810-CGA4J2X7R2A104K
+  observed:
+    digikey: 445-5827-1-ND 89261 in stock, $0.18 @1 (2026-10-28)
+    mouser: 810-CGA4J2X7R2A104K 111206 in stock, $0.18 @1 (2026-10-28)
+- mpn: GCM21BR72A104KA37L
+  family: murata_gcm
+  value: 100nF
+  size: 0805
+  voltage: 100 V
+  tolerance: ±10%
+  dielectric: X7R
+  line: T1S termination centre-tap X7R 100nF 100V 0805 (Node60, 2026-10-28)
+  notes: Second source for the T1S termination centre-tap capacitor.
+  digikey: 490-4789-1-ND
+  mouser: 81-GCM21BR72A104KA7L
+  datasheet: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM21BR72A104KA37-01A-EN_PDF_CERAMICCAPACITORSMD
+  observed:
+    digikey: 490-4789-1-ND 537020 in stock, $0.20 @1 (2026-10-28)
+    mouser: 81-GCM21BR72A104KA7L 857670 in stock, $0.20 @1 (2026-10-28)
