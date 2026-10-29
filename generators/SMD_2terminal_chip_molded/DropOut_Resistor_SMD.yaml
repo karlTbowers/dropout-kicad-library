@@ -45,3 +45,39 @@ R_0603:
         minimum: 0.10
         maximum: 0.50
     size_info: '(Body size source: envelope of Yageo AC, Panasonic ERJ-3E/3G/ERA-3A, Vishay CRCW/CRCW-HP/TNPW, Susumu RG, KOA RK73Z and Stackpole RNCF 0603 datasheets, https://github.com/karlTbowers/dropout-kicad-library/blob/main/generators/SMD_2terminal_chip_molded/DropOut_Resistor_SMD.yaml)'
+
+R_0805:
+    code_imperial: "0805"
+    code_metric: "2012"
+    # Yageo AC0805 (PYu-AC_51 V.11 Table 1): L 2.00+/-0.10, W 1.25+/-0.10, I1/I2 0.35+/-0.20
+    # Vishay CRCW0805 e3 (20035, rev. 14-Apr-2026): L 2.0 +0.20/-0.10, W 1.25+/-0.15, T1 0.3 +0.20/-0.10, T2 0.3+/-0.20
+    body_length:
+        minimum: 1.90
+        maximum: 2.20
+    body_width:
+        minimum: 1.10
+        maximum: 1.40
+    terminal_length:
+        minimum: 0.10
+        maximum: 0.55
+    size_info: '(Body size source: envelope of Yageo AC0805 and Vishay CRCW0805 e3 datasheets, https://github.com/karlTbowers/dropout-kicad-library/blob/main/generators/SMD_2terminal_chip_molded/DropOut_Resistor_SMD.yaml)'
+
+R_1206:
+    code_imperial: "1206"
+    code_metric: "3216"
+    # Yageo AC1206 (PYu-AC_51 V.11 Table 1): L 3.10+/-0.10, W 1.60+/-0.10, I1/I2 0.45+/-0.20
+    # Vishay CRCW1206 e3 (20035): L 3.2 +0.10/-0.20, W 1.6+/-0.15, T1 0.45+/-0.20, T2 0.4+/-0.20
+    # Vishay CRCW1206-HP e3 (20043, rev. 17-Mar-2026): L 3.1+/-0.20, W 1.6+/-0.15, T1 0.5+/-0.20, T2 0.45+/-0.20
+    # Panasonic ERJ-P08 (AOA0000C331, 28-Mar-26): L 3.20 +0.05/-0.20, W 1.60 +0.05/-0.15, a 0.40+/-0.20, b 0.50+/-0.20
+    # KOA SG73P2B (SG73P datasheet): L 3.2+/-0.2, W 1.6+/-0.2, c/d 0.4 +0.2/-0.1
+    # Rohm ESR18: its datasheet (2025.10 Rev.001) gives no dimensions; not included.
+    body_length:
+        minimum: 2.90
+        maximum: 3.40
+    body_width:
+        minimum: 1.40
+        maximum: 1.80
+    terminal_length:
+        minimum: 0.20
+        maximum: 0.70
+    size_info: '(Body size source: envelope of Yageo AC1206, Vishay CRCW1206/CRCW1206-HP, Panasonic ERJ-P08 and KOA SG73P2B datasheets, https://github.com/karlTbowers/dropout-kicad-library/blob/main/generators/SMD_2terminal_chip_molded/DropOut_Resistor_SMD.yaml)'

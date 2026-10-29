@@ -1,0 +1,30 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/DMC2710UVQ-7/part.yaml
+# Diodes DMC2710UVQ data sheet DS43454 Rev. 3-2 (June 2022, marked "Advanced Information"). SELECTED for the Node60
+# switchable 10BASE-T1S termination (relay coil half-bridges from 3V3, user decision 2026-10-28).
+# Ordering Information (p. 1): DMC2710UVQ-7 = SOT563, 3,000/tape & reel (-13 = 10,000/reel). AEC-Q101 (p. 1).
+# Ratings (pp. 2-3): Q1 N 20 V, 0.4 Ω max at 4.5 V; Q2 P -20 V, 0.7 Ω max at -4.5 V; VGSS ±6 V (both); Tj -55..+150 °C.
+# Stock and price: DigiKey 31-DMC2710UVQ-7CT-ND 3216 in stock, $0.46 @1 ($0.092 @3k reel); Mouser 621-DMC2710UVQ-7
+# 2977 in stock, $0.53 @1, $0.128 @1k (2026-10-28).
+# Drawn as KiCad's Transistor_FET:Q_Dual_NMOS_PMOS_*: unit A the N-channel FET (Device:Q_NMOS), unit B the P-channel
+# FET (Device:Q_PMOS), drain on top and source below in both (flip the P unit in the schematic for a high-side
+# switch). Gates input, drains and sources passive, as KiCad's stock FET symbols. The gate ESD diodes are not drawn.
+library: DropOut_PowerSwitch
+name: DMC2710UVQ-7
+style: nmos_pmos
+pins: pins.csv
+units: [N, P]
+fields:
+  Reference: Q
+  Value: DMC2710UVQ-7
+  Footprint: DropOut_Package_TO_SOT_SMD:Diodes_SOT-563
+  Datasheet: https://www.diodes.com/assets/Datasheets/DMC2710UVQ.pdf
+  Description: Diodes DMC2710UVQ complementary N + P MOSFET pair, 20 V / -20 V, N 0.4 Ω max at VGS 4.5 V (1.1 A), P 0.7 Ω max at VGS -4.5 V (-0.8 A), ±6 V VGS, ESD-protected gates, AEC-Q101, SOT-563
+  ki_keywords: MOSFET complementary N-channel P-channel pair dual transistor half bridge
+  ki_fp_filters: Diodes*SOT?563*
+  Manufacturer: Diodes Incorporated
+  MPN: DMC2710UVQ-7
+  DigiKey_PN: 31-DMC2710UVQ-7CT-ND
+  Mouser_PN: 621-DMC2710UVQ-7
+  Temperature_Grade: AEC-Q101, Tj -55 to +150 °C
+  Notes: "Unit A = N-channel (G1 2, D1 6, S1 1), unit B = P-channel (G2 5, D2 3, S2 4). VGS max ±6 V. Data sheet marked Advanced Information."

@@ -362,10 +362,29 @@ QNMOS = [("poly", [(0.254, 1.905), (0.254, -1.905)], 0.254, "none"),
          ("poly", [(3.302, 0.381), (2.921, -0.254), (3.683, -0.254), (3.302, 0.381)], 0, "none")]
 
 
-def qnmos(tx):
-    """The Q_NMOS drawing with every x mapped through tx (shift, or mirror for a FET facing left)."""
+# KiCad's Device:Q_PMOS drawing, same frame as QNMOS (drain on top, source below; the channel arrow
+# points out of the channel and the body diode is reversed).
+QPMOS = [("poly", [(0.254, 1.905), (0.254, -1.905)], 0.254, "none"),
+         ("poly", [(0.254, 0), (-2.54, 0)], 0, "none"),
+         ("poly", [(0.762, 2.286), (0.762, 1.27)], 0.254, "none"),
+         ("poly", [(0.762, 1.778), (3.302, 1.778), (3.302, -1.778), (0.762, -1.778)], 0, "none"),
+         ("poly", [(0.762, 0.508), (0.762, -0.508)], 0.254, "none"),
+         ("poly", [(0.762, -1.27), (0.762, -2.286)], 0.254, "none"),
+         ("circle", ((1.651, 0), 2.794), 0.254, "none"),
+         ("poly", [(2.286, 0), (1.27, 0.381), (1.27, -0.381), (2.286, 0)], 0, "outline"),
+         ("poly", [(2.54, 2.54), (2.54, 1.778)], 0, "none"),
+         ("circle", ((2.54, 1.778), 0.254), 0, "outline"),
+         ("circle", ((2.54, -1.778), 0.254), 0, "outline"),
+         ("poly", [(2.54, -2.54), (2.54, 0), (0.762, 0)], 0, "none"),
+         ("poly", [(2.921, -0.381), (3.683, -0.381)], 0, "none"),
+         ("poly", [(3.302, -0.381), (2.921, 0.254), (3.683, 0.254), (3.302, -0.381)], 0, "none")]
+
+
+def qnmos(tx, drawing=QNMOS):
+    """The Q_NMOS (or, with drawing=QPMOS, Q_PMOS) drawing with every x mapped through tx (shift, or
+    mirror for a FET facing left)."""
     out = []
-    for kind, geo, w, fill in QNMOS:
+    for kind, geo, w, fill in drawing:
         if kind == "poly":
             out.append(poly([(tx(x), y) for x, y in geo], fill=fill, width=w))
         else:
@@ -375,12 +394,12 @@ def qnmos(tx):
     return out
 
 
-def label(s, x, y):
+def label(s, x, y, size=1):
     return (f'\t\t\t(text "{esc(s)}" (at {fmt(x)} {fmt(y)} 0)\n'
-            f"\t\t\t\t(effects (font (size 1 1))))")
+            f"\t\t\t\t(effects (font (size {fmt(size)} {fmt(size)}))))")
 
 
-def style_nmos(pins):
+def style_nmos(pins, geo=QNMOS):
     """N-channel MOSFET drawn as KiCad's Device:Q_NMOS, with every package pin its own pin: gate on
     L, drain pins on T, source pins on B (joined by bus lines 100 mil outside the drawing). A part with a second gate on R
     (dual-gate parts such as Infineon's LINFET + ONFET) is drawn as two FETs in parallel, the second
@@ -390,12 +409,12 @@ def style_nmos(pins):
     if len(gl) != 1 or len(gr) > 1 or not drains or not sources or len(pins) != 1 + len(gr) + len(drains) + len(sources):
         sys.exit("symbolgen: nmos needs one L gate, optionally one R gate, and T drain and B source pins")
     if gr:   # FET 1 as drawn, FET 2 mirrored 6 grid units to the right; drain/source leads at 2.54 and 12.7
-        legs, g = [2.54, 12.7], qnmos(lambda x: x) + qnmos(lambda x: 15.24 - x)
+        legs, g = [2.54, 12.7], qnmos(lambda x: x, geo) + qnmos(lambda x: 15.24 - x, geo)
         gates = [(gl[0], -5.08, 0), (gr[0], 20.32, 180)]
         # gate labels without a "G_" prefix, so they fit between pin and channel
         g += [label(gl[0]["name"].split("_")[-1], -1.27, 1.27), label(gr[0]["name"].split("_")[-1], 16.51, 1.27)]
     else:
-        legs, g = [2.54], qnmos(lambda x: x)
+        legs, g = [2.54], qnmos(lambda x: x, geo)
         gates = [(gl[0], -5.08, 0)]
     def row(n, mid):     # n pins on the grid, centred on mid as nearly as the grid allows
         x0 = mid - G * ((n - 1) // 2)
@@ -416,6 +435,68 @@ def style_nmos(pins):
     out += [pin_sexpr(p, x - ox, 7.62, 270, length=G) for p, x in zip(drains, dx)]
     out += [pin_sexpr(p, x - ox, -7.62, 90, length=G) for p, x in zip(sources, sx)]
     return out, 7.62, 7.62
+
+
+def style_nmos_pmos(pins):
+    """Complementary N + P MOSFET pair in one package (e.g. Diodes DMC2710UVQ, Nexperia PMDT290UCE),
+    as two units like KiCad's Transistor_FET:Q_Dual_NMOS_PMOS_*: unit 1 (unit label N) drawn as
+    Device:Q_NMOS, unit 2 (unit label P) as Device:Q_PMOS. In each unit the gate is on L, the drain on T
+    and the source on B, as in KiCad's stock Q_NMOS/Q_PMOS. Returns a list of units."""
+    n = [p for p in pins if p["unit"] == "N"]
+    pch = [p for p in pins if p["unit"] == "P"]
+    if not n or not pch or len(n) + len(pch) != len(pins):
+        sys.exit("symbolgen: nmos_pmos needs the N-channel pins in unit N and the P-channel pins in unit P")
+    return [style_nmos(n, QNMOS), style_nmos(pch, QPMOS)]
+
+
+# KiCad's Relay:G6KU-2 drawing (DPDT, single-winding latching, kicad-symbols CC-BY-SA 4.0): coil on
+# the left with the latching diagonal, mechanical link dashed, two changeover contacts drawn in the
+# reset state. Items: (kind, points, width, fill); rectangles as (start, end).
+RELAY_DPDT_LATCHING = [
+    ("rectangle", [(-15.24, 5.08), (15.24, -5.08)], 0.254, "background"),
+    ("rectangle", [(-13.335, 1.905), (-6.985, -1.905)], 0.254, "none"),
+    ("poly", [(-12.7, -1.905), (-7.62, 1.905)], 0.254, "none"),
+    ("poly", [(-10.16, 5.08), (-10.16, 1.905)], 0, "none"),
+    ("poly", [(-10.16, -5.08), (-10.16, -1.905)], 0, "none"),
+    *[("poly", [(x, 0), (x + 0.635, 0)], 0.254, "none") for x in
+      (-6.985, -5.715, -4.445, -3.175, -1.905, -0.635, 0.635, 1.905, 3.175, 4.445, 5.715, 6.985, 8.255)],
+    ("poly", [(-2.54, 5.08), (-2.54, 2.54), (-1.905, 3.175), (-2.54, 3.81)], 0, "outline"),   # pole 1, reset contact
+    ("poly", [(0, -2.54), (-1.905, 3.81)], 0.508, "none"),                                      # pole 1 arm
+    ("poly", [(0, -2.54), (0, -5.08)], 0, "none"),
+    ("poly", [(2.54, 5.08), (2.54, 2.54), (1.905, 3.175), (2.54, 3.81)], 0, "none"),           # pole 1, set contact
+    ("poly", [(7.62, 5.08), (7.62, 2.54), (8.255, 3.175), (7.62, 3.81)], 0, "outline"),        # pole 2, reset contact
+    ("poly", [(10.16, -2.54), (8.255, 3.81)], 0.508, "none"),                                   # pole 2 arm
+    ("poly", [(10.16, -2.54), (10.16, -5.08)], 0, "none"),
+    ("poly", [(12.7, 5.08), (12.7, 2.54), (12.065, 3.175), (12.7, 3.81)], 0, "none"),          # pole 2, set contact
+]
+# pin name -> (x, y, rotation) of its connection point, as on Relay:G6KU-2
+RELAY_DPDT_LATCHING_PINS = {"S+": (-10.16, 7.62, 270), "R+": (-10.16, -7.62, 90),
+                            "RST1": (-2.54, 7.62, 270), "COM1": (0, -7.62, 90), "SET1": (2.54, 7.62, 270),
+                            "RST2": (7.62, 7.62, 270), "COM2": (10.16, -7.62, 90), "SET2": (12.7, 7.62, 270)}
+
+
+def style_relay_dpdt_latching(pins):
+    """DPDT single-winding latching relay drawn as KiCad's Relay:G6KU-2. Pins are placed by name:
+    S+ (coil end that is positive to SET) on top, R+ (positive to RESET) below, and per pole n the
+    common COMn (bottom), the contact closed in the reset state RSTn and the one closed in the set
+    state SETn (top). The contacts are drawn in the reset state; "S:+" and "R:+" mark the coil end
+    that is positive for set and reset."""
+    names = sorted(p["name"] for p in pins)
+    if names != sorted(RELAY_DPDT_LATCHING_PINS):
+        sys.exit(f"symbolgen: relay_dpdt_latching needs pins named {sorted(RELAY_DPDT_LATCHING_PINS)}")
+    g = []
+    for kind, pts, w, fill in RELAY_DPDT_LATCHING:
+        if kind == "rectangle":
+            (x1, y1), (x2, y2) = pts
+            g.append(f"\t\t\t(rectangle (start {fmt(x1)} {fmt(y1)}) (end {fmt(x2)} {fmt(y2)})\n"
+                     f"\t\t\t\t(stroke (width {w}) (type default)) (fill (type {fill})))")
+        else:
+            g.append(poly(pts, fill=fill, width=w))
+    g += [label("S:+", -8.763, 2.794, 0.762), label("R:+", -8.763, -2.794, 0.762)]
+    out = g + [pin_sexpr(p, *RELAY_DPDT_LATCHING_PINS[p["name"]], length=G) for p in pins]
+    return out, 7.62, 7.62
+
+
 def style_inductor(pins):
     # Four half-turns as KiCad's Device:L
     g = [arc((0, 2.54 - i * 1.27), (0.6323, 1.905 - i * 1.27), (0, 1.27 - i * 1.27), width=0) for i in range(4)]
@@ -436,16 +517,20 @@ STYLES = {"tvs_bidirectional": style_tvs_bidirectional, "crystal_gnd24": style_c
           "crystal_nc24": style_crystal_nc24,
           "cmc_4pin": style_cmc_4pin, "inductor": style_inductor, "testpoint": style_testpoint,
           "resistor": style_resistor, "resistor_shunt_4pin": style_resistor_shunt_4pin, "nmos": style_nmos,
-          "thermistor_ntc": style_thermistor_ntc, "capacitor": style_capacitor}
+          "thermistor_ntc": style_thermistor_ntc, "capacitor": style_capacitor,
+          "nmos_pmos": style_nmos_pmos, "relay_dpdt_latching": style_relay_dpdt_latching}
 # Reference and Value beside the body, left-justified, for the narrow vertical styles (as
 # KiCad's Device:C; a long MPN Value would not fit inside Device:R's body)
 STYLE_FIELDS = {"inductor": {"Reference": (2.54, 1.27), "Value": (2.54, -1.27)},
-                "capacitor": {"Reference": (2.54, 1.27), "Value": (2.54, -1.27)}}
+                "capacitor": {"Reference": (2.54, 1.27), "Value": (2.54, -1.27)},
+                # as Relay:G6KU-2: right of the body, which spans the pins
+                "relay_dpdt_latching": {"Reference": (16.51, 3.81), "Value": (16.51, 1.27)}}
 # Reference and Value positions where the default (above and below the body) doesn't fit:
 # a test point's connection point is at the bottom, so both go above it, as on KiCad's TestPoint
 STYLE_FIELD_Y = {"testpoint": {"Reference": 6.858, "Value": 5.08}}
 # Pin numbers are shown where the package has more than two terminals (as KiCad's stock symbols)
-STYLE_SHOW_NUMBERS = {"crystal_gnd24", "crystal_nc24", "cmc_4pin", "resistor_shunt_4pin", "nmos"}
+STYLE_SHOW_NUMBERS = {"crystal_gnd24", "crystal_nc24", "cmc_4pin", "resistor_shunt_4pin", "nmos", "nmos_pmos",
+                      "relay_dpdt_latching"}
 
 
 def build_symbol(part, pins):
@@ -458,7 +543,8 @@ def build_symbol(part, pins):
     if style:
         if style not in STYLES:
             sys.exit(f"symbolgen: unknown style '{style}' (have {sorted(STYLES)})")
-        units = [STYLES[style](pins)]
+        res = STYLES[style](pins)
+        units = res if isinstance(res, list) else [res]   # multi-unit styles return a list
         head = "\t\t(pin_names (offset 1.016) (hide yes))"
         if style not in STYLE_SHOW_NUMBERS:
             head = "\t\t(pin_numbers (hide yes))\n" + head

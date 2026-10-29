@@ -1,0 +1,36 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/PMDT290UCEH/part.yaml
+# Nexperia PMDT290UCE product data sheet (28 December 2022). ALTERNATE from the Node60 T1S termination MOSFET search
+# (2026-10-28), REJECTED: the data sheet claims no AEC-Q101 qualification (the board needs AEC-Q101 Grade 1),
+# Mouser lists the orderable PMDT290UCEH as Not Recommended for New Designs and neither DigiKey nor Mouser had stock.
+# Orderable code: the data sheet's ordering table (Table 3) gives only the type number PMDT290UCE (SOT666); DigiKey
+# and Mouser sell it as PMDT290UCEH (Newark: PMDT290UCE,115). The "H" packing suffix is not explained in the data
+# sheet and was not confirmed on nexperia.com (its ordering table did not load), so it is taken from the distributors.
+# Pins: Table 2 "Pinning information": 1 S1, 2 G1, 3 D2, 4 S2, 5 G2, 6 D1 (TR1 = N, TR2 = P); same numbering as
+# Diodes DMC2710UVQ. NB: KiCad's stock Transistor_FET:PMDT290UCE extends BSD235C (pins G1 S2 G2 D2 S1 D1), which
+# does not match Nexperia's table.
+# Ratings: TR1 N 20 V, 380 mΩ max at 4.5 V; TR2 P -20 V, 0.85 Ω max at -4.5 V; VGS ±8 V; Tj -55..+150 °C.
+# Stock and price: DigiKey 1727-PMDT290UCEHCT-ND 0 in stock ($0.123 @4k reel); Mouser 771-PMDT290UCEH no stock shown,
+# NRND (2026-10-28).
+# Drawn as KiCad's Transistor_FET:Q_Dual_NMOS_PMOS_*: unit A the N-channel FET (Device:Q_NMOS), unit B the P-channel
+# FET (Device:Q_PMOS), drain on top and source below in both (flip the P unit in the schematic for a high-side
+# switch). Gates input, drains and sources passive, as KiCad's stock FET symbols. The gate ESD diodes are not drawn.
+library: DropOut_PowerSwitch
+name: PMDT290UCEH
+style: nmos_pmos
+pins: pins.csv
+units: [N, P]
+fields:
+  Reference: Q
+  Value: PMDT290UCEH
+  Footprint: DropOut_Package_TO_SOT_SMD:Nexperia_SOT-666
+  Datasheet: https://assets.nexperia.com/documents/data-sheet/PMDT290UCE.pdf
+  Description: Nexperia PMDT290UCE complementary N + P Trench MOSFET pair, 20 V / -20 V, N 380 mΩ max at VGS 4.5 V (800 mA), P 0.85 Ω max at VGS -4.5 V (-550 mA), ±8 V VGS, ESD protection 2 kV, SOT666
+  ki_keywords: MOSFET complementary N-channel P-channel pair dual transistor half bridge
+  ki_fp_filters: Nexperia*SOT?666*
+  Manufacturer: Nexperia
+  MPN: PMDT290UCEH
+  DigiKey_PN: 1727-PMDT290UCEHCT-ND
+  Mouser_PN: 771-PMDT290UCEH
+  Temperature_Grade: Tj -55 to +150 °C (no AEC-Q101 claim in the data sheet)
+  Notes: "Unit A = N-channel (G1 2, D1 6, S1 1), unit B = P-channel (G2 5, D2 3, S2 4). Not AEC-Q101 per its data sheet; Mouser lists it NRND (2026-10-28)."

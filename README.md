@@ -37,6 +37,7 @@ Planned categories (created as the first part in each one is added). Microcontro
 | `DropOut_Protection` | TVS, ESD, fuses |
 | `DropOut_Timing` | Oscillators, crystals |
 | `DropOut_Connector` | Connectors and headers |
+| `DropOut_Relay` | Relays (named after KiCad's `Relay`) |
 | `DropOut_Oscillator` | Footprints and 3D models for oscillators (KLC footprint library naming) |
 | `DropOut_Crystal` | Footprints and 3D models for crystals |
 | `DropOut_Connector_Amphenol` | Footprints and 3D models for Amphenol connectors (incl. Amphenol Sine BoardLock), named after KiCad's `Connector_Amphenol` |
@@ -52,6 +53,7 @@ Planned categories (created as the first part in each one is added). Microcontro
 | `DropOut_Package_SO` | Footprints and 3D models for small-outline packages (SOIC, SSOP, TSSOP, HTSSOP) |
 | `DropOut_Package_TO_SOT_SMD` | Footprints and 3D models for SOT/TSOT/TO SMD packages, including TOLL-family power MOSFETs |
 | `DropOut_Resistor_SMD` | Footprints and 3D models for SMD resistors: chip resistors (one IPC footprint per size code), current-sense shunts with manufacturer land patterns |
+| `DropOut_Relay_SMD` | Footprints and 3D models for SMD relays, named after KiCad's `Relay_SMD` |
 | `DropOut_TestPoint` | Footprints and 3D models for test points: bare pads and SMD/THT test loops (as KiCad's stock `TestPoint`) |
 
 ## Using it in a project
