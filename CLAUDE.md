@@ -12,7 +12,7 @@ The essentials are below.
 
 ## Rules that must never be broken
 
-- **Atomic parts:** one symbol = one orderable MPN, with its footprint and 3D model linked.
+- **Atomic parts:** one symbol = one orderable MPN, with its footprint and 3D model linked. Exception: a part bought but never placed on the PCB (a panel connector bolted to a board terminal, e.g. Amphenol SurLok Plus SLPRATPSx) has no footprint; its symbol is `on_board: false` and its `Notes` give the 3D model path (user, 2026-10-28; `docs/CONTRIBUTING.md` "Parts not placed on the PCB").
 - **Never combine pins on a symbol:** every package pin gets its own visible pin, including repeated supply and ground pins and NC pins (visible `no_connect` pins; KLC S4.6 waived by `visible-nc-pins`). No KiCad native pin stacks and no hidden stacked pins, even where KLC S4.3 allows them. `scripts/check_pin_pad_match.py` enforces it in CI. Exception: a power terminal whose unnumbered press-fit pins form one contact (Würth REDCUBE) has one symbol pin and all its pads numbered `1` (user, 2026-10-26).
 - **Required symbol fields:** KLC S6.2 fields plus `Manufacturer`, `MPN`, `DigiKey_PN`, `Mouser_PN`. Use `-` for a distributor PN only when the part genuinely is not stocked there.
 - **No overprinting text on a symbol** (handbook D-47): no pin name, pin number, or visible field may run into another. Size the body from the text; grow it downward first so existing pins keep their positions. `scripts/check_symbol_text.py` enforces it in CI and `symbolgen.py` refuses to write a symbol that fails it.

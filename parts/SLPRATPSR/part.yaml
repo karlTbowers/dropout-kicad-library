@@ -1,0 +1,45 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/SLPRATPSR/part.yaml
+# Amphenol Industrial Operations SurLok Plus SLPRATPSR: Gen 1.0 (1000 V DC) 5.7 mm RADSOK receptacle without keyway,
+# threaded termination (M6 stud), flange panel mount, IP67 sealed, red. Code (catalog IC-10, 23 Oct 2025, p. 6):
+# SLP series, R receptacle w/o keyway, A 5.7 mm 120 A, T threaded, P with flange, S IP67, R red, no keyway digit.
+# Catalog p. 5: 100-120 A, 1000 V DC, -40 to +105 °C (1000 V DC version), UL 94 V-0, >= 100 cycles; p. 13: panel
+# cutout Ø14.3 with 4 × M4 screws on 18 × 18 (0.8 N·m), M6 nut 3 N·m. Archived in dropout-vendor-docs
+# Amphenol-Industrial/SurLok-Plus/. Same receptacle in the other colours: SLPRATPSB, SLPRATPSO.
+# No footprint (user's decision 2026-10-28): the receptacle mounts on the enclosure wall and its M6 stud screws
+# into a Würth REDCUBE 74660016 on the board, which is placed as its own part. The symbol is on_board: false
+# (BOM only, never sent to the PCB) and in_pos_files: false.
+# One electrical contact: one passive pin, as the REDCUBE symbol.
+# 3D model: generators/custom/Amphenol_SurLok-Plus_SLPRAT.py. No official model or dimensioned drawing is public
+# (searched 2026-10-28); catalog dimensions plus estimates from the catalog photo, marked in the generator.
+# The user is requesting Amphenol's customer drawing and STEP to replace the estimates.
+# Observed 2026-10-28: DigiKey 2070 in stock, Mouser 1218; Newark carries it. Active.
+library: DropOut_Connector
+name: SLPRATPSR
+pins: pins.csv
+on_board: false
+in_pos_files: false
+fields:
+  Reference: J
+  Value: SLPRATPSR
+  Footprint: ""
+  Datasheet: https://amphenol-industrial.com/wp-content/uploads/amphenol/surlok-plus-series-ic-10.pdf
+  Description: Amphenol SurLok Plus 5.7 mm RADSOK receptacle, 120 A, 1000 V DC, M6 threaded stud, square flange panel mount (4 × M4), IP67, red, no keyway, -40 to +105 °C
+  ki_keywords: SurLok Plus RADSOK power connector receptacle panel flange threaded stud M6 high current
+  Manufacturer: Amphenol Industrial Operations
+  MPN: SLPRATPSR
+  DigiKey_PN: 965-SLPRATPSR-ND
+  Mouser_PN: 654-SLPRATPSR
+  Temperature_Grade: -40 to +105 °C
+  Notes: "Panel mount, not placed on the PCB (no footprint): the M6 stud screws into a Würth REDCUBE 74660016 on the board, placed as its own part. Panel: Ø14.3 cutout, 4 × M4 on 18 × 18 (catalog p. 13). 3D model ${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_Connector_Amphenol.3dshapes/Amphenol_SurLok-Plus_SLPRATPSR.step, partly estimated from the catalog: add it to the 74660016 footprint with offset z = -2.6 mm. Mates 5.7 mm SurLok Plus plugs without keyway (SLPPA…, SLPIPA…)."
+catalog:
+  family: power-connectors
+  group: Amphenol SurLok Plus 5.7 mm
+  attributes:
+    Colour: Red
+    Current: 120 A
+    Voltage: 1000 V DC
+    Termination: M6 threaded stud
+    Mounting: Square flange panel mount, 4 × M4
+    Sealing: IP67
+    Keyway: None

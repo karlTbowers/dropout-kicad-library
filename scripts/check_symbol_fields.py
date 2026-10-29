@@ -17,6 +17,12 @@ NO_PLACEHOLDER = {"Footprint", "Datasheet", "Description", "Manufacturer", "MPN"
 PLACEHOLDERS = {"", "~", "-"}
 
 
+def off_board(body):
+    """(on_board no): a part bought but never placed on the PCB, e.g. a panel connector; it has no
+    footprint (user's decision 2026-10-28, SurLok Plus SLPRATPSx)."""
+    return re.search(r"^\s*\(on_board no\)", body, re.M) is not None
+
+
 def top_level_symbols(text):
     """Yield (name, body) for each top-level (symbol "...") block, skipping unit sub-symbols."""
     depth = 0
@@ -91,7 +97,7 @@ def main():
                     continue
                 val = props[field].strip()
                 if val in PLACEHOLDERS and (field in NO_PLACEHOLDER or val in {"", "~"}):
-                    if field == "Footprint" and is_alias(body):
+                    if field == "Footprint" and (is_alias(body) or off_board(body)):
                         continue
                     print(f"{f.name}:{name}: field '{field}' is blank")
                     errors += 1
