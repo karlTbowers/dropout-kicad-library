@@ -36,6 +36,7 @@ catalog:
   family: power-connectors
   group: Amphenol SurLok Plus 5.7 mm
   attributes:
+    Type: Receptacle
     Colour: Black
     Current: 120 A
     Voltage: 1000 V DC
@@ -43,3 +44,4 @@ catalog:
     Mounting: Square flange panel mount, 4 × M4
     Sealing: IP67
     Keyway: None
+  mates_with: [SLPPA25BSB, SLPPA25BSR]
