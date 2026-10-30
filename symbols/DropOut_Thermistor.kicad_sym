@@ -3,9 +3,6 @@
 	(generator "kicad_symbol_editor")
 	(generator_version "10.0")
 	(symbol "NCU18XH103F6SRB"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -341,9 +338,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "NTCG163JF103FT1H"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -679,9 +673,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "NTCG163JF103FT1S"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -1017,9 +1008,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "NTCG163JF103FTDS"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -1355,9 +1343,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "NTCS0603E3103FMT"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)

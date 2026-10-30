@@ -3,9 +3,6 @@
 	(generator "kicad_symbol_editor")
 	(generator_version "10.0")
 	(symbol "74438356010"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -236,9 +233,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "74438356010HT"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -469,9 +463,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "74438356022"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -702,9 +693,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "74438356022HT"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -935,9 +923,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "74438357010"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -1168,9 +1153,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "74438357022"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -2501,9 +2483,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "DFE322520FD-1R0M_P2"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -2734,9 +2713,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "DFE322520FD-2R2M_P2"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -4067,9 +4043,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "SPM4020T-1R0M-DZ"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -4300,9 +4273,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "SPM4020T-2R2M-DZ"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -4533,9 +4503,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "SRP3020TA-1R0M"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -4766,9 +4733,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "SRP4020TA-1R0M"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -4999,9 +4963,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "SRP4020TA-2R2M"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -5232,9 +5193,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "XEL4020-102MEC"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -5465,9 +5423,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "XEL4020-222MEC"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -5698,9 +5653,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "XGL4020-102MEC"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -5931,9 +5883,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "XGL4020-222MEC"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -6164,9 +6113,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "XGL4030-102MEC"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -6397,9 +6343,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "XGL4030-222MEC"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
