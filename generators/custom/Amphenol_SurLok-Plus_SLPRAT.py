@@ -26,6 +26,8 @@ Estimated (marked ESTIMATE below): every other size. The catalog's p. 6 screw-te
 proportions were scaled to the 5.7 mm part's catalog dimensions and kept inside the cutout and plug:
 front lip, front body, flange-to-body fillet, flange thickness, rear-body length, the metal contact
 disc on the rear face, the thread relief, stud length, mating bore and the pin's touch-proof cap.
+The mating bore was widened and deepened on 2026-10-30 to take the plug's Ø11.3 nose, 15.2 deep when
+mated (plug drawing C10-730186 and measured plug models; Amphenol_SurLok-Plus_SLPPA.py).
 
 Frame: z is the connector axis. z = 0 is the rear contact face (the metal disc the lug, busbar or
 REDCUBE seats on); the stud points +z, the mating face is at z = -27.8. The model is symmetric about
@@ -66,8 +68,9 @@ R_FRONT = 7.0                      # ESTIMATE: Ø14.0 front body (photo: 0.94 of
 R_LIP = 7.7                        # ESTIMATE: Ø15.4 latch lip, inside the plug's 18
 LIP_L = 2.2                        # ESTIMATE: lip length
 FILLET = 2.0                       # ESTIMATE: flange-to-front-body fillet
-R_BORE = 5.2                       # ESTIMATE: Ø10.4 mating bore for the plug's socket insulator
-Z_BORE = -17.0                     # ESTIMATE: bore floor
+R_BORE = 5.7                       # ESTIMATE: Ø11.4 mating bore for the plug's Ø11.3 nose (plug drawing
+                                   # C10-730186; see Amphenol_SurLok-Plus_SLPPA.py)
+Z_BORE = -12.0                     # ESTIMATE: bore floor just behind the mated plug's nose tip (z = -12.6)
 R_PIN = 2.85                       # RADSOK size 5.7 mm pin (catalog: "5.7mm")
 Z_PIN = -26.0                      # ESTIMATE: metal pin end, cap beyond
 CAP_OUT = 1.0                      # ESTIMATE: cap stands 1.0 proud of the mating face (photo)
@@ -117,7 +120,7 @@ def housing():
               .rect(FLANGE, FLANGE).extrude(FLANGE_T)
               .edges("|Z").fillet(FLANGE_R)
               .faces(">Z").workplane().pushPoints(holes).hole(HOLE_D)
-              .faces(">Z").workplane().hole(2 * R_PIN))
+              .faces(">Z").workplane().hole(2 * R_BORE))
     return w.union(flange)
 
 

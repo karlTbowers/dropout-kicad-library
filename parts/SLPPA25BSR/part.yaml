@@ -1,0 +1,46 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/SLPPA25BSR/part.yaml
+# Amphenol Industrial Operations SurLok Plus SLPPA25BSR: Gen 1.0 (1000 V DC) 5.7 mm RADSOK right-angle plug, 25 mm² crimp,
+# with back shell, IP67 sealed, red, no keyway. Code (catalog IC-10, 23 Oct 2025, p. 7): SLP series, P right angle 90°,
+# A 5.7 mm 120 A, 25 = 25 mm² cable (120 A max.), B with back shell, S sealed, R red, no keyway digit.
+# Customer drawing C10-730186 rev. D (Amphenol Tuchel Industrial, cdr-slppa25bsr-01-000.pdf): 120 A max,
+# 1000 V DC, -40 to +105 °C, IP67 mated, touch proof; 22.6 high, 18 wide, 55.1 long (REF); cable Ø10.8 max for 25 mm²
+# (product page: Ø10.0-10.4). Archived in dropout-vendor-docs Amphenol-Industrial/SurLok-Plus/. Same plug in the other
+# colour: SLPPA25BSB. The 16 mm² version (SLPPA16BSx, 100 A) was not built (user's choice, 2026-10-30).
+# A cable part: no footprint, on_board: false and in_pos_files: false, as the SLPRATPSx receptacles it mates.
+# One electrical contact: one passive pin, as the receptacle symbol.
+# 3D model: generators/custom/Amphenol_SurLok-Plus_SLPPA.py, built from the customer drawing and measurements of
+# Amphenol Tuchel's customer STEP (no licence stated, so not redistributed) and a GrabCAD community model (measured
+# only); estimates are marked in the generator. Drawn mated in the receptacle model's frame.
+# Observed 2026-10-30: DigiKey 613 in stock, Mouser 2081; Newark carries it (75Y9193). Active.
+library: DropOut_Connector
+name: SLPPA25BSR
+pins: pins.csv
+on_board: false
+in_pos_files: false
+fields:
+  Reference: J
+  Value: SLPPA25BSR
+  Footprint: ""
+  Datasheet: https://amphenol-industrial.com/wp-content/uploads/amphenol/surlok-plus-series-ic-10.pdf
+  Description: Amphenol SurLok Plus 5.7 mm RADSOK right-angle plug, 120 A, 1000 V DC, 25 mm² crimp, with back shell, IP67 mated, red, no keyway, -40 to +105 °C
+  ki_keywords: SurLok Plus RADSOK power connector plug right angle cable crimp 25mm2 high current
+  Manufacturer: Amphenol Industrial Operations
+  MPN: SLPPA25BSR
+  DigiKey_PN: 965-SLPPA25BSR-ND
+  Mouser_PN: 654-SLPPA25BSR
+  Temperature_Grade: -40 to +105 °C
+  Notes: "Cable plug, not placed on the PCB (no footprint). 25 mm² cable, Ø10.0-10.4 (customer drawing C10-730186 rev. D). 3D model ${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_Connector_Amphenol.3dshapes/Amphenol_SurLok-Plus_SLPPA25BSR.step, partly estimated: drawn mated on the SLPRATPSx receptacle model, so give it the receptacle's offset (z = -2.6 mm on the 74660016 footprint) and rotate it about z to aim the cable (+x unrotated). Mates 5.7 mm SurLok Plus receptacles without keyway (SLPRATPSx)."
+catalog:
+  family: power-connectors
+  group: Amphenol SurLok Plus 5.7 mm
+  attributes:
+    Type: Right-angle plug
+    Colour: Red
+    Current: 120 A
+    Voltage: 1000 V DC
+    Termination: 25 mm² crimp
+    Mounting: Cable, with back shell
+    Sealing: IP67
+    Keyway: None
+  mates_with: [SLPRATPSB, SLPRATPSO, SLPRATPSR]
