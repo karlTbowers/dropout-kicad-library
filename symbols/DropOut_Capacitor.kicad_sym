@@ -3,9 +3,6 @@
 	(generator "kicad_symbol_editor")
 	(generator_version "10.0")
 	(symbol "12101C475K4T2A"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -267,9 +264,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "AC0603KRX7R6BB225"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -531,9 +525,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "C0603C104K1RACAUTO"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -784,9 +775,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "C1206C104J3GACAUTO"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -1048,9 +1036,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "C1206C105K1RACAUTO"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -1312,9 +1297,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "C1210C226K8RACAUTO"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -1576,9 +1558,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "CGA2B1X7R1C104K050BC"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -1829,9 +1808,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "CGA2B2X7R1C224K050BA"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -2082,9 +2058,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "CGA2B3X7R1H103K050BB"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -2335,9 +2308,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "CGA3E1C0G2A103J080AC"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -2588,9 +2558,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "CGA3E1X7R1C105K080AC"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -2852,9 +2819,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "CGA3E1X7R1C474K080AC"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -3116,9 +3080,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "CGA3E2C0G1H103J080AA"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -3380,9 +3341,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "CGA3E2C0G1H472J080AA"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -3644,9 +3602,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "CGA3E3X7R1H474K080AB"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -3897,9 +3852,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "CGA4J2X7R2A104K125AA"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -4161,9 +4113,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "CGA4J3X7R1A475K125AB"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -4414,9 +4363,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "CGA5L1C0G2A104J160AC"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -4667,9 +4613,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "CGA5L1X7R1C106K160AC"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -4931,9 +4874,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "CGA5L2C0G1H104J160AA"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -5195,9 +5135,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "CGA5L2C0G1H683J160AA"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -5459,9 +5396,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "CGA5L2X7R2A105K160AA"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -5712,9 +5646,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "CNA6P1X7R2A475K250AE"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -5976,9 +5907,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "GCJ188R72A104KA01D"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -6240,9 +6168,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "GCM1555C1H100JA16D"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -6493,9 +6418,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "GCM155R71C104KA55D"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -6746,9 +6668,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "GCM155R71C224KE02D"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -6999,9 +6918,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "GCM155R71H103KA55D"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -7252,9 +7168,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "GCM1885C1H103GA16D"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -7516,9 +7429,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "GCM1885C1H472JA16D"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -7780,9 +7690,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "GCM1885C2A103JE02D"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -8033,9 +7940,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "GCM188R71C105KA64D"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -8297,9 +8201,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "GCM188R71C474KA55D"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -8561,9 +8462,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "GCM21BR71C475KA73L"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -8825,9 +8723,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "GCM21BR72A104KA37L"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -9089,9 +8984,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "GCM31C5C1H683JA16L"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -9353,9 +9245,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "GCM31C5C2A104JE02L"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -9606,9 +9495,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "GCM31CR71C106KA64L"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -9870,9 +9756,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "GCM32ER71A226KE12L"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -10123,9 +10006,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "KAM15AR71A225KT"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -10387,9 +10267,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "MCASU168SB7474KTCA01"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)

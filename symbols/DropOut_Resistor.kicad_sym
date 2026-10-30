@@ -3,9 +3,6 @@
 	(generator "kicad_symbol_editor")
 	(generator_version "10.0")
 	(symbol "AC0402FR-07100KL"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -243,9 +240,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "AC0402FR-0712K4L"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -483,9 +477,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "AC0402FR-0714KL"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -723,9 +714,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "AC0402FR-0728KL"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -963,9 +951,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "AC0402JR-070RL"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -1170,9 +1155,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "AC0402JR-0710KL"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -1410,9 +1392,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "AC0402JR-0710RL"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -1650,9 +1629,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "AC0402JR-072K2L"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -1890,9 +1866,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "AC0402JR-0733RL"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -2130,9 +2103,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "AC0402JR-074K7L"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -2370,9 +2340,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "AC0603FR-07100RL"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -2610,9 +2577,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "AC0603FR-07107KL"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -2850,9 +2814,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "AC0603FR-072K1L"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -3090,9 +3051,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "AC0603FR-072KL"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -3330,9 +3288,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "AC0603FR-0749R9L"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -3570,9 +3525,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "AC0603FR-077K87L"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -3810,9 +3762,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "AC0603JR-070RL"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -4028,9 +3977,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "AC0805FR-07100KL"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -4279,9 +4225,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "AC1206FR-071K5L"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -5534,9 +5477,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "CRCW06030000Z0EA"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -5741,9 +5681,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "CRCW06030000Z0EAHP"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -5948,9 +5885,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "CRCW0805100KFKEA"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -6199,9 +6133,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "CRCW12061K50FKEA"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -6450,9 +6381,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "CRCW120649R9FKEAHP"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -6701,9 +6629,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "CSS2725FTL250"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -6895,9 +6820,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "ERA-3AEB103V"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -7146,9 +7068,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "ERA-3AEB6980V"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -7397,9 +7316,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "ERJ-2GE0R00X"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -7604,9 +7520,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "ERJ-2GEJ100X"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -7844,9 +7757,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "ERJ-2GEJ103X"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -8084,9 +7994,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "ERJ-2GEJ222X"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -8324,9 +8231,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "ERJ-2GEJ330X"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -8564,9 +8468,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "ERJ-2GEJ472X"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -8804,9 +8705,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "ERJ-2RKF1003X"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -9044,9 +8942,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "ERJ-2RKF1242X"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -9284,9 +9179,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "ERJ-2RKF1402X"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -9524,9 +9416,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "ERJ-2RKF2802X"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -9764,9 +9653,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "ERJ-3EKF1000V"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -10004,9 +9890,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "ERJ-3EKF1073V"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -10244,9 +10127,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "ERJ-3EKF2001V"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -10484,9 +10364,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "ERJ-3EKF2101V"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -10724,9 +10601,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "ERJ-3EKF49R9V"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -10964,9 +10838,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "ERJ-3EKF7871V"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -11204,9 +11075,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "ERJ-3GEY0R00V"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -11422,9 +11290,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "ERJ-P08F49R9V"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -11673,9 +11538,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "ESR18EZPF49R9"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -11924,9 +11786,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "HCS2512FTL250"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -12118,9 +11977,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "RG1608P-103-B-T5"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -12369,9 +12225,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "RG1608P-6980-B-T5"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -12620,9 +12473,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "RK73Z1JTTD"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -12838,9 +12688,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "RNCF0603BTE32K0"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -13089,9 +12936,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "SG73P2BTTD49R9F"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -13340,9 +13184,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "TNPW060310K0BEEA"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -13591,9 +13432,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "TNPW060332K0BEEA"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)
@@ -13842,9 +13680,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "TNPW0603698RBEEA"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 1.016)
 			(hide yes)

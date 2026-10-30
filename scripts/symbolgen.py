@@ -528,9 +528,11 @@ STYLE_FIELDS = {"inductor": {"Reference": (2.54, 1.27), "Value": (2.54, -1.27)},
 # Reference and Value positions where the default (above and below the body) doesn't fit:
 # a test point's connection point is at the bottom, so both go above it, as on KiCad's TestPoint
 STYLE_FIELD_Y = {"testpoint": {"Reference": 6.858, "Value": 5.08}}
-# Pin numbers are shown where the package has more than two terminals (as KiCad's stock symbols)
+# Pin numbers are shown where the package has more than two terminals (as KiCad's stock symbols),
+# and on two-terminal passives too (the user's decision 2026-10-29, so a netlist or layout question
+# about pin 1 / pin 2 can be answered from the schematic)
 STYLE_SHOW_NUMBERS = {"crystal_gnd24", "crystal_nc24", "cmc_4pin", "resistor_shunt_4pin", "nmos", "nmos_pmos",
-                      "relay_dpdt_latching"}
+                      "relay_dpdt_latching", "resistor", "capacitor", "inductor", "thermistor_ntc"}
 
 
 def build_symbol(part, pins):
