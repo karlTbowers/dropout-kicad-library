@@ -56,6 +56,8 @@ Optional: `Temperature_Grade` (e.g. `AEC-Q100 Grade 1`), the rating fields of ha
 
 The `Datasheet` field must be the **manufacturer's** URL, never a distributor copy. Datasheet PDFs are never committed.
 
+Exception (adopted 2026-11-01): when the manufacturer hosts no public copy of any document for the part, `Datasheet` may link the manufacturer's own, unmodified document (data sheet or customer drawing) at the address a distributor publishes it, preferring the distributor's own datasheet link for that part (DigiKey's, then Mouser's). The part's `part.yaml` says that no manufacturer copy exists and when that was checked, and the PR calls it out. A distributor's own summary sheet, or a document the manufacturer marks confidential, still doesn't qualify. Example: Amphenol RADLOK (`parts/RL9057-101-F1/`), whose drawings Amphenol TPI publishes only through distributors.
+
 ### Parts with nothing to buy
 
 (Adopted 2026-10-22.) Some library parts are features of the board itself, e.g. a bare copper test pad: there is no MPN and nothing to order or place. They still carry every required field, filled in like this:
