@@ -152,6 +152,7 @@ class Plug:
     t_mid: float                   # ESTIMATE: top of the lower body (drawing side view)
     x_low: float                   # ESTIMATE: end of the lower body (from the axis)
     collar_t: float                # ESTIMATE: collar thickness
+    neck_top: float                # ESTIMATE: drawing side view, top of the transition where it leaves the body
     neck: tuple                    # ESTIMATE: (half width, t0, t1) where the transition meets the collar
     collar: tuple                  # ESTIMATE: (half width, t0, t1)
     x_cap: float                   # ESTIMATE: end of the ribbed cap's flat top
@@ -160,9 +161,9 @@ class Plug:
 
 
 TUBULAR = Plug(A=18.5, B=33.0, C=23.8, D=9.4, E=11.5, F=47.7, t_mid=17.6, x_low=17.15, collar_t=2.0,
-               neck=(7.0, 11.0, 22.2), collar=(9.7, 8.6, 23.8), x_cap=13.0, slope_end=17.15, ribs=11)
+               neck_top=23.8, neck=(7.0, 11.0, 22.2), collar=(9.7, 8.6, 23.8), x_cap=13.0, slope_end=17.15, ribs=11)
 STAMPED = Plug(A=18.5, B=30.0, C=21.9, D=9.2, E=11.2, F=43.6, t_mid=16.3, x_low=17.6, collar_t=1.6,
-               neck=(8.6, 9.8, 15.7), collar=(9.25, 9.4, 16.3), x_cap=12.5, slope_end=15.0, ribs=10)
+               neck_top=16.3, neck=(8.6, 9.8, 15.7), collar=(9.25, 9.4, 16.3), x_cap=12.5, slope_end=15.0, ribs=10)
 TUBE = {"16": (5.5 / 2, 8.5 / 2), "25": (7.2 / 2, 9.5 / 2)}   # tubular drawing D1, D2
 R_BORE = 3.7                       # ESTIMATE: boss bore around the RADSOK socket
 R_SOCK_IN, R_SOCK_OUT = 2.95, 3.65  # ESTIMATE: RADSOK socket for the Ø5.7 pin
@@ -185,9 +186,9 @@ def plug_housing(p):
                         (p.slope_end, p.t_mid), (p.x_cap, p.C)]).close().extrude(2 * p.A))
     cap = cap.cut(slope)
     yn, n0, n1 = p.neck
-    neck = (cq.Workplane("YZ").workplane(offset=p.x_low - 0.2).center(0, (p.D + p.t_mid) / 2)
-            .rect(p.A, p.t_mid - p.D).workplane(offset=x_col0 - p.x_low + 0.2)
-            .center(0, (n0 + n1) / 2 - (p.D + p.t_mid) / 2).rect(2 * yn, n1 - n0).loft())
+    neck = (cq.Workplane("YZ").workplane(offset=p.x_low - 0.2).center(0, (p.D + p.neck_top) / 2)
+            .rect(p.A, p.neck_top - p.D).workplane(offset=x_col0 - p.x_low + 0.2)
+            .center(0, (n0 + n1) / 2 - (p.D + p.neck_top) / 2).rect(2 * yn, n1 - n0).loft())
     yc, c0, c1 = p.collar
     collar = (box(x_col0, x0 + p.B, yc, c0, c1).edges("|X").fillet(1.2).edges("|Y or |Z").fillet(0.4))
     boss = (cq.Workplane("XY").circle(p.E / 2).extrude(p.D + 0.5).faces("<Z").edges().chamfer(0.4))

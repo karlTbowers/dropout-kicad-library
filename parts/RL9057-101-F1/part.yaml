@@ -43,3 +43,4 @@ catalog:
     Voltage: 1000 V
     Termination: M6 threaded stud
     Mounting: Square flange panel mount, 4 × M3
+  mates_with: [RL00571-16, RL00571-16BK, RL00571-16RE, RL00571-25, RL00571-25BK, RL00571-25RE, RL00572-16, RL00572-16BK, RL00572-16RE, RL00572-25, RL00572-25BK, RL00572-25RE]

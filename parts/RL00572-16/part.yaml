@@ -1,0 +1,43 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/RL00572-16/part.yaml
+# Amphenol Technical Products International RADLOK RL00572-16: 5.7 mm RADLOK right-angle cable plug (RADSOK socket),
+# stamped (open-barrel) crimp lug for 16 mm² cable, orange. Code (customer drawing "RADLOK Connector Stamped Lug Version" rev. C (2018-02-23)): RL 0 = RADLOK connector, 057 = 5.7 mm,
+# 2 = stamped lug, 16 = 16 mm² cable, colour blank = orange (data sheet IDS-67-1: blank orange, BK black, RE red).
+# Drawing, 5.7 mm row: 90 A (the drawing gives one lug for both cable sizes); 18.5 wide, 30.0 to the collar, 21.9 high, Ø11.2 boss 9.2 long, 43.6 overall. Data sheet IDS-67-1: 1000 V, -40 to +125 °C,
+# 500 mating cycles, red release clip. Archived in dropout-vendor-docs Amphenol-TPI/RADLOK/. Same plug in the other colours: RL00572-16BK, RL00572-16RE.
+# A cable part: no footprint, on_board: false and in_pos_files: false, as the RL9057-101-F1x receptacles it mates.
+# One electrical contact: one passive pin, as the receptacle symbol.
+# Datasheet: no Amphenol-hosted RADLOK document exists (2026-11-01); the field links Amphenol TPI's unmodified customer
+# drawing at the address DigiKey publishes it.
+# 3D model: generators/custom/Amphenol_RADLOK_5.7mm.py, from the customer drawing; estimates marked there. Drawn mated
+# in the feed-through model's frame.
+# Observed 2026-11-01: DigiKey none in stock, Mouser none in stock. Active.
+library: DropOut_Connector
+name: RL00572-16
+pins: pins.csv
+on_board: false
+in_pos_files: false
+fields:
+  Reference: J
+  Value: RL00572-16
+  Footprint: ""
+  Datasheet: https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/5340/RADLOK_Connector_Stamped_Lug_REVC.pdf
+  Description: Amphenol RADLOK 5.7 mm RADSOK right-angle plug, 90 A, 1000 V, stamped (open-barrel) crimp lug for 16 mm² cable, orange, -40 to +125 °C
+  ki_keywords: RADLOK RADSOK power connector plug right angle cable crimp 16mm2 high current
+  Manufacturer: Amphenol Technical Products International
+  MPN: RL00572-16
+  DigiKey_PN: 3936-RL00572-16-ND
+  Mouser_PN: 654-RL00572-16
+  Temperature_Grade: -40 to +125 °C
+  Notes: "Cable plug, not placed on the PCB (no footprint). 16 mm² cable, stamped (open-barrel) crimp lug. 3D model ${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_Connector_Amphenol.3dshapes/Amphenol_RADLOK_RL00572-16.step, partly estimated: drawn mated on the RL9057-101-F1x receptacle model, so give it the receptacle's offset (z = -2.6 mm on the 74660016 footprint) and rotate it about z to aim the cable (+x unrotated). Mates 5.7 mm RADLOK pins and feed-throughs (RL9057-101-F1x)."
+catalog:
+  family: power-connectors
+  group: Amphenol RADLOK 5.7 mm
+  attributes:
+    Type: Right-angle plug
+    Colour: Orange
+    Current: 90 A
+    Voltage: 1000 V
+    Termination: 16 mm² stamped crimp lug
+    Mounting: Cable
+  mates_with: [RL9057-101-F1, RL9057-101-F1OR, RL9057-101-F1RE]
