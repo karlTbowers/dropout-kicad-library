@@ -1,0 +1,45 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/RL9057-101-F1RE/part.yaml
+# Amphenol Technical Products International RADLOK RL9057-101-F1RE: 5.7 mm RADLOK feed-through ("Feed Thru Pin To Thread"),
+# RADSOK pin in front, M6 x 1.0-6g stud behind, silver plating (101), square flange with seal, red housing.
+# Code (customer drawing rev. H, 2018-01-11): RL 9 = RADLOK pin, 057 = 5.7 mm, 10X = pin to thread with plating X
+# (1 silver), F1 = feed thru. RE = red (DigiKey colour parameter).
+# Drawing, 5.7 mm row: 120 A, 25.0 square flange, 4 × M3 screws on 17.0, Ø14.7 panel hole with two 2.8 key notches
+# 18.2 across, 3 mm max. panel, 49.6 overall, stud 10 long, 4.0 ± 0.4 N·m. Data sheet IDS-67-1: 1000 V,
+# -40 to +125 °C, 500 mating cycles. Archived in dropout-vendor-docs Amphenol-TPI/RADLOK/. Same part in the other
+# colours: RL9057-101-F1, RL9057-101-F1OR. The bare pin RL9057-101 was not built (user's choice, 2026-11-01).
+# No footprint (user's decision 2026-10-28, as SurLok Plus SLPRATPSx): the receptacle mounts on the enclosure wall and
+# its M6 stud screws into a Würth REDCUBE 74660016 on the board, placed as its own part. on_board: false, in_pos_files: false.
+# One electrical contact: one passive pin, as the REDCUBE symbol.
+# Datasheet: no Amphenol-hosted RADLOK document exists (amphenol-industrial.com has no RADLOK page, 2026-11-01); the field
+# links Amphenol TPI's unmodified customer drawing at the address DigiKey publishes it.
+# 3D model: generators/custom/Amphenol_RADLOK_5.7mm.py, from the customer drawing; estimates marked there.
+# Observed 2026-11-01: DigiKey 12 in stock, Mouser 796. Active.
+library: DropOut_Connector
+name: RL9057-101-F1RE
+pins: pins.csv
+on_board: false
+in_pos_files: false
+fields:
+  Reference: J
+  Value: RL9057-101-F1RE
+  Footprint: ""
+  Datasheet: https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/5344/RADLOK_Feed_Thru_Pin_to_thread-REVH.pdf
+  Description: Amphenol RADLOK 5.7 mm RADSOK feed-through receptacle, 120 A, 1000 V, M6 threaded stud, square flange panel mount (4 × M3), red, -40 to +125 °C
+  ki_keywords: RADLOK RADSOK power connector receptacle feedthrough panel flange threaded stud M6 high current
+  Manufacturer: Amphenol Technical Products International
+  MPN: RL9057-101-F1RE
+  DigiKey_PN: 3936-RL9057-101-F1RE-ND
+  Mouser_PN: 654-RL9057-101-F1-RE
+  Temperature_Grade: -40 to +125 °C
+  Notes: "Panel mount, not placed on the PCB (no footprint): the M6 stud screws into a Würth REDCUBE 74660016 on the board, placed as its own part. Panel: Ø14.7 hole with two 2.8 wide key notches 18.2 across, 4 × M3 on 17 × 17, 3 mm max. (drawing rev. H). 3D model ${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_Connector_Amphenol.3dshapes/Amphenol_RADLOK_RL9057-101-F1RE.step: add it to the 74660016 footprint with offset z = -2.6 mm. Mates 5.7 mm RADLOK plugs (RL00571-xx, RL00572-xx)."
+catalog:
+  family: power-connectors
+  group: Amphenol RADLOK 5.7 mm
+  attributes:
+    Type: Receptacle
+    Colour: Red
+    Current: 120 A
+    Voltage: 1000 V
+    Termination: M6 threaded stud
+    Mounting: Square flange panel mount, 4 × M3
