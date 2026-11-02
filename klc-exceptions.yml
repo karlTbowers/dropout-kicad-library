@@ -97,3 +97,16 @@ exceptions:
       orderable code is on the sheet without dominating it (user's decision 2026-10-23). KLC S3.2
       wants every field at 50 mil.
     approved: 2026-10-23
+
+  - id: busbar-designator
+    rules: [S6.1]
+    applies: ["DropOut_Busbar:*"]
+    # Waives only the designator-list message. Every other S6.1 finding still fails.
+    match: >-
+      ^Component Reference designator not in list of allowed designators$
+    reason: >
+      Busbars that the schematic shows (net-tie parts joining two power terminals' nets on
+      purpose, e.g. Node60's VBAT_IN bar BB901, placement decision D02) take Reference BB. KLC's
+      list has no busbar or net-tie designator (KiCad's own Device:NetTie_2 uses NT, also not in
+      the list); BB names the part for what it is on the board and in the BOM.
+    approved: 2026-11-02   # proposed; the user approves it by merging its PR
