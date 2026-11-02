@@ -81,6 +81,16 @@ The symbol is marked `(in_bom no)` and `(in_pos_files no)` (`in_bom: false`, `in
 - The 3D model lives in `3dmodels/DropOut_Connector_<Vendor>.3dshapes/`, named `<Vendor>_<Series>_<MPN>` when variants differ only in colour. `Notes` gives its path and how to add it to the board terminal's footprint (offset).
 - The KLC symbol checker warns S5.2 ("No footprint filters defined") on these symbols; that warning is expected.
 
+### Model-only parts
+
+(Adopted 2026-11-02.) Some parts are neither drawn in a schematic nor placed from a footprint, but boards still need their 3D model and the shop needs a drawing: e.g. Node60's copper busbars (`DropOut_Busbar`), cut and drilled in house and bolted across two REDCUBE terminals. Such a part is a **model-only part**:
+
+- No symbol and no footprint. `parts/<name>/part.yaml` holds `kind: model`, `library`, `name`, `model` (`3dmodels/<library>.3dshapes/<name>.step`), optional `drawing` (`drawings/<library>/<name>.svg`), the fields `Value` (= name), `Datasheet`, `Description`, `Manufacturer`, `MPN`, `DigiKey_PN`, `Mouser_PN` (and optional `Notes`, `ki_keywords`), and a `catalog:` block.
+- Something made in house has no MPN: as for parts with nothing to buy, `Manufacturer: DropOut`, `MPN` = the name, distributor PNs `-`, and `Datasheet` links the drawing (or the generator).
+- The model and drawing come from one generator in `generators/custom/` so they cannot disagree. The drawing is a dimensioned SVG (black on white, mm), with every estimated dimension marked as such.
+- `Notes` says how a board adds the model (to which footprint, with what offset).
+- `scripts/check_catalog_data.py` checks these parts (required fields, names, model and drawing present). The library catalog lists them with the model and the drawing.
+
 ### Library names
 
 `DropOut_<Category>`, where `<Category>` follows KLC functional naming (see README for the list). New categories need approval.

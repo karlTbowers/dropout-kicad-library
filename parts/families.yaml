@@ -52,3 +52,9 @@ debug-headers:
   intro: 1.27 mm micro headers for the 10-pin Arm Cortex SWD/JTAG debug connector.
   groups:
     - Samtec FTSH 2×05, 1.27 mm
+
+busbars:
+  title: Busbars
+  intro: Copper bars cut and drilled in house that join power terminals; model-only parts with a dimensioned drawing.
+  groups:
+    - Copper flat bar 19.05 × 3.175 mm

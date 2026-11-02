@@ -12,6 +12,7 @@ Every part in this library is an **atomic part**: one symbol = one orderable man
 symbols/        DropOut_<Category>.kicad_sym        one file per category
 footprints/     DropOut_<Category>.pretty/          one folder per category
 3dmodels/       DropOut_<Category>.3dshapes/        STEP models, mirroring footprint categories
+drawings/       DropOut_<Category>/                 dimensioned drawings (SVG) of model-only parts
 docs/           CONTRIBUTING.md (library rules: KLC + DropOut additions)
 scripts/        check_symbol_fields.py, klc_check.py (run by CI), vendor-env.sh
 klc-exceptions.yml   approved deviations from the KiCad Library Conventions
@@ -54,6 +55,7 @@ Planned categories (created as the first part in each one is added). Microcontro
 | `DropOut_Package_TO_SOT_SMD` | Footprints and 3D models for SOT/TSOT/TO SMD packages, including TOLL-family power MOSFETs |
 | `DropOut_Resistor_SMD` | Footprints and 3D models for SMD resistors: chip resistors (one IPC footprint per size code), current-sense shunts with manufacturer land patterns |
 | `DropOut_Relay_SMD` | Footprints and 3D models for SMD relays, named after KiCad's `Relay_SMD` |
+| `DropOut_Busbar` | 3D models and drawings for busbars cut and drilled in house (model-only parts: no symbol, no footprint) |
 | `DropOut_TestPoint` | Footprints and 3D models for test points: bare pads and SMD/THT test loops (as KiCad's stock `TestPoint`) |
 
 ## Using it in a project
