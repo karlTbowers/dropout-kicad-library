@@ -1,0 +1,33 @@
+# Model-only part (docs/CONTRIBUTING.md "Model-only parts", user's decision 2026-11-02): a 3D model and a
+# dimensioned drawing, no symbol and no footprint. scripts/check_catalog_data.py checks it; the library
+# catalog lists it. Model and drawing: generators/custom/Busbar_Cu_FlatBar.py.
+# Node60 GND busbar (BB902): joins the REDCUBE terminals J911 and J902 (node60-hw DEC-025, enclosure
+# version 15, 2026-11-01). Cut from 1/8" x 3/4" C110 copper flat bar and drilled in house, so there is
+# no MPN to order: Manufacturer DropOut, MPN = the part name, distributor PNs "-", as the no-MPN
+# convention (docs/CONTRIBUTING.md "Parts with nothing to buy"). Dimensions: hole pitch 157 mm from the
+# terminal positions in node60-hw scripts/place_connectors.py (v15), length = pitch + one bar width,
+# holes Ø6.5 (BUSBAR_HOLE). Edge radius and deburr chamfers are estimates (see the generator).
+kind: model
+library: DropOut_Busbar
+name: Busbar_Cu_19.05x3.175mm_L176.05mm_2xD6.5mm_P157mm
+model: 3dmodels/DropOut_Busbar.3dshapes/Busbar_Cu_19.05x3.175mm_L176.05mm_2xD6.5mm_P157mm.step
+drawing: drawings/DropOut_Busbar/Busbar_Cu_19.05x3.175mm_L176.05mm_2xD6.5mm_P157mm.svg
+fields:
+  Value: Busbar_Cu_19.05x3.175mm_L176.05mm_2xD6.5mm_P157mm
+  Datasheet: https://github.com/karlTbowers/dropout-kicad-library/blob/main/drawings/DropOut_Busbar/Busbar_Cu_19.05x3.175mm_L176.05mm_2xD6.5mm_P157mm.svg
+  Description: "Busbar, C110 copper flat bar 19.05 × 3.175 mm (3/4\" × 1/8\"), length 176.05 mm, 2 × Ø6.5 mm M6 clearance holes at 157 mm pitch; cut and drilled in house"
+  ki_keywords: busbar copper flat bar C110 M6 REDCUBE high current
+  Manufacturer: DropOut
+  MPN: Busbar_Cu_19.05x3.175mm_L176.05mm_2xD6.5mm_P157mm
+  DigiKey_PN: "-"
+  Mouser_PN: "-"
+  Notes: "Made in house from 1/8\" x 3/4\" C110 copper flat bar: cut to 176.05 mm, drill 2 × Ø6.5 at 157 mm, deburr. Not placed on the PCB as a library footprint: a board draws the bar as a board-only footprint of its own (Node60 BB902) and adds the 3D model ${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_Busbar.3dshapes/Busbar_Cu_19.05x3.175mm_L176.05mm_2xD6.5mm_P157mm.step at its centre, offset z = 0.6 mm (resting on REDCUBE 74660016R spigots)."
+catalog:
+  family: busbars
+  group: Copper flat bar 19.05 × 3.175 mm
+  attributes:
+    Length: 176.05 mm
+    Hole pitch: 157 mm
+    Holes: 2 × Ø6.5 mm (M6 clearance)
+    Used on: Node60 GND (BB902)
+  mates_with: [74660016R, SLPRATPSB]

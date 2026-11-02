@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
-"""Check the catalog family data: parts/families.yaml and the `catalog:` blocks in parts/*/part.yaml.
+"""Check the catalog family data: parts/families.yaml and the `catalog:` blocks in parts/*/part.yaml,
+and the model-only parts (`kind: model`, docs/CONTRIBUTING.md "Model-only parts").
 
 Usage: python3 scripts/check_catalog_data.py [parts_dir]
 Exit code 1 if a part names a family or group that families.yaml doesn't list, an attribute value
-is blank or not plain text, or a family lists a group no part uses. Needs PyYAML.
+is blank or not plain text, or a family lists a group no part uses; or if a model-only part lacks a
+required field, its folder or model file isn't named as the part, or its model or drawing is missing.
+Needs PyYAML.
 """
 import sys
 from pathlib import Path
@@ -12,6 +15,31 @@ import yaml
 
 KEYS = {"family", "group", "attributes", "mates_with"}
 FAMILY_KEYS = {"title", "intro", "groups"}
+MODEL_KEYS = {"kind", "library", "name", "model", "drawing", "fields", "catalog"}
+MODEL_FIELDS = ["Value", "Datasheet", "Description", "Manufacturer", "MPN", "DigiKey_PN", "Mouser_PN"]
+
+
+def check_model_part(path, data, root):
+    """Errors for a model-only part: a 3D model (and optional drawing) with fields, no symbol or footprint."""
+    where = path.relative_to(root)
+    errors = []
+    if set(data) - MODEL_KEYS:
+        errors.append(f"{where}: unknown keys {sorted(set(data) - MODEL_KEYS)} for kind: model")
+    name, lib = data.get("name"), data.get("library")
+    if name != path.parent.name:
+        errors.append(f"{where}: name '{name}' must match its folder")
+    fields = data.get("fields") or {}
+    for f in MODEL_FIELDS:
+        if not isinstance(fields.get(f), str) or not fields[f].strip():
+            errors.append(f"{where}: field {f} is required")
+    if fields.get("Value") != name:
+        errors.append(f"{where}: Value must be the part name")
+    if data.get("model") != f"3dmodels/{lib}.3dshapes/{name}.step":
+        errors.append(f"{where}: model must be 3dmodels/{lib}.3dshapes/{name}.step")
+    for key in ("model", "drawing"):
+        if data.get(key) and not (root / data[key]).is_file():
+            errors.append(f"{where}: {key} {data[key]} does not exist")
+    return errors
 
 
 def main():
@@ -27,7 +55,10 @@ def main():
     used = set()
     count = 0
     for path in sorted(parts.glob("*/part.yaml")):
-        cat = (yaml.safe_load(path.read_text(encoding="utf-8")) or {}).get("catalog")
+        data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        if data.get("kind") == "model":
+            errors += check_model_part(path, data, parts.parent)
+        cat = data.get("catalog")
         if cat is None:
             continue
         count += 1
