@@ -14,6 +14,8 @@
 # Datasheet: Amphenol Tuchel Industrial's product drawing for this part (customer drawing rev. K, 2022-04-25).
 # 3D model: generators/custom/Amphenol_RADLOK_5.7mm.py, from the customer drawing and measurements of Amphenol
 # Tuchel's customer STEP c3d-rl9057-101-f1bk-01-000.stp (no licence stated, so not redistributed); estimates marked there.
+# The model puts the panel face 14.2 from the seat, as the drawing's I = 24.2 does (the STEP has 13.35; user's
+# decision 2026-11-02).
 # Observed 2026-11-01: DigiKey and Mouser none in stock. Active.
 library: DropOut_Connector
 name: RL9057-101-F1OR

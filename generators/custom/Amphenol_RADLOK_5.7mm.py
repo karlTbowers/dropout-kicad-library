@@ -32,7 +32,7 @@ Estimated (marked ESTIMATE): what neither the drawings nor the STEPs give, e.g. 
 flange, gusset and pocket sizes, the stamped plug's lug.
 
 Frame (all models): z is the RADSOK axis. z = 0 is the feed-through's rear seating face (what a lug, busbar
-or REDCUBE seats on); the stud points +z; the feed-through's front tube ends at z = -27.6. The plugs are drawn
+or REDCUBE seats on); the stud points +z; the panel face is at z = -14.2 (drawing I) and the front tube ends at z = -28.45. The plugs are drawn
 mated: boss fully in the tube, housing on the tube's front face, cable toward +x. Every model is symmetric
 about the XZ plane, so KiCad's mirrored model Y needs no correction. On a REDCUBE 74660016 footprint, give
 the feed-through and its plug the offset z = -2.6 mm (the REDCUBE spigot end), as the SurLok Plus SLPRATPSx
@@ -61,19 +61,24 @@ R_SEAT = 4.7                       # STEP: Ø9.4 seating face at z = 0
 R_METAL = 4.0                      # ESTIMATE: the pin's metal shoulder showing in the seating face
 Z_CONE = -1.6                      # STEP: cone from the seat out to the rear body
 R_REAR = 7.0                       # STEP: Ø14.0 rear body, through the Ø14.7 panel hole (drawing E)
-Z_KEY = -10.85                     # STEP: keys from here to the seal, along ±x
+# The panel face is where the drawing puts it: I = 24.2 from the stud tip, so 14.2 from the seat (user's
+# decision 2026-11-02). Amphenol's STEP has it 0.85 nearer the seat (13.35); everything from the panel face
+# forward (keys' end, seal, flange, gussets, tube, bore floor) is the STEP's, moved forward by that 0.85,
+# so the rear body is 0.85 longer and the pin, whose tip stays at C = 49.6, stands 0.85 less proud.
+PANEL_SHIFT = (Z_TIP - 24.2) - (-13.35)   # -0.85
+Z_SEAL = Z_TIP - 24.2              # drawing I: seal's panel face, -14.2
+Z_KEY = -10.85 + PANEL_SHIFT       # STEP: keys from here to the seal (2.5 long), along ±x
 KEY_W, KEY_R = 2.6, 8.7            # STEP: radial reach; width ESTIMATE (drawing F 2.8 notch)
-Z_SEAL = -13.35                    # STEP: seal's panel face (drawing I gives -14.2)
 SEAL_T = 1.0                       # ESTIMATE: STEP shows one 4.5 thick stack for seal and flange
-Z_FLANGE = -17.85                  # STEP: flange front face
+Z_FLANGE = -17.85 + PANEL_SHIFT    # STEP: flange front face
 FLANGE, FLANGE_R = 25.0, 2.0       # drawing A, STEP 24.8-25.0; corner radius ESTIMATE
 PITCH_SCREW = 17.0                 # drawing B
 HOLE_D = 4.3                       # STEP: Ø4.3 (drawing P: M4)
 POCKET_D = 1.1                     # STEP: section area drop over the last 1.1 of the flange
 R_TUBE, R_BORE_FT = 7.5, 6.15      # STEP: Ø15.0 front tube (drawing D 15.2), Ø12.3 bore for the plug's boss
-Z_TUBE_END = -27.6                 # STEP: front face of the tube
-Z_FLOOR = -18.0                    # STEP: bore floor (9.6 deep; the plug's boss is 9.4)
-R_GUSSET0, Z_GUSSET1 = 11.4, -22.1  # STEP: four gussets along ±x/±y, flange r 11.4 down to the tube at -22.1
+Z_TUBE_END = -27.6 + PANEL_SHIFT   # STEP: front face of the tube
+Z_FLOOR = -18.0 + PANEL_SHIFT      # STEP: bore floor (9.6 deep; the plug's boss is 9.4)
+R_GUSSET0, Z_GUSSET1 = 11.4, -22.1 + PANEL_SHIFT  # STEP: four gussets along ±x/±y, flange r 11.4 to the tube
 GUSSET_T = 1.6                     # ESTIMATE: STEP diagonal rays miss them
 HEX_AF, HEX_T = 7.8, 0.6           # STEP: pin hex at the bore floor (7.8 across flats, 9.4 across corners)
 R_PIN = 2.85                       # STEP, RADSOK size 5.7
