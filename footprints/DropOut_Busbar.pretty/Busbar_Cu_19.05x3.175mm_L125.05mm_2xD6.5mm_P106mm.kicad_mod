@@ -1,0 +1,156 @@
+(footprint "Busbar_Cu_19.05x3.175mm_L125.05mm_2xD6.5mm_P106mm"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Busbar, 1/8 x 3/4 in C110 copper flat bar (3.175 x 19.05 mm), 125.05 mm long, 2 x Ø6.5 M6 clearance holes at 106 mm on Würth REDCUBE 74660016R terminals; net tie: one B.Cu pad in each terminal's pad 1 ring, 5.7 mm +x of its spigot; courtyard = bar outline, https://github.com/karlTbowers/dropout-kicad-library/blob/main/drawings/DropOut_Busbar/Busbar_Cu_19.05x3.175mm_L125.05mm_2xD6.5mm_P106mm.svg")
+	(tags "busbar net tie copper flat bar C110 REDCUBE M6")
+	(property "Reference" "REF**"
+		(at 0 -11.025 0)
+		(layer "F.SilkS")
+		(uuid "6d39631a-a576-48bf-bc1f-c580ae9e0532")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Busbar_Cu_19.05x3.175mm_L125.05mm_2xD6.5mm_P106mm"
+		(at 0 11.025 0)
+		(layer "F.Fab")
+		(uuid "42dd6620-f49e-446e-a043-17571d7fa8e5")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b1220c4c-72bd-43c7-a001-1979aabd9301")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "df41e5f4-c656-4f91-937d-90b184346484")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr exclude_from_pos_files)
+	(net_tie_pad_groups "1, 2")
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_rect
+		(start -62.53 -9.53)
+		(end 62.53 9.53)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "a128a22c-ebe0-4ade-9bdd-cfd6d34a0372")
+	)
+	(fp_circle
+		(center -53 0)
+		(end -48.25 0)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "e89dc21a-61fd-453f-8027-a339b00347ea")
+	)
+	(fp_circle
+		(center 53 0)
+		(end 57.75 0)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "9f2dcb9a-da8a-48a2-bef6-eff0afad1487")
+	)
+	(fp_rect
+		(start -62.525 -9.525)
+		(end 62.525 9.525)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "a4da9cd4-cf7e-4751-b265-0007139b803b")
+	)
+	(fp_circle
+		(center -53 0)
+		(end -49.75 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "b27e3678-8bd1-4e58-b7c9-d379c53f4222")
+	)
+	(fp_circle
+		(center 53 0)
+		(end 56.25 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "d63e3158-d824-489b-a1fe-c1ef01914820")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "b9422a14-aba6-46f7-8e5c-1d7cc1e2f792")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd circle
+		(at -47.3 0)
+		(size 1.6 1.6)
+		(layers "B.Cu")
+		(uuid "ade0d8ed-9cb5-4e39-ae34-0beeafe4a10a")
+	)
+	(pad "2" smd circle
+		(at 58.7 0)
+		(size 1.6 1.6)
+		(layers "B.Cu")
+		(uuid "4871d6dc-2a8b-45fd-bc69-e027d1e52450")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_Busbar.3dshapes/Busbar_Cu_19.05x3.175mm_L125.05mm_2xD6.5mm_P106mm.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
