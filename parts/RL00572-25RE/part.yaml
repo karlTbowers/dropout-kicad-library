@@ -1,0 +1,43 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/RL00572-25RE/part.yaml
+# Amphenol Technical Products International RADLOK RL00572-25RE: 5.7 mm RADLOK right-angle cable plug (RADSOK socket),
+# stamped (open-barrel) crimp lug for 25 mm² cable, red. Code (customer drawing "RADLOK Connector Stamped Lug Version" rev. C (2018-02-23)): RL 0 = RADLOK connector, 057 = 5.7 mm,
+# 2 = stamped lug, 25 = 25 mm² cable, colour RE = red (data sheet IDS-67-1: blank orange, BK black, RE red).
+# Drawing, 5.7 mm row: 120 A (the drawing gives one lug for both cable sizes); 18.5 wide, 30.0 to the collar, 21.9 high, Ø11.2 boss 9.2 long, 43.6 overall. Data sheet IDS-67-1: 1000 V, -40 to +125 °C,
+# 500 mating cycles, red release clip. Archived in dropout-vendor-docs Amphenol-TPI/RADLOK/. Same plug in the other colours: RL00572-25, RL00572-25BK.
+# A cable part: no footprint, on_board: false and in_pos_files: false, as the RL9057-101-F1x receptacles it mates.
+# One electrical contact: one passive pin, as the receptacle symbol.
+# Datasheet: Amphenol Tuchel Industrial's PowerLok/RADLOK/HC32 catalogue (2020), which covers this part (ordering code and 5.7 mm dimensions, PDF pp. 28 and 31); amphenol-industrial.de has no product page for it.
+# 3D model: generators/custom/Amphenol_RADLOK_5.7mm.py, from the customer drawing, with the housing measured on Amphenol
+# Tuchel's RL00571-25 STEP (same housing; no stamped-lug STEP exists); estimates marked there. Drawn mated
+# in the feed-through model's frame.
+# Observed 2026-11-01: DigiKey none in stock, Mouser none in stock. Active.
+library: DropOut_Connector
+name: RL00572-25RE
+pins: pins.csv
+on_board: false
+in_pos_files: false
+fields:
+  Reference: J
+  Value: RL00572-25RE
+  Footprint: ""
+  Datasheet: https://www.amphenol-industrial.de/media/pages/downloads/ev/a8dde4ca91-1707818191/powerlok-radlok-hc32-katalog-en.pdf
+  Description: Amphenol RADLOK 5.7 mm RADSOK right-angle plug, 120 A, 1000 V, stamped (open-barrel) crimp lug for 25 mm² cable, red, -40 to +125 °C
+  ki_keywords: RADLOK RADSOK power connector plug right angle cable crimp 25mm2 high current
+  Manufacturer: Amphenol Technical Products International
+  MPN: RL00572-25RE
+  DigiKey_PN: 3936-RL00572-25RE-ND
+  Mouser_PN: 654-RL00572-25RE
+  Temperature_Grade: -40 to +125 °C
+  Notes: "Cable plug, not placed on the PCB (no footprint). 25 mm² cable, stamped (open-barrel) crimp lug. 3D model ${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_Connector_Amphenol.3dshapes/Amphenol_RADLOK_RL00572-25RE.step, partly estimated: drawn mated on the RL9057-101-F1x receptacle model, so give it the receptacle's offset (z = -2.6 mm on the 74660016 footprint) and rotate it about z to aim the cable (+x unrotated). Mates 5.7 mm RADLOK pins and feed-throughs (RL9057-101-F1x)."
+catalog:
+  family: power-connectors
+  group: Amphenol RADLOK 5.7 mm
+  attributes:
+    Type: Right-angle plug
+    Colour: Red
+    Current: 120 A
+    Voltage: 1000 V
+    Termination: 25 mm² stamped crimp lug
+    Mounting: Cable
+  mates_with: [RL9057-101-F1, RL9057-101-F1OR, RL9057-101-F1RE]

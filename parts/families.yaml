@@ -45,6 +45,7 @@ power-connectors:
   intro: Panel-mount single-pole power connectors; the receptacle's stud bolts to a board power terminal.
   groups:
     - Amphenol SurLok Plus 5.7 mm
+    - Amphenol RADLOK 5.7 mm
 
 debug-headers:
   title: Debug headers
