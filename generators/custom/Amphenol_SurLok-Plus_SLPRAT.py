@@ -9,31 +9,25 @@ and its M6 stud screws into a Würth REDCUBE 74660016 (WP-SMRT, M6 internal thro
 board. The symbols are `on_board: false`; a designer who wants the connector in the board's 3D view
 adds this model to the 74660016 footprint by hand (see Frame).
 
-No official model or dimensioned drawing is public (searched 2026-10-28: Amphenol Industrial's site,
-KiCad and the trusted libraries, CADENAS/3Dfindit, GitHub; distributor CAD tabs are aggregator models,
-which DropOut doesn't use). The user is asking Amphenol for the customer drawing and STEP; until then
-this is a detailed model built from the catalog (archived in dropout-vendor-docs,
-Amphenol-Industrial/SurLok-Plus/surlok-plus-series-ic-10.pdf, IC-10 of 23 Oct 2025).
+Sources, archived in dropout-vendor-docs Amphenol-Industrial/SurLok-Plus/ (rebuilt 2026-11-02; the first
+model was estimated from catalogue photos because these hadn't been found):
+- Customer drawing C10-730187 rev. F (2022-10-13), "5.7MM SURLOK PLUS RECEPTACLE", screw type, from the
+  SLPRATPSB page on amphenol-industrial.de (Amphenol Tuchel). Stamped "controlled document", so it is
+  measured from, not linked. Exact: 13.50 front face to flange, 16.50 to the flange's back (flange 3.0),
+  gasket 1.0, 9.50 from the flange's back to the rear face (Ø14 rear body), stud 10.70 REF, M6 x 1.0;
+  27 square flange with R4 corners, 4 x M4 on 18 x 18; panel cutout Ø14.20.
+- Amphenol's customer STEP c3d-slpratpsb-01-000.stp (C10-730187-X20_CUS_D, one solid, no licence stated):
+  measured only, not redistributed. Measured ("STEP" below): latch lip, tube and bore radii, flange fillet,
+  bore depth, pin collar, hex shoulder, relief and thread, pin cap.
+- Catalogue IC-10 (2025-10-23): A 16.5, B 36.7, C 1.0, D 27, as the drawing.
+Estimated (marked ESTIMATE): the flange hole diameter and the split of the pin between metal and its
+touch-proof cap; the STEP is one solid.
 
-From the catalog (exact):
-- p. 6, Gen 1.0 receptacle, screw termination, 5.7 mm: A = 16.5 (mating face to the flange's panel
-  face), B = 36.7 (mating face to stud tip), C = 1.0 (flange gasket), D = 27 (square flange).
-- p. 13, panel layout, 5.7 mm: Ø14.3 cutout (the rear body passes through it), 4 × M4 screws on an
-  18 × 18 square; screw termination "M6 Nut", 3 N·m (so the stud is M6; coarse pitch 1.0 assumed).
-- p. 7: the 5.7 mm plug is 18 wide (D), so the receptacle front fits inside 18.
-Estimated (marked ESTIMATE below): every other size. The catalog's p. 6 screw-termination photo is the
-10.3 mm part (its stud scales to M10 against D = 35, at about 22 px/mm in the PDF image), so its
-proportions were scaled to the 5.7 mm part's catalog dimensions and kept inside the cutout and plug:
-front lip, front body, flange-to-body fillet, flange thickness, rear-body length, the metal contact
-disc on the rear face, the thread relief, stud length, mating bore and the pin's touch-proof cap.
-The mating bore was widened and deepened on 2026-10-30 to take the plug's Ø11.3 nose, 15.2 deep when
-mated (plug drawing C10-730186 and measured plug models; Amphenol_SurLok-Plus_SLPPA.py).
-
-Frame: z is the connector axis. z = 0 is the rear contact face (the metal disc the lug, busbar or
-REDCUBE seats on); the stud points +z, the mating face is at z = -27.8. The model is symmetric about
-the XZ and YZ planes, so KiCad's mirrored model Y needs no correction. To show the connector under a
-board with the REDCUBE 74660016 on top (its Ø9.0 spigot ends 2.6 below the board's top surface),
-add this model to that footprint with offset z = -2.6 mm.
+Frame: z is the connector axis. z = 0 is the seating face (the back of the stud's hex shoulder, what the
+lug, busbar or REDCUBE seats on); the stud points +z; the front face is at z = -26.75 and the pin cap
+stands 1.0 beyond it. The model is symmetric about the XZ and YZ planes, so KiCad's mirrored model Y needs
+no correction. To show the connector under a board with the REDCUBE 74660016 on top (its Ø9.0 spigot ends
+2.6 below the board's top surface), add this model to that footprint with offset z = -2.6 mm.
 """
 import cadquery as cq
 
@@ -49,37 +43,35 @@ COLORS = {                         # catalog p. 6 colour code
 GASKET = (0.88, 0.88, 0.86)        # flange gasket, light grey as in the catalog photo
 CAP = (0.92, 0.92, 0.90)           # touch-proof pin cap
 
-# Axial positions (z, mm). Catalog: A, B, C. ESTIMATE: the split of the rear stack.
-A, B, C = 16.5, 36.7, 1.0
-Z_FRONT = -27.8                    # mating face; B = 36.7 to the stud tip
-Z_TIP = Z_FRONT + B                # 8.9
-Z_FLANGE_BACK = Z_FRONT + A        # -11.3: flange panel face (gasket starts here)
-Z_GASKET_BACK = Z_FLANGE_BACK + C  # -10.3: gasket face against the panel
-FLANGE_T = 2.5                     # ESTIMATE: photo, flange 78 px of the 10.3 mm part's A = 25.8
-Z_FLANGE_FRONT = Z_FLANGE_BACK - FLANGE_T
-STUD_RELIEF = 1.2                  # ESTIMATE: unthreaded relief between contact face and thread
-# Rear stack B - A - C = 19.2: rear body 10.3 + relief 1.2 + thread 7.7 (ESTIMATE: photo proportions
-# 16.8 : 2.0 : 12.6 of the 10.3 mm part, scaled to 19.2), so the contact face is at z = 0.
+# Axial positions (z, mm), seating face at 0. Drawing: 13.50 / 16.50 / 1.0 / 9.50 / 10.70 REF.
+Z_HEX = -0.75                      # STEP: hex shoulder 0.75 thick, behind the rear face
+Z_REAR = Z_HEX                     # rear face of the body
+Z_GASKET_BACK = Z_REAR - 8.5       # drawing: 9.50 flange back to rear face, less the 1.0 gasket -> -9.25
+Z_FLANGE_BACK = Z_GASKET_BACK - 1.0    # -10.25
+Z_FLANGE_FRONT = Z_FLANGE_BACK - 3.0   # drawing 16.50 - 13.50: -13.25
+Z_FRONT = Z_FLANGE_FRONT - 13.5    # drawing 13.50: -26.75 front face
+Z_TIP = Z_REAR + 10.7              # drawing 10.70 REF: 9.95
+Z_CAP = Z_FRONT - 1.0              # STEP: cap 1.0 beyond the front face
+Z_FLOOR = -7.0                     # STEP: bore floor 19.75 behind the front face
 
 # Radii (mm).
-R_REAR = 6.65                      # ESTIMATE: Ø13.3 rear body, under the Ø14.3 panel cutout
-R_DISC = 5.0                       # ESTIMATE: Ø10 contact disc (photo: 0.75 of the rear body)
-R_FRONT = 7.0                      # ESTIMATE: Ø14.0 front body (photo: 0.94 of the cutout ratio)
-R_LIP = 7.7                        # ESTIMATE: Ø15.4 latch lip, inside the plug's 18
-LIP_L = 2.2                        # ESTIMATE: lip length
-FILLET = 2.0                       # ESTIMATE: flange-to-front-body fillet
-R_BORE = 5.7                       # ESTIMATE: Ø11.4 mating bore for the plug's Ø11.3 nose (plug drawing
-                                   # C10-730186; see Amphenol_SurLok-Plus_SLPPA.py)
-Z_BORE = -12.0                     # ESTIMATE: bore floor just behind the mated plug's nose tip (z = -12.6)
-R_PIN = 2.85                       # RADSOK size 5.7 mm pin (catalog: "5.7mm")
-Z_PIN = -26.0                      # ESTIMATE: metal pin end, cap beyond
-CAP_OUT = 1.0                      # ESTIMATE: cap stands 1.0 proud of the mating face (photo)
-FLANGE = 27.0                      # catalog D
-FLANGE_R = 2.0                     # ESTIMATE: flange corner radius
-HOLE_PITCH = 18.0                  # catalog p. 13
-HOLE_D = 4.3                       # ESTIMATE: M4 clearance
+R_REAR = 7.0                       # drawing Ø14, STEP
+R_TUBE = 7.0                       # STEP: Ø14 front tube
+R_LIP = 8.0                        # STEP: Ø16 latch lip, inside the plug's Ø16.1 skirt
+R_LIP_FRONT = 6.8                  # STEP: front edge of the lip, rounded
+LIP = (Z_FRONT + 1.0, Z_FRONT + 1.25, Z_FRONT + 2.75)  # STEP: lip full from here, to here, ramp to the tube
+R_FILLET_END, Z_FILLET0 = 8.5, Z_FLANGE_FRONT - 1.75  # STEP: tube flares from Ø14 to Ø17 into the flange
+R_BORE_FRONT, R_BORE_BACK = 6.2, 5.8   # STEP: bore Ø12.4 at the mouth tapering to Ø11.6
+Z_BORE_TAPER = Z_FRONT + 8.0       # STEP: taper ends here
+R_PIN = 2.8                        # STEP, RADSOK size 5.7
+PIN_COLLAR = (-12.0, -11.0, 3.9)   # STEP: collar on the pin near the bore floor (z from, z to, r)
+Z_CAP_END = Z_FRONT + 2.0          # ESTIMATE: where the cap meets the metal pin
+FLANGE, FLANGE_R = 27.0, 4.0       # drawing: 27 square, R4 corners
+HOLE_PITCH = 18.0                  # drawing
+HOLE_D = 4.2                       # ESTIMATE: flange holes as the drawing's Ø4.20 panel holes (M4)
+HEX_AF = 8.8                       # STEP: 8.8 across flats
+R_RELIEF, Z_RELIEF = 2.6, 0.75     # STEP: relief from the seat to the thread
 M6_MAJOR, M6_MINOR, PITCH = 6.0, 4.92, 1.0   # ISO M6 coarse
-R_RELIEF = 2.4                     # ESTIMATE: thread relief radius
 
 
 def revolve(points):
@@ -88,69 +80,67 @@ def revolve(points):
 
 
 def housing():
-    lip_back = Z_FRONT + LIP_L
+    lip0, lip1, lip2 = LIP
     w = (cq.Workplane("XZ")
-         .moveTo(R_DISC, 0)
-         .lineTo(R_REAR - 0.5, 0)
-         .lineTo(R_REAR, -0.5)                                  # rear edge chamfer
+         .moveTo(R_PIN, Z_REAR)
+         .lineTo(R_REAR - 0.3, Z_REAR)
+         .lineTo(R_REAR, Z_REAR - 0.3)                          # rear edge chamfer
          .lineTo(R_REAR, Z_FLANGE_FRONT)
-         .lineTo(R_FRONT + FILLET, Z_FLANGE_FRONT)
-         .threePointArc((R_FRONT + FILLET * (1 - 0.7071), Z_FLANGE_FRONT - FILLET * (1 - 0.7071)),
-                        (R_FRONT, Z_FLANGE_FRONT - FILLET))     # concave fillet into the flange
-         .lineTo(R_FRONT, lip_back)
-         .lineTo(R_LIP - 0.3, lip_back)
-         .lineTo(R_LIP, lip_back - 0.3)                         # lip ramp the plug latch rides over
-         .lineTo(R_LIP, Z_FRONT + 0.6)
-         .threePointArc((R_LIP - 0.6 + 0.6 * 0.7071, Z_FRONT + 0.6 - 0.6 * 0.7071),
-                        (R_LIP - 0.6, Z_FRONT))                 # rounded front edge
-         .lineTo(R_BORE + 0.4, Z_FRONT)
-         .lineTo(R_BORE, Z_FRONT + 0.4)                         # lead-in chamfer into the bore
-         .lineTo(R_BORE, Z_BORE)
-         .lineTo(R_PIN, Z_BORE)
-         .lineTo(R_PIN, -1.0)
-         .lineTo(R_DISC, -1.0)
+         .lineTo(R_FILLET_END, Z_FLANGE_FRONT)
+         .threePointArc((R_FILLET_END - (R_FILLET_END - R_TUBE) * 0.7071, Z_FILLET0 + (Z_FLANGE_FRONT - Z_FILLET0) * 0.7071),
+                        (R_TUBE, Z_FILLET0))                     # concave flare into the flange
+         .lineTo(R_TUBE, lip2)
+         .lineTo(R_LIP, lip1)                                   # ramp the plug latch rides over
+         .lineTo(R_LIP, lip0)
+         .threePointArc((R_LIP_FRONT + 0.75, Z_FRONT + 0.25), (R_LIP_FRONT, Z_FRONT))   # rounded front
+         .lineTo(R_BORE_FRONT + 0.3, Z_FRONT)
+         .lineTo(R_BORE_FRONT, Z_FRONT + 0.3)                   # lead-in chamfer into the bore
+         .lineTo(R_BORE_BACK, Z_BORE_TAPER)
+         .lineTo(R_BORE_BACK, Z_FLOOR)
+         .lineTo(R_PIN, Z_FLOOR)
          .close()
          .revolve(360, (0, 0, 0), (0, 1, 0)))
-    # Latch groove behind the lip (ESTIMATE: 0.4 wide, 0.3 deep; the line on the photo's lip).
-    groove = revolve([(R_FRONT - 0.3, lip_back + 0.4), (R_FRONT + 0.1, lip_back + 0.4),
-                      (R_FRONT + 0.1, lip_back), (R_FRONT - 0.3, lip_back)])
-    w = w.cut(groove)
     holes = [(sx * HOLE_PITCH / 2, sy * HOLE_PITCH / 2) for sx in (-1, 1) for sy in (-1, 1)]
     flange = (cq.Workplane("XY").workplane(offset=Z_FLANGE_FRONT)
-              .rect(FLANGE, FLANGE).extrude(FLANGE_T)
+              .rect(FLANGE, FLANGE).extrude(Z_FLANGE_BACK - Z_FLANGE_FRONT)
               .edges("|Z").fillet(FLANGE_R)
               .faces(">Z").workplane().pushPoints(holes).hole(HOLE_D)
-              .faces(">Z").workplane().hole(2 * R_BORE))
+              .faces(">Z").workplane().hole(2 * R_BORE_BACK))
     return w.union(flange)
 
 
 def gasket():
     holes = [(sx * HOLE_PITCH / 2, sy * HOLE_PITCH / 2) for sx in (-1, 1) for sy in (-1, 1)]
     return (cq.Workplane("XY").workplane(offset=Z_FLANGE_BACK)
-            .rect(FLANGE, FLANGE).extrude(C)
+            .rect(FLANGE, FLANGE).extrude(Z_GASKET_BACK - Z_FLANGE_BACK)
             .edges("|Z").fillet(FLANGE_R)
             .faces(">Z").workplane().pushPoints(holes).hole(HOLE_D)
             .faces(">Z").workplane().hole(2 * R_REAR))
 
 
 def terminal():
-    """Contact pin, rear contact disc, thread relief and M6 stud as one metal part. The thread is
-    drawn as 60° grooves at the M6 pitch (a helix adds nothing at board-render scale)."""
+    """Pin, collar, hex shoulder, relief and M6 stud as one metal part. The thread is drawn as 60°
+    grooves at the M6 pitch (a helix adds nothing at board-render scale)."""
     rmaj, rmin = M6_MAJOR / 2, M6_MINOR / 2
-    pts = [(0, Z_PIN), (R_PIN, Z_PIN), (R_PIN, -1.0), (R_DISC, -1.0), (R_DISC, 0),
-           (R_RELIEF, 0), (R_RELIEF, STUD_RELIEF)]
-    z = STUD_RELIEF
+    c0, c1, rc = PIN_COLLAR
+    pts = [(0, Z_CAP_END), (R_PIN, Z_CAP_END), (R_PIN, c0), (rc, c0), (rc, c1), (R_PIN, c1),
+           (R_PIN, Z_HEX), (R_RELIEF, Z_HEX), (R_RELIEF, Z_RELIEF)]
+    z = Z_RELIEF + 0.25
+    pts.append((R_RELIEF, z))
     while z + PITCH <= Z_TIP - 0.6 + 1e-9:
         flank = (rmaj - rmin) * 0.5774                    # tan 30°: 60° thread flanks
         pts += [(rmin, z), (rmaj, z + flank), (rmaj, z + PITCH - flank - 0.125), (rmin, z + PITCH - 0.125)]
         z += PITCH
-    pts += [(rmin, z), (rmaj - 0.3, z + 0.3), (rmin, Z_TIP), (0, Z_TIP)]   # tip chamfer
-    return revolve(pts)
+    pts += [(rmin, z), (rmaj - 0.3, z + 0.3), (2.1, Z_TIP), (0, Z_TIP)]   # tip chamfer (STEP: Ø4.2 at the tip)
+    hex_ = (cq.Workplane("XY").workplane(offset=Z_HEX).polygon(6, HEX_AF / 0.8660254).extrude(-Z_HEX)
+            .rotate((0, 0, 0), (0, 0, 1), 30))           # flats facing ±x (STEP)
+    return revolve(pts).union(hex_)
 
 
 def cap():
-    return revolve([(0, Z_PIN), (R_PIN, Z_PIN), (R_PIN, Z_FRONT - CAP_OUT + 0.6),
-                    (R_PIN - 0.6, Z_FRONT - CAP_OUT), (0, Z_FRONT - CAP_OUT)])
+    """Touch-proof cap on the pin tip, standing 1.0 beyond the front face (STEP)."""
+    return revolve([(0, Z_CAP_END), (R_PIN, Z_CAP_END), (R_PIN - 0.2, Z_CAP + 0.5),
+                    (2.4, Z_CAP + 0.25), (2.0, Z_CAP), (0, Z_CAP)])
 
 
 if __name__ == "__main__":
