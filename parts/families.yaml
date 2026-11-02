@@ -55,7 +55,7 @@ debug-headers:
 
 busbars:
   title: Busbars
-  intro: Copper bars cut and drilled in house that join power terminals, each with a dimensioned drawing; a bar the schematic shows is a net-tie part, the others are model-only.
+  intro: Copper bars cut and drilled in house that join power terminals, each with a dimensioned drawing; each is a two-pin net-tie part, so the schematic shows it and it has a BOM line.
   groups:
     - Copper flat bar 19.05 × 3.175 mm
 

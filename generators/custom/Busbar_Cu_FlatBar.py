@@ -5,15 +5,13 @@ to length and drilled in house, one Ø6.5 M6 clearance hole near each end.
 Usage: ~/.cache/dropout/klt-venv/bin/python generators/custom/Busbar_Cu_FlatBar.py
 
 Each bar has a parts/<name>/part.yaml with its fields, its model and its drawing, so the library
-catalog lists it. The GND bar is a model-only part (user's decision 2026-11-02; docs/CONTRIBUTING.md
-"Model-only parts"): no symbol and no footprint, and Node60 draws it as a board-only footprint of its
-own (BB902, node60-hw scripts/place_connectors.py) carrying this model.
-
-The VBAT_IN bar is a net-tie part (node60-hw placement decision D02, option A, user 2026-11-02): a
-two-pin symbol and a footprint, so the schematic joins VBAT_IN (J910) to the pass-through net (J901)
-on purpose and the bar has a BOM line. A KiCad net tie between two pads of one net joins nothing
-(tested on Node60: VBAT_IN had 17 unconnected items with and without tie pads), so the bar joins two
-nets. Footprint (net_tie() below): F.CrtYd = the bar outline with the REDCUBE spigot holes cut out, so
+catalog lists it. Until 2026-11-02 both were model-only parts (docs/CONTRIBUTING.md "Model-only
+parts"); now both are net-tie parts: a two-pin symbol and a footprint, so the schematic shows the bar
+and it has a BOM line. The VBAT_IN bar first (node60-hw placement decision D02, option A): the
+schematic joins VBAT_IN (J910) to the pass-through net (J901) through it on purpose, since a KiCad net
+tie between two pads of one net joins nothing (tested on Node60: VBAT_IN had 17 unconnected items with
+and without tie pads). Then the GND bar, the same way for consistency (user, 2026-11-02), with both
+pins on GND: the GND plane joins its terminals as well. Footprint (net_tie() below): F.CrtYd = the bar outline with the REDCUBE spigot holes cut out, so
 DRC keeps top-side parts from under the bar (as Node60's board-only BB901 did); F.Fab outline and
 holes; two B.Cu net-tie pads, one inside each REDCUBE 74660016R terminal's pad 1 ring (the terminals
 sit on the bottom side, the bar on top, and the stud joins them). A pad sits on the ring's anchor,
@@ -62,7 +60,7 @@ BARS = {                           # name -> (hole pitch, what it is), DEC-025 /
     106.0: "Node60 VBAT_IN busbar (BB901, J910-J901)",
     157.0: "Node60 GND busbar (BB902, J911-J902)",
 }
-NET_TIE = {106.0}                  # bars that are net-tie parts with a footprint (the others are model-only)
+NET_TIE = {106.0, 157.0}           # bars that are net-tie parts with a footprint (the others are model-only)
 
 
 def length(pitch):
