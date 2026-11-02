@@ -56,7 +56,7 @@ Optional: `Temperature_Grade` (e.g. `AEC-Q100 Grade 1`), the rating fields of ha
 
 The `Datasheet` field must be the **manufacturer's** URL, never a distributor copy. Datasheet PDFs are never committed.
 
-Exception (adopted 2026-11-01): when the manufacturer hosts no public copy of any document for the part, `Datasheet` may link the manufacturer's own, unmodified document (data sheet or customer drawing) at the address a distributor publishes it, preferring the distributor's own datasheet link for that part (DigiKey's, then Mouser's). The part's `part.yaml` says that no manufacturer copy exists and when that was checked, and the PR calls it out. A distributor's own summary sheet, or a document the manufacturer marks confidential, still doesn't qualify. Example: Amphenol RADLOK (`parts/RL9057-101-F1/`), whose drawings Amphenol TPI publishes only through distributors.
+Exception (adopted 2026-11-01): when the manufacturer hosts no public copy of any document for the part, `Datasheet` may link the manufacturer's own, unmodified document (data sheet or customer drawing) at the address a distributor publishes it, preferring the distributor's own datasheet link for that part (DigiKey's, then Mouser's). The part's `part.yaml` says that no manufacturer copy exists and when that was checked, and the PR calls it out. A distributor's own summary sheet, or a document the manufacturer marks confidential, still doesn't qualify. Before using it, search every site the manufacturer runs, including regional and partner divisions, by MPN: Amphenol RADLOK first looked distributor-only, but Amphenol Tuchel Industrial (amphenol-industrial.de) hosts a product page with drawings and a STEP for each part.
 
 ### Parts with nothing to buy
 

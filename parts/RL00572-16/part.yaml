@@ -7,9 +7,9 @@
 # 500 mating cycles, red release clip. Archived in dropout-vendor-docs Amphenol-TPI/RADLOK/. Same plug in the other colours: RL00572-16BK, RL00572-16RE.
 # A cable part: no footprint, on_board: false and in_pos_files: false, as the RL9057-101-F1x receptacles it mates.
 # One electrical contact: one passive pin, as the receptacle symbol.
-# Datasheet: no Amphenol-hosted RADLOK document exists (2026-11-01); the field links Amphenol TPI's unmodified customer
-# drawing at the address DigiKey publishes it.
-# 3D model: generators/custom/Amphenol_RADLOK_5.7mm.py, from the customer drawing; estimates marked there. Drawn mated
+# Datasheet: Amphenol Tuchel Industrial's PowerLok/RADLOK/HC32 catalogue (2020), which covers this part (ordering code and 5.7 mm dimensions, PDF pp. 28 and 31); amphenol-industrial.de has no product page for it.
+# 3D model: generators/custom/Amphenol_RADLOK_5.7mm.py, from the customer drawing, with the housing measured on Amphenol
+# Tuchel's RL00571-25 STEP (same housing; no stamped-lug STEP exists); estimates marked there. Drawn mated
 # in the feed-through model's frame.
 # Observed 2026-11-01: DigiKey none in stock, Mouser none in stock. Active.
 library: DropOut_Connector
@@ -21,7 +21,7 @@ fields:
   Reference: J
   Value: RL00572-16
   Footprint: ""
-  Datasheet: https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/5340/RADLOK_Connector_Stamped_Lug_REVC.pdf
+  Datasheet: https://www.amphenol-industrial.de/media/pages/downloads/ev/a8dde4ca91-1707818191/powerlok-radlok-hc32-katalog-en.pdf
   Description: Amphenol RADLOK 5.7 mm RADSOK right-angle plug, 90 A, 1000 V, stamped (open-barrel) crimp lug for 16 mm² cable, orange, -40 to +125 °C
   ki_keywords: RADLOK RADSOK power connector plug right angle cable crimp 16mm2 high current
   Manufacturer: Amphenol Technical Products International

@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""3D models for Amphenol Technical Products International RADLOK 5.7 mm parts (120 A, 1000 V):
+"""3D models for Amphenol RADLOK 5.7 mm parts (120 A, 1000 V; made by Amphenol Technical Products International,
+sold by Amphenol Tuchel Industrial):
 
 - RL9057-101-F1 (black), -F1OR (orange), -F1RE (red): feed-through panel receptacle, RADSOK pin in front,
-  M6 x 1.0 threaded stud behind, square flange with seal, 4 x M3 screws.
+  M6 x 1.0 threaded stud behind, square flange with seal, 4 x M4 screws.
 - RL00571-16, -25 (+BK, RE): right-angle cable plug, tubular crimp lug for 16 or 25 mm².
 - RL00572-16, -25 (+BK, RE): right-angle cable plug, stamped (open-barrel) crimp lug for 16 or 25 mm².
 
@@ -11,28 +12,31 @@ Usage: ~/.cache/dropout/klt-venv/bin/python generators/custom/Amphenol_RADLOK_5.
 None of these has a footprint (docs/CONTRIBUTING.md "Parts not placed on the PCB"): the feed-through's
 M6 stud screws into a Würth REDCUBE 74660016 on the board, and the plugs are cable parts.
 
-No official model is public (searched 2026-11-01: Amphenol's sites, CADENAS/3Dfindit, KiCad and the
-trusted libraries; distributor CAD tabs are aggregator models). Sources, archived in dropout-vendor-docs
-Amphenol-TPI/RADLOK/:
-- Customer drawing "RADLOK Feed Thru Pin To Thread" rev. H (2018-01-11), size 5.7 row: A 25.0 flange,
-  B 17.0 screw pitch, C 49.6 overall, D Ø15.2 front body, E Ø14.7 panel hole, F 2.8 key notch, G 18.2
-  across the notches, H 10 thread, I 24.2 panel face to stud tip, M6x1.0-6g, P M3, 3 mm max. panel.
-- Customer drawing "RADLOK Connector Tubular Lug Version" rev. H (2021-01-19), 5.7 rows: A 18.5 wide,
+Sources, archived in dropout-vendor-docs Amphenol-TPI/RADLOK/:
+- Amphenol Tuchel's customer STEPs c3d-rl9057-101-f1bk-01-000.stp (feed-through) and c3d-rl00571-25or-01-000.stp
+  (tubular plug), from amphenol-industrial.de: single uncoloured solids with no licence stated, so they are
+  measured only and not redistributed (as the SurLok Plus SLPPA25BSx plug's STEP). Everything marked "STEP"
+  below was measured on them. There is none for the stamped plug.
+- Customer drawing "RADLOK Feed Thru Pin To Thread" rev. K (2022-04-25; 5.7 mm row as rev. H): A 25.0 flange,
+  B 17.0 screw pitch, C 49.6 overall, D Ø15.2 front tube, E Ø14.7 panel hole, F 2.8 key notch, G 18.2 across
+  the notches, H 10 thread, I 24.2 panel face to stud tip, M6x1.0-6g, P M4 (M3 is the 3.6 mm size only),
+  3 mm max. panel.
+- Customer drawing "RADLOK Connector Tubular Lug Version" rev. L (2024-02-20), 5.7 rows: A 18.5 wide,
   B 33.0 front to collar, C 23.8 high, D 9.4 boss, E Ø11.5 boss, F 47.7 overall, G 19.0 barrel,
   D1/D2 Ø5.5/8.5 (16 mm²) and Ø7.2/9.5 (25 mm²).
 - Customer drawing "RADLOK Connector Stamped Lug Version" rev. C (2018-02-23), 5.7 row: A 18.5, B 30.0,
   C 21.9, D 9.2, E Ø11.2, F 43.6.
-- Customer drawing "RadLok Pin" rev. G (2018-07-09): pin Ø5.7, tip groove, hex.
-- Data sheet IDS-67-1: photos (black feed-through housings, red release clip on the plugs).
-Estimated (marked ESTIMATE): everything else, from the drawings' views (not to scale, so only their
-proportions are used, anchored on the table dimensions) and the data sheet photos.
+- Amphenol Tuchel's PowerLok/RADLOK/HC32 catalogue (2020) and data sheet IDS-67-1: the same tables, photos
+  (black feed-through housings, red release clip on the plugs).
+Estimated (marked ESTIMATE): what neither the drawings nor the STEPs give, e.g. the split between seal and
+flange, gusset and pocket sizes, the stamped plug's lug.
 
-Frame (all models): z is the RADSOK axis. z = 0 is the feed-through's rear contact face (the metal
-shoulder a lug, busbar or REDCUBE seats on); the stud points +z; the feed-through's front face is at
-z = -29.1. The plugs are drawn mated on it (boss face on that front face), cable toward +x. Every model is
-symmetric about the XZ plane, so KiCad's mirrored model Y needs no correction. On a REDCUBE 74660016
-footprint, give the feed-through and its plug the offset z = -2.6 mm (the REDCUBE spigot end), as the
-SurLok Plus SLPRATPSx models; rotate a plug about z to aim its cable.
+Frame (all models): z is the RADSOK axis. z = 0 is the feed-through's rear seating face (what a lug, busbar
+or REDCUBE seats on); the stud points +z; the feed-through's front tube ends at z = -27.6. The plugs are drawn
+mated: boss fully in the tube, housing on the tube's front face, cable toward +x. Every model is symmetric
+about the XZ plane, so KiCad's mirrored model Y needs no correction. On a REDCUBE 74660016 footprint, give
+the feed-through and its plug the offset z = -2.6 mm (the REDCUBE spigot end), as the SurLok Plus SLPRATPSx
+models; rotate a plug about z to aim its cable.
 """
 import sys
 from dataclasses import dataclass
@@ -49,29 +53,33 @@ CLIP = (0.80, 0.10, 0.10)          # drawings: "Clip, Red"; data sheet photos: r
 BRASS = (0.80, 0.62, 0.25)         # RADSOK socket (data sheet photo)
 
 # ---------------------------------------------------------------- feed-through RL9057-101-F1x
-Z_TIP = 10.0                       # drawing H: thread length from the contact face
-Z_PANEL = Z_TIP - 24.2             # drawing I: -14.2, panel face (seal's back)
-Z_PIN_TIP = Z_TIP - 49.6           # drawing C: -39.6
-SEAL_T = 1.0                       # ESTIMATE: drawing proportions
-FLANGE_T = 3.0                     # ESTIMATE: drawing proportions
-Z_SEAL = Z_PANEL - SEAL_T          # -15.2
-Z_FLANGE = Z_SEAL - FLANGE_T       # -18.2, flange front face
-FLANGE, FLANGE_R = 25.0, 2.0       # drawing A; corner radius ESTIMATE
-PITCH_SCREW = 17.0                 # drawing B
-HOLE_D = 3.4                       # ESTIMATE: M3 clearance (drawing P: M3)
-R_FRONT = 15.2 / 2                 # drawing D
-Z_FRONT = -29.1                    # ESTIMATE: front body 10.9 long (drawing proportions; pin 10.5 beyond)
-R_RING, RING_T = 8.25, 0.8         # ESTIMATE: drawing front view, ring around the body's base
-R_REAR = 6.5                       # ESTIMATE: Ø13.0 rear body, through the Ø14.7 panel hole (drawing E)
-KEY_W, KEY_R, KEY_L = 2.6, 8.8, 2.8  # ESTIMATE: keys in the panel hole's notches (drawing F 2.8, G 18.2)
-POCKET_D = 1.2                     # ESTIMATE: drawing front view, 8 pockets in the flange face
-R_PIN = 5.7 / 2                    # RADSOK size
-R_SHOULDER = 5.25                  # ESTIMATE: metal contact shoulder Ø10.5 (drawing side view)
-SHOULDER_PROUD = 0.4               # ESTIMATE
-HEX_AF, HEX_T = 10.0, 2.0          # pin drawing S 10 (hex in the front face, drawing front view); depth ESTIMATE
-GROOVE_Z, GROOVE_W, GROOVE_D = 2.6, 0.8, 0.45  # ESTIMATE: pin drawing, latch groove behind the tip
+Z_TIP = 10.0                       # drawing H, STEP: stud tip
+Z_PIN_TIP = Z_TIP - 49.6           # drawing C, STEP: -39.6
 M6_MAJOR, M6_MINOR, M6_PITCH = 6.0, 4.92, 1.0  # ISO M6 coarse
-R_RELIEF, RELIEF_L = 2.4, 1.0      # ESTIMATE: thread relief
+R_RELIEF, RELIEF_L = 2.35, 1.0     # STEP: Ø4.7 relief between the seat and the thread
+R_SEAT = 4.7                       # STEP: Ø9.4 seating face at z = 0
+R_METAL = 4.0                      # ESTIMATE: the pin's metal shoulder showing in the seating face
+Z_CONE = -1.6                      # STEP: cone from the seat out to the rear body
+R_REAR = 7.0                       # STEP: Ø14.0 rear body, through the Ø14.7 panel hole (drawing E)
+Z_KEY = -10.85                     # STEP: keys from here to the seal, along ±x
+KEY_W, KEY_R = 2.6, 8.7            # STEP: radial reach; width ESTIMATE (drawing F 2.8 notch)
+Z_SEAL = -13.35                    # STEP: seal's panel face (drawing I gives -14.2)
+SEAL_T = 1.0                       # ESTIMATE: STEP shows one 4.5 thick stack for seal and flange
+Z_FLANGE = -17.85                  # STEP: flange front face
+FLANGE, FLANGE_R = 25.0, 2.0       # drawing A, STEP 24.8-25.0; corner radius ESTIMATE
+PITCH_SCREW = 17.0                 # drawing B
+HOLE_D = 4.3                       # STEP: Ø4.3 (drawing P: M4)
+POCKET_D = 1.1                     # STEP: section area drop over the last 1.1 of the flange
+R_TUBE, R_BORE_FT = 7.5, 6.15      # STEP: Ø15.0 front tube (drawing D 15.2), Ø12.3 bore for the plug's boss
+Z_TUBE_END = -27.6                 # STEP: front face of the tube
+Z_FLOOR = -18.0                    # STEP: bore floor (9.6 deep; the plug's boss is 9.4)
+R_GUSSET0, Z_GUSSET1 = 11.4, -22.1  # STEP: four gussets along ±x/±y, flange r 11.4 down to the tube at -22.1
+GUSSET_T = 1.6                     # ESTIMATE: STEP diagonal rays miss them
+HEX_AF, HEX_T = 7.8, 0.6           # STEP: pin hex at the bore floor (7.8 across flats, 9.4 across corners)
+R_PIN = 2.85                       # STEP, RADSOK size 5.7
+GROOVE = (-36.6, -37.85, 2.2)      # STEP: latch groove (z from, z to, radius)
+TIP = (-39.1, 2.7, 1.8)            # STEP: tip chamfer (z where it starts, r there, r at the tip)
+Z_MATE = Z_TUBE_END + 9.4          # plug boss face when mated: housing on the tube's front face (drawing D 9.4)
 
 
 def revolve(points):
@@ -88,29 +96,34 @@ def square_plate(z0, t, hole_r):
 
 
 def ft_housing():
-    body = revolve([(R_SHOULDER + 0.05, -SHOULDER_PROUD), (R_REAR - 0.6, -SHOULDER_PROUD),
-                    (R_REAR, -SHOULDER_PROUD - 0.6), (R_REAR, Z_FLANGE), (R_RING, Z_FLANGE),
-                    (R_RING, Z_FLANGE - RING_T), (R_FRONT, Z_FLANGE - RING_T), (R_FRONT, Z_FRONT + 0.5),
-                    (R_FRONT - 0.5, Z_FRONT), (R_PIN, Z_FRONT), (R_PIN, -1.0), (R_SHOULDER + 0.05, -1.0)])
-    flange = square_plate(Z_FLANGE, FLANGE_T, R_REAR)
-    # Eight pockets in the flange's front face, two per side, clipped by the ring (drawing front view).
+    seal_front = Z_SEAL - SEAL_T
+    body = revolve([(R_METAL, 0), (R_SEAT, 0), (R_REAR - 0.1, Z_CONE), (R_REAR, Z_CONE - 0.1),
+                    (R_REAR, seal_front), (R_TUBE, seal_front), (R_TUBE, Z_TUBE_END + 0.3),
+                    (R_TUBE - 0.3, Z_TUBE_END), (R_BORE_FT + 0.3, Z_TUBE_END), (R_BORE_FT, Z_TUBE_END + 0.3),
+                    (R_BORE_FT, Z_FLOOR), (R_PIN, Z_FLOOR), (R_PIN, -0.6), (R_METAL, -0.6)])
+    flange = square_plate(Z_FLANGE, seal_front - Z_FLANGE, R_REAR)
+    # Eight pockets in the flange's front face, two per side, clipped by a ring round the tube (drawing
+    # front view; depth from the STEP).
     pockets = cq.Workplane("XY")
     for a, b in ((3.5, 8.5), (-3.5, 8.5), (3.5, -8.5), (-3.5, -8.5)):
-        pockets = pockets.union(cq.Workplane("XY").workplane(offset=Z_FLANGE - 0.1)
-                                .center(a, b).rect(5.0, 3.8).extrude(POCKET_D + 0.1).edges("|Z").fillet(0.6))
-        pockets = pockets.union(cq.Workplane("XY").workplane(offset=Z_FLANGE - 0.1)
-                                .center(b, a).rect(3.8, 5.0).extrude(POCKET_D + 0.1).edges("|Z").fillet(0.6))
-    pockets = pockets.cut(cq.Workplane("XY").workplane(offset=Z_FLANGE - 1).circle(R_RING + 0.6).extrude(5))
+        for cx, cy, w, h in ((a, b, 5.0, 3.6), (b, a, 3.6, 5.0)):
+            pockets = pockets.union(cq.Workplane("XY").workplane(offset=Z_FLANGE - 0.1)
+                                    .center(cx, cy).rect(w, h).extrude(POCKET_D + 0.1).edges("|Z").fillet(0.6))
+    pockets = pockets.cut(cq.Workplane("XY").workplane(offset=Z_FLANGE - 1).circle(R_TUBE + 1.4).extrude(5))
     flange = flange.cut(pockets)
+    # Four gussets from the flange face down to the tube, along ±x and ±y (STEP).
+    gussets = cq.Workplane("XY")
+    for ang in (0, 90, 180, 270):
+        g = (cq.Workplane("XZ", origin=(0, GUSSET_T / 2, 0))
+             .polyline([(R_TUBE - 0.5, Z_FLANGE + 0.1), (R_GUSSET0, Z_FLANGE + 0.1), (R_GUSSET0, Z_FLANGE),
+                        (R_TUBE, Z_GUSSET1), (R_TUBE - 0.5, Z_GUSSET1)]).close().extrude(GUSSET_T))
+        gussets = gussets.union(g.rotate((0, 0, 0), (0, 0, 1), ang))
     keys = cq.Workplane("XY")
     for side in (1, -1):
-        keys = keys.union(cq.Workplane("XY").workplane(offset=Z_PANEL)
-                          .center(0, side * (R_REAR + KEY_R - 0.5) / 2)
-                          .rect(KEY_W, KEY_R - R_REAR + 0.5).extrude(KEY_L))
-    h = body.union(flange).union(keys)
-    hex_pocket = (cq.Workplane("XY").workplane(offset=Z_FRONT - 0.1)
-                  .polygon(6, HEX_AF / 0.8660254).extrude(HEX_T + 0.1))
-    return h.cut(hex_pocket)
+        keys = keys.union(cq.Workplane("XY").workplane(offset=Z_SEAL)
+                          .center(side * (R_REAR + KEY_R - 0.5) / 2, 0)
+                          .rect(KEY_R - R_REAR + 0.5, KEY_W).extrude(Z_KEY - Z_SEAL))
+    return body.union(flange).union(gussets).union(keys)
 
 
 def thread_profile(z0, z_tip):
@@ -125,19 +138,19 @@ def thread_profile(z0, z_tip):
 
 
 def ft_pin():
-    """RADSOK pin, contact shoulder and M6 stud as one silver-plated part; hex in the front face."""
-    t = Z_PIN_TIP
-    pts = [(0, t), (R_PIN - 0.6, t), (R_PIN, t + 0.6), (R_PIN, t + GROOVE_Z),
-           (R_PIN - GROOVE_D, t + GROOVE_Z), (R_PIN - GROOVE_D, t + GROOVE_Z + GROOVE_W),
-           (R_PIN, t + GROOVE_Z + GROOVE_W), (R_PIN, -1.0), (R_SHOULDER, -1.0), (R_SHOULDER, 0),
-           (R_RELIEF, 0), (R_RELIEF, RELIEF_L)] + thread_profile(RELIEF_L, Z_TIP)
+    """RADSOK pin, seating shoulder and M6 stud as one silver-plated part; hex at the bore floor."""
+    g0, g1, rg = GROOVE
+    zt, r_t, r_tip = TIP
+    pts = [(0, Z_PIN_TIP), (r_tip, Z_PIN_TIP), (r_t, zt), (R_PIN, zt + 0.3), (R_PIN, g1), (rg, g1), (rg, g0),
+           (R_PIN, g0), (R_PIN, -0.6), (R_METAL, -0.6), (R_METAL, 0), (R_RELIEF, 0),
+           (R_RELIEF, RELIEF_L)] + thread_profile(RELIEF_L, Z_TIP)
     pin = revolve(pts)
-    hex_ = cq.Workplane("XY").workplane(offset=Z_FRONT).polygon(6, HEX_AF / 0.8660254).extrude(HEX_T)
-    return pin.union(hex_.cut(cq.Workplane("XY").workplane(offset=Z_FRONT - 1).circle(R_PIN).extrude(HEX_T + 2)))
+    hex_ = cq.Workplane("XY").workplane(offset=Z_FLOOR - HEX_T).polygon(6, HEX_AF / 0.8660254).extrude(HEX_T)
+    return pin.union(hex_)
 
 
 def ft_seal():
-    return square_plate(Z_SEAL, SEAL_T, R_REAR)
+    return square_plate(Z_SEAL - SEAL_T, SEAL_T, R_REAR)
 
 
 # ---------------------------------------------------------------- plugs RL00571 / RL00572
@@ -145,28 +158,40 @@ def ft_seal():
 class Plug:
     A: float                       # drawing: width
     B: float                       # drawing: front end to the collar's back
-    C: float                       # drawing: height, boss face to top
+    C: float                       # drawing: overall height, boss face to the top
     D: float                       # drawing: boss length
     E: float                       # drawing: boss diameter
     F: float                       # drawing: overall length
-    t_mid: float                   # ESTIMATE: top of the lower body (drawing side view)
-    x_low: float                   # ESTIMATE: end of the lower body (from the axis)
-    collar_t: float                # ESTIMATE: collar thickness
-    neck_top: float                # ESTIMATE: drawing side view, top of the transition where it leaves the body
-    neck: tuple                    # ESTIMATE: (half width, t0, t1) where the transition meets the collar
-    collar: tuple                  # ESTIMATE: (half width, t0, t1)
-    x_cap: float                   # ESTIMATE: end of the ribbed cap's flat top
-    slope_end: float               # ESTIMATE: where the cap's back slopes down to t_mid
+    x_front: float                 # front end, from the socket axis
+    t_top: float                   # top of the housing (the tubular collar stands higher)
+    t_mid: float                   # seam between the lower body and the ribbed cap
+    x_body: float                  # end of the straight body, from the socket axis
+    trans: tuple                   # (half width, t0, t1) where the transition meets the collar
+    collar_t: float                # collar thickness
+    collar: tuple                  # (half width, t0, t1)
+    x_cap: float                   # end of the ribbed region
+    slope: tuple                   # stamped only: (x where the cap starts down, x where it reaches t_mid)
+    t_lug: float                   # tubular: barrel axis height; stamped: base sheet bottom
     ribs: int                      # drawing side view: grip slots per side
 
 
-TUBULAR = Plug(A=18.5, B=33.0, C=23.8, D=9.4, E=11.5, F=47.7, t_mid=17.6, x_low=17.15, collar_t=2.0,
-               neck_top=23.8, neck=(7.0, 11.0, 22.2), collar=(9.7, 8.6, 23.8), x_cap=13.0, slope_end=17.15, ribs=11)
-STAMPED = Plug(A=18.5, B=30.0, C=21.9, D=9.2, E=11.2, F=43.6, t_mid=16.3, x_low=17.6, collar_t=1.6,
-               neck_top=16.3, neck=(8.6, 9.8, 15.7), collar=(9.25, 9.4, 16.3), x_cap=12.5, slope_end=15.0, ribs=10)
+# Tubular: measured on Amphenol Tuchel's customer STEP c3d-rl00571-25or-01-000.stp (no licence stated, not
+# redistributed): socket axis 10.45 behind the front end, front corners r 4.6 in plan, housing to t 21.9 with
+# a seam at t 16.1 and the cap 0.55 narrower, straight to 12.0 behind the axis, then flaring down to t 7.6 and
+# up to 22.8 while narrowing to 15.4 wide; collar 1.25 thick, 17.3 wide, t 6.6-23.85 (C); barrel axis t 15.25.
+TUBULAR = Plug(A=18.5, B=33.0, C=23.85, D=9.4, E=11.5, F=47.7, x_front=-10.45, t_top=21.9, t_mid=16.1,
+               x_body=12.0, trans=(7.7, 7.6, 22.8), collar_t=1.25, collar=(8.65, 6.6, 23.85), x_cap=11.5,
+               slope=None, t_lug=15.25, ribs=11)
+# Stamped: no customer STEP. The drawing's C 21.9 equals the tubular housing's top, so the housing is taken as
+# the tubular one (ESTIMATE); the cap sloping down to a low collar rim and the lug are ESTIMATES from the
+# drawing's side view.
+STAMPED = Plug(A=18.5, B=30.0, C=21.9, D=9.2, E=11.2, F=43.6, x_front=-10.45, t_top=21.9, t_mid=16.1,
+               x_body=17.0, trans=(8.6, 9.8, 15.7), collar_t=1.6, collar=(9.25, 9.2, 16.1), x_cap=11.5,
+               slope=(11.5, 14.5), t_lug=11.8, ribs=10)
 TUBE = {"16": (5.5 / 2, 8.5 / 2), "25": (7.2 / 2, 9.5 / 2)}   # tubular drawing D1, D2
 R_BORE = 3.7                       # ESTIMATE: boss bore around the RADSOK socket
 R_SOCK_IN, R_SOCK_OUT = 2.95, 3.65  # ESTIMATE: RADSOK socket for the Ø5.7 pin
+CAP_INSET, CAP_ROUND = 0.55, 1.5   # STEP: cap 17.4 wide, 15.3 at the very top
 
 
 def box(x0, x1, y, t0, t1):
@@ -174,51 +199,56 @@ def box(x0, x1, y, t0, t1):
 
 
 def plug_housing(p):
-    x0 = -p.A / 2                  # ESTIMATE: socket axis A/2 behind the rounded front end
+    x0 = p.x_front
     x_col0 = x0 + p.B - p.collar_t
-    lower = (box(x0, p.x_low, p.A / 2, p.D, p.t_mid).edges("|Z and <X").fillet(4.5)
-             .edges("|Z and >X").fillet(1.0).faces("<Z").edges().fillet(0.5))
-    ycap = p.A / 2 - 0.6           # ESTIMATE: cap inset from the sides (drawing views)
-    cap = (box(x0 + 0.3, p.slope_end, ycap, p.t_mid - 0.5, p.C).edges("|Z and <X").fillet(4.2)
-           .faces(">Z").edges().fillet(0.8))
-    slope = (cq.Workplane("XZ", origin=(0, p.A, 0))
-             .polyline([(p.x_cap, p.C + 1), (p.slope_end + 1, p.C + 1), (p.slope_end + 1, p.t_mid),
-                        (p.slope_end, p.t_mid), (p.x_cap, p.C)]).close().extrude(2 * p.A))
-    cap = cap.cut(slope)
-    yn, n0, n1 = p.neck
-    neck = (cq.Workplane("YZ").workplane(offset=p.x_low - 0.2).center(0, (p.D + p.neck_top) / 2)
-            .rect(p.A, p.neck_top - p.D).workplane(offset=x_col0 - p.x_low + 0.2)
-            .center(0, (n0 + n1) / 2 - (p.D + p.neck_top) / 2).rect(2 * yn, n1 - n0).loft())
+    lower = (box(x0, p.x_body, p.A / 2, p.D, p.t_mid + 0.01).edges("|Z and <X").fillet(4.6)
+             .faces("<Z").edges().fillet(0.5))
+    ycap = p.A / 2 - CAP_INSET
+    x_cap_end = p.slope[1] if p.slope else p.x_body
+    cap = (box(x0 + CAP_INSET, x_cap_end, ycap, p.t_mid, p.t_top).edges("|Z and <X").fillet(4.6 - CAP_INSET)
+           .faces(">Z").edges().fillet(CAP_ROUND))
+    if p.slope:                    # stamped: the cap's back runs down to the lower body (drawing side view)
+        cap = cap.cut(cq.Workplane("XZ", origin=(0, p.A, 0))
+                      .polyline([(p.slope[0], p.t_top + 1), (p.slope[1] + 1, p.t_top + 1), (p.slope[1] + 1, p.t_mid),
+                                 (p.slope[1], p.t_mid), (p.slope[0], p.t_top)]).close().extrude(2 * p.A))
+    t_start = p.t_mid if p.slope else p.t_top
+    yn, n0, n1 = p.trans
+    trans = (cq.Workplane("YZ").workplane(offset=p.x_body - 0.2).center(0, (p.D + t_start) / 2)
+             .rect(p.A, t_start - p.D).workplane(offset=x_col0 - p.x_body + 0.2)
+             .center(0, (n0 + n1) / 2 - (p.D + t_start) / 2).rect(2 * yn, n1 - n0).loft())
     yc, c0, c1 = p.collar
-    collar = (box(x_col0, x0 + p.B, yc, c0, c1).edges("|X").fillet(1.2).edges("|Y or |Z").fillet(0.4))
-    boss = (cq.Workplane("XY").circle(p.E / 2).extrude(p.D + 0.5).faces("<Z").edges().chamfer(0.4))
-    h = lower.union(cap).union(neck).union(collar).union(boss)
+    collar = box(x_col0, x0 + p.B, yc, c0, c1).edges("|X").fillet(3.5 if not p.slope else 1.2)
+    boss = cq.Workplane("XY").circle(p.E / 2).extrude(p.D + 0.5).faces("<Z").edges().chamfer(0.4)
+    h = lower.union(cap).union(trans).union(collar).union(boss)
+    # Seam groove between the lower body and the cap (STEP: section dip at t 16.1).
+    for side in (1, -1):
+        h = h.cut(box(x0 + 4.6, p.x_body - 0.5, 0.3, p.t_mid - 0.2, p.t_mid + 0.2).translate((0, side * (p.A / 2 - 0.15), 0)))
     # Grip slots on both sides of the cap (drawing side view), rounded ends.
-    xs = [x0 + 2.8 + i * (p.x_cap - 2.0 - x0 - 2.8) / (p.ribs - 1) for i in range(p.ribs)]
-    hs = p.C - p.t_mid - 1.6
+    xs = [x0 + 3.2 + i * (p.x_cap - 1.5 - x0 - 3.2) / (p.ribs - 1) for i in range(p.ribs)]
+    hs = p.t_top - p.t_mid - 2.2
     for side in (1, -1):
         for x in xs:
-            h = h.cut(cq.Workplane("XZ", origin=(0, side * ycap, 0)).center(x, (p.C + p.t_mid) / 2)
+            h = h.cut(cq.Workplane("XZ", origin=(0, side * ycap, 0)).center(x, (p.t_top + p.t_mid) / 2 - 0.3)
                       .slot2D(hs, 0.8, 90).extrude(side * 0.5))
     # Release clip pocket in the front (the red clip sits in it), latch windows and label recess on top.
-    h = h.cut(box(x0 - 1, x0 + 2.5, 4.5, p.t_mid - 2.5, p.C - 1.2))
+    h = h.cut(box(x0 - 1, x0 + 2.5, 4.5, p.t_mid - 2.5, p.t_top - 1.2))
     for side in (1, -1):
-        h = h.cut(box(x0 + 1.2, x0 + 3.6, 1.5, p.C - 1.0, p.C + 1).translate((0, side * 4.7, 0)))
-    h = h.cut(box(x0 + 5.5, p.x_cap - 4.5, ycap - 2.0, p.C - 0.15, p.C + 1))
+        h = h.cut(box(x0 + 1.4, x0 + 3.8, 1.5, p.t_top - 1.0, p.t_top + 1).translate((0, side * 4.7, 0)))
+    h = h.cut(box(x0 + 5.5, p.x_cap - 3.0, ycap - 2.5, p.t_top - 0.15, p.t_top + 1))
     # Bore for the RADSOK socket.
-    return h.cut(cq.Workplane("XY").workplane(offset=-1).circle(R_BORE).extrude(p.C - 2.0))
+    return h.cut(cq.Workplane("XY").workplane(offset=-1).circle(R_BORE).extrude(p.t_top - 0.4 + 1))
 
 
 def plug_clip(p):
-    x0 = -p.A / 2
-    return box(x0 + 0.3, x0 + 2.5, 4.4, p.t_mid - 2.4, p.C - 1.3).edges("|X").fillet(0.5)
+    x0 = p.x_front
+    return box(x0 + 0.3, x0 + 2.5, 4.4, p.t_mid - 2.4, p.t_top - 1.3).edges("|X").fillet(0.5)
 
 
 def plug_socket(p):
     """RADSOK socket: brass sleeve with the louvre band drawn as two grooves."""
-    s = revolve([(R_SOCK_IN + 0.3, 0.8), (R_SOCK_OUT, 0.8), (R_SOCK_OUT, p.C - 3.0),
-                 (R_SOCK_IN, p.C - 3.0), (R_SOCK_IN, 1.1)])
-    for t in (2.5, p.C - 7.0):
+    s = revolve([(R_SOCK_IN + 0.3, 0.8), (R_SOCK_OUT, 0.8), (R_SOCK_OUT, p.t_top - 0.6),
+                 (R_SOCK_IN, p.t_top - 0.6), (R_SOCK_IN, 1.1)])
+    for t in (2.5, p.t_top - 7.0):
         s = s.cut(revolve([(R_SOCK_IN - 0.1, t), (R_SOCK_IN + 0.25, t), (R_SOCK_IN + 0.25, t + 0.6),
                            (R_SOCK_IN - 0.1, t + 0.6)]))
     return s
@@ -227,8 +257,8 @@ def plug_socket(p):
 def tubular_lug(p, cable):
     """Tubular crimp barrel along +x at mid height, with an inspection hole on top."""
     r_in, r_out = TUBE[cable]
-    tb = (p.D + p.C) / 2           # ESTIMATE: barrel centred on the housing height (section X-X)
-    x0 = -p.A / 2
+    tb = p.t_lug
+    x0 = p.x_front
     x_end, x_start = x0 + p.F, x0 + p.F - 19.0   # drawing F; G 19.0 barrel length
     tube = (cq.Workplane("YZ").workplane(offset=x_start).center(0, tb).circle(r_out).circle(r_in)
             .extrude(x_end - x_start).faces(">X").edges().chamfer(0.3))
@@ -238,10 +268,10 @@ def tubular_lug(p, cable):
 
 def stamped_lug(p):
     """Open-barrel crimp lug: tongue from the collar, base with serrations, two wings standing up."""
-    x0 = -p.A / 2
+    x0 = p.x_front
     xc, x_end = x0 + p.B, x0 + p.F
     xw = xc + 1.7                  # ESTIMATE: wings start (drawing side view)
-    tb0, tb1 = 11.8, 12.8          # ESTIMATE: drawing side view, base sheet
+    tb0, tb1 = p.t_lug, p.t_lug + 1.0  # ESTIMATE: drawing side view, base sheet
     t_top = 26.6                   # ESTIMATE: drawing side view, open wings above the housing
     lug = box(xc - 3.0, x_end, 5.0, tb0, tb1)
     for x in (xw + 2.5, xw + 4.0, xw + 5.5):
@@ -256,7 +286,7 @@ def stamped_lug(p):
 
 def place(w):
     """Plug frame (t up from the boss face, cable +x) -> feed-through frame, mated."""
-    return w.rotate((0, 0, 0), (1, 0, 0), 180).translate((0, 0, Z_FRONT))
+    return w.rotate((0, 0, 0), (1, 0, 0), 180).translate((0, 0, Z_MATE))
 
 
 def receptacles():
