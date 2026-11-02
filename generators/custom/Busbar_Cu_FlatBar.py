@@ -102,7 +102,9 @@ def net_tie(pitch):
     holes = (-pitch / 2, pitch / 2)
     pads = [f'\t(pad "{i}" smd circle (at {r(x + RING_X)} 0) (size {r(TIE_PAD)} {r(TIE_PAD)})\n'
             f'\t\t(layers "B.Cu"))' for i, x in enumerate(holes, start=1)]
-    body = [text("Reference", "REF**", -hw - 1.5, "F.SilkS"), text("Value", n, hw + 1.5, "F.Fab"),
+    # Reference silk inside the bar outline: nothing else may sit there, and next to the bar it overprints
+    # the parts packed along it (Node60: C501, C503, C504 beside BB902)
+    body = [text("Reference", "REF**", -hw / 2, "F.SilkS"), text("Value", n, hw + 1.5, "F.Fab"),
             '\t(net_tie_pad_groups "1, 2")',
             _rect(-ch, -cw, ch, cw, "F.CrtYd", CRT_W), *[_circle(x, HOLE_CUT, "F.CrtYd", CRT_W) for x in holes],
             _rect(-hl, -hw, hl, hw, "F.Fab", FAB_W), *[_circle(x, HOLE_D / 2, "F.Fab", FAB_W) for x in holes],
