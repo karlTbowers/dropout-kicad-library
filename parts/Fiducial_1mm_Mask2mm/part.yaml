@@ -1,0 +1,36 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/Fiducial_1mm_Mask2mm/part.yaml
+# A board fiducial (node60-hw placement decision D03, option A, user 2026-11-02: three per side): a
+# 1 mm bare copper dot in a 2 mm solder-mask opening, as KiCad's stock Fiducial_1mm_Mask2mm ("Level A").
+# Footprint: generators/custom/Fiducial.py. Symbol as KiCad's Mechanical:Fiducial: no pins (the pad is
+# unnumbered), Reference FID.
+#
+# A PCB feature, not a bought part (docs/CONTRIBUTING.md "Parts with nothing to buy"): Manufacturer
+# DropOut, MPN = the symbol name, distributor PNs "-", Datasheet = the generator, excluded from the BOM
+# and from position files (here and in the footprint's attributes).
+library: DropOut_Mechanical
+name: Fiducial_1mm_Mask2mm
+style: fiducial
+in_bom: false
+in_pos_files: false
+pins: pins.csv
+fields:
+  Reference: FID
+  Value: Fiducial_1mm_Mask2mm
+  Footprint: DropOut_Fiducial:Fiducial_1mm_Mask2mm
+  Datasheet: https://github.com/karlTbowers/dropout-kicad-library/blob/main/generators/custom/Fiducial.py
+  Description: "Fiducial marker, 1 mm bare copper dot, 2 mm solder mask opening (Level A); a PCB feature with nothing to buy or place (excluded from BOM and position files)"
+  ki_keywords: fiducial marker
+  ki_fp_filters: Fiducial?1mm?Mask2mm*
+  Manufacturer: DropOut
+  MPN: Fiducial_1mm_Mask2mm
+  DigiKey_PN: "-"
+  Mouser_PN: "-"
+  Notes: "PCB copper only; nothing to order. Excluded from BOM and position files."
+catalog:
+  family: fiducials
+  group: Copper dots
+  attributes:
+    Pad: Ø1.0 mm bare copper
+    Mask opening: Ø2.0 mm
+    Mounting: PCB feature, nothing to order

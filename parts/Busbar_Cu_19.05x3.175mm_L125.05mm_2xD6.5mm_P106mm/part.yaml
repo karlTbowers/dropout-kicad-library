@@ -1,27 +1,43 @@
-# Model-only part (docs/CONTRIBUTING.md "Model-only parts", user's decision 2026-11-02): a 3D model and a
-# dimensioned drawing, no symbol and no footprint. scripts/check_catalog_data.py checks it; the library
-# catalog lists it. Model and drawing: generators/custom/Busbar_Cu_FlatBar.py.
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/Busbar_Cu_19.05x3.175mm_L125.05mm_2xD6.5mm_P106mm/part.yaml
+# Footprint, 3D model and drawing: generators/custom/Busbar_Cu_FlatBar.py.
+#
 # Node60 VBAT_IN busbar (BB901): joins the REDCUBE terminals J910 and J901 (node60-hw DEC-025, enclosure
-# version 15, 2026-11-01). Cut from 1/8" x 3/4" C110 copper flat bar and drilled in house, so there is
-# no MPN to order: Manufacturer DropOut, MPN = the part name, distributor PNs "-", as the no-MPN
-# convention (docs/CONTRIBUTING.md "Parts with nothing to buy"). Dimensions: hole pitch 106 mm from the
-# terminal positions in node60-hw scripts/place_connectors.py (v15), length = pitch + one bar width,
+# version 15, 2026-11-01). Until 2026-11-02 a model-only part (docs/CONTRIBUTING.md "Model-only parts");
+# now a net-tie part (node60-hw placement decision D02, option A, user 2026-11-02): the board has no
+# copper between J910 and J901, only this bar, so KiCad reported J901 unconnected, and a net tie between
+# two pads of one net joins nothing. The schematic now puts J901 on its own net and this two-pin part
+# joins it to VBAT_IN on purpose, which also gives the bar a BOM line.
+#
+# Cut from 1/8" x 3/4" C110 copper flat bar and drilled in house, so there is no MPN to order: as the
+# other busbar and parts made in house, Manufacturer DropOut, MPN = the part name, distributor PNs "-",
+# Datasheet = the drawing (docs/CONTRIBUTING.md "Parts with nothing to buy", "Model-only parts"). The
+# bar IS bought and fitted, so it stays on the BOM (in_bom true); it is fitted by hand at assembly, not
+# placed by machine, so it is out of the position files (here and in the footprint's attributes).
+# Stock: ASTM B187 C110 bar; stocked e.g. by Metals Depot (CPF1834, 1/8" x 3/4", 3/6/12 ft) and Zoro
+# (Zoro Select CF.125X.75-72, 6 ft), seen in a web search 2026-11-02. Dimensions: hole pitch 106 mm from
+# the terminal positions in node60-hw scripts/place_connectors.py (v15), length = pitch + one bar width,
 # holes Ø6.5 (BUSBAR_HOLE). Edge radius and deburr chamfers are estimates (see the generator).
-kind: model
 library: DropOut_Busbar
 name: Busbar_Cu_19.05x3.175mm_L125.05mm_2xD6.5mm_P106mm
+style: net_tie
+in_pos_files: false
+pins: pins.csv
 model: 3dmodels/DropOut_Busbar.3dshapes/Busbar_Cu_19.05x3.175mm_L125.05mm_2xD6.5mm_P106mm.step
 drawing: drawings/DropOut_Busbar/Busbar_Cu_19.05x3.175mm_L125.05mm_2xD6.5mm_P106mm.svg
 fields:
+  Reference: BB
   Value: Busbar_Cu_19.05x3.175mm_L125.05mm_2xD6.5mm_P106mm
+  Footprint: DropOut_Busbar:Busbar_Cu_19.05x3.175mm_L125.05mm_2xD6.5mm_P106mm
   Datasheet: https://github.com/karlTbowers/dropout-kicad-library/blob/main/drawings/DropOut_Busbar/Busbar_Cu_19.05x3.175mm_L125.05mm_2xD6.5mm_P106mm.svg
-  Description: "Busbar, C110 copper flat bar 19.05 × 3.175 mm (3/4\" × 1/8\"), length 125.05 mm, 2 × Ø6.5 mm M6 clearance holes at 106 mm pitch; cut and drilled in house"
-  ki_keywords: busbar copper flat bar C110 M6 REDCUBE high current
+  Description: "Busbar, C110 copper flat bar 19.05 × 3.175 mm (3/4\" × 1/8\"), length 125.05 mm, 2 × Ø6.5 mm M6 clearance holes at 106 mm pitch, on two Würth REDCUBE 74660016R terminals; cut and drilled in house; net tie joining the two terminals' nets"
+  ki_keywords: busbar net tie copper flat bar C110 M6 REDCUBE high current
+  ki_fp_filters: Busbar?Cu?19.05x3.175mm?L125.05mm?2xD6.5mm?P106mm*
   Manufacturer: DropOut
   MPN: Busbar_Cu_19.05x3.175mm_L125.05mm_2xD6.5mm_P106mm
   DigiKey_PN: "-"
   Mouser_PN: "-"
-  Notes: "Made in house from 1/8\" x 3/4\" C110 copper flat bar: cut to 125.05 mm, drill 2 × Ø6.5 at 106 mm, deburr. Not placed on the PCB as a library footprint: a board draws the bar as a board-only footprint of its own (Node60 BB901) and adds the 3D model ${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_Busbar.3dshapes/Busbar_Cu_19.05x3.175mm_L125.05mm_2xD6.5mm_P106mm.step at its centre, offset z = 0.6 mm (resting on REDCUBE 74660016R spigots)."
+  Notes: "Made in house from 1/8\" x 3/4\" C110 copper flat bar (ASTM B187): cut to 125.05 mm, drill 2 × Ø6.5 at 106 mm, deburr; fitted by hand on the REDCUBE spigots at assembly (not in position files). Pin 1 = the -x terminal, pin 2 = the +x terminal; the footprint's B.Cu net-tie pads sit in each 74660016R's pad 1 ring, 5.7 mm +x of its spigot, so the terminals must be placed with their pad anchors toward +x. The 3D model's bottom face is at z = 0: a board whose spigots stand proud (Node60, 2.0 mm board: 0.6 mm) raises the placed model by that much."
 catalog:
   family: busbars
   group: Copper flat bar 19.05 × 3.175 mm

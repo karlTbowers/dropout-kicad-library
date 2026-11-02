@@ -110,3 +110,20 @@ exceptions:
       list has no busbar or net-tie designator (KiCad's own Device:NetTie_2 uses NT, also not in
       the list); BB names the part for what it is on the board and in the BOM.
     approved: 2026-11-02   # proposed; the user approves it by merging its PR
+
+  - id: fiducial-pinless
+    rules: [S6.1, S6.2, S7.2]
+    applies: ["DropOut_Mechanical:Fiducial_*"]
+    # Waives only: the designator-list message (Reference FID), and the graphic-symbol rules the
+    # checker applies to any symbol without pins (Reference, Value and footprint as for a logo).
+    # dropout-symbol-fields still covers the DropOut fields; any other S6.2 or S7.2 finding still fails.
+    match: >-
+      ^Component Reference designator not in list of allowed designators$|^Reference field must be INVISIBLE in graphic symbols or power-symbols$|^Graphical symbols have no footprint association \(footprint was set to '[^']+'\)$|^Graphical symbols have no footprint filters$|^Graphical symbols have Reference set to '#SYM'$|^Graphical symbols have a hidden Reference$|^Graphical symbols have a hidden Value$|^Graphical symbols must be 'Excluded from board'$
+    reason: >
+      Board fiducials (e.g. Node60's FID901-FID906, placement decision D03) are drawn as KiCad's own
+      Mechanical:Fiducial: Reference FID, no pins (the copper dot's pad is unnumbered and joins no
+      net), and a footprint. The KLC checker treats every pinless symbol as a graphical symbol (a
+      logo) and its designator list has no FID, so KiCad's stock fiducial fails the same rules.
+      The symbol still carries every DropOut field, is out of the BOM and position files, and
+      links its footprint.
+    approved: 2026-11-02   # proposed; the user approves it by merging its PR

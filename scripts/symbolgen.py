@@ -513,8 +513,24 @@ def style_testpoint(pins):
     return g + [pin_sexpr(pins[0], 0, 0, 90, length=G)], 4.318, 0
 
 
+def style_net_tie(pins):
+    """Two-pin net tie as KiCad's Device:NetTie_2, the link drawn as a short heavy line (a busbar
+    joining two nets on purpose): pin 1 L, pin 2 R."""
+    g = [poly([(-2.54, 0), (2.54, 0)], width=1.016)]
+    return two_pin(pins, g)
+
+
+def style_fiducial(pins):
+    """Fiducial marker as KiCad's Mechanical:Fiducial: a circle and no pins."""
+    if pins:
+        sys.exit("symbolgen: fiducial has no pins (pins.csv holds the header only)")
+    g = [f"\t\t\t(circle (center 0 0) (radius 1.27)\n"
+         f"\t\t\t\t(stroke (width 0.508) (type default)) (fill (type background)))"]
+    return g, 1.27, 1.27
+
+
 STYLES = {"tvs_bidirectional": style_tvs_bidirectional, "crystal_gnd24": style_crystal_gnd24,
-          "crystal_nc24": style_crystal_nc24,
+          "crystal_nc24": style_crystal_nc24, "net_tie": style_net_tie, "fiducial": style_fiducial,
           "cmc_4pin": style_cmc_4pin, "inductor": style_inductor, "testpoint": style_testpoint,
           "resistor": style_resistor, "resistor_shunt_4pin": style_resistor_shunt_4pin, "nmos": style_nmos,
           "thermistor_ntc": style_thermistor_ntc, "capacitor": style_capacitor,
@@ -527,12 +543,13 @@ STYLE_FIELDS = {"inductor": {"Reference": (2.54, 1.27), "Value": (2.54, -1.27)},
                 "relay_dpdt_latching": {"Reference": (16.51, 3.81), "Value": (16.51, 1.27)}}
 # Reference and Value positions where the default (above and below the body) doesn't fit:
 # a test point's connection point is at the bottom, so both go above it, as on KiCad's TestPoint
-STYLE_FIELD_Y = {"testpoint": {"Reference": 6.858, "Value": 5.08}}
+STYLE_FIELD_Y = {"testpoint": {"Reference": 6.858, "Value": 5.08},
+                 "fiducial": {"Reference": 5.08, "Value": 3.175}}    # as Mechanical:Fiducial
 # Pin numbers are shown where the package has more than two terminals (as KiCad's stock symbols),
 # and on two-terminal passives too (the user's decision 2026-10-29, so a netlist or layout question
 # about pin 1 / pin 2 can be answered from the schematic)
 STYLE_SHOW_NUMBERS = {"crystal_gnd24", "crystal_nc24", "cmc_4pin", "resistor_shunt_4pin", "nmos", "nmos_pmos",
-                      "relay_dpdt_latching", "resistor", "capacitor", "inductor", "thermistor_ntc"}
+                      "relay_dpdt_latching", "resistor", "capacitor", "inductor", "thermistor_ntc", "net_tie"}
 
 
 def build_symbol(part, pins):

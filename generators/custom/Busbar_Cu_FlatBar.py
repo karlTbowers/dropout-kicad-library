@@ -4,10 +4,21 @@ to length and drilled in house, one Ø6.5 M6 clearance hole near each end.
 
 Usage: ~/.cache/dropout/klt-venv/bin/python generators/custom/Busbar_Cu_FlatBar.py
 
-These are model-only parts (user's decision 2026-11-02): no symbol and no footprint. Each has a
-parts/<name>/part.yaml with its fields, its model and its drawing, so the library catalog lists it
-(docs/CONTRIBUTING.md "Model-only parts"). A board places the bar as a board-only footprint of its own
-(Node60: BB901, BB902 from node60-hw scripts/place_connectors.py) and adds this model to it.
+Each bar has a parts/<name>/part.yaml with its fields, its model and its drawing, so the library
+catalog lists it. The GND bar is a model-only part (user's decision 2026-11-02; docs/CONTRIBUTING.md
+"Model-only parts"): no symbol and no footprint, and Node60 draws it as a board-only footprint of its
+own (BB902, node60-hw scripts/place_connectors.py) carrying this model.
+
+The VBAT_IN bar is a net-tie part (node60-hw placement decision D02, option A, user 2026-11-02): a
+two-pin symbol and a footprint, so the schematic joins VBAT_IN (J910) to the pass-through net (J901)
+on purpose and the bar has a BOM line. A KiCad net tie between two pads of one net joins nothing
+(tested on Node60: VBAT_IN had 17 unconnected items with and without tie pads), so the bar joins two
+nets. Footprint (net_tie() below): F.CrtYd = the bar outline with the REDCUBE spigot holes cut out, so
+DRC keeps top-side parts from under the bar (as Node60's board-only BB901 did); F.Fab outline and
+holes; two B.Cu net-tie pads, one inside each REDCUBE 74660016R terminal's pad 1 ring (the terminals
+sit on the bottom side, the bar on top, and the stud joins them). A pad sits on the ring's anchor,
+5.7 mm east (+x) of each spigot centre (Wuerth_REDCUBE_SMT.py), so the terminals must be placed with
+their pad anchors toward +x, as Node60's are; the ring is round, so any point on it would do.
 
 Sources (node60-hw, enclosure version 15, DEC-025, 2026-11-01):
 - Stock: 1/8" x 3/4" C110 copper flat bar, 3.175 x 19.05 mm.
@@ -20,14 +31,22 @@ deburring chamfer on the saw-cut ends and on the holes.
 
 Frame: origin at the bar's centre, on its bottom face; the bar runs along x, holes at x = ±pitch/2;
 z up. The model is symmetric about the XZ and YZ planes, so KiCad's mirrored model Y needs no
-correction. On a board the bar rests on the REDCUBE spigots: Node60's REDCUBE 74660016R spigots stand
-0.6 mm proud of the top face, so add the model to BB901/BB902 with offset z = 0.6 mm.
+correction. The footprint uses the same frame, its model at zero offset (KLC F9.3). On a board the
+bar rests on the REDCUBE spigots, which stand proud of the top face by the spigot length less the
+board thickness (Node60, 2.0 mm board: 0.6 mm), so the board raises the placed model by that much.
 """
 from pathlib import Path
 
 import cadquery as cq
 
-from fplib import REPO, write_model
+from fplib import CRT_W, FAB_W, REPO, footprint_text, model_ref, r, text, up, write_footprint, write_model
+from Wuerth_REDCUBE_SMT import PARTS as REDCUBE_SMT
+
+REDCUBE = REDCUBE_SMT["Wuerth_REDCUBE-SMT_WP-SMRT_74660016"]
+SPIGOT_HOLE = REDCUBE["hole"]                          # Ø9.3 NPTH in the board
+RING_X = (REDCUBE["pad"][0] + REDCUBE["pad"][1]) / 4   # pad 1 anchor, +x of the spigot centre (5.7)
+TIE_PAD = (REDCUBE["pad"][1] - REDCUBE["pad"][0]) / 2  # the ring's width (1.6): pad inside the ring
+HOLE_CUT = SPIGOT_HOLE / 2 + 0.1                       # courtyard cut-out radius (Node60 placer: drill/2 + 0.1)
 
 LIB = "DropOut_Busbar"
 COPPER = (0.80, 0.46, 0.27)
@@ -43,6 +62,7 @@ BARS = {                           # name -> (hole pitch, what it is), DEC-025 /
     106.0: "Node60 VBAT_IN busbar (BB901, J910-J901)",
     157.0: "Node60 GND busbar (BB902, J911-J902)",
 }
+NET_TIE = {106.0}                  # bars that are net-tie parts with a footprint (the others are model-only)
 
 
 def length(pitch):
@@ -62,6 +82,41 @@ def bar(pitch):
         b = b.cut(cq.Workplane("XY").center(x, 0).circle(HOLE_D / 2).extrude(THICK))
     b = b.faces(">Z or <Z").edges("%CIRCLE").chamfer(HOLE_CHAMFER)
     return b
+
+
+# ---- net-tie footprint ------------------------------------------------------------------------
+
+def _rect(x1, y1, x2, y2, layer, w):
+    return (f'\t(fp_rect (start {r(x1)} {r(y1)}) (end {r(x2)} {r(y2)}) (stroke (width {w}) (type solid))'
+            f' (fill no) (layer "{layer}"))')
+
+
+def _circle(cx, rad, layer, w):
+    return (f'\t(fp_circle (center {r(cx)} 0) (end {r(cx + rad)} 0) (stroke (width {w}) (type solid))'
+            f' (fill no) (layer "{layer}"))')
+
+
+def net_tie(pitch):
+    """Footprint text for a bar whose two holes sit on REDCUBE 74660016R terminals: pad 1 on the -x
+    terminal, pad 2 on the +x terminal."""
+    n, hl, hw = name(pitch), length(pitch) / 2, WIDTH / 2
+    ch, cw = up(hl, 0.01), up(hw, 0.01)                    # courtyard: the bar outline on the 0.01 grid (KLC F5.3)
+    holes = (-pitch / 2, pitch / 2)
+    pads = [f'\t(pad "{i}" smd circle (at {r(x + RING_X)} 0) (size {r(TIE_PAD)} {r(TIE_PAD)})\n'
+            f'\t\t(layers "B.Cu"))' for i, x in enumerate(holes, start=1)]
+    body = [text("Reference", "REF**", -hw - 1.5, "F.SilkS"), text("Value", n, hw + 1.5, "F.Fab"),
+            '\t(net_tie_pad_groups "1, 2")',
+            _rect(-ch, -cw, ch, cw, "F.CrtYd", CRT_W), *[_circle(x, HOLE_CUT, "F.CrtYd", CRT_W) for x in holes],
+            _rect(-hl, -hw, hl, hw, "F.Fab", FAB_W), *[_circle(x, HOLE_D / 2, "F.Fab", FAB_W) for x in holes],
+            f'\t(fp_text user "${{REFERENCE}}" (at 0 0 0) (layer "F.Fab")\n'
+            f'\t\t(effects (font (size 1 1) (thickness 0.15))))',
+            *pads, model_ref(LIB, n)]
+    descr = (f"Busbar, 1/8 x 3/4 in C110 copper flat bar ({THICK:g} x {WIDTH:g} mm), {length(pitch):g} mm long, 2 x Ø{HOLE_D:g} M6 clearance "
+             f"holes at {pitch:g} mm on Würth REDCUBE 74660016R terminals; net tie: one B.Cu pad in each "
+             f"terminal's pad 1 ring, {RING_X:g} mm +x of its spigot; courtyard = bar outline, "
+             f"https://github.com/karlTbowers/dropout-kicad-library/blob/main/drawings/{LIB}/{n}.svg")
+    return footprint_text(n, descr, "busbar net tie copper flat bar C110 REDCUBE M6", body,
+                          attr="exclude_from_pos_files")   # fitted by hand, so no smd type (KLC F6.1)
 
 
 # ---- drawing ----------------------------------------------------------------------------------
@@ -207,3 +262,5 @@ if __name__ == "__main__":
     for pitch in BARS:
         print("3D model  ", write_model(LIB, name(pitch), [(bar(pitch), COPPER)]))
         print("drawing   ", drawing(pitch))
+        if pitch in NET_TIE:
+            print("footprint ", write_footprint(LIB, name(pitch), net_tie(pitch)))
