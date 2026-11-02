@@ -214,6 +214,17 @@ families:
     datasheet: https://yageogroup.com/content/datasheet/asset/file/UPY-AC_NP0X7RX7S_6_3V-TO-2KV
     source: Yageo AC series NP0/X7R/X7S 6.3 V to 2 kV product specification V.25 (21 Jan 2026)
     keywords: capacitor ceramic MLCC automotive
+  yageo_ac_hicap:
+    kind: C
+    manufacturer: Yageo
+    series: AC HiCap
+    construction: automotive MLCC
+    grade: AEC-Q200
+    temperature: -55 to +125 °C
+    datasheet: https://www.yageogroup.com/content/datasheet/asset/file/UPY-AC_HICAP_X7RX7S
+    source: Yageo Automotive grade HiCap X7R/X7S 4 V to 100 V product specification V.4 (5 Aug 2025); the AC
+      NP0/X7R/X7S specification stops at 680 nF
+    keywords: capacitor ceramic MLCC automotive
   taiyo_mcas:
     kind: C
     manufacturer: Taiyo Yuden
@@ -1319,7 +1330,7 @@ parts:
     digikey: 478-KAM15AR71A225KTCT-ND 14346 in stock, $0.47 @1, $0.1462 @1k (2026-10-22)
     mouser: 581-KAM15AR71A225KT 3851 in stock, $0.47 @1, $0.147 @1k (2026-10-23)
 - mpn: AC0603KRX7R6BB225
-  family: yageo_ac_mlcc
+  family: yageo_ac_hicap
   value: 2.2uF
   size: '0603'
   voltage: 10 V
