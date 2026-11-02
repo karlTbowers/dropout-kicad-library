@@ -8660,7 +8660,7 @@
 				)
 			)
 		)
-		(property "Notes" "Panel mount, not placed on the PCB (no footprint): the M6 stud screws into a Würth REDCUBE 74660016 on the board, placed as its own part. Panel: Ø14.3 cutout, 4 × M4 on 18 × 18 (catalog p. 13). 3D model ${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_Connector_Amphenol.3dshapes/Amphenol_SurLok-Plus_SLPRATPSB.step, partly estimated from the catalog: add it to the 74660016 footprint with offset z = -2.6 mm. Mates 5.7 mm SurLok Plus plugs without keyway (SLPPA…, SLPIPA…)."
+		(property "Notes" "Panel mount, not placed on the PCB (no footprint): the M6 stud screws into a Würth REDCUBE 74660016 on the board, placed as its own part. Panel: Ø14.20 +0.20/0 cutout, 4 × M4 on 18 × 18 (drawing C10-730187 rev. F; catalog p. 13). 3D model ${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_Connector_Amphenol.3dshapes/Amphenol_SurLok-Plus_SLPRATPSB.step (from Amphenol's drawing and STEP): add it to the 74660016 footprint with offset z = -2.6 mm. Mates 5.7 mm SurLok Plus plugs without keyway (SLPPA…, SLPIPA…)."
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8829,7 +8829,7 @@
 				)
 			)
 		)
-		(property "Notes" "Panel mount, not placed on the PCB (no footprint): the M6 stud screws into a Würth REDCUBE 74660016 on the board, placed as its own part. Panel: Ø14.3 cutout, 4 × M4 on 18 × 18 (catalog p. 13). 3D model ${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_Connector_Amphenol.3dshapes/Amphenol_SurLok-Plus_SLPRATPSO.step, partly estimated from the catalog: add it to the 74660016 footprint with offset z = -2.6 mm. Mates 5.7 mm SurLok Plus plugs without keyway (SLPPA…, SLPIPA…)."
+		(property "Notes" "Panel mount, not placed on the PCB (no footprint): the M6 stud screws into a Würth REDCUBE 74660016 on the board, placed as its own part. Panel: Ø14.20 +0.20/0 cutout, 4 × M4 on 18 × 18 (drawing C10-730187 rev. F; catalog p. 13). 3D model ${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_Connector_Amphenol.3dshapes/Amphenol_SurLok-Plus_SLPRATPSO.step (from Amphenol's drawing and STEP): add it to the 74660016 footprint with offset z = -2.6 mm. Mates 5.7 mm SurLok Plus plugs without keyway (SLPPA…, SLPIPA…)."
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8998,7 +8998,7 @@
 				)
 			)
 		)
-		(property "Notes" "Panel mount, not placed on the PCB (no footprint): the M6 stud screws into a Würth REDCUBE 74660016 on the board, placed as its own part. Panel: Ø14.3 cutout, 4 × M4 on 18 × 18 (catalog p. 13). 3D model ${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_Connector_Amphenol.3dshapes/Amphenol_SurLok-Plus_SLPRATPSR.step, partly estimated from the catalog: add it to the 74660016 footprint with offset z = -2.6 mm. Mates 5.7 mm SurLok Plus plugs without keyway (SLPPA…, SLPIPA…)."
+		(property "Notes" "Panel mount, not placed on the PCB (no footprint): the M6 stud screws into a Würth REDCUBE 74660016 on the board, placed as its own part. Panel: Ø14.20 +0.20/0 cutout, 4 × M4 on 18 × 18 (drawing C10-730187 rev. F; catalog p. 13). 3D model ${KIPRJMOD}/lib/dropout-kicad-library/3dmodels/DropOut_Connector_Amphenol.3dshapes/Amphenol_SurLok-Plus_SLPRATPSR.step (from Amphenol's drawing and STEP): add it to the 74660016 footprint with offset z = -2.6 mm. Mates 5.7 mm SurLok Plus plugs without keyway (SLPPA…, SLPIPA…)."
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)

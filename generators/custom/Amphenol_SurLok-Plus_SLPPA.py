@@ -24,8 +24,9 @@ Sources (archived in dropout-vendor-docs, Amphenol-Industrial/SurLok-Plus/):
 Estimated (marked ESTIMATE below): everything not listed as exact or measured. The RADSOK lettering
 is not modelled.
 
-Frame: the receptacle model's. z is the mating axis, z = -27.8 is the receptacle's mating face, which
-seats on the plug's recess floor when mated; the plug lies at z < -12.6 (its nose tip) and the cable
+Frame: the receptacle model's. z is the mating axis, z = -26.75 is the receptacle's front face (drawing
+C10-730187; -27.8 before the receptacle model was rebuilt on 2026-11-02), which seats on the plug's
+recess floor when mated; the plug lies at z < -11.55 (its nose tip) and the cable
 leaves toward +x. Symmetric about the XZ plane, so KiCad's mirrored model Y needs no correction. To
 show the plug mated on a receptacle fitted to a REDCUBE 74660016 footprint, give it the receptacle's
 offset (z = -2.6 mm) and rotate it about z to point the cable where it should go.
@@ -33,6 +34,8 @@ offset (z = -2.6 mm) and rotate it about z to point the cable where it should go
 import cadquery as cq
 
 from fplib import METAL, write_model
+
+Z_RECEPTACLE_FRONT = -26.75       # SLPRATPSx front face (Amphenol_SurLok-Plus_SLPRAT.py, drawing C10-730187)
 
 LIB = "DropOut_Connector_Amphenol"
 
@@ -217,8 +220,8 @@ def crimp_barrel():
 
 
 def place(w):
-    """Plug frame -> receptacle frame: t = 0 (nose tip) at z = -12.6, head toward -z, back shell +x."""
-    return w.rotate((0, 0, 0), (1, 0, 0), 180).translate((0, 0, -27.8 + T_RECESS))
+    """Plug frame -> receptacle frame: t = 0 (nose tip) at z = -11.55, head toward -z, back shell +x."""
+    return w.rotate((0, 0, 0), (1, 0, 0), 180).translate((0, 0, Z_RECEPTACLE_FRONT + T_RECESS))
 
 
 if __name__ == "__main__":
