@@ -55,6 +55,12 @@ debug-headers:
 
 busbars:
   title: Busbars
-  intro: Copper bars cut and drilled in house that join power terminals; model-only parts with a dimensioned drawing.
+  intro: Copper bars cut and drilled in house that join power terminals, each with a dimensioned drawing; a bar the schematic shows is a net-tie part, the others are model-only.
   groups:
     - Copper flat bar 19.05 × 3.175 mm
+
+fiducials:
+  title: Fiducials
+  intro: Bare copper marks in a solder-mask opening for the assembly machines' vision system; PCB features with nothing to buy.
+  groups:
+    - Copper dots

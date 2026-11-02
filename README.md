@@ -55,7 +55,9 @@ Planned categories (created as the first part in each one is added). Microcontro
 | `DropOut_Package_TO_SOT_SMD` | Footprints and 3D models for SOT/TSOT/TO SMD packages, including TOLL-family power MOSFETs |
 | `DropOut_Resistor_SMD` | Footprints and 3D models for SMD resistors: chip resistors (one IPC footprint per size code), current-sense shunts with manufacturer land patterns |
 | `DropOut_Relay_SMD` | Footprints and 3D models for SMD relays, named after KiCad's `Relay_SMD` |
-| `DropOut_Busbar` | 3D models and drawings for busbars cut and drilled in house (model-only parts: no symbol, no footprint) |
+| `DropOut_Busbar` | Busbars cut and drilled in house: 3D models and drawings; a bar the schematic shows (a net tie joining two terminals' nets) also has its symbol and footprint here, the others are model-only parts |
+| `DropOut_Mechanical` | Symbols for mechanical board features (fiducials), named after KiCad's `Mechanical` |
+| `DropOut_Fiducial` | Footprints for fiducials, named after KiCad's `Fiducial` |
 | `DropOut_TestPoint` | Footprints and 3D models for test points: bare pads and SMD/THT test loops (as KiCad's stock `TestPoint`) |
 
 ## Using it in a project
