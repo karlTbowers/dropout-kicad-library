@@ -1,0 +1,24 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/744383560047HT/part.yaml
+# Würth Elektronik data sheet 744383560047HT rev. 003.002 (2026-09-01) p. 1. Two-terminal inductor, no polarity (pins 1/2 = footprint pads 1/2).
+# Dimensions (4.1 ±0.2 x 4.1 ±0.2 x 2.1 max) and both recommended land patterns are the same as 74438356022's, which
+# L_Wuerth_MAPI-4020 was built from: footprint reused.
+# Node60 1V5_CORE buck part search (TPS628502QDRLRQ1, 2026-11-02; TI recommends 0.47 µH): NOT CHOSEN. No DigiKey stock on
+# 2026-11-02 (Mouser 136); the 0.56 µH 744383560056HT was selected instead.
+library: DropOut_Inductor
+name: 744383560047HT
+style: inductor
+pins: pins.csv
+fields:
+  Reference: L
+  Value: 744383560047HT
+  Footprint: DropOut_Inductor_SMD:L_Wuerth_MAPI-4020
+  Datasheet: "https://www.we-online.com/components/products/datasheet/744383560047HT.pdf"
+  Description: Würth Elektronik WE-MAPI 4020 power inductor, 0.47 µH ±30 %, Isat 6.45 A (-10 %) / 13 A (-30 %), IRP 12.7 A (40 K rise), DCR 8.1 mΩ max, metal alloy composite, molded, AEC-Q200, 4.1x4.1x2.1 mm
+  ki_keywords: inductor choke coil power buck shielded automotive AEC-Q200
+  ki_fp_filters: L*Wuerth*MAPI?4020*
+  Manufacturer: Würth Elektronik
+  MPN: 744383560047HT
+  DigiKey_PN: 732-744383560047HTCT-ND
+  Mouser_PN: 710-744383560047HT
+  Temperature_Grade: AEC-Q200 Grade 0, -55 to +150 °C operating (-55 to +110 °C ambient at IRP)

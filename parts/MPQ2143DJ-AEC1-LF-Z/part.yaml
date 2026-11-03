@@ -1,0 +1,28 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/MPQ2143DJ-AEC1-LF-Z/part.yaml
+# Pins from MPS MPQ2143 datasheet Rev. 1.02 (10/15/2024) "Pin Functions" (p. 9) and the TSOT23-8 package drawing
+# (p. 15; pin 1 lower left when the top mark reads left to right). Types: PG is an open drain with an internal pull-up
+# to VIN (open_collector); OUT is the output voltage sense input (typed input, so the output net needs a PWR_FLAG;
+# KLC S4.4 warns on an input named OUT); FB is the divider input; EN the on/off input. SW drives the inductor:
+# power_out. PGND and AGND are separate pins, both power_in at the bottom. VIN on the left (KLC S4.2).
+# Ordering Information (p. 2): MPQ2143DJ-AEC1 = TSOT23-8, AEC-Q100 Grade 1, top marking ACE; -LF = RoHS, -Z = tape and
+# reel. Recommended operating conditions: VIN 2.5 to 5.5 V, VOUT 0.6 V to VIN - 0.5 V, TJ -40 to +125 °C; 3 A,
+# 1.2 MHz COT, 40 uA Iq (p. 1).
+# Node60 1V5_CORE buck part search (2026-11-02): REJECTED. DigiKey status "Not For New Designs" (Mouser: "Not
+# Recommended for New Designs"; the datasheet says "refer to MPQ2179"), no stock at either on 2026-11-02.
+library: DropOut_Power
+name: MPQ2143DJ-AEC1-LF-Z
+pins: pins.csv
+fields:
+  Reference: U
+  Value: MPQ2143DJ-AEC1-LF-Z
+  Footprint: DropOut_Package_TO_SOT_SMD:MPS_TSOT-23-8
+  Datasheet: https://www.monolithicpower.com/en/documentview/productdocument/index/version/2/document_type/Datasheet/lang/en/sku/MPQ2143/document_id/996
+  Description: MPS MPQ2143 2.5 to 5.5 V 3 A synchronous step-down converter, COT, 1.2 MHz, adjustable from 0.6 V, 40 µA Iq, power good, AEC-Q100 Grade 1, TSOT-23-8 (not for new designs)
+  ki_keywords: buck step-down regulator converter DC-DC automotive low-voltage power-good COT
+  ki_fp_filters: MPS*TSOT?23?8*
+  Manufacturer: Monolithic Power Systems
+  MPN: MPQ2143DJ-AEC1-LF-Z
+  DigiKey_PN: 1589-1782-1-ND
+  Mouser_PN: 946-MPQ2143DJAEC1LFZ
+  Temperature_Grade: AEC-Q100 Grade 1, TJ -40 to +125 °C (recommended operating)

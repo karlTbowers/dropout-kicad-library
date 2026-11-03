@@ -1,0 +1,10 @@
+number,name,type,unit,side,slot,alternates
+2,VIN,power_in,1,L,0,
+8,EN,input,1,L,2,
+1,MODE/SYNC,input,1,L,3,
+7,COMP/FSET,input,1,L,4,
+6,SS/TR,input,1,L,5,
+3,SW,power_out,1,R,0,
+5,FB,input,1,R,2,
+9,PG,open_collector,1,R,4,
+4,GND,power_in,1,B,,

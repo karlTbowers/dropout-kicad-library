@@ -1,0 +1,31 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/TPS62903QRYTRQ1/part.yaml
+# Pins from TPS62903-Q1 datasheet SLVSG65A (May 2022, revised March 2023) Table 6-1 and Figure 6-1. Types: EN,
+# MODE/S-CONF, SS/TR, FB/VSET and VOS are inputs (Table 6-1 "I"). VIN is typed "I" in Table 6-1 but is the supply:
+# power_in (KLC S4.4), on the left (S4.2). VOS is the output sense pin ("connect directly to the positive pin of the
+# output capacitor"): input, so the output net needs a PWR_FLAG. SW (no type) drives the inductor: power_out. PG is
+# open drain and needs a pull-up. EN and MODE/S-CONF must not be left unconnected; SS/TR may float (fastest ramp).
+# FB/VSET is a divider input (FB) or a resistor to GND choosing one of 16 internal output voltages (VSET, Table 8-2),
+# set by MODE/S-CONF (Table 8-1). No exposed pad: GND is pin 4.
+# Device Comparison Table (Section 5) and Package Option Addendum: TPS62903-Q1 = 0 to 3 A, 3 to 18 V input, -40 to
+# 165 C operating junction, 1 or 2.5 MHz selectable, auto PFM/PWM or forced PWM; QRYTRQ1 = RYT (VQFN-HR 9, 2 x 2.2 mm),
+# AEC-Q100 Grade 1 (TA -40 to +125 C), MSL 2 260 C, marking TS03, 3000 per reel. Iq 4 uA typ (p. 1).
+# Node60 1V5_CORE buck part search (2026-11-02): REJECTED. Minimum input 3.0 V (Recommended Operating Conditions), while 3V3_MAIN's supervisor
+# (TPS3702, 3.10 / 3.50 V window) lets the rail sit as low as 3.10 V, leaving no margin; and no DigiKey stock on
+# 2026-11-02 (Mouser listed, no stock figure).
+library: DropOut_Power
+name: TPS62903QRYTRQ1
+pins: pins.csv
+fields:
+  Reference: U
+  Value: TPS62903QRYTRQ1
+  Footprint: DropOut_Package_DFN_QFN:Texas_RYT0009A_VQFN-HR-9_2x2.2mm_P0.5mm
+  Datasheet: https://www.ti.com/lit/ds/symlink/tps62903-q1.pdf
+  Description: TI TPS62903-Q1 3 to 18 V 3 A synchronous step-down converter, DCS-Control, adjustable 0.6 to 5.5 V or 16 VSET options from 0.4 V, 1 or 2.5 MHz, 4 µA typ Iq, power good, TJ to 165 °C, AEC-Q100 Grade 1, VQFN-HR-9 2x2.2 mm
+  ki_keywords: buck step-down regulator converter DC-DC automotive low-Iq power-good HotRod
+  ki_fp_filters: Texas*RYT0009A*VQFN*
+  Manufacturer: Texas Instruments
+  MPN: TPS62903QRYTRQ1
+  DigiKey_PN: 296-TPS62903QRYTRQ1CT-ND
+  Mouser_PN: 595-TPS62903QRYTRQ1
+  Temperature_Grade: AEC-Q100 Grade 1, TJ -40 to +165 °C

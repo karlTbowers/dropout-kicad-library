@@ -27,3 +27,18 @@ DropOut_DFE322520F:
   landingInsideX: 1.8
   landingOutsideX: 3.7
   landingY: 2.8
+
+# DFE252012P reference specification J(E)TE243A-9102J-01 p. 1 "Physical Dimensions" (2.5 ±0.2 x 2.0 ±0.2 x 1.2 max,
+# 0.6 ±0.2 terminals across the full 2.0 width) and p. 4 "Recommended PCB pattern": 2.8 mm outside, 1.2 mm inside,
+# 2.0 mm pad height.
+DropOut_DFE252012P:
+  PartNumber: DFE252012P
+  datasheet: "https://pim.murata.com/asset/pim4/inductor/J(E)TE243A-9102_PDF_INDUCTOR"
+  widthX: 2.5
+  lengthY: 2.0
+  height: 1.2
+  padX: 0.6
+  padY: 2.0
+  landingInsideX: 1.2
+  landingOutsideX: 2.8
+  landingY: 2.0
