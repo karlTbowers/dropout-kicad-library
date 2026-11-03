@@ -1,0 +1,31 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/TPS628501QDRLRQ1/part.yaml
+# Pins from TPS62850x-Q1 datasheet SLUSDM0N (May 2020, revised January 2026) Table 5-1 and Figure 5-1 (DRL top
+# view); the same for TPS628501/2/3-Q1 (pin-to-pin family), so the pin table lives in parts/TPS628502QDRLRQ1/pins.csv.
+# Types: EN, MODE/SYNC, COMP/FSET and FB are inputs (Table 5-1 "I"); EN and MODE/SYNC must not be left unconnected.
+# COMP/FSET takes a resistor to GND that sets the loop compensation and the switching frequency (1.8 to 4 MHz) when not
+# synchronised. PG is the open-drain power-good output (ISINK_PG up to 2 mA, 6.3). SW (no type in Table 5-1) drives
+# the inductor: power_out. FB is the divider tap, typed input as LMQ66430's VOUT/FB, so the output net needs a
+# PWR_FLAG. VIN is on the left (KLC S4.2, power converters). No exposed pad: GND is pin 8.
+# Device Comparison Table (Section 4) and Package Option Addendum (22-Apr-2026): TPS628501QDRLRQ1 = 1 A output current,
+# output discharge ON, foldback current limit OFF, 2 x 10 uF typical output capacitor, internal 1 ms soft start,
+# adjustable output (0.6 to 5.5 V), DRL (SOT-583, 8 pins), Q1 = AEC-Q100 Grade 1, TA -40 to +125 C (TJ -40 to
+# +150 C, 6.3), MSL 1 260 C, marking 100Q, 4000 per reel.
+# Node60 1V5_CORE buck U303: pin-compatible 1 A version of the selected TPS628502QDRLRQ1 (same family second source,
+# build-all-versions rule, 2026-11-02).
+library: DropOut_Power
+name: TPS628501QDRLRQ1
+pins: ../TPS628502QDRLRQ1/pins.csv
+fields:
+  Reference: U
+  Value: TPS628501QDRLRQ1
+  Footprint: DropOut_Package_TO_SOT_SMD:Texas_DRL0008A_SOT-583-8
+  Datasheet: https://www.ti.com/lit/ds/symlink/tps628501-q1.pdf
+  Description: TI TPS62850x-Q1 2.7 to 6 V 1 A synchronous step-down converter, adjustable 0.6 to 5.5 V output, 1.8 to 4 MHz adjustable or synchronised, 17 µA typ Iq, power good, AEC-Q100 Grade 1, SOT-583 (DRL)
+  ki_keywords: buck step-down regulator converter DC-DC automotive low-voltage power-good
+  ki_fp_filters: Texas*DRL0008A*SOT?583*
+  Manufacturer: Texas Instruments
+  MPN: TPS628501QDRLRQ1
+  DigiKey_PN: 296-TPS628501QDRLRQ1CT-ND
+  Mouser_PN: 595-TPS628501QDRLRQ1
+  Temperature_Grade: AEC-Q100 Grade 1, TJ -40 to +150 °C
