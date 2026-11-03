@@ -55,3 +55,27 @@ OnSemi_483_TSOP-5_1.5x3mm_P0.95mm:
   pad_to_pad_min_x_overwrite: 1.4
   pad_to_pad_max_x_overwrite: 3.4
   pad_size_y_overwrite: 0.7
+
+# MPQ2143DJ-AEC1-LF-Z. MPS TSOT23-8 (JEDEC MO-193 BA), MPQ2143 datasheet Rev. 1.02 (10/15/2024) p. 15 "Package
+# Information": body 2.80..3.00 x 1.50..1.70, span 2.60..3.00, A 1.00 max, A2 0.70..0.90, A1 0.00..0.10, b 0.20..0.40,
+# c 0.09..0.20, L 0.30..0.50, pitch 0.65; pin 1 lower left when the top mark reads left to right. Recommended land
+# pattern: 0.30 x 1.20 TYP pads, 0.65 pitch, rows 2.60 TYP apart -> pad-to-pad 1.40 inside, 3.80 outside.
+MPS_TSOT-23-8:
+  size_source: 'https://www.monolithicpower.com/en/documentview/productdocument/index/version/2/document_type/Datasheet/lang/en/sku/MPQ2143/document_id/996'
+  custom_name_format: 'MPS_TSOT-23-8'
+  body_size_x: 1.50 .. 1.60 .. 1.70     # E1
+  body_size_y: 2.80 .. 2.90 .. 3.00     # D
+  body_height: 0.70 .. 0.80 .. 0.90     # A2
+  body_pcb_gap: 0.0 .. 0.05 .. 0.10     # A1
+  overall_size_x: 2.60 .. 2.80 .. 3.00  # E
+  lead_width: 0.20 .. 0.30 .. 0.40      # b
+  lead_len: 0.30 .. 0.40 .. 0.50        # L
+  lead_height: 0.09 .. 0.145 .. 0.20    # c
+  lead_radius_top: 0.1
+  lead_radius_bottom: 0.15
+  pitch: 0.65
+  num_pins_x: 0
+  num_pins_y: 4
+  pad_to_pad_min_x_overwrite: 1.4
+  pad_to_pad_max_x_overwrite: 3.8
+  pad_size_y_overwrite: 0.3

@@ -1,0 +1,25 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/DFE252012PD-R47M_P2/part.yaml
+# Murata reference specification J(E)TE243A-9102J-01 (DFE252012P) pp. 1-4. Two-terminal inductor, no polarity (pins 1/2 = footprint pads 1/2). Symbol name and Value replace "=" with "_" (KLC G1.1/S6.2: "=" is not a legal name character; Value = name); the MPN field keeps the exact code.
+# p. 2: 0.47 µH ±20 %, DCR 27 mΩ max / 21 typ, rated current 5.2 A max / 6.1 typ (inductance -30 %), 4.0 A max / 4.7 typ
+# (40 °C rise, Murata 6-layer test board); withstand voltage 20 V DC. p. 3: operating -40 to +125 °C including self
+# temperature rise (40 °C max). Murata grades it for automotive infotainment/comfort equipment.
+# Node60 1V5_CORE buck part search (TPS628502QDRLRQ1, 2026-11-02): NOT CHOSEN. Rated only to +125 °C including
+# self-heating, so no margin for self-heating at Node60's +125 °C ambient (REQ-QUAL-001).
+library: DropOut_Inductor
+name: DFE252012PD-R47M_P2
+style: inductor
+pins: pins.csv
+fields:
+  Reference: L
+  Value: DFE252012PD-R47M_P2
+  Footprint: DropOut_Inductor_SMD:L_Murata_DFE252012P
+  Datasheet: "https://pim.murata.com/asset/pim4/inductor/J(E)TE243A-9102_PDF_INDUCTOR"
+  Description: Murata DFE252012PD power inductor, 0.47 µH ±20 %, Isat 5.2 A (-30 %), Irms 4.0 A (40 °C rise), DCR 27 mΩ max, metal alloy, wound chip, AEC-Q200, 2.5x2.0x1.2 mm
+  ki_keywords: inductor choke coil power buck shielded automotive AEC-Q200
+  ki_fp_filters: L*Murata*DFE252012P*
+  Manufacturer: Murata
+  MPN: DFE252012PD-R47M=P2
+  DigiKey_PN: 490-DFE252012PD-R47M=P2CT-ND
+  Mouser_PN: 81-DFE252012PDR47MP2
+  Temperature_Grade: AEC-Q200 (automotive infotainment/comfort grade), -40 to +125 °C including self-heating

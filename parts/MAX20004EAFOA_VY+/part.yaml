@@ -1,0 +1,32 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py "parts/MAX20004EAFOA_VY+/part.yaml"
+# Pins from MAX20004E/MAX20006E/MAX20008E datasheet 19-100562 Rev 6 (7/20) "Pin Configuration" and "Pin Description"
+# (pp. 8-9). Symbol name and Value replace "/" with "_" (KiCad names can't contain "/"); the MPN field keeps the exact
+# code. Types: SUP and SUPSW are supply inputs (SUP is fused to SUPSW; the exposed pad is SUPSW too, "connect to SUPSW
+# pins 3 and 9", numbered 18 here as the datasheet gives it no number), each its own power_in pin. LX drives the
+# inductor (power_out). BST takes the 0.1 uF bootstrap capacitor to LX: passive. OUT is the output sense and
+# standby supply input (input, so the output net needs a PWR_FLAG). FB, EN, SYNC, SSEN are inputs (FB to BIAS
+# selects the fixed output). BIAS is the internal linear regulator output (2.2 uF min): power_out. RESET is an
+# active-low open-drain output. PGND (4, 5, 7, 8) and GND (14) at the bottom. Supplies on the left (KLC S4.2).
+# Ordering Information (p. 20): MAX20004EAFOA/VY+ = skip and FPWM, 5 V with FB tied to BIAS, 4 A, 2100 kHz, 5 ms
+# soft start, 10 ms reset hold, RCOMP 209 kOhm; /V = automotive qualified, + = lead-free. Package F173A3FY+7
+# (outline 21-100383, land pattern 90-100124). Input 3.5 to 36 V (3 V after start-up), 15 uA skip-mode Iq, ambient
+# -40 to +125 C, TJ -40 to +150 C (p. 1, Recommended Operating Conditions).
+# Node60 1V5_CORE buck part search (2026-11-02): REJECTED. 3.5 V minimum input to start, above the 3.3 V rail it
+# would run from. (The search listed it as a fixed-5 V code; the adjustable output runs 1 to 5 V with a divider.)
+library: DropOut_Power
+name: MAX20004EAFOA_VY+
+pins: pins.csv
+fields:
+  Reference: U
+  Value: MAX20004EAFOA_VY+
+  Footprint: DropOut_Package_DFN_QFN:Analog_F173A3FY_FC2QFN-17-1EP_3.5x3.75mm_P0.5mm
+  Datasheet: https://www.analog.com/media/en/technical-documentation/data-sheets/max20004e-max20008e.pdf
+  Description: Analog Devices (Maxim) MAX20004E 3.5 to 36 V 4 A synchronous step-down converter, fixed 5 V (FB to BIAS) or adjustable 1 to 5 V, 2.1 MHz, 15 µA skip-mode Iq, RESET output, spread spectrum, AEC-Q100, FC2QFN-17 3.5x3.75 mm
+  ki_keywords: buck step-down regulator converter DC-DC automotive 36V low-Iq reset
+  ki_fp_filters: Analog*F173A3FY*FC2QFN*
+  Manufacturer: Analog Devices
+  MPN: MAX20004EAFOA/VY+
+  DigiKey_PN: 505-MAX20004EAFOA/VY+-ND
+  Mouser_PN: 700-MAX20004EAFOAVY
+  Temperature_Grade: AEC-Q100, TA -40 to +125 °C, TJ -40 to +150 °C
