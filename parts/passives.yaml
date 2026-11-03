@@ -549,6 +549,36 @@ parts:
   observed:
     digikey: YAG3434CT-ND 541165 in stock, price not captured (API daily limit) (2026-10-22)
     mouser: 603-AC0402FR-07100KL 466108 in stock, $0.11 @1, $0.007 @1k (2026-10-23)
+- mpn: AC0402FR-0776K8L
+  family: yageo_ac
+  value: 76.8k
+  size: '0402'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 1/16 W
+  voltage: 50 V
+  line: 1 % 0402
+  notes: Node60 1V5_CORE buck (TPS628502QDRLRQ1 from 3V3_MAIN) part search, 2026-11-02.
+  digikey: 13-AC0402FR-0776K8LCT-ND
+  mouser: 603-AC0402FR-0776K8L
+  observed:
+    digikey: 13-AC0402FR-0776K8LCT-ND 41900 in stock, price not captured (2026-11-02)
+    mouser: 603-AC0402FR-0776K8L 109871 in stock, price not captured (2026-11-02)
+- mpn: AC0402FR-0751KL
+  family: yageo_ac
+  value: 51k
+  size: '0402'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 1/16 W
+  voltage: 50 V
+  line: 1 % 0402
+  notes: Node60 1V5_CORE buck (TPS628502QDRLRQ1 from 3V3_MAIN) part search, 2026-11-02.
+  digikey: YAG3499CT-ND
+  mouser: 603-AC0402FR-0751KL
+  observed:
+    digikey: YAG3499CT-ND 180003 in stock, price not captured (2026-11-02)
+    mouser: 603-AC0402FR-0751KL 251450 in stock, price not captured (2026-11-02)
 - mpn: ERJ-2RKF1242X
   family: panasonic_erj_precision
   value: 12.4k
