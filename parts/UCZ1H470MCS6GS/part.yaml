@@ -1,0 +1,34 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/UCZ1H470MCS6GS/part.yaml
+# Nichicon UCZ catalogue sheet e-ucz (PDF dated 2024-06-02): specifications, dimensions (6.3x7.7: L 7.7 +/- 0.3), ratings table (UCZ1H470M□□6GS: ESR 0.50 Ohm at 20 °C, 5.00 Ohm at -40 °C, ripple 197 mA).
+# Rejected for Node60 C207 (2026-11-03): its ESR is near the ideal damping value at room temperature but ten times higher at -40 °C (filter peak 2.5 Ohm against U302's 3.1 Ohm worst input impedance), and it has half the hybrid's life. Kept as a candidate.
+# Observed 2026-11-03: DigiKey 493-17607-1-ND 1393 in stock, $1.56 @1; Mouser 647-UCZ1H470MCS6GS 222 in stock.
+# Node60 C207/L201 part search (VBAT_FILT damped pi filter for U302 LMQ66430; decision page 2026-11-03): damping cap Cd >= 4 x CIN (about 48 uF), voltage >= 1.25 x 34 V (TI AN-2162 SNVA489C §4.4), AEC-Q200, -40 to +125 °C.
+# Polarised: pin 1 = +, pin 2 = -, as footprint pads 1/2 (pad 1 marked on silk).
+library: DropOut_Capacitor
+name: UCZ1H470MCS6GS
+style: capacitor_polarized
+pins: pins.csv
+fields:
+  Reference: "C"
+  Value: "47uF"
+  Footprint: "DropOut_Capacitor_SMD:CP_Elec_6.3x7.7"
+  Datasheet: "https://www.nichicon.co.jp/english/series_items/catalog_pdf/e-ucz.pdf"
+  Description: "Nichicon UCZ aluminium electrolytic capacitor, 47 µF ±20%, 50 V, ESR 0.50 Ω max (100 kHz, 20 °C) / 5.0 Ω max (-40 °C), ripple 197 mA rms (100 kHz), 2000 h at 125 °C, AEC-Q200, -40 to +125 °C, 6.3x7.7 mm SMD can (8.0 mm max)"
+  ki_keywords: "capacitor polarized aluminium electrolytic SMD automotive AEC-Q200"
+  ki_fp_filters: "CP?Elec?6.3x*"
+  Manufacturer: "Nichicon"
+  MPN: "UCZ1H470MCS6GS"
+  DigiKey_PN: "493-17607-1-ND"
+  Mouser_PN: "647-UCZ1H470MCS6GS"
+  Temperature_Grade: "AEC-Q200, -40 to +125 °C"
+  Voltage: "50V"
+  Tolerance: "±20%"
+  Case: "6.3x7.7"
+field_layout:
+  Reference: {"at": [2.54, 2.858]}
+  Value: {"at": [2.54, 0.953]}
+  MPN: {"at": [2.54, -2.794], "size": 1.0, "show": true}
+  Voltage: {"at": [2.54, -0.953], "show": true}
+  Tolerance: {"at": [7.62, -0.953], "show": true}
+  Case: {"at": [13.97, -0.953], "show": true}

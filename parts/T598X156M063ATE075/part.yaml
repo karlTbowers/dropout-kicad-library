@@ -1,0 +1,34 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/T598X156M063ATE075/part.yaml
+# KEMET T59X data sheet T2073_T59X (2025-11-05): ratings table (T598X156M063ATE075: leakage 94.5 uA, ESR 75 mOhm), reliability table 1 (63 V rated -> 42.2 V category voltage at 125 °C), case X dimensions (7.3 x 4.3 x 4.0 +/- 0.3 mm), Table 2 land dimensions.
+# Node60 C207 bottom-side option (three in parallel, 45 uF), not chosen 2026-11-03; T598D106M050 (50 V -> 33.5 V at 125 °C) fails the 34 V OV cut-off. Pin 1 = anode (+).
+# Observed 2026-11-03: DigiKey 399-T598X156M063ATE075CT-ND 2036 in stock, $5.78 @1; Mouser 80-T598X156M63ATE075 1011 in stock.
+# Node60 C207/L201 part search (VBAT_FILT damped pi filter for U302 LMQ66430; decision page 2026-11-03): damping cap Cd >= 4 x CIN (about 48 uF), voltage >= 1.25 x 34 V (TI AN-2162 SNVA489C §4.4), AEC-Q200, -40 to +125 °C.
+# Polarised: pin 1 = +, pin 2 = -, as footprint pads 1/2 (pad 1 marked on silk).
+library: DropOut_Capacitor
+name: T598X156M063ATE075
+style: capacitor_polarized
+pins: pins.csv
+fields:
+  Reference: "C"
+  Value: "15uF"
+  Footprint: "DropOut_Capacitor_SMD:CP_EIA-7343-43_Kemet-X"
+  Datasheet: "https://yageogroup.com/content/datasheet/asset/file/KEM_T2073_T59X"
+  Description: "KEMET T598 KO-CAP automotive polymer tantalum capacitor, 15 µF ±20%, 63 V (42.2 V category voltage at 125 °C), ESR 75 mΩ max (100 kHz), AEC-Q200, -55 to +125 °C, case X 7343-43 (4.3 mm max)"
+  ki_keywords: "capacitor polarized tantalum polymer SMD automotive AEC-Q200"
+  ki_fp_filters: "CP?EIA?7343?43*"
+  Manufacturer: "KEMET"
+  MPN: "T598X156M063ATE075"
+  DigiKey_PN: "399-T598X156M063ATE075CT-ND"
+  Mouser_PN: "80-T598X156M63ATE075"
+  Temperature_Grade: "AEC-Q200, -55 to +125 °C"
+  Voltage: "63V"
+  Tolerance: "±20%"
+  Case: "7343-43"
+field_layout:
+  Reference: {"at": [2.54, 2.858]}
+  Value: {"at": [2.54, 0.953]}
+  MPN: {"at": [2.54, -2.794], "size": 1.0, "show": true}
+  Voltage: {"at": [2.54, -0.953], "show": true}
+  Tolerance: {"at": [7.62, -0.953], "show": true}
+  Case: {"at": [13.97, -0.953], "show": true}

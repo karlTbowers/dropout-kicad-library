@@ -1,0 +1,15 @@
+# Footprint groups for DropOut_Capacitor_Tantalum_SMD.yaml. scripts/generate_footprint.py puts this file in
+# place of the generator's stock part_definitions.yaml, so only the sizes in our spec are generated.
+# Copied from the stock "capacitor_tantalum" group (kicad-library-tools a903a69), library renamed.
+capacitor_tantalum:
+    fp_lib_name: 'DropOut_Capacitor_SMD'
+    size_definitions: ['dropout_DropOut_Capacitor_Tantalum_SMD.yaml']
+    ipc_reference: "ipc_spec_tantalum_7352"
+    prefix: 'CP'
+    description: 'Tantalum Capacitor SMD {code_letter:s} ({code_metric:s} Metric){density:s}, {size_info:s}'
+    keywords: 'capacitor tantalum'
+    ipc_density: 'nominal'
+    pad_length_addition: 0
+    suffix: ""
+    polarization_mark: 'True'
+    ipc_string: "IPC-7352"

@@ -1,0 +1,23 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/VCHA042A-2R2MS6/part.yaml
+# Cyntec VCHA042A MS6 data sheet CYNVC-175-016 rev. B0 (June 2021) pp. 2-3: dimensions, land pattern, specifications table (VCHA042A-2R2MS6: Rdc 20.9 typ / 23.0 max mOhm, Idc 5.8 / 5.3 A, Isat 5.3 / 4.5 A).
+# Node60 L201 alternate (EMI filter inductor, 2026-11-03): lowest DCR and 165 °C; 1.0 and 4.7 uH (-1R0MS6, -4R7MS6) share the footprint. Not chosen: L201 = 74438356022HT (same part as L301).
+# Observed 2026-11-03: DigiKey 2037-VCHA042A-2R2MS6CT-ND 35362 in stock, $1.43 @1; Mouser 108-VCHA042A-2R2MS6 8 in stock.
+# Two-terminal inductor, no polarity (pins 1/2 = footprint pads 1/2).
+library: DropOut_Inductor
+name: VCHA042A-2R2MS6
+style: inductor
+pins: pins.csv
+fields:
+  Reference: L
+  Value: VCHA042A-2R2MS6
+  Footprint: DropOut_Inductor_SMD:L_Cyntec_VCHA042A
+  Datasheet: "https://www.cyntec.com/upfile/products/download/(B0)%20VCHA042A%20MS6%20Series_standard.pdf"
+  Description: Cyntec VCHA042A MS6 power choke, 2.2 µH ±20 %, Isat 5.3 A typ / 4.5 A (-30 %), Idc 5.8 A typ / 5.3 A (40 K rise), DCR 23.0 mΩ max, metal dust core, shielded, AEC-Q200, -55 to +165 °C, 4.2x4.0x2.1 mm
+  ki_keywords: inductor choke coil power filter shielded automotive AEC-Q200
+  ki_fp_filters: L*Cyntec*VCHA042A*
+  Manufacturer: Cyntec
+  MPN: VCHA042A-2R2MS6
+  DigiKey_PN: 2037-VCHA042A-2R2MS6CT-ND
+  Mouser_PN: 108-VCHA042A-2R2MS6
+  Temperature_Grade: AEC-Q200, -55 to +165 °C including temperature rise

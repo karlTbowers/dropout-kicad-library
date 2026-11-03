@@ -1,0 +1,23 @@
+# Symbol definition for scripts/symbolgen.py. Regenerate with:
+#   python3 scripts/symbolgen.py parts/SRP4020FA-2R2M/part.yaml
+# Bourns SRP4020FA data sheet (PDF dated 2026-05-16) p. 1: electrical specifications, dimensions, recommended layout.
+# Node60 L201 alternate (EMI filter inductor, 2026-11-03): cheapest, stocked at both distributors; 1.0 and 4.7 uH (-1R0M, -4R7M) share the footprint. Not chosen: L201 = 74438356022HT (same part as L301).
+# Observed 2026-11-03: DigiKey SRP4020FA-2R2MCT-ND 4618 in stock, $1.17 @1; Mouser 652-SRP4020FA-2R2M 1519 in stock.
+# Two-terminal inductor, no polarity (pins 1/2 = footprint pads 1/2).
+library: DropOut_Inductor
+name: SRP4020FA-2R2M
+style: inductor
+pins: pins.csv
+fields:
+  Reference: L
+  Value: SRP4020FA-2R2M
+  Footprint: DropOut_Inductor_SMD:L_Bourns_SRP4020FA
+  Datasheet: "https://www.bourns.com/docs/Product-Datasheets/SRP4020FA.pdf"
+  Description: Bourns SRP4020FA power inductor, 2.2 µH ±20 %, Isat 3.1 A (-10 %) / 3.8 A (-20 %) / 6.0 A (-30 %), Irms 8.0 A (40 °C rise), DCR 23.5 mΩ max, metal alloy powder core, flat wire, shielded, AEC-Q200, -55 to +155 °C, 4.1x4.1x2.1 mm
+  ki_keywords: inductor choke coil power filter shielded automotive AEC-Q200
+  ki_fp_filters: L*Bourns*SRP4020FA*
+  Manufacturer: Bourns
+  MPN: SRP4020FA-2R2M
+  DigiKey_PN: SRP4020FA-2R2MCT-ND
+  Mouser_PN: 652-SRP4020FA-2R2M
+  Temperature_Grade: AEC-Q200, -55 to +155 °C including temperature rise

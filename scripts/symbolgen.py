@@ -213,6 +213,19 @@ def style_capacitor(pins):
     return vertical_two_pin(pins, g, G)
 
 
+def style_capacitor_polarized(pins):
+    # As KiCad's Device:C_Polarized: an open positive plate with a "+" beside it (pin 1, on top) and a
+    # solid negative plate; 100 mil pins, as style_capacitor. No rectangles: the KLC checker centres a
+    # symbol on its rectangle nearest the origin (S3.1), and the two plates are equally near. The open
+    # plate is two open polylines, the solid one a 20 mil line as in style_capacitor. The "+" is right
+    # of pin 1, not left as on Device:C_Polarized, where it would overprint the shown pin number.
+    g = [poly([(-2.286, 0.508), (-2.286, 1.016), (2.286, 1.016), (2.286, 0.508)], width=0),
+         poly([(2.286, 0.508), (-2.286, 0.508)], width=0),
+         poly([(-2.286, -0.762), (2.286, -0.762)], width=0.508),
+         poly([(0.762, 2.286), (1.778, 2.286)], width=0), poly([(1.27, 2.794), (1.27, 1.778)], width=0)]
+    return vertical_two_pin(pins, g, G)
+
+
 def style_tvs_bidirectional(pins):
     # Two opposing diode triangles and a Z-shaped breakdown bar (as KiCad's Device:D_TVS)
     g = [poly([(-2.54, 1.27), (-2.54, -1.27), (0, 0), (-2.54, 1.27)]),
@@ -534,11 +547,13 @@ STYLES = {"tvs_bidirectional": style_tvs_bidirectional, "crystal_gnd24": style_c
           "cmc_4pin": style_cmc_4pin, "inductor": style_inductor, "testpoint": style_testpoint,
           "resistor": style_resistor, "resistor_shunt_4pin": style_resistor_shunt_4pin, "nmos": style_nmos,
           "thermistor_ntc": style_thermistor_ntc, "capacitor": style_capacitor,
+          "capacitor_polarized": style_capacitor_polarized,
           "nmos_pmos": style_nmos_pmos, "relay_dpdt_latching": style_relay_dpdt_latching}
 # Reference and Value beside the body, left-justified, for the narrow vertical styles (as
 # KiCad's Device:C; a long MPN Value would not fit inside Device:R's body)
 STYLE_FIELDS = {"inductor": {"Reference": (2.54, 1.27), "Value": (2.54, -1.27)},
                 "capacitor": {"Reference": (2.54, 1.27), "Value": (2.54, -1.27)},
+                "capacitor_polarized": {"Reference": (2.54, 1.27), "Value": (2.54, -1.27)},
                 # as Relay:G6KU-2: right of the body, which spans the pins
                 "relay_dpdt_latching": {"Reference": (16.51, 3.81), "Value": (16.51, 1.27)}}
 # Reference and Value positions where the default (above and below the body) doesn't fit:
@@ -549,7 +564,8 @@ STYLE_FIELD_Y = {"testpoint": {"Reference": 6.858, "Value": 5.08},
 # and on two-terminal passives too (the user's decision 2026-10-29, so a netlist or layout question
 # about pin 1 / pin 2 can be answered from the schematic)
 STYLE_SHOW_NUMBERS = {"crystal_gnd24", "crystal_nc24", "cmc_4pin", "resistor_shunt_4pin", "nmos", "nmos_pmos",
-                      "relay_dpdt_latching", "resistor", "capacitor", "inductor", "thermistor_ntc", "net_tie"}
+                      "relay_dpdt_latching", "resistor", "capacitor", "capacitor_polarized", "inductor", "thermistor_ntc",
+                      "net_tie"}
 
 
 def build_symbol(part, pins):
