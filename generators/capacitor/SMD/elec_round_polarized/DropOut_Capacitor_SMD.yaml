@@ -1,0 +1,47 @@
+# SMD aluminium electrolytic and hybrid polymer cans for DropOut_Capacitor_SMD, in kicad-library-tools'
+# capacitor/SMD/elec_round_polarized format. Generate:
+#   ~/.cache/dropout/klt-venv/bin/python scripts/generate_footprint.py \
+#       generators/capacitor/SMD/elec_round_polarized/DropOut_Capacitor_SMD.yaml --lib DropOut_Capacitor_SMD --no-3d
+# 3D models: generators/custom/CP_Elec_SMD.py (the stock model generator lands the can turned 180 deg).
+#
+# Land pattern: KiCad's stock CP_Elec_6.3x5.8 / 6.3x7.7 (1.6 x 3.5 mm pads, 1.9 mm apart, from
+# Nichicon's recommended land for 6.3 mm chip types). Nichicon no longer publishes that guide at the
+# address KiCad cites (checked 2026-11-03), so the pads were checked against each part's terminals:
+#   Nichicon GYF / UCZ 6.3x7.7 (catalogue sheets e-gyf, e-ucz): base 6.6 mm, terminals 7.3 mm
+#     over both, 2.2 mm apart, 0.5-0.8 mm wide -> 1.1 to 3.65 mm from the centre;
+#   Chemi-Con HXC F61 / F80 (catalogue HXCRA-e): base 6.6 mm, terminals 7.2 mm over both, 1.9 mm
+#     apart, 0.5-0.8 mm wide -> 0.95 to 3.6 mm;
+#   Panasonic ZC 6.3x5.8 (ABA0000C1234): see parts/EEH-ZC1H220P/part.yaml.
+# The pads (0.95 to 4.45 mm from the centre) cover every terminal with a toe fillet beyond it.
+# The two sizes share one land pattern, so a 6.3x5.8 can also fits the 6.3x7.7 footprint.
+CP_Elec_6.3x5.8:
+    extra_description: "Nichicon, Chemi-Con, Panasonic"
+    body_length:
+      nominal: 6.6
+    body_width:
+      nominal: 6.6
+    body_height:
+      nominal: 5.8
+    body_diameter:
+      nominal: 6.3
+    datasheet: "https://github.com/karlTbowers/dropout-kicad-library/blob/main/generators/capacitor/SMD/elec_round_polarized/DropOut_Capacitor_SMD.yaml"
+    pad_width: 1.6
+    pin1_chamfer: 'auto'
+    pad_length: 3.5
+    pad_spacing: 1.9
+
+CP_Elec_6.3x7.7:
+    extra_description: "Nichicon, Chemi-Con"
+    body_length:
+      nominal: 6.6
+    body_width:
+      nominal: 6.6
+    body_height:
+      nominal: 7.7
+    body_diameter:
+      nominal: 6.3
+    datasheet: "https://github.com/karlTbowers/dropout-kicad-library/blob/main/generators/capacitor/SMD/elec_round_polarized/DropOut_Capacitor_SMD.yaml"
+    pad_width: 1.6
+    pin1_chamfer: 'auto'
+    pad_length: 3.5
+    pad_spacing: 1.9

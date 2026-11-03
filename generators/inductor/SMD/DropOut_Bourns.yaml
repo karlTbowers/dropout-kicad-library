@@ -1,4 +1,4 @@
-# Bourns SRP-TA automotive shielded power inductors (DropOut spec for kicad-library-tools
+# Bourns SRP-TA and SRP-FA automotive shielded power inductors (DropOut spec for kicad-library-tools
 # data/inductor/SMD/).
 default_parameters:
   manufacturer: Bourns
@@ -40,3 +40,19 @@ DropOut_SRP3020TA:
   landingInsideX: 1.9
   landingOutsideX: 4.1
   landingY: 1.45
+
+# SRP4020FA data sheet (PDF dated 2026-05-16) p. 1, "Recommended Layout": 3.8 x 1.4 mm pads, 3.4 mm
+# over both, so 0.6 mm apart. Body 4.1 x 4.1 x 1.9 +/- 0.2 mm (2.1 max); terminals 0.88 x 3.4 mm on
+# two opposite edges. The data sheet draws the pads one above the other; here they are along X as
+# in the other DropOut inductors (the part has no polarity).
+DropOut_SRP4020FA:
+  PartNumber: SRP4020FA
+  datasheet: "https://www.bourns.com/docs/Product-Datasheets/SRP4020FA.pdf"
+  widthX: 4.1
+  lengthY: 4.1
+  height: 2.1
+  padX: 0.88
+  padY: 3.4
+  landingInsideX: 0.6
+  landingOutsideX: 3.4
+  landingY: 3.8

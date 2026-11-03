@@ -1,0 +1,29 @@
+# Cyntec (Delta Electronics) automotive power chokes (DropOut spec for kicad-library-tools
+# data/inductor/SMD/).
+default_parameters:
+  manufacturer: Cyntec
+  library_name: DropOut_Inductor_SMD
+  3d:
+    type: 2
+    bodyColor: dark grey body
+    pinColor: metal grey pins
+    padThickness: 0.05
+  tags:
+    - power
+    - shielded
+    - AEC-Q200
+
+# VCHA042A MS6 data sheet CYNVC-175-016 rev. B0 (June 2021) p. 2: body L 4.2 +/- 0.3, W 4.0 +/- 0.3,
+# T 2.1 max; terminals A1 0.8 +/- 0.3 x B 3.0 +/- 0.3. "Recommend Land Pattern": A 3.50 (pad height),
+# B 1.50 (inside), C 5.18 (outside).
+DropOut_VCHA042A:
+  PartNumber: VCHA042A
+  datasheet: "https://www.cyntec.com/upfile/products/download/(B0)%20VCHA042A%20MS6%20Series_standard.pdf"
+  widthX: 4.2
+  lengthY: 4.0
+  height: 2.1
+  padX: 0.8
+  padY: 3.0
+  landingInsideX: 1.5
+  landingOutsideX: 5.18
+  landingY: 3.5
