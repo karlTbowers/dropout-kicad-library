@@ -134,9 +134,16 @@ def wsk1216():
         "resistor shunt current sense Kelvin 4-terminal Vishay WSK1216", model)
 
 
-def isa_weld_model(foot, wall, top_x, body_y, force_w, sense_w, h=2.4, d1=0.4, d2=1.2):
+def isa_weld_model(foot, wall, top_x, body_y, force_w, sense_w, h=2.5, d1=0.4, d2=1.3):
     """Isabellenhuette ISA-WELD shunt: copper terminals (feet split into a force and a sense lead,
-    a wall, a top flange) welded to the alloy element on top. foot/wall: (x_inner, x_outer)."""
+    a wall, a top flange) welded to the alloy element on top. foot/wall: (x_inner, x_outer).
+
+    Heights (BVB data sheet p. 2 drawing): H is the copper terminal's height up to the top flange and
+    the element D2 sits on it, so the part is H + D2 tall. Drawn at the maximum, H 2.4 + 0.1 and D2
+    1.2 + 0.1 (R0002, the thickest element; R0003 is 0.81 BVB / 0.85 BVR), 3.8 mm in all, so one model
+    covers every value sharing the footprint. DigiKey's "Height - Seated (Max)" (2026-11-03) agrees
+    with H max + D2 max for all four parts in the library: BVB R0002 3.80, BVB R0003 3.40, BVR R0002
+    3.80, BVR R0003 3.45 mm. Until 2026-11-03 the element was drawn inside H (2.4 mm tall)."""
     def model():
         by = body_y / 2
         cu = None
@@ -147,13 +154,14 @@ def isa_weld_model(foot, wall, top_x, body_y, force_w, sense_w, h=2.4, d1=0.4, d
                     part = box(*xs(xa, xb), y_a, y_b, 0, z1)
                     cu = part if cu is None else cu.union(part)
             cu = cu.union(box(*xs(top_x, wall[1]), -by, by, h - d1, h))
-        return [(cu, METAL), (box(-top_x, top_x, -by, by, h - d2, h), ELEMENT)]
+        return [(cu, METAL), (box(-top_x, top_x, -by, by, h, h + d2), ELEMENT)]
     return model
 
 
 def bvb2725():
-    # Body B 6.9 (x) x L 6.6 (y) x H 2.4; feet A 1.9 under the body (C-bent terminals), C 3.1 between
-    # them; force lead G 4.9, gap F 1.0, sense lead E 0.7; copper D1 0.4; element D2 1.2 (R0002).
+    # Body B 6.9 (x) x L 6.6 (y); feet A 1.9 under the body (C-bent terminals), C 3.1 between
+    # them; force lead G 4.9, gap F 1.0, sense lead E 0.7; copper D1 0.4; terminal height H 2.4 ±0.1;
+    # element D2 1.2 (R0002), 0.81 (R0003) on top of H.
     return kelvin(
         "R_Shunt_Isabellenhuette_BVB2725", 2.9, 2.0, 5.6, 0.8, 0.9, 6.9, 6.6,
         "Isabellenhuette BVB 4-terminal (Kelvin) ISA-WELD shunt, 2725, 6.9 x 6.6 mm, pcb-layout proposal "
@@ -165,8 +173,9 @@ def bvb2725():
 
 def bvr4026():
     # L 10.1 over the gull-wing feet (x), W 6.6 (y), C 6.9 between the feet; sense lead A 0.7, gap B 1.0,
-    # force lead 4.9; copper D1 0.4; element D2 1.2 (R0002). The data sheet gives no height: the model
-    # uses the BVB's 2.4 mm (same ISA-WELD construction).
+    # force lead 4.9; copper D1 0.4; element D2 1.2 (R0002), 0.85 (R0003). The data sheet gives no terminal
+    # height H: the model uses the BVB's H 2.4 (same ISA-WELD construction), which with D2 matches
+    # DigiKey's seated heights (3.80 mm R0002, 3.45 mm R0003); see isa_weld_model.
     return kelvin(
         "R_Shunt_Isabellenhuette_BVR4026", 2.55, 5.5, 5.6, 0.8, 0.9, 10.1, 6.6,
         "Isabellenhuette BVR 4-terminal (Kelvin) ISA-WELD shunt, 4026, 10.1 x 6.6 mm, pcb-layout proposal "
