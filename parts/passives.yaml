@@ -579,6 +579,36 @@ parts:
   observed:
     digikey: YAG3499CT-ND 180003 in stock, price not captured (2026-11-02)
     mouser: 603-AC0402FR-0751KL 251450 in stock, price not captured (2026-11-02)
+- mpn: AC0402FR-0726K7L
+  family: yageo_ac
+  value: 26.7k
+  size: '0402'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 1/16 W
+  voltage: 50 V
+  line: 1 % 0402
+  notes: Node60 LM74910H R(ILIM) for the 0.3 mΩ BVR-Z-R0003-1.0 shunt (74.8 A breaker), decision D14-1, 2026-11-03.
+  digikey: YAG5658CT-ND
+  mouser: 603-AC0402FR-0726K7L
+  observed:
+    digikey: YAG5658CT-ND 74 in stock, $0.10 @1, $0.00448 @10k reel (2026-11-03)
+    mouser: 603-AC0402FR-0726K7L 195213 in stock, price not captured (2026-11-03)
+- mpn: AC0402FR-07383RL
+  family: yageo_ac
+  value: 383R
+  size: '0402'
+  tolerance: ±1%
+  tcr: ±100 ppm/K
+  power: 1/16 W
+  voltage: 50 V
+  line: 1 % 0402
+  notes: Node60 LM74910H RISCP for the 0.3 mΩ BVR-Z-R0003-1.0 shunt (24.0 mV fast trip = 80 A), decision D14-1, 2026-11-03. No stock seen on 2026-11-03 (DigiKey lists full reels only).
+  digikey: AC0402FR-07383RL-ND
+  mouser: 603-AC0402FR-07383RL
+  observed:
+    digikey: AC0402FR-07383RL-ND (tape and reel only) no stock, $0.00448 @10k reel (2026-11-03)
+    mouser: 603-AC0402FR-07383RL no stock figure (2026-11-03)
 - mpn: ERJ-2RKF1242X
   family: panasonic_erj_precision
   value: 12.4k
